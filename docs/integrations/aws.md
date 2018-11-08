@@ -68,7 +68,7 @@ The following relationships are created/mapped:
 
 |
 | --
-| `aws_iam_user - IS -> Person` <br> Note: This is mapped automatically only when the `username` of the IAM User is an email that matches the Person's.
+| `aws_iam_user` **IS** `Person` <br> Note: This is mapped automatically only when the `username` of the IAM User is an email that matches the Person's.
 
 ### Advanced mappings
 
