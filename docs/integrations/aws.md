@@ -49,7 +49,7 @@ The following entity resources are ingested when the integration runs:
 |             | IAM User Policy     | `aws_iam_user_policy`    : `AccessPolicy`
 | S3          | S3 Bucket           | `aws_s3_bucket`          : `DataStore`
 | Lambda      | Lambda Function     | `aws_lambda_function`    : `Function, Workload`
-| API Gateway | REST API            | `aws_apigateway_rest_api`: `Gateway, Proxy`
+| API Gateway | REST API            | `aws_apigateway_rest_api`: `Gateway`
 | Config      | Config Rule         | `aws_config_rule`        : `ControlPolicy`
 
 ## Relationships
