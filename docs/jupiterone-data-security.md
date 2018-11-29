@@ -158,7 +158,7 @@ perform) given the attributes.
 [nist-abac]: https://csrc.nist.gov/publications/detail/sp/800-162/final
 
 Access policies defined in JupiterOne are associated with a **User Group** and
-**Users** are invited/added as members of groups.
+**Users** are invited/added as members to one or more groups.
 
 - A *Read-Only* access policy is predefined and associated with the default
   **Users** group.
