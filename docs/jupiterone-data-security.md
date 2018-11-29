@@ -169,7 +169,7 @@ Access policies defined in JupiterOne are associated with a **User Group** and
 
 ### API Access
 
-JupiterOne API is available at **https://api.dev.jupiterone.io/query/graphql**.
+JupiterOne API is available at https://api.dev.jupiterone.io/query/graphql.
 
 We use [OAuth 2.0](https://oauth.net/2/) for authorization, which means in order
 to access data a user must authenticate and the requesting app must be
