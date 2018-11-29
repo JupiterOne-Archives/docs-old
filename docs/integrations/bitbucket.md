@@ -15,9 +15,10 @@ specific integration instance.
 The integration instance configuration requires the customer's Bitbucket OAuth
 App `clientId` and `clientSecret` to authenticate requests to the Bitbucket REST
 APIs. The integration requires Read access to the target Account, Team
-Membership, Projects, and Repositories. See the following screenshot for an
-example configuration within a Bitbucket Team Settings, note the required and
-optional settings.
+Membership, Projects, and Repositories.
+
+See the following screenshot for an example configuration within a Bitbucket
+Team Settings, note the required and optional settings.
 
 ![BitBucket OAuth Example Config][1]
 
