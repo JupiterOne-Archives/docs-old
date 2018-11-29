@@ -110,8 +110,8 @@ allows us to deploy security patches within minutes of identification and
 remediation of an issue.
 
 You can review our published [security model][security-model] and corresponding
-[policies and procedures][security-psp] for more details on our operational and
-infrastructure security.
+[policies and procedures][security-psp] for more details on our operational,
+infrastructure, and software development security.
 
 [security-model]: https://security.lifeomic.com/psp/model/
 [security-psp]: https://security.lifeomic.com/psp/
