@@ -101,6 +101,14 @@ necessary operational support and maintenance jobs are performed via automation
 where the automation code is fully documented, reviewed, and approved, ensuring
 end-to-end traceability.
 
+Our production environment incorporates multiple layers of security monitoring,
+using JupiterOne itself as well as third party security solutions. Additionally,
+our software development follows rigorous code analysis and continuous testing
+process to ensure we proactively identify any security vulnerability. Our
+infrastructure-as-code operational model and automated change management process
+allows us to deploy security patches within minutes of identification and
+remediation of an issue.
+
 You can review our published [security model][security-model] and corresponding
 [policies and procedures][security-psp] for more details on our operational and
 infrastructure security.
