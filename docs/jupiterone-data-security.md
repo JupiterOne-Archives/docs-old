@@ -20,10 +20,12 @@ URL that the SSL/TLS certificate has been issued to.
 **Data at Rest** is hosted in our production AWS environments, using the managed
 RDS/Neptune, DynamoDB, and S3 services. All database instances, tables, and S3
 buckets with customer data have server-side encryption enabled, using AWS KMS
-for key management. In addition to encryption, managed backup is enabled for the
-database clusters. For S3 buckets, cross-account replication is enabled to back
-up data to a different region for disaster recovery. All backup data is fully
-encrypted the same way as its source.
+for key management. KMS encryption keys are scheduled to rotate annually.
+
+In addition to encryption, managed backup is enabled for the database clusters.
+For S3 buckets, cross-account replication is enabled to back up data to a
+different region for disaster recovery. All backup data is fully encrypted the
+same way as its source.
 
 ### Multi-tenancy
 
