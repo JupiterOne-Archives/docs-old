@@ -1,4 +1,4 @@
-# GitHub Integration Details
+# GitHub Data and Integration Details
 
 ## Overview
 
@@ -24,8 +24,9 @@ The following entity resources are ingested when the integration runs:
 
 | GitHub Entity Resource | _type : _class of the Entity
 | -----------            | -----------
-| Repository             | `github_repo`: `CodeRepo`
-| User                   | `github_user`: `User`
+| Account                | `github_account` : `Account`
+| Repository             | `github_repo`    : `CodeRepo`
+| User                   | `github_user`    : `User`
 
 ## Relationships
 

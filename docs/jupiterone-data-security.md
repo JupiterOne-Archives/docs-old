@@ -47,11 +47,12 @@ corresponding documentation:
 - [AWS][aws]
 - [Bitbucket][bitbucket]
 - [Github][github]
-- Okta
+- [Okta][okta]
 
 [aws]: https://support.jupiterone.io/hc/en-us/articles/360012626754-AWS-Data-and-Integration-Details
 [bitbucket]: https://support.jupiterone.io/hc/en-us/articles/360012758713-Bitbucket-Data-and-Integration-Details
 [github]: https://support.jupiterone.io/hc/en-us/articles/360012627134-Github-Data-and-Integration-Details
+[okta]: https://support.jupiterone.io/hc/en-us/articles/360012776654-Okta-Data-and-Integration-Details
 
 ### Access Permissions Needed to Integrated Environments
 
