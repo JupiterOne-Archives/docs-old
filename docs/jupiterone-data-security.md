@@ -103,8 +103,8 @@ end-to-end traceability.
 
 Our production environment incorporates multiple layers of security monitoring,
 using JupiterOne itself as well as third party security solutions. Additionally,
-our software development follows rigorous code analysis and continuous testing
-process to ensure we proactively identify any security vulnerability. Our
+our software development includes rigorous code analysis and continuous testing
+practices to ensure we proactively identify any security vulnerability. Our
 infrastructure-as-code operational model and automated change management process
 allows us to deploy security patches within minutes of identification and
 remediation of an issue.
