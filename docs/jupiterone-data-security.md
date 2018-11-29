@@ -1,6 +1,6 @@
 # JupiterOne Data Security
 
-This document describe in details the data JupiterOne ingests and how your data
+This document describes in detail the data JupiterOne ingests and how your data
 is protected on our platform.
 
 ## Data Protection
@@ -114,7 +114,7 @@ enabled over HTTPS, through either the JupiterOne web apps or the public APIs.
 
 ### User Logins
 
-Each user has an unique user login to the JupiterOne platform and apps. Users
+Each user has a unique user login to the JupiterOne platform and apps. Users
 may be invited to one or multiple organizational accounts on JupiterOne.
 
 #### Password Policy
