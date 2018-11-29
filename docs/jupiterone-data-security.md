@@ -17,7 +17,7 @@ JupiterOne platform.
 *Production Domains:* `*.apps.us.jupiterone.io` is the associated production
 URL that the SSL/TLS certificate has been issued to.
 
-**Data at Rest** is hosted in our product AWS environments, using the managed
+**Data at Rest** is hosted in our production AWS environments, using the managed
 RDS/Neptune, DynamoDB, and S3 services. All database instances, tables, and S3
 buckets with customer data have server-side encryption enabled, using AWS KMS
 for key management. In addition to encryption, managed backup is enabled for the
@@ -60,16 +60,16 @@ In general, JupiterOne only requires read-only, security-auditor-type access
 permissions to your environments. Additionally, this read-only access only
 applies to configurations and meta data, not the actual data content. For
 example, we do **NOT** read S3 objects data from a connected AWS account, or the
-actual source codes of a connected Bitbucket/Github account.
+actual source code of a connected Bitbucket/Github account.
 
-Additional level of access may be need for workflow automation. For example,
+Additional level of access may be needed for workflow automation. For example,
 integration with Jira to automatically create an issue when a new Vulnerability
 finding is added; or to post to a Slack channel/user to send a security alert
 notification.
 
 You are always in control of the actual permissions granted for each
 integration. More details of the access permissions required for each managed
-integration can be found in its corresponding documented listed above.
+integration can be found in its corresponding documentation listed above.
 
 ### Custom Data Import
 
@@ -81,7 +81,7 @@ Additionally, JupiterOne supports the ability for you to add custom data by
 
 ## Data Ownership and Access
 
-You retain full ownership All data that is ingested via integrations, API or
+You retain full ownership of all data that is ingested via integrations, API or
 manual importing/creation. Data is stored in JupiterOne's production environment
 in AWS, protected via encryption and replication as specified in the first
 section.
@@ -91,8 +91,9 @@ section.
 JupiterOne infrastructure is built on a **Zero Trust** security model, where
 access to production is *highly restricted*.
 
-The production environment is virtually "air-gapped" such that there is no
-direct, internal network connectivity into the production systems. We do not
+The production environment is virtually "air-gapped" such that there is no SSH,
+"bastion host", or VPN connectivity into the production systems to prevent
+unintended network access to databases and other production servers. We do not
 allow internal access to production data by any JupiterOne team member. All
 necessary operational support and maintenance jobs are performed via automation
 where the automation code is fully documented, reviewed, and approved, ensuring
@@ -164,24 +165,24 @@ Access policies defined in JupiterOne are associated with a **User Group** and
   **Users** group.
 - A *Full-Access* policy is also predefined and associated with the default
   **Administrators** group.
-- The ability to customize and add granular access control policy is to be
-  release in 1Q2019.
+- The ability to customize and add granular access control policies is to be
+  released in 1Q2019.
 
 ### API Access
 
-JupiterOne API is available at https://api.dev.jupiterone.io/query/graphql.
+JupiterOne API is available at: https://api.us.jupiterone.io/
 
 We use [OAuth 2.0](https://oauth.net/2/) for authorization, which means in order
 to access data a user must authenticate and the requesting app must be
 authorized. Implicit grant, authorization code, and client credentials flows are
 supported. Authorization code is recommended for web apps, which involves
 utilizing both the authorize and token API resources. When using the
-Authorization Code grant flow, it is also recommended to use Proof Key for Code
+authorization code grant flow, it is also recommended to use Proof Key for Code
 Exchange (PCKE) to mitigate authorization code intercept attacks. Contact us if
 building a native app which can securely perform client credentials flow.
 
-Additionally, each user on the can create an API key that can be passed along
-with request to act on behalf of that user.
+Additionally, each user on the platform can create an API key that can be passed
+along with request to act on behalf of that user.
 
 *Note: the UI for self-service configuration of OAuth and user API key is targeted to be available in 1Q2019.*
 
