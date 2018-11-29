@@ -21,7 +21,7 @@ Instructions on creating an API token within your Okta account can be found
 
 The following entity resources are ingested when the integration runs:
 
-| GitHub Entity Resource | _type : _class of the Entity
+| Okta Entity Resource   | _type : _class of the Entity
 | -----------            | -----------
 | Account                | `okta_account`     : `Account`
 | Application            | `okta_application` : `Application`
