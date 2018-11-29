@@ -1,4 +1,4 @@
-# Bitbucket Integration Details
+# Bitbucket Data and Integration Details
 
 ## Overview
 
@@ -22,7 +22,7 @@ Team Settings, note the required and optional settings.
 
 ![BitBucket OAuth Example Config][1]
 
-[1]: ../assets/integration-bitbucket-oauth-consumer-settings.png
+[1]: ../../assets/integration-bitbucket-oauth-consumer-settings.png
 
 ## Entities
 

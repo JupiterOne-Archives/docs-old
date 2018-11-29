@@ -1,4 +1,4 @@
-# AWS Integration Details
+# AWS Data and Integration Details
 
 ## Overview
 
@@ -34,6 +34,7 @@ The following entity resources are ingested when the integration runs:
 
 | AWS Service | AWS Entity Resource | _type : _class of the Entity
 | ----------- | -----------         | -----------
+| Account     | n/a                 | `aws_account`            : `Account`
 | API Gateway | REST API            | `aws_apigateway_rest_api`: `Gateway`
 | EC2         | EC2 Instance        | `aws_ec2_instance`       : `Host`
 |             | EBS Volume          | `aws_ec2_volume`         : `DataStore, Disk`
