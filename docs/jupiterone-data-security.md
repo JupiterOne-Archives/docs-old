@@ -43,7 +43,7 @@ Objects from these external environments and their corresponding metadata,
 including configuration properties and tags but never the actual data content,
 are ingested as "entities". The entity properties and tags are used to perform
 analysis to build out "relationships" among ingested entities. These entities
-and relationships are the JupiterOne CORE Data Model.
+and relationships are the **JupiterOne CORE Data Model**.
 
 JupiterOne then uses this data model to inventory for and provide insight into
 your digital infrastructure across all of your connected environments.
