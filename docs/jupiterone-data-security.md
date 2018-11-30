@@ -37,7 +37,18 @@ is a standard pattern used by cloud infrastructure and SaaS providers.
 
 ## External Data Ingestion/Import
 
-High level information of the JupiterOne Data Model can be found [here][data-model].
+JupiterOne ingests data from external sources and connected environments
+primarily via the APIs provided by the target environment/service provider.
+Objects from these external environments and their corresponding metadata,
+including configuration properties and tags but never the actual data content,
+are ingested as "entities". The entity properties and tags are used to perform
+analysis to build out "relationships" among ingested entities. These entities
+and relationships are the JupiterOne CORE Data Model.
+
+JupiterOne then uses this data model to inventory for and provide insight into
+your digital infrastructure across all of your connected environments.
+
+More information on the JupiterOne Data Model can be found [here][data-model].
 
 [data-model]: https://support.jupiterone.io/hc/en-us/articles/360011556113-JupiterOne-Data-Model
 
