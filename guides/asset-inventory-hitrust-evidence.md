@@ -1,3 +1,5 @@
+@deprecated
+
 # Collect HITRUST evidences using JupiterOne Asset Inventory app
 
 _Article updated on 2018-09-21_
