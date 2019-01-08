@@ -28,7 +28,7 @@ Or ask a question like:
 - Who are my vendors?
 - What lambda functions do I have in AWS?
 - What is connected to the Internet?
-- Who have access to ...?
+- Who has access to ...?
 
 ## Full Text Search
 
@@ -43,7 +43,7 @@ Put your keywords in quotes ("keyword") to start a full text search. For example
 The JupiterOne Query Language (J1QL) is used here for searching for anything
 across all of your entities and relationships.
 
-To start, understand this the basic query structure:
+To start, understand the basic query structure:
 
 ```j1ql
 FIND {class or type of Entity1} AS {alias1}

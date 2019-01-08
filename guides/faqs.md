@@ -54,7 +54,7 @@ i.e. `public=true` -- only when the following conditions are met:
 "Callisto <callisto@jupiterone.io>" is the account for JupiterOne Support. The
 Support User is by default added to a new account during free trial,
 proof-of-concept evaluation, or initial account onboarding. This is to
-facilitate better support and training to using the platform.
+facilitate better support and training on using the platform.
 
 - The support user can be removed by an account administrator at any time,
   should you determine that ongoing regular support is no longer needed.

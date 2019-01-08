@@ -212,7 +212,7 @@ along with request to act on behalf of that user.
 
 A JupiterOne Support User is by default added to a new account during free
 trial, proof-of-concept evaluation, or initial account onboarding. This is to
-facilitate better support and training to using the platform.
+facilitate better support and training on using the platform.
 
 - The support user's login can either be the individual Security
   Engineer/Architect designated to your account (e.g.
