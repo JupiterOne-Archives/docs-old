@@ -48,3 +48,15 @@ i.e. `public=true` -- only when the following conditions are met:
 - The VPC has an Internet Gateway that connects it to the Internet
 - The VPC or subnet has a Route in the Route Table to external networks
 - The VPC or subnet has a Network ACL that allows traffic to/from external networks
+
+## I see a user named "Callisto" on my account. Who is that?
+
+"Callisto <callisto@jupiterone.io>" is the account for JupiterOne Support. The
+Support User is by default added to a new account during free trial,
+proof-of-concept evaluation, or initial account onboarding. This is to
+facilitate better support and training to using the platform.
+
+- The support user can be removed by an account administrator at any time,
+  should you determine that ongoing regular support is no longer needed.
+- You have the option and administrative privilege to add the support user back
+  at any time, when support is needed in the future.
