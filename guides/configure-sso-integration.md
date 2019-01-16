@@ -87,16 +87,17 @@ Here's an example of attribute mapping configuration in Okta:
 
 ![okta-attribute-mappings](/assets/configure-sso/okta-attribute-mappings.png)
 
-We highly recommend adding a custom *group attribute* to the JupiterOne within
-your IdP's app profile, This is typically added using the **Profile Editor** for
-the app. You can name the attribute something like `jupiterone_groups`.
+We highly recommend adding a custom *group attribute* to the JupiterOne app
+profile in your IdP account (e.g. Okta). This is typically added using the
+**Profile Editor** for the app. You can name the attribute something like
+`jupiterone_groups`.
 
 Below is an example within Okta:
 
 ![okta-app-profile-editor](/assets/configure-sso/okta-app-profile-editor.png)
 
 You can then use this custom app attribute to assign group memberships to your
-users based on their IdP group assignments. The actual values for the attribute
+users based on their IdP group assignments. The actual value for the attribute
 is typically configured on the group(s) assigned to the app.
 
 Below is an example within Okta:
