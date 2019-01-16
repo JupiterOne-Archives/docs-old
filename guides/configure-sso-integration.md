@@ -29,13 +29,13 @@ _IdP-initiated SSO is currently unsupported due to a limitation of Amazon Cognit
 1. Log in to your JupiterOne account -- your user must be a member of the
    *Administrators* group.
 
-1. Go to the **Auth Clients** setup from the configurations menu.
+1. Go to the **Single Sign On** setup from the configurations menu.
 
-   ![auth-clients-menu](/assets/configure-sso/j1-auth-clients-menu.png)
+   ![sso-menu](/assets/configure-sso/j1-sso-menu.png)
 
-1. Click on **Add Client**.
+1. Click on **Configure**.
 
-   ![add-auth-client](/assets/configure-sso/j1-auth-clients-add.png)
+   ![configure-sso](/assets/configure-sso/j1-configure-sso.png)
 
 1. In the client configuration screen, copy the following two variables to be
    used when adding JupiterOne as an application in your SAML IdP account:
