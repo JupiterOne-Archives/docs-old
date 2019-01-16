@@ -11,16 +11,14 @@ a support ticket or contact your technical account manager.
 
   Service Provider Initiated (SP-initiated) SSO means when SAML authentication
   is initiated by the Service Provider (SP). This is triggered when the end user
-  tries to access a resource in the Service Provider or login directly to the
-  Service Provider.
+  tries to access a resource in JupiterOne or login directly to the JupiterOne
+  account.
 
 - **JIT (Just In Time) Provisioning**
 
   Users are created/updated on the fly using the SAML attributes sent as part of
-  the SAML response coming from the Identity Provider. The user is created
-  during initial login to the Service Provider and updated during subsequent
-  logins. Turning on JIT Provisioning is normally a configuration value in the
-  Service Provider.
+  the SAML response coming from the Identity Provider (IdP). The user is created
+  during initial login to JupiterOne and updated during subsequent logins.
 
 _IdP-initiated SSO is currently unsupported due to a limitation of Amazon Cognito._
 
