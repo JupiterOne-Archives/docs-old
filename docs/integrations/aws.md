@@ -28,26 +28,44 @@ project on Github.
 
 [1]: https://github.com/jupiterone-io/jupiterone-aws-integration
 
+## Permissions
+
+The AWS integration requires security auditor permissions into the target AWS
+account, as defined by a combination of the [SecurityAudit][2] IAM policy
+managed by AWS, and a few additional `List*`, `Get*`, and `Describe*`
+permissions missing from the AWS managed policy. The exact policy and permission
+statements can be found in the public [JupiterOne AWS Integration][1] project on
+Github.
+
+[2]: https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/SecurityAudit
+
 ## Entities
 
-The following entity resources are ingested when the integration runs:
+The following entity resources and their meta data (not actual contents) are
+ingested when the integration runs:
 
 | AWS Service | AWS Entity Resource | _type : _class of the Entity
 | ----------- | -----------         | -----------
 | Account     | n/a                 | `aws_account`            : `Account`
 | API Gateway | REST API            | `aws_apigateway_rest_api`: `Gateway`
+| DynamoDB    | DynamoDB Table      | `aws_dynamodb_table`     : `DataStore`, `Database`
 | EC2         | EC2 Instance        | `aws_ec2_instance`       : `Host`
+|             | EC2 Key Pair        | `aws_ec2_key_pair`       : `AccessKey`
 |             | EBS Volume          | `aws_ec2_volume`         : `DataStore, Disk`
 |             | Security Group      | `aws_ec2_security_group` : `Firewall`
 |             | VPC                 | `aws_ec2_vpc`            : `Network`
 |             | Subnet              | `aws_ec2_subnet`         : `Network`
 | IAM         | IAM User            | `aws_iam_user`           : `User`
+|             | IAM User Access Key | `aws_iam_access_key`     : `AccessKey`
+|             | IAM User MFA Device | `mfa_device`             : `AccessKey`
 |             | IAM Group           | `aws_iam_group`          : `UserGroup`
 |             | IAM Role            | `aws_iam_role`           : `AccessRole`
 |             | IAM User Policy     | `aws_iam_user_policy`    : `AccessPolicy`
 |             | IAM Group Policy    | `aws_iam_group_policy`   : `AccessPolicy`
 |             | IAM Role Policy     | `aws_iam_role_policy`    : `AccessPolicy`
 |             | IAM Managed Policy  | `aws_iam_managed_policy` : `AccessPolicy`
+| RDS         | RDS DB Cluster      | `aws_rds_db_cluster`     : `DataStore`, `Database`, `Cluster`
+|             | RDS DB Instance     | `aws_rds_db_instance`    : `DataStore`, `Database`, `Host`
 | S3          | S3 Bucket           | `aws_s3_bucket`          : `DataStore`
 | Lambda      | Lambda Function     | `aws_lambda_function`    : `Function, Workload`
 | Config      | Config Rule         | `aws_config_rule`        : `ControlPolicy`
@@ -107,7 +125,7 @@ The following relationships are created/mapped:
 
 |
 | --
-| `aws_iam_user` **IS** `Person` <br> Note: This is mapped automatically only when the `username` of the IAM User is an email that matches the Person's.
+| `aws_iam_user` **IS** `Person` <br> Note: This is mapped automatically only when the IAM user has an `Email` tag, or the `username` of the IAM User is an email that matches that of a Person entity in the graph.
 
 ### Advanced mappings
 
@@ -116,4 +134,5 @@ assume role trust policies to determine the following mapping:
 
 |
 | --
-| `User|Service|AccessRole` **CAN_ASSUME** `aws_iam_role`
+| `aws_iam_role` **TRUSTS** `aws_iam_user|aws_<service>` (within the same account)
+| `aws_iam_role` **TRUSTS** `aws_iam_role|aws_iam_user|aws_account` (cross-account)
