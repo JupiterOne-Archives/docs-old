@@ -46,6 +46,8 @@ _IdP-initiated SSO is currently unsupported due to a limitation of Amazon Cognit
 1. In your IdP Account, add a new SAML Application and name it "JupiterOne".
    
    - Copy/paste the previous two variable values in the SAML settings.
+   - Use the same **Single Sign On URL** string value for **Recipient URL** and
+     **Destination URL**.
    - Leave the **Default Relay State** blank.
    - Select *EmailAddress* for **Name ID Format**.
    - Select *Email* or *Username* for **Application Username**.
