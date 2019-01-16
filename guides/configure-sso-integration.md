@@ -108,9 +108,9 @@ your JupiterOne account by default.
 ## Removing Users
 
 When you unassign / remove a user from the JupiterOne app within your IdP, the
-user will no longer have access to your JupiterOne account because the
-authentication happens with your IdP. However, the user objects will remain in
-the Groups. You can manually remove them from the groups within JupiterOne.
+user will immediately lose access to your JupiterOne account because the
+authentication happens with your IdP. However, the user memberships will remain
+in the Groups. You can manually remove them from the groups within JupiterOne.
 
 ![remove-user](/assets/configure-sso/j1-remove-user.png)
 
