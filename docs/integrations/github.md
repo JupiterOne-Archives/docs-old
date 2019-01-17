@@ -18,6 +18,20 @@ The integration instance configuration requires the customer's GitHub OAuth App
 
 [1]: https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/
 
+## Permissions
+
+The integration is using GitHub Apps authentication, which requests permissions
+from the org/account installing the app.
+
+Beside the Metadata Permissions always granted, our app is only requesting Read
+Only for Repository Metadata and Organization Members at this time.
+
+Github References:
+
+* https://developer.github.com/apps/building-github-apps/setting-permissions-for-github-apps/
+* https://developer.github.com/v3/apps/permissions/#metadata-permissions
+* https://developer.github.com/v3/apps/permissions/#permission-on-contents
+
 ## Entities
 
 The following entity resources are ingested when the integration runs:
