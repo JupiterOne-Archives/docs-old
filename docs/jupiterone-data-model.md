@@ -172,13 +172,19 @@ Network         -- CONTAINS ->        Database
 Network         -- CONTAINS ->        Network (e.g. a subnet)
 ```
 
-#### IS / USES / OWNS / EXPLOITS
+#### IS / OWNS
 
 ```text
 User            -- IS ->              Person
 Vulnerability   -- IS ->              Vulnerability (e.g. a Snyk Vuln IS a CVE)
-Vulnerability   -- EXPLOITS ->        Weakness
 Person          -- OWNS ->            Device
+```
+
+#### EXPLOITS / IMPACTS
+
+```text
+Vulnerability   -- EXPLOITS ->        Weakness
+Vulnerability   -- IMPACTS  ->        CodeRepo | Application
 ```
 
 #### USES
