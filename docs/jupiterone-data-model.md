@@ -193,7 +193,7 @@ Host            -- USES ->            Resource (e.g. aws_ec2_instance USES aws_e
 Application     -- CONNECTS ->        Account
 Gateway         -- CONNECTS ->        Network
 Gateway         -- TRIGGERS ->        Function
-HOST            -- EXTENDS  ->        Resource (e.g. aws_ec2_instance EXTENDS aws_ec2_ami)
+HOST            -- EXTENDS  ->        Resource
 ```
 
 #### IMPLEMENTS / MITIGATES
