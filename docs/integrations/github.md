@@ -28,9 +28,9 @@ Only for Repository Metadata and Organization Members at this time.
 
 Github References:
 
-* https://developer.github.com/apps/building-github-apps/setting-permissions-for-github-apps/
-* https://developer.github.com/v3/apps/permissions/#metadata-permissions
-* https://developer.github.com/v3/apps/permissions/#permission-on-contents
+* <https://developer.github.com/apps/building-github-apps/setting-permissions-for-github-apps/>
+* <https://developer.github.com/v3/apps/permissions/#metadata-permissions>
+* <https://developer.github.com/v3/apps/permissions/#permission-on-contents>
 
 ## Entities
 
