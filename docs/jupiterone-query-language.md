@@ -26,9 +26,11 @@ boundaries obvious to query authors.
 `FIND` is followed by an **Entity** `class` or `type` value.
 
 > The value is case sensitive in order to automatically determine if the query
-> needs to search for entities by the `class` or the `type`, without query
-> authors needing to specifically call it out. Entity `class` is stored in
-> `TitleCase` while `type` is stored in `snake_case`.
+> needs to search for entities by the `class` or the `type`, without requiring
+> authors to specifically call it out.
+>
+> Entity `class` is stored in `TitleCase` while `type` is stored in
+> `snake_case`.
 >
 > A wildcard `*` can be used to find _any entity_.
 >
