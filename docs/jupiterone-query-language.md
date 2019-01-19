@@ -149,7 +149,7 @@ boundaries obvious to query authors.
 >   RETURN u.username, p.firstName, p.lastName, p.email
 > ```
 >
-> Wildcard can be used to return all properties. For example: 
+> Wildcard can be used to return all properties. For example:
 >
 > ```j1ql
 > FIND User as u that IS Person as p
@@ -415,7 +415,7 @@ Ex. `return user, count(user._classes)`
 
 For example, with the following query,
 
-```
+```j1ql
 find
   bitbucket_team as team
     that relates to
@@ -447,7 +447,7 @@ relative to the identifier that it is closer to in the traversal.
 
 Example:
 
-```
+```j1ql
 find
   bitbucket_project as project
     that relates to
@@ -477,7 +477,7 @@ Example result:
 
 If the `return` statement is changed to this:
 
-```
+```j1ql
 return
   project.name, count(user)
 ```
@@ -504,7 +504,7 @@ aggregations will happen locally to the element.
 
 Example:
 
-```
+```j1ql
 find
   bitbucket_project as project
     that relates to
