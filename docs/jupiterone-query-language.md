@@ -280,7 +280,7 @@ Find "127.0.0.1" with _class='Host'
 
 It's useful to know if entities do not have a relationship with another entity.
 To achieve this, relationships can be negated by prefixing a relationship with
-an exclamation point (!).
+an exclamation point: `!`.
 
 ```j1ql
 Find User that !IS Person
@@ -292,9 +292,20 @@ Find User that !RELATES TO Person
 This finds EBS volumes that are not in use. The query finds relationships
 regardless of the edge direction, therefore the `!USES` in the below query
 translates more directly as **"is not used by"**.
+
 ```j1ql
 Find aws_ebs_volume that !USES aws_ec2_instance
 ```
+
+It is important to note that the above query returns `aws_ebs_volume` entities.
+If the query were constructed the other way around --
+
+```j1ql
+Find aws_ec2_instance that !USES aws_ebs_volume
+```
+
+-- it would return a list of `aws_ec2_instances`, if it does not have an EBS
+volume attached.
 
 ### More complex queries
 
