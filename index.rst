@@ -12,10 +12,10 @@ Welcome to JupiterOne's documentation!
    :maxdepth: 2
    :caption: Integrations
 
-   docs/integrations/aws
-   docs/integrations/bitbucket
-   docs/integrations/github
-   docs/integrations/okta
+   AWS <docs/integrations/aws>
+   Bitbucket <docs/integrations/bitbucket>
+   GitHub <docs/integrations/github>
+   Okta <docs/integrations/okta>
 
 .. toctree::
    :maxdepth: 2
