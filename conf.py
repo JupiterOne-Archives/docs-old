@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'JupiterOne'
-copyright = '2019, Lifeomic'
-author = 'Lifeomic'
+copyright = '2019, Lifeomic Security LLC'
+author = 'JupiterOne'
 
 # The short X.Y version
 version = ''
@@ -46,8 +46,7 @@ templates_path = ['_templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-# source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ['.rst', '.md']
 
 # The master toctree document.
 master_doc = 'index'
@@ -128,7 +127,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'JupiterOne.tex', 'JupiterOne Documentation',
-     'Lifeomic', 'manual'),
+     'JupiterOne', 'manual'),
 ]
 
 
