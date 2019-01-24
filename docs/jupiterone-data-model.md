@@ -200,7 +200,7 @@ Vulnerability   -- IMPACTS  ->        CodeRepo | Application
 #### USES
 
 ```text
-Host            -- USES ->            Resource (e.g. aws_ec2_instance USES aws_ec2_volume)
+Host            -- USES ->            Resource (e.g. aws_instance USES aws_ebs_volume)
 ```
 
 #### CONNECTS / TRIGGERS / EXTENDS

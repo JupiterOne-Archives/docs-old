@@ -9,7 +9,7 @@ will have a prefix `tag.` followed by the tag name as the entity property name.
 You can then build queries using these tag properties. For example:
 
 ```j1ql
-Find aws_ec2_instance with tag.Environment='staging'
+Find aws_instance with tag.Environment='staging'
 ```
 
 ## Some AWS resources seem to be missing from the Asset Inventory / Graph. What is going on?
