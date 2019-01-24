@@ -22,14 +22,14 @@ technical operations.
 #### Type
 
 The **type** property represents the specific type that entity is as defined by
-the source. For example, an AWS resource may be of type `aws_ec2_instance` or
+the source. For example, an AWS resource may be of type `aws_instance` or
 `aws_s3_bucket` or `aws_iam_user`.  
 
 #### Class
 
 The **class** of an entity is considered an abstract, super-type that defines
 what that entity is within the general framework of IT and security operations.
-In the above example, an `aws_ec2_instance` entity has a class of `Host`, while
+In the above example, an `aws_instance` entity has a class of `Host`, while
 an `aws_s3_bucket` is a `DataStore`, and an `aws_iam_user` a `User`.
 
 ### Common Entity Properties
@@ -121,6 +121,7 @@ Entity             | Description
 `Service`          | A service provided by a vendor.
 `Site`             | The physical location of an organization. A Person (i.e. employee) would typically has a relationship to a Site (i.e. located_at or work_at). Also used as the abstract reference to AWS Regions.
 `Team`             | A team consists of multiple member Person entities. For example, the Development team or the Security team.
+`Training`         | A security training module.
 `User`             | A user account/login to access certain systems and/or services. Examples include okta-user, aws-iam-user, ssh-user, local-user (on a host), etc.
 `UserGroup`        | A user group, typically associated with some type of access control, such as a group in Okta or in Office365. If a UserGroup has an access policy attached, and all member Users of the UserGroup would inherit the policy.
 `Vendor`           | An external organization that is a vendor or service provider.
@@ -144,8 +145,17 @@ A **Relationship** is the edge between two Entity nodes in the graph. The
 `_class` of the relationship should be, in most cases, a generic descriptive
 verb, such as `HAS` or `IMPLEMENTS`.
 
-Relationships can also carry their own properties. Relationships have the same
-metadata properties as entities, which are managed by the integration providers.
+Relationships can also carry their own properties.
+
+For example, `CodeRepo -- DEPLOYED_TO -> Host` may have `version` as a property
+on the `DEPLOYED_TO` relationship. This represents the mapping between a code
+repo to multiple deployment targets, while one deployment may be of a different
+version of the code than another. Storing the version as a relationship
+property allows us to void duplicate instances of the code repo entity to be
+created to represent different versions.
+
+Relationships have the same metadata properties as entities, which are managed
+by the integration providers.
 
 ### Example defined Relationships between abstract Entity Classes
 
@@ -190,7 +200,7 @@ Vulnerability   -- IMPACTS  ->        CodeRepo | Application
 #### USES
 
 ```text
-Host            -- USES ->            Resource (e.g. aws_ec2_instance USES aws_ec2_volume)
+Host            -- USES ->            Resource (e.g. aws_instance USES aws_ebs_volume)
 ```
 
 #### CONNECTS / TRIGGERS / EXTENDS
@@ -246,10 +256,11 @@ User            -- ASSIGNED ->        AccessRole
 UserGroup       -- ASSIGNED ->        AccessRole
 ```
 
-#### IDENTIFIED / PERFORMED
+#### IDENTIFIED / PERFORMED / COMPLETED
 
 ```text
 Person          -- PERFORMED  ->      Assessment
+Person          -- COMPLETED  ->      Training
 Assessment      -- IDENTIFIED ->      Risk
 Assessment      -- IDENTIFIED ->      Vulnerability
 ```

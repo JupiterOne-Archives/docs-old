@@ -294,17 +294,17 @@ regardless of the edge direction, therefore the `!USES` in the below query
 translates more directly as **"is not used by"**.
 
 ```j1ql
-Find aws_ebs_volume that !USES aws_ec2_instance
+Find aws_ebs_volume that !USES aws_instance
 ```
 
 It is important to note that the above query returns `aws_ebs_volume` entities.
 If the query were constructed the other way around --
 
 ```j1ql
-Find aws_ec2_instance that !USES aws_ebs_volume
+Find aws_instance that !USES aws_ebs_volume
 ```
 
--- it would return a list of `aws_ec2_instances`, if it does not have an EBS
+-- it would return a list of `aws_instances`, if it does not have an EBS
 volume attached.
 
 ### More complex queries

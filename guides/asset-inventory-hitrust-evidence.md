@@ -22,7 +22,7 @@ requires proper tagging at the source.  The tag name does not have to be PHI.
 **Evidence of At-Rest Encryption for Example Server**
 
 Use *Quick Filter* to select **Class** `DataStore` and **Type**
-`aws_ec2_volume`, and then select your production account in `tag.AccountName`
+`aws_ebs_volume`, and then select your production account in `tag.AccountName`
 in *Filter Panel*. The table should show all encrypted volumes.
 
 **Firewall rules**
