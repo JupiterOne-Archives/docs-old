@@ -49,12 +49,12 @@ ingested when the integration runs:
 | Account     | n/a                 | `aws_account`            : `Account`
 | API Gateway | REST API            | `aws_apigateway_rest_api`: `Gateway`
 | DynamoDB    | DynamoDB Table      | `aws_dynamodb_table`     : `DataStore`, `Database`
-| EC2         | EC2 Instance        | `aws_ec2_instance`       : `Host`
-|             | EC2 Key Pair        | `aws_ec2_key_pair`       : `AccessKey`
-|             | EBS Volume          | `aws_ec2_volume`         : `DataStore, Disk`
-|             | Security Group      | `aws_ec2_security_group` : `Firewall`
-|             | VPC                 | `aws_ec2_vpc`            : `Network`
-|             | Subnet              | `aws_ec2_subnet`         : `Network`
+| EC2         | EC2 Instance        | `aws_instance`       : `Host`
+|             | EC2 Key Pair        | `aws_key_pair`       : `AccessKey`
+|             | EBS Volume          | `aws_ebs_volume`         : `DataStore, Disk`
+|             | Security Group      | `aws_security_group` : `Firewall`
+|             | VPC                 | `aws_vpc`            : `Network`
+|             | Subnet              | `aws_subnet`         : `Network`
 | IAM         | IAM User            | `aws_iam_user`           : `User`
 |             | IAM User Access Key | `aws_iam_access_key`     : `AccessKey`
 |             | IAM User MFA Device | `mfa_device`             : `AccessKey`
@@ -79,7 +79,7 @@ The following relationships are created/mapped:
 |
 | --
 | `aws_account` **HAS** `aws_apigateway`
-| `aws_account` **HAS** `aws_ec2`
+| `aws_account` **HAS** `aws`
 | `aws_account` **HAS** `aws_iam`
 | `aws_account` **HAS** `aws_lambda`
 | `aws_account` **HAS** `aws_s3`
@@ -88,21 +88,21 @@ The following relationships are created/mapped:
 | `aws_apigateway_rest_api` **TRIGGERS** `aws_lambda_function`
 | `aws_config` **HAS** `aws_config_rule`
 | `aws_config_rule` **EVALUATES** `aws_account`
-| `aws_config_rule` **EVALUATES** `aws_ec2_instance`
-| `aws_config_rule` **EVALUATES** `aws_ec2_security_group`
-| `aws_config_rule` **EVALUATES** `aws_ec2_volume`
+| `aws_config_rule` **EVALUATES** `aws_instance`
+| `aws_config_rule` **EVALUATES** `aws_security_group`
+| `aws_config_rule` **EVALUATES** `aws_ebs_volume`
 | `aws_config_rule` **EVALUATES** `aws_iam_user`
 | `aws_config_rule` **EVALUATES** `aws_iam_group`
 | `aws_config_rule` **EVALUATES** `aws_iam_role`
 | `aws_config_rule` **EVALUATES** `aws_s3_bucket`
-| `aws_ec2` **HAS** `aws_ec2_instance`
-| `aws_ec2` **HAS** `aws_ec2_security_group`
-| `aws_ec2` **HAS** `aws_ec2_subnet`
-| `aws_ec2` **HAS** `aws_ec2_volume`
-| `aws_ec2` **HAS** `aws_ec2_vpc`
-| `aws_ec2_instance` **USES** `aws_ec2_volume`
-| `aws_ec2_security_group` **PROTECTS** `aws_ec2_instance`
-| `aws_ec2_vpc` **CONTAINS** `aws_ec2_subnet`
+| `aws` **HAS** `aws_instance`
+| `aws` **HAS** `aws_security_group`
+| `aws` **HAS** `aws_subnet`
+| `aws` **HAS** `aws_ebs_volume`
+| `aws` **HAS** `aws_vpc`
+| `aws_instance` **USES** `aws_ebs_volume`
+| `aws_security_group` **PROTECTS** `aws_instance`
+| `aws_vpc` **CONTAINS** `aws_subnet`
 | `aws_iam` **HAS** `aws_iam_managed_policy`
 | `aws_iam` **HAS** `aws_iam_role`
 | `aws_iam` **HAS** `aws_iam_role_policy`

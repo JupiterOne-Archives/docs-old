@@ -304,7 +304,7 @@ If the query were constructed the other way around --
 Find aws_ec2_instance that !USES aws_ebs_volume
 ```
 
--- it would return a list of `aws_ec2_instances`, if it does not have an EBS
+-- it would return a list of `aws_instances`, if it does not have an EBS
 volume attached.
 
 ### More complex queries

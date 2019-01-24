@@ -36,13 +36,13 @@ potentially an external network, with `internal=undefined`. When such a network
 (or host) has a public IP address or CIDR, it is set to be `public=true`.
 
 An internal network - that is, a Network entity ingested from an integration,
-such as an `aws_ec2_subnet` or `aws_ec2_vpc` - is set to `internal=true`. An
+such as an `aws_subnet` or `aws_vpc` - is set to `internal=true`. An
 internal network may be determined to be publicly accessible by the integration
 with certain conditions that are specific to each type of integration.
 
 ## How is it determined if an AWS VPC or Subnet is public?
 
-An `aws_ec2_vpc` or `aws_ec2_subnet` is determined to be publicly accessible --
+An `aws_vpc` or `aws_subnet` is determined to be publicly accessible --
 i.e. `public=true` -- only when the following conditions are met:
 
 - The VPC has an Internet Gateway that connects it to the Internet
