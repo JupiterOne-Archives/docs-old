@@ -63,9 +63,9 @@ ingested when the integration runs:
 |             | IAM User Policy     | `aws_iam_user_policy`     : `AccessPolicy`
 |             | IAM Group Policy    | `aws_iam_group_policy`    : `AccessPolicy`
 |             | IAM Role Policy     | `aws_iam_role_policy`     : `AccessPolicy`
-|             | IAM Managed Policy  | `aws_iam_managed_policy`  : `AccessPolicy`
-| RDS         | RDS DB Cluster      | `aws_rds_db_cluster`      : `DataStore`, `Database`, `Cluster`
-|             | RDS DB Instance     | `aws_rds_db_instance`     : `DataStore`, `Database`, `Host`
+|             | IAM Managed Policy  | `aws_iam_policy`          : `AccessPolicy`
+| RDS         | RDS DB Cluster      | `aws_rds_cluster`         : `DataStore`, `Database`, `Cluster`
+|             | RDS DB Instance     | `aws_db_instance`         : `DataStore`, `Database`, `Host`
 | S3          | S3 Bucket           | `aws_s3_bucket`           : `DataStore`
 | Lambda      | Lambda Function     | `aws_lambda_function`     : `Function, Workload`
 | Config      | Config Rule         | `aws_config_rule`         : `ControlPolicy`
@@ -95,6 +95,7 @@ The following relationships are created/mapped:
 | `aws_config_rule` **EVALUATES** `aws_iam_group`
 | `aws_config_rule` **EVALUATES** `aws_iam_role`
 | `aws_config_rule` **EVALUATES** `aws_s3_bucket`
+| `aws_dynamodb` **HAS** `aws_dynamodb_table`
 | `aws_ec2` **HAS** `aws_instance`
 | `aws_ec2` **HAS** `aws_security_group`
 | `aws_ec2` **HAS** `aws_subnet`
@@ -120,6 +121,9 @@ The following relationships are created/mapped:
 | `aws_lambda` **HAS** `aws_lambda_function`
 | `aws_lambda_function` **HAS** `aws_iam_role`
 | `aws_s3` **HAS** `aws_s3_bucket`
+| `aws_rds` **HAS** `aws_rds_cluster`
+| `aws_rds` **HAS** `aws_db_instance`
+| `aws_rds_cluster` **CONTAINS** `aws_db_instance`
 
 ### Connections to broader entity resources
 
