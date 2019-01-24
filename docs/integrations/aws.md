@@ -46,29 +46,29 @@ ingested when the integration runs:
 
 | AWS Service | AWS Entity Resource | _type : _class of the Entity
 | ----------- | -----------         | -----------
-| Account     | n/a                 | `aws_account`            : `Account`
-| API Gateway | REST API            | `aws_apigateway_rest_api`: `Gateway`
-| DynamoDB    | DynamoDB Table      | `aws_dynamodb_table`     : `DataStore`, `Database`
-| EC2         | EC2 Instance        | `aws_instance`       : `Host`
-|             | EC2 Key Pair        | `aws_key_pair`       : `AccessKey`
-|             | EBS Volume          | `aws_ebs_volume`         : `DataStore, Disk`
-|             | Security Group      | `aws_security_group` : `Firewall`
-|             | VPC                 | `aws_vpc`            : `Network`
-|             | Subnet              | `aws_subnet`         : `Network`
-| IAM         | IAM User            | `aws_iam_user`           : `User`
-|             | IAM User Access Key | `aws_iam_access_key`     : `AccessKey`
-|             | IAM User MFA Device | `mfa_device`             : `AccessKey`
-|             | IAM Group           | `aws_iam_group`          : `UserGroup`
-|             | IAM Role            | `aws_iam_role`           : `AccessRole`
-|             | IAM User Policy     | `aws_iam_user_policy`    : `AccessPolicy`
-|             | IAM Group Policy    | `aws_iam_group_policy`   : `AccessPolicy`
-|             | IAM Role Policy     | `aws_iam_role_policy`    : `AccessPolicy`
-|             | IAM Managed Policy  | `aws_iam_managed_policy` : `AccessPolicy`
-| RDS         | RDS DB Cluster      | `aws_rds_db_cluster`     : `DataStore`, `Database`, `Cluster`
-|             | RDS DB Instance     | `aws_rds_db_instance`    : `DataStore`, `Database`, `Host`
-| S3          | S3 Bucket           | `aws_s3_bucket`          : `DataStore`
-| Lambda      | Lambda Function     | `aws_lambda_function`    : `Function, Workload`
-| Config      | Config Rule         | `aws_config_rule`        : `ControlPolicy`
+| Account     | n/a                 | `aws_account`             : `Account`
+| API Gateway | REST API            | `aws_api_gateway_rest_api`: `Gateway`
+| DynamoDB    | DynamoDB Table      | `aws_dynamodb_table`      : `DataStore`, `Database`
+| EC2         | EC2 Instance        | `aws_instance`            : `Host`
+|             | EC2 Key Pair        | `aws_key_pair`            : `AccessKey`
+|             | EBS Volume          | `aws_ebs_volume`          : `DataStore, Disk`
+|             | Security Group      | `aws_security_group`      : `Firewall`
+|             | VPC                 | `aws_vpc`                 : `Network`
+|             | Subnet              | `aws_subnet`              : `Network`
+| IAM         | IAM User            | `aws_iam_user`            : `User`
+|             | IAM User Access Key | `aws_iam_access_key`      : `AccessKey`
+|             | IAM User MFA Device | `mfa_device`              : `AccessKey`
+|             | IAM Group           | `aws_iam_group`           : `UserGroup`
+|             | IAM Role            | `aws_iam_role`            : `AccessRole`
+|             | IAM User Policy     | `aws_iam_user_policy`     : `AccessPolicy`
+|             | IAM Group Policy    | `aws_iam_group_policy`    : `AccessPolicy`
+|             | IAM Role Policy     | `aws_iam_role_policy`     : `AccessPolicy`
+|             | IAM Managed Policy  | `aws_iam_managed_policy`  : `AccessPolicy`
+| RDS         | RDS DB Cluster      | `aws_rds_db_cluster`      : `DataStore`, `Database`, `Cluster`
+|             | RDS DB Instance     | `aws_rds_db_instance`     : `DataStore`, `Database`, `Host`
+| S3          | S3 Bucket           | `aws_s3_bucket`           : `DataStore`
+| Lambda      | Lambda Function     | `aws_lambda_function`     : `Function, Workload`
+| Config      | Config Rule         | `aws_config_rule`         : `ControlPolicy`
 
 ## Relationships
 
@@ -84,8 +84,8 @@ The following relationships are created/mapped:
 | `aws_account` **HAS** `aws_lambda`
 | `aws_account` **HAS** `aws_s3`
 | `aws_account` **HAS** `aws_config`
-| `aws_apigateway` **HAS** `aws_apigateway_rest_api`
-| `aws_apigateway_rest_api` **TRIGGERS** `aws_lambda_function`
+| `aws_apigateway` **HAS** `aws_api_gateway_rest_api`
+| `aws_api_gateway_rest_api` **TRIGGERS** `aws_lambda_function`
 | `aws_config` **HAS** `aws_config_rule`
 | `aws_config_rule` **EVALUATES** `aws_account`
 | `aws_config_rule` **EVALUATES** `aws_instance`
@@ -95,11 +95,11 @@ The following relationships are created/mapped:
 | `aws_config_rule` **EVALUATES** `aws_iam_group`
 | `aws_config_rule` **EVALUATES** `aws_iam_role`
 | `aws_config_rule` **EVALUATES** `aws_s3_bucket`
-| `aws` **HAS** `aws_instance`
-| `aws` **HAS** `aws_security_group`
-| `aws` **HAS** `aws_subnet`
-| `aws` **HAS** `aws_ebs_volume`
-| `aws` **HAS** `aws_vpc`
+| `aws_ec2` **HAS** `aws_instance`
+| `aws_ec2` **HAS** `aws_security_group`
+| `aws_ec2` **HAS** `aws_subnet`
+| `aws_ec2` **HAS** `aws_ebs_volume`
+| `aws_ec2` **HAS** `aws_vpc`
 | `aws_instance` **USES** `aws_ebs_volume`
 | `aws_security_group` **PROTECTS** `aws_instance`
 | `aws_vpc` **CONTAINS** `aws_subnet`
