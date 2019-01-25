@@ -86,7 +86,7 @@ html_theme_options = {
     'logo_only': True,
 }
 
-html_logo = "_static/jupiter-one.svg"
+html_logo = "_static/jupiter-one.png"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
