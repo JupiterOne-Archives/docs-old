@@ -42,7 +42,7 @@ _IdP-initiated SSO is currently unsupported due to a limitation of Amazon Cognit
    - **Audience URI (SP Entity ID)**
 
 1. In your IdP Account, add a new SAML Application and name it "JupiterOne".
-   
+
    - Copy/paste the previous two variable values in the SAML settings.
    - Use the same **Single Sign On URL** string value for **Recipient URL** and
      **Destination URL**.
@@ -57,7 +57,7 @@ _IdP-initiated SSO is currently unsupported due to a limitation of Amazon Cognit
    In Okta, this link can be found on the **Sign On** tab of the application,
    under **View Setup Instructions**, as shown below:
 
-   ![okta-idp-metadata](/assets/configure-sso/okta-idp-metadata.png)
+   ![okta-idp-metadata](/assets/configure-sso/okta-idp-metadata.png "Okta IDP metadata")
 
 1. Go back to **JupiterOne Auth Client Settings** screen, paste the above link
    to the **SAML Metadata Document URL** field.
@@ -114,5 +114,3 @@ authentication happens with your IdP. However, the user memberships will remain
 in the Groups. You can manually remove them from the groups within JupiterOne.
 
 ![remove-user](/assets/configure-sso/j1-remove-user.png)
-
---
