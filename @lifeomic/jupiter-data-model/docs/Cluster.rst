@@ -1,5 +1,5 @@
-``Cluster``
-===========
+Cluster
+=======
 
 A cluster of compute or database resources/workloads.
 

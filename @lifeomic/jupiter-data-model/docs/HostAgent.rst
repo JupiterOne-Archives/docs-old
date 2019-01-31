@@ -1,5 +1,5 @@
-``HostAgent``
-=============
+HostAgent
+=========
 
 A software agent or sensor that runs on a host/endpoint
 
@@ -8,8 +8,8 @@ Includes properties from:
 * `Entity <Entity.html>`_
 * `Metadata <Metadata.html>`_
 
-function (array of string) - Required
--------------------------------------
+``function`` (array of string) - Required
+-----------------------------------------
 
 The function of sensor/agent
 

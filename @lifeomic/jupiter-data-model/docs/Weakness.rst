@@ -1,5 +1,5 @@
-``Weakness``
-============
+Weakness
+========
 
 A security weakness.
 
@@ -8,8 +8,8 @@ Includes properties from:
 * `RecordEntity <RecordEntity.html>`_
 * `Metadata <Metadata.html>`_
 
-category (string) - Optional
-----------------------------
+``category`` (string) - Optional
+--------------------------------
 
 The category of the vulnerability finding
 
@@ -20,12 +20,12 @@ The category of the vulnerability finding
 * infrastructure
 * other
 
-exploitability (string) - Optional
-----------------------------------
+``exploitability`` (string) - Optional
+--------------------------------------
 
 Indicates the likelihood of exploit.
 
-references (array of string) - Optional
----------------------------------------
+``references`` (array of string) - Optional
+-------------------------------------------
 
 The array of links to references.

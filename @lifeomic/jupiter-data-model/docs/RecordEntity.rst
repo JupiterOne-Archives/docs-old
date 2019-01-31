@@ -1,5 +1,5 @@
-``RecordEntity``
-================
+RecordEntity
+============
 
 A node in the graph database that represents a Record Entity, with a set of different defined common properties than standard (resource) entities.
 
@@ -7,28 +7,28 @@ Includes properties from:
 
 * `Metadata <Metadata.html>`_
 
-name (string) - Required
-------------------------
+``name`` (string) - Required
+----------------------------
 
 Name of this entity
 
-displayName (string) - Required
--------------------------------
+``displayName`` (string) - Required
+-----------------------------------
 
 Display name, e.g. a person's preferred name or an AWS account alias
 
-summary (string) - Optional
----------------------------
+``summary`` (string) - Optional
+-------------------------------
 
 A summary / short description of this entity.
 
-description (string) - Optional
--------------------------------
+``description`` (string) - Optional
+-----------------------------------
 
 An extended description of this entity.
 
-classification (string) - Optional
-----------------------------------
+``classification`` (string) - Optional
+--------------------------------------
 
 The sensitivity of the data; should match company data classification scheme. For example: critical - confidential - internal - public.
 
@@ -39,8 +39,8 @@ The sensitivity of the data; should match company data classification scheme. Fo
 * internal
 * public
 
-category (string) - Optional
-----------------------------
+``category`` (string) - Optional
+--------------------------------
 
 The category of the official record
 
@@ -61,57 +61,57 @@ The category of the official record
 * risk
 * other
 
-webLink (string) - Optional
----------------------------
+``webLink`` (string) - Optional
+-------------------------------
 
 Hyperlink to the location of this record, e.g. URL to a Jira issue
 
 Format: uri
 
-content (string) - Optional
----------------------------
+``content`` (string) - Optional
+-------------------------------
 
 Text content of the record/documentation
 
-open (boolean) - Optional
--------------------------
+``open`` (boolean) - Optional
+-----------------------------
 
 Indicates if this record is currently open. For example, an open Vulnerability finding (Vulnerability extends Record).
 
-public (boolean) - Optional
----------------------------
+``public`` (boolean) - Optional
+-------------------------------
 
 If this is a public record. Defaults to false.
 
-production (boolean) - Optional
--------------------------------
+``production`` (boolean) - Optional
+-----------------------------------
 
 If this is a production record. For example, a production change management ticket would have this set to `true`, and have a `category` = `change` property. Another example would be a Vulnerability finding in production.
 
-approved (boolean) - Optional
------------------------------
+``approved`` (boolean) - Optional
+---------------------------------
 
 If this is record has been reviewed and approved.
 
-approvedOn (string) - Optional
-------------------------------
+``approvedOn`` (string) - Optional
+----------------------------------
 
 The datetime in ISO 8601 format when this record was approved.
 
 Format: date-time
 
-approvers (array of string) - Optional
---------------------------------------
+``approvers`` (array of string) - Optional
+------------------------------------------
 
 The list of approvers on the record.
 
-reporter (string) - Optional
-----------------------------
+``reporter`` (string) - Optional
+--------------------------------
 
 The person or system that reported or created this record.
 
-reportedOn (string) - Optional
-------------------------------
+``reportedOn`` (string) - Optional
+----------------------------------
 
 The datetime in ISO 8601 format when this record was approved.
 

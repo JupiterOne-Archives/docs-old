@@ -1,5 +1,5 @@
-``Group``
-=========
+Group
+=====
 
 A defined, generic group of Entities. This could represent a group of Resources, Users, Workloads, DataRepositories, etc.
 

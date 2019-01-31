@@ -1,5 +1,5 @@
-``Framework``
-=============
+Framework
+=========
 
 An object to represent a standard compliance or technical security framework.
 
@@ -7,28 +7,28 @@ Includes properties from:
 
 * `Metadata <Metadata.html>`_
 
-name (string) - Required
-------------------------
+``name`` (string) - Required
+----------------------------
 
 Name of this entity
 
-displayName (string) - Required
--------------------------------
+``displayName`` (string) - Required
+-----------------------------------
 
 Display name
 
-summary (string) - Optional
----------------------------
+``summary`` (string) - Optional
+-------------------------------
 
 A summary / short description of this entity.
 
-description (string) - Optional
--------------------------------
+``description`` (string) - Optional
+-----------------------------------
 
 An extended description of this entity.
 
-standard (string) - Required
-----------------------------
+``standard`` (string) - Required
+--------------------------------
 
 The name of the framework standard.
 
@@ -45,7 +45,7 @@ The name of the framework standard.
 * OWASP
 * Other
 
-version (string) - Required
----------------------------
+``version`` (string) - Required
+-------------------------------
 
 The version of the framework. For example, HITRUST CSF may have version 8.1, 9.0, 9.1, etc.; OWASP may have version 2010, 2013, 2017.
