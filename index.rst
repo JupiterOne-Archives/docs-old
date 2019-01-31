@@ -27,6 +27,13 @@ Welcome to JupiterOne's documentation!
 
 .. toctree::
    :maxdepth: 2
+   :glob:
+   :caption: Data Model
+
+   @lifeomic/jupiter-data-model/docs/*
+
+.. toctree::
+   :maxdepth: 2
    :caption: Release Notes
 
    release-notes/2018-10
