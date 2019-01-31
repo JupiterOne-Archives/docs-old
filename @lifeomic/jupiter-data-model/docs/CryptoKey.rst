@@ -1,5 +1,5 @@
-``CryptoKey``
-=============
+CryptoKey
+=========
 
 A key used to perform cryptographic functions, such as an encryption key.
 

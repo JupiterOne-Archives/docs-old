@@ -1,5 +1,5 @@
-``Certificate``
-===============
+Certificate
+===========
 
 A digital Certificate such as an SSL or S/MIME certificate.
 

@@ -1,5 +1,5 @@
-``Gateway``
-===========
+Gateway
+=======
 
 A gateway/proxy that can be a system/appliance or software service, such as a network router or application gateway.
 
@@ -8,8 +8,8 @@ Includes properties from:
 * `Entity <Entity.html>`_
 * `Metadata <Metadata.html>`_
 
-category (array of string) - Required
--------------------------------------
+``category`` (array of string) - Required
+-----------------------------------------
 
 The category of the Gateway (corresponds to which OSI layer does the Proxy operates at).
 
@@ -20,8 +20,8 @@ The category of the Gateway (corresponds to which OSI layer does the Proxy opera
 * data
 * other
 
-function (array of string) - Required
--------------------------------------
+``function`` (array of string) - Required
+-----------------------------------------
 
 The function of the Gateway
 
@@ -44,7 +44,7 @@ The function of the Gateway
 * malware-protection
 * other
 
-public (boolean) - Required
----------------------------
+``public`` (boolean) - Required
+-------------------------------
 
 Indicates if the Gateway is open to public access

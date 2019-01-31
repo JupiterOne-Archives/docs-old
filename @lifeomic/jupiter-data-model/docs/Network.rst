@@ -1,5 +1,5 @@
-``Network``
-===========
+Network
+=======
 
 A network, such as an aws-vpc, aws-subnet, cisco-meraki-vlan.
 
@@ -8,8 +8,8 @@ Includes properties from:
 * `Entity <Entity.html>`_
 * `Metadata <Metadata.html>`_
 
-environment (string) - Required
--------------------------------
+``environment`` (string) - Required
+-----------------------------------
 
 The environment of network
 
@@ -26,31 +26,31 @@ The environment of network
 * administrative
 * other
 
-CIDR (string) - Required
-------------------------
+``CIDR`` (string) - Required
+----------------------------
 
 The IPv4 network CIDR block (e.g. 0.0.0.0/0)
 
 Format: ipv4
 
-CIDRv6 (string) - Optional
---------------------------
+``CIDRv6`` (string) - Optional
+------------------------------
 
 The IPv6 network CIDR block (e.g. ::/0)
 
 Format: ipv6
 
-public (boolean) - Required
----------------------------
+``public`` (boolean) - Required
+-------------------------------
 
 Indicates if the network is publicly accessible.
 
-internal (boolean) - Required
------------------------------
+``internal`` (boolean) - Required
+---------------------------------
 
 Indicates if this is an internal/private network.
 
-wireless (boolean) - Optional
------------------------------
+``wireless`` (boolean) - Optional
+---------------------------------
 
 Indicates if this is a wireless network.

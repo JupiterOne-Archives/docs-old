@@ -1,5 +1,5 @@
-``Incident``
-============
+Incident
+========
 
 An operational or security incident.
 
@@ -8,8 +8,8 @@ Includes properties from:
 * `Entity <Entity.html>`_
 * `Metadata <Metadata.html>`_
 
-category (string) - Required
-----------------------------
+``category`` (string) - Required
+--------------------------------
 
 The category of the incident
 
@@ -23,27 +23,27 @@ The category of the incident
 * 6. Data Breach
 * 7. Physical or Environmental
 
-severity (string) - Required
-----------------------------
+``severity`` (string) - Required
+--------------------------------
 
 Severity rating based on impact. Can be a string such as 'critical', 'major', 'minor', or an integer usually between 1-3.
 
-impacts (array of string) - Optional
-------------------------------------
+``impacts`` (array of string) - Optional
+----------------------------------------
 
 The target listing of [IDs/keys to] systems and resources this incident impacts.
 
-reportable (boolean) - Required
--------------------------------
+``reportable`` (boolean) - Required
+-----------------------------------
 
 Indicates if this is a reportable incident per applicable regulations, such as HIPAA, PCI, or GDPR.
 
-reporter (string) - Optional
-----------------------------
+``reporter`` (string) - Optional
+--------------------------------
 
 The person/entity who reported this incident.
 
-postmortem (string) - Optional
-------------------------------
+``postmortem`` (string) - Optional
+----------------------------------
 
 Summary and/or a link to the documented lesson learned.

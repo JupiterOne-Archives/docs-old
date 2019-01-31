@@ -1,5 +1,5 @@
-``AccessRole``
-==============
+AccessRole
+==========
 
 An access control role mapped to a Principal (e.g. user, group, or service).
 

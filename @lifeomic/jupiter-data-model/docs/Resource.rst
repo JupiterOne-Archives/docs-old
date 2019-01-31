@@ -1,5 +1,5 @@
-``Resource``
-============
+Resource
+========
 
 A generic assignable resource. A resource is typically non-functional by itself unless used by or attached to a host or workload.
 
