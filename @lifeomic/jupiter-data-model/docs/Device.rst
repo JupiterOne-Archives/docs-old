@@ -46,8 +46,8 @@ The device serial number
 
 The asset tag number/label that matches the identifier in asset tracking system, for company owned physical devices
 
-``osPlatform`` (string) - Optional
-----------------------------------
+``platform`` (string) - Optional
+--------------------------------
 
 Operating System Platform
 
@@ -66,6 +66,11 @@ Operating System Platform
 ---------------------------------
 
 Operating System Full Details (e.g. macOS High Sierra version 10.13.6)
+
+``osName`` (string) - Optional
+------------------------------
+
+Operating System Name (e.g. macOS)
 
 ``osVersion`` (string) - Optional
 ---------------------------------
