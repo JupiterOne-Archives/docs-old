@@ -63,8 +63,8 @@ A listing of all IPv6 addresses associated with this Host
 
 Primary MAC address
 
-``osPlatform`` (string) - Optional
-----------------------------------
+``platform`` (string) - Optional
+--------------------------------
 
 Operating System Platform
 
@@ -83,6 +83,11 @@ Operating System Platform
 ---------------------------------
 
 Operating System Full Details (e.g. macOS High Sierra version 10.13.6)
+
+``osName`` (string) - Optional
+------------------------------
+
+Operating System Name (e.g. macOS)
 
 ``osVersion`` (string) - Optional
 ---------------------------------
