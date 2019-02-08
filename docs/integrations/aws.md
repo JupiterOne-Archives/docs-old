@@ -26,7 +26,7 @@ Detailed setup instructions and a pre-built CloudFormation Stack are provided in
 the application and maintained in the public [JupiterOne AWS Integration][1]
 project on Github.
 
-[1]: https://github.com/jupiterone-io/jupiterone-aws-integration
+[1]: https://github.com/jupiterone/jupiterone-aws-integration
 
 ## Permissions
 

@@ -23,7 +23,7 @@ can find details on the required permissions by going to
 
 Or they can be found on the [jupiterone-aws-integration][] project on Github.
 
-[jupiterone-aws-integration]: https://github.com/jupiterone-io/jupiterone-aws-integration
+[jupiterone-aws-integration]: https://github.com/jupiterone/jupiterone-aws-integration
 
 ## I have a Network marked as "public", what does that mean?
 
