@@ -96,7 +96,21 @@ Indicates if this node has been validated as a known/valid Entity.
 
 Indicates if this node is a temporary resource, such as a lambda instance or an EC2 instance started by ECS.
 
-``expiresOn`` (string) - Optional
+``createdOn`` (number) - Optional
+---------------------------------
+
+The timestamp (in milliseconds since epoch) when the entity was created at the source. This is different than `_createdOn` which is the timestamp the entity was first ingested into JupiterOne.
+
+Format: date-time
+
+``updatedOn`` (number) - Optional
+---------------------------------
+
+The timestamp (in milliseconds since epoch) when the entity was last updated at the source.
+
+Format: date-time
+
+``expiresOn`` (number) - Optional
 ---------------------------------
 
 If the entity is a temporary resource, optionally set the expiration date. For example, the expiration date of an SSL cert.

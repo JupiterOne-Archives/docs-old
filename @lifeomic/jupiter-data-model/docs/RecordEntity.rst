@@ -93,10 +93,10 @@ If this is a production record. For example, a production change management tick
 
 If this is record has been reviewed and approved.
 
-``approvedOn`` (string) - Optional
+``approvedOn`` (number) - Optional
 ----------------------------------
 
-The datetime in ISO 8601 format when this record was approved.
+The timestamp (in milliseconds since epoch) when this record was approved.
 
 Format: date-time
 
@@ -110,9 +110,23 @@ The list of approvers on the record.
 
 The person or system that reported or created this record.
 
-``reportedOn`` (string) - Optional
+``reportedOn`` (number) - Optional
 ----------------------------------
 
-The datetime in ISO 8601 format when this record was approved.
+The timestamp (in milliseconds since epoch) when this record was reported/opened. In most cases, this would be the same as `createdOn` but occasionally a record can be created at a different time than when it was first reported.
+
+Format: date-time
+
+``createdOn`` (number) - Optional
+---------------------------------
+
+The timestamp (in milliseconds since epoch) when the entity was created at the source. This is different than `_createdOn` which is the timestamp the entity was first ingested into JupiterOne.
+
+Format: date-time
+
+``updatedOn`` (number) - Optional
+---------------------------------
+
+The timestamp (in milliseconds since epoch) when the entity was last updated at the source.
 
 Format: date-time
