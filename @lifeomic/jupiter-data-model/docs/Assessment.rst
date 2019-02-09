@@ -39,17 +39,17 @@ The summary description of the Assessment.
 
 Indicates if this is an internal or external assessment/audit. Defaults to true.
 
-``startedOn`` (string) - Optional
+``startedOn`` (number) - Optional
 ---------------------------------
 
-The datetime in ISO 8601 format when the Assessment was started.
+The timestamp (in milliseconds since epoch) when the Assessment was started.
 
 Format: date-time
 
-``completedOn`` (string) - Optional
+``completedOn`` (number) - Optional
 -----------------------------------
 
-The datetime in ISO 8601 format when the Assessment was completed.
+The timestamp (in milliseconds since epoch) when the Assessment was completed.
 
 Format: date-time
 

@@ -48,10 +48,10 @@ The unique ID of the integration definition that created this entity.
 
 The unique ID of the integration instance that created this entity.
 
-``_createdOn`` (string) - Required
+``_createdOn`` (number) - Required
 ----------------------------------
 
-The datetime in ISO 8601 format when this node was created - the earliest timestamp for this entity as known by the security platform (might be different from when entity was actually created in external system)
+The timestamp (in milliseconds since epoch) when this node was created - the earliest timestamp for this entity as known by the security platform (might be different from when entity was actually created in external system)
 
 Format: date-time
 
@@ -60,17 +60,17 @@ Format: date-time
 
 The entityId of the user who created this node, if it is created manually and not by an integration.
 
-``_beginOn`` (string) - Required
+``_beginOn`` (number) - Required
 --------------------------------
 
-The datetime in ISO 8601 format when this node was updated
+The timestamp (in milliseconds since epoch) when this node was updated
 
 Format: date-time
 
-``_endOn`` (string) - Optional
+``_endOn`` (number) - Optional
 ------------------------------
 
-The datetime in ISO 8601 format when a new version of this node was created
+The timestamp (in milliseconds since epoch) when a new version of this node was created
 
 Format: date-time
 
@@ -79,10 +79,10 @@ Format: date-time
 
 The entityId of the user who last updated this node, if it is created manually and not by an integration.
 
-``_lastSeenOn`` (string) - Required
+``_lastSeenOn`` (number) - Required
 -----------------------------------
 
-The datetime in ISO 8601 format when this node was last seen in events/logs or other ingested data sources
+The timestamp (in milliseconds since epoch) when this node was last seen in events/logs or other ingested data sources
 
 Format: date-time
 
