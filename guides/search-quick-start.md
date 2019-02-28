@@ -4,7 +4,7 @@ You can quickly search and get insight across your entire digital environment
 integrated with JupiterOne, right here from the Landing Zone. There are three
 modes of search:
 
-1. **Keywords search** to ask saved/packaged questions
+1. **Ask questions** by typing in any keywords to search across all packaged/saved questions
 2. **Full text search** across all entities based on their property values
 3. **JupiterOne query language (J1QL)** for precise querying of entities and relationships
 
@@ -15,13 +15,17 @@ _Note that for performance reasons, search results are limited to return up to
 250 items. If you believe something is missing from a large result set, try
 tuning the query to generate more precise results._
 
-## Keywords Search
+## Ask Questions
 
-Just start typing any keyword such as (without quotes):
+Just start typing any keyword (or combination of keywords) such as these
+(without quotes):
 
 - compliance
 - access
 - traffic
+- ssh
+- data encrypted
+- production
 
 Or ask a question like:
 
