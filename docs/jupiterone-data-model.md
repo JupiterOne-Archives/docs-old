@@ -291,3 +291,10 @@ CodeRepo        -- DEPLOYED_TO ->     Host
 CodeRepo        -- DEPLOYED_TO ->     Container
 CodeRepo        -- DEPLOYED_TO ->     Function
 ```
+
+## What does this look like?
+
+The diagram below is an abstract illustration of the entities and relationships
+defined by the data model.
+
+![data-model](/assets/data-model.png)
