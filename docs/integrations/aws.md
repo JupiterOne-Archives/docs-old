@@ -140,3 +140,23 @@ assume role trust policies to determine the following mapping:
 | --
 | `aws_iam_role` **TRUSTS** `aws_iam_user|aws_<service>` (within the same account)
 | `aws_iam_role` **TRUSTS** `aws_iam_role|aws_iam_user|aws_account` (cross-account)
+
+### ProTips and Best Practices
+
+- Tag your resources with the following tags:
+
+  - `Classification`
+  - `Owner`
+  - `PII` or `PHI` or `PCI` (`boolean` to indicate data type)
+
+- Use email address as the `username` for your **IAM Users**, or tag them with
+  `Email` tag, so that they can be automatically mapped to a `Person` (i.e.
+  `employee`) entity.
+
+- Configure tagging as part of your integration configuration (in JupiterOne),
+  under Advanced Options, to tag the
+  
+  - `AccountName` and
+  - `Production` flag, if applicable.
+
+- Configure your integration name to be the same as your AWS account alias.

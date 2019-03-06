@@ -49,6 +49,26 @@ i.e. `public=true` -- only when the following conditions are met:
 - The VPC or subnet has a Route in the Route Table to external networks
 - The VPC or subnet has a Network ACL that allows traffic to/from external networks
 
+## How are `Person` entities (i.e. `employees`) created?
+
+A `Person` entity is created by the "mapper" process -- when a `User` entity is
+ingested/updated from an identity provider integration (e.g. Okta, OneLogin,
+Google), a `Person` entity is "mapped" with the user's information (first and
+last name, email address, etc.).
+
+## How can I avoid creating a `Person` entity for a generic/system user account?
+
+Certain properties are used to determine if the user is a system user or an
+actual individual. This depends on the integration.
+
+For **Okta**, you can set the `userType` property for the user to one of the
+following to avoid it being mapped to a `Person`:
+
+- `bot`
+- `generic`
+- `service`
+- `system`
+
 ## I see a user named "Callisto" on my account. Who is that?
 
 "Callisto <callisto@jupiterone.io>" is the account for JupiterOne Support. The
