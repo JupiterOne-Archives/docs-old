@@ -44,31 +44,40 @@ Github.
 The following entity resources and their meta data (not actual contents) are
 ingested when the integration runs:
 
-| AWS Service | AWS Entity Resource | _type : _class of the Entity
-| ----------- | -----------         | -----------
-| Account     | n/a                 | `aws_account`             : `Account`
-| API Gateway | REST API            | `aws_api_gateway_rest_api`: `Gateway`
-| DynamoDB    | DynamoDB Table      | `aws_dynamodb_table`      : `DataStore`, `Database`
-| EC2         | EC2 Instance        | `aws_instance`            : `Host`
-|             | EC2 Key Pair        | `aws_key_pair`            : `AccessKey`
-|             | EBS Volume          | `aws_ebs_volume`          : `DataStore, Disk`
-|             | Security Group      | `aws_security_group`      : `Firewall`
-|             | VPC                 | `aws_vpc`                 : `Network`
-|             | Subnet              | `aws_subnet`              : `Network`
-| IAM         | IAM User            | `aws_iam_user`            : `User`
-|             | IAM User Access Key | `aws_iam_access_key`      : `AccessKey`
-|             | IAM User MFA Device | `mfa_device`              : `AccessKey`
-|             | IAM Group           | `aws_iam_group`           : `UserGroup`
-|             | IAM Role            | `aws_iam_role`            : `AccessRole`
-|             | IAM User Policy     | `aws_iam_user_policy`     : `AccessPolicy`
-|             | IAM Group Policy    | `aws_iam_group_policy`    : `AccessPolicy`
-|             | IAM Role Policy     | `aws_iam_role_policy`     : `AccessPolicy`
-|             | IAM Managed Policy  | `aws_iam_policy`          : `AccessPolicy`
-| RDS         | RDS DB Cluster      | `aws_rds_cluster`         : `DataStore`, `Database`, `Cluster`
-|             | RDS DB Instance     | `aws_db_instance`         : `DataStore`, `Database`, `Host`
-| S3          | S3 Bucket           | `aws_s3_bucket`           : `DataStore`
-| Lambda      | Lambda Function     | `aws_lambda_function`     : `Function, Workload`
-| Config      | Config Rule         | `aws_config_rule`         : `ControlPolicy`
+| AWS Service | AWS Entity Resource       | _type : _class of the Entity
+| ----------- | -----------               | -----------
+| Account     | n/a                       | `aws_account`             : `Account`
+| ACM         | ACM Certificate           | `aws_acm_certificate`     : `Certificate`
+| API Gateway | REST API                  | `aws_api_gateway_rest_api`   : `Gateway`
+| CloudFront  | Distribution              | `aws_cloudfront_distribution`: `Gateway`
+| Config      | Config Rule               | `aws_config_rule`         : `ControlPolicy`
+| DynamoDB    | DynamoDB Table            | `aws_dynamodb_table`      : `DataStore`, `Database`
+| EC2         | AMI Image                 | `aws_ami_image`           : `Image`
+|             | EC2 Instance              | `aws_instance`            : `Host`
+|             | EC2 Key Pair              | `aws_key_pair`            : `AccessKey`
+|             | EBS Volume                | `aws_ebs_volume`          : `DataStore`, `Disk`
+|             | Internet Gateway          | `aws_internet_gateway`    : `Gateway`
+|             | Network ACL               | `aws_network_acl`         : `Firewall`
+|             | Security Group            | `aws_security_group`      : `Firewall`
+|             | VPC                       | `aws_vpc`                 : `Network`
+|             | Subnet                    | `aws_subnet`              : `Network`
+| ELB         | Application Load Balancer | `aws_alb`                 : `Gateway`
+|             | Network Load Balancer     | `aws_nlb`                 : `Gateway`
+| IAM         | Account Password Policy   | `aws_iam_account_password_policy` : `PasswordPolicy`
+|             | IAM User                  | `aws_iam_user`            : `User`
+|             | IAM User Access Key       | `aws_iam_access_key`      : `AccessKey`
+|             | IAM User MFA Device       | `mfa_device`              : `AccessKey`
+|             | IAM Group                 | `aws_iam_group`           : `UserGroup`
+|             | IAM Role                  | `aws_iam_role`            : `AccessRole`
+|             | IAM User Policy           | `aws_iam_user_policy`     : `AccessPolicy`
+|             | IAM Group Policy          | `aws_iam_group_policy`    : `AccessPolicy`
+|             | IAM Role Policy           | `aws_iam_role_policy`     : `AccessPolicy`
+|             | IAM Managed Policy        | `aws_iam_policy`          : `AccessPolicy`
+| Lambda      | Lambda Function           | `aws_lambda_function`     : `Function`, `Workload`
+| RDS         | RDS DB Cluster            | `aws_rds_cluster`         : `DataStore`, `Database`, `Cluster`
+|             | RDS DB Instance           | `aws_db_instance`         : `DataStore`, `Database`, `Host`
+| S3          | S3 Bucket                 | `aws_s3_bucket`           : `DataStore`
+| WAF         | Web ACL                   | `aws_waf_web_acl`         : `Firewall`
 
 ## Relationships
 
@@ -84,8 +93,13 @@ The following relationships are created/mapped:
 | `aws_account` **HAS** `aws_lambda`
 | `aws_account` **HAS** `aws_s3`
 | `aws_account` **HAS** `aws_config`
+| `aws_acm` **HAS** `aws_acm_certificate`
 | `aws_apigateway` **HAS** `aws_api_gateway_rest_api`
 | `aws_api_gateway_rest_api` **TRIGGERS** `aws_lambda_function`
+| `aws_cloudfront` **HAS** `aws_cloudfront_distribution`
+| `aws_cloudfront_distribution` **CONNECTS** `aws_api_gateway_rest_api`
+| `aws_cloudfront_distribution` **CONNECTS** `aws_s3_bucket`
+| `aws_cloudfront_distribution` **USES** `aws_acm_certificate`
 | `aws_config` **HAS** `aws_config_rule`
 | `aws_config_rule` **EVALUATES** `aws_account`
 | `aws_config_rule` **EVALUATES** `aws_instance`
@@ -100,10 +114,15 @@ The following relationships are created/mapped:
 | `aws_ec2` **HAS** `aws_security_group`
 | `aws_ec2` **HAS** `aws_subnet`
 | `aws_ec2` **HAS** `aws_ebs_volume`
+| `aws_ec2` **HAS** `aws_network_acl`
 | `aws_ec2` **HAS** `aws_vpc`
 | `aws_instance` **USES** `aws_ebs_volume`
 | `aws_security_group` **PROTECTS** `aws_instance`
 | `aws_vpc` **CONTAINS** `aws_subnet`
+| `aws_network_acl` **PROTECTS** `aws_subnet`
+| `aws_elb` **HAS** `aws_alb`
+| `aws_elb` **HAS** `aws_nlb`
+| `aws_alb` **USES** `aws_acm_certificate`
 | `aws_iam` **HAS** `aws_iam_managed_policy`
 | `aws_iam` **HAS** `aws_iam_role`
 | `aws_iam` **HAS** `aws_iam_role_policy`
@@ -124,6 +143,8 @@ The following relationships are created/mapped:
 | `aws_rds` **HAS** `aws_rds_cluster`
 | `aws_rds` **HAS** `aws_db_instance`
 | `aws_rds_cluster` **CONTAINS** `aws_db_instance`
+| `aws_waf` **HAS** `aws_waf_web_acl`
+| `aws_waf_web_acl` **PROTECTS** `aws_cloudfront_distribution`
 
 ### Connections to broader entity resources
 
