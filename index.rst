@@ -36,6 +36,7 @@ Welcome to JupiterOne's documentation!
 .. toctree::
    :maxdepth: 2
    :glob:
+   :reversed:
    :caption: Release Notes
 
    release-notes/*
