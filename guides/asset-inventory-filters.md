@@ -56,4 +56,5 @@ from the property dropdown box will unselect it.
 ![](../assets/asset-inventory-filters/property-filter-select.png)
 
 **Tips**: We recommend selecting Class/Type using the quick filter first, before
-apply more granular property filters. This will reduce the number of properties/values and make it a lot easier for selection.
+apply more granular property filters. This will reduce the number of
+properties/values and make it a lot easier for selection.
