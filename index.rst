@@ -21,9 +21,10 @@ Welcome to JupiterOne's documentation!
    :maxdepth: 2
    :caption: Guides
 
+   Filtering entities in Asset Inventory <guides/asset-inventory-filters.md>
    Configure SAML SSO Integration <guides/configure-sso-integration>
    Search Quickstart <guides/search-quick-start>
-   FAQ <guides/faqs>
+   FAQs <guides/faqs>
 
 .. toctree::
    :maxdepth: 2
@@ -42,3 +43,5 @@ Welcome to JupiterOne's documentation!
    release-notes/2018-13
    release-notes/2018-14
    release-notes/2019-15
+   release-notes/2019-16
+   release-notes/2019-17
