@@ -1,4 +1,4 @@
-# AWS Data and Integration Details
+# AWS
 
 ## Overview
 
@@ -44,40 +44,40 @@ Github.
 The following entity resources and their meta data (not actual contents) are
 ingested when the integration runs:
 
-| AWS Service | AWS Entity Resource       | _type : _class of the Entity
-| ----------- | -----------               | -----------
-| Account     | n/a                       | `aws_account`             : `Account`
-| ACM         | ACM Certificate           | `aws_acm_certificate`     : `Certificate`
-| API Gateway | REST API                  | `aws_api_gateway_rest_api`   : `Gateway`
-| CloudFront  | Distribution              | `aws_cloudfront_distribution`: `Gateway`
-| Config      | Config Rule               | `aws_config_rule`         : `ControlPolicy`
-| DynamoDB    | DynamoDB Table            | `aws_dynamodb_table`      : `DataStore`, `Database`
-| EC2         | AMI Image                 | `aws_ami_image`           : `Image`
-|             | EC2 Instance              | `aws_instance`            : `Host`
-|             | EC2 Key Pair              | `aws_key_pair`            : `AccessKey`
-|             | EBS Volume                | `aws_ebs_volume`          : `DataStore`, `Disk`
-|             | Internet Gateway          | `aws_internet_gateway`    : `Gateway`
-|             | Network ACL               | `aws_network_acl`         : `Firewall`
-|             | Security Group            | `aws_security_group`      : `Firewall`
-|             | VPC                       | `aws_vpc`                 : `Network`
-|             | Subnet                    | `aws_subnet`              : `Network`
-| ELB         | Application Load Balancer | `aws_alb`                 : `Gateway`
-|             | Network Load Balancer     | `aws_nlb`                 : `Gateway`
-| IAM         | Account Password Policy   | `aws_iam_account_password_policy` : `PasswordPolicy`
-|             | IAM User                  | `aws_iam_user`            : `User`
-|             | IAM User Access Key       | `aws_iam_access_key`      : `AccessKey`
-|             | IAM User MFA Device       | `mfa_device`              : `AccessKey`
-|             | IAM Group                 | `aws_iam_group`           : `UserGroup`
-|             | IAM Role                  | `aws_iam_role`            : `AccessRole`
-|             | IAM User Policy           | `aws_iam_user_policy`     : `AccessPolicy`
-|             | IAM Group Policy          | `aws_iam_group_policy`    : `AccessPolicy`
-|             | IAM Role Policy           | `aws_iam_role_policy`     : `AccessPolicy`
-|             | IAM Managed Policy        | `aws_iam_policy`          : `AccessPolicy`
-| Lambda      | Lambda Function           | `aws_lambda_function`     : `Function`, `Workload`
-| RDS         | RDS DB Cluster            | `aws_rds_cluster`         : `DataStore`, `Database`, `Cluster`
-|             | RDS DB Instance           | `aws_db_instance`         : `DataStore`, `Database`, `Host`
-| S3          | S3 Bucket                 | `aws_s3_bucket`           : `DataStore`
-| WAF         | Web ACL                   | `aws_waf_web_acl`         : `Firewall`
+| AWS Service | AWS Entity Resource       | \_type : \_class of the Entity                         |
+| ----------- | ------------------------- | ------------------------------------------------------ |
+| Account     | n/a                       | `aws_account` : `Account`                              |
+| ACM         | ACM Certificate           | `aws_acm_certificate` : `Certificate`                  |
+| API Gateway | REST API                  | `aws_api_gateway_rest_api` : `Gateway`                 |
+| CloudFront  | Distribution              | `aws_cloudfront_distribution`: `Gateway`               |
+| Config      | Config Rule               | `aws_config_rule` : `ControlPolicy`                    |
+| DynamoDB    | DynamoDB Table            | `aws_dynamodb_table` : `DataStore`, `Database`         |
+| EC2         | AMI Image                 | `aws_ami_image` : `Image`                              |
+|             | EC2 Instance              | `aws_instance` : `Host`                                |
+|             | EC2 Key Pair              | `aws_key_pair` : `AccessKey`                           |
+|             | EBS Volume                | `aws_ebs_volume` : `DataStore`, `Disk`                 |
+|             | Internet Gateway          | `aws_internet_gateway` : `Gateway`                     |
+|             | Network ACL               | `aws_network_acl` : `Firewall`                         |
+|             | Security Group            | `aws_security_group` : `Firewall`                      |
+|             | VPC                       | `aws_vpc` : `Network`                                  |
+|             | Subnet                    | `aws_subnet` : `Network`                               |
+| ELB         | Application Load Balancer | `aws_alb` : `Gateway`                                  |
+|             | Network Load Balancer     | `aws_nlb` : `Gateway`                                  |
+| IAM         | Account Password Policy   | `aws_iam_account_password_policy` : `PasswordPolicy`   |
+|             | IAM User                  | `aws_iam_user` : `User`                                |
+|             | IAM User Access Key       | `aws_iam_access_key` : `AccessKey`                     |
+|             | IAM User MFA Device       | `mfa_device` : `AccessKey`                             |
+|             | IAM Group                 | `aws_iam_group` : `UserGroup`                          |
+|             | IAM Role                  | `aws_iam_role` : `AccessRole`                          |
+|             | IAM User Policy           | `aws_iam_user_policy` : `AccessPolicy`                 |
+|             | IAM Group Policy          | `aws_iam_group_policy` : `AccessPolicy`                |
+|             | IAM Role Policy           | `aws_iam_role_policy` : `AccessPolicy`                 |
+|             | IAM Managed Policy        | `aws_iam_policy` : `AccessPolicy`                      |
+| Lambda      | Lambda Function           | `aws_lambda_function` : `Function`, `Workload`         |
+| RDS         | RDS DB Cluster            | `aws_rds_cluster` : `DataStore`, `Database`, `Cluster` |
+|             | RDS DB Instance           | `aws_db_instance` : `DataStore`, `Database`, `Host`    |
+| S3          | S3 Bucket                 | `aws_s3_bucket` : `DataStore`                          |
+| WAF         | Web ACL                   | `aws_waf_web_acl` : `Firewall`                         |
 
 ## Relationships
 
@@ -176,7 +176,7 @@ assume role trust policies to determine the following mapping:
 
 - Configure tagging as part of your integration configuration (in JupiterOne),
   under Advanced Options, to tag the
-  
+
   - `AccountName` and
   - `Production` flag, if applicable.
 
