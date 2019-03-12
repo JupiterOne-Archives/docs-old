@@ -24,20 +24,20 @@ Team Settings, note the required and optional settings.
 
 [1]: ../../assets/integration-bitbucket-oauth-consumer-settings.png
 
-*Pull requests read permission is needed to ingest PRs. The PR entities serve as
-code review records for security and compliance.*
+_Pull requests read permission is needed to ingest PRs. The PR entities serve as
+code review records for security and compliance._
 
 ## Entities
 
 The following entity resources are ingested when the integration runs:
 
-| Bitbucket Entity Resource | _type : _class of the Entity
-| -----------               | -----------
-| Team                      | `bitbucket_team`         : `Account`
-| Project                   | `bitbucket_project`      : `Project`
-| Pull Request              | `bitbucket_pull_request` : `CodeReview`, `PR`
-| Repository                | `bitbucket_repo`         : `CodeRepo`
-| User                      | `bitbucket_user`         : `User`
+| Bitbucket Entity Resource | \_type : \_class of the Entity                |
+| ------------------------- | --------------------------------------------- |
+| Team                      | `bitbucket_team` : `Account`                  |
+| Project                   | `bitbucket_project` : `Project`               |
+| Pull Request              | `bitbucket_pull_request` : `CodeReview`, `PR` |
+| Repository                | `bitbucket_repo` : `CodeRepo`                 |
+| User                      | `bitbucket_user` : `User`                     |
 
 ## Relationships
 
