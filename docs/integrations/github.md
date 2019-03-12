@@ -1,4 +1,4 @@
-# GitHub Data and Integration Details
+# GitHub
 
 ## Overview
 

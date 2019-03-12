@@ -1,4 +1,4 @@
-# Okta Data and Integration Details
+# Okta
 
 ## Overview
 

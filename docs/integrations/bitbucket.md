@@ -1,4 +1,4 @@
-# Bitbucket Data and Integration Details
+# Bitbucket
 
 ## Overview
 
