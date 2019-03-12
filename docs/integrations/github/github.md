@@ -1,4 +1,4 @@
-# GitHub Data and Integration Details
+# GitHub
 
 ## Overview
 
@@ -28,19 +28,19 @@ Only for Repository Metadata and Organization Members at this time.
 
 Github References:
 
-* <https://developer.github.com/apps/building-github-apps/setting-permissions-for-github-apps/>
-* <https://developer.github.com/v3/apps/permissions/#metadata-permissions>
-* <https://developer.github.com/v3/apps/permissions/#permission-on-contents>
+- <https://developer.github.com/apps/building-github-apps/setting-permissions-for-github-apps/>
+- <https://developer.github.com/v3/apps/permissions/#metadata-permissions>
+- <https://developer.github.com/v3/apps/permissions/#permission-on-contents>
 
 ## Entities
 
 The following entity resources are ingested when the integration runs:
 
-| GitHub Entity Resource | _type : _class of the Entity
-| -----------            | -----------
-| Account                | `github_account` : `Account`
-| Repository             | `github_repo`    : `CodeRepo`
-| User                   | `github_user`    : `User`
+| GitHub Entity Resource | \_type : \_class of the Entity |
+| ---------------------- | ------------------------------ |
+| Account                | `github_account` : `Account`   |
+| Repository             | `github_repo` : `CodeRepo`     |
+| User                   | `github_user` : `User`         |
 
 ## Relationships
 
