@@ -1,4 +1,4 @@
-# Okta Data and Integration Details
+# Okta
 
 ## Overview
 
@@ -21,14 +21,14 @@ Instructions on creating an API token within your Okta account can be found
 
 The following entity resources are ingested when the integration runs:
 
-| Okta Entity Resource   | _type : _class of the Entity
-| -----------            | -----------
-| Account                | `okta_account`        : `Account`
-| Application            | `okta_application`    : `Application`
-| Application Group      | `okta_app_user_group` : `UserGroup`
-| MFA Factor             | `mfa_device`          : `[Key,AccessKey]`
-| Okta Group             | `okta_user_group`     : `UserGroup`
-| User                   | `okta_user`           : `User`
+| Okta Entity Resource | \_type : \_class of the Entity      |
+| -------------------- | ----------------------------------- |
+| Account              | `okta_account` : `Account`          |
+| Application          | `okta_application` : `Application`  |
+| Application Group    | `okta_app_user_group` : `UserGroup` |
+| MFA Factor           | `mfa_device` : `[Key,AccessKey]`    |
+| Okta Group           | `okta_user_group` : `UserGroup`     |
+| User                 | `okta_user` : `User`                |
 
 ## Relationships
 
@@ -38,9 +38,9 @@ The following relationships are created/mapped:
 
 |
 | --
-| `okta_account`    **HAS** `okta_application`
-| `okta_account`    **HAS** `okta_user_group`
-| `okta_user`       **ASSIGNED** `okta_application`
-| `okta_user`       **ASSIGNED** `mfa_device`
+| `okta_account` **HAS** `okta_application`
+| `okta_account` **HAS** `okta_user_group`
+| `okta_user` **ASSIGNED** `okta_application`
+| `okta_user` **ASSIGNED** `mfa_device`
 | `okta_user_group` **ASSIGNED** `okta_application`
 | `okta_user_group` **HAS** `okta_user`
