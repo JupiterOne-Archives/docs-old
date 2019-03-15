@@ -150,7 +150,12 @@ First, let's see if there are any unencrypted EBS volumes:
 Find aws_ebs_volume with encrypted != true
 ```
 
-If there is, it'll be interested to see what's using them:
+> Note in the above query, the `with` keyword binds to the entity noun
+immediately to its left, and allows you to filter results on that entity's
+property values.
+
+If the above query finds some unencrypted EBS volumes, it'll be interested to
+see what's using them:
 
 ```j1ql
 Find Host that uses aws_ebs_volume with encrypted != true
