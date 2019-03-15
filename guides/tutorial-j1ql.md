@@ -24,11 +24,11 @@ Find Account that relates to Root return tree
 
 Please note the noun that immediately follows the verb is case sensitive:
 
-- A `TitleCase` word tells the query to search for entities of that class (e.g.
+- A `TitleCase` word tells the query to search for entities of that **class** (e.g.
 `Account`, `Firewall`, `Gateway`, `Host`, `User`, `Root`, `Internet`, etc.);
-- A `snake_case` word tells the query to search for entities of that type (e.g.
-  `aws_account`, `aws_security_group`, `aws_internet_gateway`, `aws_instance`,
-  `aws_iam_user`, `okta_user`, `user_endpoint`, etc.)
+- A `snake_case` word tells the query to search for entities of that **type**
+  (e.g. `aws_account`, `aws_security_group`, `aws_internet_gateway`,
+  `aws_instance`, `aws_iam_user`, `okta_user`, `user_endpoint`, etc.)
 
 You should get a result that looks like this (the return tree part of the query tells it to show the graph view by default):
 
