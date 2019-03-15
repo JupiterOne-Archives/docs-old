@@ -161,6 +161,11 @@ see what's using them:
 Find Host that uses aws_ebs_volume with encrypted != true
 ```
 
+> You can view the `aws_ebs_volume` entities and their relationships in the
+> **Graph** mode, and further inspect the properties on each entity node or
+> relationship edge. You can also expand to see more connected entities and
+> relationships.
+
 Are these actively in use? And in production?
 
 ```j1ql
