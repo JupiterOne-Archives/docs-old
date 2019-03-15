@@ -127,7 +127,7 @@ Find Host as h
 >
 > Note the keyword `that` is what tells the query to traverse the graph to find
 > connections/relationships between entities, followed by a _verb_ that
-> represents the relationship class.
+> represents :) the relationship class.
 >
 > Also keep in mind you can switch to the **Graph** view to get a more visual
 > result, and continue to drill down interactively.
