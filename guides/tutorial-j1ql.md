@@ -164,8 +164,8 @@ Find Host that uses aws_ebs_volume with encrypted != true
 Are these actively in use? And in production?
 
 ```j1ql
-Find Host with active = true
-  that uses aws_ebs_volume with encrypted != true and tag.Production = true
+Find Host with active = true and tag.Production = true
+  that uses aws_ebs_volume with encrypted != true
 ```
 
 What subnets are these instances in? Let's also just return a few key properties
