@@ -358,7 +358,7 @@ find aws_lambda_function as function
     trigger._type, trigger.displayName, trigger.arn, trigger.webLink, function.functionName, function.arn, function.webLink
 ```
 
-Are the lambda functions with access to resources in a VPC?
+Are there lambda functions with access to resources in a VPC?
 
 ```j1ql
 Find aws_lambda_function that has aws_vpc return tree
