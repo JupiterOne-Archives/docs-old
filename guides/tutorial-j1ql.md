@@ -570,3 +570,22 @@ Find HostAgent as agent
     agent._type,
     agent.displayName
 ```
+
+**Whose endpoints are non-compliant?**
+
+```j1ql
+Find Person as person
+  that OWNS (Host|Device) as device
+  that MONITORS HostAgent with compliant!=true as agent
+  return
+    person.displayName,
+    person.email,
+    device.displayName,
+    device.platform,
+    device.osVersion,
+    device.hardwareModel,
+    device.owner,
+    agent.compliant,
+    agent._type,
+    agent.displayName
+```
