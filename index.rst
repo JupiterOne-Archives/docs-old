@@ -22,6 +22,7 @@ Welcome to JupiterOne's documentation!
    Filtering entities in Asset Inventory <guides/asset-inventory-filters.md>
    Configure SAML SSO Integration <guides/configure-sso-integration>
    Search Quickstart <guides/search-quick-start>
+   J1QL Query Tutorial <guides/tutorial-j1ql>
    FAQs <guides/faqs>
 
 .. toctree::
