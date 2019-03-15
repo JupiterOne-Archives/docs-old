@@ -30,7 +30,8 @@ Please note the noun that immediately follows the verb is case sensitive:
   (e.g. `aws_account`, `aws_security_group`, `aws_internet_gateway`,
   `aws_instance`, `aws_iam_user`, `okta_user`, `user_endpoint`, etc.)
 
-You should get a result that looks like this (the return tree part of the query tells it to show the graph view by default):
+You should get a result that looks like this (the return tree part of the query
+tells it to show the graph view by default):
 
 ![](../assets/j1ql/j1ql-tutorial-root-accounts-graph.png)
 
@@ -61,7 +62,9 @@ The second set of controls (above the selected entity node) allows you to:
   allowing you to further the search and analysis.
 
 - Hide the selected entity node from the graph view - once you've hidden an
-  entity, an unhide button will show up in the third set of controls at the bottom left of the graph, allowing you to unhide all currently hidden entities.
+  entity, an unhide button will show up in the third set of controls at the
+  bottom left of the graph, allowing you to unhide all currently hidden
+  entities.
 
 The last set of controls (at the bottom left corner) allows you to:
 
