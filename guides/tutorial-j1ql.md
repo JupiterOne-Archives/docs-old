@@ -125,6 +125,10 @@ Find Host as h
 > This finds the `Host` entities that `USES` each `AccessKey` and returns a set
 > of specific properties. You can add or remove properties returned as desired.
 >
+> Note the keyword `that` is what tells the query to traverse the graph to find
+> connections/relationships between entities, followed by a _verb_ that
+> represents the relationship class.
+>
 > Also keep in mind you can switch to the **Graph** view to get a more visual
 > result, and continue to drill down interactively.
 
