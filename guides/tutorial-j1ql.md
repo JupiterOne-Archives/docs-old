@@ -1,4 +1,5 @@
 # JupiterOne Query Language Tutorial
+  eueryV1(query: "FIND (security_procedure|security_document) THAT IMPLEMENTS as relationship security_policy return relationship") {
 
 Querying can be the most challenging, yet the most fun and rewarding part of the
 JupiterOne experience. Once you become familiar with the query language, we are
@@ -10,7 +11,7 @@ entities and relationships within your digital environment. J1QL blends together
 the capabilities of asking questions, performing full text search, or querying
 the complex entity-relationship graph.
 
-There are plenty of pre-package queries you can easily search in the **Landing**
+There are plenty of pre-packaged queries you can easily use in the **Landing**
 app or browse in **Query Library**. This tutorial focuses instead on helping you
 construct custom queries yourself.
 
@@ -30,7 +31,7 @@ Please note the noun that immediately follows the verb is case sensitive:
   (e.g. `aws_account`, `aws_security_group`, `aws_internet_gateway`,
   `aws_instance`, `aws_iam_user`, `okta_user`, `user_endpoint`, etc.)
 
-You should get a result that looks like this (the return tree part of the query
+You should get a result that looks like this (the `return tree` part of the query
 tells it to show the graph view by default):
 
 ![](../assets/j1ql/j1ql-tutorial-root-accounts-graph.png)
