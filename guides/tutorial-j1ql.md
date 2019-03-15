@@ -454,7 +454,7 @@ Find User with active = true and mfaEnabled != true
 > relationship mapping to an `mfa_device` instead of the `mfaEnabled` flag
 > directly as a property.
 >
-> Therefore, The above queries finds all `User` entities with the `active` flag
+> Therefore, the above query finds all `User` entities with the `active` flag
 > but not the `mfaEnabled` flag set to true on its properties, and additionally,
 > checks for the existence of an relationship between that `User` and any
 > `mfa_device` assigned or in use.
