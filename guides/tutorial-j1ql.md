@@ -14,6 +14,9 @@ There are plenty of pre-packaged queries you can easily use in the **Landing**
 app or browse in **Query Library**. This tutorial focuses instead on helping you
 construct custom queries yourself.
 
+This tutorial builds on the [full J1QL documentation][j1ql-doc] using some
+common use cases.
+
 ## Part 1 - Simple Root query
 
 First, let’s try this query:
@@ -388,8 +391,12 @@ Find Firewall as fw
     src.CIDR
 ```
 
-> Keep in mind you can toggle to **Graph** View to see the above results more
-> visually and interactively.
+> Notice the above query uses `where` to filter the property values of the
+> relationship. You can use both `with` and `where` to filter property values of
+> entities. See the [full J1QL documentation][j1ql-doc] for more details.
+>
+> Also keep in mind you can toggle to **Graph** View to see the above
+> results more visually and interactively.
 
 **What production resources are directly connected/exposed to the Internet/everyone?**
 
@@ -605,3 +612,5 @@ Find Person as person
     agent._type,
     agent.displayName
 ```
+
+[j1ql-doc]: ../docs/jupiterone-query-language.md
