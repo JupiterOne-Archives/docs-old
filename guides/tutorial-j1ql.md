@@ -282,7 +282,7 @@ Find Network that contains Network return tree
 Or resources in a VPC:
 
 ```j1ql
-Find Network that HAS (Host|Cluster|Database) return tree
+Find Network that has (Host|Cluster|Database) return tree
 ```
 
 > The result looks like this (you may have a lot more going on than what's shown
@@ -323,10 +323,10 @@ the users have access to.
 
 ```j1ql
 Find aws_account
-  that has aws_transfer
-  that has Host
-  that has User
-  that relates to *
+  that HAS aws_transfer
+  that HAS Host
+  that HAS User
+  that RELATES TO *
   return tree
 ```
 
@@ -357,7 +357,7 @@ find aws_lambda_function as function
 Are the lambda functions with access to resources in a VPC?
 
 ```j1ql
-Find aws_lambda_function that HAS aws_vpc return tree
+Find aws_lambda_function that has aws_vpc return tree
 ```
 
 > The above query will give you a visual graph of the lambda functions and
