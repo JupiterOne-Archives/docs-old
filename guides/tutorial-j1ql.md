@@ -1,5 +1,4 @@
 # JupiterOne Query Language Tutorial
-  eueryV1(query: "FIND (security_procedure|security_document) THAT IMPLEMENTS as relationship security_policy return relationship") {
 
 Querying can be the most challenging, yet the most fun and rewarding part of the
 JupiterOne experience. Once you become familiar with the query language, we are
@@ -140,6 +139,8 @@ Or mix and match them:
 ```j1ql
 Find Host that uses aws_key_pair
 ```
+
+> Note that the relationship keyword/verb is *not* case sensitive.
 
 ### 2b - EBS Volume Examples
 
