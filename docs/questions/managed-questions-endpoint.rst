@@ -16,7 +16,9 @@ Find employees whose endpoint device did not meet your defined configuration com
 Queries
 +++++++
 
-- ``Find Person that OWNS Device that (MONITORS|MANAGES|PROTECTS) HostAgent with compliant=false``
+- ::
+
+  Find Person that OWNS Device that (MONITORS|MANAGES|PROTECTS) HostAgent with compliant=false
 
 Is there anybody who does not have a user endpoint device (e.g. a laptop or workstation)?
 -----------------------------------------------------------------------------------------
@@ -28,7 +30,9 @@ Find employees who do not have an endpoint device being mapped and tracked in th
 Queries
 +++++++
 
-- ``Find Person that !OWNS (user_endpoint|laptop|workstation|desktop)``
+- ::
+
+  Find Person that !OWNS (user_endpoint|laptop|workstation|desktop)
 
 What is the configuration and compliance status of my endpoint devices?
 -----------------------------------------------------------------------
@@ -40,11 +44,17 @@ Returns all endpoint Devices and their relevant compliance status, such as disk 
 Queries
 +++++++
 
-- ``Find HostAgent with compliant=true that (MONITORS|MANAGES) (user_endpoint|workstation|laptop|desktop|tablet)``
+- ::
 
-- ``Find HostAgent with compliant=false that (MONITORS|MANAGES) (user_endpoint|workstation|laptop|desktop|tablet)``
+  Find HostAgent with compliant=true that (MONITORS|MANAGES) (user_endpoint|workstation|laptop|desktop|tablet)
 
-- ``Find (user_endpoint|workstation|laptop|desktop|tablet) that !(MONITORS|MANAGES) HostAgent with function='endpoint-compliance' or function='endpoint-configuration'``
+- ::
+
+  Find HostAgent with compliant=false that (MONITORS|MANAGES) (user_endpoint|workstation|laptop|desktop|tablet)
+
+- ::
+
+  Find (user_endpoint|workstation|laptop|desktop|tablet) that !(MONITORS|MANAGES) HostAgent with function='endpoint-compliance' or function='endpoint-configuration'
 
 Compliance Mappings
 +++++++++++++++++++
@@ -63,9 +73,13 @@ Returns all endpoint Devices and their anti-malware Host Agents. Secondly, retur
 Queries
 +++++++
 
-- ``Find HostAgent with function='anti-malware' as a that PROTECTS (user_endpoint|workstation|laptop|desktop|server) as h return a.displayName, h.displayName, h.owner``
+- ::
 
-- ``Find (user_endpoint|workstation|laptop|desktop|server) that !PROTECTS HostAgent with function='anti-malware'``
+  Find HostAgent with function='anti-malware' as a that PROTECTS (user_endpoint|workstation|laptop|desktop|server) as h return a.displayName, h.displayName, h.owner
+
+- ::
+
+  Find (user_endpoint|workstation|laptop|desktop|server) that !PROTECTS HostAgent with function='anti-malware'
 
 Compliance Mappings
 +++++++++++++++++++
@@ -86,9 +100,13 @@ Returns all user endpoints and their Host Agents. Secondly, returns user endpoin
 Queries
 +++++++
 
-- ``Find HostAgent that (PROTECTS|MANAGES|MONITORS) user_endpoint``
+- ::
 
-- ``Find user_endpoint that !(PROTECTS|MANAGES|MONITORS) HostAgent``
+  Find HostAgent that (PROTECTS|MANAGES|MONITORS) user_endpoint
+
+- ::
+
+  Find user_endpoint that !(PROTECTS|MANAGES|MONITORS) HostAgent
 
 Compliance Mappings
 +++++++++++++++++++
@@ -105,9 +123,13 @@ Returns all user endpoints that has either enabled or disabled automatic operati
 Queries
 +++++++
 
-- ``Find HostAgent with automaticOsUpdates='ON' and automaticSecurityUpdates='ON' as agent that (PROTECTS|MONITORS|MANAGES) user_endpoint as device return device.displayName, device.owner, agent.automaticOsUpdates, agent.automaticSecurityUpdates``
+- ::
 
-- ``Find HostAgent with automaticOsUpdates='OFF' or automaticSecurityUpdates='OFF' as agent that (PROTECTS|MONITORS|MANAGES) user_endpoint as device return device.displayName, device.owner, agent.automaticOsUpdates, agent.automaticSecurityUpdates``
+  Find HostAgent with automaticOsUpdates='ON' and automaticSecurityUpdates='ON' as agent that (PROTECTS|MONITORS|MANAGES) user_endpoint as device return device.displayName, device.owner, agent.automaticOsUpdates, agent.automaticSecurityUpdates
+
+- ::
+
+  Find HostAgent with automaticOsUpdates='OFF' or automaticSecurityUpdates='OFF' as agent that (PROTECTS|MONITORS|MANAGES) user_endpoint as device return device.displayName, device.owner, agent.automaticOsUpdates, agent.automaticSecurityUpdates
 
 Compliance Mappings
 +++++++++++++++++++
@@ -128,9 +150,13 @@ Returns all user endpoints that has either enabled or disabled automatic applica
 Queries
 +++++++
 
-- ``Find HostAgent with automaticAppUpdates='ON' as agent that (PROTECTS|MONITORS|MANAGES) user_endpoint as device return device.displayName, device.owner, agent.automaticAppUpdates``
+- ::
 
-- ``Find HostAgent with automaticAppUpdates='OFF' as agent that (PROTECTS|MONITORS|MANAGES) user_endpoint as device return device.displayName, device.owner, agent.automaticAppUpdates``
+  Find HostAgent with automaticAppUpdates='ON' as agent that (PROTECTS|MONITORS|MANAGES) user_endpoint as device return device.displayName, device.owner, agent.automaticAppUpdates
+
+- ::
+
+  Find HostAgent with automaticAppUpdates='OFF' as agent that (PROTECTS|MONITORS|MANAGES) user_endpoint as device return device.displayName, device.owner, agent.automaticAppUpdates
 
 Compliance Mappings
 +++++++++++++++++++
@@ -151,9 +177,13 @@ Returns all user endpoints that has local firewall turned on or off in two lists
 Queries
 +++++++
 
-- ``Find HostAgent with firewall='ON' as agent that (PROTECTS|MONITORS|MANAGES) user_endpoint as device return device.displayName, device.owner, agent.firewall``
+- ::
 
-- ``Find HostAgent with firewall!='ON' as agent that (PROTECTS|MONITORS|MANAGES) user_endpoint as device return device.displayName, device.owner, agent.firewall``
+  Find HostAgent with firewall='ON' as agent that (PROTECTS|MONITORS|MANAGES) user_endpoint as device return device.displayName, device.owner, agent.firewall
+
+- ::
+
+  Find HostAgent with firewall!='ON' as agent that (PROTECTS|MONITORS|MANAGES) user_endpoint as device return device.displayName, device.owner, agent.firewall
 
 Compliance Mappings
 +++++++++++++++++++
@@ -174,9 +204,13 @@ Returns all endpoint Hosts or Devices and their Host Agents. Secondly, returns d
 Queries
 +++++++
 
-- ``Find HostAgent as a that (PROTECTS|MANAGES|MONITORS) (Host|Device) as h return a.displayName, a._type, a.function, h.displayName, h.owner``
+- ::
 
-- ``Find (Host|Device) with _type!='mapped_entity' that !(PROTECTS|MANAGES|MONITORS) HostAgent``
+  Find HostAgent as a that (PROTECTS|MANAGES|MONITORS) (Host|Device) as h return a.displayName, a._type, a.function, h.displayName, h.owner
+
+- ::
+
+  Find (Host|Device) with _type!='mapped_entity' that !(PROTECTS|MANAGES|MONITORS) HostAgent
 
 Compliance Mappings
 +++++++++++++++++++
@@ -193,9 +227,13 @@ Returns all endpoint Hosts that has either enabled or disabled automatic operati
 Queries
 +++++++
 
-- ``Find (Host|HostAgent) with automaticOsUpdates='ON' and automaticSecurityUpdates='ON'``
+- ::
 
-- ``Find (Host|HostAgent) with automaticOsUpdates='OFF' or automaticSecurityUpdates='OFF'``
+  Find (Host|HostAgent) with automaticOsUpdates='ON' and automaticSecurityUpdates='ON'
+
+- ::
+
+  Find (Host|HostAgent) with automaticOsUpdates='OFF' or automaticSecurityUpdates='OFF'
 
 Compliance Mappings
 +++++++++++++++++++
@@ -216,9 +254,13 @@ Returns all endpoint Hosts that has either enabled or disabled automatic applica
 Queries
 +++++++
 
-- ``Find (Host|HostAgent) with automaticAppUpdates='ON'``
+- ::
 
-- ``Find (Host|HostAgent) with automaticAppUpdates='OFF'``
+  Find (Host|HostAgent) with automaticAppUpdates='ON'
+
+- ::
+
+  Find (Host|HostAgent) with automaticAppUpdates='OFF'
 
 Compliance Mappings
 +++++++++++++++++++
@@ -239,11 +281,17 @@ Lists Firewall instances and the Hosts they each protect. Additionally, to ident
 Queries
 +++++++
 
-- ``Find Firewall as f that PROTECTS Host as h return f.displayName as firewall, h.displayName as host``
+- ::
 
-- ``Find (Host|Device) with firewall='ON'``
+  Find Firewall as f that PROTECTS Host as h return f.displayName as firewall, h.displayName as host
 
-- ``Find (Host|Device) with firewall!='ON' and active=true that !PROTECTS Firewall``
+- ::
+
+  Find (Host|Device) with firewall='ON'
+
+- ::
+
+  Find (Host|Device) with firewall!='ON' and active=true that !PROTECTS Firewall
 
 Compliance Mappings
 +++++++++++++++++++
@@ -266,7 +314,9 @@ Lists all system images. Standard approved system images should be used to build
 Queries
 +++++++
 
-- ``Find Image``
+- ::
+
+  Find Image
 
 Compliance Mappings
 +++++++++++++++++++
@@ -287,9 +337,13 @@ Lists all system images that have (or have not) been updated in the past 6 month
 Queries
 +++++++
 
-- ``Find Image with createdOn > date.now - 6 months``
+- ::
 
-- ``Find Image with createdOn < date.now - 6 months``
+  Find Image with createdOn > date.now - 6 months
+
+- ::
+
+  Find Image with createdOn < date.now - 6 months
 
 Compliance Mappings
 +++++++++++++++++++
@@ -310,9 +364,13 @@ Lists all server and container instances using approved standard images and thos
 Queries
 +++++++
 
-- ``Find (aws_instance|docker_container|server) as h that USES Image as i return h._type, h.displayName, h.tag.AccountName, i._type, i.displayName``
+- ::
 
-- ``Find (aws_instance|docker_container|server) with active=true that !USES Image``
+  Find (aws_instance|docker_container|server) as h that USES Image as i return h._type, h.displayName, h.tag.AccountName, i._type, i.displayName
+
+- ::
+
+  Find (aws_instance|docker_container|server) with active=true that !USES Image
 
 Compliance Mappings
 +++++++++++++++++++
@@ -333,7 +391,9 @@ Returns a list of devices with a 'disposed' status and last updated within 12 mo
 Queries
 +++++++
 
-- ``Find Device with status='disposed' and _beginOn > date.now-24hrs``
+- ::
+
+  Find Device with status='disposed' and _beginOn > date.now-24hrs
 
 Compliance Mappings
 +++++++++++++++++++

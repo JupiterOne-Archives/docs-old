@@ -16,7 +16,9 @@ Returns Vulnerability findings that are still active (i.e. with a status that is
 Queries
 +++++++
 
-- ``Find Vulnerability with active=true``
+- ::
+
+  Find Vulnerability with active=true
 
 Compliance Mappings
 +++++++++++++++++++
@@ -33,7 +35,9 @@ Returns Applications and their open (i.e. active) Vulnerability findings except 
 Queries
 +++++++
 
-- ``Find (Application|Project|CodeRepo) as app that has Vulnerability with severity>2 and active=true as vuln return app.name as AppName, vuln.name as Vulnerability, vuln.severity as Severity, vuln.priority as Priority``
+- ::
+
+  Find (Application|Project|CodeRepo) as app that has Vulnerability with severity>2 and active=true as vuln return app.name as AppName, vuln.name as Vulnerability, vuln.severity as Severity, vuln.priority as Priority
 
 Compliance Mappings
 +++++++++++++++++++

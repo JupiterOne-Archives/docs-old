@@ -16,9 +16,13 @@ Find all security policies and procedures.
 Queries
 +++++++
 
-- ``Find security_policy``
+- ::
 
-- ``Find security_procedure as procedure that IMPLEMENTS security_policy as policy return policy.displayName, procedure.displayName order by policy.displayName``
+  Find security_policy
+
+- ::
+
+  Find security_procedure as procedure that IMPLEMENTS security_policy as policy return policy.displayName, procedure.displayName order by policy.displayName
 
 Compliance Mappings
 +++++++++++++++++++
@@ -35,9 +39,13 @@ Find all security policies and procedures by date, and the ones that have not be
 Queries
 +++++++
 
-- ``Find (security_policy|security_procedure) as p return p.displayName as PolicyProcedureName, p.updatedOn as lastUpdatedOn``
+- ::
 
-- ``Find (security_policy|security_procedure) with (reviewedOn < date.Now - 1yr and updatedOn < date.Now - 1yr)``
+  Find (security_policy|security_procedure) as p return p.displayName as PolicyProcedureName, p.updatedOn as lastUpdatedOn
+
+- ::
+
+  Find (security_policy|security_procedure) with (reviewedOn < date.Now - 1yr and updatedOn < date.Now - 1yr)
 
 Compliance Mappings
 +++++++++++++++++++
@@ -54,7 +62,9 @@ Find the Person who implements the security program or is assigned the security 
 Queries
 +++++++
 
-- ``Find Person that (IMPLEMENTS|ASSIGNED) Procedure with id='cp-role-assignment'``
+- ::
+
+  Find Person that (IMPLEMENTS|ASSIGNED) Procedure with id='cp-role-assignment'
 
 Compliance Mappings
 +++++++++++++++++++
@@ -71,7 +81,9 @@ Return all documented risks.
 Queries
 +++++++
 
-- ``Find Risk``
+- ::
+
+  Find Risk
 
 Compliance Mappings
 +++++++++++++++++++
@@ -90,9 +102,13 @@ Return all risk assessments performed with a createdOn timestamp in the past yea
 Queries
 +++++++
 
-- ``Find risk_assessment with _createdOn > date.now - 1yr``
+- ::
 
-- ``Find Assessment with _createdOn > date.now - 1yr that (IDENTIFIED|REVIEWED) Risk``
+  Find risk_assessment with _createdOn > date.now - 1yr
+
+- ::
+
+  Find Assessment with _createdOn > date.now - 1yr that (IDENTIFIED|REVIEWED) Risk
 
 Compliance Mappings
 +++++++++++++++++++
@@ -111,7 +127,9 @@ Returns a list of Vendors and their properties, including links to NDA, BAA, MSA
 Queries
 +++++++
 
-- ``Find Vendor``
+- ::
+
+  Find Vendor
 
 Compliance Mappings
 +++++++++++++++++++
