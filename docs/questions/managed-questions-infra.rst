@@ -18,7 +18,7 @@ Queries
 
 - ::
 
-  Find (Internet|everyone) that relates to * return tree
+    Find (Internet|everyone) that relates to * return tree
 
 What production resources are directly connected/exposed to the Internet/everyone?
 ----------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ Queries
 
 - ::
 
-  Find (Internet|Everyone) that relates to * with tag.Production=true and _class!='Firewall' and _class!='Gateway' as resource return resource.tag.AccountName, resource._type, resource.name, resource.classification, resource.description
+    Find (Internet|Everyone) that relates to * with tag.Production=true and _class!='Firewall' and _class!='Gateway' as resource return resource.tag.AccountName, resource._type, resource.name, resource.classification, resource.description
 
 Compliance Mappings
 +++++++++++++++++++
@@ -51,7 +51,7 @@ Queries
 
 - ::
 
-  Find Network as n1 that has (Service|Account) as env that has Network as n2 where n1.CIDR=n2.CIDR return n1.displayName, n1.CIDR, n1.region, n2.displayName, n2.CIDR, n2.region, env.displayName, env.tag.AccountName order by env.tag.AccountName
+    Find Network as n1 that has (Service|Account) as env that has Network as n2 where n1.CIDR=n2.CIDR return n1.displayName, n1.CIDR, n1.region, n2.displayName, n2.CIDR, n2.region, env.displayName, env.tag.AccountName order by env.tag.AccountName
 
 What hosts or devices are connected to my internal networks?
 ------------------------------------------------------------
@@ -65,7 +65,7 @@ Queries
 
 - ::
 
-  Find (Host|Device) that relates to Network with internal=true
+    Find (Host|Device) that relates to Network with internal=true
 
 Compliance Mappings
 +++++++++++++++++++
@@ -84,7 +84,7 @@ Queries
 
 - ::
 
-  Find Firewall as fw that ALLOWS as rule * as src where rule.ingress=true and (rule.fromPort=22 or rule.toPort=22) return fw.displayName, rule.fromPort, rule.toPort, src.displayName, src.ipAddress, src.CIDR
+    Find Firewall as fw that ALLOWS as rule * as src where rule.ingress=true and (rule.fromPort=22 or rule.toPort=22) return fw.displayName, rule.fromPort, rule.toPort, src.displayName, src.ipAddress, src.CIDR
 
 Is inbound SSH allowed directly from an external host or network?
 -----------------------------------------------------------------
@@ -98,7 +98,7 @@ Queries
 
 - ::
 
-  Find Firewall as fw that ALLOWS as rule (Host|Network) with internal=false or internal=undefined as src where rule.ingress=true and (rule.fromPort<=22 and rule.toPort>=22) return fw.displayName, rule.fromPort, rule.toPort, src.displayName, src.ipAddress, src.CIDR
+    Find Firewall as fw that ALLOWS as rule (Host|Network) with internal=false or internal=undefined as src where rule.ingress=true and (rule.fromPort<=22 and rule.toPort>=22) return fw.displayName, rule.fromPort, rule.toPort, src.displayName, src.ipAddress, src.CIDR
 
 What network traffic is allowed between internal and external (i.e. between trusted and untrusted) networks?
 ------------------------------------------------------------------------------------------------------------
@@ -112,7 +112,7 @@ Queries
 
 - ::
 
-  Find Firewall as fw that ALLOWS as r (Network|Host) with internal=undefined or internal=false as n return fw.tag.AccountName, fw._type, fw.displayName, fw.description, r.ipProtocol, r.fromPort, r.toPort, n.displayName, n.CIDR, n.ipAddress
+    Find Firewall as fw that ALLOWS as r (Network|Host) with internal=undefined or internal=false as n return fw.tag.AccountName, fw._type, fw.displayName, fw.description, r.ipProtocol, r.fromPort, r.toPort, n.displayName, n.CIDR, n.ipAddress
 
 Compliance Mappings
 +++++++++++++++++++
@@ -135,7 +135,7 @@ Queries
 
 - ::
 
-  Find Network with internal=true as n that (HAS|CONTAINS|CONNECTS|PROTECTS) (Gateway|Firewall) with category='network' as g return n.displayName as Network, n._type as NetworkType, n.CIDR as CIDR, n.tag.AccountName as Account, n.internal as Internal, g.displayName as Gateway, g._type as GatewayType
+    Find Network with internal=true as n that (HAS|CONTAINS|CONNECTS|PROTECTS) (Gateway|Firewall) with category='network' as g return n.displayName as Network, n._type as NetworkType, n.CIDR as CIDR, n.tag.AccountName as Account, n.internal as Internal, g.displayName as Gateway, g._type as GatewayType
 
 Compliance Mappings
 +++++++++++++++++++
@@ -158,7 +158,7 @@ Queries
 
 - ::
 
-  Find Network with wireless=true as n that (HAS|CONTAINS|CONNECTS|PROTECTS) (Gateway|Firewall) with category='network' as g that (CONNECTS|ALLOWS|PERMITS|DENIES|REJECTS) as r * return n.displayName as Network, n._type as NetworkType, n.cidr as CIDR, n.environment as Environment, g.displayName as Gateway, g._type as GatewayType, r._class, r.ipProtocol, r.fromPort, r.toPort
+    Find Network with wireless=true as n that (HAS|CONTAINS|CONNECTS|PROTECTS) (Gateway|Firewall) with category='network' as g that (CONNECTS|ALLOWS|PERMITS|DENIES|REJECTS) as r * return n.displayName as Network, n._type as NetworkType, n.cidr as CIDR, n.environment as Environment, g.displayName as Gateway, g._type as GatewayType, r._class, r.ipProtocol, r.fromPort, r.toPort
 
 Compliance Mappings
 +++++++++++++++++++
@@ -177,7 +177,7 @@ Queries
 
 - ::
 
-  Find Firewall as f that PROTECTS Network as n return f.displayName as firewall, n.displayName as network
+    Find Firewall as f that PROTECTS Network as n return f.displayName as firewall, n.displayName as network
 
 Compliance Mappings
 +++++++++++++++++++
@@ -198,7 +198,7 @@ Queries
 
 - ::
 
-  'vpn' with _class='Host' or _class='Device' or _class='Network'
+    'vpn' with _class='Host' or _class='Device' or _class='Network'
 
 Compliance Mappings
 +++++++++++++++++++

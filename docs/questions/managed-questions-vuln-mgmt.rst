@@ -18,7 +18,7 @@ Queries
 
 - ::
 
-  Find Vulnerability with active=true
+    Find Vulnerability with active=true
 
 Compliance Mappings
 +++++++++++++++++++
@@ -37,7 +37,7 @@ Queries
 
 - ::
 
-  Find (Application|Project|CodeRepo) as app that has Vulnerability with severity>2 and active=true as vuln return app.name as AppName, vuln.name as Vulnerability, vuln.severity as Severity, vuln.priority as Priority
+    Find (Application|Project|CodeRepo) as app that has Vulnerability with severity>2 and active=true as vuln return app.name as AppName, vuln.name as Vulnerability, vuln.severity as Severity, vuln.priority as Priority
 
 Compliance Mappings
 +++++++++++++++++++
