@@ -18,11 +18,11 @@ Queries
 
 - ::
 
-  Find Everyone that ALLOWS * return tree
+    Find Everyone that ALLOWS * return tree
 
 - ::
 
-  Find Everyone that ALLOWS * as resource return resource.tag.AccountName, resource._type, resource.name, resource.classification, resource.description, resource.webLink
+    Find Everyone that ALLOWS * as resource return resource.tag.AccountName, resource._type, resource.name, resource.classification, resource.description, resource.webLink
 
 Show me the current password policy and compliance status.
 ----------------------------------------------------------
@@ -36,11 +36,11 @@ Queries
 
 - ::
 
-  Find PasswordPolicy
+    Find PasswordPolicy
 
 - ::
 
-  'password' with _class='ControlPolicy' as p that evaluates * as e return p.displayName as Policy, e.displayName as TargetEnv, p.compliant as Compliant, p.inputParameters as Details
+    'password' with _class='ControlPolicy' as p that evaluates * as e return p.displayName as Policy, e.displayName as TargetEnv, p.compliant as Compliant, p.inputParameters as Details
 
 Compliance Mappings
 +++++++++++++++++++
@@ -59,11 +59,11 @@ Queries
 
 - ::
 
-  Find User that IS Person that !EMPLOYS Root
+    Find User that IS Person that !EMPLOYS Root
 
 - ::
 
-  Find User as u that IS Person as p where u.userType='contractor' or p.employeeType='contractor'
+    Find User as u that IS Person as p where u.userType='contractor' or p.employeeType='contractor'
 
 Compliance Mappings
 +++++++++++++++++++
@@ -84,7 +84,7 @@ Queries
 
 - ::
 
-  Find AccessPolicy with admin=true as policy that ASSIGNED * as e return policy.displayName, policy.webLink, e.displayName, e.webLink
+    Find AccessPolicy with admin=true as policy that ASSIGNED * as e return policy.displayName, policy.webLink, e.displayName, e.webLink
 
 Compliance Mappings
 +++++++++++++++++++
@@ -107,7 +107,7 @@ Queries
 
 - ::
 
-  Find (User|Person) as u that (ASSIGNED|TRUSTS|HAS|OWNS) (Application|AccessPolicy|AccessRole|Account|Device|Host) as a return u.displayName, u._type, u.username, u.email, a._type, a.displayName, a.tag.AccountName order by u.displayName
+    Find (User|Person) as u that (ASSIGNED|TRUSTS|HAS|OWNS) (Application|AccessPolicy|AccessRole|Account|Device|Host) as a return u.displayName, u._type, u.username, u.email, a._type, a.displayName, a.tag.AccountName order by u.displayName
 
 Compliance Mappings
 +++++++++++++++++++
@@ -128,7 +128,7 @@ Queries
 
 - ::
 
-  Find User that IS Person
+    Find User that IS Person
 
 Compliance Mappings
 +++++++++++++++++++
@@ -149,11 +149,11 @@ Queries
 
 - ::
 
-  Find AccessRole that TRUSTS Service
+    Find AccessRole that TRUSTS Service
 
 - ::
 
-  Find User with mfaEnabled != true that !IS Person
+    Find User with mfaEnabled != true that !IS Person
 
 Did we remove all access from employees who left?
 -------------------------------------------------
@@ -167,7 +167,7 @@ Queries
 
 - ::
 
-  Find User that IS Person that !EMPLOYS Root
+    Find User that IS Person that !EMPLOYS Root
 
 Compliance Mappings
 +++++++++++++++++++
@@ -188,15 +188,15 @@ Queries
 
 - ::
 
-  Find User with mfaEnabled != true that !(ASSIGNED|USES|HAS) mfa_device
+    Find User with mfaEnabled != true that !(ASSIGNED|USES|HAS) mfa_device
 
 - ::
 
-  Find User with mfaEnabled = true
+    Find User with mfaEnabled = true
 
 - ::
 
-  Find User that (ASSIGNED|USES|HAS) mfa_device
+    Find User that (ASSIGNED|USES|HAS) mfa_device
 
 Compliance Mappings
 +++++++++++++++++++

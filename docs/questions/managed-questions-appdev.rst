@@ -18,7 +18,7 @@ Queries
 
 - ::
 
-  Find CodeRepo that relates to (Application|Project) with name='JupiterOne'
+    Find CodeRepo that relates to (Application|Project) with name='JupiterOne'
 
 Were there any Code Repos added in the last 24 hours?
 -----------------------------------------------------
@@ -32,7 +32,7 @@ Queries
 
 - ::
 
-  Find CodeRepo with _beginOn > date.now-24hr and _version=1
+    Find CodeRepo with _beginOn > date.now-24hr and _version=1
 
 Who are the most recent contributors to this repo?
 --------------------------------------------------
@@ -46,7 +46,7 @@ Queries
 
 - ::
 
-  Find User as u that OPENED PR as PR that HAS CodeRepo with name='repo-name' as repo return u.displayName, u.username, PR.displayName, PR.name, PR._createdOn, repo.name ORDER BY PR._createdOn LIMIT 5
+    Find User as u that OPENED PR as PR that HAS CodeRepo with name='repo-name' as repo return u.displayName, u.username, PR.displayName, PR.name, PR._createdOn, repo.name ORDER BY PR._createdOn LIMIT 5
 
 Which PRs did this developer open in the last 5 days?
 -----------------------------------------------------
@@ -60,4 +60,4 @@ Queries
 
 - ::
 
-  'Charlie' that OPENED PR with _createdOn > date.now - 5days as PR return PR.displayName, PR.name
+    'Charlie' that OPENED PR with _createdOn > date.now - 5days as PR return PR.displayName, PR.name

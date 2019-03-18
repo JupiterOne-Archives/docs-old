@@ -18,11 +18,11 @@ Queries
 
 - ::
 
-  Find security_policy
+    Find security_policy
 
 - ::
 
-  Find security_procedure as procedure that IMPLEMENTS security_policy as policy return policy.displayName, procedure.displayName order by policy.displayName
+    Find security_procedure as procedure that IMPLEMENTS security_policy as policy return policy.displayName, procedure.displayName order by policy.displayName
 
 Compliance Mappings
 +++++++++++++++++++
@@ -41,11 +41,11 @@ Queries
 
 - ::
 
-  Find (security_policy|security_procedure) as p return p.displayName as PolicyProcedureName, p.updatedOn as lastUpdatedOn
+    Find (security_policy|security_procedure) as p return p.displayName as PolicyProcedureName, p.updatedOn as lastUpdatedOn
 
 - ::
 
-  Find (security_policy|security_procedure) with (reviewedOn < date.Now - 1yr and updatedOn < date.Now - 1yr)
+    Find (security_policy|security_procedure) with (reviewedOn < date.Now - 1yr and updatedOn < date.Now - 1yr)
 
 Compliance Mappings
 +++++++++++++++++++
@@ -64,7 +64,7 @@ Queries
 
 - ::
 
-  Find Person that (IMPLEMENTS|ASSIGNED) Procedure with id='cp-role-assignment'
+    Find Person that (IMPLEMENTS|ASSIGNED) Procedure with id='cp-role-assignment'
 
 Compliance Mappings
 +++++++++++++++++++
@@ -83,7 +83,7 @@ Queries
 
 - ::
 
-  Find Risk
+    Find Risk
 
 Compliance Mappings
 +++++++++++++++++++
@@ -104,11 +104,11 @@ Queries
 
 - ::
 
-  Find risk_assessment with _createdOn > date.now - 1yr
+    Find risk_assessment with _createdOn > date.now - 1yr
 
 - ::
 
-  Find Assessment with _createdOn > date.now - 1yr that (IDENTIFIED|REVIEWED) Risk
+    Find Assessment with _createdOn > date.now - 1yr that (IDENTIFIED|REVIEWED) Risk
 
 Compliance Mappings
 +++++++++++++++++++
@@ -129,7 +129,7 @@ Queries
 
 - ::
 
-  Find Vendor
+    Find Vendor
 
 Compliance Mappings
 +++++++++++++++++++

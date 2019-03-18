@@ -18,11 +18,11 @@ Queries
 
 - ::
 
-  Find DataStore with (classification!='public' or classification=undefined) that ALLOWS everyone
+    Find DataStore with (classification!='public' or classification=undefined) that ALLOWS everyone
 
 - ::
 
-  Find DataStore with (classification!='public' or classification=undefined) and public=true
+    Find DataStore with (classification!='public' or classification=undefined) and public=true
 
 Which data stores do not have proper classification tags?
 ---------------------------------------------------------
@@ -36,7 +36,7 @@ Queries
 
 - ::
 
-  Find DataStore with classification='' or classification=undefined
+    Find DataStore with classification='' or classification=undefined
 
 What is the inventory of my sensitive data stores?
 --------------------------------------------------
@@ -50,11 +50,11 @@ Queries
 
 - ::
 
-  Find DataStore with classification='sensitive' or classification='confidential' or classification='critical'
+    Find DataStore with classification='sensitive' or classification='confidential' or classification='critical'
 
 - ::
 
-  Find DataStore with (classification='' or classification=undefined) and (production=true or tag.Production=true)
+    Find DataStore with (classification='' or classification=undefined) and (production=true or tag.Production=true)
 
 Compliance Mappings
 +++++++++++++++++++
@@ -75,7 +75,7 @@ Queries
 
 - ::
 
-  Find DataStore with (classification='' or classification=undefined) and (production=true or tag.Production=true)
+    Find DataStore with (classification='' or classification=undefined) and (production=true or tag.Production=true)
 
 Is there any known confidential or critical data outside of production?
 -----------------------------------------------------------------------
@@ -89,11 +89,11 @@ Queries
 
 - ::
 
-  Find DataStore with (classification='confidential' or classification='critical') and (tag.Production!=true or production!=true)
+    Find DataStore with (classification='confidential' or classification='critical') and (tag.Production!=true or production!=true)
 
 - ::
 
-  Find DataStore with (classification='confidential' or classification='critical') that RELATES TO (Account|Service) with (tag.Production!=true or production!=true)
+    Find DataStore with (classification='confidential' or classification='critical') that RELATES TO (Account|Service) with (tag.Production!=true or production!=true)
 
 Evidence of data-at-rest encryption for production servers
 ----------------------------------------------------------
@@ -107,11 +107,11 @@ Queries
 
 - ::
 
-  Find Host with (tag.Production=true or production=true or tag.ePHI=true or tag.PHI=true or tag.PII=true) as h that uses DataStore with encrypted=true as d return h.tag.AccountName as Account, h.displayName as Hostname, d.displayName as EncryptedDisks, d.encrypted as Encrypted
+    Find Host with (tag.Production=true or production=true or tag.ePHI=true or tag.PHI=true or tag.PII=true) as h that uses DataStore with encrypted=true as d return h.tag.AccountName as Account, h.displayName as Hostname, d.displayName as EncryptedDisks, d.encrypted as Encrypted
 
 - ::
 
-  Find Host with (tag.Production=true or production=true or tag.ePHI=true or tag.PHI=true or tag.PII=true) as h that uses DataStore with encrypted!=true as d return h.tag.AccountName as Account, h.displayName as Hostname, d.displayName as UnencryptedDisks, d.encrypted as Encrypted
+    Find Host with (tag.Production=true or production=true or tag.ePHI=true or tag.PHI=true or tag.PII=true) as h that uses DataStore with encrypted!=true as d return h.tag.AccountName as Account, h.displayName as Hostname, d.displayName as UnencryptedDisks, d.encrypted as Encrypted
 
 Compliance Mappings
 +++++++++++++++++++
@@ -132,11 +132,11 @@ Queries
 
 - ::
 
-  Find DataStore with (production=true or tag.Production=true or tag.ePHI=true or tag.PHI=true or tag.PII=true) and encrypted=true as d return d.tag.AccountName as Account, d.displayName as EncryptedDataStores, d._type as Type, d.encrypted as Encrypted
+    Find DataStore with (production=true or tag.Production=true or tag.ePHI=true or tag.PHI=true or tag.PII=true) and encrypted=true as d return d.tag.AccountName as Account, d.displayName as EncryptedDataStores, d._type as Type, d.encrypted as Encrypted
 
 - ::
 
-  Find DataStore with (production=true or tag.Production=true or tag.ePHI=true or tag.PHI=true or tag.PII=true) and encrypted!=true as d return d.tag.AccountName as Account, d.displayName as UnencryptedDataStores, d._type as Type, d.encrypted as Encrypted
+    Find DataStore with (production=true or tag.Production=true or tag.ePHI=true or tag.PHI=true or tag.PII=true) and encrypted!=true as d return d.tag.AccountName as Account, d.displayName as UnencryptedDataStores, d._type as Type, d.encrypted as Encrypted
 
 Compliance Mappings
 +++++++++++++++++++
@@ -157,11 +157,11 @@ Queries
 
 - ::
 
-  Find DataStore with (production=true or tag.Production=true) and classification='critical' and encrypted=true as d return d.tag.AccountName as Account, d.displayName as EncryptedDataStores, d._type as Type, d.encrypted as Encrypted
+    Find DataStore with (production=true or tag.Production=true) and classification='critical' and encrypted=true as d return d.tag.AccountName as Account, d.displayName as EncryptedDataStores, d._type as Type, d.encrypted as Encrypted
 
 - ::
 
-  Find DataStore with (production=true or tag.Production=true) and classification='critical' and encrypted!=true as d return d.tag.AccountName as Account, d.displayName as UnencryptedDataStores, d._type as Type, d.encrypted as Encrypted
+    Find DataStore with (production=true or tag.Production=true) and classification='critical' and encrypted!=true as d return d.tag.AccountName as Account, d.displayName as UnencryptedDataStores, d._type as Type, d.encrypted as Encrypted
 
 Is there unencrypted ePHI or PII?
 ---------------------------------
@@ -175,4 +175,4 @@ Queries
 
 - ::
 
-  Find DataStore with (tag.PHI=true or tag.ePHI=true or tag.PII=true) and encrypted=false
+    Find DataStore with (tag.PHI=true or tag.ePHI=true or tag.PII=true) and encrypted=false

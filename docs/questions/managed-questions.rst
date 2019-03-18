@@ -18,7 +18,7 @@ Queries
 
 - ::
 
-  Find * as e return count(e)
+    Find * as e return count(e)
 
 Compliance Mappings
 +++++++++++++++++++
@@ -39,7 +39,7 @@ Queries
 
 - ::
 
-  Find (Application|CodeRepo|Workload|Function|Host|Device|Database|DataStore) as asset return asset._class, asset._type, asset.displayName, asset.tag.AccountName, asset.owner, asset.classification
+    Find (Application|CodeRepo|Workload|Function|Host|Device|Database|DataStore) as asset return asset._class, asset._type, asset.displayName, asset.tag.AccountName, asset.owner, asset.classification
 
 Compliance Mappings
 +++++++++++++++++++
@@ -62,7 +62,7 @@ Queries
 
 - ::
 
-  Find (Application|CodeRepo|Workload|Function|Host|Device|Database|DataStore) with tag.Production=true
+    Find (Application|CodeRepo|Workload|Function|Host|Device|Database|DataStore) with tag.Production=true
 
 Compliance Mappings
 +++++++++++++++++++
@@ -85,7 +85,7 @@ Queries
 
 - ::
 
-  Find (Workload|Function|Host) with tag.Production=true
+    Find (Workload|Function|Host) with tag.Production=true
 
 Compliance Mappings
 +++++++++++++++++++
@@ -108,7 +108,7 @@ Queries
 
 - ::
 
-  Find (Database|DataStore) with tag.Production=true
+    Find (Database|DataStore) with tag.Production=true
 
 Compliance Mappings
 +++++++++++++++++++
@@ -131,7 +131,7 @@ Queries
 
 - ::
 
-  Find * with tag.Production=true
+    Find * with tag.Production=true
 
 What applications and operating systems are in use?
 ---------------------------------------------------
@@ -145,11 +145,11 @@ Queries
 
 - ::
 
-  Find Application
+    Find Application
 
 - ::
 
-  Find Host with platform!=undefined as h return h.platform, h.platformName, h.osName, h.osVersion, h.osDetails ORDER BY h.platform
+    Find Host with platform!=undefined as h return h.platform, h.platformName, h.osName, h.osVersion, h.osDetails ORDER BY h.platform
 
 Compliance Mappings
 +++++++++++++++++++
@@ -172,7 +172,7 @@ Queries
 
 - ::
 
-  Find Application with tag.Production=true
+    Find Application with tag.Production=true
 
 Compliance Mappings
 +++++++++++++++++++
@@ -195,15 +195,15 @@ Queries
 
 - ::
 
-  Find Application as app that CONNECTS Account that RELATES TO Vendor as v return app.displayName as app, v.name as vendor, v.linkToSLA, v.linkToMSA
+    Find Application as app that CONNECTS Account that RELATES TO Vendor as v return app.displayName as app, v.name as vendor, v.linkToSLA, v.linkToMSA
 
 - ::
 
-  Find Application that RELATES TO Vendor
+    Find Application that RELATES TO Vendor
 
 - ::
 
-  Find Application
+    Find Application
 
 Compliance Mappings
 +++++++++++++++++++
@@ -226,7 +226,7 @@ Queries
 
 - ::
 
-  Find employee with _createdOn > date.now-12months
+    Find employee with _createdOn > date.now-12months
 
 Compliance Mappings
 +++++++++++++++++++
@@ -247,7 +247,7 @@ Queries
 
 - ::
 
-  Find Application that !has CodeRepo
+    Find Application that !has CodeRepo
 
 What changed in my environment in the last 24 hours?
 ----------------------------------------------------
@@ -261,7 +261,7 @@ Queries
 
 - ::
 
-  Find * with _beginOn > date.now-24hrs
+    Find * with _beginOn > date.now-24hrs
 
 What was added to my environment in the last 24 hours?
 ------------------------------------------------------
@@ -275,4 +275,4 @@ Queries
 
 - ::
 
-  Find * with _createdOn > date.now-24hrs
+    Find * with _createdOn > date.now-24hrs
