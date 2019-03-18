@@ -10,13 +10,6 @@ Welcome to JupiterOne's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :glob:
-   :caption: Integrations
-
-   docs/integrations/**
-
-.. toctree::
-   :maxdepth: 2
    :caption: Guides
 
    Filtering entities in Asset Inventory <guides/asset-inventory-filters.md>
@@ -27,6 +20,20 @@ Welcome to JupiterOne's documentation!
 
 .. toctree::
    :maxdepth: 2
+   :glob:
+   :caption: Questions
+
+   docs/questions/*
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+   :caption: Integrations
+
+   docs/integrations/**
+
+.. toctree::
+   :maxdepth: 1
    :glob:
    :caption: Data Model
 
