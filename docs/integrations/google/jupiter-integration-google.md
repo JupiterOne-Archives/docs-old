@@ -58,6 +58,7 @@ The following entity resources are ingested when the integration runs:
 | Account                | `google_account` : `Account`   |
 | Group                  | `google_group` : `UserGroup`   |
 | User                   | `google_user` : `User`         |
+| User location          | `google_site` : `Site`         |
 
 ## Relationships
 
@@ -68,3 +69,4 @@ The following relationships are created/mapped:
 | `google_account` | **HAS** | `google_group` |
 | `google_account` | **HAS** | `google_user`  |
 | `google_group`   | **HAS** | `google_user`  |
+| `google_site`    | **HAS** | `google_user`  |
