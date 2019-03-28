@@ -24,7 +24,7 @@ The following entity resources are ingested when the integration runs:
 | ------------------------ | ------------------------------------------ |
 | Account                  | `whitehat_account` : `Account`             |
 | Scan Type                | `whitehat_scan` : `Service`                |
-| CVE                      | `cve` : `Weakness`                         |
+| CVE                      | `cve` : `Vulnerability`                    |
 | Vulnerability            | `whitehat_vulnerability` : `Vulnerability` |
 | Finding                  | `whitehat_finding` : `Vulnerability`       |
 
