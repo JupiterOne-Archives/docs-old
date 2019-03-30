@@ -53,17 +53,7 @@ More information on the JupiterOne Data Model can be found [here][data-model].
 [data-model]: https://support.jupiterone.io/hc/en-us/articles/360011556113-JupiterOne-Data-Model
 
 For more details on data ingested for each managed integration, see their
-corresponding documentation:
-
-- [AWS][aws]
-- [Bitbucket][bitbucket]
-- [Github][github]
-- [Okta][okta]
-
-[aws]: integrations/aws.md
-[bitbucket]: integrations/bitbucket.md
-[github]: integrations/github.md
-[okta]: integrations/okta.md
+corresponding documentation in the **Integrations** section.
 
 ### Access Permissions Needed to Integrated Environments
 

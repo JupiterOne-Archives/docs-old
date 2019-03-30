@@ -36,7 +36,8 @@ Or ask a question like:
 
 ## Full Text Search
 
-Put your keywords in quotes ("keyword") to start a full text search. For example,
+Put your keywords in quotes (e.g. "keyword") to start a full text search.
+For example,
 
 - "0123456789012" will likely find an AWS Account entity with that account ID
 - "sg-123ab45c" will find an AWS EC2 Security Group with that group ID
@@ -72,9 +73,11 @@ The query language is case insensitive except for the following:
 - Entity property names and values, and alias names defined as part of the query,
   are case sensitive.
 
-The complete J1QL documentation with advanced examples can be found [here][1].
+Checkout the [J1QL query tutorial][1] and the [complete J1QL documentation][2]
+with more advanced examples.
 
-[1]: ../docs/jupiterone-query-language.md
+[1]: ./tutorial-j1ql.md
+[2]: ../docs/jupiterone-query-language.md
 
 ## Combining full text search with J1QL
 
