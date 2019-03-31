@@ -2,7 +2,7 @@
 
 ## Where do these `Person` entities come from? Why are they not tagged with an integration?
 
-he Person entities are “mapped” from `User` entities. They are considered
+The Person entities are “mapped” from `User` entities. They are considered
 "shared" entities that multiple integrations can map to and contribute
 properties to. For example, a `Person` can be created by a Google integration
 (from a `google_user`). Or from a Github User, AWS IAM User, etc.
