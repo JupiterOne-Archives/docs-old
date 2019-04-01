@@ -49,3 +49,16 @@ The following relationships are created/mapped:
 | `okta_user_group` **HAS** `okta_user`             |
 
 [1]: https://developer.okta.com/docs/api/getting_started/getting_a_token
+
+## Tips
+
+All Okta users are automatically mapped to a `Person` entity as an employee. If
+you have service accounts or generic users in Okta, set their `userType`
+attribute to `generic` or `service` or `bot` in Okta user profile to skip this
+mapping.
+
+This allows you to find non-interactive users with a query like
+
+```j1ql
+Find User that !is Person
+```
