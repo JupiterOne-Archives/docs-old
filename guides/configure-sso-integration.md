@@ -62,11 +62,16 @@ _IdP-initiated SSO is currently unsupported due to a limitation of Amazon Cognit
 1. Go back to **JupiterOne Auth Client Settings** screen, paste the above link
    to the **SAML Metadata Document URL** field.
 
-1. Enter a **Client Name**, such as "Okta", and save.
+1. Enter a **Client Name**, such as "Okta".
 
-You are all set. Next time you access your JupiterOne account via the vanity URL
-(e.g. https://your_company.apps.us.jupiterone.io), you should be redirected to
-your SAML IdP for authentication.
+1. Check **Authorization code grant** and **Implicit Grant** under "Allowed
+   OAuth Flows".
+
+   ![allowed-oauth-flows](/assets/configure-sso/j1-sso-client-oauth-flows.png)
+
+Save and you are all set. Next time you access your JupiterOne account via the
+vanity URL (e.g. https://your_company.apps.us.jupiterone.io), you should be
+redirected to your SAML IdP for authentication.
 
 ## Attribute Mappings
 
