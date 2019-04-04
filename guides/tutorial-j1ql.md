@@ -613,4 +613,26 @@ Find Person as person
     agent.displayName
 ```
 
+**What applications do those users have access to?**
+
+```j1ql
+Find HostAgent with compliant!=true
+  that MONITORS (Host|Device)
+  that OWNS Person
+  that IS User
+  that Assigned Application
+  return tree
+```
+
+**Out of those above, any of them have access to AWS?**
+
+```j1ql
+Find HostAgent with compliant!=true
+  that MONITORS (Host|Device)
+  that OWNS Person
+  that IS User
+  that Assigned Application with shortName='aws'
+  return tree
+```
+
 [j1ql-doc]: ../docs/jupiterone-query-language.md
