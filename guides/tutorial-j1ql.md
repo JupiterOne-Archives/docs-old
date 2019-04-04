@@ -631,7 +631,7 @@ Find HostAgent with compliant!=true
   that MONITORS (Host|Device)
   that OWNS Person
   that IS User
-  that Assigned Application with shortName='aws'
+  that (ASSIGNED|HAS) (aws_iam_role|aws_iam_policy|aws_iam_user_policy|aws_iam_group)
   return tree
 ```
 
