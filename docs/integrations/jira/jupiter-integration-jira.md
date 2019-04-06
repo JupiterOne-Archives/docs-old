@@ -29,12 +29,12 @@ The following entity resources are ingested when the integration runs:
 
 The following relationships are created/mapped:
 
-| From           | Type            | To             |
-| -------------- | --------------- | -------------- |
-| `jira_account` | **HAS**         | `jira_project` |
-| `jira_project` | **HAS**         | `jira_issue`   |
-| `jira_issue`   | **CREATED_BY**  | `jira_user`    |
-| `jira_issue`   | **REPORTED_BY** | `jira_user`    |
+| From           | Type         | To             |
+| -------------- | ------------ | -------------- |
+| `jira_account` | **HAS**      | `jira_project` |
+| `jira_project` | **HAS**      | `jira_issue`   |
+| `jira_user`    | **CREATED**  | `jira_issue`   |
+| `jira_user`    | **REPORTED** | `jira_issue`   |
 
 [1]:
   https://developer.atlassian.com/cloud/jira/platform/security-for-other-integrations/
