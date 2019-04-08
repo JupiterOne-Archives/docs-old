@@ -7,6 +7,7 @@ Welcome to JupiterOne's documentation!
    Data Model <docs/jupiterone-data-model>
    Data Security <docs/jupiterone-data-security>
    Query Language <docs/jupiterone-query-language>
+   API Docs <docs/jupiterone-api>
 
 .. toctree::
    :maxdepth: 2
