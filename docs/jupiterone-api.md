@@ -262,7 +262,7 @@ Variables:
   "filters": {
     "_id": "<a relationship id>",
     "_key": "<a relationship key>",
-    "_type": "<a relationship type>"
+    "_type": "<a relationship type>",
     "_class": "<a relationship class>"
   }
 }
@@ -446,7 +446,7 @@ Variables:
     "_type": ["<an entity type>"],
     "_class": ["<an entity class>"]
   },
-  "filterType": "<AND or OR>"
+  "filterType": "<AND or OR>",
   "after": "the value of pageInfo.endCursor"
 }
 ```
