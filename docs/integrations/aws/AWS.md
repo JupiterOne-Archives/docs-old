@@ -1,4 +1,4 @@
-# AWS Data and Integration Details
+# AWS
 
 ## Overview
 
