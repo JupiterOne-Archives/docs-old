@@ -17,12 +17,13 @@ Welcome to JupiterOne's documentation!
    Configure SAML SSO Integration <guides/configure-sso-integration>
    Search Quickstart <guides/search-quick-start>
    J1QL Query Tutorial <guides/tutorial-j1ql>
+   Queries for AWS Config <guides/j1-queries-for-aws-config>
    FAQs <guides/faqs>
 
 .. toctree::
    :maxdepth: 2
    :glob:
-   :caption: Questions
+   :caption: Query Questions
 
    docs/questions/*
 
