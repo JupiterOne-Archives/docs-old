@@ -63,6 +63,8 @@ ingested when the integration runs:
 |             | Subnet                    | `aws_subnet` : `Network`                                    |
 | ELB         | Application Load Balancer | `aws_alb` : `Gateway`                                       |
 |             | Network Load Balancer     | `aws_nlb` : `Gateway`                                       |
+| GuardDuty   | GuardDuty Detector        | `aws_guardduty_detector` : `Assessment`, `Scanner`          |
+|             | GuardDuty Finding         | `aws_guardduty_finding` : `Finding`                         |
 | IAM         | Account Password Policy   | `aws_iam_account_password_policy` : `PasswordPolicy`        |
 |             | IAM User                  | `aws_iam_user` : `User`                                     |
 |             | IAM User Access Key       | `aws_iam_access_key` : `AccessKey`                          |
@@ -131,6 +133,8 @@ The following relationships are created/mapped:
 | `aws_elb` **HAS** `aws_alb`
 | `aws_elb` **HAS** `aws_nlb`
 | `aws_alb` **USES** `aws_acm_certificate`
+| `aws_guardduty_detector` **IDENTIFIED** `aws_guardduty_finding`
+| `aws_instance` **HAS** `aws_guardduty_finding`
 | `aws_iam` **HAS** `aws_iam_managed_policy`
 | `aws_iam` **HAS** `aws_iam_role`
 | `aws_iam` **HAS** `aws_iam_role_policy`
