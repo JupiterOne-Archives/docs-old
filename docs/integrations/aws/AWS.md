@@ -73,6 +73,8 @@ ingested when the integration runs:
 |             | IAM Group Policy          | `aws_iam_group_policy` : `AccessPolicy`                     |
 |             | IAM Role Policy           | `aws_iam_role_policy` : `AccessPolicy`                      |
 |             | IAM Managed Policy        | `aws_iam_policy` : `AccessPolicy`                           |
+| Inspector   | Inspector Assessment Run  | `aws_inspector_assessment` : `Assessment`                   |
+|             | Inspector Finding         | `aws_inspector_finding` : `Finding`                         |
 | KMS         | KMS Key                   | `aws_kms_key` : `CryptoKey`                                 |
 | Lambda      | Lambda Function           | `aws_lambda_function` : `Function`, `Workload`              |
 | RedShift    | Redshift Cluster          | `aws_redshift_cluster` : `DataStore`, `Database`, `Cluster` |
@@ -143,6 +145,8 @@ The following relationships are created/mapped:
 | `aws_iam_role` **HAS** `aws_iam_managed_policy`
 | `aws_iam_user` **HAS** `aws_iam_managed_policy`
 | `aws_iam_user` **HAS** `aws_iam_user_policy`
+| `aws_inspector_assessment` **IDENTIFIED** `aws_inspector_finding`
+| `aws_instance` **HAS** `aws_inspector_finding`
 | `aws_lambda` **HAS** `aws_lambda_function`
 | `aws_lambda_function` **HAS** `aws_iam_role`
 | `aws_redshift` **HAS** `aws_redshift_cluster`
