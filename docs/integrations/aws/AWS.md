@@ -50,6 +50,7 @@ ingested when the integration runs:
 | ACM         | ACM Certificate           | `aws_acm_certificate` : `Certificate`                       |
 | API Gateway | REST API                  | `aws_api_gateway_rest_api` : `Gateway`                      |
 | CloudFront  | Distribution              | `aws_cloudfront_distribution`: `Gateway`                    |
+| CloudWatch  | Event Rule                | `aws_cloudwatch_event_rule` : `Task`                        |
 | Config      | Config Rule               | `aws_config_rule` : `ControlPolicy`                         |
 | DynamoDB    | DynamoDB Table            | `aws_dynamodb_table` : `DataStore`, `Database`              |
 | EC2         | AMI Image                 | `aws_ami_image` : `Image`                                   |
@@ -108,15 +109,10 @@ The following relationships are created/mapped:
 | `aws_cloudfront_distribution` **CONNECTS** `aws_api_gateway_rest_api`
 | `aws_cloudfront_distribution` **CONNECTS** `aws_s3_bucket`
 | `aws_cloudfront_distribution` **USES** `aws_acm_certificate`
+| `aws_cloudwatch_event_rule` **TRIGGERS** `aws_lambda_function`
 | `aws_config` **HAS** `aws_config_rule`
 | `aws_config_rule` **EVALUATES** `aws_account`
-| `aws_config_rule` **EVALUATES** `aws_instance`
-| `aws_config_rule` **EVALUATES** `aws_security_group`
-| `aws_config_rule` **EVALUATES** `aws_ebs_volume`
-| `aws_config_rule` **EVALUATES** `aws_iam_user`
-| `aws_config_rule` **EVALUATES** `aws_iam_group`
-| `aws_config_rule` **EVALUATES** `aws_iam_role`
-| `aws_config_rule` **EVALUATES** `aws_s3_bucket`
+| `aws_config_rule` **EVALUATES** `<AWS Resource>`
 | `aws_dynamodb` **HAS** `aws_dynamodb_table`
 | `aws_dynamodb_table` **USES** `aws_kms_key`
 | `aws_ec2` **HAS** `aws_instance`
