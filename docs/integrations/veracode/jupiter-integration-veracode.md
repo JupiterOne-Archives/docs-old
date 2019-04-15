@@ -35,17 +35,17 @@ The following entity resources are ingested when the integration runs:
 
 The following relationships are created/mapped:
 
-### Basic relationships within the integration instance account/resources
+### Intra-Instance
 
-|
-| --
-| `veracode_account` **HAS** `veracode_scan`
-| `veracode_scan` **IDENTIFIED** `veracode_vulnerability`
-| `veracode_vulnerability` **EXPLOITS** `cwe`
-| `veracode_finding` **IS** `veracode_vulnerability`
+| From                     | Type           | To                       |
+| ------------------------ | -------------- | ------------------------ |
+| `veracode_account`       | **HAS**        | `veracode_scan`          |
+| `veracode_scan`          | **IDENTIFIED** | `veracode_vulnerability` |
+| `veracode_vulnerability` | **EXPLOITS**   | `cwe`                    |
+| `veracode_finding`       | **IS**         | `veracode_vulnerability` |
 
-### Connections to broader entity resources
+### Extra-Instance / Mapped
 
-|
-| --
-| `CodeRepo/Project/Application` **HAS/HAD** `veracode_finding` <br> Note: This is mapped automatically only when the name of the Veracode Application the finding belongs to matches the name of a CodeRepo/Project/Application in JupiterOne.
+| From                           | Type        | To                                                                                                                                                                                                 |
+| ------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `CodeRepo/Project/Application` | **HAS/HAD** | `veracode_finding` <br> Note: This is mapped automatically only when the name of the Veracode Application the finding belongs to matches the name of a CodeRepo/Project/Application in JupiterOne. |
