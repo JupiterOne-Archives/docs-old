@@ -29,7 +29,7 @@ The following entity resources are ingested when the integration runs:
 | Scan Type                | `veracode_scan` : `Service`                |
 | CWE                      | `cwe` : `Weakness`                         |
 | Vulnerability            | `veracode_vulnerability` : `Vulnerability` |
-| Finding                  | `veracode_finding` : `Vulnerability`       |
+| Finding                  | `veracode_finding` : `Finding`             |
 
 ## Relationships
 
