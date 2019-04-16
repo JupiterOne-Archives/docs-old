@@ -37,3 +37,8 @@ If the data store is encrypted
 -------------------------------
 
 Indicates if the data store is open to public access
+
+``hasBackup`` (boolean) - Optional
+----------------------------------
+
+Indicates if the data store is data backup has been configured/enabled.
