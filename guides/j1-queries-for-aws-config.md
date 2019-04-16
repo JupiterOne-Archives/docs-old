@@ -7,8 +7,8 @@ configuration settings.
 
 There are a few downsides of AWS Config:
 
-- It can easily cost $500 to $1000+ per account month depending on the number of
-  resources in the account and number of rules you have configured.
+- It can easily cost $500 to $1000+ per account per month depending on the
+  number of resources in the account and number of rules you have configured.
 
 - It is hard to fine tune AWS Config rules with the tags and other contextual
   data to reduce false positives.
