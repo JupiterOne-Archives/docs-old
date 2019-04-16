@@ -18,6 +18,7 @@ Welcome to JupiterOne's documentation!
    Search Quickstart <guides/search-quick-start>
    J1QL Query Tutorial <guides/tutorial-j1ql>
    Queries for AWS Config <guides/j1-queries-for-aws-config>
+   Common Questions and Queries <guides/common-questions-and-queries>
    FAQs <guides/faqs>
 
 .. toctree::
