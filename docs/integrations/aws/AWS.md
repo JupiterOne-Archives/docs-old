@@ -62,6 +62,7 @@ ingested when the integration runs:
 |             | Security Group            | `aws_security_group` : `Firewall`                           |
 |             | VPC                       | `aws_vpc` : `Network`                                       |
 |             | Subnet                    | `aws_subnet` : `Network`                                    |
+| AutoScaling | Auto Scaling Group        | `aws_autoscaling_group` : `Group`                           |
 | ELB         | Application Load Balancer | `aws_alb` : `Gateway`                                       |
 |             | Network Load Balancer     | `aws_nlb` : `Gateway`                                       |
 | GuardDuty   | GuardDuty Detector        | `aws_guardduty_detector` : `Assessment`, `Scanner`          |
@@ -121,6 +122,7 @@ The following relationships are created/mapped:
 | `aws_ec2` **HAS** `aws_ebs_volume`
 | `aws_ec2` **HAS** `aws_network_acl`
 | `aws_ec2` **HAS** `aws_vpc`
+| `aws_autoscaling_group` **HAS** `aws_instance`
 | `aws_instance` **USES** `aws_ebs_volume`
 | `aws_ebs_volume` **USES** `aws_kms_key`
 | `aws_security_group` **PROTECTS** `aws_instance`
