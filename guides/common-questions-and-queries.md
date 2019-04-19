@@ -69,7 +69,11 @@ Find (Gateway|Firewall) with category='network'
 
 **Which devices are/are not auto-scaling?**
 
-_This will be supported once we add Auto Scaling support in AWS integration._
+```j1ql
+Find aws_instance that has aws_autoscaling_group
+
+Find aws_instance that !has aws_autoscaling_group
+```
 
 **What are the tiers of infrastructure?**
 

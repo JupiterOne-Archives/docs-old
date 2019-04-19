@@ -635,4 +635,8 @@ Find HostAgent with compliant!=true
   return tree
 ```
 
+The resulting graph may look like this:
+
+![noncompliance-device-aws-access](../assets/graphs/noncompliant-user-endpoint-aws-access.png)
+
 [j1ql-doc]: ../docs/jupiterone-query-language.md
