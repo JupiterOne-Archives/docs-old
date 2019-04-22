@@ -3,6 +3,25 @@ Welcome to JupiterOne's documentation!
 
 .. toctree::
    :maxdepth: 2
+   :caption: Get Started
+
+   Search Quickstart <guides/search-quick-start>
+   J1QL Query Tutorial <guides/tutorial-j1ql>
+   Using Asset Inventory Filters <guides/asset-inventory-filters.md>
+   FAQs <guides/faqs>
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Advanced Guides
+
+   Queries for AWS Config <guides/j1-queries-for-aws-config>
+   Common Questions and Queries <guides/common-questions-and-queries>
+   Configure SAML SSO Integration <guides/configure-sso-integration>
+   SecOps Artifacts as Code <guides/secops-artifacts-in-j1>
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Technical Docs
 
    Data Model <docs/jupiterone-data-model>
    Data Security <docs/jupiterone-data-security>
@@ -11,20 +30,8 @@ Welcome to JupiterOne's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Guides
-
-   Filtering entities in Asset Inventory <guides/asset-inventory-filters.md>
-   Configure SAML SSO Integration <guides/configure-sso-integration>
-   Search Quickstart <guides/search-quick-start>
-   J1QL Query Tutorial <guides/tutorial-j1ql>
-   Queries for AWS Config <guides/j1-queries-for-aws-config>
-   Common Questions and Queries <guides/common-questions-and-queries>
-   FAQs <guides/faqs>
-
-.. toctree::
-   :maxdepth: 2
    :glob:
-   :caption: Query Questions
+   :caption: Packaged Questions Library
 
    docs/questions/*
 
@@ -38,7 +45,7 @@ Welcome to JupiterOne's documentation!
 .. toctree::
    :maxdepth: 1
    :glob:
-   :caption: Data Model
+   :caption: Data Model Entities Reference
 
    docs/data-model/*
 
