@@ -179,9 +179,9 @@ Notes:
     - 2: medium/likely
     - 1: low/unlikely
     - 0: none/negligible
-  
+
   - Impact rating:
-  
+
     - 3: high/severe
     - 2: medium/moderate
     - 1: low/minor
@@ -290,6 +290,13 @@ using the CLI. Just follow these three simple steps:
   j1 -o create --entity -a lifeomic -f ./risks.yml
   j1 -o create --entity -a lifeomic -f ./assessments.yml
   j1 -o create --entity -a lifeomic -f ./findings.yml
+  ```
+
+  If you have several YAML files to upload, you might use a command like:
+
+  ```bash
+  export J1_API_TOKEN={api_key}
+  find . -name \*.yml | while read yml; do j1 -o create --entity -a lifeomic -f $yml; done
   ```
 
 We highly recommended you use a source code control system such as Github or
