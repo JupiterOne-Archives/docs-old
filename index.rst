@@ -21,6 +21,12 @@ Welcome to JupiterOne's documentation!
 
 .. toctree::
    :maxdepth: 2
+   :caption: Power Ups
+
+   J1 Endpoint Compliance Agent <guides/endpoint-compliance-agent>
+
+.. toctree::
+   :maxdepth: 2
    :caption: Technical Docs
 
    Data Model <docs/jupiterone-data-model>
@@ -38,7 +44,7 @@ Welcome to JupiterOne's documentation!
 .. toctree::
    :maxdepth: 2
    :glob:
-   :caption: Integrations
+   :caption: Managed Integrations
 
    docs/integrations/**
 
