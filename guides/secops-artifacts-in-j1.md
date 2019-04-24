@@ -296,7 +296,7 @@ using the CLI. Just follow these three simple steps:
 
   ```bash
   export J1_API_TOKEN={api_key}
-  find . -name \*.yml | while read yml; do j1 -o create --entity -a lifeomic -f $yml; done
+  find . -name \*.yml | while read yml; do j1 -o create --entity -a <j1_account_id> -f $yml; done
   ```
 
 We highly recommended you use a source code control system such as Github or
