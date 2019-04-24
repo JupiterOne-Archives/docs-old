@@ -1,5 +1,20 @@
 # Frequently Asked Questions
 
+## How do I get my custom / on-premise data into JupiterOne?
+
+JupiterOne's asset inventory, search and visualization supports any data
+imported that follows the [reference data model][1], not limited to data
+ingested by managed integrations.
+
+This is easily done via the [API or CLI][2]. Each entity object can be
+represented in a few lines of JSON or YAML code. The [J1 API Client or CLI][2]
+can create/update them to your JupiterOne account. You can also develop a script
+to run on a schedule (e.g. via a cron job) or integrate into your DevOps
+automation.
+
+[1]: ../docs/jupiterone-data-model
+[2]: ../guides/j1-client-and-cli
+
 ## Where do these `Person` entities come from? Why are they not tagged with an integration?
 
 The Person entities are “mapped” from `User` entities. They are considered
