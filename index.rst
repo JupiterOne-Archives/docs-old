@@ -5,6 +5,7 @@ Welcome to JupiterOne's documentation!
    :maxdepth: 2
    :caption: Get Started
 
+   Configure Integrations <guides/configure-integration>
    Search Quickstart <guides/search-quick-start>
    J1QL Query Tutorial <guides/tutorial-j1ql>
    Using Asset Inventory Filters <guides/asset-inventory-filters.md>
@@ -17,6 +18,7 @@ Welcome to JupiterOne's documentation!
    Queries for AWS Config <guides/j1-queries-for-aws-config>
    Common Questions and Queries <guides/common-questions-and-queries>
    Configure SAML SSO Integration <guides/configure-sso-integration>
+   JupiterOne Node.js Client and CLI <guides/j1-client-and-cli>
    SecOps Artifacts as Code <guides/secops-artifacts-in-j1>
 
 .. toctree::

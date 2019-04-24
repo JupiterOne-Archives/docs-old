@@ -57,7 +57,7 @@ self service approach.
 For organizations using a automated package deployment tool such as SaltStack or
 Jamf, we are often asked if the JupiterOne power up agent can be included in the
 auto rollout from the deployment tool. This is technically doable (see below for
-more details below), but not officially supported at the moment.
+more details), but not officially supported at the moment.
 
 Technically the Stethoscope agent installation and JupiterOne integration
 process has three moving parts:
