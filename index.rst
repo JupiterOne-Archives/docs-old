@@ -55,7 +55,7 @@ Welcome to JupiterOne's documentation!
    :glob:
    :caption: Data Model Entities Reference
 
-   @lifeomic/jupiter-data-model/docs/*
+   docs/data-model/*
 
 .. toctree::
    :maxdepth: 2

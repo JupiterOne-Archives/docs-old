@@ -1,47 +1,51 @@
 # Using JupiterOne as a central repository for SecOps and compliance artifacts
 
-JupiterOne already includes several out-of-box managed integration with security
-and compliance solutions to consolidate data. For example, security assessments
-and findings data from AWS Inspector, GuardDuty, Veracode, WhiteHat, etc.
+JupiterOne integrates with and consolidates data from several security and
+compliance solutions right out of the box (for example, ingesting security
+assessments and findings from AWS Inspector, GuardDuty, Veracode, WhiteHat, and
+more).
 
-Inevitably there will be operational and compliance artifacts produced outside
-of an automated tools. For example:
+However, there will inevitably be operational and compliance artifacts produced
+outside of automated tools, such as **Assessments** performed manually
+(E.G. risk assessments or penetration tests) and the **Findings** and **Risks**
+identified by those assessments.
 
-- **Assessments** performed manually (such as a risk assessment or manual
-  penetration test)
-- **Findings** and **Risks** identified from those assessments
-
-These efforts are typically documented in an unstructured format. For example,
-as a Word or PDF document. Or they could be maintained in separate repositories
-such as a governance, risk and compliance (GRC) or vulnerability
-management system/software/service (VMS) application.
+These efforts are typically documented in unstructured formats (Word or PDF) or
+are maintained in a separate repository such as a governance, risk and
+compliance (GRC), or vulnerability management system/software/service (VMS).
 
 JupiterOne serves as a lightweight GRC and VMS so that no separate, siloed tools
-are needed, and allows security and compliance artifacts to be managed as code.
+are needed, allowing teams to manage security and compliance artifacts as code.
 
 ## Security artifacts as code
 
-Instead of writing security documents in a Word document that is difficult to
-track and maintain, you should create and store artifacts and records as code.
-The artifacts can be easily uploaded to JupiterOne for querying and reporting.
+Instead of writing security documents in Word, which are difficult to track and
+maintain, you should create and store artifacts and records as code. You can
+then easily upload these artifacts to JupiterOne for querying and
+reporting. Check out the examples below!
 
-Below are some examples. Note these common properties across all entity types:
+Note that the following properties are common across all entity types:
 
-- `entityId` property is not required. The JupiterOne API will create a new
-  entity without an ID, and will update an existing entity with an ID.
+- `entityId`
 
-- `entityKey` property is required and must be unique. The JupiterOne create
-  entity API will update an existing entity with identical key.
+  The JupiterOne API does not require this property. If it is not provided,
+  JupiterOne will create a new entity for the document. If it is provided,
+  JupiterOne will update the existing entity for that id.
 
-- `entityType` and `entityClass` are both required.
+- `entityKey`
 
-- `name` and `displayName` are required properties for all entities.
+  This property is required and must be unique. The JupiterOne entity creation
+  API will update any existing entity with an identical key.
 
-- All other properties listed in the examples are recommended but not required.
+- `entityType`, `entityClass`, `name`, `displayName`
 
-You can create these in either JSON or YAML format to be later uploaded to
-JupiterOne. We chose YAML in the examples below because it is much easier to
-deal with long, multi-line text in YAML.
+  These properties are required.
+
+All other properties listed in the examples are recommended but not required.
+
+You can create documents to upload to JupiterOne in either JSON or YAML
+format. We use YAML in the examples below because it makes dealing with long,
+multi-line text much easier.
 
 ### **Assessment** Entity Example
 
@@ -99,19 +103,20 @@ deal with long, multi-line text in YAML.
 
 The above example contains an array of two assessment objects - one HIPAA Risk
 Assessment and one Internal Penetration Test. If there is a more detailed report
-stored elsewhere, such as on company's SharePoint or Google Docs account, you
-can link to it using the `reportURL` and `webLink` properties. The `webLink`
-property is a known property by the JupiterOne UI to render a hyperlink.
+stored elsewhere, such as on your company's SharePoint or Google Docs account,
+you can link to it using the `reportURL` and `webLink` properties. The `webLink`
+property is known by the JupiterOne UI and will render a hyperlink.
 
-We recommend writing a full report in markdown and also store that in source
+We recommend also writing a full report in Markdown and storing that in source
 code control. The `reportURL` / `webLink` in that case will be something like
+this:
 
 ```text
 https://bitbucket.org/yourorg/security-assessments/src/master/2018/hipaa-risk-assessment-report.md
 ```
 
-By specifying the email address(es) of the assessor(s), JupiterOne will look up
-those individuals (the `Person` entities) and create the following mapped
+When you specify the email address(es) of the assessor(s), JupiterOne looks
+up those individuals (the `Person` entities) and creates the following mapped
 relationship:
 
 ```text
@@ -174,9 +179,9 @@ Notes:
     - 2: medium/likely
     - 1: low/unlikely
     - 0: none/negligible
-  
+
   - Impact rating:
-  
+
     - 3: high/severe
     - 2: medium/moderate
     - 1: low/minor
@@ -195,8 +200,8 @@ Notes:
 - The Risk is considered `open` unless it is `accepted`, `mitigated` or
   `transferred` status.
 
-- When uploaded to JupiterOne, it will automatically map a relationship using
-  the email address specified in the `reporter` property to an employee/Person:
+- When uploaded to JupiterOne, Risks will automatically map to an
+  employee/Person using the email address specified in the `reporter` property:
 
   ```text
   Person (with matching email address) - REPORTED -> Risk
@@ -211,8 +216,8 @@ Notes:
 
 - The `webLink` property is optional.
 
-- Note the `jiraKey` property and the `webLink` URL in the example points to a
-  Jira issue -- if Jira is used to track the workflow of this Risk item.
+- Note the `jiraKey` property and the `webLink` URL in the example point to a
+  Jira issue since Jira is used to track the workflow of this Risk item.
 
 ### **Finding** Entity Example
 
@@ -251,26 +256,26 @@ A vulnerability finding is similar to a risk item:
       webLink: https://yourcompany.atlassian.net/browse/SEC-99
 ```
 
-Again, here the `assessment` property is used to connect the finding to the
+Again, the `assessment` property here is used to connect the finding to the
 assessment that identified it.
 
-Additionally, if the `targets` contains one or more entries that match the
-`name` of an `Application` or `CodeRepo` or `Project` entity, this finding will
-be linked to that matching entity, so that you can easily run a query like:
+Additionally, if the `targets` property contains one or more entries that match
+the `name` of an `Application`/`CodeRepo`/`Project` entity, this finding
+will be linked to that matching entity, so that you can easily run a query like:
 
 ```j1ql
 Find (Application|CodeRepo|Project) that has Finding with severity='high'
 ```
 
-Also note the `remediationSLA` property above. This specifies the number of days
-your team has to address this finding per your company policy.
+Also note the `remediationSLA` property. This specifies the number of days your
+team has left to address this finding per your company policy.
 
 ## Uploading to JupiterOne
 
-Once you have these artifacts created, they can be easily uploaded to JupiterOne
-using the CLI. Just follow these three simple steps below:
+Once you have created your artifacts, you can easily upload them to JupiterOne
+using the CLI. Just follow these three simple steps:
 
-1. Obtain an API Key from JupiterOne account
+1. Obtain an API Key from your JupiterOne account
 
 1. Install JupiterOne client/CLI:
 
@@ -287,24 +292,27 @@ using the CLI. Just follow these three simple steps below:
   j1 -o create --entity -a lifeomic -f ./findings.yml
   ```
 
+  If you have several YAML files to upload, you might use a command like:
+
+  ```bash
+  export J1_API_TOKEN={api_key}
+  find . -name \*.yml | while read yml; do j1 -o create --entity -a lifeomic -f $yml; done
+  ```
+
 We highly recommended you use a source code control system such as Github or
 Bitbucket to maintain these artifacts. This way, you can easily set up your CI
-system (e.g. Travis CI or Jenkins) to run the above commands to automatically
-keep the entities updated in JupiterOne with every approved code change (i.e.
-when a PR is merged to master).
+system (e.g. Travis CI or Jenkins) to run the above commands and automatically
+keep the entities up to date in JupiterOne with every approved code change (i.e.
+when a PR is merged into master).
 
 ### Reporting and Visualization
 
-You can see and export these assessments, risks, and findings from the Asset
-Inventory app in JupiterOne. Or easily query and visualize them.
-
-For example:
+You can see and export these Assessments, Risks, and Findings from the Asset
+Inventory app in JupiterOne or query and visualize them on the Landing page.
 
 ![pentest-findings](../assets/graphs/person-performed-pentest-findings.png)
 
 Lastly, these artifacts are automatically tracked and mapped to the supported
 compliance requirements as evidences for conducting the necessary assessments.
-
-For example:
 
 ![risk-assessments](../assets/compliance-hitrust-risk-assessments.png)

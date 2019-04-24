@@ -50,6 +50,7 @@ ingested when the integration runs:
 | ACM         | ACM Certificate           | `aws_acm_certificate` : `Certificate`                       |
 | API Gateway | REST API                  | `aws_api_gateway_rest_api` : `Gateway`                      |
 | CloudFront  | Distribution              | `aws_cloudfront_distribution`: `Gateway`                    |
+| CloudWatch  | Event Rule                | `aws_cloudwatch_event_rule` : `Task`                        |
 | Config      | Config Rule               | `aws_config_rule` : `ControlPolicy`                         |
 | DynamoDB    | DynamoDB Table            | `aws_dynamodb_table` : `DataStore`, `Database`              |
 | EC2         | AMI Image                 | `aws_ami_image` : `Image`                                   |
@@ -61,8 +62,11 @@ ingested when the integration runs:
 |             | Security Group            | `aws_security_group` : `Firewall`                           |
 |             | VPC                       | `aws_vpc` : `Network`                                       |
 |             | Subnet                    | `aws_subnet` : `Network`                                    |
+| AutoScaling | Auto Scaling Group        | `aws_autoscaling_group` : `Group`                           |
 | ELB         | Application Load Balancer | `aws_alb` : `Gateway`                                       |
 |             | Network Load Balancer     | `aws_nlb` : `Gateway`                                       |
+| GuardDuty   | GuardDuty Detector        | `aws_guardduty_detector` : `Assessment`, `Scanner`          |
+|             | GuardDuty Finding         | `aws_guardduty_finding` : `Finding`                         |
 | IAM         | Account Password Policy   | `aws_iam_account_password_policy` : `PasswordPolicy`        |
 |             | IAM User                  | `aws_iam_user` : `User`                                     |
 |             | IAM User Access Key       | `aws_iam_access_key` : `AccessKey`                          |
@@ -73,6 +77,8 @@ ingested when the integration runs:
 |             | IAM Group Policy          | `aws_iam_group_policy` : `AccessPolicy`                     |
 |             | IAM Role Policy           | `aws_iam_role_policy` : `AccessPolicy`                      |
 |             | IAM Managed Policy        | `aws_iam_policy` : `AccessPolicy`                           |
+| Inspector   | Inspector Assessment Run  | `aws_inspector_assessment` : `Assessment`                   |
+|             | Inspector Finding         | `aws_inspector_finding` : `Finding`                         |
 | KMS         | KMS Key                   | `aws_kms_key` : `CryptoKey`                                 |
 | Lambda      | Lambda Function           | `aws_lambda_function` : `Function`, `Workload`              |
 | RedShift    | Redshift Cluster          | `aws_redshift_cluster` : `DataStore`, `Database`, `Cluster` |
@@ -104,15 +110,10 @@ The following relationships are created/mapped:
 | `aws_cloudfront_distribution` **CONNECTS** `aws_api_gateway_rest_api`
 | `aws_cloudfront_distribution` **CONNECTS** `aws_s3_bucket`
 | `aws_cloudfront_distribution` **USES** `aws_acm_certificate`
+| `aws_cloudwatch_event_rule` **TRIGGERS** `aws_lambda_function`
 | `aws_config` **HAS** `aws_config_rule`
 | `aws_config_rule` **EVALUATES** `aws_account`
-| `aws_config_rule` **EVALUATES** `aws_instance`
-| `aws_config_rule` **EVALUATES** `aws_security_group`
-| `aws_config_rule` **EVALUATES** `aws_ebs_volume`
-| `aws_config_rule` **EVALUATES** `aws_iam_user`
-| `aws_config_rule` **EVALUATES** `aws_iam_group`
-| `aws_config_rule` **EVALUATES** `aws_iam_role`
-| `aws_config_rule` **EVALUATES** `aws_s3_bucket`
+| `aws_config_rule` **EVALUATES** `<AWS Resource>`
 | `aws_dynamodb` **HAS** `aws_dynamodb_table`
 | `aws_dynamodb_table` **USES** `aws_kms_key`
 | `aws_ec2` **HAS** `aws_instance`
@@ -121,6 +122,7 @@ The following relationships are created/mapped:
 | `aws_ec2` **HAS** `aws_ebs_volume`
 | `aws_ec2` **HAS** `aws_network_acl`
 | `aws_ec2` **HAS** `aws_vpc`
+| `aws_autoscaling_group` **HAS** `aws_instance`
 | `aws_instance` **USES** `aws_ebs_volume`
 | `aws_ebs_volume` **USES** `aws_kms_key`
 | `aws_security_group` **PROTECTS** `aws_instance`
@@ -129,6 +131,8 @@ The following relationships are created/mapped:
 | `aws_elb` **HAS** `aws_alb`
 | `aws_elb` **HAS** `aws_nlb`
 | `aws_alb` **USES** `aws_acm_certificate`
+| `aws_guardduty_detector` **IDENTIFIED** `aws_guardduty_finding`
+| `aws_instance` **HAS** `aws_guardduty_finding`
 | `aws_iam` **HAS** `aws_iam_managed_policy`
 | `aws_iam` **HAS** `aws_iam_role`
 | `aws_iam` **HAS** `aws_iam_role_policy`
@@ -143,6 +147,8 @@ The following relationships are created/mapped:
 | `aws_iam_role` **HAS** `aws_iam_managed_policy`
 | `aws_iam_user` **HAS** `aws_iam_managed_policy`
 | `aws_iam_user` **HAS** `aws_iam_user_policy`
+| `aws_inspector_assessment` **IDENTIFIED** `aws_inspector_finding`
+| `aws_instance` **HAS** `aws_inspector_finding`
 | `aws_lambda` **HAS** `aws_lambda_function`
 | `aws_lambda_function` **HAS** `aws_iam_role`
 | `aws_redshift` **HAS** `aws_redshift_cluster`

@@ -1,24 +1,12 @@
-Vulnerability
-=============
+Finding
+=======
 
-A security vulnerability finding (application or system or infrastructure). A single vulnerability may impact multiple resources. The `IMPACTS` relationship between the Vulnerability and the resource entity that was impacted serves as the record of the finding. The `IMPACTS` relationship carries properties such as 'identifiedOn', 'remediatedOn', 'remediationDueOn', 'issueLink', etc.
+A security finding, which may be a vulnerability or just an informative issue. A single finding may impact one or more resources. The `IMPACTS` relationship between the Vulnerability and the resource entity that was impacted serves as the record of the finding. The `IMPACTS` relationship carries properties such as 'identifiedOn', 'remediatedOn', 'remediationDueOn', 'issueLink', etc.
 
 Includes properties from:
 
 * `RecordEntity <RecordEntity.html>`_
 * `Metadata <Metadata.html>`_
-
-``category`` (string) - Required
---------------------------------
-
-The category of the vulnerability finding
-
-**Options**
-
-* application
-* system
-* infrastructure
-* other
 
 ``status`` (string) - Optional
 ------------------------------
