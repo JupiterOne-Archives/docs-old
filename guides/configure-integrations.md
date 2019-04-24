@@ -6,7 +6,7 @@ capabilities. The more data, the more powerful these capabilities become.
 There are over a dozen managed integrations available out-of-the-box for turnkey
 configuration. More are added regularly.
 
-Each integration may have slightly different mechanism for authentication and
+Each integration may have a slightly different mechanism for authentication and
 configuration, as required by the provider. For example, the AWS integration
 uses an IAM Role and Assume Role Trust policies for access. Other integrations
 may use an API key/token, OAuth, or Basic Auth.
