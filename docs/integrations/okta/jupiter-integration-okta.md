@@ -48,8 +48,6 @@ The following relationships are created/mapped:
 | `okta_user_group` **ASSIGNED** `okta_application` |
 | `okta_user_group` **HAS** `okta_user`             |
 
-[1]: https://developer.okta.com/docs/api/getting_started/getting_a_token
-
 ## Tips
 
 All Okta users are automatically mapped to a `Person` entity as an employee. If
@@ -62,3 +60,5 @@ This allows you to find non-interactive users with a query like
 ```j1ql
 Find User that !is Person
 ```
+
+[1]: https://developer.okta.com/docs/api/getting_started/getting_a_token
