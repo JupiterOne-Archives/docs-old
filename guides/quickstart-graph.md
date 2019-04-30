@@ -34,8 +34,8 @@ following functions:
 | ![][8]  | **Open side panel** to show the detailed properties, tags and metadata of the selected entity. <br>Note that you can select an **edge** and see its properties in the side panel as well.
 | ![][9]  | **Load neighbors** – bring in additional nodes directly connected to the selected node that are not yet loaded into the graph.
 | ![][10] | **Hide selected node** from graph to reduce clutter. You can unhide all hidden nodes from the bottom left control.
-| ![][11] | **Expand nodes** of the same type that have the same parent nodes. This option may not be always available depending on the data in the graph.
-| ![][12] | **Collapse nodes** of the same type that have the same parent nodes. This option may not be always available depending on the data in the graph.
+| ![][11] | **Expand grouped nodes** of the same type that have the same parent nodes. This option may not be always available depending on the data in the graph.
+| ![][12] | **Collapse nodes** of the same type that have the same parent nodes into a group. This option may not be always available depending on the data in the graph.
 
 The last set of controls are at the bottom left corner of the graph, and they do
 the following:
