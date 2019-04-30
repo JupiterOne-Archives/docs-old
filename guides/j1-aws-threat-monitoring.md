@@ -52,7 +52,7 @@ Find aws_guardduty_finding that relates to aws_instance
 
 Here is an example graph returned by the above query:
 
-![guardduty-inspector-finding-correlation]()
+![guardduty-inspector-finding-correlation](../assets/graphs/guardduty-inspector-finding-correlation.png)
 
 You can correlate Inspector and GuardDuty findings with other security scanner
 findings as well, if you have those integrations configured.
