@@ -6,7 +6,8 @@ Welcome to JupiterOne's documentation!
    :caption: Get Started
 
    Configure Integrations <guides/configure-integrations>
-   Search Quickstart <guides/search-quick-start>
+   Search Quickstart <guides/quickstart-search>
+   Navigate the Graph <guides/quickstart-graph>
    J1QL Query Tutorial <guides/tutorial-j1ql>
    Using Asset Inventory Filters <guides/asset-inventory-filters.md>
    FAQs <guides/faqs>
