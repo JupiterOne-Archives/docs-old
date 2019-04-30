@@ -62,7 +62,7 @@ ingested when the integration runs:
 |             | Security Group            | `aws_security_group` : `Firewall`                           |
 |             | VPC                       | `aws_vpc` : `Network`                                       |
 |             | Subnet                    | `aws_subnet` : `Network`                                    |
-| AutoScaling | Auto Scaling Group        | `aws_autoscaling_group` : `Group`                           |
+| AutoScaling | Auto Scaling Group        | `aws_autoscaling_group` : `Deployment`, `Group`             |
 | ELB         | Application Load Balancer | `aws_alb` : `Gateway`                                       |
 |             | Network Load Balancer     | `aws_nlb` : `Gateway`                                       |
 | GuardDuty   | GuardDuty Detector        | `aws_guardduty_detector` : `Assessment`, `Scanner`          |
