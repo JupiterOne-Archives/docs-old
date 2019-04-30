@@ -34,16 +34,18 @@ following functions:
 | ![][8]  | **Open side panel** to show the detailed properties, tags and metadata of the selected entity. <br>Note that you can select an **edge** and see its properties in the side panel as well.
 | ![][9]  | **Load neighbors** – bring in additional nodes directly connected to the selected node that are not yet loaded into the graph.
 | ![][10] | **Hide selected node** from graph to reduce clutter. You can unhide all hidden nodes from the bottom left control.
+| ![][11] | **Expand nodes** of the same type that have the same parent nodes. This option may not be always available depending on the data in the graph.
+| ![][12] | **Collapse nodes** of the same type that have the same parent nodes. This option may not be always available depending on the data in the graph.
 
 The last set of controls are at the bottom left corner of the graph, and they do
 the following:
 
 | Control | Function
 |:-------:| --------
-| ![][11] | **Maximize** graph in full screen mode.
-| ![][12] | **Restore** graph in query result component.
-| ![][13] | **Open filter panel** to let you filter (show/hide) nodes on the graph by **Account** and/or **Type**.
-| ![][14] | **Unhide hidden nodes**. This control icon will only show up when there are hidden nodes on the graph.
+| ![][13] | **Maximize** graph in full screen mode.
+| ![][14] | **Restore** graph in query result component.
+| ![][15] | **Open filter panel** to let you filter (show/hide) nodes on the graph by **Account** and/or **Type**.
+| ![][16] | **Unhide hidden nodes**. This control icon will only show up when there are hidden nodes on the graph.
 
 Here's a screenshot of a graph with the **property panel** and **filter panel**
 open:
@@ -54,8 +56,8 @@ open:
 
 | Control         | Function
 |:---------------:| --------
-| ![][15] ![][16] | **Scroll** using your mouse/touchpad to zoom in/out on the graph
-| ![][17]         | **Click and Drag** on a **blank spot** on the graph using your mouse/touchpad to move the graph. **Click and Drag** on a **selected node** to move that particular node.
+| ![][17] ![][18] | **Scroll** using your mouse/touchpad to zoom in/out on the graph
+| ![][19]         | **Click and Drag** on a **blank spot** on the graph using your mouse/touchpad to move the graph. **Click and Drag** on a **selected node** to move that particular node.
 
 The stand-alone **Galaxy / Graph Viewer** app uses the same sets of controls.
 
@@ -72,10 +74,12 @@ yet.
 [8]: https://raw.githubusercontent.com/feathericons/feather/master/icons/info.svg?sanitize=true
 [9]: https://raw.githubusercontent.com/feathericons/feather/master/icons/more-horizontal.svg?sanitize=true
 [10]: https://raw.githubusercontent.com/feathericons/feather/master/icons/eye-off.svg?sanitize=true
-[11]: https://raw.githubusercontent.com/feathericons/feather/master/icons/maximize.svg?sanitize=true
-[12]: https://raw.githubusercontent.com/feathericons/feather/master/icons/minimize.svg?sanitize=true
-[13]: https://raw.githubusercontent.com/feathericons/feather/master/icons/filter.svg?sanitize=true
-[14]: https://raw.githubusercontent.com/feathericons/feather/master/icons/eye.svg?sanitize=true
-[15]: https://raw.githubusercontent.com/feathericons/feather/master/icons/zoom-in.svg?sanitize=true
-[16]: https://raw.githubusercontent.com/feathericons/feather/master/icons/zoom-out.svg?sanitize=true
-[17]: https://raw.githubusercontent.com/feathericons/feather/master/icons/move.svg?sanitize=true
+[11]: https://raw.githubusercontent.com/feathericons/feather/master/icons/maximize-2.svg?sanitize=true
+[12]: https://raw.githubusercontent.com/feathericons/feather/master/icons/minimize-2.svg?sanitize=true
+[13]: https://raw.githubusercontent.com/feathericons/feather/master/icons/maximize.svg?sanitize=true
+[14]: https://raw.githubusercontent.com/feathericons/feather/master/icons/minimize.svg?sanitize=true
+[15]: https://raw.githubusercontent.com/feathericons/feather/master/icons/filter.svg?sanitize=true
+[16]: https://raw.githubusercontent.com/feathericons/feather/master/icons/eye.svg?sanitize=true
+[17]: https://raw.githubusercontent.com/feathericons/feather/master/icons/zoom-in.svg?sanitize=true
+[18]: https://raw.githubusercontent.com/feathericons/feather/master/icons/zoom-out.svg?sanitize=true
+[19]: https://raw.githubusercontent.com/feathericons/feather/master/icons/move.svg?sanitize=true
