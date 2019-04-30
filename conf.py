@@ -107,7 +107,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'JupiterOnedoc'
+htmlhelp_basename = 'JupiterOneDocs'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -156,8 +156,9 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'JupiterOne', 'JupiterOne Documentation',
-     author, 'JupiterOne', 'One line description of project.',
-     'Miscellaneous'),
+     author, 'JupiterOne',
+     'A graph-based cloud-native security and compliance platform.',
+     'Cybersecurity'),
 ]
 
 

@@ -119,3 +119,34 @@ authentication happens with your IdP. However, the user memberships will remain
 in the Groups. You can manually remove them from the groups within JupiterOne.
 
 ![remove-user](/assets/configure-sso/j1-remove-user.png)
+
+## Current Limitations
+
+### IdP-initiated sign on flow is not supported
+
+JupiterOne uses Amazon Cognito service to manage authentication including SSO.
+Cognito currently does _not_ support IdP-initiated sign on. That is, you will
+_not_ be able to click on the app icon on your IdP account (e.g. JumpCloud,
+Okta, OneLogin). Instead, you will need to initiate single sign on by going to
+your JupiterOne account URL:
+
+```text
+https://<your_j1_account_id>.apps.us.jupiterone.io
+```
+
+This will redirect to your configured SSO provider for authentication.
+
+You can find your J1 account id by running the following query:
+
+```j1ql
+Find jupiterone_account as a return a.accountId
+```
+
+**Workaround**
+
+If your SSO provider supports configuring a "Bookmark" app, you can workaround
+this limitation by doing the following:
+
+- **Hide** the app icon to users for the configured JupiterOne SAML SSO app
+- Configure a **Bookmark** app with your JupiterOne account URL and assigned it
+  to the same users/groups that have been assigned the JupiterOne SAML app
