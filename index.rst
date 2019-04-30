@@ -15,7 +15,7 @@ Welcome to JupiterOne's documentation!
    :maxdepth: 2
    :caption: Advanced Guides
 
-   AWS Config Auditing <guides/j1-queries-for-aws-config>
+   AWS Resource Configuration Auditing <guides/j1-queries-for-aws-config>
    AWS Threat Monitoring <guides/j1-aws-threat-monitoring>
    Common Questions and Queries <guides/common-questions-and-queries>
    Configure SAML SSO Integration <guides/configure-sso-integration>
