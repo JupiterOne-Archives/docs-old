@@ -42,7 +42,7 @@ for more details.
 
 Using J1QL, you can easily perform correlation of Inspector and GuardDuty
 findings and the resources they impact. For example, the following query
-identify any suspicious activities against any EC2 instance that also has high
+identifies suspicious activities against any EC2 instance that also has high
 severity vulnerability findings.
 
 ```j1ql
