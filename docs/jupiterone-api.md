@@ -942,6 +942,30 @@ Note that the only difference here for `update` is the `"id"` property
 associated with the rule instance. All settings of a rule instance can be
 modified.
 
+### Delete an alert rule
+
+```graphql
+mutation DeleteRuleInstance ($id: ID!) {
+  deleteRuleInstance (
+    id: $id
+  ) {
+    id
+  }
+}
+```
+
+variables:
+
+```json
+{
+  "id": "b1c0f75d-770d-432a-95f5-6f59b4239c72"
+}
+```
+
+Note that deleting an alert rule this way will **not** dismiss active alerts
+already triggered by this rule. It is recommended to **Disable** a rule in the
+alerts app UI instead of deleting one.
+
 ### Trigger an alert rule on demand
 
 ```graphql
