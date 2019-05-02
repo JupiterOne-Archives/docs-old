@@ -17,7 +17,8 @@ The integration instance configuration requires the customer's API ID and secret
 to authenticate requests to the Veracode REST APIs. Veracode provides [detailed
 instructions for obtaining these credentials][1].
 
-[1]: https://help.veracode.com/reader/lsoDk5r2cv~YrwLQSI7lfw/6UdIc6di0T5_Lo6qTHTpNA
+[1]:
+  https://help.veracode.com/reader/lsoDk5r2cv~YrwLQSI7lfw/6UdIc6di0T5_Lo6qTHTpNA
 
 ## Entities
 
