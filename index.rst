@@ -10,6 +10,8 @@ Welcome to JupiterOne's documentation!
    Navigate the Graph <guides/quickstart-graph>
    J1QL Query Tutorial <guides/tutorial-j1ql>
    Using Asset Inventory Filters <guides/asset-inventory-filters.md>
+   Alerts and Alert Rules <guides/manage-alerts.md>
+   Manage Findings <guides/manage-findings.md>
    FAQs <guides/faqs>
 
 .. toctree::
