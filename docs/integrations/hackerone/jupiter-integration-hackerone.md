@@ -1,4 +1,4 @@
-# Managed-Integration-HackerOne
+# HackerOne
 
 ## Overview
 
