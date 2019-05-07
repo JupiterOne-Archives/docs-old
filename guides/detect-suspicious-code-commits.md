@@ -5,7 +5,7 @@ JupiterOne is capable of detecting suspicious code commits in a git pull request
 (PR) in two ways:
 
 - Commits self-approved by the code author
-- Commits made by an unknown user to the organization
+- Commits made by a user unknown to the organization
 
 ## Enable Detection
 
