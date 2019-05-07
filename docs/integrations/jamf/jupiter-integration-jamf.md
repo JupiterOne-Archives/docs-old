@@ -23,14 +23,16 @@ The following entity resources are ingested when the integration runs:
 | Account         | `jamf_account` : `Account`      |
 | User            | `jamf_user` : `User`            |
 | MobileDevice    | `jamf_mobile_device` : `Device` |
+| Computer        | `jamf_computer` : `Device`      |
 
 ## Relationships
 
 The following relationships are created/mapped:
 
-| From           | Type    | To                   |
+| From           | Edge    | To                   |
 | -------------- | ------- | -------------------- |
 | `jamf_account` | **HAS** | `jamf_user`          |
 | `jamf_user`    | **HAS** | `jamf_mobile_device` |
+| `jamf_user`    | **HAS** | `jamf_computer`      |
 
 [1]: https://developer.jamf.com/documentation#authentication
