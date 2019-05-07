@@ -310,6 +310,14 @@ when a PR is merged into master).
 You can see and export these Assessments, Risks, and Findings from the Asset
 Inventory app in JupiterOne or query and visualize them on the Landing page.
 
+**Query:**
+
+```j1ql
+Find Person that performed Assessment that identified (Risk|Finding) return tree
+```
+
+**Graph:**
+
 ![pentest-findings](../assets/graphs/person-performed-pentest-findings.png)
 
 Lastly, these artifacts are automatically tracked and mapped to the supported

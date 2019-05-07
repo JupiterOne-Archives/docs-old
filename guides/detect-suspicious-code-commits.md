@@ -33,9 +33,13 @@ You can run a J1QL query to detect "PRs with suspicious activities":
 Find PR with approved = false or validated = false
 ```
 
-You can also set up an alert with the above query.
+![](../assets/graphs/suspicious-pullrequests.png)
 
-## How does it work? 
+You can also set up an alert with the above query. You can also integrate this
+analysis into your DevOps pipeline to check for suspicious commits in PRs before
+deploying code to production.
+
+## How does it work?
 
 ### Detecting self-approved commits
 
