@@ -22,6 +22,7 @@ Welcome to JupiterOne's documentation!
    AWS Threat Monitoring <guides/j1-aws-threat-monitoring>
    Common Questions and Queries <guides/common-questions-and-queries>
    Configure SAML SSO Integration <guides/configure-sso-integration>
+   Detect Suspicious Code Commits <guides/detect-suspicious-code-commits>
    JupiterOne Node.js Client and CLI <guides/j1-client-and-cli>
    SecOps Artifacts as Code <guides/secops-artifacts-in-j1>
 

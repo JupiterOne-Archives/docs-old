@@ -444,13 +444,14 @@ Find User that !is Person
 > `Person` (`_type: 'employee'`) entity, when there is at least one Identity
 > Provider (IdP) integration configuration - such as Okta or OneLogin.
 >
-> Pro Tip 1: set the `userType` property of the user profile in your IdP account
+> Pro Tip 1: Set the `userType` property of the user profile in your IdP account
 > to `'system' or 'generic' or 'bot'` will prevent JupiterOne from creating a
 > `Person` entity for that user.
 >
-> Pro Tip 2: set the `username` or add a `username` Tag to your `aws_iam_user`
-> or other non-IdP users to be the email address of a Person / employee will
-> allow JupiterOne to automatically map that User to its corresponding Person.
+> Pro Tip 2: Set the `username` of your `aws_iam_user` or other non-IdP users to
+> be the email address of a Person / employee will allow JupiterOne to
+> automatically map that User to its corresponding Person. Alternatively, you
+> can add an `email` tag to your `aws_iam_user` for the mapping to work.
 
 **Which active user accounts do not have multi-factor authentication enabled?**
 
