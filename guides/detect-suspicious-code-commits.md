@@ -74,3 +74,23 @@ author, JupiterOne sets the `validated` flag on the PR entity to `false`.
 
 The commit hash of the detected suspicious commit is added to the
 `commitsByUnknownAuthor` list property.
+
+## Combine suspicious commits checking and vulnerability checking for CI/CD
+
+You can use the following J1QL query to detect open vulnerability findings that
+are associated with certain code repos, and use this in conjunction with the
+PR analysis query previously discussed to make automated decisions for promoting
+code to production in your CI/CD pipeline.
+
+For example, you can query JupiterOne via API for:
+
+```j1ql
+Find Finding with open=true and severity=('Critical' or 'High')
+  that relates to CodeRepo with name='my-new-project'
+
+Find PR with id=55 as PR that relates to CodeRepo with name='my-new-project'
+  return PR.approved, PR.validated
+```
+
+And block production deploy if the first query above returns a finding or if
+the second query returns `false` for `approved` or `validated` status.
