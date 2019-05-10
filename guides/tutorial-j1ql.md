@@ -36,7 +36,7 @@ Please note the noun that immediately follows the verb is case sensitive:
 You should get a result that looks like this (the `return tree` part of the query
 tells it to show the graph view by default):
 
-![](../assets/j1ql/j1ql-tutorial-root-accounts-graph.png)
+![](../assets/j1ql-tutorial-root-accounts-graph.png)
 
 The selected node in the above example is the special `Root` node, which
 represents your organization. Depending on the number of integration
@@ -297,7 +297,7 @@ Find Network that has (Host|Cluster|Database) return tree
 > The result looks like this (you may have a lot more going on than what's shown
 > here from the demo environment):
 >
-> ![](../assets/j1ql/j1ql-tutorial-network-has-resources.png)
+> ![](../assets/j1ql-tutorial-network-has-resources.png)
 >
 > Note that the properties panel for the selected `aws_subnet` has a `webLink`
 > that will allow you to quickly get to the source directly in the AWS web
@@ -315,7 +315,7 @@ Find aws_cloudfront_distribution that relates to * return tree
 > integration configurations and quite a few `aws_cloudfront_distribution`
 > entities and relationships.
 >
-> ![](../assets/j1ql/j1ql-tutorial-cloudfront.png)
+> ![](../assets/j1ql-tutorial-cloudfront.png)
 >
 > This graph shows you the **origins** connected to the **distributions**: both
 > **S3 buckets** (for static website/contents) and **API Gateways**.
@@ -341,7 +341,7 @@ Find aws_account
 
 > You'll get a visual that looks like this:
 >
-> ![](../assets/j1ql/j1ql-aws-transfer-servers-users.png)
+> ![](../assets/j1ql-aws-transfer-servers-users.png)
 
 ### 2f - Serverless Functions
 
@@ -640,6 +640,6 @@ Find HostAgent with compliant!=true
 
 The resulting graph may look like this:
 
-![noncompliance-device-aws-access](../assets/graphs/noncompliant-user-endpoint-aws-access.png)
+![noncompliance-device-aws-access](../assets/graph-noncompliant-user-endpoint-aws-access.png)
 
 [j1ql-doc]: ../docs/jupiterone-query-language.md

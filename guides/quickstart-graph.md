@@ -14,12 +14,12 @@ J1QL, check out the [J1QL tutorial][2] and [technical doc][3].
 This screenshot below shows an example result graph from a query in the Landing
 app:
 
-![](../assets/j1ql/j1ql-tutorial-root-accounts-graph.png)
+![](../assets/j1ql-tutorial-root-accounts-graph.png)
 
 The first set of controls on the upper right corner does the following:
 
 | Control | Function
-|:-------:| --------
+|:-------:|:--------
 | ![][4]  | **Switch views** between `Table`, `Graph`, `Raw JSON`, and `Pretty JSON`.
 | ![][5]  | **Share the query** – shows a modal popup with the weblink to copy and share.
 | ![][6]  | **Save the query** – shows a modal popup where you can provide a title, description, and optionally some tags to save it to your own query library.

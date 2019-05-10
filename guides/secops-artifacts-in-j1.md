@@ -318,7 +318,7 @@ Find Person that performed Assessment that identified (Risk|Finding) return tree
 
 **Graph:**
 
-![pentest-findings](../assets/graphs/person-performed-pentest-findings.png)
+![pentest-findings](../assets/graph-person-performed-pentest-findings.png)
 
 Lastly, these artifacts are automatically tracked and mapped to the supported
 compliance requirements as evidences for conducting the necessary assessments.
