@@ -297,4 +297,4 @@ CodeRepo        -- DEPLOYED_TO ->     Function
 The diagram below is an abstract illustration of the entities and relationships
 defined by the data model.
 
-![data-model](/assets/data-model.png)
+![data-model](../assets/data-model.png)

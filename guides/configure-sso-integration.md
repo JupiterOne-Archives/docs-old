@@ -29,11 +29,11 @@ _IdP-initiated SSO is currently unsupported due to a limitation of Amazon Cognit
 
 1. Go to the **Single Sign On** setup from the configurations menu.
 
-   ![sso-menu](/assets/configure-sso/j1-sso-menu.png)
+   ![sso-menu](../assets/j1-sso-menu.png)
 
 1. Click on **Configure**.
 
-   ![configure-sso](/assets/configure-sso/j1-configure-sso.png)
+   ![configure-sso](../assets/j1-configure-sso.png)
 
 1. In the client configuration screen, copy the following two variables to be
    used when adding JupiterOne as an application in your SAML IdP account:
@@ -57,7 +57,7 @@ _IdP-initiated SSO is currently unsupported due to a limitation of Amazon Cognit
    In Okta, this link can be found on the **Sign On** tab of the application,
    under **View Setup Instructions**, as shown below:
 
-   ![okta-idp-metadata](/assets/configure-sso/okta-idp-metadata.png "Okta IDP metadata")
+   ![okta-idp-metadata](../assets/okta-idp-metadata.png "Okta IDP metadata")
 
 1. Go back to **JupiterOne Auth Client Settings** screen, paste the above link
    to the **SAML Metadata Document URL** field.
@@ -67,7 +67,7 @@ _IdP-initiated SSO is currently unsupported due to a limitation of Amazon Cognit
 1. Check **Authorization code grant** and **Implicit Grant** under "Allowed
    OAuth Flows".
 
-   ![allowed-oauth-flows](/assets/configure-sso/j1-sso-client-oauth-flows.png)
+   ![allowed-oauth-flows](../assets/j1-sso-client-oauth-flows.png)
 
 Save and you are all set. Next time you access your JupiterOne account via the
 vanity URL (e.g. https://your_company.apps.us.jupiterone.io), you should be
@@ -88,7 +88,7 @@ The following attribute mappings are supported:
 
 Here's an example of attribute mapping configuration in Okta:
 
-![okta-attribute-mappings](/assets/configure-sso/okta-attribute-mappings.png)
+![okta-attribute-mappings](../assets/okta-attribute-mappings.png)
 
 We highly recommend adding a custom *group attribute* to the JupiterOne app
 profile in your IdP account (e.g. Okta). This is typically added using the
@@ -97,7 +97,7 @@ profile in your IdP account (e.g. Okta). This is typically added using the
 
 Below is an example within Okta:
 
-![okta-app-profile-editor](/assets/configure-sso/okta-app-profile-editor.png)
+![okta-app-profile-editor](../assets/okta-app-profile-editor.png)
 
 You can then use this custom app attribute to assign group memberships to your
 users based on their IdP group assignments. The actual value for the attribute
@@ -105,7 +105,7 @@ is typically configured on the group(s) assigned to the app.
 
 Below is an example within Okta:
 
-![okta-app-group-assignment](/assets/configure-sso/okta-app-group-assignment.png)
+![okta-app-group-assignment](../assets/okta-app-group-assignment.png)
 
 Note that provisioning users with `group_names` attribute mapping is *OPTIONAL*.
 Users without `group_names` mapping are assigned to the **Users** group within
@@ -118,7 +118,7 @@ user will no longer be able to log in to your JupiterOne account because the
 authentication happens with your IdP. However, the user memberships will remain
 in the Groups. You can manually remove them from the groups within JupiterOne.
 
-![remove-user](/assets/configure-sso/j1-remove-user.png)
+![remove-user](../assets/j1-remove-user.png)
 
 ## Current Limitations
 

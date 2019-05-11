@@ -4,3 +4,5 @@ node_modules
 *.pdf
 .DS_Store
 .vscode
+.env
+yarn-error.log
