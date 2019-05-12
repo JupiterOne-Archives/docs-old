@@ -6,6 +6,9 @@
     "showdown": "^1.9.0"
   },
   "scripts": {
-    "publish:zendesk": "cd zendesk; node publish.js"
+    "publish:zendesk": "cd zendesk; node -r dotenv/config publish.js"
+  },
+  "devDependencies": {
+    "dotenv": "^8.0.0"
   }
 }
