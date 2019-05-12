@@ -11,8 +11,8 @@ const config = yaml.safeLoad(fs.readFileSync('config.yaml', 'utf8'));
 const converter = new showdown.Converter({tables: true});
 
 const baseUrl = 'https://jupiterone.zendesk.com/api/v2/help_center/';
-const user = process.env.ZEKDESK_USER || 'callisto@jupiterone.io/token';
-const pass = process.env.ZEKDESK_PASS;
+const user = process.env.ZENDESK_USER || 'callisto@jupiterone.io/token';
+const pass = process.env.ZENDESK_PASS;
 
 const request = rp.defaults({
   baseUrl,
