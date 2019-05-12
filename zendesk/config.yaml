@@ -5,7 +5,7 @@ sections:
       - id: 360022884813
         title: 1/7 Configure Integrations
         file: ../guides/configure-integrations.md
-        hash: aDIY9H7W0MtDkX8wAeD5s2HjTYa9R48vbHhAD3HJi/A=
+        hash: 2ZnJWBSePflXO7WdgYfRGJuLgIEdNlRXaDQRnuxSBno=
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022884813-1-7-Configure-Integrations
       - id: 360022705414
@@ -50,7 +50,7 @@ sections:
       - id: 360022879453
         title: FAQs
         file: ../guides/faqs.md
-        hash: xfoSG3koyAIeHxHViMFCa+oJ2QtynJIiw9LT+h398ME=
+        hash: dRjo3CSvX/CpRgMVeAHrs2hTVtEJmRxoJeQsCFU3mJQ=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022879453-FAQs'
   - id: 360002297174
     name: User Guides
@@ -87,7 +87,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360022721934-Detect-Suspicious-Code-Commits
       - title: JupiterOne Node.js Client and CLI
         file: ../guides/j1-client-and-cli.md
-        hash: FgzyNjgYjHhuAM8iWcpNxSxpYpU6COA7uaL8/y8TZQc=
+        hash: pbJe9Rk0PcseeE6IYQ9gQXUooWBLwe6H6m6hYKolLVI=
         id: 360022903373
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022903373-JupiterOne-Node.js-Client-and-CLI
