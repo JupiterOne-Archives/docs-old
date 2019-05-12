@@ -10,4 +10,4 @@ The CLI supports uploading entities in either JSON or YAML format. This guide -
 provides an example use case.
 
 [1]: https://github.com/JupiterOne/jupiterone-client-nodejs
-[2]: ./secops-artifacts-in-j1
+[2]: ./secops-artifacts-in-j1.md

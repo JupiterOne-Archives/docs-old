@@ -12,8 +12,8 @@ can create/update them to your JupiterOne account. You can also develop a script
 to run on a schedule (e.g. via a cron job) or integrate into your DevOps
 automation.
 
-[1]: ../docs/jupiterone-data-model
-[2]: ../guides/j1-client-and-cli
+[1]: ../docs/jupiterone-data-model.md
+[2]: ../guides/j1-client-and-cli.md
 
 ## Where do these `Person` entities come from? Why are they not tagged with an integration?
 
