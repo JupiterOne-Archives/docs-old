@@ -52,6 +52,13 @@ self-service approach.
 1. Users should then follow the simple instructions in the activation email to
    download, install and activate the endpoint agent.
 
+## Policies
+
+For details on how to customize your endpoint compliance policy, see the
+documentation here:
+
+<a href="https://github.com/Netflix-Skunkworks/stethoscope-app/blob/master/docs/POLICIES.md#supported-practices" target="_blank">Supported Practices</a>
+
 ## Advanced Use Cases
 
 For organizations using an automated package deployment tool such as SaltStack or
