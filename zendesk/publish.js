@@ -8,7 +8,13 @@ const createHash = require('crypto').createHash;
 
 const config = yaml.safeLoad(fs.readFileSync('config.yaml', 'utf8'));
 
-const converter = new showdown.Converter({tables: true});
+const converter = new showdown.Converter(
+  {
+    parseImgDimensions: true,
+    simplifiedAutoLink: true,
+    tables: true
+  }
+);
 
 const baseUrl = 'https://jupiterone.zendesk.com/api/v2/help_center/';
 const user = process.env.ZENDESK_USER || 'callisto@jupiterone.io/token';
