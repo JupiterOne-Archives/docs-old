@@ -25,4 +25,4 @@ the JupiterOne [API Client or CLI][1]. This allows you to centrally track,
 monitor and visualize any of your data such as on-premise systems and security /
 compliance artifacts.
 
-[1]: ./j1-client-and-cli
+[1]: ./j1-client-and-cli.md
