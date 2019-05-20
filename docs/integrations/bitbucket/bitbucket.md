@@ -31,13 +31,13 @@ code review records for security and compliance._
 
 The following entity resources are ingested when the integration runs:
 
-| Bitbucket Entity Resource | \_type : \_class of the Entity                |
-| ------------------------- | --------------------------------------------- |
-| Team                      | `bitbucket_team` : `Account`                  |
-| Project                   | `bitbucket_project` : `Project`               |
-| Pull Request              | `bitbucket_pull_request` : `CodeReview`, `PR` |
-| Repository                | `bitbucket_repo` : `CodeRepo`                 |
-| User                      | `bitbucket_user` : `User`                     |
+| Bitbucket Entity Resource | \_type : \_class of the Entity            |
+| ------------------------- | ----------------------------------------- |
+| Team                      | `bitbucket_team` : `Account`              |
+| Project                   | `bitbucket_project` : `Project`           |
+| Pull Request              | `bitbucket_pull_request` : `Review`, `PR` |
+| Repository                | `bitbucket_repo` : `CodeRepo`             |
+| User                      | `bitbucket_user` : `User`                 |
 
 ## Relationships
 
