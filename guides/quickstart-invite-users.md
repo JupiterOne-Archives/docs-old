@@ -1,6 +1,6 @@
 # Invite Users to Your J1 Account/Org
 
-Adding others to your JupiterOne account/organization done via a simple invite
+Adding others to your JupiterOne account/organization is done via a simple invite
 process. To send an invite, follow these steps:
 
 1. Go to ![][1] **Settings**, select ![][2] **Users & Access**.
