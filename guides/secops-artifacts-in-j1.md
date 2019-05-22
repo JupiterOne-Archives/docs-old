@@ -17,6 +17,12 @@ compliance (GRC), or vulnerability management system/software/service (VMS).
 JupiterOne serves as a lightweight GRC and VMS so that no separate, siloed tools
 are needed, allowing teams to manage security and compliance artifacts as code.
 
+## TL;DR
+
+*Ok. Here's some example code. Dive in!*
+
+<https://github.com/JupiterOne/secops-automation-examples>
+
 ## Security artifacts as code
 
 Instead of writing security documents in Word, which are difficult to track and
@@ -283,13 +289,13 @@ using the CLI. Just follow these three simple steps:
   npm install @jupiterone/jupiterone-client-nodejs -g
   ```
 
-1. Upload the artifacts (entities) to the LifeOmic account on JupiterOne:
+1. Upload the artifacts (entities) to your account on JupiterOne:
 
   ```bash
   export J1_API_TOKEN={api_key}
-  j1 -o create --entity -a lifeomic -f ./risks.yml
-  j1 -o create --entity -a lifeomic -f ./assessments.yml
-  j1 -o create --entity -a lifeomic -f ./findings.yml
+  j1 -o create --entity -a {accountId} -f ./risks.yml
+  j1 -o create --entity -a {accountId} -f ./assessments.yml
+  j1 -o create --entity -a {accountId} -f ./findings.yml
   ```
 
   If you have several YAML files to upload, you might use a command like:
@@ -324,3 +330,11 @@ Lastly, these artifacts are automatically tracked and mapped to the supported
 compliance requirements as evidences for conducting the necessary assessments.
 
 ![risk-assessments](../assets/compliance-hitrust-risk-assessments.png)
+
+**PDF:**
+
+You can use a simple utility to query J1 for an assessment, its related
+findings, and generate a PDF report. An example can be found in the
+`secops-automation-examples` Github repo:
+
+<https://github.com/JupiterOne/secops-automation-examples>
