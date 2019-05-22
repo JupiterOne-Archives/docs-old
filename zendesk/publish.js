@@ -67,11 +67,12 @@ async function publish() {
         data = data.replace(linksRegex, linksMap[match[5]]);
         match = linksRegex.exec(data);
       }
-        
+      
       const html = converter.makeHtml(data)
         .replace(/..\/assets\//g, 'http://jupiterone.com/wp-content/uploads/')
         .replace(/<pre><code/g, '<pre><div')
-        .replace(/<\/code><\/pre>/g, '</div></pre>');
+        .replace(/<\/code><\/pre>/g, '</div></pre>')
+        .replace(/<h2 id="(.*)">(.*)<\/h2>/g, `<h2 id="$1">$2 <a href="#$1"><img src="https://raw.githubusercontent.com/feathericons/feather/master/icons/link.svg?sanitize=true" width="12" height="12"></a></a></h2>`);
       const article = {
         title: art.title,
         body: html,
