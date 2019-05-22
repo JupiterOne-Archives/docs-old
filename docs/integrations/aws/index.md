@@ -95,93 +95,93 @@ The following relationships are created/mapped:
 
 ### Basic relationships within the integration instance account/resources
 
-|
-| --
-| `aws_account` **HAS** `aws_apigateway`
-| `aws_account` **HAS** `aws`
-| `aws_account` **HAS** `aws_iam`
-| `aws_account` **HAS** `aws_lambda`
-| `aws_account` **HAS** `aws_s3`
-| `aws_account` **HAS** `aws_config`
-| `aws_acm` **HAS** `aws_acm_certificate`
-| `aws_apigateway` **HAS** `aws_api_gateway_rest_api`
-| `aws_api_gateway_rest_api` **TRIGGERS** `aws_lambda_function`
-| `aws_cloudfront` **HAS** `aws_cloudfront_distribution`
-| `aws_cloudfront_distribution` **CONNECTS** `aws_api_gateway_rest_api`
-| `aws_cloudfront_distribution` **CONNECTS** `aws_s3_bucket`
-| `aws_cloudfront_distribution` **USES** `aws_acm_certificate`
-| `aws_cloudwatch_event_rule` **TRIGGERS** `aws_lambda_function`
-| `aws_config` **HAS** `aws_config_rule`
-| `aws_config_rule` **EVALUATES** `aws_account`
-| `aws_config_rule` **EVALUATES** `<AWS Resource>`
-| `aws_dynamodb` **HAS** `aws_dynamodb_table`
-| `aws_dynamodb_table` **USES** `aws_kms_key`
-| `aws_ec2` **HAS** `aws_instance`
-| `aws_ec2` **HAS** `aws_security_group`
-| `aws_ec2` **HAS** `aws_subnet`
-| `aws_ec2` **HAS** `aws_ebs_volume`
-| `aws_ec2` **HAS** `aws_network_acl`
-| `aws_ec2` **HAS** `aws_vpc`
-| `aws_autoscaling_group` **HAS** `aws_instance`
-| `aws_instance` **USES** `aws_ebs_volume`
-| `aws_ebs_volume` **USES** `aws_kms_key`
-| `aws_security_group` **PROTECTS** `aws_instance`
-| `aws_vpc` **CONTAINS** `aws_subnet`
-| `aws_network_acl` **PROTECTS** `aws_subnet`
-| `aws_elb` **HAS** `aws_alb`
-| `aws_elb` **HAS** `aws_nlb`
-| `aws_alb` **USES** `aws_acm_certificate`
-| `aws_guardduty_detector` **IDENTIFIED** `aws_guardduty_finding`
-| `aws_instance` **HAS** `aws_guardduty_finding`
-| `aws_iam` **HAS** `aws_iam_managed_policy`
-| `aws_iam` **HAS** `aws_iam_role`
-| `aws_iam` **HAS** `aws_iam_role_policy`
-| `aws_iam` **HAS** `aws_iam_user`
-| `aws_iam` **HAS** `aws_iam_user_policy`
-| `aws_iam` **HAS** `aws_iam_group`
-| `aws_iam` **HAS** `aws_iam_group_policy`
-| `aws_iam_group` **HAS** `aws_iam_group_policy`
-| `aws_iam_group` **CONTAINS** `aws_iam_user`
-| `aws_iam_group` **HAS** `aws_iam_managed_policy`
-| `aws_iam_role` **HAS** `aws_iam_role_policy`
-| `aws_iam_role` **HAS** `aws_iam_managed_policy`
-| `aws_iam_user` **HAS** `aws_iam_managed_policy`
-| `aws_iam_user` **HAS** `aws_iam_user_policy`
-| `aws_inspector_assessment` **IDENTIFIED** `aws_inspector_finding`
-| `aws_instance` **HAS** `aws_inspector_finding`
-| `aws_lambda` **HAS** `aws_lambda_function`
-| `aws_lambda_function` **HAS** `aws_iam_role`
-| `aws_redshift` **HAS** `aws_redshift_cluster`
-| `aws_vpc` **HAS** `aws_redshift_cluster`
-| `aws_rds` **HAS** `aws_rds_cluster`
-| `aws_rds` **HAS** `aws_db_instance`
-| `aws_rds_cluster` **CONTAINS** `aws_db_instance`
-| `aws_rds_cluster` **USES** `aws_kms_key`
-| `aws_db_instance` **USES** `aws_kms_key`
-| `aws_s3` **HAS** `aws_s3_bucket`
-| `aws_s3_bucket` **USES** `aws_kms_key`
-| `aws_transfer_server` **HAS** `aws_transfer_user`
-| `aws_s3_bucket` **ALLOWS** `aws_transfer_user`
-| `aws_iam_role` **ASSIGNED** `aws_transfer_server`
-| `aws_iam_role` **ASSIGNED** `aws_transfer_user`
-| `aws_waf` **HAS** `aws_waf_web_acl`
-| `aws_waf_web_acl` **PROTECTS** `aws_cloudfront_distribution`
+| Relationships                                                         |
+| --------------------------------------------------------------------- |
+| `aws_account` **HAS** `aws_apigateway`                                |
+| `aws_account` **HAS** `aws`                                           |
+| `aws_account` **HAS** `aws_iam`                                       |
+| `aws_account` **HAS** `aws_lambda`                                    |
+| `aws_account` **HAS** `aws_s3`                                        |
+| `aws_account` **HAS** `aws_config`                                    |
+| `aws_acm` **HAS** `aws_acm_certificate`                               |
+| `aws_apigateway` **HAS** `aws_api_gateway_rest_api`                   |
+| `aws_api_gateway_rest_api` **TRIGGERS** `aws_lambda_function`         |
+| `aws_cloudfront` **HAS** `aws_cloudfront_distribution`                |
+| `aws_cloudfront_distribution` **CONNECTS** `aws_api_gateway_rest_api` |
+| `aws_cloudfront_distribution` **CONNECTS** `aws_s3_bucket`            |
+| `aws_cloudfront_distribution` **USES** `aws_acm_certificate`          |
+| `aws_cloudwatch_event_rule` **TRIGGERS** `aws_lambda_function`        |
+| `aws_config` **HAS** `aws_config_rule`                                |
+| `aws_config_rule` **EVALUATES** `aws_account`                         |
+| `aws_config_rule` **EVALUATES** `<AWS Resource>`                      |
+| `aws_dynamodb` **HAS** `aws_dynamodb_table`                           |
+| `aws_dynamodb_table` **USES** `aws_kms_key`                           |
+| `aws_ec2` **HAS** `aws_instance`                                      |
+| `aws_ec2` **HAS** `aws_security_group`                                |
+| `aws_ec2` **HAS** `aws_subnet`                                        |
+| `aws_ec2` **HAS** `aws_ebs_volume`                                    |
+| `aws_ec2` **HAS** `aws_network_acl`                                   |
+| `aws_ec2` **HAS** `aws_vpc`                                           |
+| `aws_autoscaling_group` **HAS** `aws_instance`                        |
+| `aws_instance` **USES** `aws_ebs_volume`                              |
+| `aws_ebs_volume` **USES** `aws_kms_key`                               |
+| `aws_security_group` **PROTECTS** `aws_instance`                      |
+| `aws_vpc` **CONTAINS** `aws_subnet`                                   |
+| `aws_network_acl` **PROTECTS** `aws_subnet`                           |
+| `aws_elb` **HAS** `aws_alb`                                           |
+| `aws_elb` **HAS** `aws_nlb`                                           |
+| `aws_alb` **USES** `aws_acm_certificate`                              |
+| `aws_guardduty_detector` **IDENTIFIED** `aws_guardduty_finding`       |
+| `aws_instance` **HAS** `aws_guardduty_finding`                        |
+| `aws_iam` **HAS** `aws_iam_managed_policy`                            |
+| `aws_iam` **HAS** `aws_iam_role`                                      |
+| `aws_iam` **HAS** `aws_iam_role_policy`                               |
+| `aws_iam` **HAS** `aws_iam_user`                                      |
+| `aws_iam` **HAS** `aws_iam_user_policy`                               |
+| `aws_iam` **HAS** `aws_iam_group`                                     |
+| `aws_iam` **HAS** `aws_iam_group_policy`                              |
+| `aws_iam_group` **HAS** `aws_iam_group_policy`                        |
+| `aws_iam_group` **CONTAINS** `aws_iam_user`                           |
+| `aws_iam_group` **HAS** `aws_iam_managed_policy`                      |
+| `aws_iam_role` **HAS** `aws_iam_role_policy`                          |
+| `aws_iam_role` **HAS** `aws_iam_managed_policy`                       |
+| `aws_iam_user` **HAS** `aws_iam_managed_policy`                       |
+| `aws_iam_user` **HAS** `aws_iam_user_policy`                          |
+| `aws_inspector_assessment` **IDENTIFIED** `aws_inspector_finding`     |
+| `aws_instance` **HAS** `aws_inspector_finding`                        |
+| `aws_lambda` **HAS** `aws_lambda_function`                            |
+| `aws_lambda_function` **HAS** `aws_iam_role`                          |
+| `aws_redshift` **HAS** `aws_redshift_cluster`                         |
+| `aws_vpc` **HAS** `aws_redshift_cluster`                              |
+| `aws_rds` **HAS** `aws_rds_cluster`                                   |
+| `aws_rds` **HAS** `aws_db_instance`                                   |
+| `aws_rds_cluster` **CONTAINS** `aws_db_instance`                      |
+| `aws_rds_cluster` **USES** `aws_kms_key`                              |
+| `aws_db_instance` **USES** `aws_kms_key`                              |
+| `aws_s3` **HAS** `aws_s3_bucket`                                      |
+| `aws_s3_bucket` **USES** `aws_kms_key`                                |
+| `aws_transfer_server` **HAS** `aws_transfer_user`                     |
+| `aws_s3_bucket` **ALLOWS** `aws_transfer_user`                        |
+| `aws_iam_role` **ASSIGNED** `aws_transfer_server`                     |
+| `aws_iam_role` **ASSIGNED** `aws_transfer_user`                       |
+| `aws_waf` **HAS** `aws_waf_web_acl`                                   |
+| `aws_waf_web_acl` **PROTECTS** `aws_cloudfront_distribution`          |
 
 ### Connections to broader entity resources
 
-|
-| --
-| `aws_iam_user` **IS** `Person` <br> Note: This is mapped automatically only when the IAM user has an `Email` tag, or the `username` of the IAM User is an email that matches that of a Person entity in the graph.
+| Relationships                                                                                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `aws_iam_user` **IS** `Person` <br> Note: This is mapped automatically only when the IAM user has an `Email` tag, or the `username` of the IAM User is an email that matches that of a Person entity in the graph. |
 
 ### Advanced mappings
 
 The AWS integration performs analysis of security group rules, IAM policies, and
 assume role trust policies to determine the following mapping:
 
-|
-| --
-| `aws_iam_role` **TRUSTS** `aws_iam_user|aws_<service>` (within the same account)
-| `aws_iam_role` **TRUSTS** `aws_iam_role|aws_iam_user|aws_account` (cross-account)
+| Relationships                                                                     |
+| --------------------------------------------------------------------------------- |
+| `aws_iam_role` **TRUSTS** `aws_iam_user|aws_<service>` (within the same account)  |
+| `aws_iam_role` **TRUSTS** `aws_iam_role|aws_iam_user|aws_account` (cross-account) |
 
 ### ProTips and Best Practices
 
