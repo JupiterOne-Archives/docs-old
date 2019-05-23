@@ -17,9 +17,6 @@ The integration instance configuration requires the customer's API ID and secret
 to authenticate requests to the Veracode REST APIs. Veracode provides [detailed
 instructions for obtaining these credentials][1].
 
-[1]:
-  https://help.veracode.com/reader/lsoDk5r2cv~YrwLQSI7lfw/6UdIc6di0T5_Lo6qTHTpNA
-
 ## Entities
 
 The following entity resources are ingested when the integration runs:
@@ -50,3 +47,6 @@ The following relationships are created/mapped:
 | From                           | Type        | To                                                                                                                                                                                                 |
 | ------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `CodeRepo/Project/Application` | **HAS/HAD** | `veracode_finding` <br> Note: This is mapped automatically only when the name of the Veracode Application the finding belongs to matches the name of a CodeRepo/Project/Application in JupiterOne. |
+
+[1]:
+  https://help.veracode.com/reader/lsoDk5r2cv~YrwLQSI7lfw/6UdIc6di0T5_Lo6qTHTpNA
