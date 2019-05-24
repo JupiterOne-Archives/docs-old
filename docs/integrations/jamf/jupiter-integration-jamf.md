@@ -18,12 +18,12 @@ jamf provides [detailed instructions on creating credentials][1].
 
 The following entity resources are ingested when the integration runs:
 
-| Entity Resource | \_type : \_class of the Entity  |
-| --------------- | ------------------------------- |
-| Account         | `jamf_account` : `Account`      |
-| User            | `jamf_user` : `User`            |
-| MobileDevice    | `jamf_mobile_device` : `Device` |
-| Computer        | `jamf_computer` : `Device`      |
+| Entity Resource | \_type : \_class of the Entity   |
+| --------------- | -------------------------------- |
+| Account         | `jamf_account` : `Account`       |
+| User            | `device_user` : `User`           |
+| MobileDevice    | `jamf_mobile_device` : `Device`  |
+| Computer        | `user_endpoint` : `Host, Device` |
 
 ## Relationships
 
@@ -31,8 +31,8 @@ The following relationships are created/mapped:
 
 | From           | Edge    | To                   |
 | -------------- | ------- | -------------------- |
-| `jamf_account` | **HAS** | `jamf_user`          |
-| `jamf_user`    | **HAS** | `jamf_mobile_device` |
-| `jamf_user`    | **HAS** | `jamf_computer`      |
+| `jamf_account` | **HAS** | `device_user`        |
+| `device_user`  | **HAS** | `jamf_mobile_device` |
+| `device_user`  | **HAS** | `user_endpoint`      |
 
 [1]: https://developer.jamf.com/documentation#authentication
