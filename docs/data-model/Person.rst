@@ -48,15 +48,38 @@ The person's physical contact address
 
 The person's employee ID/number within an organization
 
-``employment`` (string) - Optional
-----------------------------------
+``employeeType`` (string) - Optional
+------------------------------------
 
 The type of employment
 
 **Options**
 
-* Employee
-* Contractor
-* Intern
-* Vendor
+* employee
+* contractor
+* intern
+* vendor
+* advisor
 * other
+
+``userIds`` (array of string) - Optional
+----------------------------------------
+
+One or more user Ids associated with this person
+
+``manager`` (string) - Optional
+-------------------------------
+
+Name of the person's manager
+
+``managerId`` (string) - Optional
+---------------------------------
+
+Employee ID of the person's manager
+
+``managerEmail`` (string) - Optional
+------------------------------------
+
+Email of the person's manager
+
+Format: email

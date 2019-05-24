@@ -8,6 +8,11 @@ Includes properties from:
 * `RecordEntity <RecordEntity.html>`_
 * `Metadata <Metadata.html>`_
 
+``assessment`` (string) - Optional
+----------------------------------
+
+The name/id of the assessment that produced this finding.
+
 ``status`` (string) - Optional
 ------------------------------
 
@@ -28,10 +33,10 @@ Priority level mapping to Severity rating. Can be a string such as 'critical', '
 
 The overall vulnerability score, e.g. CVSSv3.
 
-``impact`` (number) - Optional
+``impact`` (string) - Optional
 ------------------------------
 
-The impact score/rating.
+The impact description or rating.
 
 ``exploitability`` (number) - Optional
 --------------------------------------
@@ -43,18 +48,33 @@ The exploitability score/rating.
 
 The vulnerability attack vector. (e.g. a CVSSv3 vector looks like this - 'AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N')
 
-``impacts`` (array of string) - Optional
+``stepsToReproduce`` (array of string) - Optional
+-------------------------------------------------
+
+Steps to reproduce this finding.
+
+``recommendation`` (string) - Optional
+--------------------------------------
+
+Recommendation on how to remediate/fix this finding.
+
+``targets`` (array of string) - Optional
 ----------------------------------------
 
 The target listing of projects, applications, repos or systems this vulnerability impacts. Specifying either the project/repo name or the application URL here will auto-map this Vulnerability to the corresponding Project/CodeRepo/Application entity if a match is found.
+
+``targetDetails`` (array of string) - Optional
+----------------------------------------------
+
+Additional details about the targets. Can be a string or an array.
 
 ``remediationSLA`` (integer) - Optional
 ---------------------------------------
 
 The number of days that the Vulnerability must be remediated within, based on SLA set by the organization's internal vulnerability management program policy. The actually due date is set by 'remediationDueOn' property on the `IMPACTS` relationship between the Vulnerability and its impacted resource entity.
 
-``blocking`` (boolean) - Required
----------------------------------
+``blocksProduction`` (boolean) - Optional
+-----------------------------------------
 
 Indicates whether this vulnerability finding is a blocking issue. If true, it should block a production deploy. Defaults to false.
 

@@ -1,7 +1,7 @@
 PasswordPolicy
 ==============
 
-A password policy is a specific `ControlPolicy`. It is separately defined because of its pervasive usage across digital environments and the well known properties (such as length and complexity) unique to a password policy.
+A password policy is a specific `Ruleset`. It is separately defined because of its pervasive usage across digital environments and the well known properties (such as length and complexity) unique to a password policy.
 
 Includes properties from:
 

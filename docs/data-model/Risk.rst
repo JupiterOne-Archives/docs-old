@@ -8,6 +8,11 @@ Includes properties from:
 * `RecordEntity <RecordEntity.html>`_
 * `Metadata <Metadata.html>`_
 
+``assessment`` (string) - Optional
+----------------------------------
+
+The name/id of the assessment that produced this risk.
+
 ``category`` (string) - Optional
 --------------------------------
 
