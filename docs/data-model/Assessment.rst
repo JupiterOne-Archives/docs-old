@@ -59,3 +59,13 @@ Format: date-time
 Link to the assessment report, if available.
 
 Format: uri
+
+``assessor`` (string) - Optional
+--------------------------------
+
+Email or name or ID of the assessor
+
+``assessors`` (array of string) - Optional
+------------------------------------------
+
+List of email or name or ID of the assessors

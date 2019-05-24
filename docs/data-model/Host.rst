@@ -1,7 +1,7 @@
 Host
 ====
 
-An compute instance that itself owns a whole network stack and serves as an environment for workloads. Typically it runs an operating system. The exact host type is described in the _type property of the Entity. The UUID of the host should be captured in the _id property of the Entity
+A compute instance that itself owns a whole network stack and serves as an environment for workloads. Typically it runs an operating system. The exact host type is described in the _type property of the Entity. The UUID of the host should be captured in the _id property of the Entity
 
 Includes properties from:
 
