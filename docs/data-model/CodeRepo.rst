@@ -8,6 +8,11 @@ Includes properties from:
 * `Entity <Entity.html>`_
 * `Metadata <Metadata.html>`_
 
+``application`` (string) - Optional
+-----------------------------------
+
+The application that this repo is part of.
+
 ``project`` (string) - Optional
 -------------------------------
 
