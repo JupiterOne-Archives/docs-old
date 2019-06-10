@@ -1031,7 +1031,7 @@ variables:
     "description": "Returns a list of all production entities.",
     "queries": [
       {
-        "name": "Find production true",
+        "name": "Find production resources",
         "query": "Find * with tag.Production=true"
       }
     ],
@@ -1086,7 +1086,7 @@ variables:
     "description": "Returns a list of all production entities.",
     "queries": [
       {
-        "name": "Find production true",
+        "name": "Find production resources",
         "query": "Find * with tag.Production=true"
       }
     ],
