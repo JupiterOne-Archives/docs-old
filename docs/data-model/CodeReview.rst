@@ -1,7 +1,7 @@
 CodeReview
 ==========
 
-A code review (in git, a pull request). A CodeReview is also an official Record.
+A code review record.
 
 Includes properties from:
 
@@ -11,36 +11,14 @@ Includes properties from:
 ``title`` (string) - Required
 -----------------------------
 
-The title text of the code review / PR.
+The title text of the review.
 
 ``summary`` (string) - Optional
 -------------------------------
 
-The summary text of the code review / PR.
+The summary text of the review.
 
-``state`` (string) - Required
+``state`` (string) - Optional
 -----------------------------
 
-The state of the code review / PR.
-
-**Options**
-
-* open
-* merged
-* declined
-* superseded
-
-``source`` (string) - Required
-------------------------------
-
-The source branch.
-
-``target`` (string) - Required
-------------------------------
-
-The target/destination branch.
-
-``repository`` (string) - Required
-----------------------------------
-
-The name of the CodeRepo this CodeMerge (PR) belongs to.
+The state of the review.
