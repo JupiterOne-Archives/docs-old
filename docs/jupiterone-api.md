@@ -800,7 +800,7 @@ mutation CreateQuestionRuleInstance (
       queries {
         query
         version
-      }
+      } 
     }
     operations {
       when
@@ -986,5 +986,153 @@ variables:
 ```json
 {
   "id": "b1c0f75d-770d-432a-95f5-6f59b4239c72"
+}
+```
+
+## Question Operations
+
+**Endpoint:** `/graphql`
+
+### Create a Question
+
+```graphql
+  mutation CreateQuestion($question: CreateQuestionInput!) {
+    createQuestion(question: $question) {
+      id
+      title
+      description
+      queries {
+        name
+        query
+        version
+      }
+      variables {
+        name
+        required
+        default
+      }
+      compliance {
+        standard
+        requirements
+      }
+      accountId
+      integrationDefinitionId
+    }
+  }
+```
+
+variables:
+
+```json
+{
+  "question": {
+    "title": "What are my production resources?",
+    "tags": ["SecOps"],
+    "description": "Returns a list of all production entities.",
+    "queries": [
+      {
+        "name": "Find production true",
+        "query": "Find * with tag.Production=true"
+      }
+    ],
+    "compliance": [
+      {
+        "standard": "HITRUST CSF",
+        "requirements": ["10.k"]
+      }
+    ]
+  }
+}
+```
+
+Note that the query `name` field with the values `good`, `bad`, and `unkown` are used to perform continuous compliance gap analysis.
+
+### Update a question
+
+```graphql
+  mutation UpdateQuestion($id: ID!, $update: QuestionUpdate!) {
+    updateQuestion(id: $id, update: $update) {
+      id
+      title
+      description
+      queries {
+        name
+        query
+        version
+      }
+      variables {
+        name
+        required
+        default
+      }
+      compliance {
+        standard
+        requirements
+      }
+      accountId
+      integrationDefinitionId
+    }
+  }
+```
+
+variables:
+
+```json
+{
+  "id": "sj3j9f0j2ndlsj300swdjfjs",
+  "update": {
+    "title": "What are my production resources?",
+    "tags": ["SecOps"],
+    "description": "Returns a list of all production entities.",
+    "queries": [
+      {
+        "name": "Find production true",
+        "query": "Find * with tag.Production=true"
+      }
+    ],
+    "compliance": [
+      {
+        "standard": "HITRUST CSF",
+        "requirements": ["10.k"]
+      }
+    ]
+  }
+}
+```
+
+Note that the only difference here for `update` is the `"id"` property
+associated with the question.
+
+### Delete a question.
+
+```graphql
+  mutation DeleteQuestion($id: ID!) {
+    deleteQuestion(id: $id) {
+      id
+      title
+      description
+      queries {
+        query
+        name
+        version
+      }
+      variables {
+        name
+        required
+        default
+      }
+      tags
+      accountId
+      integrationDefinitionId
+    }
+  }
+}
+```
+
+variables:
+
+```json
+{
+  "id": "slj3098s03j-i2ojd0j2-sjkkdjf"
 }
 ```
