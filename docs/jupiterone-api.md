@@ -1031,7 +1031,7 @@ variables:
     "description": "Returns a list of all production entities.",
     "queries": [
       {
-        "name": "Find production resources",
+        "name": "prodresources",
         "query": "Find * with tag.Production=true"
       }
     ],
@@ -1045,7 +1045,11 @@ variables:
 }
 ```
 
-Note that the query `name` field with the values `good`, `bad`, and `unkown` are used to perform continuous compliance gap analysis.
+**Notes on "named queries":**
+
+- `name` field is optional
+- `name` should be a single word without special characters
+- queries named `good`, `bad`, and `unkown` are used to determine gaps/issues and to perform continuous compliance assessment
 
 ### Update a question
 
@@ -1086,7 +1090,7 @@ variables:
     "description": "Returns a list of all production entities.",
     "queries": [
       {
-        "name": "Find production resources",
+        "name": "prodresources",
         "query": "Find * with tag.Production=true"
       }
     ],
