@@ -590,7 +590,7 @@ Find HostAgent as agent
     device.platform,
     device.osVersion,
     device.hardwareModel,
-    device.owner
+    device.owner,
     agent.firewall,
     agent.compliant,
     agent._type,
