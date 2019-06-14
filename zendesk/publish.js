@@ -82,11 +82,10 @@ async function publish() {
         user_segment_id: null,
         permission_group_id: zendesk_managers_agents_group_id
       }
-      console.log({article: art.title});
+
       // Calculate hash to determine if the content needs updating
       const hash = sha256(article);
       if (hash !== art.hash) {
-        console.log('!!!!UPDATE');
         // Update existing article if there is an id
         const response = art.id
           ? await request.put({
