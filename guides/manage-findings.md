@@ -9,6 +9,7 @@ manage security findings from different sources, including:
 - WhiteHat application security findings
 - Tenable Cloud scanning findings
 - HackerOne report findings
+- CVEs and other vulnerability findings
 - Manual penetration testing findings (imported via API - see [this guide][1])
 
 *More vulnerability scanner integrations are being added. Current roadmap
@@ -85,5 +86,20 @@ The following rule is included in the J1 **AWS Threat** Rule Pack:
     that has aws_inspector_finding with numericSeverity>5 and open=true as inspector
     return i.*, guardduty.*, inspector.*
   ```
+
+## Visualizing Findings with J1 Query and Graph
+
+You can execute J1QL queries to generate graph visualizations that help you
+analyze the relationships among findings, the agents/scanners/services that
+identified them, and the resources they impact.
+
+Here's an example:
+
+```Find cve that relates to (Host|HostAgent) with active=true return tree```
+
+This will give you a visual like this (you may need to move the nodes around to
+adjust their positioning):
+
+![graph-cve](../assets/graph-cve-agents.png)
 
 [1]: secops-artifacts-in-j1.md

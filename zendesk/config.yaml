@@ -41,7 +41,7 @@ sections:
       - title: 7/8 Manage Findings
         file: ../guides/manage-findings.md
         id: 360022901893
-        hash: ZFyA8g0XUZDbfnY2v2es/E7OzxjBq0DTneW58w7mUAg=
+        hash: KzVYZIbew2eLZpSWOcItcf3clDDvFLZhtGvFsrv/MKg=
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022901893-7-8-Manage-Findings
       - title: 8/8 Invite Your Team Members
@@ -56,7 +56,7 @@ sections:
       - title: FAQs
         file: ../guides/faqs.md
         id: 360022879453
-        hash: LNLRdalUF2AHF+jBrRy5QVgBLy7HLXCD7/rxJG65vGk=
+        hash: Nq64Xvw7i1QvSJoKAkKgAII0aVRc8C/QMbxjGP3aV60=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022879453-FAQs'
   - name: User Guides
     id: 360002297174
