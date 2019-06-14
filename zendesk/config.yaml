@@ -56,8 +56,35 @@ sections:
       - title: FAQs
         file: ../guides/faqs.md
         id: 360022879453
-        hash: Nq64Xvw7i1QvSJoKAkKgAII0aVRc8C/QMbxjGP3aV60=
+        hash: TleVZ0PeWEM04MXgGFe0oTLaamNR1ZuPOP46z+aW72Q=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022879453-FAQs'
+  - name: Common Questions and Queries
+    id: 360004563074
+    articles:
+      - title: Common Questions and Queries Catalog
+        file: ../queries/common-qq-index.md
+      - title: Hardware/software inventory and configuration
+        file: ../queries/common-qq-inventory-config.md
+      - title: Running applications and processes
+        file: ../queries/common-qq-apps-processes.md
+      - title: Secrets and key management
+        file: ../queries/common-qq-key-mgmt.md
+      - title: Network connections & zones
+        file: ../queries/common-qq-network.md
+      - title: Data Security
+        file: ../queries/common-qq-data.md
+      - title: Changes and attribution
+        file: ../queries/common-qq-changes.md
+      - title: Risks
+        file: ../queries/common-qq-risks.md
+      - title: Identity, People and Privileged access
+        file: ../queries/common-qq-idp.md
+      - title: Development
+        file: ../queries/common-qq-dev.md
+      - title: User Training and Awareness
+        file: ../queries/common-qq-training.md
+      - title: Endpoint Security
+        file: ../queries/common-qq-endpoint.md
   - name: User Guides
     id: 360002297174
     articles:
@@ -155,6 +182,8 @@ sections:
         id: 360022721054
         hash: 3zYP5ZwjIn9jM/K61li7WIJWUBpJybDBuW1V+hRT74o=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721054-AWS'
+      - title: Azure
+        file: ../docs/integrations/azure/jupiter-integration-azure.md
       - title: BitBucket
         file: ../docs/integrations/bitbucket/bitbucket.md
         id: 360022721074
