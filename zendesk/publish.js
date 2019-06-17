@@ -20,6 +20,8 @@ const baseUrl = 'https://jupiterone.zendesk.com/api/v2/help_center/';
 const user = process.env.ZENDESK_USER || 'callisto@jupiterone.io/token';
 const pass = process.env.ZENDESK_PASS;
 
+const zendesk_managers_agents_group_id = 554213;
+
 const request = rp.defaults({
   baseUrl,
   auth: {
@@ -38,11 +40,11 @@ function sha256(object) {
 
 function parseLinks() {
   let linksMap = {};
-  let linksRegexStr = '((\\.|\\.\\.)\\/)?((docs|guides)\\/)?(';
+  let linksRegexStr = '((\\.|\\.\\.)\\/)?((docs|guides|queries)\\/)?(';
   for (const section of config.sections || []) {
     for (const art of section.articles || []) {
       linksMap[art.file.substr(art.file.indexOf('/', 3)+1).replace('.md', '')] = art.webLink;
-      linksRegexStr += `(${art.file.replace(/\.\.\/(docs|guides)\//, '').replace(/\//g, '\\/').replace(/\.md/, '')})|`;
+      linksRegexStr += `(${art.file.replace(/\.\.\/(docs|guides|queries)\//, '').replace(/\//g, '\\/').replace(/\.md/, '')})|`;
     }
   }
   linksRegexStr = linksRegexStr.slice(0, -1) + ')(\\.md)';
@@ -77,6 +79,8 @@ async function publish() {
       const article = {
         title: art.title,
         body: html,
+        user_segment_id: null,
+        permission_group_id: zendesk_managers_agents_group_id
       }
 
       // Calculate hash to determine if the content needs updating

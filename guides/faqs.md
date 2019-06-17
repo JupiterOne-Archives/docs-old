@@ -140,3 +140,23 @@ activation step.
 Additional diagnostic information may be available in the device's system
 log. You can search this for "jupiterone" or "ECA:" to quickly filter the
 results.
+
+## How do I search/filter on all AWS entities without enumerating all types?
+
+For example, you may want to identify if a certain tag is present across all
+entities from AWS. You can do this by using the special metadata
+`_integrationName`, like this:
+
+```j1ql
+Find * with _integrationName="AWS" and tag.ABC=undefined
+```
+
+You may also want to limit this query to filter out irrelevant entities by class.
+For example:
+
+```j1ql
+Find * with
+  _integrationName="AWS" and
+  tag.ABC=undefined and
+  _class!='Finding'
+```
