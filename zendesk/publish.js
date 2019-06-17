@@ -20,7 +20,7 @@ const baseUrl = 'https://jupiterone.zendesk.com/api/v2/help_center/';
 const user = process.env.ZENDESK_USER || 'callisto@jupiterone.io/token';
 const pass = process.env.ZENDESK_PASS;
 
-const zendesk_managers_agents_group_id = 360000654813;
+const zendesk_managers_agents_group_id = 554213;
 
 const request = rp.defaults({
   baseUrl,

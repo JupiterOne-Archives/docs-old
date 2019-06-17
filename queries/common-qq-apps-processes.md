@@ -1,4 +1,4 @@
-# Running applications and processes
+# Applications and Processes
 
 _We plan to add deeper integration with endpoint protection and device management
 solutions to obtain services and processes information on hosts._
