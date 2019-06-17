@@ -56,7 +56,7 @@ sections:
       - title: FAQs
         file: ../guides/faqs.md
         id: 360022879453
-        hash: SYyRX4rF4c0uSTDSAb45o+vN6D21XNsPnO7KB9ytKQQ=
+        hash: DB5rT66/Z1olpeO2mVK9yX2Mr5IbQfkB9/xSSy+m8ZI=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022879453-FAQs'
   - name: Common Questions and Queries
     id: 360004563074
@@ -75,7 +75,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360024909093-Hardware-software-inventory-and-configuration
       - title: Applications and processes
         file: ../queries/common-qq-apps-processes.md
-        hash: kwIJqqXtLwUUURwU5Vza2NLPfiNOG0Em173MVx0sY3A=
+        hash: St5yDXSIoD8hyduhc+js6Dt2tRvMgLaKeaoNLKdx94c=
         id: 360024909113
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909113-Applications-and-processes
@@ -99,7 +99,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360024758154-Data-Security
       - title: Changes and attribution
         file: ../queries/common-qq-changes.md
-        hash: Bo+PmCnB2y1NhsPQ2hw9XbB3awzgBn+JfIL53ErWZ2k=
+        hash: 28yya3qkB+rqUhjVu64jT524217BPUhtxOD/HH2pHLE=
         id: 360024758174
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024758174-Changes-and-attribution
