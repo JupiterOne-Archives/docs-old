@@ -56,14 +56,14 @@ sections:
       - title: FAQs
         file: ../guides/faqs.md
         id: 360022879453
-        hash: 0CTabI9UPqfnpkV7Zz3ESGe71DSjKNMKrxuxwiylLNI=
+        hash: SYyRX4rF4c0uSTDSAb45o+vN6D21XNsPnO7KB9ytKQQ=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022879453-FAQs'
   - name: Common Questions and Queries
     id: 360004563074
     articles:
       - title: Common Questions and Queries Catalog
         file: ../queries/common-qq-index.md
-        hash: pg8xk6Qwptwh1oOL5ysYjlLg5ahZtC7qrzV1d9+vTy8=
+        hash: 735wEbK+wCMib/VZu/Gz4l9zGBKmmaIDE1aIBTtGqNY=
         id: 360024909073
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909073-Common-Questions-and-Queries-Catalog
@@ -87,7 +87,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360024758134-Secrets-and-key-management
       - title: Network connections & zones
         file: ../queries/common-qq-network.md
-        hash: U1LtBJhhZrn8gUBZYTlyAWV+JlD/susT10L+XBsP9SA=
+        hash: +KOBnb/rOVpWsNxF9tz0aXwXzuGkFJvLiyeVton+SM4=
         id: 360024909133
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909133-Network-connections-&-zones
@@ -105,7 +105,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360024758174-Changes-and-attribution
       - title: Risks and Vulnerability Management
         file: ../queries/common-qq-risks.md
-        hash: +wyszhfIOdifaijne+36bx2TStunwo+vqE6G7Sfbe5E=
+        hash: 4YPgNEuO7PKdz5vY+muJIt8lbCE/NO/vjFbZ5VTS7Rs=
         id: 360024758194
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024758194-Risks-and-Vulnerability-Management
@@ -149,8 +149,8 @@ sections:
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022903333-AWS-Threat-Monitoring
       - title: Common Questions and Queries
-        file: ../guides/common-questions-and-queries.md
-        hash: eJO2nIfAXcj7VKIq2SYnPQz3xdnf6xC0VaCwJN5iALo=
+        file: ../queries/common-qq-index.md
+        hash: cqTitqSFa7jSGoEsMyRHvUZ8mxBT4eT2AiXTfYSlU5s=
         id: 360022721914
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721914-Common-Questions-and-Queries

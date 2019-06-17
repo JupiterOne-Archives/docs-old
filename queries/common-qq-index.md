@@ -21,17 +21,17 @@ accessible in the **Landing** app in JupiterOne.
 - [User training and awareness][10]
 - [Endpoint security][11]
 
-[1]: common-qq-inventory-config.md
-[2]: common-qq-apps-processes.md
-[3]: common-qq-key-mgmt.md
-[4]: common-qq-network.md
-[5]: common-qq-data.md
-[6]: common-qq-changes.md
-[7]: common-qq-risks.md
-[8]: common-qq-idp.md
-[9]: common-qq-dev.md
-[10]: common-qq-training.md
-[11]: common-qq-endpoint.md
+[1]: ../queries/common-qq-inventory-config.md
+[2]: ../queries/common-qq-apps-processes.md
+[3]: ../queries/common-qq-key-mgmt.md
+[4]: ../queries/common-qq-network.md
+[5]: ../queries/common-qq-data.md
+[6]: ../queries/common-qq-changes.md
+[7]: ../queries/common-qq-risks.md
+[8]: ../queries/common-qq-idp.md
+[9]: ../queries/common-qq-dev.md
+[10]: ../queries/common-qq-training.md
+[11]: ../queries/common-qq-endpoint.md
 
 
 

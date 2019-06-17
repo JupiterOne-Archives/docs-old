@@ -40,11 +40,11 @@ function sha256(object) {
 
 function parseLinks() {
   let linksMap = {};
-  let linksRegexStr = '((\\.|\\.\\.)\\/)?((docs|guides)\\/)?(';
+  let linksRegexStr = '((\\.|\\.\\.)\\/)?((docs|guides|queries)\\/)?(';
   for (const section of config.sections || []) {
     for (const art of section.articles || []) {
       linksMap[art.file.substr(art.file.indexOf('/', 3)+1).replace('.md', '')] = art.webLink;
-      linksRegexStr += `(${art.file.replace(/\.\.\/(docs|guides)\//, '').replace(/\//g, '\\/').replace(/\.md/, '')})|`;
+      linksRegexStr += `(${art.file.replace(/\.\.\/(docs|guides|queries)\//, '').replace(/\//g, '\\/').replace(/\.md/, '')})|`;
     }
   }
   linksRegexStr = linksRegexStr.slice(0, -1) + ')(\\.md)';

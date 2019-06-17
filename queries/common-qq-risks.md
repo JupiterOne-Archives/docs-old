@@ -16,7 +16,8 @@ Find (Application|CodeRepo) as app that has (Finding|Vulnerability) as vuln
 _Requires enabling AWS Inspector, GuardDuty, Tenable or similar integration._
 
 ```j1ql
-Find (Host|Workload|DataStore) as system that has (Finding|Vulnerability) as vuln
+Find (Host|Workload|DataStore) as system
+  that has (Finding|Vulnerability) as vuln
   return
     system._type, system.displayName,
     vuln._type, vuln.displayName, vuln.severity, vuln.numericSeverity
@@ -36,7 +37,8 @@ Similar, you can query for vulnerability findings that are resolved/suppressed
 or marked as exception:
 
 ```j1ql
-Find (Finding|Vulnerability) with open=false or suppressed=true or exception=true
+Find (Finding|Vulnerability)
+  with open=false or suppressed=true or exception=true
 ```
 
 ## Do I have proper vendor support for my software applications?
@@ -51,7 +53,8 @@ Find Application as app that
 // Or in a more generic way
 Find Application that RELATES TO (Vendor|Account)
 
-// Returns all applications that does not have a vendor or vendor account associated
+// Returns all applications that does not have a vendor or
+// vendor account associated
 Find Application that !RELATES TO (Vendor|Account)
 ```
 

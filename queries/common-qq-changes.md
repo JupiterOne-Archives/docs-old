@@ -17,4 +17,3 @@ _This will be captured when we start processing cloudtrail events._
 ## What changes were made with interactive sessions?
 
 _This will be captured when we start processing cloudtrail events._
-

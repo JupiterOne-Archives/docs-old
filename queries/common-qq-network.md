@@ -4,7 +4,8 @@
 
 ```j1ql
 Find Firewall as fw
-  that ALLOWS as r (Network|Host) with internal=undefined or internal=false as n
+  that ALLOWS as r (Network|Host) with
+    internal=undefined or internal=false as n
   return
     fw.tag.AccountName, fw._type, fw.displayName, fw.description,
     r.ipProtocol, r.fromPort, r.toPort,
@@ -66,10 +67,12 @@ Find DataStore that allows Everyone
 ```j1ql
 Find Gateway
 
-// Network layer gateways including AWS internet gateways, network load balancers, etc.
+// Network layer gateways including AWS internet gateways,
+// network load balancers, etc.
 Find Gateway with category='network'
 
-// Application layer gateways including API gateways, application load balancers, etc.
+// Application layer gateways including API gateways,
+// application load balancers, etc.
 Find Gateway with category='application'
 
 // More specifically, find AWS ELB application and network load balancers
@@ -117,26 +120,33 @@ configuration information via the J1 API._
 
 ```j1ql
 Find Network with wireless=true as n
-  that (HAS|CONTAINS|CONNECTS|PROTECTS) (Gateway|Firewall) with category='network' as g
+  that (HAS|CONTAINS|CONNECTS|PROTECTS) (Gateway|Firewall)
+    with category='network' as g
   that (CONNECTS|ALLOWS|PERMITS|DENIES|REJECTS) as r *
   return
-    n.displayName as Network, n._type as NetworkType, n.cidr as CIDR, n.environment as Environment,
-    g.displayName as Gateway, g._type as GatewayType, r._class, r.ipProtocol, r.fromPort, r.toPort
+    n.displayName as Network, n._type as NetworkType,
+    n.cidr as CIDR, n.environment as Environment,
+    g.displayName as Gateway, g._type as GatewayType,
+    r._class, r.ipProtocol, r.fromPort, r.toPort
 ```
 
 ## Are there VPN configured for remote access?
 
 ```j1ql
-// Performs a full text search to see if any indexed data that matches the
-// search string 'vpn' is a VPN Host, a VPN Device, a VPN Network or a VPN Gateway
-'vpn' with _class='Host' or _class='Device' or _class='Network' or _class='Gateway'
+// Performs a full text search to see if any indexed data that matches
+// the search string 'vpn' is a VPN Host, a VPN Device, a VPN Network
+// or a VPN Gateway
+
+'vpn' with
+  _class=('Host' or 'Device' or 'Network' or 'Gateway')
 ```
 
 ## Is there proper segmentation/segregation of networks?
 
 ```j1ql
 Find Network with internal=true as n
-  that (HAS|CONTAINS|CONNECTS|PROTECTS) (Gateway|Firewall) with category='network' as g
+  that (HAS|CONTAINS|CONNECTS|PROTECTS) (Gateway|Firewall)
+    with category='network' as g
   return
     n.displayName as Network,
     n._type as NetworkType,
@@ -152,7 +162,9 @@ Find Network with internal=true as n
 ```j1ql
 Find Firewall as fw
   that ALLOWS as rule * as src
-  where rule.ingress=true and rule.ipProtocol='tcp' and rule.fromPort<=22 and rule.toPort>=22
+  where rule.ingress=true and
+    rule.ipProtocol='tcp' and
+    rule.fromPort<=22 and rule.toPort>=22
   return
     fw.displayName,
     rule.ipProtocol, rule.fromPort, rule.toPort,
@@ -163,8 +175,11 @@ Find Firewall as fw
 
 ```j1ql
 Find Firewall as fw
-  that ALLOWS as rule (Host|Network) with internal=false or internal=undefined as src
-  where rule.ingress=true and rule.ipProtocol='tcp' and rule.fromPort<=22 and rule.toPort>=22
+  that ALLOWS as rule (Host|Network) 
+    with internal=false or internal=undefined as src
+  where
+    rule.ingress=true and rule.ipProtocol='tcp' and
+    rule.fromPort<=22 and rule.toPort>=22
   return
     fw.displayName,
     rule.fromPort, rule.toPort,
