@@ -42,3 +42,4 @@ The following relationships are created/mapped:
 | `threatstack_account` **HAS** `threatstack_agent` |
 | `threatstack_agent` **PROTECTS** `aws_instance`   |
 | `threatstack_agent` **PROTECTS** `server`         |
+| `threatstack_agent` **IDENTIFIED** `cve`          |
