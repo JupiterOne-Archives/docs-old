@@ -53,7 +53,8 @@ _To be added._
 ## When was the last time a service or server runtime was refreshed / updated / cycled?
 
 ```j1ql
-// Returns EC2 instances and the AMI images they are using, and the creation timestamp of the AMI
+// Returns EC2 instances and the AMI images they are using, and the
+// creation timestamp of the AMI
 Find Host as h that uses Image as i
   return
     h.tag.AccountName, h.displayName, h.instanceId,
