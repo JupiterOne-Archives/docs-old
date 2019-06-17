@@ -56,7 +56,7 @@ sections:
       - title: FAQs
         file: ../guides/faqs.md
         id: 360022879453
-        hash: DB5rT66/Z1olpeO2mVK9yX2Mr5IbQfkB9/xSSy+m8ZI=
+        hash: n217RbT9Yh3qhCN3gwOS3Arcrjt+FeOMftI/9cnhKVY=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022879453-FAQs'
   - name: Common Questions and Queries
     id: 360004563074
@@ -93,7 +93,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360024909133-Network-connections-&-zones
       - title: Data Security
         file: ../queries/common-qq-data.md
-        hash: y105rhaqCg97z4i5vT39ErnJjso4DtWIGZDPuTDgYaQ=
+        hash: mYNwmgoKS6gW8TCBuUufXbwK4xVELfJ1HFfrZYE8eCk=
         id: 360024758154
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024758154-Data-Security

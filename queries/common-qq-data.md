@@ -21,10 +21,10 @@ Find (Host|DataStore|Workload) with classification = undefined
   that relates to aws_vpc with vpcId='{vpcId}' or name='{name}'
 ```
 
-## What are all the resources without encryption with data security tag '{Restricted}'?
+## What are all the resources without encryption with data security tag '{restricted}'?
 
 ```j1ql
-Find DataStore with encrypted!=true and classification='Restricted'
+Find DataStore with encrypted!=true and classification='restricted'
 
 // Sometimes is also interesting to find unencrypted data that is non-public
 Find DataStore with encrypted!=true and classification!='Public'
