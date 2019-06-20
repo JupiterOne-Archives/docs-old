@@ -56,7 +56,7 @@ sections:
       - title: FAQs
         file: ../guides/faqs.md
         id: 360022879453
-        hash: n217RbT9Yh3qhCN3gwOS3Arcrjt+FeOMftI/9cnhKVY=
+        hash: Gp7xRBfYWjxPKmf/wCwA01OkDw8R2D4mHXpU47/SMXI=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022879453-FAQs'
   - name: Common Questions and Queries
     id: 360004563074
@@ -171,7 +171,7 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: ccNJX2s5PS5lerYvT5OVWqZwY0cY/C0oKALgdIMRNjo=
+        hash: h77PHH9BKKzkPcYQt2mSGyZcpZ7ki4+cYtp+h+MaIe0=
         id: 360022722014
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022722014-J1QL-Language-Specs
@@ -264,7 +264,7 @@ sections:
       - title: Jamf
         file: ../docs/integrations/jamf/jupiter-integration-jamf.md
         id: 360022721134
-        hash: R6hvwvtiE1Dw2b/Bt2ahdaRqq/rRLWzf4jqWn9NHe84=
+        hash: BH6tsyyNZYsEjWXwst1PKLU0fxwID9ZDE0G3duB4mk0=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721134-Jamf'
       - title: Jira
         file: ../docs/integrations/jira/jupiter-integration-jira.md
@@ -297,6 +297,11 @@ sections:
         hash: rMldsKUY6xeQ/VfsLYzGNp9Lvf58Ul2TpDq5NoLXBvE=
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721214-SentinelOne
+      - title: Snyk
+        file: ../docs/integrations/snyk/index.md
+        hash: 3Flq4RistXQPVhPmk/Giehcmx8laPgylS85KVx2LeG8=
+        id: 360024788554
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024788554-Snyk'
       - title: Tenable Cloud
         file: >-
           ../docs/integrations/tenable-cloud/jupiter-integration-tenable-cloud.md
@@ -306,7 +311,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360022902593-Tenable-Cloud
       - title: Threat Stack
         file: ../docs/integrations/threatstack/index.md
-        hash: MToB0LN2O5W9YnkKirLpJ3gt58ONQ6BA1ez67oXPfmM=
+        hash: Y2b4BJiTYbytozaZokcN0Wlt6YdPDA6GE9U21exKFUY=
         id: 360023924853
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360023924853-Threat-Stack
