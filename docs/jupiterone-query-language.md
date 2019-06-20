@@ -70,6 +70,16 @@ boundaries obvious to query authors.
 > FIND user_endpoint WITH platform = 'darwin' OR platform = 'linux'
 > ```
 
+- You can filter multiple property values like this (similar to `IN` in SQL):
+
+  >  ```j1ql
+  >  FIND user_endpoint WITH platform = ('darwin' OR 'linux')
+  >
+  >  Find Host WITH tag.Environment = ('A' or 'B' or 'C')
+  >
+  >  Find DataStore WITH classification != ('critical' and 'restricted')
+  >  ```
+
 `THAT` is followed by a **Relationship verb**.
 
 > The verb is the `class` value of a **Relationship** -- that is, the edge
@@ -122,7 +132,8 @@ boundaries obvious to query authors.
 >
 > ```j1ql
 > FIND Firewall as fw that ALLOWS as rule * as n
->   WHERE rule.ingress=true AND (rule.fromPort=22 or rule.toPort=22)
+>   WHERE rule.ingress=true AND
+>     (rule.fromPort=22 or rule.toPort=22)
 > ```
 >
 > The following examples joins the properties of two different network entities,
@@ -174,7 +185,8 @@ In the example below, the query sorts users by their username, and returns the
 15th-20th users from the sorted list.
 
 ```j1ql
-FIND Person as u WITH encrypted = false ORDER BY u.username SKIP 10 LIMIT 5
+FIND Person as u WITH encrypted = false
+  ORDER BY u.username SKIP 10 LIMIT 5
 ```
 
 ## Aggregation Functions: `COUNT`, `MIN`, `MAX`, `AVG` and `SUM`
