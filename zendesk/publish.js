@@ -71,7 +71,7 @@ async function publish() {
       }
       
       const html = converter.makeHtml(data)
-        .replace(/..\/assets\//g, 'http://jupiterone.com/wp-content/uploads/')
+        .replace(/(..\/)+assets\//g, 'http://jupiterone.com/wp-content/uploads/')
         .replace(/<pre><code/g, '<pre><div')
         .replace(/<\/code><\/pre>/g, '</div></pre>')
         .replace(/<h2 id="(.*)">(.*)<\/h2>/g, `<h2 id="$1">$2 <a href="#$1"><img src="https://raw.githubusercontent.com/feathericons/feather/master/icons/link.svg?sanitize=true" width="12" height="12"></a></a></h2>`)
