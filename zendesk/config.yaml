@@ -56,7 +56,7 @@ sections:
       - title: FAQs
         file: ../guides/faqs.md
         id: 360022879453
-        hash: iUU2xzSj2o88y/LJzPFGvHjmDhNib+f8Dn2hXECFKEY=
+        hash: hDF1CjGfjVxl0FBLmucJvS5ky2oL+UHfY7MbZPESGIc=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022879453-FAQs'
   - name: Common Questions and Queries
     id: 360004563074
@@ -336,6 +336,10 @@ sections:
     articles:
       - title: 2019.25 Release
         file: ../release-notes/2019-25.md
+        hash: l8NuPc8k1coYtWPcyaZGGl+9aKGcGteke/Z0BM8Xgrw=
+        id: 360025585253
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360025585253-2019.25-Release
       - title: 2019.24 Release
         file: ../release-notes/2019-24.md
         hash: eZkRUbcJYjtb2UbyP4nKzUZIcqlPnLm8l2xLJUHIL6Y=
