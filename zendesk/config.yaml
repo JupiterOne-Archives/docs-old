@@ -56,7 +56,7 @@ sections:
       - title: FAQs
         file: ../guides/faqs.md
         id: 360022879453
-        hash: Gp7xRBfYWjxPKmf/wCwA01OkDw8R2D4mHXpU47/SMXI=
+        hash: OlH0VTffCr+Wa1LrW+KG8KAbQERtAN4YaWdffti/mnU=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022879453-FAQs'
   - name: Common Questions and Queries
     id: 360004563074
@@ -238,7 +238,7 @@ sections:
       - title: BitBucket
         file: ../docs/integrations/bitbucket/bitbucket.md
         id: 360022721074
-        hash: UX1k7OnSBBfekxsZJyzgg1IBffPbRjWa9gtPhnKlUgs=
+        hash: CyxbkP6oBKoEJZmcZk5NYsZAnoycYX34lRC+fMrYxQk=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721074-BitBucket'
       - title: Carbon Black PSC
         file: ../docs/integrations/cbdefense/jupiter-integration-cbdefense.md
@@ -334,6 +334,12 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2019.25 Release
+        file: ../release-notes/2019-25.md
+        hash: sdJrv+fEMxGXrsMeg0tbK30IUgEApcAlNysTtYGtXtU=
+        id: 360025585253
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360025585253-2019.25-Release
       - title: 2019.24 Release
         file: ../release-notes/2019-24.md
         hash: eZkRUbcJYjtb2UbyP4nKzUZIcqlPnLm8l2xLJUHIL6Y=
