@@ -56,7 +56,7 @@ sections:
       - title: FAQs
         file: ../guides/faqs.md
         id: 360022879453
-        hash: OlH0VTffCr+Wa1LrW+KG8KAbQERtAN4YaWdffti/mnU=
+        hash: LfarMofuxYfooMCM0P2VgMTHSiDi4P6mlokIqGqXCqs=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022879453-FAQs'
   - name: Common Questions and Queries
     id: 360004563074
@@ -166,6 +166,12 @@ sections:
         id: 360022721994
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721994-J1-Endpoint-Compliance-Agent
+      - title: Enable API Key Access
+        file: ../guides/api-key-access.md
+        hash: RM1bxkEzgl6v6MpDu2CmK7DbikW9WjWvTFD6uQ22wu8=
+        id: 360025989253
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360025989253-Enable-API-Key-Access
   - name: JupiterOne Query Language (J1QL)
     id: 360004247533
     articles:
@@ -190,6 +196,12 @@ sections:
         id: 360022903373
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022903373-JupiterOne-Node.js-Client-and-CLI
+      - title: Enable API Key Access
+        file: ../guides/api-key-access.md
+        hash: RM1bxkEzgl6v6MpDu2CmK7DbikW9WjWvTFD6uQ22wu8=
+        id: 360025847594
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360025847594-Enable-API-Key-Access
   - name: Security and Compliance as Code
     id: 360004326633
     articles:
