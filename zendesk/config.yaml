@@ -56,7 +56,7 @@ sections:
       - title: FAQs
         file: ../guides/faqs.md
         id: 360022879453
-        hash: LfarMofuxYfooMCM0P2VgMTHSiDi4P6mlokIqGqXCqs=
+        hash: EHqEdcrrCeEKqspkpvATAqjLJwCgV3MBpNU3lCSqdLM=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022879453-FAQs'
   - name: Common Questions and Queries
     id: 360004563074
@@ -156,7 +156,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360022721914-Common-Questions-and-Queries
       - title: Configure SAML SSO Integration
         file: ../guides/configure-sso-integration.md
-        hash: wlR1zm9gDWupHTw7mcSraluoCChjDxXSGzT97pp2s7s=
+        hash: czJ7rOfN16+Ivmhe4n1XJZW6hg6yfosK9g5cAroNbAY=
         id: 360022903353
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022903353-Configure-SAML-SSO-Integration

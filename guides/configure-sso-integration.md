@@ -38,18 +38,18 @@ _IdP-initiated SSO is currently unsupported due to a limitation of Amazon Cognit
 1. In the client configuration screen, copy the following two variables to be
    used when adding JupiterOne as an application in your SAML IdP account:
 
-   - **Single Sign On URL**
-   - **Audience URI (SP Entity ID)**
+    - **Single Sign On URL**
+    - **Audience URI (SP Entity ID)**
 
 1. In your IdP Account, add a new SAML Application and name it "JupiterOne".
 
-   - Copy/paste the previous two variable values in the SAML settings.
-   - Use the same **Single Sign On URL** string value for **Recipient URL** and
-     **Destination URL**.
-   - Leave the **Default Relay State** blank.
-   - Select *EmailAddress* for **Name ID Format**.
-   - Select *Email* or *Username* for **Application Username**.
-   - See next section for details on **Attribute Mappings**.
+    - Copy/paste the previous two variable values in the SAML settings.
+    - Use the same **Single Sign On URL** string value for **Recipient URL** and
+      **Destination URL**.
+    - Leave the **Default Relay State** blank.
+    - Select *EmailAddress* for **Name ID Format**.
+    - Select *Email* or *Username* for **Application Username**.
+    - See next section for details on **Attribute Mappings**.
 
 1. Complete setup of the SAML application within your IdP account, and copy
    the **Identity Provider Metadata** link.
@@ -69,9 +69,9 @@ _IdP-initiated SSO is currently unsupported due to a limitation of Amazon Cognit
 
    ![allowed-oauth-flows](../assets/j1-sso-client-oauth-flows.png)
 
-Save and you are all set. Next time you access your JupiterOne account via the
-vanity URL (e.g. https://your_company.apps.us.jupiterone.io), you should be
-redirected to your SAML IdP for authentication.
+   Save and you are all set. Next time you access your JupiterOne account via
+   the vanity URL (e.g. https://your_company.apps.us.jupiterone.io), you should
+   be redirected to your SAML IdP for authentication.
 
 ## Attribute Mappings
 
