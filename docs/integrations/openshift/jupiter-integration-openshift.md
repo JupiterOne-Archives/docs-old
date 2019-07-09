@@ -52,7 +52,7 @@ The following entity resources are ingested when the integration runs:
 
 The following relationships are created/mapped:
 
-| From                | Type         | To                          |
+| From                | Edge         | To                          |
 | ------------------- | ------------ | --------------------------- |
 | `openshift_account` | **HAS**      | `openshift_user_group`      |
 | `openshift_account` | **HAS**      | `openshift_project`         |
