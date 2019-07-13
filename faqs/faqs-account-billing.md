@@ -1,0 +1,50 @@
+# Account and billing related FAQs
+
+## What are entities? And how are they counted for usage/billing?
+
+An `entity` is a `node` stored in the JupiterOne graph database. Entities
+typically come from an integration. They can also be added via the Asset
+Inventory web app or API (custom scripts).
+
+Each entity represents an object from your organization's digital operational
+environment. Examples include an AWS EC2 instance, RDS DB cluster, RDS DB
+instance, IAM role, IAM policy, user endpoint, etc.
+
+The following entities are not counted for billing/usage calculation:
+
+- **Mapped Entities** -- these are entities with `_source='system-mapper'`
+  property. These are entities derived by the JupiterOne Mapper, such as an
+  external Network or Host entity created because a security group contains a
+  rule pointing to it.
+
+- **Findings and PRs** -- these entities are considered "event-like" and not
+  true resources in an digital operating environment, therefore they are not
+  being counted for usage/billing purpose.
+
+## What are the limitations of the `COMMUNITY` Edition of JupiterOne? 
+
+JupiterOne `COMMUNITY` Edition is FREE for non-commercial use, non-profit or
+small teams. It comes with the following features:
+
+- Configure up to *five* integration instances
+- Up to 500 entities and 10 users
+- Access to Asset Inventory / CMDB, search, query and graph visualization from
+  query results
+
+The following limitations apply:
+
+- Integrations cannot be configured for scheduled polling -- you can still
+  manually trigger an integration to run to get updated data.
+
+Additionally, a paid subscription is required for the following capabilities:
+
+- Automated and continuous data polling and analysis
+- Alerts and notifications (email, Jira, Slack)
+- Reporting charts and dashboards
+- Compliance management, evidence collection with continuous assessment
+- Policy management (build/edit/export policies and procedures) and compliance
+  mapping
+- Full API access
+- SAML Single Sign On
+
+_Note: the entity limit for a paid account depends on the subscription tier._

@@ -53,11 +53,18 @@ sections:
   - name: FAQs
     id: 360002319333
     articles:
-      - title: FAQs
-        file: ../guides/faqs.md
+      - title: Account and Billing Questions
+        file: ../faqs/faqs-account-billing.md
+        hash: LWeMCE4qzutVPUFhkQkfWWHjlz6GQjmEN7lc8UG+nJk=
+        id: 360026412374
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
+      - title: General Questions
+        file: ../faqs/faqs.md
         id: 360022879453
-        hash: EHqEdcrrCeEKqspkpvATAqjLJwCgV3MBpNU3lCSqdLM=
-        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022879453-FAQs'
+        hash: ISt0P+Tgb3tNHzUQP29M7uParnmybaoshHk2IXgGIqk=
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360022879453-General-Questions
   - name: Common Questions and Queries
     id: 360004563074
     articles:
