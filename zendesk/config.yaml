@@ -53,11 +53,36 @@ sections:
   - name: FAQs
     id: 360002319333
     articles:
-      - title: FAQs
-        file: ../guides/faqs.md
+      - title: Account and Billing Questions
+        file: ../faqs/faqs-account-billing.md
+        hash: T6O4Sj0EZZpoL41tDE27C+iS/rdwxYwjVWCxSFWm0I0=
+        id: 360026412374
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
+      - title: Integrations and Mapping Related Questions
+        file: ../faqs/faqs-integrations.md
         id: 360022879453
-        hash: LfarMofuxYfooMCM0P2VgMTHSiDi4P6mlokIqGqXCqs=
-        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022879453-FAQs'
+        hash: xdxL+2nELIiokt48tSJL7OADrTjOsTYVAzxf93HHzyk=
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360022879453-Integrations-and-Mapping-Related-Questions
+      - title: AWS Specific Questions
+        file: ../faqs/faqs-aws.md
+        hash: CZAvBpt107ou1BbtAZ0ENzzZ56Vqpxa0eZNAdkiSLHg=
+        id: 360026412494
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360026412494-AWS-Specific-Questions
+      - title: Query Related Questions
+        file: ../faqs/faqs-query.md
+        hash: DE1l9pcT9dxneYxD7jFFMxBLmTQM98PJJnY2djUdS64=
+        id: 360026563033
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360026563033-Query-Related-Questions
+      - title: Endpoint Agent Questions
+        file: ../faqs/faqs-endpoint.md
+        hash: 9OiIL4oT9XaSFrX2YXdx7iXpqghBs1xyTNFQfz2RIC8=
+        id: 360026412514
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360026412514-Endpoint-Agent-Questions
   - name: Common Questions and Queries
     id: 360004563074
     articles:
@@ -156,7 +181,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360022721914-Common-Questions-and-Queries
       - title: Configure SAML SSO Integration
         file: ../guides/configure-sso-integration.md
-        hash: wlR1zm9gDWupHTw7mcSraluoCChjDxXSGzT97pp2s7s=
+        hash: czJ7rOfN16+Ivmhe4n1XJZW6hg6yfosK9g5cAroNbAY=
         id: 360022903353
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022903353-Configure-SAML-SSO-Integration
