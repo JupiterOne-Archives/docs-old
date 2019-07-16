@@ -41,6 +41,7 @@ The following entity resources are ingested when the integration runs:
 | Account                | `github_account` : `Account`   |
 | Repository             | `github_repo` : `CodeRepo`     |
 | User                   | `github_user` : `User`         |
+| Pull Request           | `github_pullrequest` : `PR`    |
 
 ## Relationships
 
@@ -52,3 +53,7 @@ The following relationships are created/mapped:
 | --
 | `github_account` **OWNS** `github_repo`
 | `github_account` **HAS** `github_user`
+| `github_repo` **HAS** `github_pullrequest`
+| `github_user` **OPENED** `github_pullrequest`
+| `github_user` **REVIEWED** `github_pullrequest`
+| `github_user` **APPROVED** `github_pullrequest`
