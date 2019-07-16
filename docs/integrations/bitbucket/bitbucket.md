@@ -52,3 +52,5 @@ The following relationships are created/mapped:
 | `bitbucket_project` **HAS** `bitbucket_repo`
 | `bitbucket_repo` **HAS** `bitbucket_pull_request`
 | `bitbucket_user` **OPENED** `bitbucket_pull_request`
+| `bitbucket_user` **REVIEWED** `bitbucket_pull_request`
+| `bitbucket_user` **APPROVED** `bitbucket_pull_request`
