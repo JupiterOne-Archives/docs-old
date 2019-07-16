@@ -1,0 +1,6 @@
+---
+dockerImages:
+  - name: jupiter-docs
+    dockerfile: deploy/Dockerfile
+    baseDir: .
+    usageTarget: deploy
