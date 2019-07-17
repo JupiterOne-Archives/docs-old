@@ -1,21 +1,20 @@
 # Detect Suspicious Code Commits in Pull Requests
 
 Security of software development and code is more important than ever.
-JupiterOne is capable of detecting suspicious code commits in a git pull request
-(PR) in two ways:
+JupiterOne can detect suspicious code commits and git behavior in Bitbucket and
+GitHub pull requests (PRs). For example:
 
 - Commits self-approved by the code author
 - Commits made by a user unknown to the organization
+- Rewritten commit history
 
 ## Enable Detection
 
 For the detection to work, you will need to:
 
 - Enable Pull Request (PR) and commit analysis in the integration configuration
-  in JupiterOne.
-
-  _This feature is currently supported on Bitbucket integration. Github support
-  is coming soon._
+  in JupiterOne. This is automatically enabled for GitHub integrations but must
+  be explicitly turned on in Bitbucket integrations.
 
 - Configure branch permissions in your git source control system to prohibit
   directly committing to the main branch (e.g. `master`) and to require pull
@@ -24,8 +23,8 @@ For the detection to work, you will need to:
   _This option is typically found under the repo settings. This allows PR
   analysis to catch the suspicious activities._
 
-When enabled, JupiterOne sets the `approved` and `validated` flags on each
-merged PR entity.
+When enabled, JupiterOne sets the `approved`, `validated`, and
+`approvedCommitsRemoved` flags on each merged PR entity.
 
 You can run a J1QL query to detect "PRs with suspicious activities":
 
@@ -44,8 +43,8 @@ deploying code to production.
 ### Detecting self-approved commits
 
 At the time of integration execution, or when requested via the API, JupiterOne
-will analyze the activities on a merged PR to determine if there is any code
-commit on the PR that was not approved by someone other than the code author.
+will analyze the activities on a PR to determine if there is any code commit on
+the PR that was not approved by someone other than the code author.
 
 _Isn't this already configured via branch protection/permissions?_
 
@@ -68,12 +67,24 @@ The commit hash of the detected suspicious commit is added to the
 
 ### Detecting commits by unknown/external authors
 
-Additionally, JupiterOne checks the commit author against known bitbucket users
-that are part of your organization. If a commit was made by an unknown/external
-author, JupiterOne sets the `validated` flag on the PR entity to `false`.
+Additionally, JupiterOne checks the commit author against known users that are
+part of your organization. If a commit was made by an unknown/external author,
+JupiterOne sets the `validated` flag on the PR entity to `false`.
 
 The commit hash of the detected suspicious commit is added to the
 `commitsByUnknownAuthor` list property.
+
+### Detecting rewritten history
+
+JupiterOne will check commits going in to master to ensure that they're
+approved, regardless of Bitbucket's or GitHub's approval statuses. This means
+that rewriting history in a way that invalidates previous approvals (for
+example, squash merging) is flagged by setting the `approved` property to
+`false` and the `approvedCommitsRemoved` property to `true`.
+
+If you still want to squash merge for a beautiful git history, but also want to
+avoid merging commits into master that are not explicitly approved, you can
+rebase before having your code approved and then merge normally.
 
 ## Combine suspicious commits checking and vulnerability checking for CI/CD
 
