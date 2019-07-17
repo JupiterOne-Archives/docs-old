@@ -1,0 +1,5 @@
+aws_cloudfront_distribution_min_ttl: 0
+aws_cloudfront_distribution_default_ttl: 0
+aws_cloudfront_distribution_max_ttl: 0
+docs_acm_certificate_domain: "*.dev.jupiterone.io"
+docs_domain: "docs.dev.jupiterone.io"
