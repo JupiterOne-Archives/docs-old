@@ -55,7 +55,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: T6O4Sj0EZZpoL41tDE27C+iS/rdwxYwjVWCxSFWm0I0=
+        hash: lzUY/V1sT3GmazYV1UJdz+nG5enXDxwk12v1qotq5tQ=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -275,7 +275,7 @@ sections:
       - title: BitBucket
         file: ../docs/integrations/bitbucket/bitbucket.md
         id: 360022721074
-        hash: CyxbkP6oBKoEJZmcZk5NYsZAnoycYX34lRC+fMrYxQk=
+        hash: O0ivwlcI+f0lmPIVLz+/uPk0ohrv/8rAjyGKbgIjtLw=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721074-BitBucket'
       - title: Carbon Black PSC
         file: ../docs/integrations/cbdefense/jupiter-integration-cbdefense.md
@@ -326,7 +326,7 @@ sections:
       - title: OpenShift
         file: ../docs/integrations/openshift/jupiter-integration-openshift.md
         id: 360022721194
-        hash: 0wGKLsZSt4hg2GzASwB8CJUvqvhbCYVmoPuGq3unZ7I=
+        hash: TIA/TmPBdu7WOJuSNmkWWJzPESq47S4EIydj/3OMmmQ=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721194-OpenShift'
       - title: SentinelOne
         file: ../docs/integrations/sentinelone/jupiter-integration-sentinelone.md
@@ -371,6 +371,12 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2019.26 Release
+        file: ../release-notes/2019-26.md
+        hash: 8UjdA90Vn1hQ8C7/bxnOsPpWbFGywnXcANjbHL9pXgs=
+        id: 360026699413
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360026699413-2019.26-Release
       - title: 2019.25 Release
         file: ../release-notes/2019-25.md
         hash: sdJrv+fEMxGXrsMeg0tbK30IUgEApcAlNysTtYGtXtU=
