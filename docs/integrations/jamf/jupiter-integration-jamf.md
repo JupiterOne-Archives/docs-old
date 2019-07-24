@@ -18,14 +18,15 @@ jamf provides [detailed instructions on creating credentials][1].
 
 The following entity resources are ingested when the integration runs:
 
-| Entity Resource | \_type : \_class of the Entity   |
-| --------------- | -------------------------------- |
-| Account         | `jamf_account` : `Account`       |
-| Admin           | `jamf_user` : `User`             |
-| Group           | `jamf_group` : `UserGroup`       |
-| User            | `device_user` : `User`           |
-| MobileDevice    | `jamf_mobile_device` : `Device`  |
-| Computer        | `user_endpoint` : `Host, Device` |
+| Entity Resource           | \_type : \_class of the Entity                     |
+| ------------------------- | -------------------------------------------------- |
+| Account                   | `jamf_account` : `Account`                         |
+| Admin                     | `jamf_user` : `User`                               |
+| Group                     | `jamf_group` : `UserGroup`                         |
+| User                      | `device_user` : `User`                             |
+| MobileDevice              | `jamf_mobile_device` : `Device`                    |
+| Computer                  | `user_endpoint` : `Host, Device`                   |
+| OSX Configuration Profile | `jamf_osx_configuration_profile` : `Configuration` |
 
 ## Relationships
 
