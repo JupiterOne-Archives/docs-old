@@ -55,7 +55,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: lzUY/V1sT3GmazYV1UJdz+nG5enXDxwk12v1qotq5tQ=
+        hash: M/fChsWANScA76jiAX6ayXMLUM0xSHe+6YlKHp6q4XA=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -148,7 +148,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360024909173-Development
       - title: User Training and Awareness
         file: ../queries/common-qq-training.md
-        hash: MyVJy64TIDvKpsEppOn3WZySvr6nFTWG8Jqx5I/L+OI=
+        hash: ZIV/AFe1yi3neilhkbATlO8eOVrjeksYa6BJtM/+QSE=
         id: 360024909193
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909193-User-Training-and-Awareness
@@ -373,7 +373,7 @@ sections:
     articles:
       - title: 2019.26 Release
         file: ../release-notes/2019-26.md
-        hash: 8UjdA90Vn1hQ8C7/bxnOsPpWbFGywnXcANjbHL9pXgs=
+        hash: HtY46mNDXPT+Ef5eSVOm0C4PlX+XB+wGacI2t1OecPc=
         id: 360026699413
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026699413-2019.26-Release
