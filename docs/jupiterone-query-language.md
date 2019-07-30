@@ -203,7 +203,6 @@ requested via the `RETURN` clause.
 The following aggregating functions are supported:
 
 - `count(selector)`
-- `count(selector.field)`
 - `min(selector.field)`
 - `max(selector.field)`
 - `avg(selector.field)`
@@ -233,7 +232,7 @@ return
 
 See more details and examples [below](#How-aggregations-are-applied).
 
-Future development:
+_Future development:_
 
 > There are plans to support the following aggregations:
 >
@@ -404,22 +403,37 @@ If all selectors are aggregations, then all aggregations will be
 scoped to the entire traversal that the user has requested and not
 tied to individual entities.
 
-Ex. `return count(user), count(team)`
+Ex. `return count(acct), count(user)`:
 
-#### Aggregations relative to a grouping
+```j1ql
+Find Account as acct that has User as user
+return count(acct), count(user)
+```
+
+#### Aggregations relative to a grouping by entity attribute
 
 If selectors are provided that do not use an aggregation function,
 they will be used as a _grouping key_.
 This key will be used to apply the aggregations relative to the data chosen.
 
-Ex. `return user, count(team)`
+Ex. `return acct._type, count(user)`:
 
-#### Aggregations relative to a single entity
+```j1ql
+Find Account as acct that has User as user
+return acct._type, count(user)
+```
 
-If aggregations are provided that use the same selector as the grouping key,
-then aggregations will be scoped to values on each individual entity.
+#### Aggregations relative to a grouping by multiple attributes
 
-Ex. `return user, count(user._classes)`
+If multiple attributes of a selector are included the return function, the last
+one before the aggregation will be used as the _grouping key_.
+
+Ex. `return acct._type, acct.displayName, count(user)`:
+
+```j1ql
+Find Account as acct that has User as user
+return acct._type, acct.displayName, count(user)
+```
 
 #### Aggregations Examples
 
@@ -509,6 +523,8 @@ Example result:
 ```
 
 ##### Examples relative to a single entity
+
+_Future development:_
 
 If a selector is specified and an aggregating function is applied to
 that selector's source identifier in some way,
