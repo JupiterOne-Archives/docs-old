@@ -203,6 +203,7 @@ requested via the `RETURN` clause.
 The following aggregating functions are supported:
 
 - `count(selector)`
+- `count(selector.field)` _future development_
 - `min(selector.field)`
 - `max(selector.field)`
 - `avg(selector.field)`
