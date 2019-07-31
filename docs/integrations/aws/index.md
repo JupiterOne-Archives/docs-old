@@ -53,16 +53,19 @@ ingested when the integration runs:
 | CloudWatch  | Event Rule                | `aws_cloudwatch_event_rule` : `Task`                        |
 | Config      | Config Rule               | `aws_config_rule` : `ControlPolicy`                         |
 | DynamoDB    | DynamoDB Table            | `aws_dynamodb_table` : `DataStore`, `Database`              |
-| EC2         | AMI Image                 | `aws_ami_image` : `Image`                                   |
+| EC2         | AMI Image                 | `aws_ami` : `Image`                                         |
 |             | EC2 Instance              | `aws_instance` : `Host`                                     |
 |             | EC2 Key Pair              | `aws_key_pair` : `AccessKey`                                |
 |             | EBS Volume                | `aws_ebs_volume` : `DataStore`, `Disk`                      |
+|             | Elastic IP                | `aws_eip` : `IpAddress`                                     |
 |             | Internet Gateway          | `aws_internet_gateway` : `Gateway`                          |
 |             | Network ACL               | `aws_network_acl` : `Firewall`                              |
+|             | Network Interface         | `aws_eni` : `NetworkInterface`                              |
 |             | Security Group            | `aws_security_group` : `Firewall`                           |
 |             | VPC                       | `aws_vpc` : `Network`                                       |
 |             | Subnet                    | `aws_subnet` : `Network`                                    |
 | AutoScaling | Auto Scaling Group        | `aws_autoscaling_group` : `Deployment`, `Group`             |
+| EKS         | EKS Cluster               | `aws_eks_cluster` : `Cluster`                               |
 | ELB         | Application Load Balancer | `aws_alb` : `Gateway`                                       |
 |             | Network Load Balancer     | `aws_nlb` : `Gateway`                                       |
 | GuardDuty   | GuardDuty Detector        | `aws_guardduty_detector` : `Assessment`, `Scanner`          |
@@ -84,6 +87,8 @@ ingested when the integration runs:
 | RedShift    | Redshift Cluster          | `aws_redshift_cluster` : `DataStore`, `Database`, `Cluster` |
 | RDS         | RDS DB Cluster            | `aws_rds_cluster` : `DataStore`, `Database`, `Cluster`      |
 |             | RDS DB Instance           | `aws_db_instance` : `DataStore`, `Database`, `Host`         |
+| Route53     | Route53 Hosted Zone       | `aws_route53_zone` : `Domain`                               |
+|             | Route53 RecordSet         | `aws_route53_record` : `DomainRecord`, `Record`             |
 | S3          | S3 Bucket                 | `aws_s3_bucket` : `DataStore`                               |
 | Transfer    | Transfer Server (SFTP)    | `aws_transfer_server` : `Host`, `Gateway`                   |
 |             | Transfer User (SFTP)      | `aws_transfer_user` : `User`                                |
@@ -124,10 +129,13 @@ The following relationships are created/mapped:
 | `aws_ec2` **HAS** `aws_vpc`                                           |
 | `aws_autoscaling_group` **HAS** `aws_instance`                        |
 | `aws_instance` **USES** `aws_ebs_volume`                              |
+| `aws_instance` **USES** `aws_eip`                                     |
+| `aws_instance` **USES** `aws_eni`                                     |
 | `aws_ebs_volume` **USES** `aws_kms_key`                               |
 | `aws_security_group` **PROTECTS** `aws_instance`                      |
 | `aws_vpc` **CONTAINS** `aws_subnet`                                   |
 | `aws_network_acl` **PROTECTS** `aws_subnet`                           |
+| `aws_eks` **HAS** `aws_eks_cluster`                                   |
 | `aws_elb` **HAS** `aws_alb`                                           |
 | `aws_elb` **HAS** `aws_nlb`                                           |
 | `aws_alb` **USES** `aws_acm_certificate`                              |
@@ -157,6 +165,8 @@ The following relationships are created/mapped:
 | `aws_rds` **HAS** `aws_db_instance`                                   |
 | `aws_rds_cluster` **CONTAINS** `aws_db_instance`                      |
 | `aws_rds_cluster` **USES** `aws_kms_key`                              |
+| `aws_route53` **HAS** `aws_route53_zone`                              |
+| `aws_route53_zone` **HAS** `aws_route53_record`                       |
 | `aws_db_instance` **USES** `aws_kms_key`                              |
 | `aws_s3` **HAS** `aws_s3_bucket`                                      |
 | `aws_s3_bucket` **USES** `aws_kms_key`                                |
@@ -167,11 +177,14 @@ The following relationships are created/mapped:
 | `aws_waf` **HAS** `aws_waf_web_acl`                                   |
 | `aws_waf_web_acl` **PROTECTS** `aws_cloudfront_distribution`          |
 
-### Connections to broader entity resources
+### Mapped Relationships - connections to broader entity resources
 
-| Relationships                                                                                                                                                                                                      |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `aws_iam_user` **IS** `Person` <br> Note: This is mapped automatically only when the IAM user has an `Email` tag, or the `username` of the IAM User is an email that matches that of a Person entity in the graph. |
+| Relationships                                         |
+| ----------------------------------------------------- |
+| `aws_iam_user` **IS** `Person` _See Note_             |
+| `aws_route53_record` **CONNECTS** `Host` or `Gateway` |
+
+\*\*Note: This is mapped automatically only when the IAM user has an `Email` tag, or the `username` of the IAM User is an email that matches that of a Person entity in the graph.
 
 ### Advanced mappings
 
