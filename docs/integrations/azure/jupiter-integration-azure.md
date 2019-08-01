@@ -16,7 +16,7 @@ The integration instance configuration requires credentials of the App which is
 registered with Azure AD. You need:
 
 1. Go to your Azure portal
-2. Navigate to
+2. Navigate to  
    [App registrations](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredAppsPreview)
 3. Create a new app
 4. Navigate to `Overview` page of the new app.
