@@ -55,7 +55,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: M/fChsWANScA76jiAX6ayXMLUM0xSHe+6YlKHp6q4XA=
+        hash: otrANKKvxDPQFUJV+mLuQfAP58yAj7FB87bbUMosLN0=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -202,7 +202,7 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: h77PHH9BKKzkPcYQt2mSGyZcpZ7ki4+cYtp+h+MaIe0=
+        hash: FOGXWQz9sFlk0ypVgWv+0Y0PV/gEjpQGTHlBu+jKuWE=
         id: 360022722014
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022722014-J1QL-Language-Specs
