@@ -41,12 +41,12 @@ sections:
       - title: 7/9 Manage Findings
         file: ../guides/manage-findings.md
         id: 360022901893
-        hash: 6hLut1OwLuZB0UpVlr8EcR1qUrfvnZ73EFaebr/Klxg=
+        hash: 04A7fm2oBM3YUbXGlgq3Ak6h/obGVr3y1scJc8qa6js=
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022901893-7-9-Manage-Findings
       - title: 8/9 Manage Policies and Procedure Documents
         file: ../guides/manage-policies.md
-        hash: ncbhkU4P1+SkU4qN4isOeIideEQH57zyA0IOoIOu/rg=
+        hash: Cyj/Oz90FdXZ1iW5NVjNhh0wkxEtvt3PthtmOQXrUEk=
         id: 360033968753
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360033968753-8-9-Manage-Policies-and-Procedure-Documents
@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: DQbuWWB/7VNyTjPIkH6cKDqfh9CXojG5sBEnnjvnBxk=
+        hash: TakIpYMA0EDFVeC6zPxBjMUjFUNCwUhXtJPnLQUTyLM=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -238,7 +238,7 @@ sections:
     articles:
       - title: SecOps Artifacts as Code
         file: ../guides/secops-artifacts-in-j1.md
-        hash: nWgF2GDCqPbeSvjBSebJ4xBdnI/Hm8/j4iTR+OnNQg4=
+        hash: 80xW0kHG0qLne/qoWZlPlJ7nbQlUv2bKT3r9hk2mm1E=
         id: 360022721954
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721954-SecOps-Artifacts-as-Code
@@ -259,7 +259,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360022903573-JupiterOne-Graph-Data-Model
       - title: Data Security
         file: ../docs/jupiterone-data-security.md
-        hash: qU0auTUlc9Ha7H8a+ediWLAk17CgnzSS7Gl1USpQt7A=
+        hash: 4AqE/n1RXMQS4IAq7+iovW3v0UABvJPiVSX1Tq1jyNQ=
         id: 360024092813
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024092813-Data-Security
@@ -271,7 +271,7 @@ sections:
       - title: AWS
         file: ../docs/integrations/aws/index.md
         id: 360022721054
-        hash: 7KFiW0udPI51Qu5yC7O3pnjxnFG2D7Qyffq1mI+Bzao=
+        hash: /7VBM7+FASrnXDnFlk5JAP0F+CIDCrV31E5iB3o0bVs=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721054-AWS'
       - title: Azure
         file: ../docs/integrations/azure/jupiter-integration-azure.md
@@ -286,7 +286,7 @@ sections:
       - title: Carbon Black PSC
         file: ../docs/integrations/cbdefense/jupiter-integration-cbdefense.md
         id: 360022721094
-        hash: 1uU32fOwZu+6Ywi72XdPNkkKV9cdhrGQt8VbT7H8GF8=
+        hash: gYAeWrV90e0tniIAitAfyL8vjGaasfpa40KtQ6+2tHA=
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721094-Carbon-Black-PSC
       - title: Github
@@ -403,13 +403,13 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360024078093-2019.23-Release
       - title: 2019.22 Release
         file: ../release-notes/2019-22.md
-        hash: SnlO/b2Eqbh5YnqRKwjAkoa2SJbDlcpb+Ci+470uuFM=
+        hash: EKgMVGsUQsnqFTVVfrnavD877l1d1iWjw4NWiSi32FA=
         id: 360024035693
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024035693-2019.22-Release
       - title: 2019.21 Release
         file: ../release-notes/2019-21.md
-        hash: uuXv7Ds/YNi1vLC7nWHTAzfhakrExsGRWiWxi1fXJnM=
+        hash: 6OQMXclO9NSw+W6jYOx0LWHWcrzMPFO8ThDTpwb241c=
         id: 360022903253
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022903253-2019.21-Release
@@ -446,7 +446,7 @@ sections:
       - title: 2019.15 Release
         file: ../release-notes/2019-15.md
         id: 360022721434
-        hash: 8z+zukyPtLDwWgqPEcho5toCVv86RL8MXnPgFSoAntM=
+        hash: gm4iY+qeKq/lLJk7cBTEd7NIx75fnZvC0p4E/RnBHiM=
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721434-2019.15-Release
       - title: 2018.14 Release
