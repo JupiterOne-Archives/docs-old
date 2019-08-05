@@ -47,7 +47,7 @@ Note that the Markdown text contains both global and local variables -- in this
 format: `{{variableName}}`. It is best not to edit the variables in the
 templates since they would be auto-replaced by the relevant text.
 
-A **Procedure** document may contains an optional local `{{provider}}` variable.
+A **Procedure** document may contain an optional local `{{provider}}` variable.
 This allows you to configure the control provider that implements or has been
 designated the responsibility to fulfill that procedure. For example, the
 provider for "Single Sign On" could be "Okta", "OneLogin", "JumpCloud", "Google",
@@ -77,7 +77,7 @@ generate a zip file containing the following three sets of files:
 
 ## Policy Builder CLI
 
-JupiterOne provides an offline CLI that allows your to manage your policies
+JupiterOne provides an offline CLI that allows you to manage your policies
 and procedures offline (for example, as code in a git repo), and publish to
 your JupiterOne account as needed.
 
