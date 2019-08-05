@@ -61,7 +61,8 @@ async function publish() {
   for (const section of config.sections || []) {
     for (const art of section.articles || []) {
       let data = fs.readFileSync(art.file, 'utf8')
-        .replace(/^#(.*)$/m, ''); // removes title
+        .replace(/^#(.*)$/m, '') // removes title
+        .replace(/^ {2}(-|\*)/gm, '    -'); // fixes sublist indentation
       
       // Parse internal links to other docs and replace with matching Zendesk article link
       let match = linksRegex.exec(data);
