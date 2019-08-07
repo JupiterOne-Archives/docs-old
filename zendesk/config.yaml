@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: TakIpYMA0EDFVeC6zPxBjMUjFUNCwUhXtJPnLQUTyLM=
+        hash: wfNs/9v8ZiFcOxlCls7kMm4DkgZ7h3eAfmmAcdmmq/M=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -275,7 +275,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721054-AWS'
       - title: Azure
         file: ../docs/integrations/azure/jupiter-integration-azure.md
-        hash: Q+ozf/0lViEuQum4iB+L6BsO7ZMbOjaJgbU5QgHSi5A=
+        hash: YWSoeEGXQSQXEI9KTMJwkfaUEKbUZetX87GU4iiiPg0=
         id: 360024909213
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909213-Azure'
       - title: BitBucket
@@ -377,9 +377,15 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2019.27 Release
+        file: ../release-notes/2019-27.md
+        hash: YAzssPRRKmQpl9KkJ0jtAyXEgBaSLWBdc5+BDHNKO6E=
+        id: 360034079833
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360034079833-2019.27-Release
       - title: 2019.26 Release
         file: ../release-notes/2019-26.md
-        hash: HtY46mNDXPT+Ef5eSVOm0C4PlX+XB+wGacI2t1OecPc=
+        hash: FSu+DXP1z/Y3/fmP4yg4OZIbYLK0ZhufeLGkEysqo/w=
         id: 360026699413
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026699413-2019.26-Release
