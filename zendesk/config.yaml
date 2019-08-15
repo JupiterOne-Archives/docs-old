@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: gAhcuhngMCAmsuoHf6FnyVB3E/+mBJ06SV7oZAcdTHc=
+        hash: 6bZUvsOq+/dZJVT0JoP7CTz3K2dxAq2YupwbCfaBbnc=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -164,6 +164,45 @@ sections:
         id: 360024758214
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024758214-Endpoint-Security
+  - name: Insight Dashboards
+    id: 360005185733
+    articles:
+      - title: Intro to Insight Dashboards
+        file: ../dashboards/dashboards-index.md
+        hash: 0ldDSgRGsmh5WaX6dNtqh7VYZ9r7VC2Zf/rN2vJOe5A=
+        id: 360034359793
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360034359793-Intro-to-Insight-Dashboards
+      - title: AWS Resources Dashboard
+        file: ../dashboards/dashboard-aws-resources.md
+        hash: fyMTx6VwZS65hrUtDUqGWzYqCLTdKt5RIOV89w1GqEk=
+        id: 360033828394
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360033828394-AWS-Resources-Dashboard
+      - title: Data Security Dashboard
+        file: ../dashboards/dashboard-data-security.md
+        hash: NX4J4eFIrttcp+Ujv8zW9Lcrls6T4SElImsx9Imu2Wo=
+        id: 360034359813
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360034359813-Data-Security-Dashboard
+      - title: Development and Secure SDLC Dashboard
+        file: ../dashboards/dashboard-development.md
+        hash: yqqRS02baVw+xwAQ4V2usSFcuTXu5xA8NwMGDfi2Oxs=
+        id: 360034359853
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360034359853-Development-and-Secure-SDLC-Dashboard
+      - title: Firewall Configurations Dashboard
+        file: ../dashboards/dashboard-firewall.md
+        hash: kBBfsa476EUf9HWuITzuq/AAAv86WSLmQ/M5R6Pw+W4=
+        id: 360033828414
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360033828414-Firewall-Configurations-Dashboard
+      - title: User Access Dashboard
+        file: ../dashboards/dashboard-user-access.md
+        hash: 35vxh/3Gbk8N3Y48ituo9YRLF4QGKm0w0f9Ia3O2xtg=
+        id: 360034359873
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360034359873-User-Access-Dashboard
   - name: User Guides
     id: 360002297174
     articles:
@@ -379,7 +418,7 @@ sections:
     articles:
       - title: 2019.27 Release
         file: ../release-notes/2019-27.md
-        hash: qHzQf/C7zS24hv86hgktoatSM9kNUNsRvpfngXBZQZE=
+        hash: lEfb9dhh7jE9jm1v//h8JFAo3JbiUAOFamhGjtrGARE=
         id: 360034079833
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360034079833-2019.27-Release
