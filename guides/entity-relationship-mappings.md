@@ -57,6 +57,10 @@ This query will show some relationships it created:
 
 `FIND * THAT RELATES TO AS r Root WHERE r._source="system-mapper" RETURN r.* LIMIT 10`
 
+## Example Use Cases
+
+### Identifying Accounts That Belong to a Person
+
 Integrations with an identity provider have mapping rules that cause the mapper
 to produce a `Person` entity when the users of the IdP have properties that
 identify the record as a real person, not a bot or service account. Once that
@@ -75,7 +79,8 @@ LIMIT 5
 
 ## Relationship Mapping Rules
 
-Mapping rules take this basic form:
+Mapping rules are maintained by the JupiterOne engineering team, but it is
+instructive to see that rules take this basic form:
 
 ```json
 {
@@ -123,6 +128,32 @@ Mapping rules take this basic form:
   entity when it does not already exist
 
 ## Mappings
+
+The current mappings are summarized below. The _Global Mappings_ apply to
+entities no matter how they are produced, whether by a managed integration or
+through the JupiterOne API. Each managed integration may also specify mappings
+that are applied only to entities managed by that integration.
+
+The summaries have a title taking the form `SOURCE RELATIONSHIP TARGET`.
+
+* `SOURCE` is always the entity that triggers the mapping configuration. The
+  label is the `_class` or `_type` that will be matched. Other match properties
+  are listed in the summary body.
+* `RELATIONSHIP` is relative to `SOURCE`, and the label of comes from the
+  `_class`. 
+  * Forward: `-CLASS->`
+  * Reverse: `<-CLASS-`
+* `TARGET` is determined by a search, or will be created when not found (unless
+  `skipTargetCreation`). The label is the `_class` or `_type` that will be
+  matched. Other match properties are listed in the summary body.
+  
+It is important to remember:
+
+* Mapping rules are triggered when a `SOURCE` entity matches. Rules are NOT
+  automatically reversed so that relationships are updated when a `TARGET` is
+  created/updated.
+* A rule produces relationships to all `TARGET` entities matching the target
+  filters.
 
 ### Global Mappings
 
@@ -941,3 +972,5 @@ Transferred Properties
   * managerEmail = source.managerEmail
   * bitbucketUsername = source.bitbucketUsername
   * githubUsername = source.githubUsername
+
+[1]: ../docs/jupiterone-data-model.md
