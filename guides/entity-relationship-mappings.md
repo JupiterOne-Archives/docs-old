@@ -152,6 +152,8 @@ It is important to remember:
 * Mapping rules are triggered when a `SOURCE` entity matches. Rules are NOT
   automatically reversed so that relationships are updated when a `TARGET` is
   created/updated.
+* Any change to the `SOURCE` entity triggers the mapping rule to be
+  evaluated/re-evaluated.
 * The **Source Filters** must match an entity or the rule will not trigger. It
   may be necessary to _add properties to entities_ at the source so that when
   they are ingested they will match the rule.
