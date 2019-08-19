@@ -152,8 +152,12 @@ It is important to remember:
 * Mapping rules are triggered when a `SOURCE` entity matches. Rules are NOT
   automatically reversed so that relationships are updated when a `TARGET` is
   created/updated.
-* A rule produces relationships to all `TARGET` entities matching the target
-  filters.
+* The **Source Filters** must match an entity or the rule will not trigger. It
+  may be necessary to _add properties to entities_ at the source so that when
+  they are ingested they will match the rule.
+* A rule produces relationships to all `TARGET` entities matching the **Target
+  filters**. It may be necessary to _add properties to entities_ at the source
+  so that when they are ingested they will match the rule.
 
 ### Global Mappings
 
