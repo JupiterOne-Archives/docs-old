@@ -90,6 +90,7 @@ ingested when the integration runs:
 | Route53     | Route53 Hosted Zone       | `aws_route53_zone` : `Domain`                               |
 |             | Route53 RecordSet         | `aws_route53_record` : `DomainRecord`, `Record`             |
 | S3          | S3 Bucket                 | `aws_s3_bucket` : `DataStore`                               |
+|             | S3 Bucket Policy          | `aws_s3_bucket_policy` : `AccessPolicy`                     |
 | Transfer    | Transfer Server (SFTP)    | `aws_transfer_server` : `Host`, `Gateway`                   |
 |             | Transfer User (SFTP)      | `aws_transfer_user` : `User`                                |
 | WAF         | Web ACL                   | `aws_waf_web_acl` : `Firewall`                              |
@@ -133,6 +134,7 @@ The following relationships are created/mapped:
 | `aws_instance` **USES** `aws_eni`                                     |
 | `aws_ebs_volume` **USES** `aws_kms_key`                               |
 | `aws_security_group` **PROTECTS** `aws_instance`                      |
+| `aws_instance` **HAS** `aws_security_group`                           |
 | `aws_vpc` **CONTAINS** `aws_subnet`                                   |
 | `aws_network_acl` **PROTECTS** `aws_subnet`                           |
 | `aws_eks` **HAS** `aws_eks_cluster`                                   |
@@ -159,6 +161,7 @@ The following relationships are created/mapped:
 | `aws_instance` **HAS** `aws_inspector_finding`                        |
 | `aws_lambda` **HAS** `aws_lambda_function`                            |
 | `aws_lambda_function` **HAS** `aws_iam_role`                          |
+| `aws_lambda_function` **HAS** `aws_vpc`                               |
 | `aws_redshift` **HAS** `aws_redshift_cluster`                         |
 | `aws_vpc` **HAS** `aws_redshift_cluster`                              |
 | `aws_rds` **HAS** `aws_rds_cluster`                                   |
@@ -170,6 +173,7 @@ The following relationships are created/mapped:
 | `aws_db_instance` **USES** `aws_kms_key`                              |
 | `aws_s3` **HAS** `aws_s3_bucket`                                      |
 | `aws_s3_bucket` **USES** `aws_kms_key`                                |
+| `aws_s3_bucket` **HAS** `aws_s3_bucket_policy`                        |
 | `aws_transfer_server` **HAS** `aws_transfer_user`                     |
 | `aws_s3_bucket` **ALLOWS** `aws_transfer_user`                        |
 | `aws_iam_role` **ASSIGNED** `aws_transfer_server`                     |
