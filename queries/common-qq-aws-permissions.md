@@ -100,7 +100,7 @@ environment, not ingested by the integration._
 
 ## S3 Bucket permissions
 
-## Are there non-public S3 buckets configured with public access to everyone?
+### Are there non-public S3 buckets configured with public access to everyone?
 
 ```j1ql
 Find aws_s3_bucket
