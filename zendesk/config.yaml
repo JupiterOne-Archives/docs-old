@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: gGgZIdt2kTq7lBdDQJ39Fk2bIfnng9iP06/51WZshOs=
+        hash: H0nia4Yv0Bgf+RS9Rv0hYdyAD55vmoSFDjEgvX9zjus=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -424,7 +424,7 @@ sections:
     articles:
       - title: 2019.28 Release
         file: ../release-notes/2019-28.md
-        hash: I8BOj1/DhnZQrFvGN6ze+O/MFOFZvaXmGL4B4lQdZWA=
+        hash: nERiev1V9gGchuC2l9bK3qldrMODpPi0ctqdCkHvPak=
         id: 360034141814
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360034141814-2019.28-Release
