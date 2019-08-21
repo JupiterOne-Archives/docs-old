@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: 6bZUvsOq+/dZJVT0JoP7CTz3K2dxAq2YupwbCfaBbnc=
+        hash: lTBUyGpbDbBiow3tWOOOlLG5h+dXqPsX5WPMo3yw+jo=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -94,10 +94,16 @@ sections:
     articles:
       - title: Common Questions and Queries Catalog
         file: ../queries/common-qq-index.md
-        hash: 735wEbK+wCMib/VZu/Gz4l9zGBKmmaIDE1aIBTtGqNY=
+        hash: BHgwd+SU7h9lA1WWBEp6kxrthZDTHRn3JBs/OT1a7b8=
         id: 360024909073
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909073-Common-Questions-and-Queries-Catalog
+      - title: AWS IAM Permissions and Trusts
+        file: ../queries/common-qq-aws-permissions.md
+        hash: GE8MALAqn60BAzu1oGagxLyxRTTQx67ycszJzvqY6uI=
+        id: 360034672793
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360034672793-AWS-IAM-Permissions-and-Trusts
       - title: Hardware/software inventory and configuration
         file: ../queries/common-qq-inventory-config.md
         hash: nutDtrbtvv2ST8XQGo3QEGdXIBE271TZ0cG4sUqK8Jk=
@@ -220,7 +226,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360022903333-AWS-Threat-Monitoring
       - title: Common Questions and Queries
         file: ../queries/common-qq-index.md
-        hash: cqTitqSFa7jSGoEsMyRHvUZ8mxBT4eT2AiXTfYSlU5s=
+        hash: E44pR28cn8n/LfIcXSP6J96jmEnOECxawfMWQKiJSeY=
         id: 360022721914
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721914-Common-Questions-and-Queries
