@@ -61,4 +61,22 @@ This allows you to find non-interactive users with a query like
 Find User that !is Person
 ```
 
+## Okta API Rate Limits
+
+[Okta API rate limits][2] are sophisticated, depending on a number of factors
+including the particular endpoint, organization-wide limits, and subscription
+level. Responses include a few headers to guide a system into conformance, and
+will deliver `429` responses that indicate a backoff delay when the rate limits
+are exceeded. The integration is implemented to respect these `429` response
+directives by leveraging the API client provided by Okta. However, there is more
+work to be done to make the integration more proactive by using the headers of
+every response.
+
+The Okta integration currently ingests users, groups, applications, and MFA
+devices. The number of calls works out to be:
+
+- `((numUsers / 200) * listUsers) + (numUsers * (listFactors(user) + listGroups(user)))`
+- `listApplications + (numApplications * (listApplicationGroupAssignments(app) + listApplicationUsers(app)))`
+
 [1]: https://developer.okta.com/docs/api/getting_started/getting_a_token
+[2]: https://developer.okta.com/docs/reference/rate-limits/
