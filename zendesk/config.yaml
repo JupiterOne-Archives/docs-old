@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: 6bZUvsOq+/dZJVT0JoP7CTz3K2dxAq2YupwbCfaBbnc=
+        hash: ezyCZfmad+Rv4kV3xr/PhiRMlQ/yoeZvoo8I1RBk4Ds=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -94,10 +94,16 @@ sections:
     articles:
       - title: Common Questions and Queries Catalog
         file: ../queries/common-qq-index.md
-        hash: 735wEbK+wCMib/VZu/Gz4l9zGBKmmaIDE1aIBTtGqNY=
+        hash: BHgwd+SU7h9lA1WWBEp6kxrthZDTHRn3JBs/OT1a7b8=
         id: 360024909073
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909073-Common-Questions-and-Queries-Catalog
+      - title: AWS IAM Permissions and Trusts
+        file: ../queries/common-qq-aws-permissions.md
+        hash: 3RHF+v32QNd4TgYdP+qSJQmui/utspHpMn7MhprSfuU=
+        id: 360034672793
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360034672793-AWS-IAM-Permissions-and-Trusts
       - title: Hardware/software inventory and configuration
         file: ../queries/common-qq-inventory-config.md
         hash: nutDtrbtvv2ST8XQGo3QEGdXIBE271TZ0cG4sUqK8Jk=
@@ -220,7 +226,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360022903333-AWS-Threat-Monitoring
       - title: Common Questions and Queries
         file: ../queries/common-qq-index.md
-        hash: cqTitqSFa7jSGoEsMyRHvUZ8mxBT4eT2AiXTfYSlU5s=
+        hash: E44pR28cn8n/LfIcXSP6J96jmEnOECxawfMWQKiJSeY=
         id: 360022721914
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721914-Common-Questions-and-Queries
@@ -275,6 +281,12 @@ sections:
   - name: Security and Compliance as Code
     id: 360004326633
     articles:
+      - title: Community Open Source Projects
+        file: ../docs/community-projects.md
+        hash: ouk/posV7Tb5WxjmpIey0q3JIPcW9ryA6RcCHuhI+E8=
+        id: 360034159914
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360034159914-Community-Open-Source-Projects
       - title: SecOps Artifacts as Code
         file: ../guides/secops-artifacts-in-j1.md
         hash: 80xW0kHG0qLne/qoWZlPlJ7nbQlUv2bKT3r9hk2mm1E=
@@ -310,7 +322,7 @@ sections:
       - title: AWS
         file: ../docs/integrations/aws/index.md
         id: 360022721054
-        hash: /7VBM7+FASrnXDnFlk5JAP0F+CIDCrV31E5iB3o0bVs=
+        hash: ZHZMzdyWai6iALfkSUF3sM6hzJ3FcwJeRR1mkFmJxjs=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721054-AWS'
       - title: Azure
         file: ../docs/integrations/azure/jupiter-integration-azure.md
@@ -361,7 +373,7 @@ sections:
       - title: Okta
         file: ../docs/integrations/okta/jupiter-integration-okta.md
         id: 360022902573
-        hash: E150wc4g0ZAKRyGjpiIbzFziV8ijz+KzwWUxQLXOuSk=
+        hash: 9j1UVmmlelw/VgbcDwuhVGgBafgkHztk0OESHbDMLBg=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902573-Okta'
       - title: OneLogin
         file: ../docs/integrations/onelogin/jupiter-integration-onelogin.md
@@ -416,6 +428,12 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2019.28 Release
+        file: ../release-notes/2019-28.md
+        hash: nERiev1V9gGchuC2l9bK3qldrMODpPi0ctqdCkHvPak=
+        id: 360034141814
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360034141814-2019.28-Release
       - title: 2019.27 Release
         file: ../release-notes/2019-27.md
         hash: lEfb9dhh7jE9jm1v//h8JFAo3JbiUAOFamhGjtrGARE=

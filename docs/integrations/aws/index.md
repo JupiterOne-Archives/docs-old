@@ -44,56 +44,59 @@ on Github.
 The following entity resources and their meta data (not actual contents) are
 ingested when the integration runs:
 
-| AWS Service | AWS Entity Resource       | \_type : \_class of the Entity                              |
-| ----------- | ------------------------- | ----------------------------------------------------------- |
-| Account     | n/a                       | `aws_account` : `Account`                                   |
-| ACM         | ACM Certificate           | `aws_acm_certificate` : `Certificate`                       |
-| API Gateway | REST API                  | `aws_api_gateway_rest_api` : `Gateway`                      |
-| CloudFront  | Distribution              | `aws_cloudfront_distribution`: `Gateway`                    |
-| CloudWatch  | Event Rule                | `aws_cloudwatch_event_rule` : `Task`                        |
-| Config      | Config Rule               | `aws_config_rule` : `ControlPolicy`                         |
-| DynamoDB    | DynamoDB Table            | `aws_dynamodb_table` : `DataStore`, `Database`              |
-| EC2         | AMI Image                 | `aws_ami` : `Image`                                         |
-|             | EC2 Instance              | `aws_instance` : `Host`                                     |
-|             | EC2 Key Pair              | `aws_key_pair` : `AccessKey`                                |
-|             | EBS Volume                | `aws_ebs_volume` : `DataStore`, `Disk`                      |
-|             | Elastic IP                | `aws_eip` : `IpAddress`                                     |
-|             | Internet Gateway          | `aws_internet_gateway` : `Gateway`                          |
-|             | Network ACL               | `aws_network_acl` : `Firewall`                              |
-|             | Network Interface         | `aws_eni` : `NetworkInterface`                              |
-|             | Security Group            | `aws_security_group` : `Firewall`                           |
-|             | VPC                       | `aws_vpc` : `Network`                                       |
-|             | Subnet                    | `aws_subnet` : `Network`                                    |
-| AutoScaling | Auto Scaling Group        | `aws_autoscaling_group` : `Deployment`, `Group`             |
-| EKS         | EKS Cluster               | `aws_eks_cluster` : `Cluster`                               |
-| ELB         | Application Load Balancer | `aws_alb` : `Gateway`                                       |
-|             | Network Load Balancer     | `aws_nlb` : `Gateway`                                       |
-| GuardDuty   | GuardDuty Detector        | `aws_guardduty_detector` : `Assessment`, `Scanner`          |
-|             | GuardDuty Finding         | `aws_guardduty_finding` : `Finding`                         |
-| IAM         | Account Password Policy   | `aws_iam_account_password_policy` : `PasswordPolicy`        |
-|             | IAM User                  | `aws_iam_user` : `User`                                     |
-|             | IAM User Access Key       | `aws_iam_access_key` : `AccessKey`                          |
-|             | IAM User MFA Device       | `mfa_device` : `AccessKey`                                  |
-|             | IAM Group                 | `aws_iam_group` : `UserGroup`                               |
-|             | IAM Role                  | `aws_iam_role` : `AccessRole`                               |
-|             | IAM User Policy           | `aws_iam_user_policy` : `AccessPolicy`                      |
-|             | IAM Group Policy          | `aws_iam_group_policy` : `AccessPolicy`                     |
-|             | IAM Role Policy           | `aws_iam_role_policy` : `AccessPolicy`                      |
-|             | IAM Managed Policy        | `aws_iam_policy` : `AccessPolicy`                           |
-| Inspector   | Inspector Assessment Run  | `aws_inspector_assessment` : `Assessment`                   |
-|             | Inspector Finding         | `aws_inspector_finding` : `Finding`                         |
-| KMS         | KMS Key                   | `aws_kms_key` : `CryptoKey`                                 |
-| Lambda      | Lambda Function           | `aws_lambda_function` : `Function`, `Workload`              |
-| RedShift    | Redshift Cluster          | `aws_redshift_cluster` : `DataStore`, `Database`, `Cluster` |
-| RDS         | RDS DB Cluster            | `aws_rds_cluster` : `DataStore`, `Database`, `Cluster`      |
-|             | RDS DB Instance           | `aws_db_instance` : `DataStore`, `Database`, `Host`         |
-| Route53     | Route53 Hosted Zone       | `aws_route53_zone` : `Domain`                               |
-|             | Route53 RecordSet         | `aws_route53_record` : `DomainRecord`, `Record`             |
-| S3          | S3 Bucket                 | `aws_s3_bucket` : `DataStore`                               |
-|             | S3 Bucket Policy          | `aws_s3_bucket_policy` : `AccessPolicy`                     |
-| Transfer    | Transfer Server (SFTP)    | `aws_transfer_server` : `Host`, `Gateway`                   |
-|             | Transfer User (SFTP)      | `aws_transfer_user` : `User`                                |
-| WAF         | Web ACL                   | `aws_waf_web_acl` : `Firewall`                              |
+| AWS Service | AWS Entity Resource       | \_type : \_class of the Entity                               |
+| ----------- | ------------------------- | ------------------------------------------------------------ |
+| Account     | n/a                       | `aws_account` : `Account`                                    |
+| ACM         | ACM Certificate           | `aws_acm_certificate` : `Certificate`                        |
+| API Gateway | REST API                  | `aws_api_gateway_rest_api` : `Gateway`                       |
+| CloudFront  | Distribution              | `aws_cloudfront_distribution`: `Gateway`                     |
+| CloudWatch  | Event Rule                | `aws_cloudwatch_event_rule` : `Task`                         |
+| Config      | Config Rule               | `aws_config_rule` : `ControlPolicy`                          |
+| DynamoDB    | DynamoDB Table            | `aws_dynamodb_table` : `DataStore`, `Database`               |
+| EC2         | AMI Image                 | `aws_ami` : `Image`                                          |
+|             | EC2 Instance              | `aws_instance` : `Host`                                      |
+|             | EC2 Key Pair              | `aws_key_pair` : `AccessKey`                                 |
+|             | EBS Volume                | `aws_ebs_volume` : `DataStore`, `Disk`                       |
+|             | EBS Volume Snapshot       | `aws_ebs_snapshot` : `DataStore`, `Disk`, `Image`            |
+|             | Elastic IP                | `aws_eip` : `IpAddress`                                      |
+|             | Internet Gateway          | `aws_internet_gateway` : `Gateway`                           |
+|             | Network ACL               | `aws_network_acl` : `Firewall`                               |
+|             | Network Interface         | `aws_eni` : `NetworkInterface`                               |
+|             | Security Group            | `aws_security_group` : `Firewall`                            |
+|             | VPC                       | `aws_vpc` : `Network`                                        |
+|             | Subnet                    | `aws_subnet` : `Network`                                     |
+| AutoScaling | Auto Scaling Group        | `aws_autoscaling_group` : `Deployment`, `Group`              |
+| EKS         | EKS Cluster               | `aws_eks_cluster` : `Cluster`                                |
+| ELB         | Application Load Balancer | `aws_alb` : `Gateway`                                        |
+|             | Network Load Balancer     | `aws_nlb` : `Gateway`                                        |
+| GuardDuty   | GuardDuty Detector        | `aws_guardduty_detector` : `Assessment`, `Scanner`           |
+|             | GuardDuty Finding         | `aws_guardduty_finding` : `Finding`                          |
+| IAM         | Account Password Policy   | `aws_iam_account_password_policy` : `PasswordPolicy`         |
+|             | IAM User                  | `aws_iam_user` : `User`                                      |
+|             | IAM User Access Key       | `aws_iam_access_key` : `AccessKey`                           |
+|             | IAM User MFA Device       | `mfa_device` : `AccessKey`                                   |
+|             | IAM Group                 | `aws_iam_group` : `UserGroup`                                |
+|             | IAM Role                  | `aws_iam_role` : `AccessRole`                                |
+|             | IAM User Policy           | `aws_iam_user_policy` : `AccessPolicy`                       |
+|             | IAM Group Policy          | `aws_iam_group_policy` : `AccessPolicy`                      |
+|             | IAM Role Policy           | `aws_iam_role_policy` : `AccessPolicy`                       |
+|             | IAM Managed Policy        | `aws_iam_policy` : `AccessPolicy`                            |
+| Inspector   | Inspector Assessment Run  | `aws_inspector_assessment` : `Assessment`                    |
+|             | Inspector Finding         | `aws_inspector_finding` : `Finding`                          |
+| KMS         | KMS Key                   | `aws_kms_key` : `CryptoKey`                                  |
+| Lambda      | Lambda Function           | `aws_lambda_function` : `Function`, `Workload`               |
+| RedShift    | Redshift Cluster          | `aws_redshift_cluster` : `DataStore`, `Database`, `Cluster`  |
+| RDS         | RDS DB Cluster            | `aws_rds_cluster` : `DataStore`, `Database`, `Cluster`       |
+|             | RDS DB Instance           | `aws_db_instance` : `DataStore`, `Database`, `Host`          |
+|             | RDS DB Instance Snapshot  | `aws_db_snapshot` : `DataStore`, `Database`, `Image`         |
+|             | RDS DB Cluster Snapshot   | `aws_db_cluster_snapshot` : `DataStore`, `Database`, `Image` |
+| Route53     | Route53 Hosted Zone       | `aws_route53_zone` : `Domain`                                |
+|             | Route53 RecordSet         | `aws_route53_record` : `DomainRecord`, `Record`              |
+| S3          | S3 Bucket                 | `aws_s3_bucket` : `DataStore`                                |
+|             | S3 Bucket Policy          | `aws_s3_bucket_policy` : `AccessPolicy`                      |
+| Transfer    | Transfer Server (SFTP)    | `aws_transfer_server` : `Host`, `Gateway`                    |
+|             | Transfer User (SFTP)      | `aws_transfer_user` : `User`                                 |
+| WAF         | Web ACL                   | `aws_waf_web_acl` : `Firewall`                               |
 
 ## Relationships
 
@@ -132,6 +135,8 @@ The following relationships are created/mapped:
 | `aws_instance` **USES** `aws_ebs_volume`                              |
 | `aws_instance` **USES** `aws_eip`                                     |
 | `aws_instance` **USES** `aws_eni`                                     |
+| `aws_ebs_volume` **HAS** `aws_ebs_snapshot`                           |
+| `aws_ebs_volume` **USES** `aws_ebs_snapshot`                          |
 | `aws_ebs_volume` **USES** `aws_kms_key`                               |
 | `aws_security_group` **PROTECTS** `aws_instance`                      |
 | `aws_instance` **HAS** `aws_security_group`                           |
@@ -168,6 +173,8 @@ The following relationships are created/mapped:
 | `aws_rds` **HAS** `aws_db_instance`                                   |
 | `aws_rds_cluster` **CONTAINS** `aws_db_instance`                      |
 | `aws_rds_cluster` **USES** `aws_kms_key`                              |
+| `aws_rds_cluster` **CONTAINS** `aws_db_cluster_snapshot`              |
+| `aws_db_instance` **CONTAINS** `aws_db_snapshot`                      |
 | `aws_route53` **HAS** `aws_route53_zone`                              |
 | `aws_route53_zone` **HAS** `aws_route53_record`                       |
 | `aws_db_instance` **USES** `aws_kms_key`                              |
@@ -185,10 +192,12 @@ The following relationships are created/mapped:
 
 | Relationships                                         |
 | ----------------------------------------------------- |
-| `aws_iam_user` **IS** `Person` _See Note_             |
+| `aws_iam_user` **IS** `Person` _See Note 1_           |
 | `aws_route53_record` **CONNECTS** `Host` or `Gateway` |
 
-\*\*Note: This is mapped automatically only when the IAM user has an `Email` tag, or the `username` of the IAM User is an email that matches that of a Person entity in the graph.
+\*\*Note 1: This is mapped automatically only when the IAM user has an `Email`
+tag, or the `username` of the IAM User is an email that matches that of a Person
+entity in the graph.
 
 ### Advanced mappings
 
@@ -199,6 +208,12 @@ assume role trust policies to determine the following mapping:
 | --------------------------------------------------------------------------------- |
 | `aws_iam_role` **TRUSTS** `aws_iam_user|aws_<service>` (within the same account)  |
 | `aws_iam_role` **TRUSTS** `aws_iam_role|aws_iam_user|aws_account` (cross-account) |
+| `aws_iam_policy` **ALLOWS** `<Resource>` _See Note 2_                             |
+
+\*\*Note 2: This creates permission relationships from an IAM policy (including
+both managed policies and inline polices -- i.e. `aws_iam_user_policy`,
+`aws_iam_group_policy` and `aws_iam_role_policy`) -- to other AWS entities based
+on the actions and resources specified by the policy document.
 
 ### ProTips and Best Practices
 

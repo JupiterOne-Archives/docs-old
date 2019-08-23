@@ -1,0 +1,2 @@
+# JupiterOne Alert Rule Schema
+

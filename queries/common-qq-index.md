@@ -9,6 +9,7 @@ accessible in the **Landing** app in JupiterOne.
 
 ## Question/Query Categories
 
+- [AWS Permissions and Trusts][0]
 - [Hardware/software inventory and configuration][1]
 - [Running applications and processes][2]
 - [Secrets and key management][3]
@@ -21,6 +22,7 @@ accessible in the **Landing** app in JupiterOne.
 - [User training and awareness][10]
 - [Endpoint security][11]
 
+[0]: ../queries/common-qq-aws-permissions.md
 [1]: ../queries/common-qq-inventory-config.md
 [2]: ../queries/common-qq-apps-processes.md
 [3]: ../queries/common-qq-key-mgmt.md
@@ -32,8 +34,3 @@ accessible in the **Landing** app in JupiterOne.
 [9]: ../queries/common-qq-dev.md
 [10]: ../queries/common-qq-training.md
 [11]: ../queries/common-qq-endpoint.md
-
-
-
-
-
