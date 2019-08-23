@@ -122,10 +122,10 @@ where a.tag.AccountName != b.tag.AccountName
 ```j1ql
 Find (User|UserGroup|AccessRole)
   that assigned AccessPolicy
-  that allows as r
+  that allows as permission
     (aws_s3|aws_s3_bucket) with
       classification!='public' and tag.Production=true
-where r.permission='READ'
+where permission.read=true
   return tree
 ```
 
@@ -135,8 +135,8 @@ where r.permission='READ'
 find aws_instance
   that uses aws_iam_role
   that assigned AccessPolicy
-  that allows as r (aws_s3|aws_s3_bucket)
-where r.permission='READ' or r.permission='OTHER'
+  that allows as permission (aws_s3|aws_s3_bucket)
+where permission.read=true
   return tree
 ```
 
