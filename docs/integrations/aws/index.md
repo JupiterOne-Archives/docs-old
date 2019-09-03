@@ -69,6 +69,7 @@ ingested when the integration runs:
 | EKS         | EKS Cluster               | `aws_eks_cluster` : `Cluster`                                |
 | ELB         | Application Load Balancer | `aws_alb` : `Gateway`                                        |
 |             | Network Load Balancer     | `aws_nlb` : `Gateway`                                        |
+|             | Classic Load Balancer     | `aws_elb` : `Gateway`                                        |
 | GuardDuty   | GuardDuty Detector        | `aws_guardduty_detector` : `Assessment`, `Scanner`           |
 |             | GuardDuty Finding         | `aws_guardduty_finding` : `Finding`                          |
 | IAM         | Account Password Policy   | `aws_iam_account_password_policy` : `PasswordPolicy`         |
@@ -143,8 +144,9 @@ The following relationships are created/mapped:
 | `aws_vpc` **CONTAINS** `aws_subnet`                                   |
 | `aws_network_acl` **PROTECTS** `aws_subnet`                           |
 | `aws_eks` **HAS** `aws_eks_cluster`                                   |
-| `aws_elb` **HAS** `aws_alb`                                           |
-| `aws_elb` **HAS** `aws_nlb`                                           |
+| `aws_elasticloadbalancing` **HAS** `aws_alb`                          |
+| `aws_elasticloadbalancing` **HAS** `aws_nlb`                          |
+| `aws_elasticloadbalancing` **HAS** `aws_elb`                          |
 | `aws_alb` **USES** `aws_acm_certificate`                              |
 | `aws_guardduty_detector` **IDENTIFIED** `aws_guardduty_finding`       |
 | `aws_instance` **HAS** `aws_guardduty_finding`                        |
