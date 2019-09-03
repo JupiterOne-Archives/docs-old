@@ -101,6 +101,11 @@ Indicates if this node is the latest version of the Entity.
 
 Indicates if this node is soft-deleted.
 
+``_source`` (string) - Required
+-------------------------------
+
+Indicates source of this node.
+
 ``vendorManaged`` (boolean) - Optional
 --------------------------------------
 
