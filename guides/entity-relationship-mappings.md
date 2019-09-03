@@ -161,6 +161,8 @@ It is important to remember:
 * A rule produces relationships to all `TARGET` entities matching the **Target
   filters**. It may be necessary to _add properties to entities_ at the data
   source so that when they are ingested they will match the rule.
+* **Transferred Properties** are listed only when the mapper will create a
+  target entity if none are found (`skipTargetCreation: false`).
 
 ### Global Mappings
 
@@ -176,27 +178,11 @@ It is important to remember:
 
   * `email = toLowerCase(source.email)`
 
-**Transferred Properties**
-
-  * `email = toLowerCase(source.email)`
-  * `aliases = toLowerCase(source.email)`
-  * `name = source.name`
-  * `displayName = source.displayName`
-  * `userId = [toLowerCase(source.id),toLowerCase(source.userId),toLowerCase(source.username)]`
-
 #### User -IS-> Person
 
 **Target Filters**
 
   * `name = source.name`
-
-**Transferred Properties**
-
-  * `email = toLowerCase(source.email)`
-  * `aliases = toLowerCase(source.email)`
-  * `name = source.name`
-  * `displayName = source.displayName`
-  * `userId = [toLowerCase(source.id),toLowerCase(source.userId),toLowerCase(source.username)]`
 
 #### User -IS-> Person
 
@@ -204,26 +190,10 @@ It is important to remember:
 
   * `displayName = source.displayName`
 
-**Transferred Properties**
-
-  * `email = toLowerCase(source.email)`
-  * `aliases = toLowerCase(source.email)`
-  * `name = source.name`
-  * `displayName = source.displayName`
-  * `userId = [toLowerCase(source.id),toLowerCase(source.userId),toLowerCase(source.username)]`
-
 #### User -IS-> Person
 
 **Target Filters**
 
-  * `userId = [toLowerCase(source.id),toLowerCase(source.userId),toLowerCase(source.username)]`
-
-**Transferred Properties**
-
-  * `email = toLowerCase(source.email)`
-  * `aliases = toLowerCase(source.email)`
-  * `name = source.name`
-  * `displayName = source.displayName`
   * `userId = [toLowerCase(source.id),toLowerCase(source.userId),toLowerCase(source.username)]`
 
 #### User -IS-> Person
@@ -231,14 +201,6 @@ It is important to remember:
 **Target Filters**
 
   * `aliases = toLowerCase(source.email)`
-
-**Transferred Properties**
-
-  * `email = toLowerCase(source.email)`
-  * `aliases = toLowerCase(source.email)`
-  * `name = source.name`
-  * `displayName = source.displayName`
-  * `userId = [toLowerCase(source.id),toLowerCase(source.userId),toLowerCase(source.username)]`
 
 #### Person <-IS- User
 
@@ -246,20 +208,10 @@ It is important to remember:
 
   * `email = source.email`
 
-**Transferred Properties**
-
-  * `email = source.email`
-  * `username = source.email`
-
 #### Person <-IS- User
 
 **Target Filters**
 
-  * `username = source.email`
-
-**Transferred Properties**
-
-  * `email = source.email`
   * `username = source.email`
 
 #### Person <-MANAGES- Person
@@ -268,20 +220,10 @@ It is important to remember:
 
   * `name = source.manager`
 
-**Transferred Properties**
-
-  * `name = source.manager`
-  * `employeeId = source.managerId`
-
 #### Person <-MANAGES- Person
 
 **Target Filters**
 
-  * `employeeId = source.managerId`
-
-**Transferred Properties**
-
-  * `name = source.manager`
   * `employeeId = source.managerId`
 
 #### (Finding|Vulnerability) <-HAS- (CodeRepo|Project|Application|Host)
@@ -291,10 +233,6 @@ It is important to remember:
   * `open = true`
 
 **Target Filters**
-
-  * `name = source.targets`
-
-**Transferred Properties**
 
   * `name = source.targets`
 
@@ -308,10 +246,6 @@ It is important to remember:
 
   * `name = source.targets`
 
-**Transferred Properties**
-
-  * `name = source.targets`
-
 #### (Finding|Vulnerability) <-HAS- (aws_instance|aws_db_instance)
 
 **Source Filters**
@@ -320,11 +254,6 @@ It is important to remember:
 
 **Target Filters**
 
-  * `instanceId = source.targets`
-
-**Transferred Properties**
-
-  * `_type = ["aws_instance","aws_db_instance"]`
   * `instanceId = source.targets`
 
 #### (Finding|Vulnerability) <-HAD- (aws_instance|aws_db_instance)
@@ -337,11 +266,6 @@ It is important to remember:
 
   * `instanceId = source.targets`
 
-**Transferred Properties**
-
-  * `_type = ["aws_instance","aws_db_instance"]`
-  * `instanceId = source.targets`
-
 #### (Finding|Vulnerability) <-HAS- CodeRepo
 
 **Source Filters**
@@ -349,10 +273,6 @@ It is important to remember:
   * `open = true`
 
 **Target Filters**
-
-  * `full_name = source.targets`
-
-**Transferred Properties**
 
   * `full_name = source.targets`
 
@@ -366,30 +286,16 @@ It is important to remember:
 
   * `full_name = source.targets`
 
-**Transferred Properties**
-
-  * `full_name = source.targets`
-
 #### (Finding|Risk|Vulnerability) <-IDENTIFIED- Assessment
 
 **Target Filters**
 
   * `name = source.assessment`
 
-**Transferred Properties**
-
-  * `name = source.assessment`
-  * `_key = source.assessment`
-
 #### (Finding|Risk|Vulnerability) <-IDENTIFIED- Assessment
 
 **Target Filters**
 
-  * `_key = source.assessment`
-
-**Transferred Properties**
-
-  * `name = source.assessment`
   * `_key = source.assessment`
 
 #### Assessment <-PERFORMED- Person
@@ -398,30 +304,16 @@ It is important to remember:
 
   * `email = [source.assessor,source.assessors]`
 
-**Transferred Properties**
-
-  * `email = [source.assessor,source.assessors]`
-
 #### Device <-OWNS- Person
 
 **Target Filters**
 
   * `email = [toLowerCase(source.owner),toLowerCase(source.email)]`
 
-**Transferred Properties**
-
-  * `email = [toLowerCase(source.owner),toLowerCase(source.email)]`
-  * `userId = [toLowerCase(source.users),toLowerCase(source.username),toLowerCase(source.userId)]`
-
 #### Device <-OWNS- Person
 
 **Target Filters**
 
-  * `userId = [toLowerCase(source.users),toLowerCase(source.username),toLowerCase(source.userId)]`
-
-**Transferred Properties**
-
-  * `email = [toLowerCase(source.owner),toLowerCase(source.email)]`
   * `userId = [toLowerCase(source.users),toLowerCase(source.username),toLowerCase(source.userId)]`
 
 #### Vendor <-MANAGES- Person
@@ -430,30 +322,16 @@ It is important to remember:
 
   * `email = [source.owner,source.owners,source.admins]`
 
-**Transferred Properties**
-
-  * `email = [source.owner,source.owners,source.admins]`
-
 #### Vendor <-APPROVES- PR
 
 **Target Filters**
 
   * `webLink = source.approvalPRLink`
 
-**Transferred Properties**
-
-  * `webLink = source.approvalPRLink`
-  * `displayName = source.approvalPRName`
-
 #### Vendor <-APPROVES- PR
 
 **Target Filters**
 
-  * `displayName = source.approvalPRName`
-
-**Transferred Properties**
-
-  * `webLink = source.approvalPRLink`
   * `displayName = source.approvalPRName`
 
 #### Account <-HOSTS- Vendor
@@ -486,7 +364,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = Atlassian`
+  * `name = "Atlassian"`
 
 **Transferred Properties**
 
@@ -502,10 +380,6 @@ It is important to remember:
 
   * `bitbucketNickname = source.nickname`
 
-**Transferred Properties**
-
-  * `bitbucketNickname = source.nickname`
-
 
 
 ### jira Mappings
@@ -514,7 +388,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = Jira`
+  * `name = "Jira"`
 
 **Transferred Properties**
 
@@ -532,7 +406,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = WhiteHat`
+  * `name = "WhiteHat"`
 
 **Transferred Properties**
 
@@ -544,7 +418,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = WhiteHat`
+  * `name = "WhiteHat"`
 
 **Transferred Properties**
 
@@ -562,7 +436,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = GitHub`
+  * `name = "GitHub"`
 
 **Transferred Properties**
 
@@ -578,10 +452,6 @@ It is important to remember:
 
   * `githubUsername = source.username`
 
-**Transferred Properties**
-
-  * `githubUsername = source.username`
-
 
 
 ### threatstack Mappings
@@ -590,7 +460,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = Threat Stack`
+  * `name = "Threat Stack"`
 
 **Transferred Properties**
 
@@ -606,20 +476,10 @@ It is important to remember:
 
   * `instanceId = source.instanceId`
 
-**Transferred Properties**
-
-  * `instanceId = source.instanceId`
-  * `hostname = source.hostname`
-
 #### threatstack_agent -PROTECTS-> Host
 
 **Target Filters**
 
-  * `hostname = source.hostname`
-
-**Transferred Properties**
-
-  * `instanceId = source.instanceId`
   * `hostname = source.hostname`
 
 
@@ -630,7 +490,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = Snyk`
+  * `name = "Snyk"`
 
 **Transferred Properties**
 
@@ -648,7 +508,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = OpenShift`
+  * `name = "OpenShift"`
 
 **Transferred Properties**
 
@@ -666,7 +526,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = Amazon Web Services`
+  * `name = "Amazon Web Services"`
 
 **Transferred Properties**
 
@@ -690,7 +550,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `_key = global:internet`
+  * `_key = "global:internet"`
 
 **Transferred Properties**
 
@@ -702,10 +562,6 @@ It is important to remember:
 #### aws_iam_user -IS-> Person
 
 **Target Filters**
-
-  * `email = [source.username,source.tag.Email]`
-
-**Transferred Properties**
 
   * `email = [source.username,source.tag.Email]`
 
@@ -721,10 +577,6 @@ It is important to remember:
 
   * `publicIpAddress = source.resourceRecords`
 
-**Transferred Properties**
-
-  * `publicIpAddress = source.resourceRecords`
-
 #### aws_route53_record -CONNECTS-> Gateway
 
 **Source Filters**
@@ -735,11 +587,6 @@ It is important to remember:
 
   * `DNSName = source.aliasTarget`
 
-**Transferred Properties**
-
-  * `DNSName = source.aliasTarget`
-  * `domainName = source.aliasTarget`
-
 #### aws_route53_record -CONNECTS-> Gateway
 
 **Source Filters**
@@ -748,11 +595,6 @@ It is important to remember:
 
 **Target Filters**
 
-  * `domainName = source.aliasTarget`
-
-**Transferred Properties**
-
-  * `DNSName = source.aliasTarget`
   * `domainName = source.aliasTarget`
 
 #### aws_instance -USES-> aws_iam_role
@@ -760,11 +602,6 @@ It is important to remember:
 **Target Filters**
 
   * `instanceProfileId = source.iamInstanceProfileId`
-
-**Transferred Properties**
-
-  * `instanceProfileId = source.iamInstanceProfileId`
-  * `_type = "aws_iam_role"`
 
 
 
@@ -774,7 +611,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = SentinelOne`
+  * `name = "SentinelOne"`
 
 **Transferred Properties**
 
@@ -804,7 +641,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = KnowBe4`
+  * `name = "KnowBe4"`
 
 **Transferred Properties**
 
@@ -822,7 +659,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = Carbon Black`
+  * `name = "Carbon Black"`
 
 **Transferred Properties**
 
@@ -840,7 +677,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = OneLogin`
+  * `name = "OneLogin"`
 
 **Transferred Properties**
 
@@ -858,7 +695,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = Jamf`
+  * `name = "Jamf"`
 
 **Transferred Properties**
 
@@ -876,7 +713,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = Veracode`
+  * `name = "Veracode"`
 
 **Transferred Properties**
 
@@ -888,7 +725,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = Veracode`
+  * `name = "Veracode"`
 
 **Transferred Properties**
 
@@ -906,7 +743,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = HackerOne`
+  * `name = "HackerOne"`
 
 **Transferred Properties**
 
@@ -924,7 +761,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = Okta`
+  * `name = "Okta"`
 
 **Transferred Properties**
 
@@ -1025,7 +862,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = Wazuh`
+  * `name = "Wazuh"`
 
 **Transferred Properties**
 
@@ -1043,7 +880,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = Tenable Cloud`
+  * `name = "Tenable Cloud"`
 
 **Transferred Properties**
 
@@ -1061,7 +898,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = Azure`
+  * `name = "Azure"`
 
 **Transferred Properties**
 
@@ -1079,7 +916,7 @@ It is important to remember:
 
 **Target Filters**
 
-  * `name = Google`
+  * `name = "Google"`
 
 **Transferred Properties**
 
