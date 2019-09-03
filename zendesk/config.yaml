@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: ezyCZfmad+Rv4kV3xr/PhiRMlQ/yoeZvoo8I1RBk4Ds=
+        hash: JShfSKUJgodf3JrM9nU2BoBzlFBXxIJtfyYdXsoQWEo=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -100,7 +100,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360024909073-Common-Questions-and-Queries-Catalog
       - title: AWS IAM Permissions and Trusts
         file: ../queries/common-qq-aws-permissions.md
-        hash: 3RHF+v32QNd4TgYdP+qSJQmui/utspHpMn7MhprSfuU=
+        hash: qJX2s8+vBc9pLFDidNloGk1HinW4Ll0C37zN6vLUXQo=
         id: 360034672793
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360034672793-AWS-IAM-Permissions-and-Trusts
@@ -118,7 +118,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360024909113-Applications-and-processes
       - title: Secrets and key management
         file: ../queries/common-qq-key-mgmt.md
-        hash: eFyEc+wTQdILL5IZb3ohWPInVjpfvCGCT23fyEa//Hc=
+        hash: aIWGtGO8jv1QZdjXTFwrbrklUSUA5fie7+qIDMlk83Q=
         id: 360024758134
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024758134-Secrets-and-key-management
@@ -308,6 +308,12 @@ sections:
         id: 360022903573
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022903573-JupiterOne-Graph-Data-Model
+      - title: JupiterOne Graph Entity Relationship Mapping
+        file: ../docs/entity-relationship-mappings.md
+        hash: JLWiuOAF27YLOn+oTTgwOgwCpOXWVoSYDyBzVs8HbWU=
+        id: 360034786734
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360034786734-JupiterOne-Graph-Entity-Relationship-Mapping
       - title: Data Security
         file: ../docs/jupiterone-data-security.md
         hash: 4AqE/n1RXMQS4IAq7+iovW3v0UABvJPiVSX1Tq1jyNQ=
@@ -322,7 +328,7 @@ sections:
       - title: AWS
         file: ../docs/integrations/aws/index.md
         id: 360022721054
-        hash: ZHZMzdyWai6iALfkSUF3sM6hzJ3FcwJeRR1mkFmJxjs=
+        hash: Z/35DwSt5LMZew+GE8vG3E+dvNSFVpN9BIcCjW1FAQU=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721054-AWS'
       - title: Azure
         file: ../docs/integrations/azure/jupiter-integration-azure.md
