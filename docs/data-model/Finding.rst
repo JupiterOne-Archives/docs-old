@@ -8,6 +8,11 @@ Includes properties from:
 * `RecordEntity <RecordEntity.html>`_
 * `Metadata <Metadata.html>`_
 
+``category`` (string) - Required
+--------------------------------
+
+The category of the finding. For example: 'event', 'app-scan', 'system-scan', 'pen-test'
+
 ``assessment`` (string) - Optional
 ----------------------------------
 

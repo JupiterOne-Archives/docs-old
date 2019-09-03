@@ -1,7 +1,7 @@
 CodeModule
 ==========
 
-An application code module/library. Such as an npm-module or java-library.
+A software module. Such as an npm_module or java_library.
 
 Includes properties from:
 
