@@ -22,15 +22,20 @@ The following entity resources are ingested when the integration runs:
 | -------------------------- | ------------------------------------------------ |
 | Account                    | `tenable_account` : `Account`                    |
 | User                       | `tenable_user` : `User`                          |
-| Scan                       | `tenable_scan` : [`Assessment`,`Service`]        |
+| Scan                       | `tenable_scan` : \[`Assessment`,`Service`\]      |
 | Scan Vulnerability         | `tenable_scan_finding` : `Finding`               |
 | Vulnerability              | `tenable_vulnerability` : `Vulnerability`        |
-| Asset                      | `tenable_asset` : `Application`                  |
 | Container                  | `tenable_container` : `Image`                    |
 | Container Finding          | `tenable_container_finding` : `Finding`          |
 | Container Report           | `tenable_container_report` : `Assessment`        |
 | Container Malware          | `tenable_container_malware` : `Finding`          |
 | Container Unwanted Program | `tenable_container_unwanted_program` : `Finding` |
+
+Tenable "assets" are not ingested. `Findings` include some asset details,
+including asset identifiers on the `targets` property that will be used by the
+system to relate findings to entities ingested through other integrations. This
+avoids duplicating corporate asset entities (reducing billing costs!) and leaves
+asset ingestion to integrations such as AWS, Wazuh, etc.
 
 ## Relationships
 
@@ -41,9 +46,7 @@ The following relationships are created/mapped:
 | `tenable_account`               | **HAS**        | `tenable_user`                       |
 | `tenable_account`               | **HAS**        | `tenable_container`                  |
 | `tenable_account`               | **HAS**        | `tenable_user`                       |
-| `tenable_asset`                 | **HAS**        | `tenable_vulnerability_finding`      |
 | `tenable_user`                  | **OWNS**       | `tenable_scan`                       |
-| `tenable_scan`                  | **HAS**        | `tenable_asset`                      |
 | `tenable_scan`                  | **IDENTIFIED** | `tenable_vulnerability`              |
 | `tenable_scan`                  | **IDENTIFIED** | `tenable_vulnerability_finding`      |
 | `tenable_vulnerability_finding` | **IS**         | `tenable_vulnerability`              |
