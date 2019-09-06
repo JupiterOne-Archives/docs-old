@@ -91,7 +91,8 @@ ingested when the integration runs:
 |             | RDS DB Instance           | `aws_db_instance` : `DataStore`, `Database`, `Host`          |
 |             | RDS DB Instance Snapshot  | `aws_db_snapshot` : `DataStore`, `Database`, `Image`         |
 |             | RDS DB Cluster Snapshot   | `aws_db_cluster_snapshot` : `DataStore`, `Database`, `Image` |
-| Route53     | Route53 Hosted Zone       | `aws_route53_zone` : `Domain`                                |
+| Route53     | Route53 Domain            | `aws_route53_domain` : `Domain`                              |
+|             | Route53 Hosted Zone       | `aws_route53_zone` : `Domain`, `Zone`                        |
 |             | Route53 RecordSet         | `aws_route53_record` : `DomainRecord`, `Record`              |
 | S3          | S3 Bucket                 | `aws_s3_bucket` : `DataStore`                                |
 |             | S3 Bucket Policy          | `aws_s3_bucket_policy` : `AccessPolicy`                      |
@@ -177,6 +178,7 @@ The following relationships are created/mapped:
 | `aws_rds_cluster` **USES** `aws_kms_key`                              |
 | `aws_rds_cluster` **CONTAINS** `aws_db_cluster_snapshot`              |
 | `aws_db_instance` **CONTAINS** `aws_db_snapshot`                      |
+| `aws_route53` **HAS** `aws_route53_domain`                            |
 | `aws_route53` **HAS** `aws_route53_zone`                              |
 | `aws_route53_zone` **HAS** `aws_route53_record`                       |
 | `aws_db_instance` **USES** `aws_kms_key`                              |
@@ -196,10 +198,15 @@ The following relationships are created/mapped:
 | ----------------------------------------------------- |
 | `aws_iam_user` **IS** `Person` _See Note 1_           |
 | `aws_route53_record` **CONNECTS** `Host` or `Gateway` |
+| `Domain` **HAS** `aws_route53_zone` _See Note 2_      |
 
 \*\*Note 1: This is mapped automatically only when the IAM user has an `Email`
 tag, or the `username` of the IAM User is an email that matches that of a Person
 entity in the graph.
+
+\*\*Note 2: `Domain` entities include domains registered on AWS Route53 (i.e.
+`aws_route53_domain`) and those registered outside of AWS and added into
+JupiterOne separately (e.g. a domain registered on GoDaddy).
 
 ### Advanced mappings
 
@@ -210,9 +217,9 @@ assume role trust policies to determine the following mapping:
 | --------------------------------------------------------------------------------- |
 | `aws_iam_role` **TRUSTS** `aws_iam_user|aws_<service>` (within the same account)  |
 | `aws_iam_role` **TRUSTS** `aws_iam_role|aws_iam_user|aws_account` (cross-account) |
-| `aws_iam_policy` **ALLOWS** `<Resource>` _See Note 2_                             |
+| `aws_iam_policy` **ALLOWS** `<Resource>` _See Note 3_                             |
 
-\*\*Note 2: This creates permission relationships from an IAM policy (including
+\*\*Note 3: This creates permission relationships from an IAM policy (including
 both managed policies and inline polices -- i.e. `aws_iam_user_policy`,
 `aws_iam_group_policy` and `aws_iam_role_policy`) -- to other AWS entities based
 on the actions and resources specified by the policy document.
