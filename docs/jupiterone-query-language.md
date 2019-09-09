@@ -80,6 +80,11 @@ boundaries obvious to query authors.
   >  Find DataStore WITH classification != ('critical' and 'restricted')
   >  ```
 
+- Property filters are evaluated according the following **order of operations**:
+
+  > Parenthesis first, comparisons (`=`, `>=`, `<=`, `!=`) after, `AND` and then
+  > `OR`.
+
 `THAT` is followed by a **Relationship verb**.
 
 > The verb is the `class` value of a **Relationship** -- that is, the edge
