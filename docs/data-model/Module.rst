@@ -1,7 +1,7 @@
 Module
 ======
 
-A software or hardware module. Such as an npm-module or java-library.
+A software or hardware module. Such as an npm_module or java_library.
 
 Includes properties from:
 
