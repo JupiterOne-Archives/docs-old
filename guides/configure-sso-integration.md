@@ -90,6 +90,9 @@ Here's an example of attribute mapping configuration in Okta:
 
 ![okta-attribute-mappings](../assets/okta-attribute-mappings.png)
 
+Here's an example of attribute mapping configuration in Azure AD:
+![azure-ad-attribute-mappings](../assets/sso-azure-user-attr-claims.png)
+
 We highly recommend adding a custom *group attribute* to the JupiterOne app
 profile in your IdP account (e.g. Okta). This is typically added using the
 **Profile Editor** for the app. You can name the attribute something like
@@ -107,7 +110,41 @@ Below is an example within Okta:
 
 ![okta-app-group-assignment](../assets/okta-app-group-assignment.png)
 
-Note that provisioning users with `group_names` attribute mapping is *OPTIONAL*.
+Below is an example within Azure AD:
+
+![azure-ad-app-group-assignment](../assets/sso-azure-auto-assign-groups.png)
+
+By adding the `user.assignedroles` -> `group_names` mapping to Azure AD,
+the app roles assigned to the user will be mapped to groups
+in JupiterOne by the name of the group/role. Review the document at
+<https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps>
+for more information on adding app roles and assigning them to users and groups.
+
+In particular, in Azure AD go to
+<https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps>
+and click on the app for JupiterOne and then click **Manifest**. Add an entry to
+`appRoles` that is similar to:
+
+```json
+{
+  "allowedMemberTypes": [
+    "User"
+  ],
+  "description": "Administrators",
+  "displayName": "Administrators",
+  "id": "e6421657-3af5-4488-831f-7989175e3e35",
+  "isEnabled": true,
+  "lang": null,
+  "origin": "Application",
+  "value": "Administrators"
+}
+```
+
+Assigning an app role to a user in Azure AD is shown in the following
+screen shot:
+![User assigned Azure AD App role](../assets/sso-azure-app-user-and-groups.png)
+
+**NOTE:** Provisioning users with `group_names` attribute mapping is *OPTIONAL*.
 Users without `group_names` mapping are assigned to the **Users** group within
 your JupiterOne account by default.
 
