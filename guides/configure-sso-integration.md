@@ -86,12 +86,15 @@ The following attribute mappings are supported:
   `group_names` mapping are assigned to the **Users** group within your
   JupiterOne account by default.
 
+**NOTE:** Provisioning users with `group_names` attribute mapping is *OPTIONAL*.
+Users without `group_names` mapping are assigned to the **Users** group within
+your JupiterOne account by default.
+
+### Okta Example
+
 Here's an example of attribute mapping configuration in Okta:
 
 ![okta-attribute-mappings](../assets/okta-attribute-mappings.png)
-
-Here's an example of attribute mapping configuration in Azure AD:
-![azure-ad-attribute-mappings](../assets/sso-azure-user-attr-claims.png)
 
 We highly recommend adding a custom *group attribute* to the JupiterOne app
 profile in your IdP account (e.g. Okta). This is typically added using the
@@ -110,7 +113,12 @@ Below is an example within Okta:
 
 ![okta-app-group-assignment](../assets/okta-app-group-assignment.png)
 
-Below is an example within Azure AD:
+### Azure AD Example
+
+Here's an example of attribute mapping configuration in Azure AD:
+![azure-ad-attribute-mappings](../assets/sso-azure-user-attr-claims.png)
+
+Below is an example of group assignment within Azure AD:
 
 ![azure-ad-app-group-assignment](../assets/sso-azure-auto-assign-groups.png)
 
@@ -143,10 +151,6 @@ and click on the app for JupiterOne and then click **Manifest**. Add an entry to
 Assigning an app role to a user in Azure AD is shown in the following
 screen shot:
 ![User assigned Azure AD App role](../assets/sso-azure-app-user-and-groups.png)
-
-**NOTE:** Provisioning users with `group_names` attribute mapping is *OPTIONAL*.
-Users without `group_names` mapping are assigned to the **Users** group within
-your JupiterOne account by default.
 
 ## Removing Users
 
