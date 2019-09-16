@@ -1,7 +1,5 @@
 # Enable API Key Access
 
-_You need to have a PAID subscription to enable API key access for your account._
-
 Follow these steps to enable API Key access:
 
 - Go to **Settings > Users & Access**
