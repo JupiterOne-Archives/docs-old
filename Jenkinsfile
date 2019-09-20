@@ -31,6 +31,11 @@ pipeline {
             initBuild()
             sh 'yarn install'
             securityScan()
+            script {
+              if (env.BRANCH_NAME == 'master') {
+                publishNpmPackage('.')
+              }
+            }
           }
         }
       }
