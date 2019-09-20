@@ -13,7 +13,7 @@ type JupiterDocs = {
   sections: JupiterDocsSection[];
 }
 
-export const JUPITER_DOCS: JupiterDocs = {
+export const J1QL_DOCS: JupiterDocs = {
   title: "JupiterOne Query Language Documentation",
   sections: [
     {
