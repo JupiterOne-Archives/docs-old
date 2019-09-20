@@ -1,4 +1,14 @@
 {
+  "name": "@lifeomic/jupiter-docs",
+  "version": "0.0.0",
+  "description": "JupiterOne documentation",
+  "files": [
+    "dashboards/**/*",
+    "docs/**/*",
+    "faqs/**/*",
+    "guides/**/*",
+    "queries/**/*"
+  ],
   "dependencies": {
     "js-yaml": "^3.13.1",
     "request": "^2.88.0",
