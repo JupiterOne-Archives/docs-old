@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "JupiterOne documentation",
   "files": [
+    "assets/**/*",
     "dashboards/**/*",
     "docs/**/*",
     "faqs/**/*",
@@ -18,7 +19,7 @@
   "scripts": {
     "publish:zendesk": "export $(grep -v '^#' .env | xargs); cd zendesk; node -r dotenv/config publish.js",
     "plan": "lifeomic-manual-deploy -t jupiterone-dev --action plan",
-    "deploy": "lifeomic-manual-deploy -t jupiterone-dev "
+    "deploy": "lifeomic-manual-deploy -t jupiterone-dev"
   },
   "devDependencies": {
     "@lifeomic/dev-tools": "^4.10.0",
