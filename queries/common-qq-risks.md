@@ -43,35 +43,48 @@ Find (Finding|Vulnerability)
 
 ## Do I have proper vendor support for my software applications?
 
+_Requires integration with Okta or OneLogin or similar SSO identity provider._
+
+This returns data that is derived from a SSO application:
+
 ```j1ql
-// This returns data that is derived from a SSO application
-// Requires integration with Okta or OneLogin or similar SSO identity provider
 Find Application as app that
   CONNECTS Account that RELATES TO Vendor as v
   return app.displayName as app, v.name as vendor, v.linkToSLA, v.linkToMSA
+```
 
-// Or in a more generic way
+Or in a more generic way:
+
+```j1ql
 Find Application that RELATES TO (Vendor|Account)
+```
 
-// Returns all applications that does not have a vendor or
-// vendor account associated
+Returns all applications that does not have a vendor or vendor account
+associated:
+
+```j1ql
 Find Application that !RELATES TO (Vendor|Account)
 ```
 
 ## Are all system images updated in the past six months?
 
-```j1ql
-// Find images that have been updated within 6 months
-Find Image with createdOn > date.now - 6 months
+Find images that have been updated within 6 months:
 
-// Find images that have not be updated within 6 months
+```j1ql
+Find Image with createdOn > date.now - 6 months
+```
+
+Find images that have not be updated within 6 months:
+
+```j1ql
 Find Image with createdOn < date.now - 6 months
 ```
 
 ## What are the approved server/system images?
 
+Find private images or the ones that have been specifically approved:
+
 ```j1ql
-// Find private images or the ones that have been specifically approved
 Find Image with public=false or approved=true
 ```
 

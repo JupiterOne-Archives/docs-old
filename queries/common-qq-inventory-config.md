@@ -4,7 +4,9 @@
 
 ```j1ql
 Find Workload
+```
 
+```j1ql
 Find Workload with tag.AccountName='{accountName}'
 ```
 
@@ -14,7 +16,9 @@ _(and what are those systems there to do?)_
 
 ```j1ql
 Find (Host|Database) with tag.Production=true
+```
 
+```j1ql
 Find (Host|Database) with tag.AccountName='{accountName}'
 ```
 
@@ -23,18 +27,22 @@ Find (Host|Database) with tag.AccountName='{accountName}'
 ```j1ql
 Find (Application|CodeRepo|Workload|Function|Task|Host|Device|Database|DataStore)
   with tag.Production=true
+```
 
+```j1ql
 Find (Application|CodeRepo|Workload|Function|Task|Host|Device|Database|DataStore)
   with tag.AccountName='{accountName}'
-
-// You can also use `Find *` but that query might be slow
 ```
+
+_You can also use `Find *` but that query might be slower._
 
 ## What are my production data stores and databases?
 
 ```j1ql
 Find (DataStore|Database) with tag.Production=true
+```
 
+```j1ql
 Find (DataStore|Database) with tag.AccountName='{accountName}'
 ```
 
@@ -42,19 +50,29 @@ Find (DataStore|Database) with tag.AccountName='{accountName}'
 
 ```j1ql
 Find Application with tag.Production = true
+```
 
+```j1ql
 Find Application with tag.AccountName='{accountName}'
 ```
 
 ## What are my network assets?
 
 ```j1ql
-// 'mapped_entity' are resources that are not directly from the integrations
 Find Network with _type!='mapped_entity'
+```
 
-// You can use this to find "external" resources
-Find Network with _type='mapped_entity'
+_Entities that are of type `'mapped_entity'` are resources that are not directly
+from the integrations._
 
+You can use `_type='mapper_entity'` or `_source='system-mapper'` to find
+"external" resources:
+
+```j1ql
+Find Network with _source='system-mapper'
+```
+
+```j1ql
 Find (Gateway|Firewall) with category='network'
 ```
 
@@ -62,7 +80,9 @@ Find (Gateway|Firewall) with category='network'
 
 ```j1ql
 Find aws_instance that has aws_autoscaling_group
+```
 
+```j1ql
 Find aws_instance that !has aws_autoscaling_group
 ```
 
@@ -99,11 +119,15 @@ by unique property values._
 Find (Host|DataStore|Workload|Task|Application)
   with tag.AccountName = '{accountName}' as system
   return system.displayName, system.owner
+```
 
+```j1ql
 Find (Host|DataStore|Workload|Task|Application) as system
   that relates to aws_vpc with vpcId='{vpcId}' or name='{vpcName}'
   return system.displayName, system.owner
+```
 
+```j1ql
 Find (Host|DataStore|Workload|Task|Application) as system
   that relates to aws_security_group with groupId='{sgId}' or name='{sgName}'
   return system.displayName, system.owner
@@ -111,8 +135,9 @@ Find (Host|DataStore|Workload|Task|Application) as system
 
 ## How many systems were added to environment {} in last time period?
 
+Example for last 24 hours time period:
+
 ```j1ql
-// example for last time period = 24 hours
 Find * with _tag.AccountName='{accountName}' and _createdOn > date.now - 24hrs
 ```
 

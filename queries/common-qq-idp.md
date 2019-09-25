@@ -6,31 +6,43 @@ entities._
 
 ## Who are the new hires within the last 12 months?
 
-```j1ql
-// If you have been using JupiterOne for more than a year
-Find employee with _createdOn > date.now-12months
+If you have been using JupiterOne for more than a year:
 
-// If your employee source data is Okta
+```j1ql
+Find employee with _createdOn > date.now-12months
+```
+
+If your employee source data is Okta:
+
+```j1ql
 Find okta_user with created > date.now-12months
 ```
 
 ## Who are the contractors?
 
-```j1ql
-// Requires mapping from your HR system or IdP to capture the employment type
-Find employee with employment = 'contractor'
+_Requires mapping from your HR system or IdP to capture the employment type._
 
-// If you have a user group called 'Contractors'
+```j1ql
+Find employee with employment = 'contractor'
+```
+
+If you have a user group called 'Contractors':
+
+```j1ql
 Find User that (has|assigned) UserGroup with displayName='Contractors'
 ```
 
 ## Who are remote workers?
 
-```j1ql
-// If the user or employee entity has a remote flag
-Find (user|employee) with remote=true
+If the user or employee entity has a remote flag:
 
-// If you have a user group called 'Remote'
+```j1ql
+Find (user|employee) with remote=true
+```
+
+If you have a user group called 'Remote':
+
+```j1ql
 Find User that (has|assigned) UserGroup with displayName='Remote'
 ```
 
@@ -44,7 +56,9 @@ Find employee with role=undefined
 
 ```j1ql
 Find employee with department=undefined
+```
 
+```j1ql
 Find employee that !relates to Team
 ```
 
@@ -63,7 +77,9 @@ Find employee with department=undefined
 Find employee with department=undefined
   that is User
   that assigned (AccessPolicy|AccessRole) with admin=true
+```
 
+```j1ql
 Find employee with department=undefined
   that is User
   that assigned AccessRole
@@ -101,12 +117,14 @@ Find AccessPolicy with admin=true as policy and tag.AccountName='{accountName}'
 
 ## What service accounts have been granted access to production data services or sources?
 
-_TBD_
+_To be added._
 
 ## What uses static authentication credentials (people, services) vs grant type credentials (saml, oidc)?
 
 ```j1ql
 Find (User|UserGroup) that assigned AccessPolicy
+```
 
+```j1ql
 Find AccessRole that assigned AccessPolicy
 ```

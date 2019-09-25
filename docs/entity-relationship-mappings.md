@@ -166,67 +166,67 @@ It is important to remember:
 
 ### Global Mappings
 
-#### jupiterone_account <-OWNS- <ROOT>
+`jupiterone_account <-OWNS- <ROOT>`
 
-#### security_policy <-HAS- <ROOT>
+`security_policy <-HAS- <ROOT>`
 
-#### employee <-EMPLOYS- <ROOT>
+`employee <-EMPLOYS- <ROOT>`
 
-#### User -IS-> Person
+`User -IS-> Person`
 
-**Target Filters**
+> **Target Filters**
+> 
+>  * `email = toLowerCase(source.email)`
 
-  * `email = toLowerCase(source.email)`
+`User -IS-> Person`
 
-#### User -IS-> Person
+> **Target Filters**
+>
+>  * `name = source.name`
 
-**Target Filters**
+`User -IS-> Person`
 
-  * `name = source.name`
+> **Target Filters**
+>
+>  * `displayName = source.displayName`
 
-#### User -IS-> Person
-
-**Target Filters**
-
-  * `displayName = source.displayName`
-
-#### User -IS-> Person
+#### `User` -IS-> `Person`
 
 **Target Filters**
 
   * `userId = [toLowerCase(source.id),toLowerCase(source.userId),toLowerCase(source.username)]`
 
-#### User -IS-> Person
+#### `User` -IS-> `Person`
 
 **Target Filters**
 
   * `aliases = toLowerCase(source.email)`
 
-#### Person <-IS- User
+#### `Person` <-IS- `User`
 
 **Target Filters**
 
   * `email = source.email`
 
-#### Person <-IS- User
+#### `Person` <-IS- `User`
 
 **Target Filters**
 
   * `username = source.email`
 
-#### Person <-MANAGES- Person
+#### `Person` <-MANAGES- `Person`
 
 **Target Filters**
 
   * `name = source.manager`
 
-#### Person <-MANAGES- Person
+#### `Person` <-MANAGES- `Person`
 
 **Target Filters**
 
   * `employeeId = source.managerId`
 
-#### (Finding|Vulnerability) <-HAS- (CodeRepo|Project|Application|Host)
+#### `(Finding|Vulnerability)` <-HAS- `(CodeRepo|Project|Application|Host)`
 
 **Source Filters**
 
@@ -236,7 +236,7 @@ It is important to remember:
 
   * `name = source.targets`
 
-#### (Finding|Vulnerability) <-HAD- (CodeRepo|Project|Application|Host)
+#### `(Finding|Vulnerability)` <-HAD- `(CodeRepo|Project|Application|Host)`
 
 **Source Filters**
 
@@ -246,7 +246,7 @@ It is important to remember:
 
   * `name = source.targets`
 
-#### (Finding|Vulnerability) <-HAS- (aws_instance|aws_db_instance)
+#### `(Finding|Vulnerability)` <-HAS- `(aws_instance|aws_db_instance)`
 
 **Source Filters**
 
@@ -256,7 +256,7 @@ It is important to remember:
 
   * `instanceId = source.targets`
 
-#### (Finding|Vulnerability) <-HAD- (aws_instance|aws_db_instance)
+#### `(Finding|Vulnerability)` <-HAD- `(aws_instance|aws_db_instance)`
 
 **Source Filters**
 
@@ -266,7 +266,7 @@ It is important to remember:
 
   * `instanceId = source.targets`
 
-#### (Finding|Vulnerability) <-HAS- CodeRepo
+#### `(Finding|Vulnerability)` <-HAS- `CodeRepo`
 
 **Source Filters**
 
@@ -276,7 +276,7 @@ It is important to remember:
 
   * `full_name = source.targets`
 
-#### (Finding|Vulnerability) <-HAD- CodeRepo
+#### `(Finding|Vulnerability)` <-HAD- `CodeRepo`
 
 **Source Filters**
 
@@ -286,55 +286,55 @@ It is important to remember:
 
   * `full_name = source.targets`
 
-#### (Finding|Risk|Vulnerability) <-IDENTIFIED- Assessment
+#### `(Finding|Risk|Vulnerability)` <-IDENTIFIED- `Assessment`
 
 **Target Filters**
 
   * `name = source.assessment`
 
-#### (Finding|Risk|Vulnerability) <-IDENTIFIED- Assessment
+#### `(Finding|Risk|Vulnerability)` <-IDENTIFIED- `Assessment`
 
 **Target Filters**
 
   * `_key = source.assessment`
 
-#### Assessment <-PERFORMED- Person
+#### `Assessment` <-PERFORMED- `Person`
 
 **Target Filters**
 
   * `email = [source.assessor,source.assessors]`
 
-#### Device <-OWNS- Person
+#### `Device` <-OWNS- `Person`
 
 **Target Filters**
 
   * `email = [toLowerCase(source.owner),toLowerCase(source.email)]`
 
-#### Device <-OWNS- Person
+#### `Device` <-OWNS- `Person`
 
 **Target Filters**
 
   * `userId = [toLowerCase(source.users),toLowerCase(source.username),toLowerCase(source.userId)]`
 
-#### Vendor <-MANAGES- Person
+#### `Vendor` <-MANAGES- `Person`
 
 **Target Filters**
 
   * `email = [source.owner,source.owners,source.admins]`
 
-#### Vendor <-APPROVES- PR
+#### `Vendor` <-APPROVES- `PR`
 
 **Target Filters**
 
   * `webLink = source.approvalPRLink`
 
-#### Vendor <-APPROVES- PR
+#### `Vendor` <-APPROVES- `PR`
 
 **Target Filters**
 
   * `displayName = source.approvalPRName`
 
-#### Account <-HOSTS- Vendor
+#### `Account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -346,7 +346,7 @@ It is important to remember:
   * `name = source.vendor`
   * `displayName = source.vendor`
 
-#### CodeRepo <-HAS- Application
+#### `CodeRepo` <-HAS- `Application`
 
 **Target Filters**
 
@@ -360,7 +360,7 @@ It is important to remember:
 
 ### bitbucket Mappings
 
-#### bitbucket_team <-HOSTS- Vendor
+#### `bitbucket_team` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -372,9 +372,9 @@ It is important to remember:
   * `displayName = "Atlassian"`
   * `_type = "atlassian"`
 
-#### bitbucket_team <-OWNS- <ROOT>
+#### `bitbucket_team` <-OWNS- `<ROOT>`
 
-#### bitbucket_user -IS-> Person
+#### `bitbucket_user` -IS-> `Person`
 
 **Target Filters**
 
@@ -384,7 +384,7 @@ It is important to remember:
 
 ### jira Mappings
 
-#### jira_account <-HOSTS- Vendor
+#### `jira_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -396,13 +396,13 @@ It is important to remember:
   * `displayName = "Jira"`
   * `_type = "jira"`
 
-#### jira_account <-OWNS- <ROOT>
+#### `jira_account` <-OWNS- `<ROOT>`
 
 
 
 ### whitehat Mappings
 
-#### whitehat_account <-HOSTS- Vendor
+#### `whitehat_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -414,7 +414,7 @@ It is important to remember:
   * `displayName = "WhiteHat"`
   * `_type = "whitehat"`
 
-#### whitehat_scan <-PROVIDES- Vendor
+#### `whitehat_scan` <-PROVIDES- `Vendor`
 
 **Target Filters**
 
@@ -426,13 +426,13 @@ It is important to remember:
   * `displayName = "WhiteHat"`
   * `_type = "whitehat"`
 
-#### whitehat_account <-OWNS- <ROOT>
+#### `whitehat_account` <-OWNS- `<ROOT>`
 
 
 
 ### github Mappings
 
-#### github_account <-HOSTS- Vendor
+#### `github_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -444,9 +444,9 @@ It is important to remember:
   * `displayName = "GitHub"`
   * `_type = "github"`
 
-#### github_account <-OWNS- <ROOT>
+#### `github_account` <-OWNS- `<ROOT>`
 
-#### github_user -IS-> Person
+#### `github_user` -IS-> `Person`
 
 **Target Filters**
 
@@ -456,7 +456,7 @@ It is important to remember:
 
 ### threatstack Mappings
 
-#### threatstack_account <-HOSTS- Vendor
+#### `threatstack_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -468,15 +468,15 @@ It is important to remember:
   * `displayName = "Threat Stack"`
   * `_type = "threatstack"`
 
-#### threatstack_account <-OWNS- <ROOT>
+#### `threatstack_account` <-OWNS- `<ROOT>`
 
-#### threatstack_agent -PROTECTS-> Host
+#### `threatstack_agent` -PROTECTS-> `Host`
 
 **Target Filters**
 
   * `instanceId = source.instanceId`
 
-#### threatstack_agent -PROTECTS-> Host
+#### `threatstack_agent` -PROTECTS-> `Host`
 
 **Target Filters**
 
@@ -486,7 +486,7 @@ It is important to remember:
 
 ### snyk Mappings
 
-#### snyk_account <-HOSTS- Vendor
+#### `snyk_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -498,13 +498,13 @@ It is important to remember:
   * `displayName = "Snyk"`
   * `_type = "snyk"`
 
-#### snyk_account <-OWNS- <ROOT>
+#### `snyk_account` <-OWNS- `<ROOT>`
 
 
 
 ### openshift Mappings
 
-#### openshift_account <-HOSTS- Vendor
+#### `openshift_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -516,13 +516,13 @@ It is important to remember:
   * `displayName = "OpenShift"`
   * `_type = "openshift"`
 
-#### openshift_account <-OWNS- <ROOT>
+#### `openshift_account` <-OWNS- `<ROOT>`
 
 
 
 ### AWS Mappings
 
-#### aws_account <-HOSTS- Vendor
+#### `aws_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -546,7 +546,7 @@ It is important to remember:
   * `active = true`
   * `validated = true`
 
-#### aws_cloudfront_distribution -CONNECTS-> internet
+#### `aws_cloudfront_distribution` -CONNECTS-> `internet`
 
 **Target Filters**
 
@@ -557,17 +557,17 @@ It is important to remember:
   * `_type = "internet"`
   * `_key = "global:internet"`
 
-#### aws_account <-OWNS- <ROOT>
+#### `aws_account` <-OWNS- `<ROOT>`
 
-#### aws_iam_user -IS-> Person
+#### `aws_iam_user` -IS-> `Person`
 
 **Target Filters**
 
   * `email = [source.username,source.tag.Email]`
 
-#### aws_transfer_server -CONNECTS-> Internet
+#### `aws_transfer_server` -CONNECTS-> `Internet`
 
-#### aws_route53_record -CONNECTS-> Host
+#### `aws_route53_record` -CONNECTS-> `Host`
 
 **Source Filters**
 
@@ -577,7 +577,7 @@ It is important to remember:
 
   * `publicIpAddress = source.resourceRecords`
 
-#### aws_route53_record -CONNECTS-> Gateway
+#### `aws_route53_record` -CONNECTS-> `Gateway`
 
 **Source Filters**
 
@@ -587,7 +587,7 @@ It is important to remember:
 
   * `DNSName = source.aliasTarget`
 
-#### aws_route53_record -CONNECTS-> Gateway
+#### `aws_route53_record` -CONNECTS-> `Gateway`
 
 **Source Filters**
 
@@ -597,7 +597,7 @@ It is important to remember:
 
   * `domainName = source.aliasTarget`
 
-#### aws_instance -USES-> aws_iam_role
+#### `aws_instance` -USES-> `aws_iam_role`
 
 **Target Filters**
 
@@ -607,7 +607,7 @@ It is important to remember:
 
 ### sentinelone Mappings
 
-#### sentinelone_account <-HOSTS- Vendor
+#### `sentinelone_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -619,9 +619,9 @@ It is important to remember:
   * `displayName = "SentinelOne"`
   * `_type = "sentinelone"`
 
-#### sentinelone_account <-OWNS- <ROOT>
+#### `sentinelone_account` <-OWNS- `<ROOT>`
 
-#### sentinelone_agent -PROTECTS-> user_endpoint
+#### `sentinelone_agent` -PROTECTS-> `user_endpoint`
 
 **Target Filters**
 
@@ -637,7 +637,7 @@ It is important to remember:
 
 ### knowbe4 Mappings
 
-#### knowbe4_account <-HOSTS- Vendor
+#### `knowbe4_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -649,13 +649,13 @@ It is important to remember:
   * `displayName = "KnowBe4"`
   * `_type = "knowbe4"`
 
-#### knowbe4_account <-OWNS- <ROOT>
+#### `knowbe4_account` <-OWNS- `<ROOT>`
 
 
 
 ### cbdefense Mappings
 
-#### carbonblack_psc_account <-HOSTS- Vendor
+#### `carbonblack_psc_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -667,13 +667,13 @@ It is important to remember:
   * `displayName = "Carbon Black"`
   * `_type = "carbonblack"`
 
-#### carbonblack_psc_account <-OWNS- <ROOT>
+#### `carbonblack_psc_account` <-OWNS- `<ROOT>`
 
 
 
 ### onelogin Mappings
 
-#### onelogin_account <-HOSTS- Vendor
+#### `onelogin_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -685,13 +685,13 @@ It is important to remember:
   * `displayName = "OneLogin"`
   * `_type = "onelogin"`
 
-#### onelogin_account <-OWNS- <ROOT>
+#### `onelogin_account` <-OWNS- `<ROOT>`
 
 
 
 ### jamf Mappings
 
-#### jamf_account <-HOSTS- Vendor
+#### `jamf_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -703,13 +703,13 @@ It is important to remember:
   * `displayName = "Jamf"`
   * `_type = "jamf"`
 
-#### jamf_account <-OWNS- <ROOT>
+#### `jamf_account` <-OWNS- `<ROOT>`
 
 
 
 ### veracode Mappings
 
-#### veracode_account <-HOSTS- Vendor
+#### `veracode_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -721,7 +721,7 @@ It is important to remember:
   * `displayName = "Veracode"`
   * `_type = "veracode"`
 
-#### veracode_scan <-PROVIDES- Vendor
+#### `veracode_scan` <-PROVIDES- `Vendor`
 
 **Target Filters**
 
@@ -733,13 +733,13 @@ It is important to remember:
   * `displayName = "Veracode"`
   * `_type = "veracode"`
 
-#### veracode_account <-OWNS- <ROOT>
+#### `veracode_account` <-OWNS- `<ROOT>`
 
 
 
-### hackerone Mappings
+### `hackerone` Mappings
 
-#### hackerone_account <-HOSTS- Vendor
+#### `hackerone_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -751,13 +751,13 @@ It is important to remember:
   * `displayName = "HackerOne"`
   * `_type = "hackerone"`
 
-#### hackerone_account <-OWNS- <ROOT>
+#### `hackerone_account` <-OWNS- `<ROOT>`
 
 
 
 ### okta Mappings
 
-#### okta_account <-HOSTS- Vendor
+#### `okta_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -769,9 +769,9 @@ It is important to remember:
   * `displayName = "Okta"`
   * `_type = "okta"`
 
-#### okta_account <-OWNS- <ROOT>
+#### `okta_account` <-OWNS- `<ROOT>`
 
-#### okta_user -IS-> Person
+#### `okta_user` -IS-> `Person`
 
 **Source Filters**
 
@@ -800,7 +800,7 @@ It is important to remember:
   * `bitbucketUsername = source.bitbucketUsername`
   * `githubUsername = source.githubUsername`
 
-#### okta_application -CONNECTS-> source.appAccountType
+#### `okta_application` -CONNECTS-> source.appAccountType
 
 **Source Filters**
 
@@ -819,7 +819,7 @@ It is important to remember:
   * `displayName = source.appAccountId`
   * `_type = source.appAccountType`
 
-#### okta_application -CONNECTS-> source.appAccountType
+#### `okta_application` -CONNECTS-> source.appAccountType
 
 **Source Filters**
 
@@ -838,7 +838,7 @@ It is important to remember:
   * `displayName = source.appAccountId`
   * `_type = source.appAccountType`
 
-#### okta_application -CONNECTS-> Account
+#### `okta_application` -CONNECTS-> `Account`
 
 **Source Filters**
 
@@ -858,7 +858,7 @@ It is important to remember:
 
 ### wazuh Mappings
 
-#### wazuh_account <-HOSTS- Vendor
+#### `wazuh_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -870,13 +870,13 @@ It is important to remember:
   * `displayName = "Wazuh"`
   * `_type = "wazuh"`
 
-#### wazuh_account <-OWNS- <ROOT>
+#### `wazuh_account` <-OWNS- `<ROOT>`
 
 
 
 ### tenable-cloud Mappings
 
-#### tenable_account <-HOSTS- Vendor
+#### `tenable_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -888,13 +888,13 @@ It is important to remember:
   * `displayName = "Tenable Cloud"`
   * `_type = "tenable_cloud"`
 
-#### tenable_account <-OWNS- <ROOT>
+#### `tenable_account` <-OWNS- `<ROOT>`
 
 
 
 ### azure Mappings
 
-#### azure_account <-HOSTS- Vendor
+#### `azure_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -906,13 +906,13 @@ It is important to remember:
   * `displayName = "Azure"`
   * `_type = "azure"`
 
-#### azure_account <-OWNS- <ROOT>
+#### `azure_account` <-OWNS- `<ROOT>`
 
 
 
 ### google Mappings
 
-#### google_account <-HOSTS- Vendor
+#### `google_account` <-HOSTS- `Vendor`
 
 **Target Filters**
 
@@ -924,9 +924,9 @@ It is important to remember:
   * `displayName = "Google"`
   * `_type = "google"`
 
-#### google_account <-OWNS- <ROOT>
+#### `google_account` <-OWNS- `<ROOT>`
 
-#### google_user -IS-> Person
+#### `google_user` -IS-> `Person`
 
 **Source Filters**
 
