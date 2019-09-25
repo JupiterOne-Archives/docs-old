@@ -26,7 +26,7 @@ Find aws_iam_user
     name='training name' or campaign='campaign name'
 ```
 
-_If SAML is used to connect an SSO user (e.g. Okta user) to an AWS IAM Role:_
+If SAML is used to connect an SSO user (e.g. Okta user) to an AWS IAM Role:
 
 ```j1ql
 Find aws_iam_role as r

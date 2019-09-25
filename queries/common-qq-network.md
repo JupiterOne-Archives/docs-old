@@ -43,8 +43,11 @@ Find aws_subnet with public=true as n
     sg.displayName as SG, sg.groupId, sg.vpcId as VPC,
     sg.tag.AccountName as Account, sg.webLink,
     rule.ipProtocol, rule.fromPort, rule.toPort
+```
 
-// Returns a graph instead
+Returns a graph instead using `return tree` at the end
+
+```j1ql
 Find aws_subnet with public=true as n
   that HAS aws_instance as i
   that PROTECTS aws_security_group as sg
@@ -54,11 +57,15 @@ Find aws_subnet with public=true as n
 
 ## What storage is directly connected to the internet?
 
-```j1ql
-// Find databases that are public
-Find Database with public=true
+Find databases that are public:
 
-// Find data stores (including AWS S3 buckets) that allows public access
+```j1ql
+Find Database with public=true
+```
+
+Find data stores (including AWS S3 buckets) that allows public access:
+
+```j1ql
 Find DataStore that allows Everyone
 ```
 
@@ -66,23 +73,33 @@ Find DataStore that allows Everyone
 
 ```j1ql
 Find Gateway
+```
 
-// Network layer gateways including AWS internet gateways,
-// network load balancers, etc.
+Network layer gateways including AWS internet gateways, network load balancers,
+etc.:
+
+```j1ql
 Find Gateway with category='network'
+```
 
-// Application layer gateways including API gateways,
-// application load balancers, etc.
+Application layer gateways including API gateways, application load balancers,
+etc.:
+
+```j1ql
 Find Gateway with category='application'
+```
 
-// More specifically, find AWS ELB application and network load balancers
+More specifically, find AWS ELB application and network load balancers:
+
+```j1ql
 Find (aws_alb|aws_nlb)
 ```
 
 ## Are there potential IP collisions among the networks/subnets in my environment?
 
+Find subnets within the same VPC with the same CIDR:
+
 ```j1ql
-// Find subnets within the same VPC with the same CIDR
 Find Network as n1 that has aws_vpc as env that has Network as n2
   where n1.CIDR=n2.CIDR
   return
@@ -90,9 +107,11 @@ Find Network as n1 that has aws_vpc as env that has Network as n2
     n2.displayName, n2.CIDR, n2.region,
     env.displayName, env.tag.AccountName
   order by env.tag.AccountName
+```
 
+Find VPCs in the same AWS account that have the same CIDR:
 
-// Find VPCs in the same AWS account that have the same CIDR
+```j1ql
 Find aws_vpc as n1 that has (Account|Service) as env that has aws_vpc as n2
   where n1.CIDR=n2.CIDR
   return
@@ -100,8 +119,11 @@ Find aws_vpc as n1 that has (Account|Service) as env that has aws_vpc as n2
     n2.displayName, n2.CIDR, n2.region,
     env.displayName, env.tag.AccountName
   order by env.tag.AccountName
+```
 
-// Filters out default VPCs
+Filters out default VPCs:
+
+```j1ql
 Find aws_vpc with defaultVpc!=true as n1
   that has (Account|Service) as env
   that has aws_vpc with defaultVpc!=true as n2
@@ -132,11 +154,10 @@ Find Network with wireless=true as n
 
 ## Are there VPN configured for remote access?
 
-```j1ql
-// Performs a full text search to see if any indexed data that matches
-// the search string 'vpn' is a VPN Host, a VPN Device, a VPN Network
-// or a VPN Gateway
+Performs a full text search to see if any indexed data that matches the search
+string 'vpn' is a VPN Host, a VPN Device, a VPN Network or a VPN Gateway:
 
+```j1ql
 'vpn' with
   _class=('Host' or 'Device' or 'Network' or 'Gateway')
 ```
@@ -175,7 +196,7 @@ Find Firewall as fw
 
 ```j1ql
 Find Firewall as fw
-  that ALLOWS as rule (Host|Network) 
+  that ALLOWS as rule (Host|Network)
     with internal=false or internal=undefined as src
   where
     rule.ingress=true and rule.ipProtocol='tcp' and
@@ -191,10 +212,12 @@ Find Firewall as fw
 ```j1ql
 Find Firewall as f that PROTECTS Network as n
   return f.displayName as firewall, n.displayName as network
+```
 
+```j1ql
 Find Firewall with category='network'
 ```
 
 ## Show cross-vpc/network trust (i.e. what services in one hosting env are configured to trust services in another)
 
-_TBD_
+_To be added._

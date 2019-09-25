@@ -8,10 +8,20 @@ Find CodeRepo with _beginOn > date.now-24hr and _version=1
 
 ## Which PRs did this developer open in the last 5 days?
 
+For a developer whose first name is Charlie:
+
 ```j1ql
-// For a developer whose first name is Charlie
 'Charlie' that OPENED PR with _createdOn > date.now - 5days as PR
-  return PR.displayName, PR.name
+  return PR.displayName, PR.name, PR.webLink
+```
+
+_OR_
+
+```j1ql
+Find Person with firstName='Charlie'
+  that IS (github_user|bitbucket_user)
+  that OPENED PR with _createdOn > date.now - 5days as PR
+return PR.displayName, PR.name, PR.webLink
 ```
 
 ## Who are the most recent contributors to this repo?

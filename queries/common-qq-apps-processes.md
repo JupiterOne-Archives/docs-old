@@ -26,11 +26,15 @@ _To be added._
 _Host level certificates details to be added later. You can query for ACM
 certificates in AWS._
 
-```j1ql
-// Returns a graph of the resources that uses certificates
-Find Certificate that relates to * return tree
+Returns a graph of the resources that uses certificates
 
-// Find certificates that are set to expire within 30 days
+```j1ql
+Find Certificate that relates to * return tree
+```
+
+Find certificates that are set to expire within 30 days
+
+```j1ql
 Find Certificate with expiresOn < date.now + 30days
 ```
 
@@ -52,17 +56,21 @@ _To be added._
 
 ## When was the last time a service or server runtime was refreshed / updated / cycled?
 
+Returns EC2 instances and the AMI images they are using, and the
+creation timestamp of the AMI:
+
 ```j1ql
-// Returns EC2 instances and the AMI images they are using, and the
-// creation timestamp of the AMI
 Find Host as h that uses Image as i
   return
     h.tag.AccountName, h.displayName, h.instanceId,
     i.displayName, i.imageId, i.createdOn
   order by
     h.tag.AccountName
+```
 
-// Returns Lambda functions and when they were last updated
+Returns Lambda functions and when they were last updated:
+
+```j1ql
 Find Function as f
   return f.tag.AccountName, f.displayName, f.updatedOn, f.lastModified
   order by f.tag.AccountName

@@ -21,7 +21,7 @@ common use cases.
 
 First, let’s try this query:
 
-```jiql
+```j1ql
 Find Account that relates to Root return tree
 ```
 
@@ -79,7 +79,7 @@ The last set of controls (at the bottom left corner) allows you to:
 - Unhide all currently hidden entities (not shown in the above screenshot -- it
   only shows up when there is at least one hidden entity).
 
-See more details on the graph controls in [this doc](quickstart-graph).
+See more details on the graph controls in [this doc][quickstart-graph].
 
 ## Part 2 - Infrastructure Analysis
 
@@ -643,3 +643,4 @@ The resulting graph may look like this:
 ![noncompliance-device-aws-access](../assets/graph-noncompliant-user-endpoint-aws-access.png)
 
 [j1ql-doc]: ../docs/jupiterone-query-language.md
+[quickstart-graph]: ../guides/quickstart-graph.md
