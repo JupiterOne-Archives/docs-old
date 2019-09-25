@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: YoRd3xpK5uSiQjO0uG6IDCQRsVm3CC+MNdHHxJmPVmM=
+        hash: RkTS+NjfhlYsZ+9nnalXK1IVncg2XLJeCp68sI2JErk=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -106,67 +106,67 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360034672793-AWS-IAM-Permissions-and-Trusts
       - title: Hardware/software inventory and configuration
         file: ../queries/common-qq-inventory-config.md
-        hash: nutDtrbtvv2ST8XQGo3QEGdXIBE271TZ0cG4sUqK8Jk=
+        hash: hfn4BNmUIc4cZCnnsVya/7gL9Xb0RqFr0To+hhmeO6M=
         id: 360024909093
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909093-Hardware-software-inventory-and-configuration
       - title: Applications and processes
         file: ../queries/common-qq-apps-processes.md
-        hash: St5yDXSIoD8hyduhc+js6Dt2tRvMgLaKeaoNLKdx94c=
+        hash: +9u0ekkgZLkWkRvlsrIac2U6Xax8+lSvNm125RMkPXU=
         id: 360024909113
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909113-Applications-and-processes
       - title: Secrets and key management
         file: ../queries/common-qq-key-mgmt.md
-        hash: aIWGtGO8jv1QZdjXTFwrbrklUSUA5fie7+qIDMlk83Q=
+        hash: Lp0J5JSttsZ2kzwFZqoMTb2ufa3aYU4SicE9RfLK8Oc=
         id: 360024758134
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024758134-Secrets-and-key-management
       - title: Network connections & zones
         file: ../queries/common-qq-network.md
-        hash: +KOBnb/rOVpWsNxF9tz0aXwXzuGkFJvLiyeVton+SM4=
+        hash: f036Pk7ZC1nLHY7WFAr2R2ptiKWCyjXb9IoOQQXj+Zw=
         id: 360024909133
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909133-Network-connections-&-zones
       - title: Data Security
         file: ../queries/common-qq-data.md
-        hash: mYNwmgoKS6gW8TCBuUufXbwK4xVELfJ1HFfrZYE8eCk=
+        hash: /ZSxet1fOr7SNAB2UTHTEaQzpc7TSfHFKSRYkDD15CE=
         id: 360024758154
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024758154-Data-Security
       - title: Changes and attribution
         file: ../queries/common-qq-changes.md
-        hash: 28yya3qkB+rqUhjVu64jT524217BPUhtxOD/HH2pHLE=
+        hash: dB9ZMJZl+kuNH8Liy/eYUUI/GwwiOWsPEUyXKpiFu4w=
         id: 360024758174
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024758174-Changes-and-attribution
       - title: Risks and Vulnerability Management
         file: ../queries/common-qq-risks.md
-        hash: 4YPgNEuO7PKdz5vY+muJIt8lbCE/NO/vjFbZ5VTS7Rs=
+        hash: ySaR+CsduNH7cB/Vwrh5C0lZO9mn+Mvi+qzB71Ig4qg=
         id: 360024758194
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024758194-Risks-and-Vulnerability-Management
       - title: 'Identity, People and Privileged access'
         file: ../queries/common-qq-idp.md
-        hash: jxq78wZBfkwO1Z2Hd2GJliYtSZ19sOYNvLZik8XWqwM=
+        hash: lbnTSZottp36XUsO98OjIFdq5MpJv/59uwzZ0mXICIA=
         id: 360024909153
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909153-Identity,-People-and-Privileged-access
       - title: Development
         file: ../queries/common-qq-dev.md
-        hash: zkRAxLEQVR62b9Tq2cjW2GYrGCWo5bsi6qJHjFm96/o=
+        hash: HCuUT5k/LztGTxBBs3EMyUEEUHkR6OJs+QfoovNs474=
         id: 360024909173
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909173-Development
       - title: User Training and Awareness
         file: ../queries/common-qq-training.md
-        hash: ZIV/AFe1yi3neilhkbATlO8eOVrjeksYa6BJtM/+QSE=
+        hash: 7rELLszDl5Ty2Zy2IAm/bXAKnDIqfQylo28Ka41X+uM=
         id: 360024909193
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909193-User-Training-and-Awareness
       - title: Endpoint Security
         file: ../queries/common-qq-endpoint.md
-        hash: zsFGs1Ve8L2IiZZBlgiMj0xj2x6tZ/iw+JfxJQtHPFY=
+        hash: Ziw+IYQPtnN5uPB+UZUumRJ+cUTA6ng7wtscos9DdNA=
         id: 360024758214
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024758214-Endpoint-Security
@@ -253,7 +253,7 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: 48xXTkMGikeoeZobcOegq8vTK7NGdYNvRrik7SLbiKs=
+        hash: tOptSzbrpZLdUbvroIFfr0YAfUvU8OExUdmqi7vNfqA=
         id: 360022722014
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022722014-J1QL-Language-Specs

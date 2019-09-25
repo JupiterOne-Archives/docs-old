@@ -1,6 +1,12 @@
 
 # AWS Access Permissions and Trusts
 
+> _Tip: If you have over 10,000 AWS resources in multiple AWS accounts, some
+query execution may take a long time or occasionally time out. Try limiting the
+query by adding `and tag.AccountName='account-name'` as part of the `WITH`
+entity property filter. Or use `LIMIT 100` at the end of the query for a smaller
+sample set of the results._
+
 ## IAM Policy permissions
 
 ### Which policies allow access to production data?
@@ -29,11 +35,6 @@ where permission.admin=true
     permission.actions, permission.resources,
     resource._type, resource.name, resource.tag.AccountName
 ```
-
-> _Tip: If you have over 10,000 AWS resources in multiple AWS accounts, the
-above query execution may take a long time or sometimes time out. Try limiting
-the query by adding `and tag.AccountName='one-account'` filter after
-`tag.Production=true`._
 
 ## IAM Assume Role Trusts
 

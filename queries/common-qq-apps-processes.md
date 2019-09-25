@@ -17,9 +17,18 @@ _To be added._
 
 _To be added._
 
-## What certificates are installed?
+## What certificates are installed/being used?
 
-_To be added._
+_Host level certificates details to be added later. You can query for ACM
+certificates in AWS._
+
+```j1ql
+Find Certificate
+```
+
+```j1ql
+Find * that (HAS|USES) Certificate return tree
+```
 
 ## What certificates are used for which service?
 
@@ -38,13 +47,31 @@ Find certificates that are set to expire within 30 days
 Find Certificate with expiresOn < date.now + 30days
 ```
 
-## What versions of software do I have running?
+## What versions of software / applications do I have running?
 
-_To be added._
+_Requires integrations that provide application information. For example, SAML
+SSO applications from Okta, or macOS apps from Jamf._
 
-## What versions of software do I have installed but not used?
+```j1ql
+Find Application as app
+return app._type, app.displayName, app.status
+```
 
-_To be added._
+_Note: to keep the entity data structure less noisy, different versions of the
+same Application are **not** stored as separate entities. Rather, the `version`
+data is kept on the relationship between the host or endpoint device that has
+installed the application._
+
+```j1ql
+Find unique * that (USES|INSTALLED) as installation Application as app
+return app._type, app.displayName, installation.version
+```
+
+## What software applications are not being used?
+
+```j1ql
+Find Application that !(ASSIGNED|USES) *
+```
 
 ## Is Security control type {} installed?
 
