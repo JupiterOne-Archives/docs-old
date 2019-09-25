@@ -59,6 +59,9 @@ boundaries obvious to query authors.
 > - **Boolean**, **Number**, and **Date** values must _not_ be wrapped in quotes.
 > - The `undefined` keyword can be used to filter on the absence of a property.
 >   For example: `FIND DataStore with encrypted=undefined`
+> - If a property name contains special characters (e.g. `-` or `:`), you can
+>   wrap the property name in `[]`.  
+>   For example: `[tag.special-name]='something'`
 
 `AND`, `OR` for multiple property comparisons are supported.
 
@@ -165,7 +168,12 @@ boundaries obvious to query authors.
 >   RETURN u.username, p.firstName, p.lastName, p.email
 > ```
 >
-> Wildcard can be used to return all properties. For example:
+> If a property name contains special characters (e.g. `-` or `:`), you can
+> wrap the property name in `[]`.
+> For example: `RETURN p.[special-name]='something'`
+>
+> Wildcard can be used to
+> return all properties. For example:
 >
 > ```j1ql
 > FIND User as u that IS Person as p
