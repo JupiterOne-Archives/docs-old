@@ -37,11 +37,14 @@ Or ask a question like:
 ## Full Text Search
 
 Put your keywords in quotes (e.g. "keyword") to start a full text search.
+Or simply type in your keywords and hit "Enter".
 For example,
 
-- "0123456789012" will likely find an AWS Account entity with that account ID
 - "sg-123ab45c" will find an AWS EC2 Security Group with that group ID
-- "Charlie" will find a Person and/or User with that first name
+- "Charlie" will find a Person and/or User with that first name, and potentially
+  other resources related to that person/user
+- "jupiterone database" will find Database entities with property values that
+  include the keyword "jupiterone"
 
 ## JupiterOne Query Language (J1QL)
 
@@ -59,9 +62,22 @@ FIND {class or type of Entity1} AS {alias1}
 
 For example:
 
-- `Find User that IS Person`
-- `Find Firewall that ALLOWS as rule (Network|Host) where rule.ingress=truee and rule.fromPort=22`
-- `Find * with tag.Production='true'` (note the wildcard `*` here)
+```j1ql
+Find User that IS Person
+```
+
+```j1ql
+Find Firewall
+  that ALLOWS as rule (Network|Host)
+where
+  rule.ingress=truee and rule.fromPort=22
+```
+
+```j1ql
+Find * with tag.Production='true'
+```
+
+(note the wildcard `*` above to include everything)
 
 The query language is case insensitive except for the following:
 
@@ -85,5 +101,16 @@ You can also start with a full text search and then use J1QL to further filter
 the results from the initial search. For example:
 
 ```j1ql
-"Administrator" with _class='AccessPolicy' that ASSIGNED (User|AccessRole)
+Find "Administrator" with _class='AccessPolicy' that ASSIGNED (User|AccessRole)
 ```
+
+```j1ql
+Find 'security officer' with _type='employee'
+```
+
+```j1ql
+Find 'roles responsibilities' with _class=('Policy' or 'Procedure')
+```
+
+Note that either single quotes (`'`) or double quotes (`"`) will work for both
+full text search keywords and property string values.

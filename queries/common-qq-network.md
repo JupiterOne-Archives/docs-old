@@ -6,12 +6,12 @@
 Find Firewall as fw
   that ALLOWS as r (Network|Host) with
     internal=undefined or internal=false as n
-  return
-    fw.tag.AccountName, fw._type, fw.displayName, fw.description,
-    r.ipProtocol, r.fromPort, r.toPort,
-    n.displayName, n.CIDR, n.ipAddress
-  order by
-    fw.tag.AccountName
+return
+  fw.tag.AccountName, fw._type, fw.displayName, fw.description,
+  r.ipProtocol, r.fromPort, r.toPort,
+  n.displayName, n.CIDR, n.ipAddress
+order by
+  fw.tag.AccountName
 ```
 
 ## What production resources are directly connected/exposed to the Internet/everyone?
@@ -22,12 +22,12 @@ Find (Internet|Everyone)
     tag.Production=true and
     _class!='Firewall' and
     _class!='Gateway' as resource
-  return
-    resource.tag.AccountName, resource._type,
-    resource.name, resource.description,
-    resource.classification
-  order by
-    resource.tag.AccountName
+return
+  resource.tag.AccountName, resource._type,
+  resource.name, resource.description,
+  resource.classification
+order by
+  resource.tag.AccountName
 ```
 
 ## What endpoints directly connected to the Internet?
@@ -37,12 +37,12 @@ Find aws_subnet with public=true as n
   that HAS aws_instance as i
   that PROTECTS aws_security_group as sg
   that ALLOWS as rule Internet
-  return
-    n.displayName as subnet,
-    i.displayName as instance,
-    sg.displayName as SG, sg.groupId, sg.vpcId as VPC,
-    sg.tag.AccountName as Account, sg.webLink,
-    rule.ipProtocol, rule.fromPort, rule.toPort
+return
+  n.displayName as subnet,
+  i.displayName as instance,
+  sg.displayName as SG, sg.groupId, sg.vpcId as VPC,
+  sg.tag.AccountName as Account, sg.webLink,
+  rule.ipProtocol, rule.fromPort, rule.toPort
 ```
 
 Returns a graph instead using `return tree` at the end
@@ -52,7 +52,7 @@ Find aws_subnet with public=true as n
   that HAS aws_instance as i
   that PROTECTS aws_security_group as sg
   that ALLOWS as rule Internet
-  return tree
+return tree
 ```
 
 ## What storage is directly connected to the internet?
@@ -97,28 +97,32 @@ Find (aws_alb|aws_nlb)
 
 ## Are there potential IP collisions among the networks/subnets in my environment?
 
-Find subnets within the same VPC with the same CIDR:
+Find subnets within the same VPC that have the same CIDR:
 
 ```j1ql
 Find Network as n1 that has aws_vpc as env that has Network as n2
-  where n1.CIDR=n2.CIDR
-  return
-    n1.displayName, n1.CIDR, n1.region,
-    n2.displayName, n2.CIDR, n2.region,
-    env.displayName, env.tag.AccountName
-  order by env.tag.AccountName
+where
+  n1.CIDR=n2.CIDR
+return
+  n1.displayName, n1.CIDR, n1.region,
+  n2.displayName, n2.CIDR, n2.region,
+  env.displayName, env.tag.AccountName
+order by env.tag.AccountName
 ```
 
 Find VPCs in the same AWS account that have the same CIDR:
 
 ```j1ql
-Find aws_vpc as n1 that has (Account|Service) as env that has aws_vpc as n2
-  where n1.CIDR=n2.CIDR
-  return
-    n1.displayName, n1.CIDR, n1.region,
-    n2.displayName, n2.CIDR, n2.region,
-    env.displayName, env.tag.AccountName
-  order by env.tag.AccountName
+Find aws_vpc as n1
+  that has (Account|Service) as env
+  that has aws_vpc as n2
+where
+  n1.CIDR=n2.CIDR
+return
+  n1.displayName, n1.CIDR, n1.region,
+  n2.displayName, n2.CIDR, n2.region,
+  env.displayName, env.tag.AccountName
+order by env.tag.AccountName
 ```
 
 Filters out default VPCs:
@@ -127,12 +131,12 @@ Filters out default VPCs:
 Find aws_vpc with defaultVpc!=true as n1
   that has (Account|Service) as env
   that has aws_vpc with defaultVpc!=true as n2
-  where n1.CIDR=n2.CIDR
-  return
-    n1.displayName, n1.CIDR, n1.region,
-    n2.displayName, n2.CIDR, n2.region,
-    env.displayName, env.tag.AccountName
-  order by env.tag.AccountName
+where n1.CIDR=n2.CIDR
+return
+  n1.displayName, n1.CIDR, n1.region,
+  n2.displayName, n2.CIDR, n2.region,
+  env.displayName, env.tag.AccountName
+order by env.tag.AccountName
 ```
 
 ## Are wireless networks segmented and protected by firewalls?
@@ -145,11 +149,11 @@ Find Network with wireless=true as n
   that (HAS|CONTAINS|CONNECTS|PROTECTS) (Gateway|Firewall)
     with category='network' as g
   that (CONNECTS|ALLOWS|PERMITS|DENIES|REJECTS) as r *
-  return
-    n.displayName as Network, n._type as NetworkType,
-    n.cidr as CIDR, n.environment as Environment,
-    g.displayName as Gateway, g._type as GatewayType,
-    r._class, r.ipProtocol, r.fromPort, r.toPort
+return
+  n.displayName as Network, n._type as NetworkType,
+  n.cidr as CIDR, n.environment as Environment,
+  g.displayName as Gateway, g._type as GatewayType,
+  r._class, r.ipProtocol, r.fromPort, r.toPort
 ```
 
 ## Are there VPN configured for remote access?
@@ -168,14 +172,14 @@ string 'vpn' is a VPN Host, a VPN Device, a VPN Network or a VPN Gateway:
 Find Network with internal=true as n
   that (HAS|CONTAINS|CONNECTS|PROTECTS) (Gateway|Firewall)
     with category='network' as g
-  return
-    n.displayName as Network,
-    n._type as NetworkType,
-    n.CIDR as CIDR,
-    n.tag.AccountName as Account,
-    n.internal as Internal,
-    g.displayName as Gateway,
-    g._type as GatewayType
+return
+  n.displayName as Network,
+  n._type as NetworkType,
+  n.CIDR as CIDR,
+  n.tag.AccountName as Account,
+  n.internal as Internal,
+  g.displayName as Gateway,
+  g._type as GatewayType
 ```
 
 ## Show all inbound SSH firewall rules across my network environments.
@@ -183,13 +187,13 @@ Find Network with internal=true as n
 ```j1ql
 Find Firewall as fw
   that ALLOWS as rule * as src
-  where rule.ingress=true and
-    rule.ipProtocol='tcp' and
-    rule.fromPort<=22 and rule.toPort>=22
-  return
-    fw.displayName,
-    rule.ipProtocol, rule.fromPort, rule.toPort,
-    src.displayName, src.ipAddress, src.CIDR
+where rule.ingress=true and
+  rule.ipProtocol='tcp' and
+  rule.fromPort<=22 and rule.toPort>=22
+return
+  fw.displayName,
+  rule.ipProtocol, rule.fromPort, rule.toPort,
+  src.displayName, src.ipAddress, src.CIDR
 ```
 
 ## Is inbound SSH allowed directly from an external host or network?
@@ -198,20 +202,20 @@ Find Firewall as fw
 Find Firewall as fw
   that ALLOWS as rule (Host|Network)
     with internal=false or internal=undefined as src
-  where
-    rule.ingress=true and rule.ipProtocol='tcp' and
-    rule.fromPort<=22 and rule.toPort>=22
-  return
-    fw.displayName,
-    rule.fromPort, rule.toPort,
-    src.displayName, src.ipAddress, src.CIDR
+where
+  rule.ingress=true and rule.ipProtocol='tcp' and
+  rule.fromPort<=22 and rule.toPort>=22
+return
+  fw.displayName,
+  rule.fromPort, rule.toPort,
+  src.displayName, src.ipAddress, src.CIDR
 ```
 
 ## Show listing of network layer firewall protection or SGs across all my environments.
 
 ```j1ql
 Find Firewall as f that PROTECTS Network as n
-  return f.displayName as firewall, n.displayName as network
+return f.displayName as firewall, n.displayName as network
 ```
 
 ```j1ql

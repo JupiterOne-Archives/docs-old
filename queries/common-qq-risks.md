@@ -6,9 +6,9 @@ _Requires at least one application scanner integration such as Veracode or White
 
 ```j1ql
 Find (Application|CodeRepo) as app that has (Finding|Vulnerability) as vuln
-  return
-    app._type, app.displayName,
-    vuln._type, vuln.displayName, vuln.severity, vuln.numericSeverity
+return
+  app._type, app.displayName,
+  vuln._type, vuln.displayName, vuln.severity, vuln.numericSeverity
 ```
 
 ## Which systems/instances are vulnerable?
@@ -18,9 +18,9 @@ _Requires enabling AWS Inspector, GuardDuty, Tenable or similar integration._
 ```j1ql
 Find (Host|Workload|DataStore) as system
   that has (Finding|Vulnerability) as vuln
-  return
-    system._type, system.displayName,
-    vuln._type, vuln.displayName, vuln.severity, vuln.numericSeverity
+return
+  system._type, system.displayName,
+  vuln._type, vuln.displayName, vuln.severity, vuln.numericSeverity
 ```
 
 ## What open vulnerabilities do I have?
@@ -50,7 +50,7 @@ This returns data that is derived from a SSO application:
 ```j1ql
 Find Application as app that
   CONNECTS Account that RELATES TO Vendor as v
-  return app.displayName as app, v.name as vendor, v.linkToSLA, v.linkToMSA
+return app.displayName as app, v.name as vendor, v.linkToSLA, v.linkToMSA
 ```
 
 Or in a more generic way:

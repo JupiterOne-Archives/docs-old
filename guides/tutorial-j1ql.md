@@ -17,6 +17,10 @@ construct custom queries yourself.
 This tutorial builds on the [full J1QL documentation][j1ql-doc] using some
 common use cases.
 
+_The queries in this tutorial and other JupiterOne documentation are examples
+that work in most cases, but may need to be tuned based on the specific
+structure of your data sources._
+
 ## Part 1 - Simple Root query
 
 First, let’s try this query:
