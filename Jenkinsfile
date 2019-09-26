@@ -31,20 +31,20 @@ pipeline {
             initBuild()
             sh 'yarn install'
             securityScan()
-            script {
-              if (env.BRANCH_NAME == 'master') {
-                publishNpmPackage('.')
-              }
-            }
           }
         }
       }
     }
 
-    stage('deploy') { when { branch 'master' }
+    stage('publish') { when { branch 'master' }
       steps {
-        deployToJupiterEnvironments(
-          autoPopulateCM: [jiraComponent: 'JupiterOne'])
+        initBuild()
+        sh 'yarn install'
+        script {
+          if (env.BRANCH_NAME == 'master') {
+            publishNpmPackage('.')
+          }
+        }
       }
     }
   }
