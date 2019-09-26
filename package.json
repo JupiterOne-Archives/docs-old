@@ -1,6 +1,6 @@
 {
   "name": "@lifeomic/jupiter-docs",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "JupiterOne documentation",
   "files": [
     "assets/**/*",
