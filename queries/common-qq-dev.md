@@ -17,7 +17,8 @@ For a developer whose first name is Charlie:
   return PR.displayName, PR.name, PR.webLink
 ```
 
-Or, the following query is more accurate but it requires an IdP integration:
+Or, the following query is more accurate but it requires an IdP integration and
+proper mapping between the dev users and IdP users:
 
 ```j1ql
 Find Person with firstName='Charlie'
