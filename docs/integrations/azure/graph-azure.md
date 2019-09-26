@@ -61,21 +61,25 @@ The following entity resources are ingested when the integration runs:
 | Group Member            | `azure_group_member` | `User`                |
 | User                    | `azure_user`         | `User`                |
 
-| Azure Resources | \_type of the Entity | \_class of the Entity |
-| --------------- | -------------------- | --------------------- |
-| Virtual Machine | `azure_vm`           | `Host`                |
+| Azure Resources   | \_type of the Entity | \_class of the Entity |
+| ----------------- | -------------------- | --------------------- |
+| Virtual Machine   | `azure_vm`           | `Host`                |
+| Network Interface | `azure_nic`          | `NetworkInterface`    |
+| Public IP Address | `azure_public_ip`    | `IpAddress`           |
 
 ## Relationships
 
 The following relationships are created/mapped:
 
-| From               | Edge    | To                   |
-| ------------------ | ------- | -------------------- |
-| `azure_account`    | **HAS** | `azure_user_group`   |
-| `azure_account`    | **HAS** | `azure_user`         |
-| `azure_user_group` | **HAS** | `azure_user`         |
-| `azure_user_group` | **HAS** | `azure_user_group`   |
-| `azure_user_group` | **HAS** | `azure_group_member` |
+| From               | Edge     | To                   |
+| ------------------ | -------- | -------------------- |
+| `azure_account`    | **HAS**  | `azure_user_group`   |
+| `azure_account`    | **HAS**  | `azure_user`         |
+| `azure_user_group` | **HAS**  | `azure_user`         |
+| `azure_user_group` | **HAS**  | `azure_user_group`   |
+| `azure_user_group` | **HAS**  | `azure_group_member` |
+| `azure_vm`         | **USES** | `azure_nic`          |
+| `azure_vm`         | **USES** | `azure_public_ip`    |
 
 [1]: https://docs.microsoft.com/en-us/graph/auth-v2-service
 [2]:
