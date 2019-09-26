@@ -1,0 +1,30 @@
+{
+  "name": "@jupiterone/docs",
+  "version": "1.2.1",
+  "description": "JupiterOne documentation",
+  "files": [
+    "dashboards/**/*",
+    "docs/**/*",
+    "faqs/**/*",
+    "guides/**/*",
+    "queries/**/*",
+    "src/**/*",
+    "zendesk/links.json"
+  ],
+  "main": "src/index.js",
+  "dependencies": {
+    "js-yaml": "^3.13.1",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
+    "showdown": "^1.9.0"
+  },
+  "scripts": {
+    "publish:zendesk": "export $(grep -v '^#' .env | xargs); cd zendesk; node -r dotenv/config publish.js",
+    "plan": "lifeomic-manual-deploy -t jupiterone-dev --action plan",
+    "deploy": "lifeomic-manual-deploy -t jupiterone-dev"
+  },
+  "devDependencies": {
+    "@lifeomic/dev-tools": "^4.10.0",
+    "dotenv": "^8.0.0"
+  }
+}
