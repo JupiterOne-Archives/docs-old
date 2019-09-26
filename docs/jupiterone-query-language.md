@@ -264,40 +264,61 @@ context and significance of each query.
 
 ### Simple Examples
 
+`/* Find any entity that is unencrypted */`
+
 ```j1ql
-/* Find any entity that is unencrypted */
 Find * with encrypted = false
+```
 
-/* Find all entities of class DataStore that are unencrypted */
+`/* Find all entities of class DataStore that are unencrypted */`
+
+```j1ql
 Find DataStore with encrypted = false
+```
 
-/* Find all entities of type aws_ebs_volume that are unencrypted */
+`/* Find all entities of type aws_ebs_volume that are unencrypted */`
+
+```j1ql
 Find aws_ebs_volume with encrypted = false
 ```
 
 ### Query with relationships
 
+`/* return just the Firewall entities that protects public-facing hosts */`
+
 ```j1ql
-/* return just the Firewall entities that protects public-facing hosts */
 Find Firewall that PROTECTS Host with public = true
+```
 
-/* return Firewall and Host entities that matched query */
+`/* return Firewall and Host entities that matched query */`
+
+```j1ql
 Find Firewall as f that PROTECTS Host with public = true as h RETURN f, h
+```
 
-/* return all the entities and relationships that were traversed as a tree */
+`/* return all the entities and relationships that were traversed as a tree */`
+
+```j1ql
 Find Firewall that PROTECTS Host with public = true RETURN tree
 ```
 
 ### Full-text search
 
+`/* find any and all entities with "127.0.0.1" in some property value */`
+
 ```j1ql
-/* find any and all entities with "127.0.0.1" in some property value */
 Find "127.0.0.1"
+```
 
-/* the `FIND` keyword is optional */
+`/* the FIND keyword is optional */`
+
+```j1ql
 "127.0.0.1"
+```
 
-/* find all hosts that have "127.0.0.1" in some property value */
+`/* find all hosts that have "127.0.0.1" in some property value */`
+
+```j1ql
 Find "127.0.0.1" with _class='Host'
 ```
 
@@ -309,8 +330,11 @@ an exclamation point: `!`.
 
 ```j1ql
 Find User that !IS Person
+```
 
-/* This also applies to any relationships */
+`/* This also applies to any relationships */`
+
+```j1ql
 Find User that !RELATES TO Person
 ```
 

@@ -8,8 +8,11 @@
     "docs/**/*",
     "faqs/**/*",
     "guides/**/*",
-    "queries/**/*"
+    "queries/**/*",
+    "src/**/*",
+    "zendesk/links.json"
   ],
+  "main": "src/index.js",
   "dependencies": {
     "js-yaml": "^3.13.1",
     "request": "^2.88.0",

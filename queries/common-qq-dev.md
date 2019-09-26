@@ -1,5 +1,7 @@
 # Development
 
+_Queries below require integration with either Github or Bitbucket._
+
 ## Were there any Code Repos added in the last 24 hours?
 
 ```j1ql
@@ -15,7 +17,7 @@ For a developer whose first name is Charlie:
   return PR.displayName, PR.name, PR.webLink
 ```
 
-_OR_
+Or, the following query is more accurate but it requires an IdP integration:
 
 ```j1ql
 Find Person with firstName='Charlie'

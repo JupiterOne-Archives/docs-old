@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: RkTS+NjfhlYsZ+9nnalXK1IVncg2XLJeCp68sI2JErk=
+        hash: RCttQWN7HiQFQwup1VRrxl22xQ+d3dU5gDO4mlqO/GE=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -100,7 +100,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360024909073-Common-Questions-and-Queries-Catalog
       - title: AWS IAM Permissions and Trusts
         file: ../queries/common-qq-aws-permissions.md
-        hash: qJX2s8+vBc9pLFDidNloGk1HinW4Ll0C37zN6vLUXQo=
+        hash: ZYiSiDNzx2QSom7BrWnagDEqVPkz5FhhEtFxJ28PDFM=
         id: 360034672793
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360034672793-AWS-IAM-Permissions-and-Trusts
@@ -328,11 +328,11 @@ sections:
       - title: AWS
         file: ../docs/integrations/aws/index.md
         id: 360022721054
-        hash: Z/35DwSt5LMZew+GE8vG3E+dvNSFVpN9BIcCjW1FAQU=
+        hash: tb6+XI/cA0xaWR+x9MsFArcGgNtIn9KQxoh1g3iLZF4=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721054-AWS'
       - title: Azure
-        file: ../docs/integrations/azure/jupiter-integration-azure.md
-        hash: mVjUX/6yNDykBOI3nFOrtOdKyOQUenjucsNui1pvkSI=
+        file: ../docs/integrations/azure/graph-azure.md
+        hash: IFTGOKsbEKFrv/AmSc1pH+tZNr3MPODmYXyVsQxqCJA=
         id: 360024909213
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909213-Azure'
       - title: BitBucket
@@ -362,7 +362,7 @@ sections:
         hash: coLXVHuoKusZoGOpweubPgag7XsDUwjnOK/0LLgtl8A=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902553-HackerOne'
       - title: Jamf
-        file: ../docs/integrations/jamf/jupiter-integration-jamf.md
+        file: ../docs/integrations/jamf/index.md
         id: 360022721134
         hash: lHMjHXwOJQ326kFWw2XDSBYfheTQ6QgEoG5BYa7Ptnk=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721134-Jamf'

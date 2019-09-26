@@ -24,8 +24,8 @@ Find key usage and return a table with specific properties:
 
 ```j1ql
 Find aws_key_pair as key that relates to Host as h
-  return key.displayName,
-    h.displayName, h.instanceId, h.region, h.classification, h.tag.AccountName
+return key.displayName,
+  h.displayName, h.instanceId, h.region, h.classification, h.tag.AccountName
 ```
 
 ## What SSH keys exist on system {} without link to employee?

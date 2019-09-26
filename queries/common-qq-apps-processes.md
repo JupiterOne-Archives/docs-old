@@ -5,18 +5,6 @@ solutions to obtain services and processes information on hosts._
 
 _Note that you can also add custom data by writing a script to call the J1 APIs._
 
-## What are the running services?
-
-_To be added._
-
-## What are the running processes?
-
-_To be added._
-
-## What processes were running in time period {}?
-
-_To be added._
-
 ## What certificates are installed/being used?
 
 _Host level certificates details to be added later. You can query for ACM
@@ -73,14 +61,6 @@ return app._type, app.displayName, installation.version
 Find Application that !(ASSIGNED|USES) *
 ```
 
-## Is Security control type {} installed?
-
-_To be added._
-
-## Where is Security control {} not installed for matching tag {}?
-
-_To be added._
-
 ## When was the last time a service or server runtime was refreshed / updated / cycled?
 
 Returns EC2 instances and the AMI images they are using, and the
@@ -102,3 +82,11 @@ Find Function as f
   return f.tag.AccountName, f.displayName, f.updatedOn, f.lastModified
   order by f.tag.AccountName
 ```
+
+## What are the running services on a system/host/device?
+
+_To be added._
+
+## What are the running processes on a system/host/device?
+
+_To be added._

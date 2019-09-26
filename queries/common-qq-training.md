@@ -7,8 +7,8 @@ _Requires training data from KnowBe4 or similar._
 ```j1ql
 Find Training as t
   that assigned as enrollment User as u
-  where enrollment.completedOn = undefined
-  return u.first_name, u.last_name, u.email, t.name
+where enrollment.completedOn = undefined
+return u.first_name, u.last_name, u.email, t.name
 ```
 
 ## Is there any user with AWS access that hasn't completed certain training?
@@ -35,7 +35,7 @@ Find aws_iam_role as r
   that is knowbe4_user
   that !completed Training with
     name='training name' or campaign='campaign name'
-  return r.displayName, u.displayName, p.displayName, p.email
+return r.displayName, u.displayName, p.displayName, p.email
 ```
 
 ## Is there any developer who has not completed "Secure Development" training?

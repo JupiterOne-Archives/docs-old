@@ -12,7 +12,7 @@ If you have been using JupiterOne for more than a year:
 Find employee with _createdOn > date.now-12months
 ```
 
-If your employee source data is Okta:
+If your employee data source / user identity provider is Okta:
 
 ```j1ql
 Find okta_user with created > date.now-12months
@@ -29,7 +29,8 @@ Find employee with employment = 'contractor'
 If you have a user group called 'Contractors':
 
 ```j1ql
-Find User that (has|assigned) UserGroup with displayName='Contractors'
+Find User that (has|assigned) UserGroup
+  with displayName='Contractors' or name='Contractors'
 ```
 
 ## Who are remote workers?
@@ -37,13 +38,14 @@ Find User that (has|assigned) UserGroup with displayName='Contractors'
 If the user or employee entity has a remote flag:
 
 ```j1ql
-Find (user|employee) with remote=true
+Find (User|employee) with remote=true
 ```
 
 If you have a user group called 'Remote':
 
 ```j1ql
-Find User that (has|assigned) UserGroup with displayName='Remote'
+Find User that (has|assigned) UserGroup
+  with displayName='Remote' or name='Remote'
 ```
 
 ## Who are the employees missing metadata about role?
@@ -103,16 +105,16 @@ the following query to find them._
 ```j1ql
 Find AccessPolicy with admin=true as policy and tag.AccountName='{accountName}'
   that ASSIGNED (AccessRole|User) as e
-  return policy.displayName, policy.webLink, e._type, e.displayName, e.webLink
+return policy.displayName, policy.webLink, e._type, e.displayName, e.webLink
 ```
 
 ## What groups are an employee or contractor a member of?
 
 ```j1ql
 'Joe Adams' as employee that relates to (Team|Group) as group
-  return
-    employee._type, employee.displayName, employee.email,
-    group._type, group.displayName
+return
+  employee._type, employee.displayName, employee.email,
+  group._type, group.displayName
 ```
 
 ## What service accounts have been granted access to production data services or sources?

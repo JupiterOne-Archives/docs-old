@@ -24,17 +24,21 @@ Find (Host|Database) with tag.AccountName='{accountName}'
 
 ## What are my production resources?
 
+Filter using production tag:
+
 ```j1ql
 Find (Application|CodeRepo|Workload|Function|Task|Host|Device|Database|DataStore)
   with tag.Production=true
 ```
+
+Filter using account name:
 
 ```j1ql
 Find (Application|CodeRepo|Workload|Function|Task|Host|Device|Database|DataStore)
   with tag.AccountName='{accountName}'
 ```
 
-_You can also use `Find *` but that query might be slower._
+_You can also use `Find *` to cover everything but the results could be overwhelming._
 
 ## What are my production data stores and databases?
 
@@ -88,15 +92,15 @@ Find aws_instance that !has aws_autoscaling_group
 
 ## What are the tiers of infrastructure?
 
-_TBD_
+_To be added._
 
 ## How many devices are in each service priority?
 
-_TBD_
+_To be added._
 
 ## What are the TTL of devices in each service priority or architectural tier or with tag type {}?
 
-_TBD_
+_To be added._
 
 ## What information assets are missing metadata for data classification, tier of service or architectural tier?
 
@@ -118,19 +122,19 @@ by unique property values._
 ```j1ql
 Find (Host|DataStore|Workload|Task|Application)
   with tag.AccountName = '{accountName}' as system
-  return system.displayName, system.owner
+return system.displayName, system.owner
 ```
 
 ```j1ql
 Find (Host|DataStore|Workload|Task|Application) as system
   that relates to aws_vpc with vpcId='{vpcId}' or name='{vpcName}'
-  return system.displayName, system.owner
+return system.displayName, system.owner
 ```
 
 ```j1ql
 Find (Host|DataStore|Workload|Task|Application) as system
   that relates to aws_security_group with groupId='{sgId}' or name='{sgName}'
-  return system.displayName, system.owner
+return system.displayName, system.owner
 ```
 
 ## How many systems were added to environment {} in last time period?
@@ -141,16 +145,31 @@ Example for last 24 hours time period:
 Find * with _tag.AccountName='{accountName}' and _createdOn > date.now - 24hrs
 ```
 
-## How many systems were added to environment {} interactively vs automated?
+## How many systems were added to a source environment (e.g. AWS account) interactively vs automated?
 
-_TBD_
+_To be added._
+
+## How many resources were added to manually vs automated?
+
+Count entities added by its source:
+
+```j1ql
+Find * as e return e._source, count(e)
+```
+
+Source (`_source`) can be one of the following:
+
+- `integration-managed`: added via a provider integration
+- `powerup-managed`: added via a JupiterOne Powerup (currently endpoint compliance stethoscope agent)
+- `system-mapper`: added by the JupiterOne mapper (derived entities or external entities)
+- `api`: added manually by a JupiterOne user from either the webapp or API
 
 ## What container images, VM images, and software packages are available in my production environments?
 
 _Container entities/relationships are to be added when we support ECS, EKS, ECR
 and Fargate._
 
-## What are the tags assigned to any inventory asset?
+## What are the tags assigned to a particular inventory asset?
 
 _This is best viewed in the Asset Inventory app by selecting an entity and going
 to the "Tags" tab in the properties panel._
