@@ -39,7 +39,6 @@ pipeline {
     stage('publish') { when { branch 'master' }
       steps {
         initBuild()
-        sh 'yarn install'
         script {
           if (env.BRANCH_NAME == 'master') {
             publishNpmPackage('.')
