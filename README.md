@@ -1,6 +1,5 @@
-# jupiter-docs
+# JupiterOne Documentation
 
-This repo hosts the static content that is currently published to Zendesk (see
-`yarn publish:zendesk`), as well as the AWS infrastructure needed to deploy (via
-Jenkins) a redirect from https://docs.jupiterone.io =>
-https://support.jupiterone.io/hc/en-us.
+Guides, docs, and release notes for JupiterOne platform and apps.
+
+See them at <https://support.jupiterone.io/hc/en-us>.
