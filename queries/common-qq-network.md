@@ -141,8 +141,7 @@ order by env.tag.AccountName
 
 ## Are wireless networks segmented and protected by firewalls?
 
-_Requires an integration such as Cisco Meraki, or by adding the wireless network
-configuration information via the J1 API._
+_Requires an integration such as Cisco Meraki, or by adding the wireless network configuration information via the J1 API._
 
 ```j1ql
 Find Network with wireless=true as n

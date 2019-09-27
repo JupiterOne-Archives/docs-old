@@ -70,9 +70,7 @@ Find aws_instance as i that USES aws_ebs_volume with encrypted!=true as v
 
 Checks whether the incoming SSH traffic for the security groups is accessible.
 
-*With AWS Config, this rule is compliant when the IP addresses of the incoming
-SSH traffic in the security groups are restricted. This rule applies only to
-IPv4.*
+*With AWS Config, this rule is compliant when the IP addresses of the incoming SSH traffic in the security groups are restricted. This rule applies only to IPv4.*
 
 ```j1ql
 Find aws_security_group as sg that ALLOWS as rule * as src

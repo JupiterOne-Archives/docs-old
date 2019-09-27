@@ -94,5 +94,4 @@ Find Image with public=false or approved=true
 Find Vendor
 ```
 
-_This is best viewed in the Asset Inventory app by selecting the Vendor class
-from the quick filter._
+_This is best viewed in the Asset Inventory app by selecting the Vendor class from the quick filter._
