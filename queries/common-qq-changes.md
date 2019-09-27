@@ -36,8 +36,7 @@ _This will be captured when we start processing cloudtrail events._
 
 ## Which developer(s) most likely introduced vulnerabilities in recent code changes?
 
-_Requires integrations with Github or Bitbucket, and code scanning solutions
-like Veracode or WhiteHat._
+_Requires integrations with Github or Bitbucket, and code scanning solutions like Veracode or WhiteHat._
 
 ```j1ql
 Find User
