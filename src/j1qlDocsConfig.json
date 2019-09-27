@@ -5,7 +5,11 @@
       "title": "JupiterOne Query Language (J1QL) Docs",
       "documents": [
         {
-          "title": "J1QL Quick Start Tutorial",
+          "title": "Search Quick Start",
+          "markdownUrl": "guides/quickstart-search.md"
+        },
+        {
+          "title": "J1QL Tutorial",
           "markdownUrl": "guides/tutorial-j1ql.md"
         },
         {
