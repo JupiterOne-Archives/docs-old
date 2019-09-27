@@ -5,7 +5,7 @@ sections:
       - id: 360022884813
         title: 1/9 Configure Integrations
         file: ../guides/configure-integrations.md
-        hash: YFPV2T+cjZqWapm2E3BmWynl02aGgeiMN8ap2l8Gm8s=
+        hash: P4TdoY11LeORVUI5nhOrndwCV9y5x0/r2fkyqGvXxlc=
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022884813-1-9-Configure-Integrations
       - id: 360022705414
@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: wfbl2gFwEw/04YUXLs+kgBLHJTnYPfy2AwZJBK6sjLE=
+        hash: U5BlfU/JYgs4ZYwkFf6iH5pQGyVO8rTvsH1z6hCSA8g=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -496,14 +496,14 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360022903213-2019.20-Release
       - title: 2019.19 Release
         file: ../release-notes/2019-19.md
-        hash: xz4nS+osvthQMY/3KBXD/Auxs1UqC7ZoJiLo6iReYRc=
+        hash: WRm9YTOdhCtRK/9BKvNSstd/+VPncPB0ir+GSI9Hiok=
         id: 360022903193
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022903193-2019.19-Release
       - title: 2019.18 Release
         file: ../release-notes/2019-18.md
         id: 360022721494
-        hash: fd8NB0MIfNOVOJTtDG0ahIeq5TtGnzqwIzvS5CfQjFw=
+        hash: 9cTGdDvJ8nJ4LKUfiPi+GYH0OmvVyhTLh3NsEvUoRR0=
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721494-2019.18-Release
       - title: 2019.17 Release
