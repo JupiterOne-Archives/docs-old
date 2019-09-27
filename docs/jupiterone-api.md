@@ -1,6 +1,6 @@
 # JupiterOne API
 
-JupiterOne platform exposes a number of public GraphQL endpoints.
+The JupiterOne platform exposes a number of public GraphQL endpoints.
 
 **Base URL**: `https://api.us.jupiterone.io`
 
@@ -8,15 +8,22 @@ JupiterOne platform exposes a number of public GraphQL endpoints.
 
 **Endpoint for alert and rules operations**: `/rules/graphql`
 
-An experimental [node.js client and CLI][1] can be found on [Github][1].
+An experimental [node.js client and CLI][1] can be found on Github.
 
 [1]: https://github.com/JupiterOne/jupiterone-client-nodejs
 
-## Querying Entities and Relationships
+## Entity and Relationship Queries
 
 **Endpoint:** `/graphql`
 
-This query will allow you to run J1QL queries for fetching data.
+### Fetching Vertices with J1QL
+
+This query will allow you to run J1QL queries for fetching data. The query
+requires three parameters:
+
+- `query`: A query string that describes what data to be returned
+- `variables`: A `JSON` list of values to be used as parameters for this query
+- `dryRun`: A boolean that determines if the query is a dry run or not.
 
 ```graphql
 query J1QL($query: String!, $variables: JSON, $dryRun: Boolean) {
@@ -40,7 +47,7 @@ Variables:
 ```
 
 NOTE: there's also a `queryV1Tree` variant that has nice types for
-use when displaying graph data.
+use when displaying graph data. The tree specifies vertices and edges.
 
 ```graphql
 query J1QL($query: String!, $variables: JSON, $dryRun: Boolean) {
@@ -70,14 +77,14 @@ Variables:
 }
 ```
 
-variables
+### Fetching Graph Data
 
-### Fetching graph data
+This query will be used for fetching graph data. The returned data includes the
+details of all vertices found on the graph as well as the edges that connect the
+vertices.
 
-This query will be used for fetching graph data.
-
-Note: ATM a canned query for IAM Role data is run.
-No input variables need to be provided.
+Note: At the moment, a canned query for IAM Role data is run. No input variables
+need to be provided.
 
 ```graphql
 query testQuery {
@@ -128,9 +135,19 @@ query testQuery {
 }
 ```
 
-### Retrieving a single vertex by Id
+### Retrieving a Single Vertex by ID
 
-This query will be used for fetch a vertex by it's id.
+This query will be used for fetching a vertex and its properties by its ID. The
+query requires one of two parameters:
+
+- `id`: The ID as a string
+- `filters`: A set of filters that define the desired vertex.
+
+The example below contains all of the currently available filters.
+
+NOTE: Only one of the variables (`id` or `filters`) is required. Specifying both
+is allowed but somewhat redundant unless you want to assert that a vertex with
+the specified `id` exists *and* has specific entity properties.
 
 ```graphql
 query VertexQuery($id: String!, $filters: VertexFilters) {
@@ -170,22 +187,16 @@ Variables:
 }
 ```
 
-NOTE: Only one of the variables (`id` or `filters`) are required.
-Specifying both is allowed but is somewhat redundant
-unless you want to assert that the vertex with a specific
-`id` exists with a specific entity property.
+### Fetching Neighbors of a Vertex
 
-`filters` is "well defined" right now
-(all allowed fields are shown in the variables above)
-but can be tweaked to allow
-for arbitrary properties in the future.
+The `Vertex` type allows you to retrieve vertex and edge neighbors up to a
+certain depth using the `neighbors` field. The return type of the `neighbors`
+resolver is the same as that of a graph query. This query requires two
+parameters:
 
-### Fetching neighbors of a vertex
-
-The `Vertex` type allows vertex and edge neighbors up to a certain
-depth to be retrieved using the `neighbors` field.
-The return type of the `neighbors` resolver is the same as that of
-a graph query.
+- `id`: The ID of the vertex as a string
+- `depth`: An integer specifying how many "levels" deep the query will go to
+  look for neighbors.
 
 ```graphql
 query VertexQuery($id: String!, $depth: Int) {
@@ -214,8 +225,6 @@ query VertexQuery($id: String!, $depth: Int) {
 
 Variables:
 
-NOTE: The depth that is supplied must be a value between 1 and 5 (inclusive)
-
 ```json
 {
   "id": "<a vertex id>",
@@ -223,9 +232,24 @@ NOTE: The depth that is supplied must be a value between 1 and 5 (inclusive)
 }
 ```
 
-### Retrieving a edge by Id
+NOTE: The depth that is supplied must be a value between 1 and 5 (inclusive)
 
-This query will be used for fetch a vertex by it's id.
+### Retrieving an Edge by ID
+
+This query allows you to fetch an edge, its properties, and the relationship it
+describes by its ID or label and filters. The query requires one or two of three
+parameters:
+
+- `id`: The ID as a string.
+- `label`: The label displayed on the edge.
+- `filters`: A set of filters that define the desired vertex.
+
+The example below contains all of the currently available filters.
+
+NOTE: Only one of the variables (`id`, `label`, or `filters`) is required.
+Specifying `label` and `filters` with `id` is allowed but somewhat redundant
+unless you want to assert that a vertex with the specified `id` exists *and* has
+the specific label and properties.
 
 ```graphql
 query VertexQuery($id: String!) {
@@ -268,24 +292,22 @@ Variables:
 }
 ```
 
-NOTE: Only one of the variables (`id`, `label` or `filters`) are required.
-Specifying a `label` and `filters` when an `id` is present
-is somewhat redundant
-but can be used to assert that the edge with a specific
-`id` exists with additional constraints.
+### Fetching the Count of Entities Via a \_type and/or \_class
 
-Much like with the vertex query, `filters` is "well defined" right now
-(all allowed fields are shown in the variables above)
-but can be tweaked to allow
-for arbitrary properties in the future.
+This query allows you to fetch the count of entities. The `_id`, `_key`,
+`_type`, or `_class` fields can be supplied as filters. This query only counts
+the latest versions of entities matching the filter criteria. This query
+requires two parameters:
 
-### Fetching the count of entities via a \_type and/or \_class
+- `filters`: A set of vertex filters that describe the entities that are to be
+  returned.
+- `filterType`: A `FilterType` (`AND` or `OR`).
 
-For fetching the count of the latest entities the
-`_id`, `_key`, `_type` and `_class`
-fields can be supplied as filters.
-This query only counts the latest versions of entities
-matching the filter criteria.
+If `OR` is specified as the filter type, any entity that has any class in the
+filter will be included in the count. By default, the query uses `AND`, which
+only includes entities that have _all_ of the specified classes in the count.
+
+Note: This resolver uses the `JSON` scalar as the return type.
 
 ```graphql
 query testQuery($filters: VertexFilters, $filterType: FilterType) {
@@ -295,8 +317,6 @@ query testQuery($filters: VertexFilters, $filterType: FilterType) {
 
 Note: Use field aliases to request the counts of
 multiple different entities.
-Also, the `filterType` argument is optional and
-defaults to the value `AND`
 
 ```graphql
 query testQuery {
@@ -314,15 +334,17 @@ Example result:
 }
 ```
 
-### Fetching the count of all types and classes
+### Fetching the Count of All Types and Classes
+
+This query returns the entity counts for all types and classes.
+
+Note: This resolver uses the `JSON` scalar as the return type.
 
 ```graphql
 query testQuery {
   allEntityCounts
 }
 ```
-
-Note: This resolver uses the `JSON` scalar as the return type.
 
 Example result:
 
@@ -340,20 +362,25 @@ Example result:
 }
 ```
 
-### Fetching the count of all types and classes
+### Fetching the Count of All Types With a Set of Classes
+
+This query returns all types that have the specified classes. The query requires
+two parameters:
+
+- `classes`: An array of strings detailing which classes should be returned.
+- `filterType`: A `FilterType` (`AND` or `OR`).
+
+If `OR` is specified as the filter type, any entity that has any class in the
+filter will be included in the count. By default, the query uses `AND`, which
+only includes entities that have _all_ of the specified classes in the count.
+
+Note: This resolver uses the `JSON` scalar as the return type.
 
 ```graphql
 query testQuery ($classes: [String], filterType: FilterType) {
   typeCounts (classes: $classes, filterType: $filterType)
 }
 ```
-
-Note: This resolver uses the `JSON` scalar as the return type.
-
-If `OR` is specified as the filter type, all of the types between the
-classes will be returned. By default, the query `AND`s the classes
-and returns only the count of entities that have _all_ of the specified
-classes.
 
 Example result:
 
@@ -365,7 +392,7 @@ Example result:
 }
 ```
 
-### Vertex full-text search
+### Vertex Full-Text Search
 
 ```graphql
 query testQuery($query: String!, $size: Int, $after: String) {
@@ -408,13 +435,20 @@ Variables:
 }
 ```
 
-### Listing vertices via a \_type and/or \_class
+### Listing Vertices Via a \_type and/or \_class
 
-For fetching the count of the latest entities the
-`_id`, `_key`, `_type` and `_class`
-fields can be supplied as filters.
-This query only returns the latest versions of entities
-matching the filter criteria.
+For fetching entities with specified filters. The `_id`, `_key`, `_type` and
+`_class` fields can be supplied as filters. This query only returns the latest
+versions of entities matching the filter criteria. This query accepts three
+parameters:
+
+- `filters`: A set of vertex filters that describe the entities to return (required).
+- `after`: A string to begin searching after (required).
+- `filterType`: A `FilterType` (`AND` or `OR`).
+
+If `OR` is specified as the filter type, any entity that has any class in the
+filter will be included in the count. By default, the query uses `AND`, which
+only includes entities that have _all_ of the specified classes in the count.
 
 ```graphql
 query testQuery($filters: VertexFilters, $filterType: FilterType, $after: String) {
@@ -434,9 +468,6 @@ query testQuery($filters: VertexFilters, $filterType: FilterType, $after: String
   }
 }
 ```
-
-Note: the `filterType` argument is optional and
-defaults to the value `AND`
 
 Variables:
 
@@ -476,6 +507,16 @@ Example result
 **Endpoint:** `/graphql`
 
 ### Create Entity
+
+This mutation creates a JupiterOne entity with the given specifications. This
+mutation requires three parameters (with two optional parameters):
+
+- `entityKey`: A string that gives the key value for the entity so that this entity can be referenced later.
+- `entityType`: A string that gives the type of the entity being created.
+- `entityClass`: A string that gives the class of the entity being created.
+- Optional Parameters
+  - `timestamp`:
+  - `properties`: A `JSON` list that gives specific properties that the entity will have.
 
 ```graphql
 mutation CreateEntity (
@@ -525,6 +566,15 @@ Variables:
 
 ### Updating Entity
 
+This mutation updates an already existing entity (does not create an entity).
+You cannot change the `entityKey`, `entityClass`, or `entityType`.
+This mutation requires one parameter (with two optional parameters):
+- `entityId`: A string specific to the entity that finds the entity.
+- Optional Parameters:
+  - `timestamp`: 
+  - `properties`: A `JSON` list of properties to be changed.
+
+
 ```graphql
 mutation UpdateEntity (
   $entityId: String!
@@ -566,6 +616,12 @@ Variables:
 ```
 
 ### Deleting Entity
+
+This mutation deletes an existing entity.
+This mutation requires one parameter (with one optional parameter):
+- `entityId`: A string specific to the entity that finds the entity.
+- Optional Parameters: 
+  - `timestamp`: 
 
 ```graphql
 mutation DeleteEntity (
@@ -1139,4 +1195,148 @@ variables:
 {
   "id": "slj3098s03j-i2ojd0j2-sjkkdjf"
 }
+```
+
+## Integration Operations
+
+### Finding an Integration Definition based on a type
+
+This query returns an Integration Definition. This query requires an Integration Type.
+
+```graphql
+query testQuery ($integrationType: String!) {
+  findIntegrationDefinition (integrationType: $integrationType) {
+    id
+    name
+    type
+    title
+    integrationType
+    integrationClass
+    configFields {
+      key
+      displayName
+      description
+    }
+  }
+}
+```
+
+### Getting an Integration Definition with an ID
+
+This query returns a Integration Definition. This query requires an ID.
+
+```graphql
+query getIntegrationDefinition($id: String) {
+  integrationDefinition(id: $id) {
+    id
+    name
+    type
+    title
+  }
+}
+```
+
+### List Integration Definitions
+
+This query returns a list of all Integration Definitions.
+
+```
+query testQuery {
+  integrationDefinitions {
+    definitions {
+      id
+      name
+      type
+      title
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}
+```
+
+###
+
+## Example Usages
+
+**Creating entities and a relationship between them**
+NOTE: The following mutations utilize a J1Client.
+
+```
+const CREATE_ENTITY = gql`
+  mutation createEntity (
+    $entityKey: String!
+    $entityType: String!
+    $entityClass: String!
+    $timestamp: Long
+    $properties: JSON
+  ) {
+    createEntity(
+      entityKey: $entityKey
+      entityType: $entityType
+      entityClass: $entityClass
+      properties: $properties
+    ) {
+  .
+  .
+  .
+  }`;
+
+const CREATE_RELATIONSHIP = gql`
+  mutation CreateRelationship (
+    $relationshipKey: String!
+    $relationshipType: String!
+    $relationshipClass: String!
+    $fromEntityId: String!
+    $toEntityId: String!
+  ) {
+    createRelationship (
+      relationshipKey: $relationshipKey
+      relationshipType: $relationshipType
+      relationshipClass: $relationshipClass
+      fromEntityId: $fromEntityId
+      toEntityId: $toEntityId
+    ) {
+    .
+    .
+    .
+  }`;
+
+
+const entity1 = await j1Client.mutate({
+  mutation: CREATE_ENTITY,
+  variable: {
+    entityKey: 'Example Key',
+    entityType: 'ExampleType',
+    entityClass: 'ExampleClass',
+    properties: {
+      'tag.key': 'tagvalue'
+    }
+  }
+});
+
+const entity2 = await j1Client.mutate({
+  mutation CREATE_ENTITY,
+  variable: {
+    entityKey: 'Other Example Key',
+    entityType: 'OtherType',
+    entityClass: 'OtherClass',
+    properties: {
+      'tag.key': 'tag'
+    }
+  }
+});
+
+const relationship = await j1Client.mutate({
+  mutation: CREATE_RELATIONSHIP,
+  variable: {
+    relationshipKey: entity1._key + ' |uses| ' + entity2._key,
+    relationshipClass: 'entity_uses_entity',
+    relationshipType: 'USES',
+    toEntityId: entity2._id,
+    toEntityKey: entity1._id,
+  }
+});
 ```
