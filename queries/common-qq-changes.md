@@ -33,3 +33,16 @@ _This will be captured when we start processing cloudtrail events._
 ## What changes were made with interactive sessions?
 
 _This will be captured when we start processing cloudtrail events._
+
+## Which developer(s) most likely introduced vulnerabilities in recent code changes?
+
+_Requires integrations with Github or Bitbucket, and code scanning solutions
+like Veracode or WhiteHat._
+
+```j1ql
+Find User
+  that OPENED PR with createdOn > date.now-7days
+  that RELATES TO CodeRepo
+  that HAS (Vulernability|Finding) with _createdOn > date.now-7days
+return tree
+```
