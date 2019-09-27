@@ -17,9 +17,7 @@ construct custom queries yourself.
 This tutorial builds on the [full J1QL documentation][j1ql-doc] using some
 common use cases.
 
-_The queries in this tutorial and other JupiterOne documentation are examples
-that work in most cases, but may need to be tuned based on the specific
-structure of your data sources._
+_The queries in this tutorial and other JupiterOne documentation are examples that work in most cases, but may need to be tuned based on the specific structure of your data sources._
 
 ## Part 1 - Simple Root query
 
@@ -435,8 +433,7 @@ example queries yourself.
 
 ### 3a - IdP users and access
 
-*Examples in this section require an identity provider integration (Okta or
-OneLogin)*
+*Examples in this section require an identity provider integration (Okta or OneLogin)*
 
 **Are there system accounts do not belong to an individual employee/user?**
 
@@ -542,9 +539,7 @@ Find (User|Person) as u
 
 ## Part 4 - Cross Account Analysis
 
-*Many examples in this section requires both Okta and AWS integration
-configurations in JupiterOne, as well as an AWS SAML app configured in your Okta
-account. Some queries work best when you have multiple AWS configurations.*
+*Many examples in this section requires both Okta and AWS integration configurations in JupiterOne, as well as an AWS SAML app configured in your Okta account. Some queries work best when you have multiple AWS configurations.*
 
 **Who has access to my AWS accounts via single sign on (SSO)?**
 
@@ -581,8 +576,7 @@ Find aws_account
 
 ## Part 5 - Endpoint Compliance
 
-*Examples in this section require the activation of at least one JupiterOne
-Endpoint Compliance Agent - powered by Stethoscope app.*
+*Examples in this section require the activation of at least one JupiterOne Endpoint Compliance Agent - powered by Stethoscope app.*
 
 **Do I have local firewall enabled on end-user devices?**
 

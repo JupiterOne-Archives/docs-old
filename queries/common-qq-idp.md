@@ -1,8 +1,6 @@
 # Identity, People and Privileged access
 
-_Most of these queries depend on proper mapping of custom properties or profile
-attributes from your HR system or identity provider to the Person/employee
-entities._
+_Most of these queries depend on proper mapping of custom properties or profile attributes from your HR system or identity provider to the Person/employee entities._
 
 ## Who are the new hires within the last 12 months?
 
@@ -98,9 +96,7 @@ Find AccessPolicy with admin=true as policy
 
 ## Who is able to make changes in a production data connected environment, and what changes can they make?
 
-_We plan to do more in-depth analysis of AWS IAM policies to determine access.
-In the meantime, we determine admin access based on policy name and you can run
-the following query to find them._
+_We plan to do more in-depth analysis of AWS IAM policies to determine access. In the meantime, we determine admin access based on policy name and you can run the following query to find them._
 
 ```j1ql
 Find AccessPolicy with admin=true as policy and tag.AccountName='{accountName}'

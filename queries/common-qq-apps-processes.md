@@ -1,14 +1,12 @@
 # Applications and Processes
 
-_We plan to add deeper integration with endpoint protection and device management
-solutions to obtain services and processes information on hosts._
+_We plan to add deeper integration with endpoint protection and device management solutions to obtain services and processes information on hosts._
 
 _Note that you can also add custom data by writing a script to call the J1 APIs._
 
 ## What certificates are installed/being used?
 
-_Host level certificates details to be added later. You can query for ACM
-certificates in AWS._
+_Host level certificates details to be added later. You can query for ACM certificates in AWS._
 
 ```j1ql
 Find Certificate
@@ -20,8 +18,7 @@ Find * that (HAS|USES) Certificate return tree
 
 ## What certificates are used for which service?
 
-_Host level certificates details to be added later. You can query for ACM
-certificates in AWS._
+_Host level certificates details to be added later. You can query for ACM certificates in AWS._
 
 Returns a graph of the resources that uses certificates
 
@@ -37,18 +34,14 @@ Find Certificate with expiresOn < date.now + 30days
 
 ## What versions of software / applications do I have running?
 
-_Requires integrations that provide application information. For example, SAML
-SSO applications from Okta, or macOS apps from Jamf._
+_Requires integrations that provide application information. For example, SAML SSO applications from Okta, or macOS apps from Jamf._
 
 ```j1ql
 Find Application as app
 return app._type, app.displayName, app.status
 ```
 
-_Note: to keep the entity data structure less noisy, different versions of the
-same Application are **not** stored as separate entities. Rather, the `version`
-data is kept on the relationship between the host or endpoint device that has
-installed the application._
+_Note: to keep the entity data structure less noisy, different versions of the same Application are **not** stored as separate entities. Rather, the `version` data is kept on the relationship between the host or endpoint device that has installed the application._
 
 ```j1ql
 Find unique * that (USES|INSTALLED) as installation Application as app

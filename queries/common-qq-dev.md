@@ -29,8 +29,7 @@ return PR.displayName, PR.name, PR.webLink
 
 ## Who are the most recent contributors to this repo?
 
-_This is particularly useful to identify who might be the best person to fix a
-newly discovered vulnerability._
+_This is particularly useful to identify who might be the best person to fix a newly discovered vulnerability._
 
 ```j1ql
 Find User as u

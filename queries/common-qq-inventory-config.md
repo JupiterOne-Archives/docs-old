@@ -114,8 +114,7 @@ Find (Host|DataStore|Workload|Task) with tag.Classification = undefined
 Find Host as h return h.platform
 ```
 
-_A 'Group By' capability will be added to J1QL soon to return objects or count
-by unique property values._
+_A 'Group By' capability will be added to J1QL soon to return objects or count by unique property values._
 
 ## Who owns a production system in account/zone/tier/layer/VPC/SG?
 
@@ -166,10 +165,8 @@ Source (`_source`) can be one of the following:
 
 ## What container images, VM images, and software packages are available in my production environments?
 
-_Container entities/relationships are to be added when we support ECS, EKS, ECR
-and Fargate._
+_Container entities/relationships are to be added when we support ECS, EKS, ECR and Fargate._
 
 ## What are the tags assigned to a particular inventory asset?
 
-_This is best viewed in the Asset Inventory app by selecting an entity and going
-to the "Tags" tab in the properties panel._
+_This is best viewed in the Asset Inventory app by selecting an entity and going to the "Tags" tab in the properties panel._

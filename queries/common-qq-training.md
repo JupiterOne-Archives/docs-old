@@ -13,8 +13,7 @@ return u.first_name, u.last_name, u.email, t.name
 
 ## Is there any user with AWS access that hasn't completed certain training?
 
-_The following example specifies `aws_iam_user` and `knowbe4_user`, requiring
-AWS and KnowBe4 integrations._
+_The following example specifies `aws_iam_user` and `knowbe4_user`, requiring AWS and KnowBe4 integrations._
 
 _Additionally, this requires proper mapping between User and Person entities._
 
@@ -40,9 +39,7 @@ return r.displayName, u.displayName, p.displayName, p.email
 
 ## Is there any developer who has not completed "Secure Development" training?
 
-_The following example specifies `bitbucket_user`, `github_user`, and
-`knowbe4_user`, which requires Bitbucket or GitHub, in addition to KnowBe4
-integrations._
+_The following example specifies `bitbucket_user`, `github_user`, and `knowbe4_user`, which requires Bitbucket or GitHub, in addition to KnowBe4 integrations._
 
 _Additionally, this requires proper mapping between User and Person entities._
 

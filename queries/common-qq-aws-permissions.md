@@ -1,11 +1,7 @@
 
 # AWS Access Permissions and Trusts
 
-> _Tip: If you have over 10,000 AWS resources in multiple AWS accounts, some
-query execution may take a long time or occasionally time out. Try limiting the
-query by adding `and tag.AccountName='account-name'` as part of the `WITH`
-entity property filter. Or use `LIMIT 100` at the end of the query for a smaller
-sample set of the results._
+> _Tip: If you have over 10,000 AWS resources in multiple AWS accounts, some query execution may take a long time or occasionally time out. Try limiting the query by adding `and tag.AccountName='account-name'` as part of the `WITH` entity property filter. Or use `LIMIT 100` at the end of the query for a smaller sample set of the results._
 
 ## IAM Policy permissions
 
@@ -94,10 +90,7 @@ find (Network|Host) with _source='system-mapper'
   return tree
 ```
 
-> _Tip: from the above, the `(Network|Host) with _source='system-mapper'`
-portion of the query looks for `Network` or `Host` entities created by the
-`system-mapper` —- meaning those are networks and hosts **“external”** to your
-environment, not ingested by the integration._
+> _Tip: from the above, the `(Network|Host) with _source='system-mapper'` portion of the query looks for `Network` or `Host` entities created by the `system-mapper` —- meaning those are networks and hosts **“external”** to your environment, not ingested by the integration._
 
 ## S3 Bucket permissions
 
