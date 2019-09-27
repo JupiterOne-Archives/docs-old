@@ -74,12 +74,14 @@ async function publish() {
         data = data.replace(linksRegex, linksMap[match[5]]);
         match = linksRegex.exec(data);
       }
-      
+      const staticAssetsUrl = 'https://github.com/JupiterOne/docs/blob/master/assets/$2.$3?raw=true';
+      const anchorIcon = `<img src="https://raw.githubusercontent.com/feathericons/feather/master/icons/link.svg?sanitize=true" width="12" height="12">`;
+      const anchoredHeader = `<h2 id="$1">$2 <a href="#$1">${anchorIcon}</a></a></h2>`;
       const html = converter.makeHtml(data)
-        .replace(/(\.\.\/)+assets\/(.*)\.png/g, 'https://github.com/JupiterOne/docs/blob/master/assets/$2.png?raw=true')
+        .replace(/(\.\.\/)+assets\/(.*)\.(png|jpg|gif|svg)/g, staticAssetsUrl)
         .replace(/<pre><code/g, '<pre><div')
         .replace(/<\/code><\/pre>/g, '</div></pre>')
-        .replace(/<h2 id="(.*)">(.*)<\/h2>/g, `<h2 id="$1">$2 <a href="#$1"><img src="https://raw.githubusercontent.com/feathericons/feather/master/icons/link.svg?sanitize=true" width="12" height="12"></a></a></h2>`)
+        .replace(/<h2 id="(.*)">(.*)<\/h2>/g, anchoredHeader)
         .replace(/<\/table>/g, '</table><br>');
       const article = {
         title: art.title,
