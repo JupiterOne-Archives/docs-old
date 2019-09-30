@@ -51,33 +51,54 @@ For example,
 The JupiterOne Query Language (J1QL) is used here for searching for anything
 across all of your entities and relationships.
 
-To start, understand the basic query structure:
+Here's the basic query structure:
 
-```j1ql
-FIND {class or type of Entity1} AS {alias1}
-  WITH {property}={value} AND|OR {property}={value}
-  THAT {relationship_verb} {class or type of Entity2} AS {alias2}
-  WHERE {alias1}.{property} = {alias2}.{property}
-```
+- Start with an entity:
+
+  `FIND {class or type of an Entity}`
+
+- Optionally add some property filters:
+
+  `WITH {property}={value} AND|OR {property}={value}`
+
+- Get its relationships:
+
+  `THAT {relationship_verb}|RELATES TO {class/type of another Entity}`
 
 For example:
 
 ```j1ql
-Find User that IS Person
-```
-
-```j1ql
-Find Firewall
-  that ALLOWS as rule (Network|Host)
-where
-  rule.ingress=true and rule.fromPort=22
-```
-
-```j1ql
-Find * with tag.Production='true'
+FIND * WITH tag.Production='true'
 ```
 
 (note the wildcard `*` above to include everything)
+
+```j1ql
+FIND User THAT IS Person
+```
+
+If you don't know the exact relationship, you can just use the keyword
+`RELATES TO` to cover any/all relationship:
+
+```j1ql
+FIND User THAT RELATES TO Person
+```
+
+You can name an entity or relationship with an alias with the `AS {something}`.
+The alias can then be used in `WHERE` for additional filtering or comparison, or
+in `RETURN` for returning specific properties.
+
+For example:
+
+```j1ql
+FIND Firewall AS fw
+  THAT ALLOWS AS rule (Network|Host) AS n
+WHERE
+  rule.ingress=true and rule.fromPort=22
+RETURN
+  fw._type, fw.displayName, fw.tag.AccountName,
+  n._type, n.displayName, n.tag.AccountName
+```
 
 The query language is case insensitive except for the following:
 
