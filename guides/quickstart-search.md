@@ -70,7 +70,7 @@ Find User that IS Person
 Find Firewall
   that ALLOWS as rule (Network|Host)
 where
-  rule.ingress=truee and rule.fromPort=22
+  rule.ingress=true and rule.fromPort=22
 ```
 
 ```j1ql
