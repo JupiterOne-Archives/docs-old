@@ -11,7 +11,7 @@ sections:
       - id: 360022705414
         title: 2/9 Search Quickstart
         file: ../guides/quickstart-search.md
-        hash: seCtqwCX28VlawHsr2qBvNH87poIDhtahZZGdNr1wsw=
+        hash: fT/gGOFwmWBKAxAH6inUlt8HFNqCV92mVqhTMpbxI3s=
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022705414-2-9-Search-Quickstart
       - id: 360022890073
@@ -23,7 +23,7 @@ sections:
       - title: 4/9 J1QL Query Tutorial
         file: ../guides/tutorial-j1ql.md
         id: 360022720434
-        hash: dk5hGjnb6LlbT2SgdDLtl/6zLGJGKy4QIAPeAlV/1dg=
+        hash: tOjU24GcsjW8STLVItsRZmoU+Crhw1xgpStTcbq/OkI=
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022720434-4-9-J1QL-Query-Tutorial
       - title: 5/9 Using Asset Inventory Filters
@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: U5BlfU/JYgs4ZYwkFf6iH5pQGyVO8rTvsH1z6hCSA8g=
+        hash: VEAPEjNu7K4N9XVrpdVz+f1LU4/41cYp+3D/e8+RWek=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -100,19 +100,19 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360024909073-Common-Questions-and-Queries-Catalog
       - title: AWS IAM Permissions and Trusts
         file: ../queries/common-qq-aws-permissions.md
-        hash: ZYiSiDNzx2QSom7BrWnagDEqVPkz5FhhEtFxJ28PDFM=
+        hash: VDUSgnoMFYWQDnt8v4kRcEWcppp7oNbbGyyQ3DyDdr0=
         id: 360034672793
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360034672793-AWS-IAM-Permissions-and-Trusts
       - title: Hardware/software inventory and configuration
         file: ../queries/common-qq-inventory-config.md
-        hash: MIwV6/xvytoLNmke+Nd9BSbmPOIxw6XkJhuMvxwB6D8=
+        hash: hGD/7oSqWQhKcPG9F4JnB0hWqgOj1T+SgLPBG4CHyKo=
         id: 360024909093
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909093-Hardware-software-inventory-and-configuration
       - title: Applications and processes
         file: ../queries/common-qq-apps-processes.md
-        hash: PTVGU0dscbnGclHkd1OlNWDo1phi0ftpzC00jKeMTPY=
+        hash: fzCa8IAMgeCcflGQJokzRA2FbkLjk4+FWiWx+Niw8GA=
         id: 360024909113
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909113-Applications-and-processes
@@ -124,7 +124,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360024758134-Secrets-and-key-management
       - title: Network connections & zones
         file: ../queries/common-qq-network.md
-        hash: tvE28zS7r8P4WK9O6XiMkB8nZ/6fgUGC8b7YWp+igKw=
+        hash: /E9cz3xeMC45K8mdEnY0Yl6Y+rwMbHklmiOr0GDaWXE=
         id: 360024909133
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909133-Network-connections-&-zones
@@ -136,31 +136,31 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360024758154-Data-Security
       - title: Changes and attribution
         file: ../queries/common-qq-changes.md
-        hash: dB9ZMJZl+kuNH8Liy/eYUUI/GwwiOWsPEUyXKpiFu4w=
+        hash: hcKjz1NpVqGMf+TdT8bU0JnuoSDy92rMuXW3d0eN9a4=
         id: 360024758174
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024758174-Changes-and-attribution
       - title: Risks and Vulnerability Management
         file: ../queries/common-qq-risks.md
-        hash: mcM31ox7+FPUzZpM0O3g25B1oY1wz/jy3KAJsuqC3RM=
+        hash: xM/SEBkc0M8aEjb4ZvK8ZF+WDNO98ndj0K/s622G9sQ=
         id: 360024758194
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024758194-Risks-and-Vulnerability-Management
       - title: 'Identity, People and Privileged access'
         file: ../queries/common-qq-idp.md
-        hash: /2TYbX/vIcNtLfxeeaJaDg7Nc1/uRzbFM4dklombQCE=
+        hash: 7FZkPdyf4z94REm5eIq/eQqfcfmKTNNr1CZZ9rwn1Dw=
         id: 360024909153
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909153-Identity,-People-and-Privileged-access
       - title: Development
         file: ../queries/common-qq-dev.md
-        hash: kk/ihoeRTJV+5VYJedJZrgEx2Db1x7FwumhxuHjmXwQ=
+        hash: mV7fKXLgjTOu/41XF4bKkOazyBjOGjOx2FCn9wOCyBM=
         id: 360024909173
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909173-Development
       - title: User Training and Awareness
         file: ../queries/common-qq-training.md
-        hash: trPkCvT5jT1mP04LpWjrGXCV25Ap+PKutBVZN3TuG8Q=
+        hash: B5cGdOE2UUoRbwYiGXSwaTOaFE4i1yAcvQC+PnsQsv4=
         id: 360024909193
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024909193-User-Training-and-Awareness
@@ -214,7 +214,7 @@ sections:
     articles:
       - title: AWS Resource Configuration Auditing
         file: ../guides/j1-queries-for-aws-config.md
-        hash: IPa+rhlPyuouuhhgMFgWB4DAeqMxgECcZ4DzoJtQi1U=
+        hash: 9/4PaWCUVzsAt8h6XFhxLRy966qbdGeooYIayeYZ+hY=
         id: 360022721894
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721894-AWS-Resource-Configuration-Auditing
@@ -262,7 +262,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: PTj2okA5RgwcX0oWZNTEKypF4nA4UH50id2QuNb38ZU=
+        hash: QX/6/Cw72XRJ2ShxLtglKdyHqhL8nzGqAudKsrW/wXA=
         id: 360022722094
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022722094-JupiterOne-Platform-API
@@ -434,6 +434,12 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2019.30 Release
+        file: ../release-notes/2019-30.md
+        hash: lH+5d0TjssUhyejT95bOZUfAN3LoDAhFvg2psochXMw=
+        id: 360036146014
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360036146014-2019.30-Release
       - title: 2019.29 Release
         file: ../release-notes/2019-29.md
         hash: 698KICAh7/yaNeTQRtOPBAxJJP3kBSAe0AeTgl6LDko=
@@ -527,7 +533,7 @@ sections:
       - title: 2018.14 Release
         file: ../release-notes/2018-14.md
         id: 360022721414
-        hash: Yt8aAcDr3ndeC3Aw8Q3N8C5+jU31/qKJD3MU+gGuG3s=
+        hash: wSKyiOfnXRgRrjt49Q8v1ZV03X6f1HlL6ODrFqqrz/4=
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721414-2018.14-Release
       - title: 2018.13 Release

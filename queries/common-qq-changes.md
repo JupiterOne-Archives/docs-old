@@ -40,8 +40,8 @@ _Requires integrations with Github or Bitbucket, and code scanning solutions lik
 
 ```j1ql
 Find User
-  that OPENED PR with createdOn > date.now-7days
-  that RELATES TO CodeRepo
-  that HAS (Vulernability|Finding) with _createdOn > date.now-7days
-return tree
+  that OPENED PR with createdOn > date.now-7days
+  that RELATES TO CodeRepo
+  that HAS (Vulernability|Finding) with _createdOn > date.now-7days
+return tree
 ```
