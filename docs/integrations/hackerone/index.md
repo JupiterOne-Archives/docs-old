@@ -22,14 +22,16 @@ The following entity resources are ingested when the integration runs:
 | Example Entity Resource | \_type : \_class of the Entity  |
 | ----------------------- | ------------------------------- |
 | Program                 | `hackerone_program` : `Service` |
-| Finding Report          | `hackerone_finding` : `Finding` |
+| Finding Report          | `hackerone_report` : `Finding`  |
 
 ## Relationships
 
 The following relationships are created/mapped:
 
-| From                | Relationship   | To                  |
-| ------------------- | -------------- | ------------------- |
-| `hackerone_program` | **IDENTIFIED** | `hackerone_finding` |
+| From                | Relationship   | To                 |
+| ------------------- | -------------- | ------------------ |
+| `hackerone_program` | **IDENTIFIED** | `hackerone_report` |
+| `hackerone_report`  | **IS**         | `cve`              |
+| `hackerone_report`  | **IS**         | `cwe`              |
 
 [1]: https://docs.hackerone.com/programs/api-tokens.html
