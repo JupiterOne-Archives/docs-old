@@ -357,7 +357,7 @@ sections:
         hash: EDGYzrt4fu45+iNpjLeMn7nqDohIQ8yfmGqWQSgQfkc=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533-Google'
       - title: HackerOne
-        file: ../docs/integrations/hackerone/jupiter-integration-hackerone.md
+        file: ../docs/integrations/hackerone/index.md
         id: 360022902553
         hash: coLXVHuoKusZoGOpweubPgag7XsDUwjnOK/0LLgtl8A=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902553-HackerOne'
