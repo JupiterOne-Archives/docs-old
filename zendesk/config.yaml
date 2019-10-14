@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: CNDok/LMzTIBaR3JUO/MhnU5UUZ7lNlyQrZdwOzph08=
+        hash: UZ8tmj1uDl+uy6xB9NuFtZpXJ1NaZiQqeO02AUetaXU=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -359,7 +359,7 @@ sections:
       - title: HackerOne
         file: ../docs/integrations/hackerone/index.md
         id: 360022902553
-        hash: coLXVHuoKusZoGOpweubPgag7XsDUwjnOK/0LLgtl8A=
+        hash: suG5faG+DTXvYowhjmLiw2AnHREVlp+9BV1lyzZCTiA=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902553-HackerOne'
       - title: Jamf
         file: ../docs/integrations/jamf/index.md
@@ -371,6 +371,11 @@ sections:
         id: 360022721154
         hash: 1xywWpvk6zH4OqmzHJLtOEu8Cgg44bW2J7USCAxb7Dk=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721154-Jira'
+      - title: JumpCloud
+        file: ../docs/integrations/jumpcloud/graph-jumpcloud.md
+        hash: ufnnhB3cjjumJp3gxdDk+aJmFKNbzRWQJCjUDRt11Vc=
+        id: 360037319533
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360037319533-JumpCloud'
       - title: KnowBe4
         file: ../docs/integrations/knowbe4/index.md
         hash: mFh5jQYVtCVgF5F6YF2NSv9HON0BJ0uYhkAehm+qXHk=
