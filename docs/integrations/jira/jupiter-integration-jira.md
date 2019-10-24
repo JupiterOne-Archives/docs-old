@@ -44,7 +44,7 @@ The following relationships are created/mapped:
 ## Pro Tips
 
 In Jira, if you create custom issue types and use one of the following, the
-integration parse them and translate them to the corresponding entity class:
+integration will parse them and translate them to the corresponding entity class:
 
 - `Change` (this also maps when the issue key starts with `PRODCM`)
 - `Finding`
