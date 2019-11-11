@@ -49,6 +49,10 @@ ingested when the integration runs:
 | Account        | n/a                       | `aws_account` : `Account`                                    |
 | ACM            | ACM Certificate           | `aws_acm_certificate` : `Certificate`                        |
 | API Gateway    | REST API                  | `aws_api_gateway_rest_api` : `Gateway`                       |
+| Batch          | Batch Compute Environment | `aws_batch_compute_environment` : `Configuration`            |
+|                | Batch Job                 | `aws_batch_job` : `Process`, `Task`                          |
+|                | Batch Job Definition      | `aws_batch_job_definition` : `Configuration`, `Function`     |
+|                | Batch Job Queue           | `aws_batch_job_queue` : `Queue`                              |
 | CloudFormation | Stack                     | `aws_cloudfront_stack`: `Configuration`                      |
 | CloudFront     | Distribution              | `aws_cloudfront_distribution`: `Gateway`                     |
 | CloudWatch     | Event Rule                | `aws_cloudwatch_event_rule` : `Task`                         |
@@ -70,6 +74,11 @@ ingested when the integration runs:
 | ECR            | ECR Container Repository  | `aws_repository` : `Repository`                              |
 |                | ECR Container Image       | `aws_image` : `Image`                                        |
 |                | ECR Image Scan Finding    | `aws_image_scan_finding` : `Finding`                         |
+| ECS            | ECS Cluster               | `aws_ecs_cluster` : `Cluster`                                |
+|                | ECS Container Instance    | `aws_ecs_container_instance` : `Host`, `Container`           |
+|                | ECS Service               | `aws_ecs_service` : `Service`                                |
+|                | ECS Task Definition       | `aws_ecs_task_definition` : `Function`, `Configuration`      |
+|                | ECS Task                  | `aws_ecs_task` : `Task`, `Process`                           |
 | EKS            | EKS Cluster               | `aws_eks_cluster` : `Cluster`                                |
 | ELB            | Application Load Balancer | `aws_alb` : `Gateway`                                        |
 |                | Network Load Balancer     | `aws_nlb` : `Gateway`                                        |
@@ -89,7 +98,7 @@ ingested when the integration runs:
 | Inspector      | Inspector Assessment Run  | `aws_inspector_assessment` : `Assessment`                    |
 |                | Inspector Finding         | `aws_inspector_finding` : `Finding`                          |
 | KMS            | KMS Key                   | `aws_kms_key` : `CryptoKey`                                  |
-| Lambda         | Lambda Function           | `aws_lambda_function` : `Function`, `Workload`               |
+| Lambda         | Lambda Function           | `aws_lambda_function` : `Function`                           |
 | RedShift       | Redshift Cluster          | `aws_redshift_cluster` : `DataStore`, `Database`, `Cluster`  |
 | RDS            | RDS DB Cluster            | `aws_rds_cluster` : `DataStore`, `Database`, `Cluster`       |
 |                | RDS DB Instance           | `aws_db_instance` : `DataStore`, `Database`, `Host`          |
@@ -119,12 +128,20 @@ The following relationships are created/mapped:
 | `aws_account` **HAS** `aws_s3`                                        |
 | `aws_account` **HAS** `aws_config`                                    |
 | `aws_acm` **HAS** `aws_acm_certificate`                               |
+| `aws_batch` **HAS** `aws_batch_compute_environment`                   |
+| `aws_batch` **HAS** `aws_batch_job_definition`                        |
+| `aws_batch` **HAS** `aws_batch_job_queue`                             |
+| `aws_batch_compute_environment` **USES** `aws_ecs_cluster`            |
+| `aws_batch_compute_environment` **ASSIGNED|USES** `aws_iam_role`      |
+| `aws_batch_job_queue` **HAS** `aws_batch_job`                         |
 | `aws_apigateway` **HAS** `aws_api_gateway_rest_api`                   |
 | `aws_api_gateway_rest_api` **TRIGGERS** `aws_lambda_function`         |
 | `aws_cloudfront` **HAS** `aws_cloudfront_distribution`                |
 | `aws_cloudfront_distribution` **CONNECTS** `aws_api_gateway_rest_api` |
 | `aws_cloudfront_distribution` **CONNECTS** `aws_s3_bucket`            |
 | `aws_cloudfront_distribution` **USES** `aws_acm_certificate`          |
+| `aws_cloudtrail` **LOGS** `aws_s3_bucket`                             |
+| `aws_cloudtrail` **LOGS** `aws_cloudwatch_log_group`                  |
 | `aws_cloudwatch_event_rule` **TRIGGERS** `aws_lambda_function`        |
 | `aws_config` **HAS** `aws_config_rule`                                |
 | `aws_config_rule` **EVALUATES** `aws_account`                         |
@@ -147,10 +164,23 @@ The following relationships are created/mapped:
 | `aws_security_group` **PROTECTS** `aws_instance`                      |
 | `aws_instance` **HAS** `aws_security_group`                           |
 | `aws_vpc` **CONTAINS** `aws_subnet`                                   |
+| `aws_vpc` **LOGS** `aws_cloudwatch_log_group`                         |
+| `aws_vpc` **LOGS** `aws_s3_bucket`                                    |
 | `aws_network_acl` **PROTECTS** `aws_subnet`                           |
 | `aws_ecr` **HAS** `aws_ecr_repository`                                |
 | `aws_ecr_repository` **HAS** `aws_ecr_image`                          |
 | `aws_ecr_image` **HAS** `aws_ecr_image_scan_finding`                  |
+| `aws_ecs` **HAS** `aws_ecs_cluster`                                   |
+| `aws_ecs` **HAS** `aws_ecs_task_definition`                           |
+| `aws_ecs_cluster` **HAS** `aws_ecs_service`                           |
+| `aws_ecs_cluster` **HAS** `aws_ecs_container_instance`                |
+| `aws_ecs_cluster` **RUNS** `aws_ecs_task`                             |
+| `aws_ecs_container_instance` **RUNS** `aws_ecs_task`                  |
+| `aws_ecs_task_definition` **ASSIGNED|USES** `aws_iam_role`            |
+| `aws_ecs_task_definition` **DEFINES** `aws_ecs_service`               |
+| `aws_ecs_task_definition` **DEFINES** `aws_ecs_task`                  |
+| `aws_ecs_service` **TRIGGERS** `aws_ecs_task`                         |
+| `aws_instance` **RUNS** `aws_ecs_container_instance`                  |
 | `aws_eks` **HAS** `aws_eks_cluster`                                   |
 | `aws_elasticloadbalancing` **HAS** `aws_alb`                          |
 | `aws_elasticloadbalancing` **HAS** `aws_nlb`                          |
