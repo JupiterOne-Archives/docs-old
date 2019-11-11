@@ -36,8 +36,14 @@ Grant permission to read Microsoft Graph information:
 
 1. Navigate to **API permissions**, choose **Microsoft Graph**, then
    **Application Permissions**
-1. Grant `Group.Read.All` and `User.Read.All` permissions
+1. Grant `Directory.Read.All` permissions to allow reading users, groups, and
+   members of groups, including organization contacts and Microsoft Intune
+   devices
 1. Grant admin consent for this directory for the permissions above
+
+Please note that minimally [`User.Read` is required][3] even when AD ingestion
+is disabled. The integration will request Organization information to maintain
+the `Account` entity.
 
 Grant the `Reader` RBAC subscription role to read Azure Resource Manager
 information:
@@ -52,7 +58,9 @@ information:
 
 ## Entities
 
-The following entity resources are ingested when the integration runs:
+The following entity resources are ingested when the integration runs. Note that
+ingestion of AD resource can be disabled in the integration configuration,
+though the `Account` entity will always be ingested.
 
 | Microsoft 365 Resources | \_type of the Entity | \_class of the Entity |
 | ----------------------- | -------------------- | --------------------- |
@@ -61,26 +69,34 @@ The following entity resources are ingested when the integration runs:
 | Group Member            | `azure_group_member` | `User`                |
 | User                    | `azure_user`         | `User`                |
 
-| Azure Resources   | \_type of the Entity | \_class of the Entity |
-| ----------------- | -------------------- | --------------------- |
-| Virtual Machine   | `azure_vm`           | `Host`                |
-| Network Interface | `azure_nic`          | `NetworkInterface`    |
-| Public IP Address | `azure_public_ip`    | `IpAddress`           |
+| Azure Resources   | \_type of the Entity   | \_class of the Entity |
+| ----------------- | ---------------------- | --------------------- |
+| Virtual Network   | `azure_vnet`           | `Network`             |
+| Subnet            | `azure_subnet`         | `Network`             |
+| Security Group    | `azure_security_group` | `Firewall`            |
+| Network Interface | `azure_nic`            | `NetworkInterface`    |
+| Public IP Address | `azure_public_ip`      | `IpAddress`           |
+| Virtual Machine   | `azure_vm`             | `Host`                |
 
 ## Relationships
 
 The following relationships are created/mapped:
 
-| From               | Edge     | To                   |
-| ------------------ | -------- | -------------------- |
-| `azure_account`    | **HAS**  | `azure_user_group`   |
-| `azure_account`    | **HAS**  | `azure_user`         |
-| `azure_user_group` | **HAS**  | `azure_user`         |
-| `azure_user_group` | **HAS**  | `azure_user_group`   |
-| `azure_user_group` | **HAS**  | `azure_group_member` |
-| `azure_vm`         | **USES** | `azure_nic`          |
-| `azure_vm`         | **USES** | `azure_public_ip`    |
+| From                   | Edge         | To                   |
+| ---------------------- | ------------ | -------------------- |
+| `azure_account`        | **HAS**      | `azure_user`         |
+| `azure_account`        | **HAS**      | `azure_user_group`   |
+| `azure_user_group`     | **HAS**      | `azure_user`         |
+| `azure_user_group`     | **HAS**      | `azure_user_group`   |
+| `azure_user_group`     | **HAS**      | `azure_group_member` |
+| `azure_vnet`           | **CONTAINS** | `azure_subnet`       |
+| `azure_subnet`         | **HAS**      | `azure_vm`           |
+| `azure_security_group` | **PROTECTS** | `azure_subnet`       |
+| `azure_security_group` | **PROTECTS** | `azure_nic`          |
+| `azure_vm`             | **USES**     | `azure_nic`          |
+| `azure_vm`             | **USES**     | `azure_public_ip`    |
 
 [1]: https://docs.microsoft.com/en-us/graph/auth-v2-service
 [2]:
   https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-api-authentication
+[3]: https://docs.microsoft.com/en-us/graph/api/organization-get
