@@ -303,7 +303,7 @@ J1QL supports basic math operations on the return values.
   > parenthesis -> multiplication or division -> addition or subtraction
 
 - The operation only works against number values. It will not work against
-  strings or strings that are in the form of numbers:
+  strings or strings that represent numbers:
   
   > `'1'` will not work, has to be `1`
 
