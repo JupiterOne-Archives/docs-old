@@ -253,6 +253,78 @@ _Future development:_
 > - `count(*)` - for determining the count of all other entities related to a
 >   given entity.
 
+## De-duplicate results with `UNIQUE` and `RETURN`
+
+Sometimes a query may generate duplicate results. This occurs if there are
+multiple paths of traversals (i.e. relationships) between the vertices (i.e.
+entities) referenced in a particular query.
+
+Take the example below:
+
+```j1ql
+Find aws_eni with publicIpAddress != undefined as nic
+  that relates to aws_instance
+  that relates to aws_security_group as sg that allows Internet
+where nic.securityGroupIds = sg.groupId
+```
+
+This query attempts to find network interfaces that are associated with a
+security group that allows public facing AWS EC2 instances. In this case, there
+could be multiple security group rules allowing access to/from the Internet,
+which may result in duplicate data in the query result because each individual
+traversal is a successful match to the query.
+
+You can use a combination of `UNIQUE` and `RETURN` keywords to filter out the
+duplicates. The query above can be modified as:
+
+```j1ql
+Find UNIQUE aws_eni with publicIpAddress != undefined as nic
+  that relates to aws_instance
+  that relates to aws_security_group as sg that allows Internet
+where
+  nic.securityGroupIds = sg.groupId
+RETURN
+  nic.id, nic.subnetId, nic.attachmentId,
+  nic.active, nic.privateIp, nic.publicIp,
+  nic.vpcId, nic.securityGroupIds, nic.securityGroupNames,
+  nic.tag.AccountName, nic.webLink
+```
+
+_Limitation: `UNIQUE` keyword **must** be used together with `RETURN`._
+
+## Math Operations
+
+J1QL supports basic math operations on the return values.
+
+- Supported operations include `+`, `-`, `/`, `*` and parenthesis
+
+- It will evaluate with normal order of operations:
+
+  > parenthesis -> multiplication or division -> addition or subtraction
+
+- The operation only works against number values. It will not work against
+  strings or strings that represent numbers:
+  
+  > `'1'` will not work, has to be `1`
+
+Example query:
+
+```j1ql
+Find (aws_db_cluster_snapshot|aws_db_snapshot) as snapshot
+Return
+  snapshot.displayName,
+  snapshot.allocatedStorage * 0.02 as Cost
+```
+
+This can be combined with aggregation functions. For example:
+
+```j1ql
+Find (aws_db_cluster_snapshot|aws_db_snapshot) as snapshot
+Return
+  snapshot.tag.AccountName as Account,
+  sum(snapshot.allocatedStorage) * 0.02 as EstimatedCost
+```
+
 ## Examples
 
 More example queries are shown below.

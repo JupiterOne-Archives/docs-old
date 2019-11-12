@@ -71,9 +71,9 @@ ingested when the integration runs:
 |                | VPC                       | `aws_vpc` : `Network`                                        |
 |                | Subnet                    | `aws_subnet` : `Network`                                     |
 | AutoScaling    | Auto Scaling Group        | `aws_autoscaling_group` : `Deployment`, `Group`              |
-| ECR            | ECR Container Repository  | `aws_repository` : `Repository`                              |
-|                | ECR Container Image       | `aws_image` : `Image`                                        |
-|                | ECR Image Scan Finding    | `aws_image_scan_finding` : `Finding`                         |
+| ECR            | ECR Container Repository  | `aws_ecr_repository` : `Repository`                          |
+|                | ECR Container Image       | `aws_ecr_image` : `Image`                                    |
+|                | ECR Image Scan Finding    | `aws_ecr_image_scan_finding` : `Finding`                     |
 | ECS            | ECS Cluster               | `aws_ecs_cluster` : `Cluster`                                |
 |                | ECS Container Instance    | `aws_ecs_container_instance` : `Host`, `Container`           |
 |                | ECS Service               | `aws_ecs_service` : `Service`                                |
@@ -132,7 +132,7 @@ The following relationships are created/mapped:
 | `aws_batch` **HAS** `aws_batch_job_definition`                        |
 | `aws_batch` **HAS** `aws_batch_job_queue`                             |
 | `aws_batch_compute_environment` **USES** `aws_ecs_cluster`            |
-| `aws_batch_compute_environment` **ASSIGNED|USES** `aws_iam_role`      |
+| `aws_batch_compute_environment` **ASSIGNED**\|**USES** `aws_iam_role` |
 | `aws_batch_job_queue` **HAS** `aws_batch_job`                         |
 | `aws_apigateway` **HAS** `aws_api_gateway_rest_api`                   |
 | `aws_api_gateway_rest_api` **TRIGGERS** `aws_lambda_function`         |
@@ -176,7 +176,7 @@ The following relationships are created/mapped:
 | `aws_ecs_cluster` **HAS** `aws_ecs_container_instance`                |
 | `aws_ecs_cluster` **RUNS** `aws_ecs_task`                             |
 | `aws_ecs_container_instance` **RUNS** `aws_ecs_task`                  |
-| `aws_ecs_task_definition` **ASSIGNED|USES** `aws_iam_role`            |
+| `aws_ecs_task_definition` **ASSIGNED**\|**USES** `aws_iam_role`       |
 | `aws_ecs_task_definition` **DEFINES** `aws_ecs_service`               |
 | `aws_ecs_task_definition` **DEFINES** `aws_ecs_task`                  |
 | `aws_ecs_service` **TRIGGERS** `aws_ecs_task`                         |

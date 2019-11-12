@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: T1/CRZupKdoCc72yMI6ZenelSoxrNW6ssytgPwj2Yv0=
+        hash: q8K/yzAFDrz8a3qOpapAqyPQyLmsASqB3VLqWsTf6ZI=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -253,7 +253,7 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: ZUUllz9xV4ZbqyAPxgyQff5rM9q+UH/61jawKq9KELc=
+        hash: /y/+SOabmghH8g9ZVAi6mTtBZl0ZSpZTE8DYkjNIMOs=
         id: 360022722014
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022722014-J1QL-Language-Specs
@@ -328,7 +328,7 @@ sections:
       - title: AWS
         file: ../docs/integrations/aws/index.md
         id: 360022721054
-        hash: 5lDB9x8K8ALujbHaevRnyKl1QgNNvnbCQl7BrBySi74=
+        hash: h2lxewqVXSXVH38Tl0lB7r5cDy4KdphEsyAfB6ZSYFc=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721054-AWS'
       - title: Azure
         file: ../docs/integrations/azure/graph-azure.md
@@ -439,6 +439,12 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2019.33 Release
+        file: ../release-notes/2019-33.md
+        hash: Kr2Dz7pL8kuUoNB4AuGm8yvNcx2X/HTWEf3Y9SVKu7M=
+        id: 360038804353
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360038804353-2019.33-Release
       - title: 2019.32 Release
         file: ../release-notes/2019-32.md
         hash: QUcvVOMNQJc4MG61F8EZ7mQwzhR23ukb+BpuQ/4zqi0=
