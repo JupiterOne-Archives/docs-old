@@ -176,7 +176,7 @@ The following relationships are created/mapped:
 | `aws_ecs_cluster` **HAS** `aws_ecs_container_instance`                |
 | `aws_ecs_cluster` **RUNS** `aws_ecs_task`                             |
 | `aws_ecs_container_instance` **RUNS** `aws_ecs_task`                  |
-| `aws_ecs_task_definition` \*\*ASSIGNED                                | USES\*\* `aws_iam_role` |
+| `aws_ecs_task_definition` **ASSIGNED**\|**USES** `aws_iam_role`       |
 | `aws_ecs_task_definition` **DEFINES** `aws_ecs_service`               |
 | `aws_ecs_task_definition` **DEFINES** `aws_ecs_task`                  |
 | `aws_ecs_service` **TRIGGERS** `aws_ecs_task`                         |
