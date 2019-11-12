@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: EpTLHvtEkta9CvWRU+VnlEirhKlTvY/DTvP4U9bAK0U=
+        hash: u+vs+LRrL1YUFO7RKkNk7l3lT7/YE4fX+BawRlaPPCA=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -328,7 +328,7 @@ sections:
       - title: AWS
         file: ../docs/integrations/aws/index.md
         id: 360022721054
-        hash: e2V1f6Wa+GjAQtnRW9LsGtqZWKlNXPZwxGm3e0sNhJc=
+        hash: h2lxewqVXSXVH38Tl0lB7r5cDy4KdphEsyAfB6ZSYFc=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721054-AWS'
       - title: Azure
         file: ../docs/integrations/azure/graph-azure.md
