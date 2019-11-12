@@ -294,7 +294,20 @@ _Limitation: `UNIQUE` keyword **must** be used together with `RETURN`._
 
 ## Math Operations
 
-J1QL supports basic math operations on the return values. For example:
+J1QL supports basic math operations on the return values.
+
+- Supported operations include `+`, `-`, `/`, `*` and parenthesis
+
+- It will evaluate with normal order of operations:
+
+  > parenthesis -> multiplication or division -> addition or subtraction
+
+- The operation only works against number values. It will not work against
+  strings or strings that are in the form of numbers:
+  
+  > `'1'` will not work, has to be `1`
+
+Example query:
 
 ```j1ql
 Find (aws_db_cluster_snapshot|aws_db_snapshot) as snapshot
