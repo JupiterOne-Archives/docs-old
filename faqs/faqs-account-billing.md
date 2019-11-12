@@ -21,6 +21,21 @@ The following entities are not counted for billing/usage calculation:
   true resources in an digital operating environment, therefore they are not
   being counted for usage/billing purpose.
 
+- **Images, NetworkInterfaces, and IpAddress** -- these entities are also not
+  counted against the usage or billing.
+
+Run the following query in your account to get a count:
+
+```j1ql
+Find * with
+  _source != 'system-mapper' and
+  _class !=
+    ('Finding' and 'PR' and 'Image' and 'NetworkInterface' and 'IpAddress')
+  as e
+return
+  count(e) as entityCount
+```
+
 ## What are the limitations of the `COMMUNITY` Edition of JupiterOne? 
 
 JupiterOne `COMMUNITY` Edition is FREE for non-commercial use, non-profit or
