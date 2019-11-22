@@ -4,8 +4,10 @@ Here are some commonly asked questions and their corresponding J1QL queries.
 You can easily modify the properties and tags used in each query to customize
 it for your own specific scenario.
 
-Many of these are included as packaged questions in the Query Library directly
-accessible in the **Landing** app in JupiterOne.
+Many of these are packaged in the Query Library directly accessible in the
+**Landing** app in JupiterOne.
+
+Here is [a catalog of the packaged questions][catalog].
 
 ## Question/Query Categories
 
@@ -22,6 +24,7 @@ accessible in the **Landing** app in JupiterOne.
 - [User training and awareness][10]
 - [Endpoint security][11]
 
+[catalog]: ../docs/questions/catalog.md
 [0]: ../queries/common-qq-aws-permissions.md
 [1]: ../queries/common-qq-inventory-config.md
 [2]: ../queries/common-qq-apps-processes.md

@@ -8,4 +8,4 @@ node_modules
 work/
 .npmrc
 *.log
-docs/questions/
+docs/questions/*.rst

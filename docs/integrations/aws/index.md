@@ -280,3 +280,59 @@ on the actions and resources specified by the policy document.
   - `Production` flag, if applicable.
 
 - Configure your integration name to be the same as your AWS account alias.
+
+## Multi-region Support
+
+Multi-region support is built-in to the integration to ensure maximum visibility,
+especially to discover resources in an unauthorized region.
+
+### Supported Regions
+
+**Americas:**
+
+- `ca-central-1` Montreal
+- `us-east-1` N. Virginia
+- `us-east-2` Ohio
+- `us-west-1` N. California
+- `us-west-2` Oregon
+- `sa-east-1` São Paulo
+
+**Europe:**
+
+- `eu-central-1` Frankfurt
+- `eu-north-1` Stockholm
+- `eu-west-1` Ireland
+- `eu-west-2` London
+- `eu-west-3` Paris
+
+**Asia Pacific:**
+
+- `ap-northeast-1` Tokyo
+- `ap-northeast-2` Seoul
+- `ap-south-1` Mumbai
+- `ap-southeast-1` Singapore
+- `ap-southeast-2` Sydney
+
+### Unsupported Regions
+
+All AWS regions are supported except for the following:
+
+**China Regions:**
+
+- `cn-north-1` Beijing
+- `cn-northwest-1` Ningxia
+
+> _Customers who wish to use the China Regions are required to sign up for a separate set of account credentials unique to China services._
+
+**GovCloud:**
+
+- `us-gov-east-1`
+- `us-gov-west-1`
+
+> _We do not run in the cloud of government yet._
+
+**Other:**
+
+- `ap-northeast-3` Osaka-Local
+
+> _The AWS Access Key Id needs a subscription for the service AWSRegion._

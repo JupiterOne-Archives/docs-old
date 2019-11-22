@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: q8K/yzAFDrz8a3qOpapAqyPQyLmsASqB3VLqWsTf6ZI=
+        hash: g8d2FsvOGbxmQGYnCI5pcIHgGKEsf5VtdRkcHugg6zs=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -92,12 +92,18 @@ sections:
   - name: Common Questions and Queries
     id: 360004563074
     articles:
-      - title: Common Questions and Queries Catalog
+      - title: Common Questions and Queries
         file: ../queries/common-qq-index.md
-        hash: BHgwd+SU7h9lA1WWBEp6kxrthZDTHRn3JBs/OT1a7b8=
+        hash: 7exrDqsBYlxSHCW7SBZ+T58X4DrogWVeCbNikM1tBig=
         id: 360024909073
         webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360024909073-Common-Questions-and-Queries-Catalog
+          https://support.jupiterone.io/hc/en-us/articles/360024909073-Common-Questions-and-Queries
+      - title: Packaged Questions Catalog
+        file: ../docs/questions/catalog.md
+        hash: YaZYo63rDM6SDT+nzx2KWbzkJX6rZRdtUc98UqfL1QY=
+        id: 360038496974
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360038496974-Packaged-Questions-Catalog
       - title: AWS IAM Permissions and Trusts
         file: ../queries/common-qq-aws-permissions.md
         hash: VDUSgnoMFYWQDnt8v4kRcEWcppp7oNbbGyyQ3DyDdr0=
@@ -226,7 +232,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360022903333-AWS-Threat-Monitoring
       - title: Common Questions and Queries
         file: ../queries/common-qq-index.md
-        hash: E44pR28cn8n/LfIcXSP6J96jmEnOECxawfMWQKiJSeY=
+        hash: 7exrDqsBYlxSHCW7SBZ+T58X4DrogWVeCbNikM1tBig=
         id: 360022721914
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721914-Common-Questions-and-Queries
@@ -328,7 +334,7 @@ sections:
       - title: AWS
         file: ../docs/integrations/aws/index.md
         id: 360022721054
-        hash: h2lxewqVXSXVH38Tl0lB7r5cDy4KdphEsyAfB6ZSYFc=
+        hash: GVdJzSuo2xnrZ1MbaJ6qhrh7psMN8i8L2ZvqYpLWqqU=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721054-AWS'
       - title: Azure
         file: ../docs/integrations/azure/graph-azure.md
@@ -382,9 +388,9 @@ sections:
         id: 360023741834
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360023741834-KnowBe4'
       - title: Okta
-        file: ../docs/integrations/okta/jupiter-integration-okta.md
+        file: ../docs/integrations/okta/graph-okta.md
         id: 360022902573
-        hash: 9j1UVmmlelw/VgbcDwuhVGgBafgkHztk0OESHbDMLBg=
+        hash: rGaPgzl5vy/pqqEZYcq0gV4DSQN7NjbN5+HdzdMUjQg=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902573-Okta'
       - title: OneLogin
         file: ../docs/integrations/onelogin/jupiter-integration-onelogin.md
