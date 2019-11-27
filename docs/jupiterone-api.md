@@ -8,6 +8,9 @@ The JupiterOne platform exposes a number of public GraphQL endpoints.
 
 **Endpoint for alert and rules operations**: `/rules/graphql`
 
+**Rate Limits**: rate limiting is enforced per account at 30 query requests per
+minute with an allowable burst of 30 requests at once
+
 An experimental [node.js client and CLI][1] can be found on Github.
 
 [1]: https://github.com/JupiterOne/jupiterone-client-nodejs

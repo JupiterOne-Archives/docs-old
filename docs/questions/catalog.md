@@ -203,6 +203,7 @@
 - [aws] What are the active Batch container job definitions?
 - [aws] How many inactive Batch job definitions are there?
 - [aws] Which EC2 instances have actively running ECS container instances?
+- [aws] Show me details of currently running ECS tasks.
 - [aws] Are all EBS volumes encrypted?
 - [aws] Is default server side encryption enabled for all S3 Buckets?
 - [aws] Is public access block configured for non-public S3 Buckets?
