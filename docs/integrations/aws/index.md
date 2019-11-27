@@ -334,5 +334,6 @@ All AWS regions are supported except for the following:
 **Other:**
 
 - `ap-northeast-3` Osaka-Local
+- `me-south-1` Bahrain (Middle East)
 
-> _The AWS Access Key Id needs a subscription for the service AWSRegion._
+> _Separate subscription or access token/client needed for these regions._
