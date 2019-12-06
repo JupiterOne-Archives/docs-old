@@ -12,8 +12,7 @@ target Okta account and providing that credential to JupiterOne.
 The integration is triggered by an event containing the information for a
 specific integration instance.
 
-Instructions on creating an API token within your Okta account can be found
-[here][1].
+Create an [Okta API Token][1] with `Read-Only Admin` permission.
 
 ## Entities
 

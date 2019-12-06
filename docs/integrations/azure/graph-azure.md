@@ -69,32 +69,35 @@ though the `Account` entity will always be ingested.
 | Group Member            | `azure_group_member` | `User`                |
 | User                    | `azure_user`         | `User`                |
 
-| Azure Resources   | \_type of the Entity   | \_class of the Entity |
-| ----------------- | ---------------------- | --------------------- |
-| Virtual Network   | `azure_vnet`           | `Network`             |
-| Subnet            | `azure_subnet`         | `Network`             |
-| Security Group    | `azure_security_group` | `Firewall`            |
-| Network Interface | `azure_nic`            | `NetworkInterface`    |
-| Public IP Address | `azure_public_ip`      | `IpAddress`           |
-| Virtual Machine   | `azure_vm`             | `Host`                |
+| Azure Resources   | \_type of the Entity      | \_class of the Entity |
+| ----------------- | ------------------------- | --------------------- |
+| Virtual Network   | `azure_vnet`              | `Network`             |
+| Subnet            | `azure_subnet`            | `Network`             |
+| Security Group    | `azure_security_group`    | `Firewall`            |
+| Network Interface | `azure_nic`               | `NetworkInterface`    |
+| Public IP Address | `azure_public_ip`         | `IpAddress`           |
+| Virtual Machine   | `azure_vm`                | `Host`                |
+| Blob (Storage)    | `azure_storage_container` | `DataStore`           |
 
 ## Relationships
 
 The following relationships are created/mapped:
 
-| From                   | Edge         | To                   |
-| ---------------------- | ------------ | -------------------- |
-| `azure_account`        | **HAS**      | `azure_user`         |
-| `azure_account`        | **HAS**      | `azure_user_group`   |
-| `azure_user_group`     | **HAS**      | `azure_user`         |
-| `azure_user_group`     | **HAS**      | `azure_user_group`   |
-| `azure_user_group`     | **HAS**      | `azure_group_member` |
-| `azure_vnet`           | **CONTAINS** | `azure_subnet`       |
-| `azure_subnet`         | **HAS**      | `azure_vm`           |
-| `azure_security_group` | **PROTECTS** | `azure_subnet`       |
-| `azure_security_group` | **PROTECTS** | `azure_nic`          |
-| `azure_vm`             | **USES**     | `azure_nic`          |
-| `azure_vm`             | **USES**     | `azure_public_ip`    |
+| From                         | Edge         | To                           |
+| ---------------------------- | ------------ | ---------------------------- |
+| `azure_account`              | **HAS**      | `azure_user`                 |
+| `azure_account`              | **HAS**      | `azure_user_group`           |
+| `azure_account`              | **HAS**      | `azure_storage_blob_service` |
+| `azure_user_group`           | **HAS**      | `azure_user`                 |
+| `azure_user_group`           | **HAS**      | `azure_user_group`           |
+| `azure_user_group`           | **HAS**      | `azure_group_member`         |
+| `azure_vnet`                 | **CONTAINS** | `azure_subnet`               |
+| `azure_subnet`               | **HAS**      | `azure_vm`                   |
+| `azure_security_group`       | **PROTECTS** | `azure_subnet`               |
+| `azure_security_group`       | **PROTECTS** | `azure_nic`                  |
+| `azure_vm`                   | **USES**     | `azure_nic`                  |
+| `azure_vm`                   | **USES**     | `azure_public_ip`            |
+| `azure_storage_blob_service` | **HAS**      | `azure_storage_container`    |
 
 [1]: https://docs.microsoft.com/en-us/graph/auth-v2-service
 [2]:
