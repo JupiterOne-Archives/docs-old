@@ -195,12 +195,14 @@ Keep in mind the keywords are _case insensitive_.
 `LIMIT` is followed by a number to indicate how many results to return.
 
 In the example below, the query sorts users by their username, and returns the
-15th-20th users from the sorted list.
+11th-15th users from the sorted list.
 
 ```j1ql
-FIND Person as u WITH encrypted = false
+FIND Person as u WITH manager = undefined
   ORDER BY u.username SKIP 10 LIMIT 5
 ```
+
+_Note: query returns up to 250 results by default if LIMIT is not set._
 
 ## Aggregation Functions: `COUNT`, `MIN`, `MAX`, `AVG` and `SUM`
 
