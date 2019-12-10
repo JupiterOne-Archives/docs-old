@@ -1,9 +1,7 @@
 # JupiterOne Alert Rule Schema
 
-## Question Rule Instance
-
-A Question Rule Instance is a rule instance that uses the results of one or
-more queries to execute one or more actions.
+A rule uses the results of one or more queries to execute one or more
+actions.
 
 Example:
 
@@ -41,26 +39,24 @@ Example:
 }
 ```
 
-### Question Rule Instance Top-level Properties
+## Rule Properties
 
-| Property           | Type              | Description                                                                               |
-| ------------------ | ----------------- | ----------------------------------------------------------------------------------------- |
-| `id`               | `string`          | Auto-generated globally unique ID of each rule instance.                                  |
-| `version`          | `number`          | Current version of the rule instance. Incremented each time the rule instance is updated. |
-| `name`             | `string`          | Name of the rule instance, which is unique to each account.                               |
-| `description?`     | `string`          | A description of the rule instance.                                                       |
-| `specVersion`      | `number`          | Rule evaluation version in the case of breaking changes.                                  |
-| `pollingInterval?` | `PollingInterval` | Frequency of automated rule evaluation. Defaults to `ONE_DAY`.                            |
-| `question`         | `Question`        | Contains properties related to queries used in the rule evaluation.                       |
-| `operations`       | `RuleOperation[]` | Actions that are executed when a corresponding condition is met.                          |
-| `templates?`       | `object`          | Optional key/value pairs of template name to template.                                    |
-| `outputs`          | `string[]`        | TODO                                                                                      |
+| Property           | Type              | Description                                                                                                                                                         |
+| ------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`               | `string`          | Auto-generated globally unique ID of each rule.                                                                                                                     |
+| `version`          | `number`          | Current version of the rule. Incremented each time the rule is updated.                                                                                             |
+| `name`             | `string`          | Name of the rule, which is unique to each account.                                                                                                                  |
+| `description?`     | `string`          | A description of the rule.                                                                                                                                          |
+| `specVersion`      | `number`          | Rule evaluation version in the case of breaking changes.                                                                                                            |
+| `pollingInterval?` | `PollingInterval` | Frequency of automated rule evaluation. Defaults to `ONE_DAY`.                                                                                                      |
+| `question`         | `Question`        | Contains properties related to queries used in the rule evaluation.                                                                                                 |
+| `operations`       | `RuleOperation[]` | Actions that are executed when a corresponding condition is met.                                                                                                    |
+| `templates?`       | `object`          | Optional key/value pairs of template name to template.                                                                                                              |
+| `outputs`          | `string[]`        | Names of properties that can be used throughout the rule evaluation process and will be included in each record of a rule evaluation. (e.g. `queries.query0.total`) |
 
-### Question Rule Instance Custom Sub-property Types
+### Type: PollingInterval
 
-#### PollingInterval
-
-Enumeration of the scheduled frequencies that rule instances can automatically
+Enumeration of the scheduled frequencies that rules can automatically
 be evaluated. Possible values:
 
 ```
@@ -70,29 +66,29 @@ THIRTY_MINUTES
 DISABLED
 ```
 
-#### RuleOperation
+### Type: RuleOperation
 
 A `RuleOperation` is a single `condition` and series of `action`s that are
 executed when the `condition` is met.
 
-| Property  | Type                                              | Description                                                                                |
-| --------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| `when?`   | `RuleOperationCondition|RuleOperationCondition[]` | Type of conditional used to determine whether the associated action(s) should be executed. |
-| `actions` | `RuleOperationAction[]`                           | Actions that should be executed when the `when` condition(s) have been met.                |
+| Property  | Type                                               | Description                                                                                |
+| --------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| `when?`   | `RuleOperationCondition\|RuleOperationCondition[]` | Type of conditional used to determine whether the associated action(s) should be executed. |
+| `actions` | `RuleOperationAction[]`                            | Actions that should be executed when the `when` condition(s) have been met.                |
 
-#### Question
+### Type: Question
 
 A Question contains a collection of named queries that should be executed during
-the rule evaluation process and who's responses can be used in any `RuleOperation`.
+the rule evaluation process and whose responses can be used in any `RuleOperation`.
 
 | Property  | Type              | Description                                                             |
 | --------- | ----------------- | ----------------------------------------------------------------------- |
 | `queries` | `QuestionQuery[]` | The collection of queries that will be used during the rule evaluation. |
 
-#### QuestionQuery
+### Type: QuestionQuery
 
 A named query that should be executed during the rule evaluation process and
-who's responses can be used in any `RuleOperation`.
+whose  responses can be used in any `RuleOperation`.
 
 | Property  | Type     | Description                                                                                                                                                                                                                         |
 | --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -100,25 +96,25 @@ who's responses can be used in any `RuleOperation`.
 | `query`   | `string` | JupiterOne query to execute                                                                                                                                                                                                         |
 | `version` | `string` | JupiterOne query language execution version (e.g. `v1`)                                                                                                                                                                             |
 
-#### RuleOperationCondition
+### Type: RuleOperationCondition
 
 Condition used to determine whether the associated action(s) should be
-executed. The type of `RuleOperationCondition` is determined using the top-level
-`type` field.
+executed. The type of `RuleOperationCondition` is determined using the
+`type` property.
 
-##### FilterRuleOperationCondition
+#### Type: FilterRuleOperationCondition
 
 | Property    | Type     | Description                                               |
 | ----------- | -------- | --------------------------------------------------------- |
 | `type`      | `string` | Rule operation condition type: `FILTER`                   |
 | `condition` | `string` | Template condition. (e.g. `{{queries.query0.total > 0}}`) |
 
-#### RuleOperationAction
+### Type: RuleOperationAction
 
 Action that is executed when a corresponding condition is met. The type of
-`RuleOperationAction` is determined using the top-level `type` field.
+`RuleOperationAction` is determined using the `type` property.
 
-##### SetPropertyRuleOperationAction
+#### Action: `SET_PROPERTY`
 
 Includes a property that can be used in rule evaluation input.
 
@@ -138,7 +134,7 @@ Example:
 }
 ```
 
-##### CreateAlertRuleOperationAction
+#### Action: `CREATE_ALERT`
 
 Creates a JupiterOne alert that is visible on the alerts app.
 
@@ -154,7 +150,7 @@ Example:
 }
 ```
 
-##### SendEmailRuleOperationAction
+#### Action: `SEND_EMAIL`
 
 Sends an email to a list of recipients with details related to alerts that were
 created during the rule evaluation.
@@ -174,7 +170,7 @@ Example:
 }
 ```
 
-##### CreateJiraTicketRuleOperationAction
+#### Action `CREATE_JIRA_TICKET`
 
 Creates a Jira ticket using a specific JupiterOne Jira integration configuration.
 
@@ -184,7 +180,7 @@ Creates a Jira ticket using a specific JupiterOne Jira integration configuration
 | `integrationInstanceId` | `string` | The `id` of the JupiterOne Jira integration that should be used to create the ticket.             |
 | `entityClass`           | `string` | The `class` of the new ticket entity that should be created in JupiterOne. (e.g. `Vulnerability`) |
 | `project`               | `string` | The unique Jira project id that the ticket will be created in.                                    |
-| `summary`               | `string` | Summary of                                                                                        |
+| `summary`               | `string` | Summary of the Jira ticket. Used as the ticket title.                                             |
 | `issueType`             | `string` | The Jira issue type (e.g. `Task`).                                                                |
 | `additionalFields?`     | `object` | Optional additional fields that will be passed directly to the Jira API.                          |
 
@@ -218,7 +214,7 @@ Example:
 }
 ```
 
-##### SendSlackMessageRuleOperationAction
+#### Action: `SEND_SLACK_MESSAGE`
 
 Sends a Slack message to a given Slack webhook URL.
 
@@ -235,7 +231,7 @@ Example:
 }
 ```
 
-##### WebhookRuleOperationAction
+#### Action: `WEBHOOK`
 
 Sends an HTTP request to a given endpoint.
 
@@ -264,8 +260,8 @@ Example:
 
 ## Operation Templating
 
-Templates can be used inside of any property under the `operations` field on
-question rule instance. The templates can contain a JavaScript-like syntax that
+Templates can be used inside of any property under the `operations` property on
+a rule. The templates can contain a JavaScript-like syntax that
 automatically have input variables injected for usage.
 
 For example, `FilterRuleOperationCondition`'s are often used with rules as
@@ -342,7 +338,7 @@ Data from query results can be used inside of rule operations by referencing the
 }
 ```
 
-### Rule Evaluation Templating Language
+## Rule Evaluation Templating Language
 
 A template can be created in any `RuleOperation` using the `{{...}}` syntax.
 Inside of the `{{...}}` is a JavaScript-like language that allows for powerful
@@ -358,20 +354,20 @@ there is only a single expression:
 {{true}}
 ```
 
-The following is an example where the entire value would be casted to a string
+The following is an example where the entire value would be cast to a string
 because it contains multiple expressions:
 
 ```
 {{age + 10}} is my age and my name is {{firstName + " " + lastName}}
 ```
 
-#### Unary Operators
+### Unary Operators
 
 | Operation | Symbol |
 | --------- | :----: |
 | Negate    |   !    |
 
-#### Binary Operators
+### Binary Operators
 
 | Operation        |    Symbol    |
 | ---------------- | :----------: |
@@ -385,7 +381,7 @@ because it contains multiple expressions:
 | Logical AND      |      &&      |
 | Logical OR       | &#124;&#124; |
 
-#### Comparisons
+### Comparisons
 
 | Comparison                 | Symbol |
 | -------------------------- | :----: |
@@ -397,7 +393,7 @@ because it contains multiple expressions:
 | Less than or equal         |   <=   |
 | Element in array or string |   in   |
 
-#### Ternary operator
+### Ternary operator
 
 | Expression                        | Result |
 | --------------------------------- | ------ |
@@ -405,7 +401,7 @@ because it contains multiple expressions:
 | "foo" in "foobar" ? "Yes" : "No"  | Yes    |
 | {agent: "Archer"}.agent ?: "Kane" | Archer |
 
-#### Native Types
+### Native Types
 
 | Type     |            Examples            |
 | -------- | :----------------------------: |
@@ -415,7 +411,7 @@ because it contains multiple expressions:
 | Objects  |       {hello: "world!"}        |
 | Arrays   |      ['hello', 'world!']       |
 
-#### Groups
+### Groups
 
 Grouping operations with parentheses:
 
@@ -424,15 +420,15 @@ Grouping operations with parentheses:
 | (83 + 1) / 2                        | 42     |
 | 1 < 3 && (4 > 2 &#124;&#124; 2 > 4) | true   |
 
-#### Custom Transforms
+### Custom Transforms
 
 Some custom transforms are exposed in the rule templating language.
 
-##### `mapTemplate(templateName: string)` Custom Transform
+#### `mapTemplate(templateName: string)` Custom Transform
 
 `mapTemplate` is used to separate and reuse templates inside of a rule. The
 transform expects a single array and the first argument should be a string
-who's value matches a template in rule `templates` object.
+whose value matches a template in rule `templates` object.
 
 The `mapTemplate` transform exposes additional input variable to the template:
 
@@ -464,7 +460,7 @@ Example `templates`:
 }
 ```
 
-##### `mapProperty(...properties: string)` Custom Transform
+#### `mapProperty(...properties: string)` Custom Transform
 
 Allows for mapping individual properties from an array. A single property may
 be supplied or multiple properties may be supplied. The properties that are
@@ -528,7 +524,7 @@ Example accessing `entity` data using `mapProperty` and the above data:
 }
 ```
 
-##### `join(separator?: string)` Custom Transform
+#### `join(separator?: string)` Custom Transform
 
 Similar to the `Array.prototype.join` function in JavaScript. Returns a new
 string by concatenating all of the elements in an array. If the `separator`
