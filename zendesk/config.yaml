@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: zhnVYQ3Aco2Ki2jy4CnnC/pNEYfSCtUywIkdsd3S+Yg=
+        hash: 4QQIuPclxbaz8ejkQa3jSn4ln1Be1I1BnlPyojIGJZY=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -242,12 +242,6 @@ sections:
         id: 360022903353
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022903353-Configure-SAML-SSO-Integration
-      - title: J1 Endpoint Compliance Agent
-        file: ../guides/endpoint-compliance-agent.md
-        hash: n5THVWttpMrPzNGL1x1m8H/ke+IopYIqWh50c8RjUS0=
-        id: 360022721994
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360022721994-J1-Endpoint-Compliance-Agent
       - title: Enable API Key Access
         file: ../guides/api-key-access.md
         hash: w8C3fCBxSho9e7k5GTAuA+gevKFJQY+0cyt6ZGkBwjY=
@@ -442,9 +436,30 @@ sections:
         hash: J9VKkB53w3QjnBeUUlNOJtBqvFFdvnq6Yo5fwSubeA8=
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721274-WhiteHat-Security
+  - name: Power Ups
+    id: 360006506113
+    articles:
+      - title: J1 Endpoint Compliance Agent
+        file: ../guides/endpoint-compliance-agent.md
+        hash: n5THVWttpMrPzNGL1x1m8H/ke+IopYIqWh50c8RjUS0=
+        id: 360022721994
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360022721994-J1-Endpoint-Compliance-Agent
+      - title: J1 Endpoint Compliance Agent with Stethoscope v4
+        file: ../guides/endpoint-compliance-agent-v4.md
+        hash: JvFq8hiGkEhHRMLDuaBtDzjTHFlA+9NycwDuMznjD2s=
+        id: 360040105273
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360040105273-J1-Endpoint-Compliance-Agent-with-Stethoscope-v4
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2019.35 Release
+        file: ../release-notes/2019-35.md
+        hash: luhxmnZ08FP4Wxvm3kBjr3Mcupl6JhPe+CihAOVZCrU=
+        id: 360039700274
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360039700274-2019.35-Release
       - title: 2019.34 Release
         file: ../release-notes/2019-34.md
         hash: IT2molwaYuqbIm0T863DlJZ1C5lPl3L067ni8knnrUk=
