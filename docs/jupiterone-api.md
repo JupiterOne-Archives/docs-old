@@ -395,49 +395,6 @@ Example result:
 }
 ```
 
-### Vertex Full-Text Search
-
-```graphql
-query testQuery($query: String!, $size: Int, $after: String) {
-  queryText(query: $query, size: $size, after: $after) {
-    vertices {
-      id
-      entity {
-        _source
-        _id
-        _key
-        _type
-        _class
-        _accountId
-        _integrationName
-        _integrationDefinitionId
-        _integrationInstanceId
-        _version
-        _createdOn
-        _beginOn
-        _endOn
-        _deleted
-        displayName
-      }
-      properties
-    }
-    total
-    pageInfo {
-      endCursor
-      hasNextPage
-    }
-  }
-}
-```
-
-Variables:
-
-```json
-{
-  "query": "127.0.0.1"
-}
-```
-
 ### Listing Vertices Via a \_type and/or \_class
 
 For fetching entities with specified filters. The `_id`, `_key`, `_type` and
