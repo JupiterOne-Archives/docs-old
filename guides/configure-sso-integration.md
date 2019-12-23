@@ -185,9 +185,11 @@ Find jupiterone_account as a return a.accountId
 
 **Workaround**
 
-If your SSO provider supports configuring a "Bookmark" app, you can workaround
-this limitation by doing the following:
+If your SSO provider supports configuring a "Bookmark" or "secure web
+authentication (SWA)" app, you can workaround this limitation by doing the
+following:
 
 - **Hide** the app icon to users for the configured JupiterOne SAML SSO app
-- Configure a **Bookmark** app with your JupiterOne account URL and assigned it
-  to the same users/groups that have been assigned the JupiterOne SAML app
+- Configure a **Bookmark / SWA** app with your JupiterOne account URL and
+  assigned it to the same users/groups that have been assigned the JupiterOne
+  SAML app
