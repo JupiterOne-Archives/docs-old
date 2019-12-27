@@ -37,7 +37,8 @@ permissions missing from the AWS managed policy. The exact policy and permission
 statements can be found in the public [JupiterOne AWS CloudFormation][1] project
 on Github.
 
-[2]: https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/SecurityAudit
+[2]:
+  https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/SecurityAudit
 
 ## Entities
 
@@ -83,6 +84,7 @@ ingested when the integration runs:
 | ELB            | Application Load Balancer | `aws_alb` : `Gateway`                                        |
 |                | Network Load Balancer     | `aws_nlb` : `Gateway`                                        |
 |                | Classic Load Balancer     | `aws_elb` : `Gateway`                                        |
+|                | Target Group              | `aws_lb_target_group` : `Group`                              |
 | GuardDuty      | GuardDuty Detector        | `aws_guardduty_detector` : `Assessment`, `Scanner`           |
 |                | GuardDuty Finding         | `aws_guardduty_finding` : `Finding`                          |
 | IAM            | Account Password Policy   | `aws_iam_account_password_policy` : `PasswordPolicy`         |
@@ -95,6 +97,7 @@ ingested when the integration runs:
 |                | IAM Group Policy          | `aws_iam_group_policy` : `AccessPolicy`                      |
 |                | IAM Role Policy           | `aws_iam_role_policy` : `AccessPolicy`                       |
 |                | IAM Managed Policy        | `aws_iam_policy` : `AccessPolicy`                            |
+|                | IAM SAML Provider         | `aws_iam_saml_provider` : `Service`                          |
 | Inspector      | Inspector Assessment Run  | `aws_inspector_assessment` : `Assessment`                    |
 |                | Inspector Finding         | `aws_inspector_finding` : `Finding`                          |
 | KMS            | KMS Key                   | `aws_kms_key` : `CryptoKey`                                  |
@@ -119,115 +122,116 @@ The following relationships are created/mapped:
 
 ### Basic relationships within the integration instance account/resources
 
-| Relationships                                                         |
-| --------------------------------------------------------------------- |
-| `aws_account` **HAS** `aws_apigateway`                                |
-| `aws_account` **HAS** `aws`                                           |
-| `aws_account` **HAS** `aws_iam`                                       |
-| `aws_account` **HAS** `aws_lambda`                                    |
-| `aws_account` **HAS** `aws_s3`                                        |
-| `aws_account` **HAS** `aws_config`                                    |
-| `aws_acm` **HAS** `aws_acm_certificate`                               |
-| `aws_batch` **HAS** `aws_batch_compute_environment`                   |
-| `aws_batch` **HAS** `aws_batch_job_definition`                        |
-| `aws_batch` **HAS** `aws_batch_job_queue`                             |
-| `aws_batch_compute_environment` **USES** `aws_ecs_cluster`            |
-| `aws_batch_compute_environment` **ASSIGNED**\|**USES** `aws_iam_role` |
-| `aws_batch_job_queue` **HAS** `aws_batch_job`                         |
-| `aws_apigateway` **HAS** `aws_api_gateway_rest_api`                   |
-| `aws_api_gateway_rest_api` **TRIGGERS** `aws_lambda_function`         |
-| `aws_cloudfront` **HAS** `aws_cloudfront_distribution`                |
-| `aws_cloudfront_distribution` **CONNECTS** `aws_api_gateway_rest_api` |
-| `aws_cloudfront_distribution` **CONNECTS** `aws_s3_bucket`            |
-| `aws_cloudfront_distribution` **USES** `aws_acm_certificate`          |
-| `aws_cloudtrail` **LOGS** `aws_s3_bucket`                             |
-| `aws_cloudtrail` **LOGS** `aws_cloudwatch_log_group`                  |
-| `aws_cloudwatch_event_rule` **TRIGGERS** `aws_lambda_function`        |
-| `aws_config` **HAS** `aws_config_rule`                                |
-| `aws_config_rule` **EVALUATES** `aws_account`                         |
-| `aws_config_rule` **EVALUATES** `<AWS Resource>`                      |
-| `aws_dynamodb` **HAS** `aws_dynamodb_table`                           |
-| `aws_dynamodb_table` **USES** `aws_kms_key`                           |
-| `aws_ec2` **HAS** `aws_instance`                                      |
-| `aws_ec2` **HAS** `aws_security_group`                                |
-| `aws_ec2` **HAS** `aws_subnet`                                        |
-| `aws_ec2` **HAS** `aws_ebs_volume`                                    |
-| `aws_ec2` **HAS** `aws_network_acl`                                   |
-| `aws_ec2` **HAS** `aws_vpc`                                           |
-| `aws_autoscaling_group` **HAS** `aws_instance`                        |
-| `aws_instance` **USES** `aws_ebs_volume`                              |
-| `aws_instance` **USES** `aws_eip`                                     |
-| `aws_instance` **USES** `aws_eni`                                     |
-| `aws_ebs_volume` **HAS** `aws_ebs_snapshot`                           |
-| `aws_ebs_volume` **USES** `aws_ebs_snapshot`                          |
-| `aws_ebs_volume` **USES** `aws_kms_key`                               |
-| `aws_security_group` **PROTECTS** `aws_instance`                      |
-| `aws_instance` **HAS** `aws_security_group`                           |
-| `aws_vpc` **CONTAINS** `aws_subnet`                                   |
-| `aws_vpc` **LOGS** `aws_cloudwatch_log_group`                         |
-| `aws_vpc` **LOGS** `aws_s3_bucket`                                    |
-| `aws_network_acl` **PROTECTS** `aws_subnet`                           |
-| `aws_ecr` **HAS** `aws_ecr_repository`                                |
-| `aws_ecr_repository` **HAS** `aws_ecr_image`                          |
-| `aws_ecr_image` **HAS** `aws_ecr_image_scan_finding`                  |
-| `aws_ecs` **HAS** `aws_ecs_cluster`                                   |
-| `aws_ecs` **HAS** `aws_ecs_task_definition`                           |
-| `aws_ecs_cluster` **HAS** `aws_ecs_service`                           |
-| `aws_ecs_cluster` **HAS** `aws_ecs_container_instance`                |
-| `aws_ecs_cluster` **RUNS** `aws_ecs_task`                             |
-| `aws_ecs_container_instance` **RUNS** `aws_ecs_task`                  |
-| `aws_ecs_task_definition` **ASSIGNED**\|**USES** `aws_iam_role`       |
-| `aws_ecs_task_definition` **DEFINES** `aws_ecs_service`               |
-| `aws_ecs_task_definition` **DEFINES** `aws_ecs_task`                  |
-| `aws_ecs_service` **TRIGGERS** `aws_ecs_task`                         |
-| `aws_instance` **RUNS** `aws_ecs_container_instance`                  |
-| `aws_eks` **HAS** `aws_eks_cluster`                                   |
-| `aws_elasticloadbalancing` **HAS** `aws_alb`                          |
-| `aws_elasticloadbalancing` **HAS** `aws_nlb`                          |
-| `aws_elasticloadbalancing` **HAS** `aws_elb`                          |
-| `aws_alb` **USES** `aws_acm_certificate`                              |
-| `aws_guardduty_detector` **IDENTIFIED** `aws_guardduty_finding`       |
-| `aws_instance` **HAS** `aws_guardduty_finding`                        |
-| `aws_iam` **HAS** `aws_iam_managed_policy`                            |
-| `aws_iam` **HAS** `aws_iam_role`                                      |
-| `aws_iam` **HAS** `aws_iam_role_policy`                               |
-| `aws_iam` **HAS** `aws_iam_user`                                      |
-| `aws_iam` **HAS** `aws_iam_user_policy`                               |
-| `aws_iam` **HAS** `aws_iam_group`                                     |
-| `aws_iam` **HAS** `aws_iam_group_policy`                              |
-| `aws_iam_group` **HAS** `aws_iam_group_policy`                        |
-| `aws_iam_group` **CONTAINS** `aws_iam_user`                           |
-| `aws_iam_group` **HAS** `aws_iam_managed_policy`                      |
-| `aws_iam_role` **HAS** `aws_iam_role_policy`                          |
-| `aws_iam_role` **HAS** `aws_iam_managed_policy`                       |
-| `aws_iam_user` **HAS** `aws_iam_managed_policy`                       |
-| `aws_iam_user` **HAS** `aws_iam_user_policy`                          |
-| `aws_inspector_assessment` **IDENTIFIED** `aws_inspector_finding`     |
-| `aws_instance` **HAS** `aws_inspector_finding`                        |
-| `aws_lambda` **HAS** `aws_lambda_function`                            |
-| `aws_lambda_function` **HAS** `aws_iam_role`                          |
-| `aws_lambda_function` **HAS** `aws_vpc`                               |
-| `aws_redshift` **HAS** `aws_redshift_cluster`                         |
-| `aws_vpc` **HAS** `aws_redshift_cluster`                              |
-| `aws_rds` **HAS** `aws_rds_cluster`                                   |
-| `aws_rds` **HAS** `aws_db_instance`                                   |
-| `aws_rds_cluster` **CONTAINS** `aws_db_instance`                      |
-| `aws_rds_cluster` **USES** `aws_kms_key`                              |
-| `aws_rds_cluster` **CONTAINS** `aws_db_cluster_snapshot`              |
-| `aws_db_instance` **CONTAINS** `aws_db_snapshot`                      |
-| `aws_route53` **HAS** `aws_route53_domain`                            |
-| `aws_route53` **HAS** `aws_route53_zone`                              |
-| `aws_route53_zone` **HAS** `aws_route53_record`                       |
-| `aws_db_instance` **USES** `aws_kms_key`                              |
-| `aws_s3` **HAS** `aws_s3_bucket`                                      |
-| `aws_s3_bucket` **USES** `aws_kms_key`                                |
-| `aws_s3_bucket` **HAS** `aws_s3_bucket_policy`                        |
-| `aws_transfer_server` **HAS** `aws_transfer_user`                     |
-| `aws_s3_bucket` **ALLOWS** `aws_transfer_user`                        |
-| `aws_iam_role` **ASSIGNED** `aws_transfer_server`                     |
-| `aws_iam_role` **ASSIGNED** `aws_transfer_user`                       |
-| `aws_waf` **HAS** `aws_waf_web_acl`                                   |
-| `aws_waf_web_acl` **PROTECTS** `aws_cloudfront_distribution`          |
+| Relationships                                                          |
+| ---------------------------------------------------------------------- |
+| `aws_account` **HAS** `aws_apigateway`                                 |
+| `aws_account` **HAS** `aws`                                            |
+| `aws_account` **HAS** `aws_iam`                                        |
+| `aws_account` **HAS** `aws_lambda`                                     |
+| `aws_account` **HAS** `aws_s3`                                         |
+| `aws_account` **HAS** `aws_config`                                     |
+| `aws_acm` **HAS** `aws_acm_certificate`                                |
+| `aws_batch` **HAS** `aws_batch_compute_environment`                    |
+| `aws_batch` **HAS** `aws_batch_job_definition`                         |
+| `aws_batch` **HAS** `aws_batch_job_queue`                              |
+| `aws_batch_compute_environment` **USES** `aws_ecs_cluster`             |
+| `aws_batch_compute_environment` **ASSIGNED**\|**USES** `aws_iam_role`  |
+| `aws_batch_job_queue` **HAS** `aws_batch_job`                          |
+| `aws_apigateway` **HAS** `aws_api_gateway_rest_api`                    |
+| `aws_api_gateway_rest_api` **TRIGGERS** `aws_lambda_function`          |
+| `aws_cloudfront` **HAS** `aws_cloudfront_distribution`                 |
+| `aws_cloudfront_distribution` **CONNECTS** `aws_api_gateway_rest_api`  |
+| `aws_cloudfront_distribution` **CONNECTS** `aws_s3_bucket`             |
+| `aws_cloudfront_distribution` **USES** `aws_acm_certificate`           |
+| `aws_cloudtrail` **LOGS** `aws_s3_bucket`                              |
+| `aws_cloudtrail` **LOGS** `aws_cloudwatch_log_group`                   |
+| `aws_cloudwatch_event_rule` **TRIGGERS** `aws_lambda_function`         |
+| `aws_config` **HAS** `aws_config_rule`                                 |
+| `aws_config_rule` **EVALUATES** `aws_account`                          |
+| `aws_config_rule` **EVALUATES** `<AWS Resource>`                       |
+| `aws_dynamodb` **HAS** `aws_dynamodb_table`                            |
+| `aws_dynamodb_table` **USES** `aws_kms_key`                            |
+| `aws_ec2` **HAS** `aws_instance`                                       |
+| `aws_ec2` **HAS** `aws_security_group`                                 |
+| `aws_ec2` **HAS** `aws_subnet`                                         |
+| `aws_ec2` **HAS** `aws_ebs_volume`                                     |
+| `aws_ec2` **HAS** `aws_network_acl`                                    |
+| `aws_ec2` **HAS** `aws_vpc`                                            |
+| `aws_autoscaling_group` **HAS** `aws_instance`                         |
+| `aws_instance` **USES** `aws_ebs_volume`                               |
+| `aws_instance` **USES** `aws_eip`                                      |
+| `aws_instance` **USES** `aws_eni`                                      |
+| `aws_ebs_volume` **HAS** `aws_ebs_snapshot`                            |
+| `aws_ebs_volume` **USES** `aws_ebs_snapshot`                           |
+| `aws_ebs_volume` **USES** `aws_kms_key`                                |
+| `aws_security_group` **PROTECTS** `aws_instance`                       |
+| `aws_instance` **HAS** `aws_security_group`                            |
+| `aws_vpc` **CONTAINS** `aws_subnet`                                    |
+| `aws_vpc` **LOGS** `aws_cloudwatch_log_group`                          |
+| `aws_vpc` **LOGS** `aws_s3_bucket`                                     |
+| `aws_network_acl` **PROTECTS** `aws_subnet`                            |
+| `aws_ecr` **HAS** `aws_ecr_repository`                                 |
+| `aws_ecr_repository` **HAS** `aws_ecr_image`                           |
+| `aws_ecr_image` **HAS** `aws_ecr_image_scan_finding`                   |
+| `aws_ecs` **HAS** `aws_ecs_cluster`                                    |
+| `aws_ecs` **HAS** `aws_ecs_task_definition`                            |
+| `aws_ecs_cluster` **HAS** `aws_ecs_service`                            |
+| `aws_ecs_cluster` **HAS** `aws_ecs_container_instance`                 |
+| `aws_ecs_cluster` **RUNS** `aws_ecs_task`                              |
+| `aws_ecs_container_instance` **RUNS** `aws_ecs_task`                   |
+| `aws_ecs_task_definition` **ASSIGNED**\|**USES** `aws_iam_role`        |
+| `aws_ecs_task_definition` **DEFINES** `aws_ecs_service`                |
+| `aws_ecs_task_definition` **DEFINES** `aws_ecs_task`                   |
+| `aws_ecs_service` **TRIGGERS** `aws_ecs_task`                          |
+| `aws_instance` **RUNS** `aws_ecs_container_instance`                   |
+| `aws_eks` **HAS** `aws_eks_cluster`                                    |
+| `aws_elasticloadbalancing` **HAS** `aws_alb` or `aws_nlb` or `aws_elb` |
+| `aws_alb` **USES** `aws_acm_certificate`                               |
+| `aws_alb` or `aws_nlb` or `aws_elb` **CONNECTS** `aws_lb_target_group` |
+| `aws_lb_target_group` **HAS** `aws_instance` or `aws_lambda_function`  |
+| `aws_lb_target_group` **HAS** `aws_eip` or `aws_eni`                   |
+| `aws_guardduty_detector` **IDENTIFIED** `aws_guardduty_finding`        |
+| `aws_instance` **HAS** `aws_guardduty_finding`                         |
+| `aws_iam` **HAS** `aws_iam_managed_policy`                             |
+| `aws_iam` **HAS** `aws_iam_role`                                       |
+| `aws_iam` **HAS** `aws_iam_role_policy`                                |
+| `aws_iam` **HAS** `aws_iam_user`                                       |
+| `aws_iam` **HAS** `aws_iam_user_policy`                                |
+| `aws_iam` **HAS** `aws_iam_group`                                      |
+| `aws_iam` **HAS** `aws_iam_group_policy`                               |
+| `aws_iam_group` **HAS** `aws_iam_group_policy`                         |
+| `aws_iam_group` **CONTAINS** `aws_iam_user`                            |
+| `aws_iam_group` **HAS** `aws_iam_managed_policy`                       |
+| `aws_iam_role` **HAS** `aws_iam_role_policy`                           |
+| `aws_iam_role` **HAS** `aws_iam_managed_policy`                        |
+| `aws_iam_user` **HAS** `aws_iam_managed_policy`                        |
+| `aws_iam_user` **HAS** `aws_iam_user_policy`                           |
+| `aws_inspector_assessment` **IDENTIFIED** `aws_inspector_finding`      |
+| `aws_instance` **HAS** `aws_inspector_finding`                         |
+| `aws_lambda` **HAS** `aws_lambda_function`                             |
+| `aws_lambda_function` **HAS** `aws_iam_role`                           |
+| `aws_lambda_function` **HAS** `aws_vpc`                                |
+| `aws_redshift` **HAS** `aws_redshift_cluster`                          |
+| `aws_vpc` **HAS** `aws_redshift_cluster`                               |
+| `aws_rds` **HAS** `aws_rds_cluster`                                    |
+| `aws_rds` **HAS** `aws_db_instance`                                    |
+| `aws_rds_cluster` **CONTAINS** `aws_db_instance`                       |
+| `aws_rds_cluster` **USES** `aws_kms_key`                               |
+| `aws_rds_cluster` **CONTAINS** `aws_db_cluster_snapshot`               |
+| `aws_db_instance` **CONTAINS** `aws_db_snapshot`                       |
+| `aws_route53` **HAS** `aws_route53_domain`                             |
+| `aws_route53` **HAS** `aws_route53_zone`                               |
+| `aws_route53_zone` **HAS** `aws_route53_record`                        |
+| `aws_db_instance` **USES** `aws_kms_key`                               |
+| `aws_s3` **HAS** `aws_s3_bucket`                                       |
+| `aws_s3_bucket` **USES** `aws_kms_key`                                 |
+| `aws_s3_bucket` **HAS** `aws_s3_bucket_policy`                         |
+| `aws_transfer_server` **HAS** `aws_transfer_user`                      |
+| `aws_s3_bucket` **ALLOWS** `aws_transfer_user`                         |
+| `aws_iam_role` **ASSIGNED** `aws_transfer_server`                      |
+| `aws_iam_role` **ASSIGNED** `aws_transfer_user`                        |
+| `aws_waf` **HAS** `aws_waf_web_acl`                                    |
+| `aws_waf_web_acl` **PROTECTS** `aws_cloudfront_distribution`           |
 
 ### Mapped Relationships - connections to broader entity resources
 
@@ -283,8 +287,8 @@ on the actions and resources specified by the policy document.
 
 ## Multi-region Support
 
-Multi-region support is built-in to the integration to ensure maximum visibility,
-especially to discover resources in an unauthorized region.
+Multi-region support is built-in to the integration to ensure maximum
+visibility, especially to discover resources in an unauthorized region.
 
 ### Supported Regions
 
