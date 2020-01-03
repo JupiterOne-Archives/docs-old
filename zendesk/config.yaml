@@ -61,14 +61,14 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: xRnDwvn7nI6lT3IHdMefdlHYGKZShq4kHzVh4ITmnTY=
+        hash: KvNZloVKd+PwjVjlF8I4YnYZExRB9uCnsZXbF2aNpL8=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
       - title: Integrations and Mapping Related Questions
         file: ../faqs/faqs-integrations.md
         id: 360022879453
-        hash: xdxL+2nELIiokt48tSJL7OADrTjOsTYVAzxf93HHzyk=
+        hash: 0EVegc68zw/OUValMAtOwS1hfC4o95v3/9992Bu/EgM=
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022879453-Integrations-and-Mapping-Related-Questions
       - title: AWS Specific Questions
@@ -89,6 +89,12 @@ sections:
         id: 360026412514
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412514-Endpoint-Agent-Questions
+      - title: Data Security
+        file: ../docs/jupiterone-data-security.md
+        hash: 4AqE/n1RXMQS4IAq7+iovW3v0UABvJPiVSX1Tq1jyNQ=
+        id: 360024092813
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360024092813-Data-Security
   - name: Common Questions and Queries
     id: 360004563074
     articles:
@@ -253,7 +259,7 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: cESR/qKiQm56BvcnaKCq7H3upXo55Tn8AZGFTBf1l8s=
+        hash: qe632NHDMzSuV+jMYyau950GpZlk7gJYnseNhgunTFk=
         id: 360022722014
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022722014-J1QL-Language-Specs
@@ -280,7 +286,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360025847594-Enable-API-Key-Access
       - title: Alert Rule Schema
         file: ../docs/schemas/alert-rule.md
-        hash: bTWIgZ9OFY82+6sLl2gtraHQW0nA2PKAGLAeC7gIGFc=
+        hash: Ij4YkdBJeoGvpiFsTqPmlmHQVscWcgEWAfdIqzCL+CY=
         id: 360039711354
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360039711354-Alert-Rule-Schema
@@ -305,27 +311,51 @@ sections:
         id: 360022721934
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721934-Detect-Suspicious-Code-Commits
-  - name: Data Model
+  - name: JupiterOne Graph Data Model
     id: 360002424373
     articles:
-      - title: JupiterOne Graph Data Model
+      - title: Data Model - Overview
         file: ../docs/jupiterone-data-model.md
-        hash: 9mOpFxbOIrfMQ+XZMDgzuykFPNi1Bdc9LdAdykvL3ss=
+        hash: ZEhYcGYHkLdfQnKncftfh+ubkvKvO8BqTtQPho1OmOw=
         id: 360022903573
         webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360022903573-JupiterOne-Graph-Data-Model
-      - title: JupiterOne Graph Entity Relationship Mapping
+          https://support.jupiterone.io/hc/en-us/articles/360022903573-Data-Model---Overview
+      - title: Entity Relationship Mapping
         file: ../docs/entity-relationship-mappings.md
-        hash: c+8HlR00LQJVFpjQvwOJmoEQA9cTB58t3GFUXeSHhr4=
+        hash: YCGw9LiPo2KmLMC1rRT8sYauk8TsmdwMPlq8lcOBKP8=
         id: 360034786734
         webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360034786734-JupiterOne-Graph-Entity-Relationship-Mapping
-      - title: Data Security
-        file: ../docs/jupiterone-data-security.md
-        hash: 4AqE/n1RXMQS4IAq7+iovW3v0UABvJPiVSX1Tq1jyNQ=
-        id: 360024092813
+          https://support.jupiterone.io/hc/en-us/articles/360034786734-Entity-Relationship-Mapping
+      - title: Data Model for Vulnerability Management
+        file: ../docs/data-model/vuln-mgmt.md
+        hash: KrBiYvzlpUhXwUgMaitfajUeHbJliyuY3NGge1o5ZBg=
+        id: 360041429733
         webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360024092813-Data-Security
+          https://support.jupiterone.io/hc/en-us/articles/360041429733-Data-Model-for-Vulnerability-Management
+      - title: Data Model for AWS IAM Access and Trusts
+        file: ../docs/data-model/aws-iam.md
+        hash: FmFyzj1AatRFqhJSDOj0/CwdPNxRmzTUbfJWHmpW7bs=
+        id: 360041433273
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360041433273-Data-Model-for-AWS-IAM-Access-and-Trusts
+      - title: Data Model for Network and Endpoint Infrastructure
+        file: ../docs/data-model/network-endpoint.md
+        hash: HCvLwrmHMbybeOoevnucoRGbwHBLsBR7RxbneBC3bvA=
+        id: 360040954034
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360040954034-Data-Model-for-Network-and-Endpoint-Infrastructure
+      - title: 'Data Model for Organization, Account, and Vendor Management'
+        file: ../docs/data-model/org-mgmt.md
+        hash: QUEMF2KhqLOZOP/1NjQF3Uz0vBTmFz94SiFitoVOAwg=
+        id: 360041436913
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360041436913-Data-Model-for-Organization,-Account,-and-Vendor-Management
+      - title: 'Data Model for Governance, Risk, and Compliance (GRC)'
+        file: ../docs/data-model/org-grc.md
+        hash: uvYisjwJfo5FZzMeFMszQRyz6WxorZ/9GxLfLkbANQE=
+        id: 360041436933
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360041436933-Data-Model-for-Governance,-Risk,-and-Compliance-(GRC)
   - name: Data Model Entity Reference
     id: 360004240434
   - name: Managed Integrations
@@ -460,6 +490,12 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2019.36 Release
+        file: ../release-notes/2019-36.md
+        hash: YjCVQCbRl4IwJAxF8TkGnHREKAWaj8GwCSMNovvTk1I=
+        id: 360040971634
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360040971634-2019.36-Release
       - title: 2019.35 Release
         file: ../release-notes/2019-35.md
         hash: UEbexKuDQUJ8m8ZPmGIinZzNMwWEaJTHwxYojY5G5v0=
