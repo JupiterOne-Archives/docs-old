@@ -365,41 +365,41 @@ because it contains multiple expressions:
 
 | Operation | Symbol |
 | --------- | :----: |
-| Negate    |   !    |
+| Negate    |  `!`   |
 
 ### Binary Operators
 
 | Operation        |    Symbol    |
 | ---------------- | :----------: |
-| Add, Concat      |      +       |
-| Subtract         |      -       |
-| Multiply         |      \*      |
-| Divide           |      /       |
-| Divide and floor |      //      |
-| Modulus          |      %       |
-| Power of         |      ^       |
-| Logical AND      |      &&      |
-| Logical OR       | &#124;&#124; |
+| Add, Concat      |     `+`      |
+| Subtract         |     `-`      |
+| Multiply         |     `*`      |
+| Divide           |     `/`      |
+| Divide and floor |     `//`     |
+| Modulus          |     `%`      |
+| Power of         |     `^`      |
+| Logical AND      |     `&&`     |
+| Logical OR       |     `||`     |
 
 ### Comparisons
 
 | Comparison                 | Symbol |
 | -------------------------- | :----: |
-| Equal                      |   ==   |
-| Not equal                  |   !=   |
-| Greater than               |   >    |
-| Greater than or equal      |   >=   |
-| Less than                  |   <    |
-| Less than or equal         |   <=   |
-| Element in array or string |   in   |
+| Equal                      |  `==`  |
+| Not equal                  |  `!=`  |
+| Greater than               |  `>`   |
+| Greater than or equal      |  `>=`  |
+| Less than                  |  `<`   |
+| Less than or equal         |  `<=`  |
+| Element in array or string |  `in`  |
 
 ### Ternary operator
 
-| Expression                        | Result |
-| --------------------------------- | ------ |
-| "" ? "Full" : "Empty"             | Empty  |
-| "foo" in "foobar" ? "Yes" : "No"  | Yes    |
-| {agent: "Archer"}.agent ?: "Kane" | Archer |
+| Expression                          | Result |
+| ----------------------------------- | ------ |
+| `"" ? "Full" : "Empty"`             | Empty  |
+| `"foo" in "foobar" ? "Yes" : "No"`  | Yes    |
+| `{agent: "Archer"}.agent ?: "Kane"` | Archer |
 
 ### Native Types
 
@@ -415,10 +415,10 @@ because it contains multiple expressions:
 
 Grouping operations with parentheses:
 
-| Expression                          | Result |
-| ----------------------------------- | :----- |
-| (83 + 1) / 2                        | 42     |
-| 1 < 3 && (4 > 2 &#124;&#124; 2 > 4) | true   |
+| Expression                  | Result |
+| --------------------------- | :----- |
+| `(83 + 1) / 2`              | 42     |
+| `1 < 3 && (4 > 2 || 2 > 4)` | true   |
 
 ### Custom Transforms
 
