@@ -356,12 +356,6 @@ sections:
         id: 360041436933
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360041436933-Data-Model-for-Governance,-Risk,-and-Compliance-(GRC)
-      - title: Data Security
-        file: ../docs/jupiterone-data-security.md
-        hash: 4AqE/n1RXMQS4IAq7+iovW3v0UABvJPiVSX1Tq1jyNQ=
-        id: 360024092813
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360024092813-Data-Security
   - name: Data Model Entity Reference
     id: 360004240434
   - name: Managed Integrations
