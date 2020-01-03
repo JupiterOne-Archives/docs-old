@@ -403,13 +403,13 @@ because it contains multiple expressions:
 
 ### Native Types
 
-| Type     |            Examples            |
-| -------- | :----------------------------: |
-| Booleans |        `true`, `false`         |
-| Strings  | "Hello \"user\"", 'Hey there!' |
-| Numerics |      6, -7.2, 5, -3.14159      |
-| Objects  |       {hello: "world!"}        |
-| Arrays   |      ['hello', 'world!']       |
+| Type     |              Examples              |
+| -------- | :--------------------------------: |
+| Booleans |          `true`, `false`           |
+| Strings  | `"Hello \"user\""`, `'Hey there!'` |
+| Numerics |      `6`, `-7.2`, `5`, `-3.14159`  |
+| Objects  |        `{hello: "world!"}`         |
+| Arrays   |       `['hello', 'world!']`        |
 
 ### Groups
 
