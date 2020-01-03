@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: 4Its71vWz3Ukg3d6y7uwC5Yb60T3WFAMOl2oJj8KCU8=
+        hash: kjNv4cfzX4KKEBAVAochwST5E0xBEe0DnRKpC6CH+gQ=
         id: 360026412374
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
@@ -92,9 +92,9 @@ sections:
       - title: Data Security
         file: ../docs/jupiterone-data-security.md
         hash: 4AqE/n1RXMQS4IAq7+iovW3v0UABvJPiVSX1Tq1jyNQ=
-        id: 360040948894
+        id: 360024092813
         webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360040948894-Data-Security
+          https://support.jupiterone.io/hc/en-us/articles/360024092813-Data-Security
   - name: Common Questions and Queries
     id: 360004563074
     articles:
