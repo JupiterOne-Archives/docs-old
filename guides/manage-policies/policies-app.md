@@ -1,4 +1,4 @@
-# Policies and Procedures
+# Managing Policies and Procedures on JupiterOne
 
 JupiterOne provides a **Policies** app that allows users to generate and manage
 corporate security policies and procedures. It has the following capabilities:
