@@ -61,7 +61,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: gVs58wNbPXYTORlNbbWA3L6AxCmumd3PIpWmSTZ1mcw=
+        hash: QrdHi8ClsSXQ7t/qRSXBrpQBvB95rV8Q+SL5BGD5G+k=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -355,9 +355,9 @@ sections:
   - name: Managed Integrations
     id: 360004247473
     articles:
-      - title: '>> Integrations Roadmap'
+      - title: ❤︎ Integrations Roadmap
         file: ../docs/integrations/integrations-roadmap.md
-        hash: WeVDRhCTX6qclQwX5LfsDdJ6KZuLis4eN9ddeR/9KKs=
+        hash: qpMROwx+isMUp8E5QhsdmNpGnjDCEgVlCohtB+oUiDc=
         id: 360041763713
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041763713'
       - title: AWS
