@@ -110,7 +110,7 @@ async function publish() {
         if (response.article) {
           art.id = response.article.id;
         } 
-        art.webLink = `https://support.jupiterone.io/hc/en-us/articles/${art.id}-${art.title.replace(/ |\//g, '-')}`
+        art.webLink = `https://support.jupiterone.io/hc/en-us/articles/${art.id}`
       }
     }
   }

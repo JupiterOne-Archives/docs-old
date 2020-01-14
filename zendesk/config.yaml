@@ -61,10 +61,9 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: KvNZloVKd+PwjVjlF8I4YnYZExRB9uCnsZXbF2aNpL8=
+        hash: QrdHi8ClsSXQ7t/qRSXBrpQBvB95rV8Q+SL5BGD5G+k=
         id: 360026412374
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360026412374-Account-and-Billing-Questions
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
         file: ../faqs/faqs-integrations.md
         id: 360022879453
@@ -330,37 +329,37 @@ sections:
         file: ../docs/data-model/vuln-mgmt.md
         hash: KrBiYvzlpUhXwUgMaitfajUeHbJliyuY3NGge1o5ZBg=
         id: 360041429733
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360041429733-Data-Model-for-Vulnerability-Management
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041429733'
       - title: Data Model for AWS IAM Access and Trusts
         file: ../docs/data-model/aws-iam.md
         hash: FmFyzj1AatRFqhJSDOj0/CwdPNxRmzTUbfJWHmpW7bs=
         id: 360041433273
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360041433273-Data-Model-for-AWS-IAM-Access-and-Trusts
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041433273'
       - title: Data Model for Network and Endpoint Infrastructure
         file: ../docs/data-model/network-endpoint.md
         hash: HCvLwrmHMbybeOoevnucoRGbwHBLsBR7RxbneBC3bvA=
         id: 360040954034
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360040954034-Data-Model-for-Network-and-Endpoint-Infrastructure
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360040954034'
       - title: 'Data Model for Organization, Account, and Vendor Management'
         file: ../docs/data-model/org-mgmt.md
         hash: QUEMF2KhqLOZOP/1NjQF3Uz0vBTmFz94SiFitoVOAwg=
         id: 360041436913
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360041436913-Data-Model-for-Organization,-Account,-and-Vendor-Management
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041436913'
       - title: 'Data Model for Governance, Risk, and Compliance (GRC)'
         file: ../docs/data-model/org-grc.md
         hash: uvYisjwJfo5FZzMeFMszQRyz6WxorZ/9GxLfLkbANQE=
         id: 360041436933
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360041436933-Data-Model-for-Governance,-Risk,-and-Compliance-(GRC)
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041436933'
   - name: Data Model Entity Reference
     id: 360004240434
   - name: Managed Integrations
     id: 360004247473
     articles:
+      - title: ❤︎ Integrations Roadmap
+        file: ../docs/integrations/integrations-roadmap.md
+        hash: qpMROwx+isMUp8E5QhsdmNpGnjDCEgVlCohtB+oUiDc=
+        id: 360041763713
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041763713'
       - title: AWS
         file: ../docs/integrations/aws/index.md
         id: 360022721054
@@ -382,6 +381,11 @@ sections:
         hash: gYAeWrV90e0tniIAitAfyL8vjGaasfpa40KtQ6+2tHA=
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721094-Carbon-Black-PSC
+      - title: CrowdStrike
+        file: ../docs/integrations/crowdstrike/index.md
+        hash: 9GthhpEMsfYUUSkEkYioLTi7iTm1PD/XFDPI9DX/ZnA=
+        id: 360041319254
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041319254'
       - title: Github
         file: ../docs/integrations/github/github.md
         id: 360022721114
@@ -490,12 +494,17 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2020.37 Release
+        file: ../release-notes/2020-37.md
+        hash: elEY9iAQedbDJAVE0tI18QZiIMznsBc3AVdaOesxnow=
+        id: 360041792413
+        webLink: >-
+          https://support.jupiterone.io/hc/en-us/articles/360041792413-2020.37-Release
       - title: 2019.36 Release
         file: ../release-notes/2019-36.md
-        hash: YjCVQCbRl4IwJAxF8TkGnHREKAWaj8GwCSMNovvTk1I=
+        hash: VdtfEhl9XXL6txpDpu8e7v16+lGH+WtHK3w0cd/oN1g=
         id: 360040971634
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360040971634-2019.36-Release
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360040971634'
       - title: 2019.35 Release
         file: ../release-notes/2019-35.md
         hash: UEbexKuDQUJ8m8ZPmGIinZzNMwWEaJTHwxYojY5G5v0=
