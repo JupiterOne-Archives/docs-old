@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: nrByfGDiCXBqnX+rBSIYgf9OeC4FqPvuLI+CitYU4ks=
+        hash: lBsDSFa1HydKFsmkBM7hFFd4HGwLPmWBMQN7qXxS4I4=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -332,11 +332,20 @@ sections:
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022903573-Data-Model---Overview
       - title: Entity Relationship Mapping
-        file: ../docs/entity-relationship-mappings.md
-        hash: YCGw9LiPo2KmLMC1rRT8sYauk8TsmdwMPlq8lcOBKP8=
+        file: ../docs/data-model/mappings.md
+        hash: 2XF6E3c08FiEDH2RagpSkK6Ge4+ExQh30eQfrmcUWPs=
         id: 360034786734
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360034786734-Entity-Relationship-Mapping
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360034786734'
+      - title: Entity Relationship Mapping - Global Rules
+        file: ../docs/data-model/mappings-global.md
+        hash: vfM0mgtWXp5MAAigEGs/2mld37Zx3bjYc7EIcxGns68=
+        id: 360041392074
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041392074'
+      - title: Entity Relationship Mapping - Integration Rules
+        file: ../docs/data-model/mappings-integrations.md
+        hash: sFG5A0CUcWL+uSPEOD7sTPOZEieK9AX13qQXQtVjYbo=
+        id: 360041392094
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041392094'
       - title: Data Model for Vulnerability Management
         file: ../docs/data-model/vuln-mgmt.md
         hash: KrBiYvzlpUhXwUgMaitfajUeHbJliyuY3NGge1o5ZBg=
