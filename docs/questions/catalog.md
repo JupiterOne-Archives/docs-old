@@ -178,14 +178,32 @@
 
 ## Integration Questions
 
+- [aws] Was the root account user recently used to log in or access?
 - [aws] Is MFA enabled for the Account Root User for all my AWS accounts?
 - [aws] Are there root user access keys in use for any of my AWS accounts?
+- [aws] Is MFA enabled for all IAM users that have a console password?
+- [aws] Are there active IAM user access keys unused for more than 90 days?
+- [aws] Which IAM user has password older than 90 days?
+- [aws] Which IAM user has not logged in to the console in more than 90 days?
+- [aws] Which IAM user account has not been accessed in 90 days?
+- [aws] Which IAM user access keys are older than 90 days?
+- [aws] Are there inactive IAM user access keys?
+- [aws] IAM password policy should require at least one uppercase letter.
+- [aws] IAM password policy should require at least one lowercase letter.
+- [aws] IAM password policy should require at least one symbol.
+- [aws] IAM password policy should require at least one number.
+- [aws] IAM password policy should require minimum length of 14 characters.
+- [aws] IAM password policy should prevent reuse of the same password (for at least past 10 history).
+- [aws] IAM password policy should enforce password expiration within 90 days.
+- [aws] Are there IAM Users with inline policy directly attached?
+- [aws] Which IAM policies allow full admin access to any and all resources?
 - [aws] Find all the IAM user access keys in production AWS accounts.
 - [aws] Find all the SSH key pairs in production AWS accounts.
 - [aws] Are there SSH keys not in use?
 - [aws] Is there anything that connects to an external AWS account that is not part of my organization?
 - [aws] What Lambda functions are in my environment, and what triggers them?
 - [aws] How are my Lambda functions invoked?
+- [aws] List Lambda Functions by Runtime
 - [aws] Which Lambda functions are inside a VPC?
 - [aws] Which IAM roles are assigned which IAM policies?
 - [aws] Who has been assigned full Administrator access?
@@ -216,11 +234,17 @@
 - [aws] Which S3 buckets have inventory reports enabled? And where do they publish to?
 - [aws] Is CloudTrail logging enabled?
 - [aws] Who has access to cloudtrail logs?
+- [aws] Is the S3 bucket containing cloudtrail logs publicly accessible?
+- [aws] Is CloudTrail logging / trails integrated with CloudWatch logs?
+- [aws] Is access logging enabled on the S3 bucket containing cloudtrail logs?
+- [aws] Is encryption enabled on the S3 bucket containing cloudtrail logs?
 - [aws] Is there any leak credential or secret in CloudFormation stack parameters or outputs?
 - [aws] Which EC2 instances or Lambda functions are configured to write logs to CloudWatch?
 - [aws] Are there any EBS volumes not in use?
 - [aws] Which security group rules allow inbound traffic from a public network or host on the Internet?
 - [aws] Which security group rules allow outbound traffic to a public network or host on the Internet?
+- [aws] Which security group rules allow inbound SSH traffic from the Internet?
+- [aws] Which security group rules allow inbound RDP (remote desktop) traffic from the Internet?
 - [aws] Which security group rules allow inbound traffic from the Internet?
 - [aws] Which security group rules allow outbound traffic to the Internet?
 - [aws] Are there EC2 instances exposed to the Internet?
@@ -234,9 +258,9 @@
 - [aws] What IAM roles and policies can external facing instances use?
 - [aws] S3 buckets referenced in IAM or bucket policies that do not exist in integrated accounts
 - [aws] AWS Cross-Account Assume Role Trusts Diagram
-- [aws] Are CloudTrail Logs enabled?
 - [aws] Are VPC Flow Logs enabled?
 - [aws] What is the estimated monthly cost of my RDS database backups?
+- [aws] What's behind elastic load balancers?
 - [hackerone] Show me the total bug bounty awarded by hacker.
 - [knowbe4] Which developers have not completed secure development training?
 - [okta] Is every Okta user using MFA? Anyone not assigned an MFA device?
