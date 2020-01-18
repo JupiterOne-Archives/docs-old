@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: lBsDSFa1HydKFsmkBM7hFFd4HGwLPmWBMQN7qXxS4I4=
+        hash: whAB4Qh6Qrhk2QcNJsR4mExyFA1+P4eNk+3CKw3WrbU=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -95,16 +95,14 @@ sections:
     articles:
       - title: Common Questions and Queries
         file: ../queries/common-qq-index.md
-        hash: 7exrDqsBYlxSHCW7SBZ+T58X4DrogWVeCbNikM1tBig=
+        hash: 6m+4oSreBbUFxwBWJ7fKmnrfZYPuj+qp809R5SiQr9s=
         id: 360024909073
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360024909073-Common-Questions-and-Queries
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909073'
       - title: Packaged Questions Catalog
         file: ../docs/questions/catalog.md
-        hash: OvIYXVH2hA/xuDTh1WNgh5Xfvo1kQ4OE2Xg8cuAbAtc=
+        hash: iDaoAA7LWc+49rhHiRNLhxnzJDnsr0V30QhIDOJTWw8=
         id: 360038496974
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360038496974-Packaged-Questions-Catalog
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360038496974'
       - title: AWS IAM Permissions and Trusts
         file: ../queries/common-qq-aws-permissions.md
         hash: VDUSgnoMFYWQDnt8v4kRcEWcppp7oNbbGyyQ3DyDdr0=
@@ -250,10 +248,9 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903333'
       - title: Common Questions and Queries
         file: ../queries/common-qq-index.md
-        hash: 7exrDqsBYlxSHCW7SBZ+T58X4DrogWVeCbNikM1tBig=
+        hash: 6m+4oSreBbUFxwBWJ7fKmnrfZYPuj+qp809R5SiQr9s=
         id: 360022721914
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360022721914-Common-Questions-and-Queries
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721914'
       - title: Configure SAML SSO Integration
         file: ../guides/configure-sso-integration.md
         hash: ywT/gIvMtIjA98qLpfMfe5RMbUwLbrJtuqFDWU9eusU=
@@ -534,10 +531,9 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360039700274-2019.35-Release
       - title: 2019.34 Release
         file: ../release-notes/2019-34.md
-        hash: sZxNacJdVK36n4kpBpALQZUuQbgPyo8Zf10lTTuK3hQ=
+        hash: YJeA96KPAZYLBnuBNKhvTJ7lWD4hI8h7+4kykVWFIv8=
         id: 360039644233
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360039644233-2019.34-Release
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360039644233'
       - title: 2019.33 Release
         file: ../release-notes/2019-33.md
         hash: Kr2Dz7pL8kuUoNB4AuGm8yvNcx2X/HTWEf3Y9SVKu7M=
