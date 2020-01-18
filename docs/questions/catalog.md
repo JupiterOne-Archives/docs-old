@@ -186,6 +186,7 @@
 - [aws] Which IAM user has password older than 90 days?
 - [aws] Which IAM user has not logged in to the console in more than 90 days?
 - [aws] Which IAM user account has not been accessed in 90 days?
+- [aws] Which IAM role has not been used in 90 days?
 - [aws] Which IAM user access keys are older than 90 days?
 - [aws] Are there inactive IAM user access keys?
 - [aws] IAM password policy should require at least one uppercase letter.
