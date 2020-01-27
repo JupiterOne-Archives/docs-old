@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: whAB4Qh6Qrhk2QcNJsR4mExyFA1+P4eNk+3CKw3WrbU=
+        hash: 4+ot0LpBr65symDCpqCGCTbN29DKYi7vRjHBYYqO2rQ=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -100,7 +100,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909073'
       - title: Packaged Questions Catalog
         file: ../docs/questions/catalog.md
-        hash: iDaoAA7LWc+49rhHiRNLhxnzJDnsr0V30QhIDOJTWw8=
+        hash: jBgqsEwCcwXDQjU1BM+fYKNJPGxWOSTOUg623spRf50=
         id: 360038496974
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360038496974'
       - title: AWS IAM Permissions and Trusts
@@ -381,8 +381,8 @@ sections:
       - title: AWS
         file: ../docs/integrations/aws/index.md
         id: 360022721054
-        hash: JeXnJCMvnF2QyJLcXNrQkUI0o2VVzFuG5SVJDNV3dyc=
-        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721054-AWS'
+        hash: VHK55Fqr8VWAqa+p/k2DZ+Y/JTUXKTCYzdSBuJaEizs=
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721054'
       - title: Azure
         file: ../docs/integrations/azure/graph-azure.md
         hash: zjxdpQZKXltor0WMqdx/e0Ow2vgW+rnpR1S8Pq4u8wY=
@@ -536,10 +536,9 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360039644233'
       - title: 2019.33 Release
         file: ../release-notes/2019-33.md
-        hash: Kr2Dz7pL8kuUoNB4AuGm8yvNcx2X/HTWEf3Y9SVKu7M=
+        hash: VPTQA1lxELnBgBaBWJEt13qbYpohTmdYYukDsEaIkAI=
         id: 360038804353
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360038804353-2019.33-Release
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360038804353'
       - title: 2019.32 Release
         file: ../release-notes/2019-32.md
         hash: QUcvVOMNQJc4MG61F8EZ7mQwzhR23ukb+BpuQ/4zqi0=
