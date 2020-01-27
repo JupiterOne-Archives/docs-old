@@ -64,9 +64,6 @@
 - Are my servers and systems protected by hosted-based firewall?
 - Are user devices configured with screen lock protection?
 - Are there security agents monitoring and protecting my endpoint hosts/devices?
-- Is operating system patching and auto-update enabled on endpoint hosts?
-- Is application patching and auto-update enabled on endpoint hosts?
-- Are my servers and systems protected by hosted-based firewall?
 - What are the approved server/system images?
 - Are all system images updated in the past six months?
 - Which hosts are (or are not) using approved standard images?
@@ -178,10 +175,14 @@
 
 ## Integration Questions
 
+- [aws] What accounts are in my AWS organization?
+- [aws] Which external AWS accounts are in my environment but not part of my organization?
 - [aws] Was the root account user recently used to log in or access?
 - [aws] Is MFA enabled for the Account Root User for all my AWS accounts?
 - [aws] Are there root user access keys in use for any of my AWS accounts?
 - [aws] Is MFA enabled for all IAM users that have a console password?
+- [aws] Which IAM users do not have a console password?
+- [aws] Which IAM users do not have an access key?
 - [aws] Which IAM user access keys were recently used (in the past week)?
 - [aws] Are there active IAM user access keys unused for more than 90 days?
 - [aws] Who recently updated their IAM user password (in the past week)?
@@ -211,6 +212,7 @@
 - [aws] How are my Lambda functions invoked?
 - [aws] List Lambda Functions by Runtime
 - [aws] Which Lambda functions are inside a VPC?
+- [aws] Is there an IAM role created to manage incidents and tickets with AWS Support?
 - [aws] Which IAM roles are assigned which IAM policies?
 - [aws] Who has been assigned full Administrator access?
 - [aws] Who has direct user access to my AWS accounts?
@@ -267,6 +269,10 @@
 - [aws] Are VPC Flow Logs enabled?
 - [aws] What is the estimated monthly cost of my RDS database backups?
 - [aws] What's behind elastic load balancers?
+- [aws] Which Lambda functions are associated with CloudFront distributions (Lambda@Edge)?
+- [aws] Which S3 buckets host static content for CloudFront distribution (CDN)?
+- [aws] Which certificates are in use by CloudFront distributions?
+- [aws] What resources are used by or associated with CloudFront distributions?
 - [hackerone] Show me the total bug bounty awarded by hacker.
 - [knowbe4] Which developers have not completed secure development training?
 - [okta] Is every Okta user using MFA? Anyone not assigned an MFA device?

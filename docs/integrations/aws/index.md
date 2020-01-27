@@ -124,12 +124,8 @@ The following relationships are created/mapped:
 
 | Relationships                                                          |
 | ---------------------------------------------------------------------- |
-| `aws_account` **HAS** `aws_apigateway`                                 |
-| `aws_account` **HAS** `aws`                                            |
-| `aws_account` **HAS** `aws_iam`                                        |
-| `aws_account` **HAS** `aws_lambda`                                     |
-| `aws_account` **HAS** `aws_s3`                                         |
-| `aws_account` **HAS** `aws_config`                                     |
+| `aws_account` (master) **HAS** `aws_account` (sub-account)             |
+| `aws_account` **HAS** `Service` (e.g. `aws_ec2`, `aws_iam`, ...)       |
 | `aws_acm` **HAS** `aws_acm_certificate`                                |
 | `aws_batch` **HAS** `aws_batch_compute_environment`                    |
 | `aws_batch` **HAS** `aws_batch_job_definition`                         |
@@ -142,6 +138,7 @@ The following relationships are created/mapped:
 | `aws_cloudfront` **HAS** `aws_cloudfront_distribution`                 |
 | `aws_cloudfront_distribution` **CONNECTS** `aws_api_gateway_rest_api`  |
 | `aws_cloudfront_distribution` **CONNECTS** `aws_s3_bucket`             |
+| `aws_cloudfront_distribution` **TRIGGERS** `aws_lambda_function`       |
 | `aws_cloudfront_distribution` **USES** `aws_acm_certificate`           |
 | `aws_cloudtrail` **LOGS** `aws_s3_bucket`                              |
 | `aws_cloudtrail` **LOGS** `aws_cloudwatch_log_group`                   |
