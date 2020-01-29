@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: Q/B14ysNucf8QS2QT21uQW8Dl8Ssw1I58UA4XzQR0xk=
+        hash: 7pVskGSSZ1GtOzSbVfJfS8KjhFduxvkMBDlt1m4MeDY=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -232,6 +232,39 @@ sections:
         hash: 1eUetmLeKSBAP/8dleye6U0wHHfXKwzzZiqwNZ7u87I=
         id: 360041337654
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041337654'
+  - name: Compliance
+    id: 360007184094
+    articles:
+      - title: Managing Compliance in JupiterOne
+        file: ../guides/compliance/compliance-overview.md
+        hash: yEPcUkLAe0Lgn12U0Cmshym024JNFzRUSgw2qzkJjIg=
+        id: 360042682733
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682733'
+      - title: Import Compliance Standard or Security Questionnaire
+        file: ../guides/compliance/compliance-import.md
+        hash: a6U8oFP5BlFXfXmUvkSzX3iOeoeP6bEF7eJoUE2iISk=
+        id: 360042682773
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682773'
+      - title: Export Compliance Artifacts
+        file: ../guides/compliance/compliance-export.md
+        hash: RwDPCcNocUseE+QiKoIiyR9wInUfwIP64247zE1349c=
+        id: 360042195334
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042195334'
+      - title: Compliance Policies Mapping
+        file: ../guides/compliance/compliance-mapping-policies.md
+        hash: RJIeRVov3OiunLsyuqOVQX6LCWo6XFZ9CWggfhFer94=
+        id: 360042195394
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042195394'
+      - title: Compliance Evidence Mapping
+        file: ../guides/compliance/compliance-mapping-evidence.md
+        hash: QSXuY6mGDQ8jSX9EFnWb7jmOyy97WvGu5oiYlf7zo7w=
+        id: 360042682833
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682833'
+      - title: Compliance Gap Analysis
+        file: ../guides/compliance/compliance-gap-analysis.md
+        hash: QHg6ZHokQ/Inkqkq51dnt7Aw18lpgQinYHNcjanAnUI=
+        id: 360042682873
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682873'
   - name: User Guides
     id: 360002297174
     articles:
@@ -298,6 +331,11 @@ sections:
         id: 360039711354
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360039711354-Alert-Rule-Schema
+      - title: Policies and Compliance related data schema
+        file: ../docs/schemas/policies-compliance.md
+        hash: wOsVfQKOxe6BhhRYOK3wI82aUqhUu/shvrNe1v1avf8=
+        id: 360042191054
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042191054'
   - name: Security and Compliance as Code
     id: 360004326633
     articles:
