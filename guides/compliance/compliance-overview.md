@@ -20,5 +20,16 @@ platform provides the following capabilities:
 [4]: ../compliance/compliance-gap-analysis.md
 [5]: ../compliance/compliance-export.md
 
-## Maturity Model
+## Compliance Status and Maturity
 
+JupiterOne compliance app provides measurements and status indicators at three
+different maturity levels for each compliance standard and its requirements /
+controls:
+
+1. Has documented policies and procedures
+2. Has implementation evidence (either via data-driven queries or external evidence)
+3. Continuous monitoring and remediation
+
+Here is an example screenshot:
+
+![compliance-status](../../assets/compliance-summary-status-bars.png)
