@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: 7pVskGSSZ1GtOzSbVfJfS8KjhFduxvkMBDlt1m4MeDY=
+        hash: ++NDNcRFdABl7C5Q6ictlS+0MV7R5SxsPVMoGra3y1w=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -237,7 +237,7 @@ sections:
     articles:
       - title: Managing Compliance in JupiterOne
         file: ../guides/compliance/compliance-overview.md
-        hash: yEPcUkLAe0Lgn12U0Cmshym024JNFzRUSgw2qzkJjIg=
+        hash: s86eABZw0ovG2NJuVhPAl8vNLPeZvc+WKvuvzw//cjE=
         id: 360042682733
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682733'
       - title: Import Compliance Standard or Security Questionnaire
