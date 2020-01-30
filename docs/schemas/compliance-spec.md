@@ -1,2 +1,0 @@
-# Compliance Standard Specification Schema
-
