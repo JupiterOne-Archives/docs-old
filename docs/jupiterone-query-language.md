@@ -188,7 +188,7 @@ Keep in mind the keywords are _case insensitive_.
 
 ## Date Comparisons
 
-The query language support both relative and static data comparisons on any
+The query language supports both relative and static data comparisons on any
 timestamp property. The timestamp property used for date comparison must be
 stored as an epoch number in milliseconds.
 
