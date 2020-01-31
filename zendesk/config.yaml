@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: ++NDNcRFdABl7C5Q6ictlS+0MV7R5SxsPVMoGra3y1w=
+        hash: wJnaIWsXJGMnkMozQJJcYWx1EOr1nXvlVumDg+s/VHM=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -100,7 +100,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909073'
       - title: Packaged Questions Catalog
         file: ../docs/questions/catalog.md
-        hash: jBgqsEwCcwXDQjU1BM+fYKNJPGxWOSTOUg623spRf50=
+        hash: Jl5cVOlC/fVmr2UucjuGXN38FX4ZRUn91U3ao4+lAhM=
         id: 360038496974
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360038496974'
       - title: AWS IAM Permissions and Trusts
@@ -301,7 +301,7 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: xtrgnjW9Yq7yebPPzliE17I0m7FSYAx1XgYEpfyKAuI=
+        hash: jd4Jaj5XR6nBregZJKvqltXioVbwks3oZYFGX6P0EH4=
         id: 360022722014
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722014'
   - name: API Docs

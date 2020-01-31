@@ -268,11 +268,16 @@
 - [aws] AWS Cross-Account Assume Role Trusts Diagram
 - [aws] Are VPC Flow Logs enabled?
 - [aws] What is the estimated monthly cost of my RDS database backups?
+- [aws] Is SSL / TLS enforced on RDS database connections?
 - [aws] What's behind elastic load balancers?
 - [aws] Which Lambda functions are associated with CloudFront distributions (Lambda@Edge)?
 - [aws] Which S3 buckets host static content for CloudFront distribution (CDN)?
 - [aws] Which certificates are in use by CloudFront distributions?
 - [aws] What resources are used by or associated with CloudFront distributions?
+- [aws] Is there any SQS Queue with wide open access?
+- [aws] Are SQS messages encrypted?
+- [aws] How are SQS dead letter queues configured?
+- [aws] Which SQS queues are configured as FIFO?
 - [hackerone] Show me the total bug bounty awarded by hacker.
 - [knowbe4] Which developers have not completed secure development training?
 - [okta] Is every Okta user using MFA? Anyone not assigned an MFA device?

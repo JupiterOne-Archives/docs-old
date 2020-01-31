@@ -186,6 +186,49 @@ boundaries obvious to query authors.
 
 Keep in mind the keywords are _case insensitive_.
 
+## Date Comparisons
+
+The query language support both relative and static data comparisons on any
+timestamp property. The timestamp property used for date comparison must be
+stored as an epoch number in milliseconds.
+
+### Relative Date Comparison
+
+Relative date comparison allows filtering based on the current datetime.
+
+For example:
+
+```j1ql
+Find DataStore with createdOn > date.now - 1 day
+```
+
+The following units are supported:
+
+- `hour`, `hr`, `hours`, `hrs`
+- `day`, `days`
+- `month`, `mo`, `months`, `mos`
+- `year`, `yr`, `years`, `yrs`
+
+### Static Date Comparison
+
+Static date comparison allows filtering based on a given datetime.
+
+For example:
+
+```j1ql
+Find DataStore with createdOn > date(2019-10-30)
+```
+
+The static date must be specified in ISO ISO 8601 format:
+
+- `date(YYYY)`
+- `date(YYYY-MM)`
+- `date(YYYY-MM-DD)`
+- `date(YYYY-MM-DDThhTZD)`
+- `date(YYYY-MM-DDThh:mmTZD)`
+- `date(YYYY-MM-DDThh:mm:ssTZD)`
+- `date(YYYY-MM-DDThh:mm:ss.sTZD)`
+
 ## Sorting and Pagination via `ORDER BY`, `SKIP`, and `LIMIT`
 
 `ORDER BY` is followed by a `selector.field` to indicate what to sort.
