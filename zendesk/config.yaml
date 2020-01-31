@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: wJnaIWsXJGMnkMozQJJcYWx1EOr1nXvlVumDg+s/VHM=
+        hash: g7l6OwrkxhSUd9Iq6+4gMt/V1GTJOIEiEFSfkf8uCPI=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -301,7 +301,7 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: jd4Jaj5XR6nBregZJKvqltXioVbwks3oZYFGX6P0EH4=
+        hash: qr/KNDT2rLbKGOMPVJve6IezkgvrLeqQXtw4IVIyneI=
         id: 360022722014
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722014'
   - name: API Docs
@@ -333,7 +333,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360039711354-Alert-Rule-Schema
       - title: Policies and Compliance related data schema
         file: ../docs/schemas/policies-compliance.md
-        hash: wOsVfQKOxe6BhhRYOK3wI82aUqhUu/shvrNe1v1avf8=
+        hash: OMSeYl7ClhA02Et/5MNBNYbYPBoqye7dOmLKwS1ukzU=
         id: 360042191054
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042191054'
   - name: Security and Compliance as Code
