@@ -20,6 +20,7 @@
 - What are the code repos for a particular application or project?
 - Were there any Code Repos added in the last 24 hours?
 - Who are the most recent contributors to this repo?
+- Who was the last contributor to this code repo?
 - Which PRs did this developer open in the last 5 days?
 - Which developer opened the most PRs in the past year?
 - Are code changes reviewed and approved?
@@ -59,11 +60,12 @@
 - What is the configuration and compliance status of my endpoint devices?
 - Is there malware protection for all endpoints?
 - Is there protection for all user endpoints/devices?
-- Is operating system patching and auto-update enabled on endpoint hosts?
 - Is application patching and auto-update enabled on endpoint hosts?
-- Are my servers and systems protected by hosted-based firewall?
+- Are end-user systems configured with hosted-based firewall?
 - Are user devices configured with screen lock protection?
 - Are there security agents monitoring and protecting my endpoint hosts/devices?
+- Is operating system patching and auto-update enabled on endpoint hosts?
+- Are my servers and systems protected by hosted-based firewall?
 - What are the approved server/system images?
 - Are all system images updated in the past six months?
 - Which hosts are (or are not) using approved standard images?
@@ -151,6 +153,7 @@
 - Which hosts are vulnerable?
 - Sample findings of vulnerability or weakness from the past year.
 - Are there software licensing related findings?
+- Which PRs (from developers) introduced new vulnerability findings this past week?
 
 ### General
 
