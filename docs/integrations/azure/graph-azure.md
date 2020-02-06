@@ -62,22 +62,30 @@ The following entity resources are ingested when the integration runs. Note that
 ingestion of AD resource can be disabled in the integration configuration,
 though the `Account` entity will always be ingested.
 
-| Microsoft 365 Resources | \_type of the Entity | \_class of the Entity |
-| ----------------------- | -------------------- | --------------------- |
-| Account                 | `azure_account`      | `Account`             |
-| Group                   | `azure_user_group`   | `UserGroup`           |
-| Group Member            | `azure_group_member` | `User`                |
-| User                    | `azure_user`         | `User`                |
+| Office 365 / Azure AD Resources | \_type of the Entity | \_class of the Entity |
+| ------------------------------- | -------------------- | --------------------- |
+| Account                         | `azure_account`      | `Account`             |
+| Group                           | `azure_user_group`   | `UserGroup`           |
+| Group Member                    | `azure_group_member` | `User`                |
+| User                            | `azure_user`         | `User`                |
 
-| Azure Resources   | \_type of the Entity      | \_class of the Entity |
-| ----------------- | ------------------------- | --------------------- |
-| Virtual Network   | `azure_vnet`              | `Network`             |
-| Subnet            | `azure_subnet`            | `Network`             |
-| Security Group    | `azure_security_group`    | `Firewall`            |
-| Network Interface | `azure_nic`               | `NetworkInterface`    |
-| Public IP Address | `azure_public_ip`         | `IpAddress`           |
-| Virtual Machine   | `azure_vm`                | `Host`                |
-| Blob (Storage)    | `azure_storage_container` | `DataStore`           |
+| Azure Resources   | \_type of the Entity        | \_class of the Entity            |
+| ----------------- | --------------------------- | -------------------------------- |
+| Virtual Network   | `azure_vnet`                | `Network`                        |
+| Subnet            | `azure_subnet`              | `Network`                        |
+| Security Group    | `azure_security_group`      | `Firewall`                       |
+| Network Interface | `azure_nic`                 | `NetworkInterface`               |
+| Public IP Address | `azure_public_ip`           | `IpAddress`                      |
+| Virtual Machine   | `azure_vm`                  | `Host`                           |
+| Blob (Storage)    | `azure_storage_container`   | `DataStore`                      |
+| Databases         | `azure_mariadb_database`    | `Databasde`, `DataStore`         |
+|                   | `azure_mariadb_server`      | `Databasde`, `DataStore`, `Host` |
+|                   | `azure_mysql_database`      | `Databasde`, `DataStore`         |
+|                   | `azure_mysql_server`        | `Databasde`, `DataStore`, `Host` |
+|                   | `azure_postgresql_database` | `Databasde`, `DataStore`         |
+|                   | `azure_postgresql_server`   | `Databasde`, `DataStore`, `Host` |
+|                   | `azure_sql_database`        | `Databasde`, `DataStore`         |
+|                   | `azure_sql_server`          | `Databasde`, `DataStore`, `Host` |
 
 ## Relationships
 
@@ -98,6 +106,10 @@ The following relationships are created/mapped:
 | `azure_vm`                   | **USES**     | `azure_nic`                  |
 | `azure_vm`                   | **USES**     | `azure_public_ip`            |
 | `azure_storage_blob_service` | **HAS**      | `azure_storage_container`    |
+| `azure_mariadb_server`       | **HAS**      | `azure_mariadb_database`     |
+| `azure_mysql_server`         | **HAS**      | `azure_mysql_database`       |
+| `azure_postgresql_server`    | **HAS**      | `azure_postgresql_database`  |
+| `azure_sql_server`           | **HAS**      | `azure_sql_database`         |
 
 [1]: https://docs.microsoft.com/en-us/graph/auth-v2-service
 [2]:

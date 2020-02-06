@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: Urlew8PTK6gSdsde8FT5oWPIrVUVM5S5dcD0tGfW2zo=
+        hash: jy+ngLVek4EdN/lc8QbmtK+MRiXjMT9U4rsG7d2G7sY=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -100,7 +100,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909073'
       - title: Packaged Questions Catalog
         file: ../docs/questions/catalog.md
-        hash: Jl5cVOlC/fVmr2UucjuGXN38FX4ZRUn91U3ao4+lAhM=
+        hash: Fz/ISm2C5zIzBmhNFd8E6c2AWhNxCVIy2H02idNvf6I=
         id: 360038496974
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360038496974'
       - title: AWS IAM Permissions and Trusts
@@ -423,9 +423,9 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721054'
       - title: Azure
         file: ../docs/integrations/azure/graph-azure.md
-        hash: zjxdpQZKXltor0WMqdx/e0Ow2vgW+rnpR1S8Pq4u8wY=
+        hash: v5mZ0RjKr/VkmM+K9x7f7cy36xuACxLTZNRCRR9y8/M=
         id: 360024909213
-        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909213-Azure'
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909213'
       - title: BitBucket
         file: ../docs/integrations/bitbucket/bitbucket.md
         id: 360022721074
@@ -574,12 +574,12 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360039700274-2019.35-Release
       - title: 2019.34 Release
         file: ../release-notes/2019-34.md
-        hash: YJeA96KPAZYLBnuBNKhvTJ7lWD4hI8h7+4kykVWFIv8=
+        hash: 9xS82irGX4HFJ2qxQGQ+EbXPM2hyn9YFXBwj8JSQNOA=
         id: 360039644233
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360039644233'
       - title: 2019.33 Release
         file: ../release-notes/2019-33.md
-        hash: VPTQA1lxELnBgBaBWJEt13qbYpohTmdYYukDsEaIkAI=
+        hash: g9du75wmAFiAZmXOPqEhibZP/7yetSoGvVneybysPmw=
         id: 360038804353
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360038804353'
       - title: 2019.32 Release
@@ -596,10 +596,9 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360036923794-2019.31-Release
       - title: 2019.30 Release
         file: ../release-notes/2019-30.md
-        hash: tyKT2tr0+wYxShxatOxRW3KBpgJtRuxSMwwMfCGn4qE=
+        hash: skacuWDWTWXnlmBliIrHAEqNoewYkTI658kuoIlvKrQ=
         id: 360036146014
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360036146014-2019.30-Release
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360036146014'
       - title: 2019.29 Release
         file: ../release-notes/2019-29.md
         hash: 698KICAh7/yaNeTQRtOPBAxJJP3kBSAe0AeTgl6LDko=
