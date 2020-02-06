@@ -25,7 +25,7 @@ See the schema documented [here](../../docs/schemas/policies-compliance.md).
 ## CSV Import
 
 A compliance standard specification can be imported from a CSV, as long as the
-CSV header contains the following as column as column headers:
+CSV header contains the following as column headers:
 
 - `ID`
 - `Requirement` or `Control`
