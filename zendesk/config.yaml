@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: jy+ngLVek4EdN/lc8QbmtK+MRiXjMT9U4rsG7d2G7sY=
+        hash: Jtjomwd0HFxzHtEnQ6erT5CsjRX3U+VTPbjGHG75agA=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -423,7 +423,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721054'
       - title: Azure
         file: ../docs/integrations/azure/graph-azure.md
-        hash: v5mZ0RjKr/VkmM+K9x7f7cy36xuACxLTZNRCRR9y8/M=
+        hash: +UM24D3gZQLn3x+5oO2gP01EqA3lUuKXQNSSZkPPsOw=
         id: 360024909213
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909213'
       - title: BitBucket
