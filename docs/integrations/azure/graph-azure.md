@@ -78,14 +78,14 @@ though the `Account` entity will always be ingested.
 | Public IP Address | `azure_public_ip`           | `IpAddress`                      |
 | Virtual Machine   | `azure_vm`                  | `Host`                           |
 | Blob (Storage)    | `azure_storage_container`   | `DataStore`                      |
-| Databases         | `azure_mariadb_database`    | `Databasde`, `DataStore`         |
-|                   | `azure_mariadb_server`      | `Databasde`, `DataStore`, `Host` |
-|                   | `azure_mysql_database`      | `Databasde`, `DataStore`         |
-|                   | `azure_mysql_server`        | `Databasde`, `DataStore`, `Host` |
-|                   | `azure_postgresql_database` | `Databasde`, `DataStore`         |
-|                   | `azure_postgresql_server`   | `Databasde`, `DataStore`, `Host` |
-|                   | `azure_sql_database`        | `Databasde`, `DataStore`         |
-|                   | `azure_sql_server`          | `Databasde`, `DataStore`, `Host` |
+| Databases         | `azure_mariadb_database`    | `Database`, `DataStore`         |
+|                   | `azure_mariadb_server`      | `Database`, `DataStore`, `Host` |
+|                   | `azure_mysql_database`      | `Database`, `DataStore`         |
+|                   | `azure_mysql_server`        | `Database`, `DataStore`, `Host` |
+|                   | `azure_postgresql_database` | `Database`, `DataStore`         |
+|                   | `azure_postgresql_server`   | `Database`, `DataStore`, `Host` |
+|                   | `azure_sql_database`        | `Database`, `DataStore`         |
+|                   | `azure_sql_server`          | `Database`, `DataStore`, `Host` |
 
 ## Relationships
 
