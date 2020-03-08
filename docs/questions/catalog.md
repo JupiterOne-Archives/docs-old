@@ -66,8 +66,8 @@
 - Are there security agents monitoring and protecting my endpoint hosts/devices?
 - Is operating system patching and auto-update enabled on endpoint hosts?
 - Are my servers and systems protected by hosted-based firewall?
-- What are the approved server/system images?
-- Are all system images updated in the past six months?
+- What are the server/system images?
+- Are all system images in use updated in the past six months?
 - Which hosts are (or are not) using approved standard images?
 - Which devices have been disposed in the last 12 months?
 - What applications are in use by endpoint hosts/devices?
