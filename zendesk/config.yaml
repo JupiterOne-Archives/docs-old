@@ -551,7 +551,11 @@ sections:
     articles:
       - title: 2020.41 Release
         file: ../release-notes/2020-41.md
+<<<<<<< HEAD
         hash: N2k3GJLcnpNkBr800wdj7x4nS+UR59D3YhsjlM1tgqA=
+=======
+        hash: b/A1qWZtF6u+QqbORqzVSoJ0V5d37LI3oNz9sma9A5I=
+>>>>>>> da0cc3eee6dc4b2075fba98d787742daee5f3e73
         id: 360044679274
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360044679274'
       - title: 2020.40 Release
