@@ -241,7 +241,7 @@ In the example below, the query sorts users by their username, and returns the
 11th-15th users from the sorted list.
 
 ```j1ql
-FIND Person as u WITH manager = undefined
+FIND Person WITH manager = undefined as u
   ORDER BY u.username SKIP 10 LIMIT 5
 ```
 
