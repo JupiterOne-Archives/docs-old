@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: fQwTZ/54sJGnOfn9XRv9w2x6gsTgQrPG3uHOQ3BMmCU=
+        hash: aivl/B5BgYPUx2tGOfqTSiS9ZMf9eouRxNxPCBRUVsE=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -326,10 +326,9 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360025847594-Enable-API-Key-Access
       - title: Alert Rule Schema
         file: ../docs/schemas/alert-rule.md
-        hash: Ij4YkdBJeoGvpiFsTqPmlmHQVscWcgEWAfdIqzCL+CY=
+        hash: S+ZHuVIuL8PShhHJJz6rCbrJqhQKpOnjtPVQ8iu21eA=
         id: 360039711354
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360039711354-Alert-Rule-Schema
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360039711354'
       - title: Policies and Compliance related data schema
         file: ../docs/schemas/policies-compliance.md
         hash: OMSeYl7ClhA02Et/5MNBNYbYPBoqye7dOmLKwS1ukzU=
@@ -582,10 +581,9 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360040971634'
       - title: 2019.35 Release
         file: ../release-notes/2019-35.md
-        hash: UEbexKuDQUJ8m8ZPmGIinZzNMwWEaJTHwxYojY5G5v0=
+        hash: DO/BlVZR3+nR1ufIwl8O991ssdYyxmNZ42A0Tv5HOiY=
         id: 360039700274
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360039700274-2019.35-Release
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360039700274'
       - title: 2019.34 Release
         file: ../release-notes/2019-34.md
         hash: Bv4kmKrZjdIfifb1AGp24lKZYRthr5AHTqKbJPqqwPY=

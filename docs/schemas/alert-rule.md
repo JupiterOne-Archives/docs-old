@@ -114,9 +114,11 @@ executed. The type of `RuleOperationCondition` is determined using the
 Action that is executed when a corresponding condition is met. The type of
 `RuleOperationAction` is determined using the `type` property.
 
+---
+
 #### Action: `SET_PROPERTY`
 
-Includes a property that can be used in rule evaluation input.
+> Includes a property that can be used in rule evaluation input.
 
 | Property         | Type                    | Description                                |
 | ---------------- | ----------------------- | ------------------------------------------ |
@@ -134,9 +136,11 @@ Example:
 }
 ```
 
+---
+
 #### Action: `CREATE_ALERT`
 
-Creates a JupiterOne alert that is visible on the alerts app.
+> Creates a JupiterOne alert that is visible on the alerts app.
 
 | Property | Type     | Description                                |
 | -------- | -------- | ------------------------------------------ |
@@ -150,10 +154,12 @@ Example:
 }
 ```
 
+---
+
 #### Action: `SEND_EMAIL`
 
-Sends an email to a list of recipients with details related to alerts that were
-created during the rule evaluation.
+> Sends an email to a list of recipients with details related to alerts that were
+> created during the rule evaluation.
 
 | Property     | Type       | Description                                        |
 | ------------ | ---------- | -------------------------------------------------- |
@@ -170,9 +176,11 @@ Example:
 }
 ```
 
+---
+
 #### Action `CREATE_JIRA_TICKET`
 
-Creates a Jira ticket using a specific JupiterOne Jira integration configuration.
+> Creates a Jira ticket using a specific JupiterOne Jira integration configuration.
 
 | Property                | Type     | Description                                                                                       |
 | ----------------------- | -------- | ------------------------------------------------------------------------------------------------- |
@@ -214,9 +222,11 @@ Example:
 }
 ```
 
+---
+
 #### Action: `SEND_SLACK_MESSAGE`
 
-Sends a Slack message to a given Slack webhook URL.
+> Sends a Slack message to a given Slack webhook URL.
 
 | Property     | Type     | Description                                                                   |
 | ------------ | -------- | ----------------------------------------------------------------------------- |
@@ -231,9 +241,11 @@ Example:
 }
 ```
 
+---
+
 #### Action: `WEBHOOK`
 
-Sends an HTTP request to a given endpoint.
+> Sends an HTTP request to a given endpoint.
 
 | Property   | Type     | Description                                                                                                 |
 | ---------- | -------- | ----------------------------------------------------------------------------------------------------------- |
@@ -255,6 +267,82 @@ Example:
   "headers": {
     "Authorization": "Bearer abc123"
   }
+}
+```
+
+---
+
+#### Action: `PUBLISH_SNS_MESSAGE`
+
+> Publishes a message to a specified SNS topic.
+
+| Property                | Type     | Description                                                                                                                        |
+| ----------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `type`                  | `string` | Rule operation action type: `PUBLISH_SNS_MESSAGE`                                                                                  |
+| `integrationInstanceId` | `string` | The ID of the AWS integration instance to use. The integration role must have `sns:Publish` permission.                            |
+| `topicArn`              | `string` | The ARN of the SNS topic to publish the message to.                                                                                |
+| `data`                  | `object` | User provided data to include in the message. See [Operation Templating](#operationtemplating) for details on using variable data. |
+
+Example:
+
+```json
+{
+  "type": "PUBLISH_SNS_MESSAGE",
+  "integrationInstanceId": "...",
+  "topicArn": "arn:aws:sns:<REGION>:arn:aws:sns:<ACCOUNT_ID>:<SNS_TOPIC_NAME>",
+  "data": {
+    "query0Data": "{{queries.query0.data}}",
+    "anotherCustomProperty": true
+  }
+}
+```
+
+Note:
+
+`data` is stringified in payload. For example:
+
+```js
+{
+  Sns: {
+    Message: '{"data":{"query0Data": ..., "anotherCustomProperty": true}}'
+  }
+}
+```
+
+---
+
+#### Action: `SEND_SQS_MESSAGE`
+
+> Publishes a message to a specified SNS topic.
+
+| Property                | Type     | Description                                                                                                                        |
+| ----------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `type`                  | `string` | Rule operation action type: `SEND_SQS_MESSAGE`                                                                                     |
+| `integrationInstanceId` | `string` | The ID of the AWS integration instance to use. The integration role must have `sqs:SendMessage` permission.                        |
+| `queueUrl`              | `string` | The URL of the SQS queue to publish the message to.                                                                                |
+| `data`                  | `object` | User provided data to include in the message. See [Operation Templating](#operationtemplating) for details on using variable data. |
+
+Example:
+
+```json
+{
+  "type": "SEND_SQS_MESSAGE",
+  "integrationInstanceId": "...",
+  "queueUrl": "https://sqs.<REGION>.amazonaws.com/<ACCOUNT_ID>/<SQS_QUEUE_NAME>",
+  "data": {
+    "query0Data": "{{queries.query0.data}}",
+    "anotherCustomProperty": true
+  }
+}
+```
+
+Note:
+
+`data` is stringified in payload. For example:
+
+```js
+{
+  body: '{"data":{"query0Data": ..., "anotherCustomProperty": true}}'
 }
 ```
 
