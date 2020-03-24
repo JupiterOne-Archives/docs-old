@@ -274,7 +274,7 @@ Example:
 
 #### Action: `PUBLISH_SNS_MESSAGE`
 
-> Publishes a message to a specified SNS topic.
+> Publishes a message to the specified SNS topic.
 
 | Property                | Type     | Description                                                                                                                        |
 | ----------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -313,7 +313,7 @@ Note:
 
 #### Action: `SEND_SQS_MESSAGE`
 
-> Publishes a message to a specified SNS topic.
+> Publishes a message to the specified SQS queue.
 
 | Property                | Type     | Description                                                                                                                        |
 | ----------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |

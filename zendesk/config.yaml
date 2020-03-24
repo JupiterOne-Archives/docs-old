@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: aivl/B5BgYPUx2tGOfqTSiS9ZMf9eouRxNxPCBRUVsE=
+        hash: JTrN07Vl1KX0mZY/4omPnF7LTECH1OFEmhH72DChbXk=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -326,7 +326,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360025847594-Enable-API-Key-Access
       - title: Alert Rule Schema
         file: ../docs/schemas/alert-rule.md
-        hash: S+ZHuVIuL8PShhHJJz6rCbrJqhQKpOnjtPVQ8iu21eA=
+        hash: HLa2MAvZn+WMrT4/G0Jd9VDYixgDmEwxnqbt3JVFvZs=
         id: 360039711354
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360039711354'
       - title: Policies and Compliance related data schema
