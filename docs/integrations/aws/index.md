@@ -88,6 +88,7 @@ ingested when the integration runs:
 | ElastiCache     | Cache Cluster (Memcached) | `aws_elasticache_memcached_cluster`                          |
 |                 | Replication Group (Redis) | `aws_elasticache_redis_cluster`                              |
 |                 | Node Group Member         | `aws_elasticache_cluster_node`                               |
+| Elasticsearch   | Elasticsearch Domain      | `aws_elasticsearch_domain`                                   |
 | GuardDuty       | GuardDuty Detector        | `aws_guardduty_detector` : `Assessment`, `Scanner`           |
 |                 | GuardDuty Finding         | `aws_guardduty_finding` : `Finding`                          |
 | IAM             | Account Password Policy   | `aws_iam_account_password_policy` : `PasswordPolicy`         |
@@ -193,6 +194,7 @@ The following relationships are created/mapped:
 | `aws_elasticloadbalancing` **HAS** `aws_alb` or `aws_nlb` or `aws_elb`    |
 | `aws_elasticache_redis_cluster` **HAS** `aws_elasticache_cluster_node`    |
 | `aws_security_group` **PROTECTS** `aws_elasticache_cluster_node`          |
+| `aws_security_group` **PROTECTS** `aws_elasticsearch_domain`              |
 | `aws_alb` **USES** `aws_acm_certificate`                                  |
 | `aws_alb` or `aws_nlb` or `aws_elb` **CONNECTS** `aws_lb_target_group`    |
 | `aws_lb_target_group` **HAS** `aws_instance` or `aws_lambda_function`     |
