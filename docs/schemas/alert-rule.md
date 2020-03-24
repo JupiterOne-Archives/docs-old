@@ -297,6 +297,18 @@ Example:
 }
 ```
 
+Note:
+
+`data` is stringified in payload. For example:
+
+```js
+{
+  Sns: {
+    Message: '{"data":{"query0Data": ..., "anotherCustomProperty": true}}'
+  }
+}
+```
+
 ---
 
 #### Action: `SEND_SQS_MESSAGE`
@@ -321,6 +333,16 @@ Example:
     "query0Data": "{{queries.query0.data}}",
     "anotherCustomProperty": true
   }
+}
+```
+
+Note:
+
+`data` is stringified in payload. For example:
+
+```js
+{
+  body: '{"data":{"query0Data": ..., "anotherCustomProperty": true}}'
 }
 ```
 
