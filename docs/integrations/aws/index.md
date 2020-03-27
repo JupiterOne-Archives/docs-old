@@ -118,6 +118,8 @@ ingested when the integration runs:
 |                 | Route53 RecordSet         | `aws_route53_record` : `DomainRecord`, `Record`              |
 | S3              | S3 Bucket                 | `aws_s3_bucket` : `DataStore`                                |
 |                 | S3 Bucket Policy          | `aws_s3_bucket_policy` : `AccessPolicy`                      |
+| SNS             | SNS Subscription          | `aws_sns_subscription` : `Subscription`                      |
+|                 | SNS Topic                 | `aws_sns_topic` : `Channel`                                  |
 | SQS             | SQS Queue                 | `aws_sqs_queue` : `Queue`                                    |
 | Transfer        | Transfer Server (SFTP)    | `aws_transfer_server` : `Host`, `Gateway`                    |
 |                 | Transfer User (SFTP)      | `aws_transfer_user` : `User`                                 |
@@ -236,6 +238,7 @@ The following relationships are created/mapped:
 | `aws_s3` **HAS** `aws_s3_bucket`                                          |
 | `aws_s3_bucket` **USES** `aws_kms_key`                                    |
 | `aws_s3_bucket` **HAS** `aws_s3_bucket_policy`                            |
+| `aws_sns_topic` **HAS** `aws_sns_subscription`                            |
 | `aws_transfer_server` **HAS** `aws_transfer_user`                         |
 | `aws_s3_bucket` **ALLOWS** `aws_transfer_user`                            |
 | `aws_iam_role` **ASSIGNED** `aws_transfer_server`                         |
