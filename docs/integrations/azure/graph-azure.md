@@ -69,15 +69,18 @@ though the `Account` entity will always be ingested.
 | Group Member                    | `azure_group_member` | `User`                |
 | User                            | `azure_user`         | `User`                |
 
-| Azure Resources   | \_type of the Entity        | \_class of the Entity            |
-| ----------------- | --------------------------- | -------------------------------- |
-| Virtual Network   | `azure_vnet`                | `Network`                        |
-| Subnet            | `azure_subnet`              | `Network`                        |
-| Security Group    | `azure_security_group`      | `Firewall`                       |
-| Network Interface | `azure_nic`                 | `NetworkInterface`               |
-| Public IP Address | `azure_public_ip`           | `IpAddress`                      |
-| Virtual Machine   | `azure_vm`                  | `Host`                           |
-| Blob (Storage)    | `azure_storage_container`   | `DataStore`                      |
+| Azure Resources   | \_type of the Entity        | \_class of the Entity           |
+| ----------------- | --------------------------- | ------------------------------- |
+| Compute           | `azure_vm`                  | `Host`                          |
+|                   | `azure_image`               | `Image`                         |
+|                   | `azure_managed_disk`        | `DataStore`, `Disk`             |
+| Load Balancer     | `azure_lb`                  | `Gateway`                       |
+| Virtual Network   | `azure_vnet`                | `Network`                       |
+| Subnet            | `azure_subnet`              | `Network`                       |
+| Security Group    | `azure_security_group`      | `Firewall`                      |
+| Network Interface | `azure_nic`                 | `NetworkInterface`              |
+| Public IP Address | `azure_public_ip`           | `IpAddress`                     |
+| Blob (Storage)    | `azure_storage_container`   | `DataStore`                     |
 | Databases         | `azure_mariadb_database`    | `Database`, `DataStore`         |
 |                   | `azure_mariadb_server`      | `Database`, `DataStore`, `Host` |
 |                   | `azure_mysql_database`      | `Database`, `DataStore`         |
@@ -104,7 +107,9 @@ The following relationships are created/mapped:
 | `azure_security_group`       | **PROTECTS** | `azure_subnet`               |
 | `azure_security_group`       | **PROTECTS** | `azure_nic`                  |
 | `azure_vm`                   | **USES**     | `azure_nic`                  |
+| `azure_vm`                   | **USES**     | `azure_managed_disk`         |
 | `azure_vm`                   | **USES**     | `azure_public_ip`            |
+| `azure_lb`                   | **CONNECTS** | `azure_nic`                  |
 | `azure_storage_blob_service` | **HAS**      | `azure_storage_container`    |
 | `azure_mariadb_server`       | **HAS**      | `azure_mariadb_database`     |
 | `azure_mysql_server`         | **HAS**      | `azure_mysql_database`       |
