@@ -4,7 +4,8 @@ Each JupiterOne account has either one of the following two access control
 configurations applied:
 
 - **Standard Access Control** (default on all accounts)
-- **Granular Access Control** (available to all PLUS/ENTERPRISE tier accounts)
+- **Granular Access Control** (available upon request to all PLUS/ENTERPRISE
+  tier accounts)
 
 ## Standard Access Control
 
@@ -85,6 +86,9 @@ application pages shown primarily on the app switcher. However, a few other
 categories have been added including Integrations and Endpoint Compliance Agent
 despite that they are not strictly apps, they function as one and it was easy to
 group their responsibilities together.
+
+Users not assigned top level or app level permissions will receive an "Access
+Denied" error message when attempting to navigate to the app.
 
 The full list of the apps is here, along with shared permissions that can be
 used by features in this app:
