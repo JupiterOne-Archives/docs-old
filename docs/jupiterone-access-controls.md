@@ -89,6 +89,8 @@ group their responsibilities together.
 The full list of the apps is here, along with shared permissions that can be
 used by features in this app:
 
+_Note: you may see a subset of these apps in your settings based on your account subscription level._
+
 - Landing (the base/root page - `/`)
   
   > Shared permissions used by this app: **Read / Write Questions** and
