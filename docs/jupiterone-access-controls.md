@@ -16,9 +16,9 @@ accounts. There are two access levels across all resources:
   resources
 
 - All other users (users in other groups) have **read-only access** to all
-  resources
+  resources, plus the permission to **save queries as questions**.
 
-This is equivalent to the **Top Level Permissions** in Granular Access Control,
+This is similar to the **Top Level Permissions** in Granular Access Control,
 as explained further below.
 
 ## Granular Access Control
@@ -87,11 +87,16 @@ categories have been added including Integrations and Endpoint Compliance Agent
 despite that they are not strictly apps, they function as one and it was easy to
 group their responsibilities together.
 
-Users not assigned top level or app level permissions will receive an "Access
-Denied" error message when attempting to navigate to the app.
+Admin permissions for each app allows certain administrative actions unique to
+each app. For example, add a new standard / questionnaire in Compliance app;
+save board layout as default in Insights app; etc. Certain actions also require
+shared permissions to global resources to be enabled.
 
-The full list of the apps is here, along with shared permissions that can be
-used by features in this app:
+Users not assigned any access at either top level or app level permissions will
+receive an "Access Denied" error message when attempting to navigate to the app.
+
+The full list of the apps is here, along with shared permissions that may be
+used by features in each app:
 
 _Note: you may see a subset of these apps in your settings based on your account subscription level._
 
@@ -138,8 +143,8 @@ _Note: you may see a subset of these apps in your settings based on your account
 
 - Insights (URL ending with `/insights`)
   
-  > Shared permissions used by this app: **Read Graph Data**. Dashboards and widgets
-  > will not load without this permission.
+  > Shared permissions used by this app: **Read Graph Data**. Dashboards and
+  > widgets will not load without this permission.
 
 - Integrations (URL ending with `/integrations`)
 
