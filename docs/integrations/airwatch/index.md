@@ -1,4 +1,4 @@
-# VMWware AirWatch
+# VMware AirWatch
 
 ## Overview
 
