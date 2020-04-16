@@ -49,41 +49,6 @@ Variables:
 }
 ```
 
-
-NOTE: there's also a `queryV1Tree` variant that forces the return clause to be `return tree`
-and has better types for use when displaying graph data. The tree specifies vertices and edges.
-
-WARNING: The resolver `queryV1Tree` has been deprecated, we recommend adding `return tree` as your
-return clause to the `queryV1` resolver.
-
-```graphql
-query J1QL($query: String!, $variables: JSON, $dryRun: Boolean) {
-  queryV1Tree(query: $query, variables: $variables, dryRun: $dryRun) {
-    type
-    data {
-      vertices {
-        id
-        edges {
-          id
-        }
-      }
-    }
-  }
-}
-```
-
-Variables:
-
-```json
-{
-  "query": "find Person with _type=${type} return tree",
-  "variables": {
-    "type": "employee"
-  },
-  "dryRun": true
-}
-```
-
 ### Fetching Graph Data
 
 This query will be used for fetching graph data. The returned data includes the
