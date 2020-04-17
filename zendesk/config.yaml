@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: x7m3ZEsD6pRLOoLYfCX25mDy5m6YNhhrfTLqxexYjDI=
+        hash: 0pu6eUvhIOZ9yhWmdLiNQEhm/gbXmcVYRQMc1GxJDdg=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -319,7 +319,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: ubzGHwnC1fC1/Qais4XKER5cUjHK5dd/QA+9vvaLbHI=
+        hash: RgTGPxPCmurp6KYx2tg7uXgbevDM6A/pEEdpogTEfgI=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Node.js Client and CLI
@@ -431,7 +431,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721054'
       - title: Azure
         file: ../docs/integrations/azure/graph-azure.md
-        hash: dp6zhDH79K4DTye7mRTbzwnbgx2mepR6c7eQrB0gED0=
+        hash: bsezpvItQIgUAzKhdd4w5xjUp6tihnfECDSq3iKBE0w=
         id: 360024909213
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909213'
       - title: BitBucket
