@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: 0pu6eUvhIOZ9yhWmdLiNQEhm/gbXmcVYRQMc1GxJDdg=
+        hash: AqsCmwXG6rOo1TXHDo+kKIYd+iKsI0aUh8vrIF3Lkmw=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -370,10 +370,9 @@ sections:
     articles:
       - title: Data Model - Overview
         file: ../docs/jupiterone-data-model.md
-        hash: ZEhYcGYHkLdfQnKncftfh+ubkvKvO8BqTtQPho1OmOw=
+        hash: +ScihpyPSJ+bzedfWI2R31/AYL9T/XJsdzijzgIRqOw=
         id: 360022903573
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360022903573-Data-Model---Overview
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903573'
       - title: Entity Relationship Mapping
         file: ../docs/data-model/mappings.md
         hash: 2XF6E3c08FiEDH2RagpSkK6Ge4+ExQh30eQfrmcUWPs=
@@ -445,6 +444,11 @@ sections:
         hash: gYAeWrV90e0tniIAitAfyL8vjGaasfpa40KtQ6+2tHA=
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721094-Carbon-Black-PSC
+      - title: Cisco Meraki
+        file: ../docs/integrations/meraki/index.md
+        hash: rgyJrRCdfkRjtoV99EyNR8IhA3ZxVxDDFrtKiNCD0ac=
+        id: 360046747174
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046747174'
       - title: CrowdStrike
         file: ../docs/integrations/crowdstrike/index.md
         hash: 9GthhpEMsfYUUSkEkYioLTi7iTm1PD/XFDPI9DX/ZnA=
