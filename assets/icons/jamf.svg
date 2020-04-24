@@ -1,0 +1,11 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96" height="96" viewBox="0 0 96 96">
+  <defs>
+    <linearGradient id="linear-gradient" x1="48" x2="48" y2="96" gradientTransform="matrix(1, 0, 0, -1, 0, 96)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#005173"/>
+      <stop offset="1" stop-color="#2accff"/>
+    </linearGradient>
+  </defs>
+  <title>jamf</title>
+  <circle cx="48" cy="48" r="48" fill="url(#linear-gradient)"/>
+  <path d="M61.6,32.336c-6.154,0-9.846,2.574-11.524,8.168L45.824,53.818A8.159,8.159,0,0,1,37.1,59.972H26.462A2.481,2.481,0,0,0,24,62.434v6.824A2.27,2.27,0,0,0,26.3,71.5H69.538A2.482,2.482,0,0,0,72,69.034V34.686a2.294,2.294,0,0,0-2.237-2.35H61.6ZM26.574,24.5A2.679,2.679,0,0,0,24,27.076V45.2a2.532,2.532,0,0,0,2.489,2.574h9.259c4.14,0,9.958-.894,11.524-8.28,0,0,1.568-7.5,2.462-11.86A2.577,2.577,0,0,0,47.16,24.5Z" fill="#fff"/>
+</svg>
