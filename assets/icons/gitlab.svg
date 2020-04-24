@@ -1,0 +1,16 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96" height="96" viewBox="0 0 96 96">
+  <defs>
+    <linearGradient id="linear-gradient" x1="48" y1="-428" x2="48" y2="-332" gradientTransform="matrix(1, 0, 0, -1, 0, -332)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#005173"/>
+      <stop offset="1" stop-color="#2accff"/>
+    </linearGradient>
+  </defs>
+  <circle cx="48" cy="48" r="48" fill="url(#linear-gradient)"/>
+  <g>
+    <path d="M48,72.02l8.842-27.109H39.166Z" fill="#fff" fill-rule="evenodd"/>
+    <path d="M26.777,44.919l-2.688,8.239a1.828,1.828,0,0,0,.662,2.04L48,72.03,26.779,44.919" fill="#fff" fill-rule="evenodd"/>
+    <path d="M26.781,44.919H39.168L33.837,28.6a.92.92,0,0,0-1.744,0L26.781,44.919" fill="#fff" fill-rule="evenodd"/>
+    <path d="M69.222,44.919l2.688,8.239a1.823,1.823,0,0,1-.662,2.04L48,72.02l21.22-27.1" fill="#fff" fill-rule="evenodd"/>
+    <path d="M69.23,44.919H56.844L62.164,28.6a.92.92,0,0,1,1.744,0L69.23,44.925" fill="#fff" fill-rule="evenodd"/>
+  </g>
+</svg>

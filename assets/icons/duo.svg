@@ -1,0 +1,17 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96" height="96" viewBox="0 0 96 96">
+  <defs>
+    <linearGradient id="linear-gradient" x1="48" y1="-428" x2="48" y2="-332" gradientTransform="matrix(1, 0, 0, -1, 0, -332)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#005173"/>
+      <stop offset="1" stop-color="#2accff"/>
+    </linearGradient>
+  </defs>
+  <circle cx="48" cy="48" r="48" fill="url(#linear-gradient)"/>
+  <g>
+    <path d="M39.472,48.416H24v7.936h7.744a8.022,8.022,0,0,0,7.728-7.936" fill="#fff"/>
+    <path d="M31.744,39.648H24v7.936H39.48a8.036,8.036,0,0,0-7.736-7.936" fill="#fff"/>
+    <path d="M64.264,39.648a8.036,8.036,0,0,0-7.736,7.936H72a8.018,8.018,0,0,0-7.728-7.936" fill="#fff"/>
+    <path d="M72,48.416H56.528a7.739,7.739,0,1,0,15.472,0" fill="#fff"/>
+    <path d="M40.256,39.648V48a8.1,8.1,0,0,0,7.36,8.344v-16.7Z" fill="#fff"/>
+    <polygon points="55.744 39.648 48.392 39.648 48.392 56.352 55.744 56.352 55.744 48 55.744 39.648" fill="#fff"/>
+  </g>
+</svg>

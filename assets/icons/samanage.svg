@@ -1,0 +1,14 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96" height="96" viewBox="0 0 96 96">
+  <defs>
+    <linearGradient id="linear-gradient" x1="48" y1="-653.488" x2="48" y2="-557.488" gradientTransform="matrix(1, 0, 0, -1, 0, -557.488)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#005173"/>
+      <stop offset="1" stop-color="#2accff"/>
+    </linearGradient>
+  </defs>
+  <circle cx="48" cy="48" r="48" fill="url(#linear-gradient)"/>
+  <g>
+    <polygon points="52.368 34.856 45.23 38.962 34.326 34.17 52.368 24 52.368 34.856" fill="#fff"/>
+    <polygon points="62.278 61.478 33.722 45.36 33.722 34.522 62.278 50.64 62.278 61.478" fill="#fff"/>
+    <polygon points="43.632 61.144 50.77 57.038 61.674 61.83 43.632 72 43.632 61.144" fill="#fff"/>
+  </g>
+</svg>
