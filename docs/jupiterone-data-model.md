@@ -12,6 +12,8 @@ represents a reference model, not a strict or rigid structure.
 An Entity is a node/vertex in the graph that represents a resource within your
 digital infrastructure.
 
+See full data model schema in this [GitHub repo][schema-repo].
+
 ### Class and Type of an Entity
 
 Each Entity has a specific **type** that defines what that entity is, and is
@@ -298,3 +300,5 @@ The diagram below is an abstract illustration of the entities and relationships
 defined by the data model.
 
 ![data-model](../assets/data-model.png)
+
+[schema-repo]: https://github.com/JupiterOne/data-model
