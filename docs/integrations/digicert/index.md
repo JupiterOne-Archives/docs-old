@@ -17,18 +17,18 @@ DigiCert documentation provides detailed [instructions to enable API access][1].
 
 The following entity resources are ingested when the integration runs.
 
-| DigiCert Resources | \_type of the Entity          | \_class of the Entity |
-| ------------------ | ----------------------------- | --------------------- |
-| Account            | `digicert_account`            | `Account`             |
-| Domain Certificate | `digicert_domain_certificate` | `Certificate`         |
+| DigiCert Resources | \_type of the Entity   | \_class of the Entity |
+| ------------------ | ---------------------- | --------------------- |
+| Account            | `digicert_account`     | `Account`             |
+| Certificate        | `digicert_certificate` | `Certificate`         |
 
 ## Relationships
 
 The following relationships are created:
 
-| From               | Relationship | To                            |
-| ------------------ | ------------ | ----------------------------- |
-| `digicert_account` | **HAS**      | `digicert_domain_certificate` |
+| From               | Relationship | To                     |
+| ------------------ | ------------ | ---------------------- |
+| `digicert_account` | **HAS**      | `digicert_certificate` |
 
 The following relationships are mapped:
 

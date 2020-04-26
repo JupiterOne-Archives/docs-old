@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: ABd7okRSiye55YJo6SdqsvXoPQX3m9JUX0hp5s1sOgc=
+        hash: aK8X/wRBS0GpqRd6bpLDyxZ04uRQpL+SPDIiw1i5+tU=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -455,7 +455,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041319254'
       - title: DigiCert
         file: ../docs/integrations/digicert/index.md
-        hash: HAZBIFq7U03vB254+yhfDHOGEU1nlwV2hlECwNPKD20=
+        hash: l8JK/GrPCKfsZASETey3d1MWRO4HzpQ+fdBftPkmRXg=
         id: 360047438713
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047438713'
       - title: Github
