@@ -12,7 +12,7 @@ The integration is triggered by an event containing the information for a
 specific integration instance. Users configure the integration by providing API
 credentials obtained through the Cisco Meraki Dashboard.
 
-Meraki documentation provide detailed [instructions to enable API access][1].
+Meraki documentation provides detailed [instructions to enable API access][1].
 
 ## Entities
 
