@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: aK8X/wRBS0GpqRd6bpLDyxZ04uRQpL+SPDIiw1i5+tU=
+        hash: 2bluDyJ8o7IKZaiW7lTabTD89gO0O1LiB+g8OHXdOfM=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -458,6 +458,11 @@ sections:
         hash: l8JK/GrPCKfsZASETey3d1MWRO4HzpQ+fdBftPkmRXg=
         id: 360047438713
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047438713'
+      - title: Duo
+        file: ../docs/integrations/duo/index.md
+        hash: Wyh1h1IjmTwgnr5fzE8ENdskEOLV33yS1m5/FdhPcYY=
+        id: 360047594893
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047594893'
       - title: Github
         file: ../docs/integrations/github/github.md
         id: 360022721114
@@ -473,6 +478,11 @@ sections:
         id: 360022902553
         hash: suG5faG+DTXvYowhjmLiw2AnHREVlp+9BV1lyzZCTiA=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902553-HackerOne'
+      - title: Heroku
+        file: ../docs/integrations/heroku/index.md
+        hash: 96uY9jYRzHmNYt6kbDVlPjGxdc5skTSxRrxykxMT8C8=
+        id: 360046951874
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046951874'
       - title: Jamf
         file: ../docs/integrations/jamf/index.md
         id: 360022721134
@@ -493,6 +503,11 @@ sections:
         hash: mFh5jQYVtCVgF5F6YF2NSv9HON0BJ0uYhkAehm+qXHk=
         id: 360023741834
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360023741834-KnowBe4'
+      - title: NPM
+        file: ../docs/integrations/npm/index.md
+        hash: 688Nn8Ipg9lKM8k6XEUpVFINk3qCD3E9GQrAZrEeaT0=
+        id: 360047514553
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047514553'
       - title: Okta
         file: ../docs/integrations/okta/graph-okta.md
         id: 360022902573
@@ -508,12 +523,32 @@ sections:
         id: 360022721194
         hash: TIA/TmPBdu7WOJuSNmkWWJzPESq47S4EIydj/3OMmmQ=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721194-OpenShift'
+      - title: PagerDuty
+        file: ../docs/integrations/pagerduty/index.md
+        hash: X0FGevaS4YX1icVReIyKLU1ePnHdDp47PLcry2HqKNw=
+        id: 360046951894
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046951894'
+      - title: Qualys
+        file: ../docs/integrations/qualys/index.md
+        hash: rCgBKdkWnUwnpJ6mVnqJqqpu0si4aCS04qxp0qozQWA=
+        id: 360046952094
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046952094'
       - title: SentinelOne
         file: ../docs/integrations/sentinelone/jupiter-integration-sentinelone.md
         id: 360022721214
         hash: rMldsKUY6xeQ/VfsLYzGNp9Lvf58Ul2TpDq5NoLXBvE=
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721214-SentinelOne
+      - title: Slack
+        file: ../docs/integrations/slack/index.md
+        hash: snKyuMLEOIGntzt3wQYDVs7DwS+KLfB6MG09cUbOedU=
+        id: 360046977154
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046977154'
+      - title: Snowflake
+        file: ../docs/integrations/snowflake/index.md
+        hash: jLmu0Gyk0PqnlQSgdJMPxYCYuWmmIRMzSqPYNzNQ0VU=
+        id: 360047070294
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047070294'
       - title: Snyk
         file: ../docs/integrations/snyk/index.md
         hash: 3Flq4RistXQPVhPmk/Giehcmx8laPgylS85KVx2LeG8=
@@ -532,6 +567,11 @@ sections:
         id: 360023924853
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360023924853-Threat-Stack
+      - title: Trend Micro
+        file: ../docs/integrations/trend-micro/index.md
+        hash: +bZ+Rt7jnlMnn49HNCzbtPjwk56RcKEIco2amLqrKjM=
+        id: 360046874134
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046874134'
       - title: Veracode
         file: ../docs/integrations/veracode/jupiter-integration-veracode.md
         id: 360022721234
@@ -571,6 +611,11 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2020.44 Release
+        file: ../release-notes/2020-44.md
+        hash: WwijPPnDcrHzwcV91ETtZMiZXbIwSgvQ8pygbmJCMWU=
+        id: 360046951954
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046951954'
       - title: 2020.43 Release
         file: ../release-notes/2020-43.md
         hash: W8+l/dbBDhAlEEX/IlQuMtG8GfPB9wm2blk13cPhNFY=
