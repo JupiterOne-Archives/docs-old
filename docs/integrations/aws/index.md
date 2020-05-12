@@ -57,6 +57,8 @@ ingested when the integration runs:
 | CloudFormation  | Stack                     | `aws_cloudfront_stack`: `Configuration`                      |
 | CloudFront      | Distribution              | `aws_cloudfront_distribution`: `Gateway`                     |
 | CloudWatch      | Event Rule                | `aws_cloudwatch_event_rule` : `Task`                         |
+|                 | Metric Alarm              | `aws_cloudwatch_metric_alarm` : `Monitor`                    |
+|                 | Log Group                 | `aws_cloudwatch_log_group` : `Logs`                          |
 | Config          | Config Rule               | `aws_config_rule` : `ControlPolicy`                          |
 | DynamoDB        | DynamoDB Table            | `aws_dynamodb_table` : `DataStore`, `Database`               |
 | EC2             | AMI Image                 | `aws_ami` : `Image`                                          |
@@ -66,11 +68,13 @@ ingested when the integration runs:
 |                 | EBS Volume Snapshot       | `aws_ebs_snapshot` : `DataStore`, `Disk`, `Image`            |
 |                 | Elastic IP                | `aws_eip` : `IpAddress`                                      |
 |                 | Internet Gateway          | `aws_internet_gateway` : `Gateway`                           |
+|                 | NAT Gateway               | `aws_nat_gateway` : `Gateway`                                |
 |                 | Network ACL               | `aws_network_acl` : `Firewall`                               |
 |                 | Network Interface         | `aws_eni` : `NetworkInterface`                               |
 |                 | Security Group            | `aws_security_group` : `Firewall`                            |
-|                 | VPC                       | `aws_vpc` : `Network`                                        |
 |                 | Subnet                    | `aws_subnet` : `Network`                                     |
+|                 | VPC                       | `aws_vpc` : `Network`                                        |
+|                 | VPN Gateway               | `aws_vpn_gateway` : `Gateway`                                |
 | AutoScaling     | Auto Scaling Group        | `aws_autoscaling_group` : `Deployment`, `Group`              |
 | ECR             | ECR Container Repository  | `aws_ecr_repository` : `Repository`                          |
 |                 | ECR Container Image       | `aws_ecr_image` : `Image`                                    |
@@ -80,6 +84,8 @@ ingested when the integration runs:
 |                 | ECS Service               | `aws_ecs_service` : `Service`                                |
 |                 | ECS Task Definition       | `aws_ecs_task_definition` : `Function`, `Configuration`      |
 |                 | ECS Task                  | `aws_ecs_task` : `Task`, `Process`                           |
+| EFS             | EFS File System           | `aws_efs_file_system` : `DataStore`                          |
+|                 | EFS Mount Target          | `aws_efs_mount_target` : `NetworkEndpoint`                   |
 | EKS             | EKS Cluster               | `aws_eks_cluster` : `Cluster`                                |
 | ELB             | Application Load Balancer | `aws_alb` : `Gateway`                                        |
 |                 | Network Load Balancer     | `aws_nlb` : `Gateway`                                        |
@@ -174,7 +180,12 @@ The following relationships are created/mapped:
 | `aws_ebs_volume` **USES** `aws_kms_key`                                   |
 | `aws_security_group` **PROTECTS** `aws_instance`                          |
 | `aws_instance` **HAS** `aws_security_group`                               |
+| `aws_nat_gateway` **USES** `aws_eni` or `aws_eip`                         |
+| `aws_eni` **USES** `aws_eip`                                              |
 | `aws_vpc` **CONTAINS** `aws_subnet`                                       |
+| `aws_vpc` **HAS** `aws_nat_gateway`                                       |
+| `aws_vpc` **HAS** `aws_internet_gateway`                                  |
+| `aws_vpc` **HAS** `aws_vpn_gateway`                                       |
 | `aws_vpc` **LOGS** `aws_cloudwatch_log_group`                             |
 | `aws_vpc` **LOGS** `aws_s3_bucket`                                        |
 | `aws_network_acl` **PROTECTS** `aws_subnet`                               |
@@ -192,6 +203,11 @@ The following relationships are created/mapped:
 | `aws_ecs_task_definition` **DEFINES** `aws_ecs_task`                      |
 | `aws_ecs_service` **TRIGGERS** `aws_ecs_task`                             |
 | `aws_instance` **RUNS** `aws_ecs_container_instance`                      |
+| `aws_efs` **HAS** `aws_efs_file_system`                                   |
+| `aws_efs_file_system` **HAS** `aws_efs_mount_point`                       |
+| `aws_efs_mount_point` **USES** `aws_eni`                                  |
+| `aws_subnet` **HAS** `aws_efs_mount_point`                                |
+| `aws_security_group` **PROTECTS** `aws_efs_mount_point`                   |
 | `aws_eks` **HAS** `aws_eks_cluster`                                       |
 | `aws_elasticloadbalancing` **HAS** `aws_alb` or `aws_nlb` or `aws_elb`    |
 | `aws_elasticache_redis_cluster` **HAS** `aws_elasticache_cluster_node`    |
@@ -250,11 +266,12 @@ The following relationships are created/mapped:
 
 ### Mapped Relationships - connections to broader entity resources
 
-| Relationships                                         |
-| ----------------------------------------------------- |
-| `aws_iam_user` **IS** `Person` _See Note 1_           |
-| `aws_route53_record` **CONNECTS** `Host` or `Gateway` |
-| `Domain` **HAS** `aws_route53_zone` _See Note 2_      |
+| Relationships                                              |
+| ---------------------------------------------------------- |
+| `aws_iam_user` **IS** `Person` _See Note 1_                |
+| `aws_route53_record` **CONNECTS** `Host` or `Gateway`      |
+| `Domain` **HAS** `aws_route53_zone` _See Note 2_           |
+| `aws_vpc` **CONNECTS** `aws_vpc` (VPC Peering Connections) |
 
 \*\*Note 1: This is mapped automatically only when the IAM user has an `Email`
 tag, or the `username` of the IAM User is an email that matches that of a Person
