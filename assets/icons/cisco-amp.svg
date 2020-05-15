@@ -1,0 +1,13 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96" height="96" viewBox="0 0 96 96">
+  <defs>
+    <linearGradient id="linear-gradient" x1="48" y1="488" x2="48" y2="392" gradientTransform="translate(0 -392)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#005173"/>
+      <stop offset="1" stop-color="#2accff"/>
+    </linearGradient>
+  </defs>
+  <circle cx="48" cy="48" r="48" fill="url(#linear-gradient)"/>
+  <g>
+    <circle cx="55.452" cy="48" r="6.342" fill="#fff"/>
+    <path d="M48,23A25,25,0,1,0,73,48,25.028,25.028,0,0,0,48,23ZM25.074,46.24a22.813,22.813,0,0,1,2.357-8.514l13.135,8.327Zm15.492,3.707L27.431,58.274a22.813,22.813,0,0,1-2.357-8.514ZM57.109,69.115V59.773a1.657,1.657,0,0,0-3.314,0V70.259A22.991,22.991,0,0,1,28.414,60.041L42.989,53.03l-5.946,8.9,9.376-8.609a10.467,10.467,0,0,1,0-10.634l-9.376-8.609,5.946,8.9L28.414,35.959A22.991,22.991,0,0,1,53.8,25.741V36.328a1.657,1.657,0,0,0,3.314,0V26.885A23.043,23.043,0,0,1,70.934,46.343h-3.88a1.657,1.657,0,0,0,0,3.314h3.88A23.042,23.042,0,0,1,57.109,69.115Z" fill="#fff"/>
+  </g>
+</svg>
