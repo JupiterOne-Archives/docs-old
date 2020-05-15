@@ -9,16 +9,8 @@ their account and providing the app credentials to JupiterOne.
 
 ## Integration Instance Configuration
 
-The integration is triggered by an event containing the information for a
-specific integration instance.
-
-The integration instance configuration requires the customer's GitHub OAuth App
-`clientId` and `clientSecret` to authenticate requests to the GitHub REST APIs.
-[Detailed instructions for creating the OAuth App][1] are provided by GitHub.
-
-[1]: https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/
-
-## Permissions
+Upon creating a new GitHub integration configuration in JupiterOne, the user is
+re-directed to GitHub to install the JupiterOne GitHub app.
 
 The integration is using GitHub Apps authentication, which requests permissions
 from the org/account installing the app.
@@ -39,6 +31,7 @@ The following entity resources are ingested when the integration runs:
 | GitHub Entity Resource | \_type : \_class of the Entity |
 | ---------------------- | ------------------------------ |
 | Account                | `github_account` : `Account`   |
+| Team                   | `github_team` : `UserGroup`    |
 | Repository             | `github_repo` : `CodeRepo`     |
 | User                   | `github_user` : `User`         |
 | Pull Request           | `github_pullrequest` : `PR`    |
@@ -49,11 +42,16 @@ The following relationships are created/mapped:
 
 ### Basic relationships within the integration instance account/resources
 
-|
-| --
-| `github_account` **OWNS** `github_repo`
-| `github_account` **HAS** `github_user`
-| `github_repo` **HAS** `github_pullrequest`
-| `github_user` **OPENED** `github_pullrequest`
-| `github_user` **REVIEWED** `github_pullrequest`
-| `github_user` **APPROVED** `github_pullrequest`
+| From             | Relationship | To                   |
+| ---------------- | ------------ | -------------------- |
+| `github_account` | **OWNS**     | `github_repo`        |
+| `github_account` | **HAS**      | `github_user`        |
+| `github_account` | **HAS**      | `github_team`        |
+| `github_team`    | **HAS**      | `github_user`        |
+| `github_team`    | **ALLOWS**   | `github_repo`        |
+| `github_user`    | **MANAGES**  | `github_account`     |
+| `github_user`    | **MANAGES**  | `github_team`        |
+| `github_repo`    | **HAS**      | `github_pullrequest` |
+| `github_user`    | **OPENED**   | `github_pullrequest` |
+| `github_user`    | **REVIEWED** | `github_pullrequest` |
+| `github_user`    | **APPROVED** | `github_pullrequest` |
