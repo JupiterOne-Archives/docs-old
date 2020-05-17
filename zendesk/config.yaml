@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: q7o6i+5oti0Bl8mmmReB/De6bmR9H4F/8cuSwcoiuOE=
+        hash: wfisgKbAtytj8Jjn0XeiVM8lneAR1ELH9r5rMnXu3S8=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -445,7 +445,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360022721094-Carbon-Black-PSC
       - title: Cisco AMP for Endpoints
         file: ../docs/integrations/cisco-amp/index.md
-        hash: SDdQR/qrDqDEC5w3EyV4X3GQpUkMNeIoDnpNcQQ5aWk=
+        hash: bSMTcBOan5B+hFjpHh83EJBeESpAV9Gt3qszIp0t8z0=
         id: 360047840954
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047840954'
       - title: Cisco Meraki
@@ -453,6 +453,11 @@ sections:
         hash: 37VVUf3MAlAtLssHeHwtDFiJVrIWremMVfRh1mSYAbk=
         id: 360046747174
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046747174'
+      - title: Cloudflare
+        file: ../docs/integrations/cloudflare/index.md
+        hash: VWgFegJknwQglhH4t7eb2AU9TE1N/So6PO3tuKdaPbA=
+        id: 360048599473
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360048599473'
       - title: CrowdStrike
         file: ../docs/integrations/crowdstrike/index.md
         hash: 9GthhpEMsfYUUSkEkYioLTi7iTm1PD/XFDPI9DX/ZnA=
