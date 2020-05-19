@@ -4,7 +4,7 @@
 
 JupiterOne provides a managed integration for Cisco AMP for Endpoints. The
 integration connects directly to [Cisco AMP for Endpoints REST API][1] to obtain
-certificate details.
+endpoint protection and configuration information.
 
 Configure the integration by providing the following details:
 
