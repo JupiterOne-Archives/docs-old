@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: wfisgKbAtytj8Jjn0XeiVM8lneAR1ELH9r5rMnXu3S8=
+        hash: leL3XjVxXbg1cUeyYrc3fDkliNcELIyJ5EtmwpSCSK8=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -473,11 +473,16 @@ sections:
         hash: Wyh1h1IjmTwgnr5fzE8ENdskEOLV33yS1m5/FdhPcYY=
         id: 360047594893
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047594893'
-      - title: Github
+      - title: GitHub
         file: ../docs/integrations/github/github.md
         id: 360022721114
-        hash: JMVlbQ2O2Z3K6J1kJ/Qjb+s1uJM3dsElFMdlnJMQ5Ng=
+        hash: GYLFzTN6YZ+k4lb0tVNh9+eIhj/oOelOenq5TQQ/whc=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721114'
+      - title: GitLab
+        file: ../docs/integrations/gitlab/index.md
+        hash: qt9vZNITozqBpbDUp2w0rLhrWvXl+v7HGU5KpPU5Pwk=
+        id: 360047916954
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047916954'
       - title: Google
         file: ../docs/integrations/google/jupiter-integration-google.md
         id: 360022902533
@@ -623,7 +628,7 @@ sections:
     articles:
       - title: 2020.44 Release
         file: ../release-notes/2020-44.md
-        hash: RE2nN5ghozY+2ACRZD6vEtwDbgtuF7r904mHz2iGmb4=
+        hash: Fp8olmPy52cvM430S7OspaWOERleHbn2sFMAKvzQK6A=
         id: 360046951954
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046951954'
       - title: 2020.43 Release
