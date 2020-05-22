@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: 1Bq5nrwMGcxOyuQZA+RnvOcuELqCVOAsdSW+t+XjsGA=
+        hash: mBUlh7te+m5+wfX6BRrW8frme7XgEd1ojn7Fb0zSjxo=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -463,6 +463,11 @@ sections:
         hash: 9GthhpEMsfYUUSkEkYioLTi7iTm1PD/XFDPI9DX/ZnA=
         id: 360041319254
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041319254'
+      - title: Detectify
+        file: ../docs/integrations/detectify/index.md
+        hash: rXDI9K9dSloVq0RTEKxXKlSOkLoaUlrWLXAKWQAPZDM=
+        id: 360048272154
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360048272154'
       - title: DigiCert
         file: ../docs/integrations/digicert/index.md
         hash: kbGu7Eq6Il1GntbMMsg9HYjat9RNOhvbr7sRlReWyUw=
@@ -523,6 +528,11 @@ sections:
         hash: 688Nn8Ipg9lKM8k6XEUpVFINk3qCD3E9GQrAZrEeaT0=
         id: 360047514553
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047514553'
+      - title: NowSecure
+        file: ../docs/integrations/nowsecure/index.md
+        hash: SN4J74kwcKowjIFBCCrjAujgQtfjXJFivKTbb23GDuM=
+        id: 360049012173
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049012173'
       - title: Okta
         file: ../docs/integrations/okta/graph-okta.md
         id: 360022902573
@@ -559,6 +569,11 @@ sections:
         hash: snKyuMLEOIGntzt3wQYDVs7DwS+KLfB6MG09cUbOedU=
         id: 360046977154
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046977154'
+      - title: Snipe-IT
+        file: ../docs/integrations/snipe-it/index.md
+        hash: xFpcwSz4/m7F5i3kTTHwdP1UoVop4PtNuwmCODDTEqE=
+        id: 360049012193
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049012193'
       - title: Snowflake
         file: ../docs/integrations/snowflake/index.md
         hash: jLmu0Gyk0PqnlQSgdJMPxYCYuWmmIRMzSqPYNzNQ0VU=
