@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: mBUlh7te+m5+wfX6BRrW8frme7XgEd1ojn7Fb0zSjxo=
+        hash: dw/6h0xkrq+h2jraqV6Iy20WxmtET9sWgWZi5JASeJw=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -437,6 +437,11 @@ sections:
         id: 360022721074
         hash: wNaZVS1RxhxHKxtMpUnoSWvNO/oUXzyZS1O8+hNhYcg=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721074-BitBucket'
+      - title: BugCrowd
+        file: ../docs/integrations/bugcrowd/index.md
+        hash: oZ1jySCouO4ztLv+GX3fVFdqsnr0krI4dLHLXKNTIXs=
+        id: 360048412194
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360048412194'
       - title: Carbon Black PSC
         file: ../docs/integrations/cbdefense/jupiter-integration-cbdefense.md
         id: 360022721094
@@ -509,10 +514,10 @@ sections:
         hash: lHMjHXwOJQ326kFWw2XDSBYfheTQ6QgEoG5BYa7Ptnk=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721134-Jamf'
       - title: Jira
-        file: ../docs/integrations/jira/jupiter-integration-jira.md
+        file: ../docs/integrations/jira/index.md
         id: 360022721154
-        hash: t7aXDSoAaaRZXkq5E0tQdHifkuGkPMn37J5nHExEFus=
-        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721154-Jira'
+        hash: 5ZgQgv7gs4pdrNvYZ7Lh8R/O2mXyHGj3lhdUJCSsSzY=
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721154'
       - title: JumpCloud
         file: ../docs/integrations/jumpcloud/graph-jumpcloud.md
         hash: ufnnhB3cjjumJp3gxdDk+aJmFKNbzRWQJCjUDRt11Vc=
