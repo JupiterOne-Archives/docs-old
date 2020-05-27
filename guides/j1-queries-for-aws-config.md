@@ -93,6 +93,14 @@ Ensure root AWS account has MFA enabled.
 Find aws_account with _source!='system-mapper' and mfaEnabled!=true
 ```
 
+**iam-root-access-key-check**
+
+Checks whether the root user access key is available.
+
+```j1ql
+Find aws_account with _source!='system-mapper' and rootUserAccessKeyEnabled!=false
+```
+
 **iam-password-policy**
 
 Ensure the account password policy for IAM users meets the specified requirements.
