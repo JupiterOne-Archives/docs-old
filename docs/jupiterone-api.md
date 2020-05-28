@@ -728,6 +728,317 @@ Variables:
 }
 ```
 
+## Entity and Relationship Synchronization
+
+An integration job is responsible for sending all of the latest entities and
+relationships to the persister and the persister will compare the _new state_ to
+the _old state_ and automatically apply the changes to the graph.
+
+The persister exposes a public REST API that will be used when developing,
+testing, and running integrations outside the JupiterOne cloud infrastructure.
+
+The synchronization API also supports synchronizing a _grouping_ of entities and
+relationships from an API source by using a _scope_ property. That is, a group
+of entities and relationships can be loggically grouped together by an arbitrary
+scope value and uploaded to the persister via the synchronization API and the
+create, update, and delete operations will be automatically determined within
+the given scope. The scope value is stored on the entities and relationships in
+the `_scope` property.
+
+### Integration Job Bookkeeping
+
+While an integration job is running, the persister will need to keep track of
+data as the job progresses.
+
+This information will be tracked:
+
+- New entities
+- New relationships
+- Raw data associated with entities (including `Content-Type`)
+- Job status and progress counters
+- Job metadata (start time, source, etc.)
+
+### Phases of Synchronization
+
+1. **Data Collection:** An integration job or other tools runs and collects all
+   data and stores it temporarily on filesystem.
+
+1. **Data Upload:** All data that represents "new state" is uploaded to the
+   persister and associated with an integration job identifier. The "new state"
+   will consist of entities, relationships, and raw data.
+
+1. **Finalization:** Once an integration has uploaded all data to the persister
+   "finalization" is triggered. During the "finalization" phase, the persister
+   will compare the "new state" with "old state" and determine changes. Any
+   changes that are detected will cause operations to be produced will persisted
+   during the run of the finalization task (they will not be enqueued on a
+   Kinesis stream).
+
+   Entities are finalized first and relationships are finalized afterward (since
+   relationships might reference new entities).
+
+### Synchronization API Usage
+
+#### Start a synchronization job
+
+**Sample request:**
+
+```text
+POST /persister/synchronization/jobs
+```
+
+```json
+{
+  "source": "api",
+  "scope": "my-sync-job"
+}
+```
+
+**Sample request:**
+
+```text
+POST /persister/synchronization/jobs
+```
+
+```json
+{
+  "source": "integration-managed",
+  "integrationInstanceId": "5465397d-8491-4a12-806a-04792839abe3"
+}
+```
+
+**Sample response:**
+
+```json
+{
+  "job": {
+    "source": "api",
+    "scope": "my-sync-job",
+    "id": "f445397d-8491-4a12-806a-04792839abe3",
+    "status": "AWAITING_UPLOADS",
+    "startTimestamp": 1586915139427,
+    "numEntitiesUploaded": 0,
+    "numEntitiesCreated": 0,
+    "numEntitiesUpdated": 0,
+    "numEntitiesDeleted": 0,
+    "numRelationshipsUploaded": 0,
+    "numRelationshipsCreated": 0,
+    "numRelationshipsUpdated": 0,
+    "numRelationshipsDeleted": 0
+  }
+}
+```
+
+#### Get status of synchronization job
+
+**Sample request:**
+
+```text
+GET /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3
+```
+
+**Sample response:**
+
+```json
+{
+  "job": {
+    "source": "api",
+    "scope": "my-sync-job",
+    "id": "f445397d-8491-4a12-806a-04792839abe3",
+    "status": "AWAITING_UPLOADS",
+    "startTimestamp": 1586915139427,
+    "numEntitiesUploaded": 0,
+    "numEntitiesCreated": 0,
+    "numEntitiesUpdated": 0,
+    "numEntitiesDeleted": 0,
+    "numRelationshipsUploaded": 0,
+    "numRelationshipsCreated": 0,
+    "numRelationshipsUpdated": 0,
+    "numRelationshipsDeleted": 0
+  }
+}
+```
+
+#### Upload batch of entities
+
+**Sample request:**
+
+```text
+POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/entities
+```
+
+```json
+{
+  "entities": [
+    {
+      "_key": "1",
+      "_type": "fake_entity"
+    },
+    {
+      "_key": "2",
+      "_type": "fake_entity"
+    },
+    {
+      "_key": "3",
+      "_type": "fake_entity"
+    }
+  ]
+}
+```
+
+**Sample response:**
+
+```json
+{
+  "job": {
+    "source": "api",
+    "scope": "my-sync-job",
+    "id": "f445397d-8491-4a12-806a-04792839abe3",
+    "status": "AWAITING_UPLOADS",
+    "startTimestamp": 1586915752483,
+    "numEntitiesUploaded": 3,
+    "numEntitiesCreated": 0,
+    "numEntitiesUpdated": 0,
+    "numEntitiesDeleted": 0,
+    "numRelationshipsUploaded": 0,
+    "numRelationshipsCreated": 0,
+    "numRelationshipsUpdated": 0,
+    "numRelationshipsDeleted": 0
+  }
+}
+```
+
+#### Upload batch of relationships
+
+**Sample request:**
+
+```text
+POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/relationships
+```
+
+```json
+{
+  "relationships": [
+    {
+      "_key": "a",
+      "_type": "fake_relationship",
+      "_fromEntityKey": "1",
+      "_toEntityKey": "2"
+    },
+    {
+      "_key": "b",
+      "_type": "fake_relationship",
+      "_fromEntityKey": "2",
+      "_toEntityKey": "3"
+    }
+  ]
+}
+```
+
+**Sample response:**
+
+```json
+{
+  "job": {
+    "source": "api",
+    "scope": "my-sync-job",
+    "id": "f445397d-8491-4a12-806a-04792839abe3",
+    "status": "AWAITING_UPLOADS",
+    "startTimestamp": 1586915752483,
+    "numEntitiesUploaded": 3,
+    "numEntitiesCreated": 0,
+    "numEntitiesUpdated": 0,
+    "numEntitiesDeleted": 0,
+    "numRelationshipsUploaded": 2,
+    "numRelationshipsCreated": 0,
+    "numRelationshipsUpdated": 0,
+    "numRelationshipsDeleted": 0
+  }
+}
+```
+
+#### Finalize synchronization job
+
+**Sample request:**
+
+```text
+POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/finalize
+```
+
+**Sample response (when running locally):**
+
+```json
+{
+  "job": {
+    "source": "api",
+    "scope": "my-sync-job",
+    "id": "f445397d-8491-4a12-806a-04792839abe3",
+    "status": "FINISHED",
+    "startTimestamp": 1586915752483,
+    "numEntitiesUploaded": 3,
+    "numEntitiesCreated": 3,
+    "numEntitiesUpdated": 0,
+    "numEntitiesDeleted": 0,
+    "numRelationshipsUploaded": 2,
+    "numRelationshipsCreated": 2,
+    "numRelationshipsUpdated": 0,
+    "numRelationshipsDeleted": 0
+  }
+}
+```
+
+**Sample response (when running in AWS):**
+
+```json
+{
+  "job": {
+    "source": "api",
+    "scope": "my-sync-job",
+    "id": "f445397d-8491-4a12-806a-04792839abe3",
+    "status": "FINALIZE_PENDING",
+    "startTimestamp": 1586915752483,
+    "numEntitiesUploaded": 3,
+    "numEntitiesCreated": 0,
+    "numEntitiesUpdated": 0,
+    "numEntitiesDeleted": 0,
+    "numRelationshipsUploaded": 2,
+    "numRelationshipsCreated": 0,
+    "numRelationshipsUpdated": 0,
+    "numRelationshipsDeleted": 0
+  }
+}
+```
+
+#### Synchronization job status upon completion
+
+**Sample request:**
+
+```text
+GET /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3
+```
+
+**Sample response:**
+
+```json
+{
+  "job": {
+    "source": "api",
+    "scope": "my-sync-job",
+    "id": "f445397d-8491-4a12-806a-04792839abe3",
+    "status": "FINISHED",
+    "startTimestamp": 1586915752483,
+    "numEntitiesUploaded": 3,
+    "numEntitiesCreated": 3,
+    "numEntitiesUpdated": 0,
+    "numEntitiesDeleted": 0,
+    "numRelationshipsUploaded": 2,
+    "numRelationshipsCreated": 2,
+    "numRelationshipsUpdated": 0,
+    "numRelationshipsDeleted": 0
+  }
+}
+```
+
 ## Building CSV Report
 
 **Endpoint:** `/graphql`
