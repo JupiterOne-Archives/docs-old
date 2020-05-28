@@ -85,12 +85,20 @@ Find aws_security_group as sg that ALLOWS as rule * as src
 
 ## IAM Rules
 
-**iam-root-access-key-check**
+**root-account-mfa-enabled**
 
 Ensure root AWS account has MFA enabled.
 
 ```j1ql
-Find aws_account with _source!='system-mapper' and AccountMFAEnabled!=1
+Find aws_account with _source!='system-mapper' and mfaEnabled!=true
+```
+
+**iam-root-access-key-check**
+
+Checks whether the root user access key is available.
+
+```j1ql
+Find aws_account with _source!='system-mapper' and rootUserAccessKeyEnabled!=false
 ```
 
 **iam-password-policy**
@@ -155,15 +163,23 @@ your lambda functions to `nodejs8.10`.
 Checks whether RDS DB instances have backups enabled.
 
 ```j1ql
-Find (aws_db_instance|aws_rds_cluster) with BackupRetentionPeriod=undefined
+Find (aws_db_instance|aws_rds_cluster) with backupRetentionPeriod=undefined
 ```
 
 *Optionally, the rule checks the backup retention period and the backup window.*
 
 ```j1ql
 Find (aws_db_instance|aws_rds_cluster) with
-  BackupRetentionPeriod=undefined or
-  BackupRetentionPeriod<30
+  backupRetentionPeriod=undefined or
+  backupRetentionPeriod<30
+```
+
+**rds-instance-public-access-check**
+
+Check whether the Amazon RDS clusters and instances are publicly accessible.
+
+```j1ql
+Find (aws_db_instance|aws_rds_cluster) with public=true
 ```
 
 **rds-snapshots-public-prohibited**
@@ -171,6 +187,10 @@ Find (aws_db_instance|aws_rds_cluster) with
 Checks if Amazon Relational Database Service (Amazon RDS) snapshots are public.
 The rule is non-compliant if any existing and new Amazon RDS snapshots are
 public.
+
+```j1ql
+Find (aws_db_snapshot|aws_db_cluster_snapshot) with public=true
+```
 
 **rds-storage-encrypted**
 
@@ -266,7 +286,7 @@ Checks whether S3 buckets have policies that require requests to use Secure
 Socket Layer (SSL/TLS).
 
 ```j1ql
-n/a
+Find aws_s3_bucket with secureTransport != true
 ```
 
 **s3-bucket-logging-enabled**

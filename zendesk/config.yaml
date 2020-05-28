@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: dw/6h0xkrq+h2jraqV6Iy20WxmtET9sWgWZi5JASeJw=
+        hash: 6zgY9O0EyJ/BbO1lNxZi6zPXAq0B0j7rjBnkN3Nq68M=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -269,10 +269,9 @@ sections:
     articles:
       - title: AWS Resource Configuration Auditing
         file: ../guides/j1-queries-for-aws-config.md
-        hash: 9/4PaWCUVzsAt8h6XFhxLRy966qbdGeooYIayeYZ+hY=
+        hash: Dmc+HsRhlCeL3Q01MaqGsEXtGoe+R6PHr2HkbmIyGmw=
         id: 360022721894
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360022721894-AWS-Resource-Configuration-Auditing
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721894'
       - title: AWS Threat Monitoring
         file: ../guides/j1-aws-threat-monitoring.md
         hash: R9IzMzan1Dq/SNeJr8461/Zb9+ZCx2aMf4tF7+NY0AI=
