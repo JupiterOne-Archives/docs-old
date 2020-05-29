@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: vOV5xtRayRBVvex1zpsIuGwmTN13FTRnvzc+IJ8eCOU=
+        hash: bVTYYaarBEsIlBTPvsk4zPBnCKHzmTziQAjD2JSgvhM=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -177,6 +177,11 @@ sections:
   - name: Advaned Query Examples
     id: 360008637414
     articles:
+      - title: Query using internal metadata
+        file: ../queries/adv-example-resources-not-tagged.md
+        hash: 917QHfFFz8uMUzUPJ4nLpthuUqdX1owga5njOvMwnzU=
+        id: 360048592834
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360048592834'
       - title: Query resources that do not have a certain tag
         file: ../queries/adv-example-resources-not-tagged.md
         hash: V8LmxHrcz7TIKOAk+1sV+Vm4Cg/x6UqejeqOzbxbL5c=
@@ -394,6 +399,11 @@ sections:
         hash: sFG5A0CUcWL+uSPEOD7sTPOZEieK9AX13qQXQtVjYbo=
         id: 360041392094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041392094'
+      - title: Resource Metadata
+        file: ../docs/metadata.md
+        hash: bNt2meHhWvV5GUQcMeTk6xUtYFGPDI9mF93qyUNxyKc=
+        id: 360049346733
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049346733'
       - title: Data Model for Vulnerability Management
         file: ../docs/data-model/vuln-mgmt.md
         hash: KrBiYvzlpUhXwUgMaitfajUeHbJliyuY3NGge1o5ZBg=

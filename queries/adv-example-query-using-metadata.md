@@ -1,4 +1,4 @@
-# Queries using internal metadata
+# Query using internal metadata
 
 JupiterOne assigns metadata to resources and sometimes it is helpful to leverage
 them in queries. Here are some examples.
