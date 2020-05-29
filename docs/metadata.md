@@ -44,10 +44,10 @@ _All timestamps are store in Epoch milliseconds and displayed in the UI in ISO d
 
 _The following metadata only exists on resources created via an integration._
 
-| Property            | Type      | Description                                        |
-| ------------------- | --------- | -------------------------------------------------- |
-| `_integrationClass` | `string`  | Class of the integration that represents the category or domain of the service provider.  For example: `CSP`, `IdP`, `EDR`, `MDM`, etc.
-| `_integrationType`  | `string`  | Type of the integration. Typically the service provider name. For example: `aws`, `google`, `azure`, `okta`, `knowbe4`, `vmware`, etc.
-| `_integrationName`  | `string`  | User-provided friendly name of the integration instance.
-| `_integrationDefinitionId` | `string` | Internal UUID that identifies the integration.
-| `_integrationInstanceId`   | `string` | Internal UUID that identifies the integration instance. An integration can have more than one configuration instances. For example, multiple AWS accounts have multiple AWS integration instances.
+| Property            | Type                | Description                                        |
+| ------------------- | ------------------- | -------------------------------------------------- |
+| `_integrationClass` | `string | string[]` | Class of the integration that represents the category or domain of the service provider.  For example: `CSP`, `IdP`, `EDR`, `MDM`, etc.
+| `_integrationType`  | `string`            | Type of the integration. Typically the service provider name. For example: `aws`, `google`, `azure`, `okta`, `knowbe4`, `vmware`, etc.
+| `_integrationName`  | `string`            | User-provided friendly name of the integration instance.
+| `_integrationDefinitionId` | `string`     | Internal UUID that identifies the integration.
+| `_integrationInstanceId`   | `string`     | Internal UUID that identifies the integration instance. An integration can have more than one configuration instances. For example, multiple AWS accounts have multiple AWS integration instances.
