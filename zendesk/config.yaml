@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: 6zgY9O0EyJ/BbO1lNxZi6zPXAq0B0j7rjBnkN3Nq68M=
+        hash: bVTYYaarBEsIlBTPvsk4zPBnCKHzmTziQAjD2JSgvhM=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -174,6 +174,19 @@ sections:
         id: 360024758214
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024758214-Endpoint-Security
+  - name: Advaned Query Examples
+    id: 360008637414
+    articles:
+      - title: Query using internal metadata
+        file: ../queries/adv-example-resources-not-tagged.md
+        hash: 917QHfFFz8uMUzUPJ4nLpthuUqdX1owga5njOvMwnzU=
+        id: 360048592834
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360048592834'
+      - title: Query resources that do not have a certain tag
+        file: ../queries/adv-example-resources-not-tagged.md
+        hash: V8LmxHrcz7TIKOAk+1sV+Vm4Cg/x6UqejeqOzbxbL5c=
+        id: 360048581914
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360048581914'
   - name: Insight Dashboards
     id: 360005185733
     articles:
@@ -269,7 +282,7 @@ sections:
     articles:
       - title: AWS Resource Configuration Auditing
         file: ../guides/j1-queries-for-aws-config.md
-        hash: Dmc+HsRhlCeL3Q01MaqGsEXtGoe+R6PHr2HkbmIyGmw=
+        hash: i2D+y11f68Zpu1Mpuu+YBJxp8hcYiPwdLUTkFj0vILE=
         id: 360022721894
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721894'
       - title: AWS Threat Monitoring
@@ -386,6 +399,11 @@ sections:
         hash: sFG5A0CUcWL+uSPEOD7sTPOZEieK9AX13qQXQtVjYbo=
         id: 360041392094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041392094'
+      - title: Resource Metadata
+        file: ../docs/metadata.md
+        hash: bNt2meHhWvV5GUQcMeTk6xUtYFGPDI9mF93qyUNxyKc=
+        id: 360049346733
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049346733'
       - title: Data Model for Vulnerability Management
         file: ../docs/data-model/vuln-mgmt.md
         hash: KrBiYvzlpUhXwUgMaitfajUeHbJliyuY3NGge1o5ZBg=
