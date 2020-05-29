@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: bVTYYaarBEsIlBTPvsk4zPBnCKHzmTziQAjD2JSgvhM=
+        hash: jFY1z0FHNC+GdfoMkMJSXj6x8SjeH1WVxh8iHddUxxk=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -174,7 +174,7 @@ sections:
         id: 360024758214
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360024758214-Endpoint-Security
-  - name: Advaned Query Examples
+  - name: Advanced Query Examples
     id: 360008637414
     articles:
       - title: Query using internal metadata
@@ -277,6 +277,19 @@ sections:
         hash: QHg6ZHokQ/Inkqkq51dnt7Aw18lpgQinYHNcjanAnUI=
         id: 360042682873
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682873'
+  - name: Asset Discovery and Inventory
+    id: 360008641714
+    articles:
+      - title: Bulk upload asset entities/relationships via JSON
+        file: ../guides/bulk-upload.md
+        hash: GwYs+j5kntBIVp56JxLB18xZPmSai37x8/RCKFIVvBE=
+        id: 360049348633
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049348633'
+      - title: View Entity History Data and Compare Versions
+        file: ../guides/entity-history-data.md
+        hash: QB1UO7MhogGVsRz1ZBasiBEchpL3SMP+oaQfh/nTs48=
+        id: 360046885893
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046885893'
   - name: User Guides
     id: 360002297174
     articles:
@@ -312,11 +325,6 @@ sections:
         id: 360025989253
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360025989253-Enable-API-Key-Access
-      - title: View Entity History Data and Compare Versions
-        file: ../guides/entity-history-data.md
-        hash: QB1UO7MhogGVsRz1ZBasiBEchpL3SMP+oaQfh/nTs48=
-        id: 360046885893
-        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046885893'
   - name: JupiterOne Query Language (J1QL)
     id: 360004247533
     articles:
@@ -330,7 +338,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: RgTGPxPCmurp6KYx2tg7uXgbevDM6A/pEEdpogTEfgI=
+        hash: rIvhD3RuUe/EOd/wWUdGx20HrRQZE02u9G6acC8C3kU=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Node.js Client and CLI
@@ -345,6 +353,11 @@ sections:
         id: 360025847594
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360025847594-Enable-API-Key-Access
+      - title: Data Structure for Bulk Upload
+        file: ../docs/schemas/bulk-upload.md
+        hash: eZ0bXwStQAB8ZtXF2aDy6j3w+zF0xXrL9BzTwsOnacM=
+        id: 360049348293
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049348293'
       - title: Alert Rule Schema
         file: ../docs/schemas/alert-rule.md
         hash: HLa2MAvZn+WMrT4/G0Jd9VDYixgDmEwxnqbt3JVFvZs=
