@@ -1,18 +1,18 @@
-# JupiterOne Managed Integration for BugCrowd
+# JupiterOne Managed Integration for Bugcrowd
 
 ## Overview
 
-JupiterOne provides a managed integration for BugCrowd. The integration connects
-directly to [BugCrowd REST API][1] to obtain application scan assets, reports,
+JupiterOne provides a managed integration for Bugcrowd. The integration connects
+directly to [Bugcrowd REST API][1] to obtain application scan assets, reports,
 and findings.
 
-Configure the integration by providing an API Token from your BugCrowd account.
+Configure the integration by providing an API Token from your Bugcrowd account.
 
 ## Entities
 
 The following entity resources are ingested when the integration runs.
 
-| BugCrowd Resources | \_type of the Entity  | \_class of the Entity |
+| Bugcrowd Resources | \_type of the Entity  | \_class of the Entity |
 | ------------------ | --------------------- | --------------------- |
 | Account            | `bugcrowd_account`    | `Account`             |
 | Bounty Program     | `bugcrowd_bounty`     | `Program`             |

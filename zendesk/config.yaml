@@ -467,7 +467,7 @@ sections:
         id: 360022721074
         hash: wNaZVS1RxhxHKxtMpUnoSWvNO/oUXzyZS1O8+hNhYcg=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721074-BitBucket'
-      - title: BugCrowd
+      - title: Bugcrowd
         file: ../docs/integrations/bugcrowd/index.md
         hash: oZ1jySCouO4ztLv+GX3fVFdqsnr0krI4dLHLXKNTIXs=
         id: 360048412194
