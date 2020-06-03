@@ -1,5 +1,11 @@
 # JupiterOne Bulk Upload Schema
 
+> IMPORTANT: Bulk upload triggers a data synchronization process that
+> automatically **updates** or **deletes** entities/relationships as needed.
+> Therefore, the upload file should always include the **complete** set of
+> entities or relationships within the defined `_scope` to avoid unintended data
+> deletion.
+
 To successfully upload entity and relationship data, follow the schema outlined below:
 
 ```json

@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: gMQZ87GzgcDsWFgle2erLt2RMntaVW2P+RLKPfYkbXo=
+        hash: efnlPfUXPe0BgPcrmg/Vhy1inCVZwrbhxfmdM7DWMCE=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -355,7 +355,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360025847594-Enable-API-Key-Access
       - title: Data Structure for Bulk Upload
         file: ../docs/schemas/bulk-upload.md
-        hash: fdgh37ozdbH7bnTBx9Rfk72gQonJgyRZDpcVkw3h0oU=
+        hash: VUt7WdGDvx2vhuUZ1NVIy20PW5p7KRZFgyi4NInmTxA=
         id: 360049348293
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049348293'
       - title: Alert Rule Schema
