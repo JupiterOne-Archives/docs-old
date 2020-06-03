@@ -1,5 +1,11 @@
 # JupiterOne Bulk Upload Schema
 
+> IMPORTANT: Bulk upload triggers a data synchronization process that
+> automatically **updates** or **deletes** entities/relationships as needed.
+> Therefore, the upload file should always include the **complete** set of
+> entities or relationships within the defined `_scope` to avoid unintended data
+> deletion.
+
 To successfully upload entity and relationship data, follow the schema outlined below:
 
 ```json
@@ -63,7 +69,7 @@ To successfully upload entity and relationship data, follow the schema outlined 
 
 | Property         | Type     | Description                                                               |
 | ---------------- | -------- | ------------------------------------------------------------------------- |
-| `_key`           | `string` | Globally unique id for this relationship.                                 |
+| `_key`           | `string` | A unique identifier/key for this relationship within the defined `_scope`.|
 | `_type`          | `string` | User defined type for this relationship. Value should be in `snake_case`. |
 | `_class`         | `string` | Relationship class. Typically a third-person singular verb such as `HAS` or `MANAGES` or `ALLOWS`. Value should be in `CAPS`. |
 | `_scope`         | `string` | The scope is used to identity relationships to update/delete during diffing. Previously existing relationships within the same `_scope` that no longer exist in the latest upload will be marked for deletion. |

@@ -18,28 +18,8 @@
         }
       ]
     },
-
     {
-      "title": "Queries for AWS Analysis",
-      "documents": [
-        {
-          "title": "AWS Access Permissions and Trusts",
-          "markdownUrl": "queries/common-qq-aws-permissions.md"
-        },
-        {
-          "title":
-            "J1 Queries for AWS Vulnerability Findings and Threat Monitoring",
-          "markdownUrl": "guides/j1-aws-threat-monitoring.md"
-        },
-        {
-          "title": "J1 Queries for AWS Config",
-          "markdownUrl": "guides/j1-queries-for-aws-config.md"
-        }
-      ]
-    },
-
-    {
-      "title": "Other Common Questions and Queries",
+      "title": "Common Questions and Queries",
       "documents": [
         {
           "title": "Applications and Processes",
@@ -84,6 +64,37 @@
         {
           "title": "User Training and Awareness",
           "markdownUrl": "queries/common-qq-training.md"
+        }
+      ]
+    },
+    {
+      "title": "Queries for AWS Analysis",
+      "documents": [
+        {
+          "title": "AWS Access Permissions and Trusts",
+          "markdownUrl": "queries/common-qq-aws-permissions.md"
+        },
+        {
+          "title":
+            "J1 Queries for AWS Vulnerability Findings and Threat Monitoring",
+          "markdownUrl": "guides/j1-aws-threat-monitoring.md"
+        },
+        {
+          "title": "J1 Queries for AWS Config",
+          "markdownUrl": "guides/j1-queries-for-aws-config.md"
+        }
+      ]
+    },
+    {
+      "title": "Advanced Query Examples",
+      "documents": [
+        {
+          "title": "Query using internal metadata",
+          "markdownUrl": "queries/adv-example-query-using-metadata.md"
+        },
+        {
+          "title": "Query resources that do not have a certain tag",
+          "markdownUrl": "queries/adv-example-resources-not-tagged.md"
         }
       ]
     }
