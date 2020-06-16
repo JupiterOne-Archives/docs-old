@@ -14,6 +14,14 @@ Navigate to the **Assets** app -> Click the plus (Add Entity) button ->
 Either drag your file into the drop zone, or click the drop zone to select
 your file.
 
+You will be prompted to select (or enter a new) "scope" for the upload.
+
+> What does "scope" mean? 
+>
+> A scope is used to identify relationships to update/delete during diffing.
+> Previously existing entities/relationships within the same scope that no
+> longer exist in the latest upload are deleted.
+
 ## Public API
 
 JupiterOne exposes a public REST API to programatically perform bulk entity and relationship
