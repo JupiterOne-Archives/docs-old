@@ -1,0 +1,30 @@
+{
+  "title": "JupiterOne Compliance Documentation",
+  "sections": [
+    {
+      "title": "Compliance Management in JupiterOne",
+      "documents": [
+        {
+          "title": "Import a compliance standard or security questionnaire",
+          "markdownUrl": "guides/compliance/compliance-import.md"
+        },
+        {
+          "title": "Map policy procedures to each control or requirement",
+          "markdownUrl": "guides/compliance/compliance-mapping-policies.md"
+        },
+        {
+          "title": "Map data-driven compliance evidence by query questions",
+          "markdownUrl": "guides/compliance/compliance-mapping-evidence.md"
+        },
+        {
+          "title": "Perform automated gap analysis based on query results",
+          "markdownUrl": "guides/compliance/compliance-gap-analysis.md"
+        },
+        {
+          "title": "Export compliance artifacts (summary or full evidence package)",
+          "markdownUrl": "guides/compliance/compliance-export.md"
+        }
+      ]
+    }
+  ]
+}
