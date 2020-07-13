@@ -2,9 +2,7 @@
 
 The AWS integration can continuously update the graph using CloudTrail events
 streamed over EventBridge. This feature is currently in beta and only supports a
-subset of CloudTrail events. The full list of supported events can be found in
-the [AWS integration's CloudFormation project on
-GitHub](https://github.com/JupiterOne/jupiterone-aws-cloudformation#supported-events).
+subset of CloudTrail events.
 
 To enable this feature, first contact the JupiterOne development team either via
 the community Slack or by creating a support ticket. Provide the AWS account ID
@@ -33,3 +31,11 @@ names to your rule's event pattern.
 See the article ["Sending and Receiving Events Between AWS
 Accounts"](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html)
 in the AWS EventBridge documentation for more details.
+
+## Supported Services
+
+- S3
+
+The full list of supported API calls can be found in the [AWS integration's
+CloudFormation project on
+GitHub](https://github.com/JupiterOne/jupiterone-aws-cloudformation#supported-events).
