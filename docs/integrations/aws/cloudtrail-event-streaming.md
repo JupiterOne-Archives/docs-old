@@ -28,9 +28,8 @@ consider removing them from your rule's event pattern. On the other hand, when
 JupiterOne adds support for more events, you will need to add those events'
 names to your rule's event pattern.
 
-See the article ["Sending and Receiving Events Between AWS
-Accounts"](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html)
-in the AWS EventBridge documentation for more details.
+See the article ["Sending and Receiving Events Between AWS Accounts"][1] in the
+AWS EventBridge documentation for more details.
 
 ## Supported Services
 
@@ -38,4 +37,7 @@ in the AWS EventBridge documentation for more details.
 
 The full list of supported API calls can be found in the [AWS integration's
 CloudFormation project on
-GitHub](https://github.com/JupiterOne/jupiterone-aws-cloudformation#supported-events).
+GitHub][2].
+
+[1]: https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html
+[2]: https://github.com/JupiterOne/jupiterone-aws-cloudformation#supported-events

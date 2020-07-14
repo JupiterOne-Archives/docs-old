@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: QjtHFy9BDXL18S+IB9ZFg6gkJtIOVYAdyoY+iGgOQqU=
+        hash: KKWTI91OXdnqAA99JVXTDa3/1J+AQHgQDSl7tGBXiF0=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -459,7 +459,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721054'
       - title: AWS CloudTrail Event Streaming
         file: ../docs/integrations/aws/cloudtrail-event-streaming.md
-        hash: x2u1bGcZjpcSfo6K1IPdCWhXNuwKLdmQBtLg1EktamA=
+        hash: WcAlYr9uQp/wqvyzeJA6B/EqKTFMLyETkEwezd7UZCM=
         id: 360051794213
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360051794213'
       - title: Azure
