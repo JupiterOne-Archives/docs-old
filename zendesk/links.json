@@ -72,6 +72,7 @@
     "data-model/org-grc": "https://support.jupiterone.io/hc/en-us/articles/360041436933",
     "integrations/integrations-roadmap": "https://support.jupiterone.io/hc/en-us/articles/360041763713",
     "integrations/aws/index": "https://support.jupiterone.io/hc/en-us/articles/360022721054",
+    "integrations/aws/cloudtrail-event-streaming": "https://support.jupiterone.io/hc/en-us/articles/360051794213",
     "integrations/azure/graph-azure": "https://support.jupiterone.io/hc/en-us/articles/360024909213",
     "integrations/bitbucket/bitbucket": "https://support.jupiterone.io/hc/en-us/articles/360022721074-BitBucket",
     "integrations/bugcrowd/index": "https://support.jupiterone.io/hc/en-us/articles/360048412194",

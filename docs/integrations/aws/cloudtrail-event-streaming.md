@@ -20,7 +20,7 @@ GitHub](https://github.com/JupiterOne/jupiterone-aws-cloudformation#jupiterone-a
 
 If you set up your event rule to send events to JupiterOne using the
 CloudFormation provided by JupiterOne, it will be configured to only send events
-that the AWS integration can actually interpret. This is acheived by listing the
+that the AWS integration can actually interpret. This is achieved by listing the
 supported CloudTrail events' names in the event rule's `EventPattern`. Any
 events sent to JupiterOne will be charged to the sending account (yours) so if
 you don't care about a subset of events that JupiterOne supports, you should
