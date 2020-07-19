@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: 27/F5lgTn/NZVG+TnaYKoAltvHkGQ5dnocNuWzlfZVw=
+        hash: +VwP9h79DHX6i4w7uwx3pi8Ew2PwgT1mjiu+HgEiLBk=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -264,7 +264,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042195334'
       - title: Compliance Policies Mapping
         file: ../guides/compliance/compliance-mapping-policies.md
-        hash: RJIeRVov3OiunLsyuqOVQX6LCWo6XFZ9CWggfhFer94=
+        hash: DACoWmr3U5rEfg51YTg1T55pbrC3gYN84sOOdmGpTGc=
         id: 360042195394
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042195394'
       - title: Compliance Evidence Mapping
