@@ -27,7 +27,14 @@ reqirement/control.
 Mapped security procedures of a specific compliance requirement or control can
 be selected via the UI in the requirement details view:
 
-  ![compliance-map-policies](../../assets/compliance-map-policies.png)
+![compliance-map-policies](../../assets/compliance-map-policies.png)
+
+- In **Compliance app**, select a standard
+- Select a requirement or control
+- Click on **Map Policies/Procedures** button near the bottom left of the view
+- In the mapping modal view, check one of more policy procedures from the left
+  (mapped policy procedures are listed on the right)
+- Click **Submit** when done
 
 ## Edit full mapping in JSON
 
