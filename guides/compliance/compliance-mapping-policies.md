@@ -13,8 +13,33 @@ security_procedure
 
 See [this article][1] for the full GRC graph data model.
 
-The mapping between a security procedure (i.e. written documentation describing
-a security control or process) and a compliance requirement is done via a JSON
+> Mapping is created only between security procedures to a compliance
+requirement/control. Policies are indirectly mapped via procedures. This is
+because policies are very high level descriptions (i.e. principal statements)
+and principals cannot directly implement a compliance requirement/control. Only
+details on what you do and how you do it (the procedures) can implement a
+reqirement/control.
+>
+> ![compliance-mapped-policy-procedure](../../assets/compliance-mapped-policy-procedure.png)
+
+## Edit mapping of an individual compliance requirement/control
+
+Mapped security procedures of a specific compliance requirement or control can
+be selected via the UI in the requirement details view:
+
+![compliance-map-policies](../../assets/compliance-map-policies.png)
+
+- In **Compliance app**, select a standard
+- Select a requirement or control
+- Click on **Map Policies/Procedures** button near the bottom left of the view
+- In the mapping modal view, check one of more policy procedures from the left
+  (mapped policy procedures are listed on the right)
+- Click **Submit** when done
+
+## Edit full mapping in JSON
+
+The complete mapping between a security procedure (i.e. written documentation describing
+a security control or process) and a compliance requirement is can be edited via a JSON
 configuration file.
 
 An example mapping is provided here:
@@ -31,6 +56,6 @@ compliance specifications, and then uploaded to the JupiterOne Compliance app:
 [1]: ../../docs/data-model/org-grc.md
 [edit-icon]: https://raw.githubusercontent.com/feathericons/feather/master/icons/edit.svg?sanitize=true
 
-## JSON Structure
+### JSON Structure
 
 See the schema documented [here](../../docs/schemas/policies-compliance.md).
