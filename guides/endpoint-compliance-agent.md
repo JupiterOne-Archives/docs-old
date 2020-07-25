@@ -103,5 +103,13 @@ process has three moving parts:
    an API token used to retrieve the Stethoscope policy and upload scan results
    to J1.
 
+## Uninstallation
+
+Uninstalling the JupiterOne endpoint compliance agent may be performed by:
+
+1. `/opt/j1endpointagent/bin/j1-endpoint-agent-darwin service --action stop`
+1. `/opt/j1endpointagent/bin/j1-endpoint-agent-darwin service --action uninstall`
+1. Remove the `/Applications/Stethoscope.app` folder.
+
 [1]: https://jupiterone.com/blog/solving-for-endpoint-compliance-in-a-cloud-first-landscape/
 [2]: https://github.com/Netflix-Skunkworks/stethoscope-app/
