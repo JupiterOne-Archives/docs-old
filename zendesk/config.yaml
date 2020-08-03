@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: P41Z30rETVJeSh8qFcihASmwMwLFkIyBbgH8bVsNSlA=
+        hash: pthRZZBc5XLTSTUxfE2G9D0biax46DoYjAkJGz6ecL4=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -605,7 +605,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360022721214-SentinelOne
       - title: Slack
         file: ../docs/integrations/slack/index.md
-        hash: snKyuMLEOIGntzt3wQYDVs7DwS+KLfB6MG09cUbOedU=
+        hash: aL7Vjwj7ZWnwSkV9he7dcv2+6fPDMd7fxlu1+iYTRJc=
         id: 360046977154
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046977154'
       - title: Snipe-IT
@@ -667,10 +667,9 @@ sections:
     articles:
       - title: J1 Endpoint Compliance Agent
         file: ../guides/endpoint-compliance-agent.md
-        hash: n5THVWttpMrPzNGL1x1m8H/ke+IopYIqWh50c8RjUS0=
+        hash: 5XLyjrGY6rHZM3gdYTiuB1Pl+WckqiJeNgyGixUIIo8=
         id: 360022721994
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360022721994-J1-Endpoint-Compliance-Agent
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721994'
       - title: J1 Endpoint Compliance Agent with Stethoscope v4
         file: ../guides/endpoint-compliance-agent-v4.md
         hash: JvFq8hiGkEhHRMLDuaBtDzjTHFlA+9NycwDuMznjD2s=
