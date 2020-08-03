@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: /FPPALcuCwE3y7Z0OUEOp2+jozEa2eH7Z/GmfJexCYs=
+        hash: pthRZZBc5XLTSTUxfE2G9D0biax46DoYjAkJGz6ecL4=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -605,7 +605,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360022721214-SentinelOne
       - title: Slack
         file: ../docs/integrations/slack/index.md
-        hash: X0X4K++U60E+PtGFYcRz4/mH+vVsHUcCoGFr5d/gnY4=
+        hash: aL7Vjwj7ZWnwSkV9he7dcv2+6fPDMd7fxlu1+iYTRJc=
         id: 360046977154
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046977154'
       - title: Snipe-IT

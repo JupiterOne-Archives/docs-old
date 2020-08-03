@@ -2,8 +2,9 @@
 
 ## Overview
 
-JupiterOne provides a managed integration with Jira. The integration connects
-directly to Jira APIs to obtain project information and issues.
+JupiterOne provides a managed integration with Slack. The integration connects
+directly to Slack APIs using the JupiterOne Slack app to obtain information and
+allows delivery of Slack messages to specific channels.
 
 ## Setup
 
