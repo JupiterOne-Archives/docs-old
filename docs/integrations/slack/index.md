@@ -16,44 +16,45 @@ specific integration instance.
 Customers must install the JupiterOne Slack app and specify which
 [Slack OAuth scopes](https://api.slack.com/legacy/oauth-scopes) the app should
 request. Once the app is installed, the JupiterOne integration can begin
-ingesting relevant information and send notification via the
+ingesting relevant information and send notifications via the
 [JupiterOne Rules and Alerting feature](https://jupiterone.com/features/rules-alerting/).
 
 1. Navigate to the JupiterOne Slack integration configuration page (e.g.
    https://apps.us.jupiterone.io/integrations/slack/configure)
-1. Fill out relavant integration instance form information and OAuth scopes. All
-   read scopes are used to ingest data into the JupiterOne graph and the write
-   scopes are used for enabling the ability to send notifications to channels in
-   the configured Slack team. NOTE:
+1. Fill out relavant integration instance form information and OAuth scopes that
+   you'd like the Slack app to request. All read scopes are used to ingest data
+   into the JupiterOne graph and the write scopes are used for enabling the
+   ability to send notifications to channels in the configured Slack team. NOTE:
    [`chat:write`](https://api.slack.com/scopes/chat:write) is required to post
    messages in channels & conversations that the `@JupiterOne` bot is a member
-   of. and [`chat:write.public`](https://api.slack.com/scopes/chat:write.public)
+   of and [`chat:write.public`](https://api.slack.com/scopes/chat:write.public)
    is required to post messages to channels that the `@JupiterOne` bot isn't a
    member of. Without one or both of `chat:write` and `chat:write.public`
    scopes, users _will not_ be able to configure JupiterOne alert rules with a
    Slack notification.
 1. Once the relevant form information has been filled out, submitting the form
    will redirect the user to Slack to authorize the requested scopes.
-1. Click "Allow" and you will be redirected back to JupiterOne.
+1. Review the request scopes, click "Allow", and then you will be redirected
+   back to JupiterOne.
 
 ### JupiterOne Alert Rule Slack Notification
 
 NOTE: For detailed instructions on how to configure JupiterOne Alert Rules,
-please see the (JupiterOne Alert Rule configuration
-documentation)[https://support.jupiterone.io/hc/en-us/articles/360022720474-6-9-Alerts-and-Alert-Rules].
+please see the
+[JupiterOne Alert Rule configuration documentation](https://support.jupiterone.io/hc/en-us/articles/360022720474-6-9-Alerts-and-Alert-Rules).
 Additionally, see the
 [JupiterOne Alert Rule Schema documentation](https://support.jupiterone.io/hc/en-us/articles/360039711354-Alert-Rule-Schema)
 for technical details on alert rule/action properties.
 
 JupiterOne can deliver Slack messages directly to any channel or to specific
 users in a Slack team once the JupiterOne slack integration has been configured
-and the Slack app installed in the team.
+and the Slack app has been installed into the team.
 
 Once the integration has been configured, copy the integration ID from the
 integration instance page. For example, if the integration instance URL looks
 like this:
 
-`https://apps.dev.jupiterone.io/integrations/slack/configuration/d1549f40-b9fd-447a-bec5-4360c9ca7e8c`
+`https://apps.us.jupiterone.io/integrations/slack/configuration/d1549f40-b9fd-447a-bec5-4360c9ca7e8c`
 
 Then the integration instance ID is `d1549f40-b9fd-447a-bec5-4360c9ca7e8c`.
 
@@ -61,12 +62,12 @@ Steps to configuring a rule
 
 1. Navigate to the JupiterOne alert rule configuration page (e.g.
    https://apps.us.jupiterone.io/alerts/edit)
-1. Click create rule
+1. Click "Create Rule"
 1. Click "Show Advanced" to open the advanced rule editor
 1. Configure a rule with the `SEND_SLACK_MESSAGE` action and specify the
-   `integrationInstanceId` property with the value being the ID specified in the
-   URL above. Example alert rule configuration with the `SEND_SLACK_MESSAGE`
-   action:
+   `integrationInstanceId` and `channels` properties with the value being the ID
+   specified in the URL above. Example alert rule configuration with the
+   `SEND_SLACK_MESSAGE` action:
 
 ```json
 {
@@ -81,7 +82,7 @@ Steps to configuring a rule
     "queries": [
       {
         "name": "query0",
-        "query": "Find Root",
+        "query": "Find DataStore with classification=('critical' or 'sensitive' or 'confidential' or 'restricted') and encrypted!=true",
         "version": "v1"
       }
     ]
