@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: 2tW2q0K0GlnWGZOWkt7RSATDfN/8xz7seFVElwPlyoE=
+        hash: y0gRjoYERtjSOdjzrmS0+3jALMzjrBTl/k96tODgTU0=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -532,6 +532,11 @@ sections:
         id: 360022902533
         hash: EDGYzrt4fu45+iNpjLeMn7nqDohIQ8yfmGqWQSgQfkc=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533-Google'
+      - title: Google Cloud
+        file: ../docs/integrations/google-cloud/index.md
+        hash: Gjqkw4sSVrq9saIOfBKEGr/09mm5X2lFHdPNGvSAxbo=
+        id: 360052241514
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360052241514'
       - title: HackerOne
         file: ../docs/integrations/hackerone/index.md
         id: 360022902553
