@@ -33,6 +33,7 @@ AWS EventBridge documentation for more details.
 
 ## Supported Services
 
+- IAM
 - S3
 
 The full list of supported API calls can be found in the [AWS integration's
