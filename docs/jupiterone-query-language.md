@@ -60,7 +60,7 @@ boundaries obvious to query authors.
 > - The `undefined` keyword can be used to filter on the absence of a property.
 >   For example: `FIND DataStore with encrypted=undefined`
 > - If a property name contains special characters (e.g. `-` or `:`), you can
->   wrap the property name in `[]`.  
+>   wrap the property name in `[]`.
 >   For example: `[tag.special-name]='something'`
 
 `AND`, `OR` for multiple property comparisons are supported.
@@ -349,7 +349,7 @@ J1QL supports basic math operations on the return values.
 
 - The operation only works against number values. It will not work against
   strings or strings that represent numbers:
-  
+
   > `'1'` will not work, has to be `1`
 
 Example query:
@@ -368,6 +368,72 @@ Find (aws_db_cluster_snapshot|aws_db_snapshot) as snapshot
 Return
   snapshot.tag.AccountName as Account,
   sum(snapshot.allocatedStorage) * 0.02 as EstimatedCost
+```
+
+## Optional traversals
+
+In situations where it is useful to optionally find related entities
+and use the value if it exists, J1QL allows for portions of a query can be
+wrapped with a `(` and `)?` to mark that section of the query as an optional
+traversal. This allows for related entities from a graph
+traversal to be coalesced.
+
+Example query:
+
+```j1ql
+find User (that IS Person)?
+```
+
+In the above example, we search for `User` entities
+and optionally traverse an `IS` relationship to a `Person` entity.
+If the relationship exists, the related `Person` entities are returned in
+the list of results.
+If the relationship does not exist, the `User` entity is returned.
+
+Relationships can still chained within an optional traversal. The query
+below will return a list of `Device` owned by a `Person` that is a `User`
+and `User` entities that do not have the indirect relationship to the `Device`.
+
+```j1ql
+Find User (that IS Person that OWNS Device)?
+```
+
+Relationships that come after an optional traversal are performed on the
+coalesced results. This query searches for AWS accounts or AWS IAM roles
+in the account that trusts another account.
+
+```j1ql
+Find aws_account as awsMasterAccount
+  (that HAS aws_iam_role as assumeRole)?
+  that TRUSTS aws_account as awsSubAccount
+Return awsMasterAccount
+```
+
+Optional traversals can also be chained. The coalesced results from
+of each previous optional traversal will be used in the next optional
+traversal.
+
+The below query will find `User` entities, `Person` entities
+that have an `IS` relationship to the `User` and `Device` entites
+that are owned by the `Person` or `User` entities from the previous
+optional traversal.
+
+```j1ql
+Find User
+  (that is Person)?
+  (that owns Device)?
+return User, Person, Device
+```
+
+The optional traversals can also be aliased. This allows for coalesced
+entities to be used when returning results and when applying constraints.
+
+```j1ql
+Find User
+  (that is Person)? as UserOrPerson
+  that owns Device
+Where UserOrPerson.email = 'test@jupiterone.com'
+return UserOrPerson, Device
 ```
 
 ## Examples
