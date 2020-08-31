@@ -387,9 +387,8 @@ find User (that IS Person)?
 
 In the above example, we search for `User` entities
 and optionally traverse an `IS` relationship to a `Person` entity.
-If the relationship exists, the related `Person` entities are returned in
-the list of results.
-If the relationship does not exist, the `User` entity is returned.
+If the relationship exists, the related `Person` entities are
+added to the list of results.
 
 Relationships can still chained within an optional traversal. The query
 below will return a list of `Device` owned by a `Person` that is a `User`
