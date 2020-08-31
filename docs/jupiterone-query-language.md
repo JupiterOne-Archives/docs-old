@@ -376,7 +376,8 @@ In situations where it is useful to optionally find related entities
 and use the value if it exists, J1QL allows for portions of a query can be
 wrapped with a `(` and `)?` to mark that section of the query as an optional
 traversal. This allows for related entities from a graph
-traversal to be coalesced.
+traversal to be unioned together and for additional constraints to be applied
+to the set of entities.
 
 Example query:
 
@@ -399,7 +400,7 @@ Find User (that IS Person that OWNS Device)?
 ```
 
 Relationships that come after an optional traversal are performed on the
-coalesced results. This query searches for AWS accounts or AWS IAM roles
+unioned results. This query searches for AWS accounts or AWS IAM roles
 in the account that trusts another account.
 
 ```j1ql
@@ -409,13 +410,13 @@ Find aws_account as awsMasterAccount
 Return awsMasterAccount
 ```
 
-Optional traversals can also be chained. The coalesced results from
+Optional traversals can also be chained. The joined results from
 of each previous optional traversal will be used in the next optional
 traversal.
 
 The below query will find `User` entities, `Person` entities
 that have an `IS` relationship to the `User` and `Device` entites
-that are owned by the `Person` or `User` entities from the previous
+that are owned by `Person` and `User` entities from the previous
 optional traversal.
 
 ```j1ql
@@ -425,7 +426,7 @@ Find User
 return User, Person, Device
 ```
 
-The optional traversals can also be aliased. This allows for coalesced
+The optional traversals can also be aliased. This allows for union set of
 entities to be used when returning results and when applying constraints.
 
 ```j1ql
