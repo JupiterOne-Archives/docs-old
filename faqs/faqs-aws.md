@@ -37,6 +37,26 @@ i.e. `public=true` -- only when the following conditions are met:
 - The VPC or subnet has a Route in the Route Table to external networks
 - The VPC or subnet has a Network ACL that allows traffic to/from external networks
 
+## Why is the security group of an EC2 instance showing as connected to the Internet when the instance itself is not in a public subnet?
+
+Relationships in the JupiterOne graph represent the actual configurations between two entities.
+
+In this case, if a security group has a rule allowing traffic to or from the Internet, there will be a
+relationship edge between that security group connecting it to/from the Internet. The EC2 instance 
+itself will _not_ have a relationship edge to/from the Internet.
+
+To determine whether an EC2 instance is publicly accessible, the instance itself needs to be in a public
+subnet in addition to having a security group rule allowing traffic. This is determined by a query that
+checks for both of these conditions:
+
+```j1ql
+Find aws_subnet with public=true
+  that HAS aws_instance
+  that PROTECTS aws_security_group
+  that ALLOWS Internet
+Return tree
+```
+
 ## How do I add custom properties to my AWS entities from the source?
 
 You can add custom properties by tagging your AWS resources. AWS supports tags
