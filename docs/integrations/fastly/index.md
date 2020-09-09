@@ -14,8 +14,6 @@ conigure this integration you should have an account in Fastly and create an
 - The **API Token** can be created from
   https://manage.fastly.com/account/personal/tokens
 
-## Data Model
-
 <!-- {J1_DOCUMENTATION_MARKER_START} -->
 <!--
 ********************************************************************************
