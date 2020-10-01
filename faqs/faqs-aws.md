@@ -13,6 +13,27 @@ Or they can be found on the [jupiterone-aws-integration][] project on Github.
 
 [jupiterone-aws-integration]: https://github.com/jupiterone/jupiterone-aws-integration
 
+## How can I add/configure all the sub-accounts in my AWS Organization?
+
+First configure your AWS Organization master account to JupiterOne per the instructions 
+in the JupiterOne application or those found at the [jupiterone-aws-integration][] project on Github. 
+During this process you will create an IAM Role for JupiterOne with specific policies attached and a 
+specific external trust ID. Please note the IAM Role name, policies, and external trust ID used. 
+Finally, make sure that in the JupiterOne application you select the option to "Auto-configure additional integrations...". 
+
+Now use your favorite infrastructure-as-code method to systematically generate an identical JupiterOne IAM Role in each of your 
+sub-accounts. Be sure to name the IAM Role identically, attach the same policies, and use the same external trust ID 
+as was used with the master account configuration. If these steps are done correctly, JupiterOne will automatically pull in all
+sub-accounts from the Organization the next time it polls your environment.
+
+[jupiterone-aws-integration]: https://github.com/jupiterone/jupiterone-aws-integration
+
+## How can I skip certain sub-accounts when auto-configuring my AWS Organization?
+
+To skip certain sub-accounts when auto-configuring JupiterOne AWS integrations 
+from an Organizations master account, add the optional `j1-integration: SKIP` tag 
+to the sub-account from the AWS Organizations web console.
+
 ## I have a Network marked as "public", what does that mean?
 
 The `public` property on a Network entity means the network is publicly
