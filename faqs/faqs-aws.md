@@ -94,17 +94,17 @@ Find aws_instance with tag.Environment='staging'
 ## I am using a powerful policy like AdministratorAccess in AWS, why can't I query on the resources it allows?
 
 The relationships in J1 are built between the entities as described in the environments. For example, 
-the AdministratorAccess IAM policy in AWS is an `allow *:*` rule, therefore there's a relationship 
-built directly from that aws_iam_policy entity to the aws_account entity.
+the `AdministratorAccess` IAM policy in AWS has an `allow *:*` rule, therefore, a relationship is
+built directly from that `aws_iam_policy` entity to the `aws_account` entity.
 
-Similarly, if the policy states `allow s3:*`, the ALLOWS relationship in JupiterOne is built between 
-the aws_iam_policy entity to the aws_s3 service entity. This approach allows for simpler graph without 
+Similarly, if the policy states `allow s3:*`, the `ALLOWS` relationship in JupiterOne is built between 
+the `aws_iam_policy` entity to the `aws_s3` service entity. This approach allows for simpler graph without 
 thousands of connections from one entity to all other sub-entities that reside within an account or service.
 
 These conditions need to be taken into account at the query level.
 
-For example, to find AccessPolicies that allow access to s3 buckets, we should also check those that 
-allow access to all resources in the s3 service and those that allow access to all services in the aws_account.
+For example, to find IAM policies that allow access to S3 buckets, we should also check those that 
+allow access to all resources in the S3 service and those that allow access to all services in the AWS account.
 
 This is done simply as follows:
 
