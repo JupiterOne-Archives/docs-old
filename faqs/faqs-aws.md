@@ -29,7 +29,7 @@ sub-accounts from the Organization the next time it polls your environment.
 
 To skip certain sub-accounts when auto-configuring JupiterOne AWS integrations 
 from an Organizations master account, add the optional `j1-integration: SKIP` tag 
-to the sub-account from the AWS Organizations web console.
+to the sub-account in your infrastructure-as-code or from the AWS Organizations web console.
 
 ## I have a Network marked as "public", what does that mean?
 
@@ -108,5 +108,8 @@ This is done simply as follows:
 Find AccessPolicy 
   that ALLOWS (aws_account|aws_s3|aws_s3_bucket) ...
 ```
+<<<<<<< HEAD
 
 [jupiterone-aws-integration]: https://github.com/jupiterone/jupiterone-aws-integration
+=======
+>>>>>>> 61f15c349ff853f1afd6452cca236de638430ec9
