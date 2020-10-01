@@ -11,28 +11,45 @@ findings with the built-in READER role event after adding all of the modules.
 This may be related to parts of the Qualys "host detection" feature being
 controlled by a license setting.
 
+<!-- {J1_DOCUMENTATION_MARKER_START} -->
+<!--
+********************************************************************************
+NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
+"j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
+DOCUMENTATION FOR USAGE INFORMATION:
+
+https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+********************************************************************************
+-->
+
 ## Data Model
 
 ### Entities
 
-Provide a table that maps concepts from the provider to the `_type` and `_class`
-generated.
+The following entities are created:
 
-| Resources       | \_type of the Entity     | \_class of the Entity |
-| --------------- | ------------------------ | --------------------- |
-| Host            | `qualys_host`            | `Host`                |
-| Host Finding    | `qualys_host_finding`    | `Finding`             |
-| Web App         | `qualys_web_app`         | `Application`         |
-| Web App Finding | `qualys_web_app_finding` | `Finding`             |
-| Vulnerability   | `qualys_vuln`            | `Vulnerability`       |
+| Resources       | Entity `_type`           | Entity `_class` |
+| --------------- | ------------------------ | --------------- |
+| Host            | `qualys_host`            | `Host`          |
+| Host Finding    | `qualys_host_finding`    | `Finding`       |
+| Vulnerability   | `qualys_vuln`            | `Vulnerability` |
+| Web App         | `qualys_web_app`         | `Application`   |
+| Web App Finding | `qualys_web_app_finding` | `Finding`       |
 
 ### Relationships
 
 The following relationships are created/mapped:
 
-| From                     | Edge    | To                       |
-| ------------------------ | ------- | ------------------------ |
-| `qualys_host`            | **HAS** | `qualys_host_finding`    |
-| `qualys_host_finding`    | **IS**  | `qualys_vuln`            |
-| `qualys_web_app`         | **HAS** | `qualys_web_app_finding` |
-| `qualys_web_app_finding` | **IS**  | `qualys_vuln`            |
+| Source Entity `_type` | Relationship `_class` | Target Entity `_type`    |
+| --------------------- | --------------------- | ------------------------ |
+| `qualys_host_finding` | **IS**                | `qualys_vuln`            |
+| `qualys_host`         | **HAS**               | `qualys_host_finding`    |
+| `qualys_host_finding` | **IS**                | `qualys_vuln`            |
+| `qualys_web_app`      | **HAS**               | `qualys_web_app_finding` |
+
+<!--
+********************************************************************************
+END OF GENERATED DOCUMENTATION AFTER BELOW MARKER
+********************************************************************************
+-->
+<!-- {J1_DOCUMENTATION_MARKER_END} -->

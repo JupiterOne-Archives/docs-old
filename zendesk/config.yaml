@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: Oef/kBasg4cqvXk+wp78Bag/VCUYv1GaoeuZLylNeBs=
+        hash: bfloKJqdoTC6riXPFjD7ICmg6BoA3iJwCcBmbyIDZiA=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -454,7 +454,7 @@ sections:
       - title: AWS
         file: ../docs/integrations/aws/index.md
         id: 360022721054
-        hash: TzMUx2UIDkvxSh1zE3OTLcRMvYIFRt18VLJeZUABw64=
+        hash: W6573XYtU+niwSz69XBGsjSJ8d+Clf0dCUcYoGHS9Ak=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721054'
       - title: AWS CloudTrail Event Streaming
         file: ../docs/integrations/aws/cloudtrail-event-streaming.md
@@ -463,9 +463,14 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360051794213'
       - title: Azure
         file: ../docs/integrations/azure/graph-azure.md
-        hash: bsezpvItQIgUAzKhdd4w5xjUp6tihnfECDSq3iKBE0w=
+        hash: DqKQFUMGUUJ1IJIUXXTyBqnfBEKhzoqRZ7p1bkIljkU=
         id: 360024909213
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909213'
+      - title: BambooHR
+        file: ../docs/integrations/bamboohr/index.md
+        hash: g+hHMUOdSVz+ZxZC3OeZ8pQMgqbY2263iZ9I3NXC2u8=
+        id: 360056759813
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360056759813'
       - title: BitBucket
         file: ../docs/integrations/bitbucket/bitbucket.md
         id: 360022721074
@@ -513,7 +518,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047438713'
       - title: Duo
         file: ../docs/integrations/duo/index.md
-        hash: Wyh1h1IjmTwgnr5fzE8ENdskEOLV33yS1m5/FdhPcYY=
+        hash: qHpPTO+hblS4NST2sPCHPhJWxkU+ZdwDhU7eeCRjxTw=
         id: 360047594893
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047594893'
       - title: Fastly
@@ -536,14 +541,19 @@ sections:
         hash: qt9vZNITozqBpbDUp2w0rLhrWvXl+v7HGU5KpPU5Pwk=
         id: 360047916954
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047916954'
+      - title: GoDaddy
+        file: ../docs/integrations/godaddy/index.md
+        hash: 61Ifs7cpfvtrdqsrNmOvMsCAVNJcwnQSuQVy8BNaeAI=
+        id: 360056759833
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360056759833'
       - title: Google
         file: ../docs/integrations/google/jupiter-integration-google.md
         id: 360022902533
-        hash: EDGYzrt4fu45+iNpjLeMn7nqDohIQ8yfmGqWQSgQfkc=
-        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533-Google'
+        hash: nyrsCPB70gmV+YsiTyLcCN1K6xn4LGSpBg9QFvUXfS4=
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
-        hash: Gjqkw4sSVrq9saIOfBKEGr/09mm5X2lFHdPNGvSAxbo=
+        hash: HuVqmWDHEgELXClM20CGbcz5MXxHqKmw20P2aatrRgQ=
         id: 360052241514
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360052241514'
       - title: HackerOne
@@ -608,9 +618,14 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046951894'
       - title: Qualys
         file: ../docs/integrations/qualys/index.md
-        hash: rCgBKdkWnUwnpJ6mVnqJqqpu0si4aCS04qxp0qozQWA=
+        hash: 5Ni27uPRRZAH/J0mL5M9w1BdgjodD6XvVgZqQZ7Ed48=
         id: 360046952094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046952094'
+      - title: Rapid7
+        file: ../docs/integrations/rapid7/index.md
+        hash: W1aW+oynYUMQpbRKnYORtxIsgcccJe5a46o1E1hDPo8=
+        id: 360056759853
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360056759853'
       - title: SentinelOne
         file: ../docs/integrations/sentinelone/jupiter-integration-sentinelone.md
         id: 360022721214

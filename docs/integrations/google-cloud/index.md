@@ -47,29 +47,50 @@ NOTE: You may also create a service account key using the
 how to leverage the CLI in the
 [Google Cloud integration developer documentation](https://github.com/JupiterOne/graph-google-cloud/blob/master/docs/development.md).
 
+<!-- {J1_DOCUMENTATION_MARKER_START} -->
+<!--
+********************************************************************************
+NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
+"j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
+DOCUMENTATION FOR USAGE INFORMATION:
+
+https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+********************************************************************************
+-->
+
 ## Data Model
 
 ### Entities
 
-Provide a table that maps concepts from the provider to the `_type` and `_class`
-generated.
+The following entities are created:
 
-| Resources            | \_type of the Entity             | \_class of the Entity |
-| -------------------- | -------------------------------- | --------------------- |
-| Cloud Function       | `google_cloud_function`          | `Function`            |
-| Cloud Storage Bucket | `google_storage_bucket`          | `DataStore`           |
-| Cloud API Service    | `google_cloud_api_service`       | `Service`             |
-| IAM Role             | `google_iam_role`                | `AccessRole`          |
-| IAM Service Account  | `google_iam_service_account`     | `User`                |
-| IAM Service Account  | `google_iam_service_account_key` | `AccessKey`           |
-| IAM User             | `google_user`                    | `User`                |
+| Resources               | Entity `_type`                   | Entity `_class`     |
+| ----------------------- | -------------------------------- | ------------------- |
+| Cloud API Service       | `google_cloud_api_service`       | `Service`           |
+| Cloud Function          | `google_cloud_function`          | `Function`          |
+| Cloud Storage Bucket    | `google_storage_bucket`          | `DataStore`         |
+| Compute Disk            | `google_compute_disk`            | `DataStore`, `Disk` |
+| Compute Instance        | `google_compute_instance`        | `Host`              |
+| IAM Role                | `google_iam_role`                | `AccessRole`        |
+| IAM Service Account     | `google_iam_service_account`     | `User`              |
+| IAM Service Account Key | `google_iam_service_account_key` | `AccessKey`         |
+| IAM User                | `google_user`                    | `User`              |
 
 ### Relationships
 
 The following relationships are created/mapped:
 
-| From                         | Edge         | To                               |
-| ---------------------------- | ------------ | -------------------------------- |
-| `google_iam_service_account` | **HAS**      | `google_iam_service_account_key` |
-| `google_iam_service_account` | **ASSIGNED** | `google_iam_role`                |
-| `google_user`                | **ASSIGNED** | `google_iam_role`                |
+| Source Entity `_type`        | Relationship `_class` | Target Entity `_type`            |
+| ---------------------------- | --------------------- | -------------------------------- |
+| `google_compute_instance`    | **TRUSTS**            | `google_iam_service_account`     |
+| `google_compute_instance`    | **USES**              | `google_compute_disk`            |
+| `google_iam_service_account` | **ASSIGNED**          | `google_iam_role`                |
+| `google_iam_service_account` | **HAS**               | `google_iam_service_account_key` |
+| `google_user`                | **ASSIGNED**          | `google_iam_role`                |
+
+<!--
+********************************************************************************
+END OF GENERATED DOCUMENTATION AFTER BELOW MARKER
+********************************************************************************
+-->
+<!-- {J1_DOCUMENTATION_MARKER_END} -->
