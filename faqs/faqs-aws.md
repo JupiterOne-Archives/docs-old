@@ -11,8 +11,6 @@ can find details on the required permissions by going to
 
 Or they can be found on the [jupiterone-aws-integration][] project on Github.
 
-[jupiterone-aws-integration]: https://github.com/jupiterone/jupiterone-aws-integration
-
 ## How can I add/configure all the sub-accounts in my AWS Organization?
 
 First configure your AWS Organization master account to JupiterOne per the instructions 
@@ -25,8 +23,6 @@ Now use your favorite infrastructure-as-code method to systematically generate a
 sub-accounts. Be sure to name the IAM Role identically, attach the same policies, and use the same external trust ID 
 as was used with the master account configuration. If these steps are done correctly, JupiterOne will automatically pull in all
 sub-accounts from the Organization the next time it polls your environment.
-
-[jupiterone-aws-integration]: https://github.com/jupiterone/jupiterone-aws-integration
 
 ## How can I skip certain sub-accounts when auto-configuring my AWS Organization?
 
@@ -111,3 +107,5 @@ This is done simply as follows:
 Find AccessPolicy 
   that ALLOWS (aws_account|aws_s3|aws_s3_bucket) ...
 ```
+
+[jupiterone-aws-integration]: https://github.com/jupiterone/jupiterone-aws-integration
