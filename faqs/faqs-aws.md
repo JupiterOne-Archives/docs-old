@@ -11,7 +11,29 @@ can find details on the required permissions by going to
 
 Or they can be found on the [jupiterone-aws-integration][] project on Github.
 
-[jupiterone-aws-integration]: https://github.com/jupiterone/jupiterone-aws-integration
+## How can I add/configure all the sub-accounts in my AWS Organization?
+
+First configure your AWS Organization master account to JupiterOne per the instructions 
+in the JupiterOne application or those found at the [jupiterone-aws-integration][] project on Github. 
+During this process you will create an IAM Role for JupiterOne with specific policies attached and a 
+specific external trust ID. Please note the IAM Role name, policies, and external trust ID used. 
+Do not select the option "Auto-configure additional integrations..." yet.
+
+Now use your favorite infrastructure-as-code method to systematically generate an identical JupiterOne IAM Role in each of your 
+sub-accounts. Be sure to name the IAM Role identically, attach the same policies, and use the same external trust ID 
+as was used with the master account configuration.
+
+Finally, make sure that in the JupiterOne application you have selected a polling inverval and select the option 
+to "Auto-configure additional integrations..." in your master account configuration.
+
+If these steps are done correctly, JupiterOne will automatically pull in all
+sub-accounts from the Organization the next time it polls your environment.
+
+## How can I skip certain sub-accounts when auto-configuring my AWS Organization?
+
+To skip certain sub-accounts when auto-configuring JupiterOne AWS integrations 
+from an Organizations master account, add the optional `j1-integration: SKIP` tag 
+to the sub-account in your infrastructure-as-code or from the AWS Organizations web console.
 
 ## I have a Network marked as "public", what does that mean?
 
@@ -68,3 +90,27 @@ You can then build queries using these tag properties. For example:
 ```j1ql
 Find aws_instance with tag.Environment='staging'
 ```
+
+## I am using a powerful policy like AdministratorAccess in AWS, why can't I query on the resources it allows?
+
+The relationships in J1 are built between the entities as described in the environments. For example, 
+the AdministratorAccess IAM policy in AWS is an `allow *:*` rule, therefore there's a relationship 
+built directly from that aws_iam_policy entity to the aws_account entity.
+
+Similarly, if the policy states `allow s3:*`, the ALLOWS relationship in JupiterOne is built between 
+the aws_iam_policy entity to the aws_s3 service entity. This approach allows for simpler graph without 
+thousands of connections from one entity to all other sub-entities that reside within an account or service.
+
+These conditions need to be taken into account at the query level.
+
+For example, to find AccessPolicies that allow access to s3 buckets, we should also check those that 
+allow access to all resources in the s3 service and those that allow access to all services in the aws_account.
+
+This is done simply as follows:
+
+```
+Find AccessPolicy 
+  that ALLOWS (aws_account|aws_s3|aws_s3_bucket) ...
+```
+
+[jupiterone-aws-integration]: https://github.com/jupiterone/jupiterone-aws-integration
