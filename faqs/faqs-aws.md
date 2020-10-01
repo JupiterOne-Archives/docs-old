@@ -71,15 +71,22 @@ Find aws_instance with tag.Environment='staging'
 
 ## I am using the AdministratorAccess policy in AWS, how is it mapped in the JupiterOne graph?
 
-The relationships in J1 are built between the entities as described in the environments.
-In this case, the AdministratorAccess IAM policy in AWS is an `allow *:*` rule, therefore there's a relationship built directly from that aws_iam_policy entity to the aws_account entity.
-Similarly, if the policy states `allow s3:*`, the ALLOWS relationship in JupiterOne is built between the aws_iam_policy entity to the aws_s3 Service entity.
-This approach allows for simpler graph -- without have thousands of lines from one entity to all other sub-entities that reside within an account or service.
+The relationships in J1 are built between the entities as described in the environments. In this case, 
+the AdministratorAccess IAM policy in AWS is an `allow *:*` rule, therefore there's a relationship 
+built directly from that aws_iam_policy entity to the aws_account entity.
 
-These conditions need to be taken into account at the query level. For example:
+Similarly, if the policy states `allow s3:*`, the ALLOWS relationship in JupiterOne is built between 
+the aws_iam_policy entity to the aws_s3 Service entity. This approach allows for simpler graph without 
+thousands of connections from one entity to all other sub-entities that reside within an account or service.
 
-**To find AccessPolicies that can access s3 bucket**
+These conditions need to be taken into account at the query level.
+
+For example, to find AccessPolicies that allow access to s3 buckets, we should also check those that 
+allow access to all resources in the s3 service and those that allow access to all services in the aws_account.
+
+This is done simply as follows:
+
 ```
 Find AccessPolicy 
-  that allows (aws_account|aws_s3|aws_s3_bucket) ...
+  that ALLOWS (aws_account|aws_s3|aws_s3_bucket) ...
 ```
