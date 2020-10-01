@@ -108,8 +108,5 @@ This is done simply as follows:
 Find AccessPolicy 
   that ALLOWS (aws_account|aws_s3|aws_s3_bucket) ...
 ```
-<<<<<<< HEAD
 
 [jupiterone-aws-integration]: https://github.com/jupiterone/jupiterone-aws-integration
-=======
->>>>>>> 61f15c349ff853f1afd6452cca236de638430ec9
