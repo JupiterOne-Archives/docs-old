@@ -17,12 +17,16 @@ First configure your AWS Organization master account to JupiterOne per the instr
 in the JupiterOne application or those found at the [jupiterone-aws-integration][] project on Github. 
 During this process you will create an IAM Role for JupiterOne with specific policies attached and a 
 specific external trust ID. Please note the IAM Role name, policies, and external trust ID used. 
-Finally, make sure that in the JupiterOne application you select a polling inverval and select the option 
-to "Auto-configure additional integrations...". 
+Do not select the option "Auto-configure additional integrations..." yet.
 
 Now use your favorite infrastructure-as-code method to systematically generate an identical JupiterOne IAM Role in each of your 
 sub-accounts. Be sure to name the IAM Role identically, attach the same policies, and use the same external trust ID 
-as was used with the master account configuration. If these steps are done correctly, JupiterOne will automatically pull in all
+as was used with the master account configuration.
+
+Finally, make sure that in the JupiterOne application you have selected a polling inverval and select the option 
+to "Auto-configure additional integrations..." in your master account configuration.
+
+If these steps are done correctly, JupiterOne will automatically pull in all
 sub-accounts from the Organization the next time it polls your environment.
 
 ## How can I skip certain sub-accounts when auto-configuring my AWS Organization?
