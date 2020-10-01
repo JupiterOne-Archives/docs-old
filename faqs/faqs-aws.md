@@ -69,14 +69,14 @@ You can then build queries using these tag properties. For example:
 Find aws_instance with tag.Environment='staging'
 ```
 
-## I am using the AdministratorAccess policy in AWS, how is it mapped in the JupiterOne graph?
+## I am using a powerful policy like AdministratorAccess in AWS, why can't I query on the resources it allows?
 
-The relationships in J1 are built between the entities as described in the environments. In this case, 
+The relationships in J1 are built between the entities as described in the environments. For example, 
 the AdministratorAccess IAM policy in AWS is an `allow *:*` rule, therefore there's a relationship 
 built directly from that aws_iam_policy entity to the aws_account entity.
 
 Similarly, if the policy states `allow s3:*`, the ALLOWS relationship in JupiterOne is built between 
-the aws_iam_policy entity to the aws_s3 Service entity. This approach allows for simpler graph without 
+the aws_iam_policy entity to the aws_s3 service entity. This approach allows for simpler graph without 
 thousands of connections from one entity to all other sub-entities that reside within an account or service.
 
 These conditions need to be taken into account at the query level.
