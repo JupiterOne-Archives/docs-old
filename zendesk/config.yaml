@@ -713,6 +713,8 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2020.56 Release
+        file: ../release-notes/2020-56.md
       - title: 2020.55 Release
         file: ../release-notes/2020-55.md
         hash: EjrlfLUE73jQ85i/icsT5ccqZaUgnGjuWGb8mDOhU7s=
