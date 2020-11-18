@@ -28,8 +28,8 @@ This is not a complete listing. For more, see <https://github.com/JupiterOne>.
 
 - `security-policy-templates`:
   
-  A set of policies, standards and procedures with mapping to HIPAA, HITRUST
-  CSF, PCI DSS, NIST, CIS Controls, etc.
+  A set of policies, standards and procedures with mapping to HIPAA, SOC 2,
+  PCI DSS, NIST, CIS Controls, etc.
 
   <https://github.com/JupiterOne/security-policy-templates>
 
