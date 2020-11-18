@@ -156,9 +156,7 @@ high level written policy. Having a written policy by itself without
 implementation or enforcement does not address the risk of any security
 or compliance requirement.
 
-Internally at JupiterOne, we leverage CIS Controls and PCI DSS. JupiterOne's
-parent company, LifeOmic, builds a suite of healthcare related software products
-and is therefore under HIPAA regulation and has adopted HITRUST CSF.
+Internally at JupiterOne, we leverage CIS Controls and SOC 2.
 
 The JSON documents for those four frameworks are included strictly because of
 our internal usage and shown as examples. Using those requires that you have

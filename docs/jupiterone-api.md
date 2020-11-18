@@ -1333,8 +1333,8 @@ variables:
     ],
     "compliance": [
       {
-        "standard": "HITRUST CSF",
-        "requirements": ["10.k"]
+        "standard": "NIST CSF",
+        "requirements": ["ID.AM-1"]
       }
     ]
   }
@@ -1392,8 +1392,8 @@ variables:
     ],
     "compliance": [
       {
-        "standard": "HITRUST CSF",
-        "requirements": ["10.k"]
+        "standard": "NIST CSF",
+        "requirements": ["ID.AM-1"]
       }
     ]
   }
