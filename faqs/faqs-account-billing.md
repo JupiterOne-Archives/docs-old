@@ -17,6 +17,11 @@ The following entities are not counted for billing/usage calculation:
   external Network or Host entity created because a security group contains a
   rule pointing to it.
 
+- **System Internal Entities** -- these are entities with `_source='system-internal'`
+  property. These are internal JupiterOne system/app generated resources that
+  are mapped to the graph as entities, such as `compliance_standard`, 
+  `compliance_requirement`, etc.
+
 - **Findings and PRs** -- these entities are considered "event-like" and not
   true resources in an digital operating environment, therefore they are not
   being counted for usage/billing purpose.
@@ -28,7 +33,7 @@ Run the following query in your account to get a count:
 
 ```j1ql
 Find * with
-  _source != 'system-mapper' and
+  _source !^= 'system-' and
   _class !=
     ('Finding' and 'PR' and 'Image' and 'NetworkInterface' and 'IpAddress')
   as e
@@ -39,26 +44,24 @@ return
 ## What are the limitations of the `COMMUNITY` Edition of JupiterOne? 
 
 JupiterOne `COMMUNITY` Edition is FREE for non-commercial use, non-profit or
-small teams. It comes with the following features:
+small teams. It comes with the following features and limitations:
 
 - Configure up to *five* integration instances
-- Up to 500 entities and 10 users
-- Access to Asset Inventory / CMDB, search, query and graph visualization from
-  query results
+- Integrations are limited to WEEKLY scheduled polling or on-demand runs
+- Up to 500 entities
+- Up to 10 users
+- Full featured access to Asset Inventory / CMDB, search, query and 
+  graph visualization from query results
+- Access to Policies app and full templates library
 
-The following limitations apply:
+A paid subscription is required for the following capabilities:
 
-- Integrations cannot be configured for scheduled polling -- you can still
-  manually trigger an integration to run to get updated data.
-
-Additionally, a paid subscription is required for the following capabilities:
-
-- Automated and continuous data polling and analysis
+- Daily and hourly data polling and analysis
 - Alerts and notifications (email, Jira, Slack)
 - Reporting charts and dashboards
 - Compliance management, evidence collection with continuous assessment
-- Policy management (build/edit/export policies and procedures) and compliance
-  mapping
+- Full policy management (build/edit/export policies and procedures) and 
+  compliance mapping
 - Full API access
 - SAML Single Sign On
 
