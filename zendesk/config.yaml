@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: r1VFqbgqCd9/OldtPz6Ifvtm5n0qAJDpZ8aRZ3yfCkQ=
+        hash: It3R8xytDtQNro4hFWXtxLfId7Db4Vr8tqHrQEOOJdk=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -430,6 +430,11 @@ sections:
         hash: HCvLwrmHMbybeOoevnucoRGbwHBLsBR7RxbneBC3bvA=
         id: 360040954034
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360040954034'
+      - title: Data Model for People and Access
+        file: ../docs/data-model/people.md
+        hash: 4POmka9y+srykbp8Rne3hG6yVuDmWZoX+VptMa+HFg0=
+        id: 360058211974
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360058211974'
       - title: 'Data Model for Organization, Account, and Vendor Management'
         file: ../docs/data-model/org-mgmt.md
         hash: QUEMF2KhqLOZOP/1NjQF3Uz0vBTmFz94SiFitoVOAwg=
