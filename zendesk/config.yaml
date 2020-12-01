@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: SXvpf2kXs3Qhwnpc6Avt4Caz/Z511k57aLlccHL17Iw=
+        hash: 3s2ALBUwB9PSmkkqjPSt8tqrhf9p6cuikQe3N2xUOHk=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -417,7 +417,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049346733'
       - title: Data Model for Software Development
         file: ../docs/data-model/development.md
-        hash: /9rVmz0zeK2p9S8QDqUSZJcYvhYF8ZxMEPBCMYLFCxw=
+        hash: uCHaKoDmn/1kEuhok61nnpQSHIAdeyMcdqBs16Zi0Ow=
         id: 360058212854
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360058212854'
       - title: Data Model for Vulnerability Management
@@ -437,7 +437,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360040954034'
       - title: Data Model for People and Access
         file: ../docs/data-model/people.md
-        hash: wLleTrRv/k74dDLZ/ria7y3oiCPAWsCarscLxD14KYs=
+        hash: id2DAFKgL1BYK9u9PNRMCpgq7VKnNMX9OkVuKpR8jQw=
         id: 360058211974
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360058211974'
       - title: 'Data Model for Organization, Account, and Vendor Management'
