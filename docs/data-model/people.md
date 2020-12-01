@@ -1,3 +1,5 @@
 # JupiterOne data model for People and Access
 
-![data-model-people](../assets/../../assets/j1-data-model-people.png)
+<div class="Sirv" data-effect="zoom" >
+    <img data-src="https://equarici.sirv.com/Images/j1-data-model-people.png" />
+</div>
