@@ -39,8 +39,26 @@ Creating your own custom alert rule is easy:
 
    ![](../assets/alerts-create-rule.png)
 
-The custom rule will be added and be evaluated daily. If the query you have
-specified in the rule returns at least one match, it will trigger an alert.
+The custom rule will be added and be evaluated daily, hourly, or with streaming evaluation for Enterprise customers. 
+If the query you have specified in the rule returns at least one match, it will trigger an alert.
+
+## Additional Alert Options
+
+We provide the ability to trigger workflows from alerts.
+
+Check the box on the option you would like to utilize and fill in the required information via the drop downs and fields.
+
+![](../assets/alerts-additional-options-1.png)
+
+![](../assets/alerts-additional-options-2.png)
+
+**Some alert options require additional integrations/permissions:**
+1. Slack: You must configure the Slack integration for JupiterOne by [following these instructions](https://support.jupiterone.io/hc/en-us/articles/360046977154-Slack)
+1. JIRA: You must configure the JIRA integration for JupiterOne by [following these instructions](https://support.jupiterone.io/hc/en-us/articles/360022721154-Jira)
+1. SNS: The AWS Account you wish to sned to must be configured as an AWS Integration, and the 
+   JupiterOne IAM Role for the AWS Account you want to publish to must have the `SNS:Publish` permission
+1. SQS: The AWS Account you wish to sned to must be configured as an AWS Integration, and the 
+   JupiterOne IAM Role for the AWS Account you want to publish to must have the `SQS:SendMessage` permission
 
 ## Managing Alerts
 
@@ -54,6 +72,8 @@ up in the **Alerts** app in a data grid that looks like this:
 
 - Click on an individual alert row will expand it to show the alert details.
 - Click on the **DISMISS** button to dismiss an alert.
+
+If an alert is not dismissed, you will not recieve a follow up alert notification unless there are new query results.
 
 ## Configure Daily Notification Email
 
