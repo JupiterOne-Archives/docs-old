@@ -4,7 +4,13 @@
 
 JupiterOne provides a managed integration with KnowBe4. The integration connects
 directly to KnowBe4 APIs to obtain account metadata and analyze resource
-relationships. You authorize access by providing that an API token.
+relationships. You authorize access by providing an API token to the **KnowBe4 Reporting API**.
+
+## Acquiring an API Token
+You can generate a new key in your [KnowBe4 Account Settings][] under the API section.
+Be sure to request a key for the **Reporting API** not the **User Event API**
+KnowBe4 APIs are available to Platinum and Diamond customers.
+
 
 ## Integration Instance Configuration
 
@@ -39,3 +45,5 @@ The following relationships are created/mapped:
 | `training_campaign`  | **ASSIGNED**  | `knowbe4_user_group` |
 | `training_module`    | **ASSIGNED**  | `knowbe4_user`       |
 | `knowbe4_user`       | **COMPLETED** | `training_module`    |
+
+[KnowBe4 Account Settings]: https://training.knowbe4.com/account/info
