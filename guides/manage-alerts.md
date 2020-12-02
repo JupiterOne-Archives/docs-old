@@ -54,6 +54,7 @@ Check the box on the option you would like to utilize and fill in the required i
 
 **Some alert options require additional integrations/permissions:**
 1. Slack: You must configure the Slack integration for JupiterOne by [following these instructions](https://support.jupiterone.io/hc/en-us/articles/360046977154-Slack)
+   Be sure to include specify the channel in the format `#channel`.
 1. JIRA: You must configure the JIRA integration for JupiterOne by [following these instructions](https://support.jupiterone.io/hc/en-us/articles/360022721154-Jira)
 1. SNS: The AWS Account you wish to sned to must be configured as an AWS Integration, and the 
    JupiterOne IAM Role for the AWS Account you want to publish to must have the `SNS:Publish` permission

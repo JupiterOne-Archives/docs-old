@@ -51,8 +51,8 @@ users in a Slack Channel once the JupiterOne Slack integration has been configur
 via the JupiterOne web app. This will prompt the JupiterOne Slack app to be installed
 in your Workspace.
 
-You can alert to private channels if and only if you have invited the JupiterOne Slack
-app to the private channel as well.
+Be sure to include specify the channel in the format `#channel`.
+You can alert to private channels as well if you have invited the JupiterOne Slack app to the private channel as well.
 
 ## Data Model
 
