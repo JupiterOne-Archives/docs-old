@@ -21,7 +21,10 @@ specified to obtain an OAuth token for API requests.
 ### Getting Organization Account ID
 
 From your Google Admin console:
+1. Click **Account Settings** then **Profile** and retrieve your **Customer ID**,
+which should have a format similar to `C1111abcd`
 
+#### Alternatively:
 1. Click Security, then expand Setup single sign-on (SSO)
 1. Copy the `idpid` property value from the SSO URL. For example,
    `https://accounts.google.com/o/saml2/idp?idpid=C1111abcd` provides the ID
@@ -37,15 +40,14 @@ Account.
 
 From your Google Admin console:
 
-1. Click Security, then expand Advanced settings and click on Manage API client
-   access
-1. Enter the JupiterOne Service Account client ID `102174985137827290632` into
-   Client Name
-1. Add the following API scopes (comma separated):
+1. Go to **Security** and click on **API controls**.
+1. In the **Domain wide delegation** pane, select **Manage Domain Wide Delegation**.
+1. Enter the JupiterOne Service Account client ID `102174985137827290632` into the **Client ID** field
+1. Add the following **API scopes** (comma separated):
 
-```text
-https://www.googleapis.com/auth/admin.directory.domain.readonly, https://www.googleapis.com/auth/admin.directory.user.readonly, https://www.googleapis.com/auth/admin.directory.group.readonly, https://www.googleapis.com/auth/admin.directory.user.security
-```
+   ```text
+   https://www.googleapis.com/auth/admin.directory.domain.readonly, https://www.googleapis.com/auth/admin.directory.user.readonly, https://www.googleapis.com/auth/admin.directory.group.readonly, https://www.googleapis.com/auth/admin.directory.user.security
+   ```
 
 1. Click Authorize
 1. Return to the Admin console, click Security, then API Permissions
