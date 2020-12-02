@@ -114,25 +114,26 @@ The following entities are created:
 
 | Resources | Entity `_type`   | Entity `_class` |
 | --------- | ---------------- | --------------- |
-| Domain    | `google_domain`  | `Domain`        |
 | Account   | `google_account` | `Account`       |
+| Domain    | `google_domain`  | `Domain`        |
 | Group     | `google_group`   | `UserGroup`     |
-| User      | `google_user`    | `User`          |
 | Site      | `google_site`    | `Site`          |
 | Token     | `google_token`   | `AccessKey`     |
+| User      | `google_user`    | `User`          |
 
 ### Relationships
 
 The following relationships are created/mapped:
 
-| Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
-| --------------------- | --------------------- | --------------------- |
-| `google_group`        | **HAS**               | `google_user`         |
-| `google_group`        | **HAS**               | `google_group`        |
-| `google_account`      | **HAS**               | `google_group`        |
-| `google_account`      | **HAS**               | `google_user`         |
-| `google_site`         | **HAS**               | `google_user`         |
-| `google_user`         | **ASSIGNED**          | `google_token`        |
+| Source Entity `_type` | Relationship `_class` | Target Entity `_type`          |
+| --------------------- | --------------------- | ------------------------------ |
+| `google_account`      | **HAS**               | `google_group`                 |
+| `google_account`      | **HAS**               | `google_user`                  |
+| `google_group`        | **HAS**               | `google_group`                 |
+| `google_group`        | **HAS**               | `google_user`                  |
+| `google_site`         | **HAS**               | `google_user`                  |
+| `google_token`        | **ALLOWS**            | `mapped_entity (class Vendor)` |
+| `google_user`         | **ASSIGNED**          | `google_token`                 |
 
 <!--
 ********************************************************************************
