@@ -250,8 +250,8 @@ integration instance page. It will look something like `d1549f40-b9fd-447a-bec5-
 
 
 1. Configure a rule with the `SEND_SLACK_MESSAGE` action and specify the
-   `integrationInstanceId` and `channels` properties with the value being the ID
-   specified in the URL above. Example alert rule configuration with the
+   `integrationInstanceId` with the unique identifier of the integration and `channels`
+   denoting the destinations. Example alert rule configuration with the
    `SEND_SLACK_MESSAGE` action:
 
 **NOTE**: In order for the JupiterOne Slack bot to deliever messages to a
