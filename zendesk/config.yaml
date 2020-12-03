@@ -57,7 +57,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: 3s2ALBUwB9PSmkkqjPSt8tqrhf9p6cuikQe3N2xUOHk=
+        hash: 7evo4beICU+yULw+j7syHReQyf4GuEnYIrQmY7UcQsc=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -558,7 +558,7 @@ sections:
       - title: Google
         file: ../docs/integrations/google/jupiter-integration-google.md
         id: 360022902533
-        hash: nyrsCPB70gmV+YsiTyLcCN1K6xn4LGSpBg9QFvUXfS4=
+        hash: PsW+AlnJGzE/j807FP20En+9L+m93ggegn5+l+gfZs0=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
@@ -597,9 +597,9 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360037319533-JumpCloud'
       - title: KnowBe4
         file: ../docs/integrations/knowbe4/index.md
-        hash: mFh5jQYVtCVgF5F6YF2NSv9HON0BJ0uYhkAehm+qXHk=
+        hash: 19jVFiGyORgtWyBfVGrgTr4H8k0oQyQ4i1/ubZ+/Hyg=
         id: 360023741834
-        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360023741834-KnowBe4'
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360023741834'
       - title: NPM
         file: ../docs/integrations/npm/index.md
         hash: 688Nn8Ipg9lKM8k6XEUpVFINk3qCD3E9GQrAZrEeaT0=
