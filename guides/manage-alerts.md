@@ -74,7 +74,7 @@ up in the **Alerts** app in a data grid that looks like this:
 - Click on an individual alert row will expand it to show the alert details.
 - Click on the **DISMISS** button to dismiss an alert.
 
-If an alert is not dismissed, you will not recieve a follow up alert notification unless there are new query results.
+If an alert is not dismissed, you will not recieve a follow up alert notification unless there are changes to the query result.
 
 ## Configure Daily Notification Email
 
