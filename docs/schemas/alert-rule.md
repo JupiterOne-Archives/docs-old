@@ -246,12 +246,7 @@ Example:
 Example:
 
 Once the integration has been configured, copy the integration ID from the
-integration instance page. For example, if the integration instance URL looks
-like this:
-
-`https://apps.us.jupiterone.io/integrations/slack/configuration/d1549f40-b9fd-447a-bec5-4360c9ca7e8c`
-
-Then the integration instance ID is `d1549f40-b9fd-447a-bec5-4360c9ca7e8c`.
+integration instance page. It will look something like `d1549f40-b9fd-447a-bec5-4360c9ca7e8c`.
 
 
 1. Configure a rule with the `SEND_SLACK_MESSAGE` action and specify the
