@@ -32,9 +32,8 @@ sections:
       - title: 6/9 Alerts and Alert Rules
         file: ../guides/manage-alerts.md
         id: 360022720474
-        hash: 6IMpNm+WJ8shm7shsRLOD43WiZrumE/2E1voIoCiSt8=
-        webLink: >-
-          https://support.jupiterone.io/hc/en-us/articles/360022720474-6-9-Alerts-and-Alert-Rules
+        hash: mdoPMnrLtToNcunM2NzsGdl/X0TB2EgTgyVLfBpBQMI=
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720474'
       - title: 7/9 Manage Findings
         file: ../guides/manage-findings.md
         id: 360022901893
@@ -57,7 +56,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: 3s2ALBUwB9PSmkkqjPSt8tqrhf9p6cuikQe3N2xUOHk=
+        hash: TYzrjmH2TiUHSIKfOqBqufGCQp//WNKsUS4uL+iUFog=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -558,7 +557,7 @@ sections:
       - title: Google
         file: ../docs/integrations/google/jupiter-integration-google.md
         id: 360022902533
-        hash: nyrsCPB70gmV+YsiTyLcCN1K6xn4LGSpBg9QFvUXfS4=
+        hash: PsW+AlnJGzE/j807FP20En+9L+m93ggegn5+l+gfZs0=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
@@ -597,9 +596,9 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360037319533-JumpCloud'
       - title: KnowBe4
         file: ../docs/integrations/knowbe4/index.md
-        hash: mFh5jQYVtCVgF5F6YF2NSv9HON0BJ0uYhkAehm+qXHk=
+        hash: 19jVFiGyORgtWyBfVGrgTr4H8k0oQyQ4i1/ubZ+/Hyg=
         id: 360023741834
-        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360023741834-KnowBe4'
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360023741834'
       - title: NPM
         file: ../docs/integrations/npm/index.md
         hash: 688Nn8Ipg9lKM8k6XEUpVFINk3qCD3E9GQrAZrEeaT0=
@@ -648,7 +647,7 @@ sections:
           https://support.jupiterone.io/hc/en-us/articles/360022721214-SentinelOne
       - title: Slack
         file: ../docs/integrations/slack/index.md
-        hash: iIlAajh2e8ZyZGL7vI5vNdgmC8qVKJiFppwZP6pc+5Y=
+        hash: JfeibErkz6A/iljMk4p2AeV+0ytAA3iZJWyQdmFXn70=
         id: 360046977154
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046977154'
       - title: Snipe-IT
@@ -722,6 +721,11 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2020.59 Release
+        file: ../release-notes/2020-59.md
+        hash: qvCSAIhz8w2wuptebuElrm6sYcx5tjNGyNYIytKbG6A=
+        id: 1500000061122
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500000061122'
       - title: 2020.58 Release
         file: ../release-notes/2020-58.md
         hash: vh+NpP7POQOLNUJfKxsV5DYrmbDO7pRYb3EtE4ThQnE=
