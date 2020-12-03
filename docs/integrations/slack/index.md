@@ -47,74 +47,12 @@ Additionally, see the
 for technical details on alert rule/action properties.
 
 JupiterOne can deliver Slack messages directly to any channel or to specific
-users in a Slack team once the JupiterOne slack integration has been configured
-and the Slack app has been installed into the team.
+users in a Slack Channel once the JupiterOne Slack integration has been configured
+via the JupiterOne web app. This will prompt the JupiterOne Slack app to be installed
+in your Workspace.
 
-Once the integration has been configured, copy the integration ID from the
-integration instance page. For example, if the integration instance URL looks
-like this:
-
-`https://apps.us.jupiterone.io/integrations/slack/configuration/d1549f40-b9fd-447a-bec5-4360c9ca7e8c`
-
-Then the integration instance ID is `d1549f40-b9fd-447a-bec5-4360c9ca7e8c`.
-
-Steps to configuring a rule
-
-1. Navigate to the JupiterOne alert rule configuration page (e.g.
-   https://apps.us.jupiterone.io/alerts/edit)
-1. Click "Create Rule"
-1. Click "Show Advanced" to open the advanced rule editor
-1. Configure a rule with the `SEND_SLACK_MESSAGE` action and specify the
-   `integrationInstanceId` and `channels` properties with the value being the ID
-   specified in the URL above. Example alert rule configuration with the
-   `SEND_SLACK_MESSAGE` action:
-
-```json
-{
-  "name": "slack-alert-test",
-  "description": "Testing Slack Messages",
-  "specVersion": 1,
-  "pollingInterval": "ONE_DAY",
-  "templates": {
-    "slackBody": "JupiterOne Account: {{item.displayName}}\n\n"
-  },
-  "question": {
-    "queries": [
-      {
-        "name": "query0",
-        "query": "Find DataStore with classification=('critical' or 'sensitive' or 'confidential' or 'restricted') and encrypted!=true",
-        "version": "v1"
-      }
-    ]
-  },
-  "operations": [
-    {
-      "when": {
-        "type": "FILTER",
-        "specVersion": 1,
-        "condition": "{{queries.query0.total > 0}}"
-      },
-      "actions": [
-        {
-          "targetValue": "HIGH",
-          "type": "SET_PROPERTY",
-          "targetProperty": "alertLevel"
-        },
-        {
-          "type": "CREATE_ALERT"
-        },
-        {
-          "integrationInstanceId": "d1549f40-b9fd-447a-bec5-4360c9ca7e8c",
-          "channels": ["#random"],
-          "type": "SEND_SLACK_MESSAGE",
-          "body": "{{queries.query0.data|mapTemplate('slackBody')|join(' ')}}"
-        }
-      ]
-    }
-  ],
-  "outputs": ["queries.query0.total", "alertLevel"]
-}
-```
+Be sure to include specify the channel in the format `#channel`.
+You can alert to private channels as well if you have invited the JupiterOne Slack app to the private channel as well.
 
 ## Data Model
 
