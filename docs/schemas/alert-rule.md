@@ -1,9 +1,17 @@
 # JupiterOne Alert Rule Schema
 
 A rule uses the results of one or more queries to execute one or more
-actions.
+actions. The basic alert workflows are described here: [JupiterOne Alert Rule configuration documentation](https://support.jupiterone.io/hc/en-us/articles/360022720474-6-9-Alerts-and-Alert-Rules)
+Users can also directly edit the JSON that defines a rule for more advanced workflow execution:
 
-Example:
+## Steps to configuring a rule
+
+1. Navigate to the JupiterOne alert rule configuration page (e.g.
+   https://apps.us.jupiterone.io/alerts/edit)
+1. Click "Create Rule"
+1. Click "Show Advanced" to open the advanced rule editor
+
+JSON Example:
 
 ```json
 {
@@ -228,16 +236,77 @@ Example:
 
 > Sends a Slack message to a given Slack webhook URL.
 
-| Property     | Type     | Description                                                                   |
-| ------------ | -------- | ----------------------------------------------------------------------------- |
-| `type`       | `string` | Rule operation action type: `SEND_SLACK_MESSAGE`                              |
-| `webhookUrl` | `string` | Webhook URL for the account/channel that this message should be delivered to. |
+| Property                | Type     | Description                                                                           |
+| ----------------------- | -------- | --------------------------------------------------------------------------------------|
+| `integrationInstanceId` | `string` | The `id` of the JupiterOne Jira integration that should be used to create the ticket. |
+| `type`                  | `string` | Rule operation action type: `SEND_SLACK_MESSAGE`                                      |
+| `channels`              | `string` | A string or list of strings begining with a `#` denoting Slack channels to send to    |
+| `webhookUrl`            | `string` | Webhook URL for the account/channel that this message should be delivered to.         |
 
 Example:
 
+Once the integration has been configured, copy the integration ID from the
+integration instance page. For example, if the integration instance URL looks
+like this:
+
+`https://apps.us.jupiterone.io/integrations/slack/configuration/d1549f40-b9fd-447a-bec5-4360c9ca7e8c`
+
+Then the integration instance ID is `d1549f40-b9fd-447a-bec5-4360c9ca7e8c`.
+
+
+1. Configure a rule with the `SEND_SLACK_MESSAGE` action and specify the
+   `integrationInstanceId` and `channels` properties with the value being the ID
+   specified in the URL above. Example alert rule configuration with the
+   `SEND_SLACK_MESSAGE` action:
+
+**NOTE**: In order for the JupiterOne Slack bot to deliever messages to a
+private Slack channel, the JupiterOne Slack bot must be a member of that private
+channel.
+
 ```json
 {
-  "type": "SEND_SLACK_MESSAGE"
+  "name": "slack-alert-test",
+  "description": "Testing Slack Messages",
+  "specVersion": 1,
+  "pollingInterval": "ONE_DAY",
+  "templates": {
+    "slackBody": "JupiterOne Account: {{item.displayName}}\n\n"
+  },
+  "question": {
+    "queries": [
+      {
+        "name": "query0",
+        "query": "Find DataStore with classification=('critical' or 'sensitive' or 'confidential' or 'restricted') and encrypted!=true",
+        "version": "v1"
+      }
+    ]
+  },
+  "operations": [
+    {
+      "when": {
+        "type": "FILTER",
+        "specVersion": 1,
+        "condition": "{{queries.query0.total > 0}}"
+      },
+      "actions": [
+        {
+          "targetValue": "HIGH",
+          "type": "SET_PROPERTY",
+          "targetProperty": "alertLevel"
+        },
+        {
+          "type": "CREATE_ALERT"
+        },
+        {
+          "integrationInstanceId": "d1549f40-b9fd-447a-bec5-4360c9ca7e8c",
+          "channels": ["#random"],
+          "type": "SEND_SLACK_MESSAGE",
+          "body": "{{queries.query0.data|mapTemplate('slackBody')|join(' ')}}"
+        }
+      ]
+    }
+  ],
+  "outputs": ["queries.query0.total", "alertLevel"]
 }
 ```
 
