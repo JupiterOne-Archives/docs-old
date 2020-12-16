@@ -149,8 +149,8 @@ verb, such as `HAS` or `IMPLEMENTS`.
 
 Relationships can also carry their own properties.
 
-For example, `CodeRepo -- DEPLOYED_TO -> Host` may have `version` as a property
-on the `DEPLOYED_TO` relationship. This represents the mapping between a code
+For example, `CodeRepo -- DEPLOYED TO -> Host` may have `version` as a property
+on the `DEPLOYED` relationship. This represents the mapping between a code
 repo to multiple deployment targets, while one deployment may be of a different
 version of the code than another. Storing the version as a relationship
 property allows us to void duplicate instances of the code repo entity to be
@@ -273,10 +273,10 @@ Assessment      -- IDENTIFIED ->      Vulnerability
 Vendor          -- PROVIDES ->        Service
 ```
 
-#### CONTRIBUTES_TO
+#### CONTRIBUTES TO
 
 ```text
-User            -- CONTRIBUTES_TO ->  CodeRepo
+User            -- CONTRIBUTES TO ->  CodeRepo
 ```
 
 #### OPENED
@@ -285,13 +285,13 @@ User            -- CONTRIBUTES_TO ->  CodeRepo
 User            -- OPENED   ->        CodeReview (i.e. PR)
 ```
 
-#### DEPLOYED_TO
+#### DEPLOYED TO
 
 ```text
-CodeRepo        -- DEPLOYED_TO ->     Account
-CodeRepo        -- DEPLOYED_TO ->     Host
-CodeRepo        -- DEPLOYED_TO ->     Container
-CodeRepo        -- DEPLOYED_TO ->     Function
+CodeRepo        -- DEPLOYED TO ->     Account
+CodeRepo        -- DEPLOYED TO ->     Host
+CodeRepo        -- DEPLOYED TO ->     Container
+CodeRepo        -- DEPLOYED TO ->     Function
 ```
 
 ## What does this look like?
