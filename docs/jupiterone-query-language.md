@@ -60,7 +60,7 @@ boundaries obvious to query authors.
 > - The `undefined` keyword can be used to filter on the absence of a property.
 >   For example: `FIND DataStore with encrypted=undefined`
 > - If a property name contains special characters (e.g. `-` or `:`), you can
->   wrap the property name in `[]`.  
+>   wrap the property name in `[]`.
 >   For example: `[tag.special-name]='something'`
 
 `AND`, `OR` for multiple property comparisons are supported.
@@ -134,7 +134,7 @@ boundaries obvious to query authors.
 >
 > - `FIND Firewall AS fw THAT ALLOWS AS rule * AS n`
 
-`WHERE` is used for post-traversal filtering or union (requires selector)
+`WHERE` is used for post-traversal filtering (requires selector)
 
 > From the example above:
 >
@@ -143,15 +143,7 @@ boundaries obvious to query authors.
 >   WHERE rule.ingress=true AND
 >     (rule.fromPort=22 or rule.toPort=22)
 > ```
->
-> The following examples joins the properties of two different network entities,
-> to identify if there are multiple networks in the same environment using
-> conflicting IP spacing:
->
-> ```j1ql
-> FIND (Network as n1 | Network as n2)
->   WHERE n1.CIDR = n2.CIDR
-> ```
+
 
 `RETURN` is used to return specific entities, relationships, or properties
 
@@ -349,7 +341,7 @@ J1QL supports basic math operations on the return values.
 
 - The operation only works against number values. It will not work against
   strings or strings that represent numbers:
-  
+
   > `'1'` will not work, has to be `1`
 
 Example query:
