@@ -69,10 +69,12 @@ gcloud services enable \
   for more information on how to create a service account in the project that
   you would like to ingest data from.
 
-- We must assign the correct permissions to the newly created service account
-  for the integration to be run. We recommend using the
-  [`roles/iam.securityReviewer`](https://cloud.google.com/iam/docs/understanding-roles#iam.securityReviewer)
-  role, which is managed by Google Cloud.
+We must assign the correct permissions to the newly created service account for
+the integration to be run. We recommend using the following roles managed by
+Google Cloud:
+
+- [`roles/iam.securityReviewer`](https://cloud.google.com/iam/docs/understanding-roles#iam.securityReviewer)
+- [`roles/iam.roleViewer`](https://cloud.google.com/iam/docs/understanding-roles#iam.roleViewer)
 
 NOTE: You may also create a service account using the
 [`gcloud` CLI](https://cloud.google.com/sdk/gcloud). There is documentation on
@@ -90,6 +92,99 @@ NOTE: You may also create a service account key using the
 [`gcloud` CLI](https://cloud.google.com/sdk/gcloud). There is documentation on
 how to leverage the CLI in the
 [Google Cloud integration developer documentation](https://github.com/JupiterOne/graph-google-cloud/blob/master/docs/development.md).
+
+### JupiterOne + Google Cloud Organization
+
+A CLI is exposed from the
+[`graph-google-cloud` project on GitHub](https://github.com/JupiterOne/graph-google-cloud)
+that can be leveraged to create individual integration instances for every
+project that is under a specific Google Cloud organization.
+
+#### Install Dependencies
+
+The following dependencies are needed in order to run the CLI:
+
+- [Node.js](https://nodejs.org/en/)
+- [Yarn package manager](https://yarnpkg.com/)
+- [gcloud CLI](https://cloud.google.com/sdk/gcloud)
+
+#### Running
+
+The following shows all of the options that are exposed by the CLI.
+
+```
+JupiterOne Google Cloud Organization Integration Setup
+
+Usage:
+  $ JupiterOne Google Cloud Organization Integration Setup []
+
+Commands:
+  []  Default command: Run the organization setup
+
+For more info, run any command with the `--help` flag:
+  $ JupiterOne Google Cloud Organization Integration Setup --help
+
+Options:
+  --jupiterone-account-id <jupiteroneAccountId>  (Required) JupiterOne Account ID
+  --jupiterone-api-key <jupiteroneApiKey>        (Required) JupiterOne API Key
+  --google-access-token <googleAccessToken>      (Required) Google Cloud Access Token
+  --organization-id [organizationId]             (Optional) Array of organization IDs to collect projects from
+  --project-id [projectId]                       (Optional) Array of project IDs to create integration instances with
+  --skip-system-projects [skipSystemProjects]    (Optional) Skips creation of any projects that have an ID that start with "sys-" (default: false)
+  -h, --help                                     Display this message
+```
+
+Example usage to create integration instances for every project that is under a
+Google Cloud organization
+
+```sh
+yarn jupiterone-organization-setup \
+  --google-access-token $(gcloud auth print-access-token) \
+  --organization-id 1111111111 \
+  --jupiterone-account-id MY_JUPITERONE_ACCOUNT_ID_HERE \
+  --jupiterone-api-key MY_JUPITERONE_API_KEY_HERE
+```
+
+Example usage to create integration instances for each project in multiple
+Google Cloud organizations:
+
+```sh
+yarn jupiterone-organization-setup \
+  --google-access-token $(gcloud auth print-access-token) \
+  --organization-id 1111111111 \
+  --organization-id 2222222222 \
+  --jupiterone-account-id MY_JUPITERONE_ACCOUNT_ID_HERE \
+  --jupiterone-api-key MY_JUPITERONE_API_KEY_HERE
+```
+
+Example usage to create integration instances for a selection of projects that
+the authenticated Google Cloud user has access to:
+
+```sh
+yarn jupiterone-organization-setup \
+  --google-access-token $(gcloud auth print-access-token) \
+  --jupiterone-account-id MY_JUPITERONE_ACCOUNT_ID_HERE \
+  --jupiterone-api-key MY_JUPITERONE_API_KEY_HERE \
+  --project-id MY_GOOGLE_CLOUD_PROJECT_ID_HERE \
+  --project-id MY_GOOGLE_CLOUD_PROJECT_ID_HERE_2 \
+  --project-id MY_GOOGLE_CLOUD_PROJECT_ID_HERE_3
+```
+
+#### How it works
+
+The following is the overall flow of how the CLI creates an integration instance
+for each project:
+
+- For every project in a GCP org
+  - Enable relevant Google Cloud API services that the JupiterOne integration
+    will interact with
+  - Create a service account to be used by JupiterOne
+  - Create a service account key for the new service account
+  - Update the project’s IAM policy with the new service account as a member of
+    the recommended roles/iam.securityReviewer to allow JupiterOne read access
+    to relevant Google Cloud resources
+  - Create a JupiterOne integration instance using the newly generated service
+    account key file
 
 <!-- {J1_DOCUMENTATION_MARKER_START} -->
 <!--
@@ -124,6 +219,7 @@ The following entities are created:
 | IAM User                | `google_user`                    | `User`              |
 | KMS Crypto Key          | `google_kms_crypto_key`          | `Key`, `CryptoKey`  |
 | KMS Key Ring            | `google_kms_key_ring`            | `Vault`             |
+| Project                 | `google_cloud_project`           | `Account`           |
 
 ### Relationships
 
@@ -132,6 +228,7 @@ The following relationships are created/mapped:
 | Source Entity `_type`        | Relationship `_class` | Target Entity `_type`            |
 | ---------------------------- | --------------------- | -------------------------------- |
 | `internet`                   | **ALLOWS**            | `google_compute_firewall`        |
+| `google_cloud_project`       | **HAS**               | `google_cloud_api_service`       |
 | `google_compute_firewall`    | **PROTECTS**          | `google_compute_network`         |
 | `google_compute_instance`    | **TRUSTS**            | `google_iam_service_account`     |
 | `google_compute_instance`    | **USES**              | `google_compute_disk`            |
