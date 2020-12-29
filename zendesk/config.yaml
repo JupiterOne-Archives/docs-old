@@ -56,7 +56,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: Ci+0tBCPry8I7JhOtXy3CnpA1ifJZsato1kVLm7cKic=
+        hash: 42gWCZc3WVnHS31AE7gIVmqA2FbaySVVWZS7YjujsSs=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -328,7 +328,7 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: ALSYBEam7f3Ge4mlfzOpnG0X+aBwY8fRpQ/AxyfOVQA=
+        hash: 2vbfyybxrkGJs8LHssqkKWJAXbCrSqYzF/lzDNzxySI=
         id: 360022722014
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722014'
   - name: API Docs
@@ -561,7 +561,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
-        hash: EzO88gZBRpMKPAbTBxh+mGmxU56A9QL62T+WQon102c=
+        hash: UVaq40psRmC9E4k90Nwy++eA+JeHyGmrcgVkM8ENwH8=
         id: 360052241514
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360052241514'
       - title: HackerOne
