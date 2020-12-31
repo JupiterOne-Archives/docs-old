@@ -19,33 +19,132 @@ An experimental [node.js client and CLI][1] can be found on Github.
 
 **Endpoint:** `/graphql`
 
-### Fetching Vertices with J1QL
+### Querying the graph with J1QL
 
-This query will allow you to run J1QL queries for fetching data. The query
-requires three parameters:
+This query will allow you to run J1QL queries for fetching data.
+The GraphQL resolver requires that one parameter is provided:
 
-- `query`: A query string that describes what data to be returned
-- `variables`: A `JSON` list of values to be used as parameters for this query
-- `dryRun`: A boolean that determines if the query is a dry run or not.
+- `query`: A J1QL query string that describes what data to return
+
+Optionally, additional parameters can be provided:
+
+- `variables`: A `JSON` map of values to be used as parameters for the query
+- `cursor`: A token that can be exchanged to fetch the next page of
+information.
+- `includeDeleted`: When set to `true`, recently deleted information will
+be included in the results.
+- `deferredResponse`: This option allows for a deferred response to be
+returned. When a deferred response is returned, a `url` pointing
+the state of the query is provided. Upon completion of the query, the `url`
+will provide a link to the query results. The results contain
+the same `type`, `data`, and `cursor` fields that the non-deferred
+GraphQL response would contain.
+Allowed values are `DISABLED` and `FORCE`.
+
+**Note:** When paging through data, it is _highly_ recommended that cursors
+are leveraged instead of adding `limit` and `skip` clauses to queries.
+
+Example GraphQL query:
 
 ```graphql
-query J1QL($query: String!, $variables: JSON, $dryRun: Boolean) {
-  queryV1(query: $query, variables: $variables, dryRun: $dryRun) {
+query J1QL(
+  $query: String!,
+  $variables: JSON,
+  $cursor: String
+) {
+  queryV1(
+    query: $query,
+    variables: $variables,
+    cursor: $cursor
+  ) {
     type
     data
+    cursor
   }
 }
 ```
 
-Variables:
+Example variables:
+
+```json
+{
+  "query": "find Person with _type=${type} return Person.name",
+  "variables": {
+    "type": "employee"
+  },
+  "cursor": "eyJjYWNoZUtleSI6IjFlNDg3MT..."
+}
+```
+
+Example `queryV1` resolver result:
+
+```json
+{
+  "type": "list",
+  "data": [
+    { "Person.name": "Mochi" }
+  ],
+  "cursor": "eyJjYWNoZUtleSI6IjFlNDg3MT..."
+}
+```
+
+Example GraphQL query using with deferred responses:
+
+```graphql
+query J1QL(
+  $query: String!,
+  $variables: JSON,
+  $cursor: String
+  $deferredResponse: DeferredResponseOption
+) {
+  queryV1(
+    query: $query,
+    variables: $variables,
+    deferredResponse: $deferredResponse,
+    cursor: $cursor
+  ) {
+    type
+    url
+  }
+}
+```
+
+Example variables:
 
 ```json
 {
   "query": "find Person with _type=${type}",
+  "deferredResponse": "FORCE",
   "variables": {
     "type": "employee"
   },
-  "dryRun": true
+  "cursor": "eyJjYWNoZUtleSI6IjFlNDg3MT..."
+}
+```
+
+Example `queryV1` resolver result when using a deferred response:
+
+```json
+{
+  "type": "deferred",
+  "url": "https://example.com/state.json"
+}
+```
+
+Example state responses:
+
+```json
+{
+  "status": "IN_PROGRESS",
+  "correlationId": "912788f1-e0c7-43bd-b853-455c0031be8a"
+}
+```
+
+```json
+{
+  "status": "COMPLETED",
+  "url": "https://example.com/results.json",
+  "correlationId": "912788f1-e0c7-43bd-b853-455c0031be8a"
 }
 ```
 
@@ -69,6 +168,7 @@ query testQuery {
         _type
         _accountId
         _integrationName
+
         _integrationDefinitionId
         _integrationInstanceId
         _version
@@ -500,7 +600,7 @@ You cannot change the `entityKey`, `entityClass`, or `entityType`.
 This mutation requires one parameter (with two optional parameters):
 - `entityId`: A string specific to the entity that finds the entity.
 - Optional Parameters:
-  - `timestamp`: 
+  - `timestamp`:
   - `properties`: A `JSON` list of properties to be changed.
 
 
@@ -549,8 +649,8 @@ Variables:
 This mutation deletes an existing entity.
 This mutation requires one parameter (with one optional parameter):
 - `entityId`: A string specific to the entity that finds the entity.
-- Optional Parameters: 
-  - `timestamp`: 
+- Optional Parameters:
+  - `timestamp`:
 
 ```graphql
 mutation DeleteEntity (
@@ -1096,7 +1196,7 @@ mutation CreateQuestionRuleInstance (
       queries {
         query
         version
-      } 
+      }
     }
     operations {
       when
