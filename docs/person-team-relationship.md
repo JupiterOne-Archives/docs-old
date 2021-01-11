@@ -1,10 +1,18 @@
-# Mapping Person Entities to a Team
+# Mapping Person Entities to a Team Entity
+ 
+This guide walks through the process of mapping Person(s) entities (already integrated via SSO/IdP providers) to a custom Team.
+
+## UI 
 
 Under the Assets section of the application, click the + button in the upper right corner.
 
+![add-asset](../assets/add-asset.png)
+
+Click the tile "Bulk upload from a JSON or YAML file".
+
 ![bulk-upload](../assets/bulk-upload.png)
 
-Upload a JSON/YAML file. Use the following JSON as an example:
+ Use the following JSON as an example:
 
 ```
 {
@@ -40,6 +48,10 @@ Upload a JSON/YAML file. Use the following JSON as an example:
 }
 ```
 
+## API
+
+This process can also be accomplished via the JupiterOne API using the JSON example above. See the document [Bulk Upload][bulk-upload-api] for more info.
+
 ### Some key things to note:
 
 - The _key must be unique for each team
@@ -48,3 +60,5 @@ Upload a JSON/YAML file. Use the following JSON as an example:
 - Currently JSON/YAML are the only supported formats to define custom entities/Teams. [^1]
 
 [^1]: CSV support will be available soon to allow users to modify a spreadsheet instead.
+
+[bulk-upload-api]: ./schemas/bulk-upload.md
