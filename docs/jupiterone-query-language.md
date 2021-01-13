@@ -376,7 +376,7 @@ In situations where it is useful to optionally find related entities
 and include them in the results, J1QL allows for portions of a query to be
 wrapped with a `(` and `)?` to mark that section of the query as an optional
 traversal. This allows for related entities from a graph
-traversal to be unioned together and for additional constraints to be applied
+traversal to be combined and for additional constraints to be applied
 to the set of entities.
 
 Example query:
