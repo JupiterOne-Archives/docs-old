@@ -390,7 +390,7 @@ and optionally traverse an `IS` relationship to a `Person` entity.
 If the relationship exists, the related `Person` entities are
 added to the list of results.
 
-Relationships can still chained within an optional traversal. The query
+Relationships can still be chained within an optional traversal. The query
 below will return a list of `Device` owned by a `Person` that is a `User`
 and `User` entities that do not have the indirect relationship to the `Device`.
 
