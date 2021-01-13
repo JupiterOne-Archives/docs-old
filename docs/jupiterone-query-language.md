@@ -409,8 +409,8 @@ Find aws_account as awsMasterAccount
 Return awsMasterAccount
 ```
 
-Optional traversals can also be chained. The joined results from
-of each previous optional traversal will be used in the next optional
+Optional traversals can also be chained. The combined results from
+each previous optional traversal will be used in the next optional
 traversal.
 
 The below query will find `User` entities, `Person` entities
