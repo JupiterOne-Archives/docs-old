@@ -425,7 +425,7 @@ Find User
 return User, Person, Device
 ```
 
-The optional traversals can also be aliased. This allows for union set of
+The optional traversals can also be aliased. This allows the union set of
 entities to be used when returning results and when applying constraints.
 
 ```j1ql
