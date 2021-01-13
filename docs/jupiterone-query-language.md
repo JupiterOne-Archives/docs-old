@@ -398,8 +398,8 @@ and `User` entities that do not have the indirect relationship to the `Device`.
 Find User (that IS Person that OWNS Device)?
 ```
 
-Relationships that come after an optional traversal are performed on the
-unioned results. This query searches for AWS accounts or AWS IAM roles
+Relationships that come after an optional traversal are processed on the
+combined results. This query searches for AWS accounts or AWS IAM roles
 in the account that trusts another account.
 
 ```j1ql
