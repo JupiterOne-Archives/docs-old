@@ -391,7 +391,7 @@ If the relationship exists, the related `Person` entities are
 added to the list of results.
 
 Relationships can still be chained within an optional traversal. The query
-below will return a list of `Device` owned by a `Person` that is a `User`
+below will return a list of `Device` entities owned by a `Person` that is a `User`
 and `User` entities that do not have the indirect relationship to the `Device`.
 
 ```j1ql
