@@ -122,7 +122,7 @@ Entity             | Description
 `Risk`             | An object that represents an identified Risk as the result of an Assessment. The collection of Risk objects in JupiterOne make up the Risk Register. A Control may have a `MITIGATES` relationship to a Risk.
 `Service`          | A service provided by a vendor.
 `Site`             | The physical location of an organization. A Person (i.e. employee) would typically has a relationship to a Site (i.e. located_at or work_at). Also used as the abstract reference to AWS Regions.
-`Team`             | A team consists of multiple member Person entities. For example, the Development team or the Security team.
+`Team`             | A team consists of multiple member Person entities. For example, the Development team or the Security team. See the guide [Mapping Person Entities to a Team][person-team]
 `Training`         | A security training module.
 `User`             | A user account/login to access certain systems and/or services. Examples include okta-user, aws-iam-user, ssh-user, local-user (on a host), etc.
 `UserGroup`        | A user group, typically associated with some type of access control, such as a group in Okta or in Office365. If a UserGroup has an access policy attached, and all member Users of the UserGroup would inherit the policy.
@@ -302,3 +302,5 @@ defined by the data model.
 ![data-model](../assets/data-model.png)
 
 [schema-repo]: https://github.com/JupiterOne/data-model
+
+[person-team]: ./person-team-relationship.md
