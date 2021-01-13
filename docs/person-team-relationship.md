@@ -60,10 +60,10 @@ See the document [Bulk Upload][bulk-upload-api] for more info.
 
 ### Some key things to note:
 
-- The _key must be unique for each team
-- "members" are mapped to Person entities by email, creating Team -HAS-> Person relationships
-- "lead" or "manager" or "supervisor" is also mapped to a Person 
-entity by email, creating Person -MANAGES-> Team relationships
+- The `_key` must be unique for each team
+- `"members"` are mapped to `Person` entities by email, creating `Team -HAS-> Person` relationships
+- `"lead"` or `"manager"` or `"supervisor"` is also mapped to a `Person` 
+entity by email, creating `Person -MANAGES-> Team` relationships
 - Currently JSON/YAML are the only supported formats to define custom entities/Teams. [^1]
 
 [^1]: CSV support will be available soon to allow users to modify a spreadsheet instead.
