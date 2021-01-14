@@ -414,7 +414,7 @@ Find aws_account as awsMasterAccount
 Return awsMasterAccount
 ```
 
-Optional traversals can also be chained. The combined results from
+**Optional traversals can also be chained.** The combined results from
 each previous optional traversal will be used in the next optional
 traversal.
 
