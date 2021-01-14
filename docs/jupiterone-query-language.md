@@ -387,7 +387,7 @@ to the set of entities.
 Example query:
 
 ```j1ql
-find User (that IS Person)?
+Find User (that IS Person)?
 ```
 
 In the above example, we search for `User` entities
@@ -435,10 +435,21 @@ entities to be used when returning results and when applying constraints.
 
 ```j1ql
 Find User
-  (that is Person)? as UserOrPerson
+  (that is Person)? as userOrPerson
   that owns Device
-Where UserOrPerson.email = 'test@jupiterone.com'
-return UserOrPerson, Device
+Where userOrPerson.email = 'test@jupiterone.com'
+return userOrPerson, Device
+```
+
+Traversals performed within the `(` and `)?` function as normal
+graph traversals, so `WITH` filters can still be applied
+to assist with narrowing results.
+
+```j1ql
+Find User with name = 'test'
+  (that is Person with email = 'test@jupiterone.com')? as userOrPerson
+  that owns Device
+return userOrPerson, Device
 ```
 
 ## Examples
