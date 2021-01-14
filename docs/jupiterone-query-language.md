@@ -427,7 +427,7 @@ optional traversal.
 Find User
   (that is Person)?
   (that owns Device)?
-return User, Person, Device
+Return User, Person, Device
 ```
 
 The optional traversals can also be aliased. This allows the union set of
@@ -438,7 +438,7 @@ Find User
   (that is Person)? as userOrPerson
   that owns Device
 Where userOrPerson.email = 'test@jupiterone.com'
-return userOrPerson, Device
+Return userOrPerson, Device
 ```
 
 Traversals performed within the `(` and `)?` function as normal
