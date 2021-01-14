@@ -61,6 +61,7 @@ function parseLinks() {
 async function publish() {
   const { linksMap, linksRegexStr } = parseLinks();
   const linksRegex = new RegExp(linksRegexStr);
+  const fontAwesome = '<script src="https://kit.fontawesome.com/9f58315920.js" crossorigin="anonymous"></script>';
 
   for (const section of config.sections || []) {
     for (const art of section.articles || []) {
