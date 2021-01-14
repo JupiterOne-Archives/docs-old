@@ -403,16 +403,18 @@ and `User` entities that do not have the indirect relationship to the `Device`.
 Find User (that IS Person that OWNS Device)?
 ```
 
-Relationships that come after an optional traversal are processed on the
-combined results. This query searches for AWS accounts or AWS IAM roles
-in the account that trusts another account.
+**Relationships that come after an optional traversal are processed on the
+combined results.** This query searches for Users or UserGroups that directly
+assigned an AccessPolicy granting admin permissions to certain resources,
+or via an AccessRole assigned to the User/UserGroup. 
 
 ```j1ql
-Find aws_account as awsMasterAccount
-  (that HAS aws_iam_role as assumeRole)?
-  that TRUSTS aws_account as awsSubAccount
-Return awsMasterAccount
-```
+Find (User | UserGroup)
+  (that assigned AccessRole)?
+  that assigned AccessPolicy
+  that allows as permission *
+where permission.admin=true
+return TREE
 
 **Optional traversals can also be chained.** The combined results from
 each previous optional traversal will be used in the next optional
