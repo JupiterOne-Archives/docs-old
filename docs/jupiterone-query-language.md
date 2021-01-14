@@ -370,7 +370,7 @@ Return
   sum(snapshot.allocatedStorage) * 0.02 as EstimatedCost
 ```
 
-## Optional traversals
+## Optional traversals (Beta)
 
 Note: This is a beta feature and the syntax for describing optional
 traversals may change in the future to help improve clarity.
@@ -406,7 +406,7 @@ Find User (that IS Person that OWNS Device)?
 **Relationships that come after an optional traversal are processed on the
 combined results.** This query searches for Users or UserGroups that directly
 assigned an AccessPolicy granting admin permissions to certain resources,
-or via an AccessRole assigned to the User/UserGroup. 
+or via an AccessRole assigned to the User/UserGroup.
 
 ```j1ql
 Find (User | UserGroup)
