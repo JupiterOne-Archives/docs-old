@@ -362,6 +362,90 @@ Return
   sum(snapshot.allocatedStorage) * 0.02 as EstimatedCost
 ```
 
+## Optional traversals (Beta)
+
+Note: This is a beta feature and the syntax for describing optional
+traversals may change in the future to help improve clarity.
+Any changes made to the language will be
+backwards compatible.
+
+In situations where it is useful to optionally find related entities
+and include them in the results, J1QL allows for portions of a query to be
+wrapped with a `(` and `)?` to mark that section of the query as an optional
+traversal. This allows for related entities from a graph
+traversal to be combined and for additional constraints to be applied
+to the set of entities.
+
+Example query:
+
+```j1ql
+Find User (that IS Person)?
+```
+
+In the above example, we search for `User` entities
+and optionally traverse an `IS` relationship to a `Person` entity.
+If the relationship exists, the related `Person` entities are
+added to the list of results.
+
+**Relationships can still be chained within an optional traversal.** The query
+below will return a list of `Device` entities owned by a `Person` that is a `User`
+and `User` entities that do not have the indirect relationship to the `Device`.
+
+```j1ql
+Find User (that IS Person that OWNS Device)?
+```
+
+**Relationships that come after an optional traversal are processed on the
+combined results.** This query searches for Users or UserGroups that directly
+assigned an AccessPolicy granting admin permissions to certain resources,
+or via an AccessRole assigned to the User/UserGroup.
+
+```j1ql
+Find (User | UserGroup)
+  (that assigned AccessRole)?
+  that assigned AccessPolicy
+  that allows as permission *
+where permission.admin=true
+return TREE
+
+**Optional traversals can also be chained.** The combined results from
+each previous optional traversal will be used in the next optional
+traversal.
+
+The below query will find `User` entities, `Person` entities
+that have an `IS` relationship to the `User` and `Device` entites
+that are owned by `Person` and `User` entities from the previous
+optional traversal.
+
+```j1ql
+Find User
+  (that is Person)?
+  (that owns Device)?
+Return User, Person, Device
+```
+
+**The optional traversals can also be aliased.** This allows the union set of
+entities to be used when returning results and when applying constraints.
+
+```j1ql
+Find User
+  (that is Person)? as userOrPerson
+  that owns Device
+Where userOrPerson.email = 'test@jupiterone.com'
+Return userOrPerson, Device
+```
+
+Traversals performed within the `(` and `)?` function as normal
+graph traversals, so `WITH` filters can still be applied
+to assist with narrowing results.
+
+```j1ql
+Find User with name = 'test'
+  (that is Person with email = 'test@jupiterone.com')? as userOrPerson
+  that owns Device
+return userOrPerson, Device
+```
+
 ## Examples
 
 More example queries are shown below.
