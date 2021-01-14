@@ -372,8 +372,9 @@ Return
 
 ## Optional traversals
 
-Note: The syntax for describing optional traversals may change in the future
-to help improve clarity. Any changes made to the language will be
+Note: This is a beta feature and the syntax for describing optional
+traversals may change in the future to help improve clarity.
+Any changes made to the language will be
 backwards compatible.
 
 In situations where it is useful to optionally find related entities
