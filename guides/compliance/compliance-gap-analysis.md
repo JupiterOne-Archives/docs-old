@@ -3,11 +3,50 @@
 JupiterOne compliance platform is capable of performing automated gap analysis
 based on the query or queries saved in mapped questions. Here is how it works.
 
-## Query Names
+## Query Results Indicator
 
-Queries saved in a question can be named as follow to trigger gap analysis:
+Each query in a saved question has a property to indiciate whether the results
+from the query are good, bad, unknown, or informative. This can be configured
+either in the app UI or via the API.
 
-- `good`:
+Here is a screenshot of the app UI configuration:
+
+![edit-question](../../assets/query-question-edit-name-results.png)
+
+At the API level, this is set with the `resultsAre` property. For example:
+
+```yaml
+  - id: managed-question-access-password-policy
+    title: Show me the current password policy and compliance status.
+    queries:
+      - name: Compliant policies
+        resultsAre: GOOD
+        query: |
+          Find PasswordPolicy with
+            minLength >= 8 and
+            requireLowercase = true and
+            requireUppercase = true and
+            requireSymbols = true and
+            maxAgeDays <= 90 and
+            historyCount >= 12
+      - name: Non-compliant policies
+        resultsAre: BAD
+        query: |
+          Find PasswordPolicy with
+            minLength < 8 or
+            requireLowercase != true or
+            requireUppercase != true or
+            requireSymbols != true or
+            maxAgeDays > 90 or
+            historyCount < 12
+```
+
+## Gap Analysis
+
+Queries with `resultsAre` property in a question that is mapped to a compliance
+requirement trigger automated gap analysis, as follow:
+
+- `GOOD`:
 
   Results from a "good" query indicates **expected configuration is present**.
   
@@ -17,7 +56,7 @@ Queries saved in a question can be named as follow to trigger gap analysis:
   Find DataStore with classification='critical' and encrypted=true
   ```
 
-- `bad`:
+- `BAD`:
 
   Results from a "bad" query indicates **gaps or misconfigurations**.
 
@@ -27,7 +66,7 @@ Queries saved in a question can be named as follow to trigger gap analysis:
   Find DataStore with classification='critical' and encrypted!=true
   ```
 
-- `unknown`:
+- `UNKNOWN`:
 
   Results from an "unknown" query indicates **resources with an unknown scope or state**.
 
@@ -36,6 +75,8 @@ Queries saved in a question can be named as follow to trigger gap analysis:
   ```j1ql
   Find DataStore with classification=undefined
   ```
+
+> `INFORMATIVE` queries are not used in compliance gap analysis.
 
 _A question can have one or all of the above named queries._
 
@@ -72,5 +113,5 @@ mapped question(s), as seen in the following matrix:
 
 ![compliance-gap-analysis](../../assets/compliance-query-gap-analysis-status.png)
 
-> Note: A single query in a question with any name or without a name is
-  implicitly interpreted as a `good` query.
+> Note: A single query in a question without the `resultsAre` property set is
+  implicitly interpreted as a `GOOD` query.
