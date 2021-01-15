@@ -16,29 +16,29 @@ Here is a screenshot of the app UI configuration:
 At the API level, this is set with the `resultsAre` property. For example:
 
 ```yaml
-  - id: managed-question-access-password-policy
-    title: Show me the current password policy and compliance status.
-    queries:
-      - name: Compliant policies
-        resultsAre: GOOD
-        query: |
-          Find PasswordPolicy with
-            minLength >= 8 and
-            requireLowercase = true and
-            requireUppercase = true and
-            requireSymbols = true and
-            maxAgeDays <= 90 and
-            historyCount >= 12
-      - name: Non-compliant policies
-        resultsAre: BAD
-        query: |
-          Find PasswordPolicy with
-            minLength < 8 or
-            requireLowercase != true or
-            requireUppercase != true or
-            requireSymbols != true or
-            maxAgeDays > 90 or
-            historyCount < 12
+- id: managed-question-access-password-policy
+  title: Show me the current password policy and compliance status.
+  queries:
+    - name: Compliant policies
+      resultsAre: GOOD
+      query: |
+        Find PasswordPolicy with
+          minLength >= 8 and
+          requireLowercase = true and
+          requireUppercase = true and
+          requireSymbols = true and
+          maxAgeDays <= 90 and
+          historyCount >= 12
+    - name: Non-compliant policies
+      resultsAre: BAD
+      query: |
+        Find PasswordPolicy with
+          minLength < 8 or
+          requireLowercase != true or
+          requireUppercase != true or
+          requireSymbols != true or
+          maxAgeDays > 90 or
+          historyCount < 12
 ```
 
 ## Gap Analysis
