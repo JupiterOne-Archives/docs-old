@@ -83,7 +83,8 @@ async function publish() {
         .replace(/<pre><code/g, '<pre><div')
         .replace(/<\/code><\/pre>/g, '</div></pre>')
         .replace(/<h2 id="(.*)">(.*)<\/h2>/g, anchoredHeader)
-        .replace(/<\/table>/g, '</table><br>');
+        .replace(/<\/table>/g, '</table><br>')
+        .replace(/<i class="fa[srldb]?\sfa-.+"><\/i>/i, `${fontAwesome}\n$&`);
       const article = {
         title: art.title,
         body: html,
