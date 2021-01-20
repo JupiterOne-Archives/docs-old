@@ -56,7 +56,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: ijQxjJlA/tD/To8C6UIExwtK4dY/3rCSG2iONuZ0Y7Y=
+        hash: kKASOu7/olM3cOFKQvjAWNwi6RUu1VmxIJcIJsJt6gQ=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -631,7 +631,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721194-OpenShift'
       - title: PagerDuty
         file: ../docs/integrations/pagerduty/index.md
-        hash: H6Enbl9FdOo1UToYt9An8Tdv+U/ZhXq7xcTdsStuZrU=
+        hash: DBxpfTA787HSo46vxq8O6UArxuQKB9UrD11L4bNtlco=
         id: 360046951894
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046951894'
       - title: Qualys

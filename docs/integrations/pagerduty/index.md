@@ -5,7 +5,7 @@
 - Visualize PagerDuty services, teams, and users in the JupiterOne graph.
 - PagerDuty users will be mapped to employees in your JupiterOne account.
 - Monitor changes to PagerDuty users using JupiterOne alerts.
-- Produce compliance evidence of system monitoring and on-call escalation.
+- Produce compliance evidence of system/service monitoring and on-call escalation.
 
 ## How it Works
 
