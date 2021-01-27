@@ -1,99 +1,154 @@
-# Google
+# Integration with JupiterOne
 
-## Overview
+## Google Workspace + JupiterOne Integration Benefits
 
-JupiterOne provides a managed integration with Google. The integration connects
-directly to the G Suite Admin API to obtain account metadata and analyze
-resource relationships. Customers authorize read-only to access to a JupiterOne
-Service Account.
+- Visualize Google Workspace domain user groups, users, and their authorized
+  tokens in the JupiterOne graph.
+- Map Google Workspace users to employees in your JupiterOne account.
+- Workspace users identified as employees are mapped to their managers to
+  provide an organization chart in JupiterOne.
+- Monitor changes to Google Workspace users using JupiterOne alerts.
 
-## Integration Instance Configuration
+## How it Works
 
-The integration is triggered by an event containing the information for a
-specific integration instance.
+- JupiterOne periodically fetches details from Google Workspace to maintain an
+  updated graph.
+- Additional details stored in Google Workspace users is used to map your
+  organization management structure.
+- Write JupiterOne queries to review and monitor updates to the graph.
+- Configure alerts to take action when JupiterOne graph changes occur.
 
-The integration instance configuration requires the Organization Account ID and
-an administrator email. The JupiterOne Service Account must be added as an
-authorized API client with required permission scopes, and a domain email
-address that is a member of an Admin Group with read only permissions must be
-specified to obtain an OAuth token for API requests.
+## Requirements
 
-### Getting Organization Account ID
+- A Google Workspace super administrator must grant the JupiterOne Google
+  Service Account domain-wide delegation authority.
+- A Google Workspace user granted Admin API permissions; this user will be
+  impersonated by the Service Account.
+- You must have permission in JupiterOne to install new integrations.
 
-From your Google Admin console:
-1. Click **Account Settings** then **Profile** and retrieve your **Customer ID**,
-which should have a format similar to `C1111abcd`
+## Support
 
-#### Alternatively:
-1. Click Security, then expand Setup single sign-on (SSO)
-1. Copy the `idpid` property value from the SSO URL. For example,
-   `https://accounts.google.com/o/saml2/idp?idpid=C1111abcd` provides the ID
-   `C1111abcd`
-1. Enter the value into the Account ID field in the JupiterOne integration
+If you need help with this integration, please contact
+[JupiterOne Support](https://support.jupiterone.io).
+
+## Integration Walkthrough
+
+### In Google Workspace
+
+The integration will connect to Google Workspace Admin APIs with the following
+details:
+
+- The Google Workspace **Customer ID** for the domain to ingest into JupiterOne
+- The **email address** of a Google Workspace user created for JupiterOne with
+  permissions to read the information ingested into JupiterOne
+- The credentials of the JupiterOne Service Account authorized to impersonate
+  the user and access necessary **API scopes**
+
+Log into the Google Workspace **Admin Console** as a super administrator to
+perform the following actions.
+
+1. Click **Account Settings** > **Profile** and retrieve your **Customer ID**.
+   It will have a format similar to `C1111abcd`.
+
+   Alternatively, click **Security** and expand **Setup single sign-on (SSO) for
+   SAML applications** and copy the **`idpid`** property value from the **SSO
+   URL**. For example, `https://accounts.google.com/o/saml2/idp?idpid=C1111abcd`
+   provides the ID `C1111abcd`
+
+   Retain this value for the Account ID field in the JupiterOne integration
    configuration.
 
-### Admin API Enablement
+2. Return to the **Admin Console** home page. Click **Security** > **API
+   controls**.
 
-The Admin API is not accessible to the JupterOne Service Account until the API
-is enabled in your G Suite organization and permission is granted to the Service
-Account.
+3. In the **Domain wide delegation** pane, select **Manage Domain Wide
+   Delegation**.
 
-From your Google Admin console:
+4. Click **Add new** and enter the JupiterOne Service Account client ID
+   `102174985137827290632` into the **Client ID** field.
 
-1. Go to **Security** and click on **API controls**.
-1. In the **Domain wide delegation** pane, select **Manage Domain Wide Delegation**.
-1. Enter the JupiterOne Service Account client ID `102174985137827290632` into the **Client ID** field
-1. Add the following **API scopes** (comma separated):
+5. Add the following **API scopes** (comma separated):
 
    ```text
    https://www.googleapis.com/auth/admin.directory.domain.readonly, https://www.googleapis.com/auth/admin.directory.user.readonly, https://www.googleapis.com/auth/admin.directory.group.readonly, https://www.googleapis.com/auth/admin.directory.user.security
    ```
 
-1. Click Authorize
-1. Return to the Admin console, click Security, then API Permissions
-1. Enable API access
+6. Click **Authorize**.
 
-### Admin User Email
+7. Return to the **Admin console** home page. Click **Security** > **API
+   Permissions** and **Enable API access**.
 
-From your Google Admin console:
+Continuing in the **Admin console**, create a user the JupiterOne Service
+Account will impersonate:
 
-1. Click Users, then Add new user
+1. Click **Users** > **Add new user**.
 
-1. Enter First name "JupiterOne", Last name "SystemUser", Primary email
-   "jupiterone-admin"
+2. Enter **First name** "JupiterOne", **Last name** "SystemUser", **Primary
+   email** "jupiterone-admin".
 
-1. Click Add new user and collect the temporary, generated password
+   Retain the email address for the Admin Email field in the JupiterOne
+   integration configuration.
 
-1. Log in as the new user to set a complex password and accept the G Suite Terms
-   of Service
+3. Click **Add new user**.
 
-1. Enter the new user email into the Admin Email field in the JupiterOne
-   integration configuration
+   Retain the temporary generated password for the next step.
 
-You may dispose of the password as it will not be used and may be reset by a
-Super Admin in the future if necessary.
+4. In another browser (or using Chrome's Incognito feature), **Log in** as the
+   new user to set a complex password and **accept the G Suite Terms of
+   Service**.
 
-Next, create a new role that will have only the permissions required by
-JupiterOne, and which will include only the `jupiterone-admin` system user.
+   You may dispose of the password as it will not be used and may be reset by a
+   super administrator in the future if necessary.
 
-From your Google Admin console:
+Continuing in the **Admin console**, create a new role that will have only the
+permissions required by JupiterOne, and which will include only the
+`jupiterone-admin` system user.
 
-1. Click Users, then click on the "JupiterOne SystemUser"
+1. Click **Users**, then click on the **"JupiterOne SystemUser"**.
 
-1. Click Admin roles and privileges, then click the icon to edit the user's
-   roles
+2. Click **Admin roles and privileges**, then click the icon to **edit the
+   user's roles**.
 
-1. Click Create custom role, then click Create a new role
+3. Click **Create custom role** > **Create a new role**.
 
-1. Name "JupiterOne System", Description "Role for JupiterOne user to enable
-   read-only access to G Suite Admin APIs."
+4. **Name** "JupiterOne System", **Description** "Role for JupiterOne user to
+   enable read-only access to G Suite Admin APIs."
 
-1. In Privileges, the Admin API Privileges section, check these permissions:
+5. In the **Privileges**, **Admin API Privileges** section, check these
+   permissions:
 
    - Users -> Read
    - Groups -> Read
    - Domain Management
    - User Security Management
+
+### In JupiterOne
+
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **Google** integration tile and click it.
+3. Click the **Add Configuration** button.
+4. Enter the **Account Name** by which you'd like to identify this Google
+   Workspace account in JupiterOne. Ingested entities will have this value
+   stored in `tag.AccountName` when **Tag with Account Name** is checked.
+5. Enter a **Description** that will further assist your team when identifying
+   the integration instance.
+6. Select a **Polling Interval** that you feel is sufficient for your monitoring
+   needs. You may leave this as `DISABLED` and manually execute the integration.
+7. Enter the **Customer ID** collected during setup of Google Workspace.
+8. Enter the **email address** of the user created during setup of Google
+   Workspace.
+9. Click **Create Configuration** once all values are provided.
+
+# How to Uninstall
+
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **Google** integration tile and click it.
+3. Identify and click the **integration to delete**.
+4. Click the **trash can** icon.
+5. Click the **Remove** button to delete the integration.
+6. Revoke JupiterOne from **Domain wide delegation** in Google Workspace.
+7. Delete the "JupiterOne SystemUser" user in Google Workspace.
+8. Delete the "JupiterOne System" role in Google Workspace.
 
 <!-- {J1_DOCUMENTATION_MARKER_START} -->
 <!--
