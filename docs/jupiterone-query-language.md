@@ -362,6 +362,54 @@ Return
   sum(snapshot.allocatedStorage) * 0.02 as EstimatedCost
 ```
 
+## Additional Operators
+
+J1QL also supports use of the following operators:
+
+- `~=` : contains
+- `^=` : starts with
+- `$=` : ends with
+- `!~=` : does not contain
+- `!^=` : does not start with
+- `!$=` : does not end with
+
+These operators only works against string values. It will not work against numbers.
+
+Examples:
+
+```j1ql
+Find aws_ec2 with tag.AccountName~='demo' 
+```
+
+*Keep in mind that these string evaluations are case-sensitive. So 'Demo' and
+'demo' will yield different results.*
+
+```j1ql
+Find Person with firstName^='J'
+```
+
+## Variable Placeholders
+
+Variable placeholders are leveraged using the syntax `{{variable-placeholder-name}}`.
+
+The value that is placed between the brackets is what will be displayed to the
+user in the UI. Take the following example query:
+
+```j1ql
+Find aws_instance with instanceId='{{instance-id}}'
+```
+
+When the query is run, a modal appears that prompts the user to enter a value
+that will be injected into the query. The query will not execute until the user
+clicks submit.
+
+![Variable Placeholder](../assets/jupiterone-query-language-placeholder.png)
+
+- You may include more than one placeholder in a query.
+- Queries with placeholders cannot be run from the landing search bar. They must
+  first be saved. Once saved, the query can be pulled up and run from the
+  questions library.
+
 ## Optional traversals (Beta)
 
 Note: This is a beta feature and the syntax for describing optional
