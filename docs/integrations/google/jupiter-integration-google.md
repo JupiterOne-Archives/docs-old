@@ -5,6 +5,8 @@
 - Visualize Google Workspace domain user groups, users, and their authorized
   tokens in the JupiterOne graph.
 - Map Google Workspace users to employees in your JupiterOne account.
+- Use queries to help perform access reviews, group assignments, OAuth
+  application authorizations, and other permission settings
 - Workspace users identified as employees are mapped to their managers to
   provide an organization chart in JupiterOne.
 - Monitor changes to Google Workspace users using JupiterOne alerts.
