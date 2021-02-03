@@ -56,7 +56,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: 1GG9pghkUn+V1hGJ3eK2UB4kuSiqwvEbNbn4sr6FEoA=
+        hash: nnDJSMxEG3uwOPmkfw+HhNj/1NAVdmmgwX/jPHDSH3k=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -562,7 +562,7 @@ sections:
       - title: Google
         file: ../docs/integrations/google/jupiter-integration-google.md
         id: 360022902533
-        hash: PsW+AlnJGzE/j807FP20En+9L+m93ggegn5+l+gfZs0=
+        hash: W3orXG0sXJ9PVVbBZ9IWYjSsWApHyHjT1Dvm9wwk9AA=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
