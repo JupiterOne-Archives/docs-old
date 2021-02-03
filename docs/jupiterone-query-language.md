@@ -381,6 +381,8 @@ Examples:
 Find aws_ec2 with tag.AccountName~='demo' 
 ```
 
+Which would return the following example results: `xyz_demo`, `demo_xyz`, and `abc_demo_xyz`
+
 *Keep in mind that these string evaluations are case-sensitive. So 'Demo' and
 'demo' will yield different results.*
 
