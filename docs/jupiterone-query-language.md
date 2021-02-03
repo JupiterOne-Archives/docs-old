@@ -192,7 +192,7 @@ J1QL supports the use of the following operators for string comparisons:
 
 These operators only work for string comparisons.
 
-Examples:
+**Examples:**
 
 ```j1ql
 Find Person with firstName^='J'
@@ -206,7 +206,7 @@ Find Host with tag.AccountName~='demo'
 
 The above query would return entities of the `Host` class with any of the following examples of `tag.AccountName`: `xyz_demo`, `demo_xyz`, `abc_demo_xyz`.
 
-*Keep in mind that these string evaluations are case-sensitive. So 'Demo' and
+*Note: These string evaluations are case-sensitive. So 'Demo' and
 'demo' will yield distinct sets of results.*
 
 ## Date Comparisons
