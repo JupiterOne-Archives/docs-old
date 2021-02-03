@@ -178,6 +178,36 @@ boundaries obvious to query authors.
 
 Keep in mind the keywords are _case insensitive_.
 
+## Additional Comparisons
+
+In addition to `=`, `>`, and `<`, J1QL also supports use of the following operators for comparisons:
+
+- `~=` : contains
+- `^=` : starts with
+- `$=` : ends with
+- `!~=` : does not contain
+- `!^=` : does not start with
+- `!$=` : does not end with
+
+These operators only work for string comparisons.
+
+Examples:
+
+```j1ql
+Find Person with firstName^='J'
+```
+
+The above query would return all entities of the `Person` class that have a `firstName` beginning with the character 'J'.
+
+```j1ql
+Find Host with tag.AccountName~='demo' 
+```
+
+The above query would return entities of the `Host` class with any of the following examples of `tag.AccountName`: `xyz_demo`, `demo_xyz`, `abc_demo_xyz`.
+
+*Keep in mind that these string evaluations are case-sensitive. So 'Demo' and
+'demo' will yield distinct sets of results.*
+
 ## Date Comparisons
 
 The query language supports both relative and static data comparisons on any
@@ -360,34 +390,6 @@ Find (aws_db_cluster_snapshot|aws_db_snapshot) as snapshot
 Return
   snapshot.tag.AccountName as Account,
   sum(snapshot.allocatedStorage) * 0.02 as EstimatedCost
-```
-
-## Additional Operators
-
-J1QL also supports use of the following operators:
-
-- `~=` : contains
-- `^=` : starts with
-- `$=` : ends with
-- `!~=` : does not contain
-- `!^=` : does not start with
-- `!$=` : does not end with
-
-These operators only works against string values. It will not work against numbers.
-
-Examples:
-
-```j1ql
-Find aws_ec2 with tag.AccountName~='demo' 
-```
-
-Which would return the following example results: `xyz_demo`, `demo_xyz`, and `abc_demo_xyz`
-
-*Keep in mind that these string evaluations are case-sensitive. So 'Demo' and
-'demo' will yield different results.*
-
-```j1ql
-Find Person with firstName^='J'
 ```
 
 ## Optional traversals (Beta)
