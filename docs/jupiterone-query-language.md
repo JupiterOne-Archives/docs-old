@@ -178,10 +178,11 @@ boundaries obvious to query authors.
 
 Keep in mind the keywords are _case insensitive_.
 
-## Additional Comparisons
+## String Comparisons
 
-In addition to `=`, `>`, and `<`, J1QL also supports use of the following operators for comparisons:
+J1QL supports the use of the following operators for string comparisons:
 
+- `=` : equal to
 - `~=` : contains
 - `^=` : starts with
 - `$=` : ends with
