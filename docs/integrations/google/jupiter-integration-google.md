@@ -141,6 +141,15 @@ permissions required by JupiterOne, and which will include only the
    Workspace.
 9. Click **Create Configuration** once all values are provided.
 
+### Integration Jobs Events
+
+A common log when running the integration job is `list_token_error`. Although it
+appears to be an error, this is actually just a warning returned from Google
+APIs because the **"JupiterOne SystemUser"** configured for integration purposes
+does not have the right permissions to list the tokens for users with higher
+privileges, such as the "Super Admin" Role. These tokens are not necessary for
+the job to complete and all other data will still be retrieved.
+
 # How to Uninstall
 
 1. From the configuration **Gear Icon**, select **Integrations**.
