@@ -178,6 +178,37 @@ boundaries obvious to query authors.
 
 Keep in mind the keywords are _case insensitive_.
 
+## String Comparisons
+
+J1QL supports the use of the following operators for string comparisons:
+
+- `=` : equal to
+- `~=` : contains
+- `^=` : starts with
+- `$=` : ends with
+- `!~=` : does not contain
+- `!^=` : does not start with
+- `!$=` : does not end with
+
+These operators only work for string comparisons.
+
+**Examples:**
+
+```j1ql
+Find Person with firstName^='J'
+```
+
+The above query would return all entities of the `Person` class that have a `firstName` beginning with the character 'J'.
+
+```j1ql
+Find Host with tag.AccountName~='demo' 
+```
+
+The above query would return entities of the `Host` class with any of the following examples of `tag.AccountName`: `xyz_demo`, `demo_xyz`, `abc_demo_xyz`.
+
+*Note: These string evaluations are case-sensitive. So 'Demo' and
+'demo' will yield distinct sets of results.*
+
 ## Date Comparisons
 
 The query language supports both relative and static data comparisons on any
