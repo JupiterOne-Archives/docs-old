@@ -146,9 +146,9 @@ permissions required by JupiterOne, and which will include only the
 A common log when running the integration job is `list_token_error`. Although it
 appears to be an error, this is actually just a warning returned from Google
 APIs because the **"JupiterOne SystemUser"** configured for integration purposes
-does not have the right permissions to list the tokens for super admin users.
-These tokens are not necessary for the job to complete and all other data will
-still be retrieved.
+does not have the right permissions to list the tokens for users with higher
+privileges, such as the "Super Admin" Role. These tokens are not necessary for
+the job to complete and all other data will still be retrieved.
 
 # How to Uninstall
 
