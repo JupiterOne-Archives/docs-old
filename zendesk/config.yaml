@@ -56,7 +56,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: nnDJSMxEG3uwOPmkfw+HhNj/1NAVdmmgwX/jPHDSH3k=
+        hash: 1EEXkwTLnwpP02JERqVhxJRHA2VNQBhbXKFtsOCOlaE=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -333,7 +333,7 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: 0pEcRhLTpnu5sJ8hcRLPMgirIEJTbcHM5o+HlvX7f5s=
+        hash: 08Da/+vOFzVE3ETCqu3yyDoP8ZzYkF5R8a68wxpI8P4=
         id: 360022722014
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722014'
   - name: API Docs
@@ -562,7 +562,7 @@ sections:
       - title: Google
         file: ../docs/integrations/google/jupiter-integration-google.md
         id: 360022902533
-        hash: W3orXG0sXJ9PVVbBZ9IWYjSsWApHyHjT1Dvm9wwk9AA=
+        hash: JWSl8xtaf6hNbd8JxUrKVEj5bpkZSVkFQPml03+YRBQ=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
@@ -709,6 +709,11 @@ sections:
         hash: J9VKkB53w3QjnBeUUlNOJtBqvFFdvnq6Yo5fwSubeA8=
         webLink: >-
           https://support.jupiterone.io/hc/en-us/articles/360022721274-WhiteHat-Security
+      - title: Whois
+        file: ../docs/integrations/whois/jupiter-integration-whois.md
+        hash: SHPoXC429InDf5kq8B4m+8s7IPvGMXfTAESXoavus4E=
+        id: 360062764753
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360062764753'
   - name: Power Ups
     id: 360006506113
     articles:
