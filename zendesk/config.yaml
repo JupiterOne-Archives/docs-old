@@ -56,7 +56,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: 1EEXkwTLnwpP02JERqVhxJRHA2VNQBhbXKFtsOCOlaE=
+        hash: 4rhsxgZH3QIahvzxyJqC9A9erDSSBczfuuAph7Br9xs=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -176,8 +176,8 @@ sections:
     id: 360008637414
     articles:
       - title: Query using internal metadata
-        file: ../queries/adv-example-resources-not-tagged.md
-        hash: 917QHfFFz8uMUzUPJ4nLpthuUqdX1owga5njOvMwnzU=
+        file: ../queries/adv-example-query-using-metadata.md
+        hash: spP0LYJJVF3Qlr9kIpPD0fgvItSZWBlWefg/BVu7Wps=
         id: 360048592834
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360048592834'
       - title: Query resources that do not have a certain tag
@@ -476,7 +476,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360051794213'
       - title: Azure
         file: ../docs/integrations/azure/graph-azure.md
-        hash: DqKQFUMGUUJ1IJIUXXTyBqnfBEKhzoqRZ7p1bkIljkU=
+        hash: gXVJLNlBa0c2RVkurpO7ihOe7aIRtPZqQDLyKoMs20s=
         id: 360024909213
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909213'
       - title: BambooHR
