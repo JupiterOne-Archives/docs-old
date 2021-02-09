@@ -59,7 +59,10 @@ gcloud services enable \
   iam.googleapis.com \
   cloudresourcemanager.googleapis.com \
   compute.googleapis.com \
-  cloudkms.googleapis.com
+  cloudkms.googleapis.com \
+  sqladmin.googleapis.com \
+  bigquery.googleapis.com \
+  dns.googleapis.com
 ```
 
 ### Creating Google Cloud project service account
@@ -125,13 +128,16 @@ For more info, run any command with the `--help` flag:
   $ JupiterOne Google Cloud Organization Integration Setup --help
 
 Options:
-  --jupiterone-account-id <jupiteroneAccountId>  (Required) JupiterOne Account ID
-  --jupiterone-api-key <jupiteroneApiKey>        (Required) JupiterOne API Key
-  --google-access-token <googleAccessToken>      (Required) Google Cloud Access Token
-  --organization-id [organizationId]             (Optional) Array of organization IDs to collect projects from
-  --project-id [projectId]                       (Optional) Array of project IDs to create integration instances with
-  --skip-system-projects [skipSystemProjects]    (Optional) Skips creation of any projects that have an ID that start with "sys-" (default: false)
-  -h, --help                                     Display this message
+  --jupiterone-account-id <jupiteroneAccountId>             (Required) JupiterOne Account ID
+  --jupiterone-api-key <jupiteroneApiKey>                   (Required) JupiterOne API Key
+  --google-access-token <googleAccessToken>                 (Required) Google Cloud Access Token
+  --organization-id [organizationId]                        (Optional) Array of organization IDs to collect projects from
+  --project-id [projectId]                                  (Optional) Array of project IDs to create integration instances with
+  --skip-project-id [projectId]                             (Optional) Array of project IDs to skip creating integration instances for
+  --skip-system-projects [skipSystemProjects]               (Optional) Skips creation of any projects that have an ID that start with "sys-" (default: true)
+  --rotate-service-account-keys [rotateServiceAccountKeys]  (Optional) Creates a new service account key for the JupiterOne service account and PUTs the JupiterOne integration instance (default: false)
+  --skip-project-id-regex [skipProjectIdRegex]              (Optional) Project IDs discovered that match this regex will be skipped
+  -h, --help                                                Display this message
 ```
 
 Example usage to create integration instances for every project that is under a
@@ -203,23 +209,29 @@ https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
 
 The following entities are created:
 
-| Resources               | Entity `_type`                   | Entity `_class`     |
-| ----------------------- | -------------------------------- | ------------------- |
-| Cloud API Service       | `google_cloud_api_service`       | `Service`           |
-| Cloud Function          | `google_cloud_function`          | `Function`          |
-| Cloud Storage Bucket    | `google_storage_bucket`          | `DataStore`         |
-| Compute Disk            | `google_compute_disk`            | `DataStore`, `Disk` |
-| Compute Firewalls       | `google_compute_firewall`        | `Firewall`          |
-| Compute Instance        | `google_compute_instance`        | `Host`              |
-| Compute Networks        | `google_compute_network`         | `Network`           |
-| Compute Subnetwork      | `google_compute_subnetwork`      | `Network`           |
-| IAM Role                | `google_iam_role`                | `AccessRole`        |
-| IAM Service Account     | `google_iam_service_account`     | `User`              |
-| IAM Service Account Key | `google_iam_service_account_key` | `AccessKey`         |
-| IAM User                | `google_user`                    | `User`              |
-| KMS Crypto Key          | `google_kms_crypto_key`          | `Key`, `CryptoKey`  |
-| KMS Key Ring            | `google_kms_key_ring`            | `Vault`             |
-| Project                 | `google_cloud_project`           | `Account`           |
+| Resources                     | Entity `_type`                   | Entity `_class`     |
+| ----------------------------- | -------------------------------- | ------------------- |
+| Big Query Dataset             | `google_bigquery_dataset`        | `DataStore`         |
+| Cloud API Service             | `google_cloud_api_service`       | `Service`           |
+| Cloud Function                | `google_cloud_function`          | `Function`          |
+| Cloud Storage Bucket          | `google_storage_bucket`          | `DataStore`         |
+| Compute Disk                  | `google_compute_disk`            | `DataStore`, `Disk` |
+| Compute Firewalls             | `google_compute_firewall`        | `Firewall`          |
+| Compute Instance              | `google_compute_instance`        | `Host`              |
+| Compute Networks              | `google_compute_network`         | `Network`           |
+| Compute Project               | `google_compute_project`         | `Project`           |
+| Compute Subnetwork            | `google_compute_subnetwork`      | `Network`           |
+| DNS Managed Zone              | `google_dns_managed_zone`        | `DomainZone`        |
+| IAM Role                      | `google_iam_role`                | `AccessRole`        |
+| IAM Service Account           | `google_iam_service_account`     | `User`              |
+| IAM Service Account Key       | `google_iam_service_account_key` | `AccessKey`         |
+| IAM User                      | `google_user`                    | `User`              |
+| KMS Crypto Key                | `google_kms_crypto_key`          | `Key`, `CryptoKey`  |
+| KMS Key Ring                  | `google_kms_key_ring`            | `Vault`             |
+| Project                       | `google_cloud_project`           | `Account`           |
+| SQL Admin MySQL Instance      | `google_sql_mysql_instance`      | `Database`          |
+| SQL Admin Postgres Instance   | `google_sql_postgres_instance`   | `Database`          |
+| SQL Admin SQL Server Instance | `google_sql_sql_server_instance` | `Database`          |
 
 ### Relationships
 
@@ -234,6 +246,7 @@ The following relationships are created/mapped:
 | `google_compute_instance`    | **USES**              | `google_compute_disk`            |
 | `google_compute_network`     | **CONTAINS**          | `google_compute_subnetwork`      |
 | `google_compute_network`     | **HAS**               | `google_compute_firewall`        |
+| `google_compute_project`     | **HAS**               | `google_compute_instance`        |
 | `google_compute_subnetwork`  | **HAS**               | `google_compute_instance`        |
 | `google_iam_service_account` | **ASSIGNED**          | `google_iam_role`                |
 | `google_iam_service_account` | **HAS**               | `google_iam_service_account_key` |
