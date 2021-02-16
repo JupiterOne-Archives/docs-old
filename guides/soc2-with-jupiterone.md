@@ -18,6 +18,8 @@ Review all of the templated, out-of-the-box policies + procedures, ensuring they
 
 Out of the box, the policies app comes with templated policies + procedures that can be edited/modified. Additionally, you can add your own policies + procedures + remove/delete documents that aren’t relevant to your organization.
 
+Reviewing + tailoring instructions are provided for the default, templated policies + procedures in the UI.
+
 ![policies](../assets/policies-1.png)
 
 Link within the app: [https://j1.apps.us.jupiterone.io/policies](https://j1.apps.us.jupiterone.io/policies)
@@ -30,7 +32,7 @@ Existing support documentation:
 
 ## 3. Import compliance framework
 
-Import the **SOC 2 Security Controls** compliance framework within the Compliance app. There is the functionality within JupiterOne to add controls, removal controls, and/or update control wording. 
+Import the **SOC 2 Security Controls** compliance framework within the Compliance app. 
 
 ![import-framework](../assets/import-framework.gif)
 
@@ -39,6 +41,12 @@ Link within the app: [https://j1.apps.us.jupiterone.io/compliance](https://j1dev
 Existing support documentation:
 
 [Import compliance standard or security questionnaire](https://support.jupiterone.io/hc/en-us/articles/360042682773-Import-Compliance-Standard-or-Security-Questionnaire)
+
+### Adding, editing, removing controls (control mapping)
+
+There is the functionality within JupiterOne to add controls, remove controls, and/or update control wording by editing the JSON (or CSV) framework specification.
+
+![control-mapping](../assets/edit-control-mapping.gif)
 
 ## 4. Review control/requirement policy + procedure mapping
 
@@ -73,8 +81,8 @@ Existing support documentation:
 [Search quickstart](https://support.jupiterone.io/hc/en-us/articles/360022705414-2-9-Search-Quickstart)\
 [J1QL language specs](https://support.jupiterone.io/hc/en-us/articles/360022722014-J1QL-Language-Specs) 
 
-2. Add additional queries, if relevant, by:
-            1. Adding a new query, or,
+### Add additional queries
+1. Adding a new query, or,
 
 Existing support documentation: 
 
@@ -82,7 +90,7 @@ Existing support documentation:
 [Search quickstart](https://support.jupiterone.io/hc/en-us/articles/360022705414-2-9-Search-Quickstart)\
 [J1QL language specs](https://support.jupiterone.io/hc/en-us/articles/360022722014-J1QL-Language-Specs)
 
-            2. Mapping a prewritten, templated query (over 400 are in our library)
+2. Mapping a prewritten, templated query (over 400 are in our library)
 
 ![additional-query](../assets/additional-queries.gif)
 
@@ -92,37 +100,32 @@ Existing support documentation:
 
 [All questions + queries](https://ask.us.jupiterone.io/filter?tagFilter=all)
 
-        3. Link additional evidence, i.e., hyperlink
-        4. Upload additional evidence, e.g., spreadsheets, compressed files, etc.
-        5. Add notes/attestations
+### Adding additional evidence
+1. Link additional evidence, i.e., hyperlink
+2. Upload additional evidence, e.g., spreadsheets, compressed files, etc.
+3. Add notes/attestations
 
 ![alternative-evidence](../assets/altnerative-evidence.gif)
 
-## 6. Reporting on/monitoring  SOC 2 progress/readiness
+## 6. Reporting on/monitoring SOC 2 progress/readiness + workflows
+
+### Reporting/monitoring
 
 For visibility, the default SOC 2 compliance framework landing page has the status of both evidence collection + a gap analysis to quickly identify which controls require your attention.
 
-Hovering over any of the 3x progress bars will provide a more detailed summary, with any of the reported details, clickable to quickly filter all of the controls with the same status:
+Hovering over any of the three (3) progress bars will provide a more detailed summary, with any of the reported details, clickable to quickly filter all of the controls with the same status:
 
 ![gap-status](../assets/status-gap.gif)
 
-## 7. Exporting compliance artifacts
-
-JupiterOne provides the capability to export compliance artifacts, e.g, control evidence, policies + procedures, reports, etc.
-
-- Exporting evidence per control
-- Exporting evidence for all controls within the SOC 2 framework, either as a summary, or the entire evidence output
-- Exporting a SOC 2 summary report
-
-![export-artifacts](../assets/exporting-artifacts.gif)
-
-## 8. Internal + auditor workflows
+### Internal + auditor workflows
 
 With the Compliance app in JupiterOne, you can enable workflow functionality that will allow your team to internally track workflow status, along with the ability to invite your external auditors to use JupiterOne to conduct the assessment with the same workflow functionality.
 
 ![workflow](../assets/workflow.gif)
 
-You can invite internal team members or external users, e.g., auditors, into your JupiterOne instance/environment:
+#### Managing access
+
+You can invite internal team members or external users, e.g., auditors, into your JupiterOne instance/environment.
 
 - Access is managed by RBAC groups
 - Users are invited via email address
@@ -134,6 +137,18 @@ Existing support documentation:
 
 ![access](../assets/access.gif)
 
+#### Recurring review configuration
+
 For ongoing/continuous compliance monitoring, you can set the recurring review configuration workflow to assign specific team members to receive notifications to review/maintain individual controls, groups of controls, or entire frameworks.
 
 ![review-config](../assets/review-config.gif)
+
+## 7. Exporting compliance artifacts
+
+JupiterOne provides the capability to export compliance artifacts, e.g, control evidence, policies + procedures, reports, etc.
+
+- Exporting evidence for a single control
+- Exporting evidence across all controls within the SOC 2 framework, either as a summary, or the entire evidence output
+- Exporting a SOC 2 summary report
+
+![export-artifacts](../assets/exporting-artifacts.gif)
