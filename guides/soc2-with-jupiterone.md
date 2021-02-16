@@ -30,7 +30,7 @@ Existing support documentation:
 
 ## 3. Import compliance framework
 
-Import the ‘SOC 2 Security Controls’ compliance framework within the Compliance app. 
+Import the **SOC 2 Security Controls** compliance framework within the Compliance app. There is the functionality within JupiterOne to add controls, removal controls, and/or update control wording. 
 
 ![import-framework](../assets/import-framework.gif)
 
@@ -61,9 +61,9 @@ For each control, the desired outcome is the corresponding evidence will suffice
 By default, for the standard controls within the SOC 2 framework in JupiterOne, more than half the controls have partial to full evidence already mapped, by way of JupiterOne query language (J1QL) managed queries.
 
 1. For each control, review default mapped evidence, if applicable.
-    1. If the evidence is satisfactory, move on to the next control.
+    1. If the evidence is satisfactory (as you'd expect for output), move on to the next control.
     2. If the evidence isn’t satisfactory, i.e., incorrect or incomplete:
-        1. Review the mapped queries + tailor the queries so the returned output is as expected.
+        1.  Review the mapped queries + tailor the queries so the returned output is as expected.
 
 ![edit-query](../assets/editing-queries.gif)
 
@@ -73,9 +73,7 @@ Existing support documentation:
 [Search quickstart](https://support.jupiterone.io/hc/en-us/articles/360022705414-2-9-Search-Quickstart)\
 [J1QL language specs](https://support.jupiterone.io/hc/en-us/articles/360022722014-J1QL-Language-Specs) 
 
-[comment] : <outline structure needs to be fixed>
-
-        2. Add additional queries, if relevant, by:
+2. Add additional queries, if relevant, by:
             1. Adding a new query, or,
 
 Existing support documentation: 
@@ -112,9 +110,9 @@ Hovering over any of the 3x progress bars will provide a more detailed summary, 
 
 JupiterOne provides the capability to export compliance artifacts, e.g, control evidence, policies + procedures, reports, etc.
 
--Exporting evidence per control\
--Exporting evidence for all controls within the SOC 2 framework, either as a summary, or the entire evidence output\
--Exporting a SOC 2 summary report
+- Exporting evidence per control
+- Exporting evidence for all controls within the SOC 2 framework, either as a summary, or the entire evidence output
+- Exporting a SOC 2 summary report
 
 ![export-artifacts](../assets/exporting-artifacts.gif)
 
@@ -126,9 +124,9 @@ With the Compliance app in JupiterOne, you can enable workflow functionality tha
 
 You can invite internal team members or external users, e.g., auditors, into your JupiterOne instance/environment:
 
--Access is managed by RBAC groups\
--Users are invited via email address\
--Granular access permissions are available
+- Access is managed by RBAC groups
+- Users are invited via email address
+- Granular access permissions are available
 
 Existing support documentation:
 
