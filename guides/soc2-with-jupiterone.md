@@ -6,9 +6,9 @@ Ensure all relevant managed integrations are properly configured to be working; 
 
 ![integrations](../assets/integrations.png)
 
-Link within the app: [https://j1.apps.us.jupiterone.io/integrations](https://j1.apps.us.jupiterone.io/integrations)
+[In-app integrations setup](https://apps.us.jupiterone.io/integrations)
 
-Existing support documentation:
+Additional support documentation:
 
 [Configure integrations](https://support.jupiterone.io/hc/en-us/articles/360022884813-1-9-Configure-Integrations)
 
@@ -18,13 +18,16 @@ Review all of the templated, out-of-the-box policies + procedures, ensuring they
 
 Out of the box, the policies app comes with templated policies + procedures that can be edited/modified. Additionally, you can add your own policies + procedures + remove/delete documents that aren’t relevant to your organization.
 
-Reviewing + tailoring instructions are provided for the default, templated policies + procedures in the UI.
-
 ![policies](../assets/policies-1.png)
 
-Link within the app: [https://j1.apps.us.jupiterone.io/policies](https://j1.apps.us.jupiterone.io/policies)
+Reviewing + tailoring instructions are provided for the default, templated policies + procedures in the UI.
 
-Existing support documentation:
+If not completed during JupiterOne account setup, the policy builder should be populated to prefill the templated policies + procedures.
+![policy-builder](../assets/policy-builder.png)
+
+[In-app policies setup](https://apps.us.jupiterone.io/policies)
+
+Additional support documentation:
 
 [Managing policies + procedures](https://support.jupiterone.io/hc/en-us/articles/360041809413-Managing-Policies-and-Procedures-on-JupiterOne)\
 [Using the policy builder CLI](https://support.jupiterone.io/hc/en-us/articles/360041809453-Using-the-Policy-Builder-CLI)\
@@ -36,9 +39,9 @@ Import the **SOC 2 Security Controls** compliance framework within the Complianc
 
 ![import-framework](../assets/import-framework.gif)
 
-Link within the app: [https://j1.apps.us.jupiterone.io/compliance](https://j1dev.apps.us.jupiterone.io/compliance)
+[In-app compliance setup](https://apps.us.jupiterone.io/compliance)
 
-Existing support documentation:
+Additional support documentation:
 
 [Import compliance standard or security questionnaire](https://support.jupiterone.io/hc/en-us/articles/360042682773-Import-Compliance-Standard-or-Security-Questionnaire)
 
@@ -56,7 +59,7 @@ However, if you wish to update the default mapping, e.g, if you want to add in y
 
 ![policy-mapping](../assets/policy-mapping.gif)
 
-Existing support documentation:
+Additional support documentation:
 
 [Compliance policies mapping](https://support.jupiterone.io/hc/en-us/articles/360042195394-Compliance-Policies-Mapping)\
 [Policies + procedures structure](https://support.jupiterone.io/hc/en-us/articles/360041337654-JupiterOne-Policies-and-Procedures-Structure)
@@ -70,12 +73,12 @@ By default, for the standard controls within the SOC 2 framework in JupiterOne, 
 
 1. For each control, review default mapped evidence, if applicable.
     1. If the evidence is satisfactory (as you'd expect for output), move on to the next control.
-    2. If the evidence isn’t satisfactory, i.e., incorrect or incomplete:
+    1. If the evidence isn’t satisfactory, i.e., incorrect or incomplete:
         1.  Review the mapped queries + tailor the queries so the returned output is as expected.
 
 ![edit-query](../assets/editing-queries.gif)
 
-Existing support documentation: 
+Additional support documentation: 
 
 [J1QL query tutorial](https://support.jupiterone.io/hc/en-us/articles/360022720434-4-9-J1QL-Query-Tutorial)\
 [Search quickstart](https://support.jupiterone.io/hc/en-us/articles/360022705414-2-9-Search-Quickstart)\
@@ -84,7 +87,7 @@ Existing support documentation:
 ### Add additional queries
 1. Adding a new query, or,
 
-Existing support documentation: 
+Additional support documentation: 
 
 [J1QL query tutorial](https://support.jupiterone.io/hc/en-us/articles/360022720434-4-9-J1QL-Query-Tutorial)\
 [Search quickstart](https://support.jupiterone.io/hc/en-us/articles/360022705414-2-9-Search-Quickstart)\
@@ -94,7 +97,7 @@ Existing support documentation:
 
 ![additional-query](../assets/additional-queries.gif)
 
-Existing support documentation:
+Additional support documentation:
 
 [Common questions + queries](https://support.jupiterone.io/hc/en-us/articles/360024909073-Common-Questions-and-Queries)
 
@@ -102,10 +105,10 @@ Existing support documentation:
 
 ### Adding additional evidence
 1. Link additional evidence, i.e., hyperlink
-2. Upload additional evidence, e.g., spreadsheets, compressed files, etc.
-3. Add notes/attestations
+1. Upload additional evidence, e.g., spreadsheets, compressed files, etc.
+1. Add notes/attestations
 
-![alternative-evidence](../assets/altnerative-evidence.gif)
+![alternative-evidence](../assets/alternative-evidence.gif)
 
 ## 6. Reporting on/monitoring SOC 2 progress/readiness + workflows
 
@@ -131,7 +134,7 @@ You can invite internal team members or external users, e.g., auditors, into you
 - Users are invited via email address
 - Granular access permissions are available
 
-Existing support documentation:
+Additional support documentation:
 
 [Invite your team members](https://support.jupiterone.io/hc/en-us/articles/360023317474-9-9-Invite-Your-Team-Members)
 
