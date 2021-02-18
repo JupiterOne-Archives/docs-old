@@ -2,7 +2,14 @@
 
 ## 1. Configure integrations
 
-Ensure all relevant managed integrations are properly configured to be working; for SOC 2, you’ll need to make a determination as to which integrations are necessary based on your in-scope environment, e.g., the relevant system components, infrastructure, tooling, etc. that are necessary to provide your service or product to your customers. 
+Ensure all relevant managed integrations are properly configured to be working;
+for SOC 2, you’ll need to make a determination as to which integrations are
+necessary based on your in-scope environment, e.g., the relevant system
+components, infrastructure, tooling, etc. that are necessary to provide your
+service or product to your customers. 
+
+Once configured, integrations will automatically start collecting data about
+your environment at a recurring cadence.
 
 ![integrations](../assets/integrations.png)
 
@@ -14,15 +21,22 @@ Additional support documentation:
 
 ## 2. Policies + procedures
 
-Review all of the templated, out-of-the-box policies + procedures, ensuring they accurately represent your organization’s principles/processes, tailoring and/or adding your own documentation where relevant. 
+Review all of the templated, out-of-the-box policies + procedures, ensuring they
+accurately represent your organization’s principles/processes, tailoring and/or
+adding your own documentation where relevant. 
 
-Out of the box, the policies app comes with templated policies + procedures that can be edited/modified. Additionally, you can add your own policies + procedures + remove/delete documents that aren’t relevant to your organization.
+Out of the box, the policies app comes with templated policies + procedures that
+can be edited/modified. Additionally, you can add your own policies + procedures
++ remove/delete documents that aren’t relevant to your organization.
 
 ![policies](../assets/policies-1.png)
 
-Reviewing + tailoring instructions are provided for the default, templated policies + procedures in the UI.
+Reviewing + tailoring instructions are provided for the default, templated
+policies + procedures in the UI.
 
-If not completed during JupiterOne account setup, the policy builder should be populated to prefill the templated policies + procedures.
+If not completed during JupiterOne account setup, the policy builder should be
+populated to prefill the templated policies + procedures.
+
 ![policy-builder](../assets/policy-builder.png)
 
 [In-app policies setup](https://apps.us.jupiterone.io/policies)
@@ -31,7 +45,8 @@ Additional support documentation:
 
 [Managing policies + procedures](https://support.jupiterone.io/hc/en-us/articles/360041809413-Managing-Policies-and-Procedures-on-JupiterOne)\
 [Using the policy builder CLI](https://support.jupiterone.io/hc/en-us/articles/360041809453-Using-the-Policy-Builder-CLI)\
-[Policies + procedures structure](https://support.jupiterone.io/hc/en-us/articles/360041337654-JupiterOne-Policies-and-Procedures-Structure)
+[Policies + procedures structure](https://support.jupiterone.io/hc/en-us/articles/360041337654-JupiterOne-Policies-and-Procedures-Structure)\
+[Compliance policies mapping](https://support.jupiterone.io/hc/en-us/articles/360042195394-Compliance-Policies-Mapping)
 
 ## 3. Import compliance framework
 
@@ -45,31 +60,26 @@ Additional support documentation:
 
 [Import compliance standard or security questionnaire](https://support.jupiterone.io/hc/en-us/articles/360042682773-Import-Compliance-Standard-or-Security-Questionnaire)
 
-### Adding, editing, removing controls (control mapping)
+## 4. Adding, editing, removing controls (control mapping)
 
-There is the functionality within JupiterOne to add controls, remove controls, and/or update control wording by editing the JSON (or CSV) framework specification.
+Within the default SOC 2 framework, templated controls are mapped to the Common
+Criteria required to meet the 'Security' Trust Service Category. 
+
+There is the functionality within JupiterOne to add controls, remove controls,
+and/or update control wording by editing the JSON (or CSV) framework
+specification.
 
 ![control-mapping](../assets/edit-control-mapping.gif)
 
-## 4. Review control/requirement policy + procedure mapping
-
-Within the imported SOC 2 framework, all of the templated policies + procedures are already mapped to the standard controls in the framework. If this meets your requirements, feel free to move on to the next step. 
-
-However, if you wish to update the default mapping, e.g, if you want to add in your own policies or procedures, you can review any/all of the controls for their existing mapping to make updates or changes.
-
-![policy-mapping](../assets/policy-mapping.gif)
-
-Additional support documentation:
-
-[Compliance policies mapping](https://support.jupiterone.io/hc/en-us/articles/360042195394-Compliance-Policies-Mapping)\
-[Policies + procedures structure](https://support.jupiterone.io/hc/en-us/articles/360041337654-JupiterOne-Policies-and-Procedures-Structure)
-
-
 ## 5. Review evidence mapping
 
-For each control, the desired outcome is the corresponding evidence will suffice to demonstrate reasonable assurance the control has been designed + implemented (SOC 2 Type I) + operating effectively over the review period (SOC 2 Type II). 
+For each control, the desired outcome is the corresponding evidence will suffice
+to demonstrate reasonable assurance the control has been designed + implemented
+(SOC 2 Type I) + operating effectively over the review period (SOC 2 Type II). 
 
-By default, for the standard controls within the SOC 2 framework in JupiterOne, more than half the controls have partial to full evidence already mapped, by way of JupiterOne query language (J1QL) managed queries.
+By default, for the standard controls within the SOC 2 framework in JupiterOne,
+more than half the controls have partial to full evidence already mapped, by way
+of JupiterOne query language (J1QL) managed queries.
 
 1. For each control, review default mapped evidence, if applicable.
     1. If the evidence is satisfactory (as you'd expect for output), move on to the next control.
@@ -114,21 +124,29 @@ Additional support documentation:
 
 ### Reporting/monitoring
 
-For visibility, the default SOC 2 compliance framework landing page has the status of both evidence collection + a gap analysis to quickly identify which controls require your attention.
+For visibility, the default SOC 2 compliance framework landing page has the
+status of both evidence collection + a gap analysis to quickly identify which
+controls require your attention.
 
-Hovering over any of the three (3) progress bars will provide a more detailed summary, with any of the reported details, clickable to quickly filter all of the controls with the same status:
+Hovering over any of the three (3) progress bars will provide a more detailed
+summary, with any of the reported details, clickable to quickly filter all of
+the controls with the same status:
 
 ![gap-status](../assets/status-gap.gif)
 
 ### Internal + auditor workflows
 
-With the Compliance app in JupiterOne, you can enable workflow functionality that will allow your team to internally track workflow status, along with the ability to invite your external auditors to use JupiterOne to conduct the assessment with the same workflow functionality.
+With the Compliance app in JupiterOne, you can enable workflow functionality
+that will allow your team to internally track workflow status, along with the
+ability to invite your external auditors to use JupiterOne to conduct the
+assessment with the same workflow functionality.
 
 ![workflow](../assets/workflow.gif)
 
 #### Managing access
 
-You can invite internal team members or external users, e.g., auditors, into your JupiterOne instance/environment.
+You can invite internal team members or external users, e.g., auditors, into
+your JupiterOne instance/environment.
 
 - Access is managed by RBAC groups
 - Users are invited via email address
@@ -142,16 +160,23 @@ Additional support documentation:
 
 #### Recurring review configuration
 
-For ongoing/continuous compliance monitoring, you can set the recurring review configuration workflow to assign specific team members to receive notifications to review/maintain individual controls, groups of controls, or entire frameworks.
+For ongoing/continuous compliance monitoring, you can set the recurring review
+configuration workflow to assign specific team members to receive notifications
+to review/maintain individual controls, groups of controls, or entire
+frameworks.
+
+By default, controls with queries/questions mapped for evidence are re-evaluated daily.
 
 ![review-config](../assets/review-config.gif)
 
 ## 7. Exporting compliance artifacts
 
-JupiterOne provides the capability to export compliance artifacts, e.g, control evidence, policies + procedures, reports, etc.
+JupiterOne provides the capability to export compliance artifacts, e.g, control
+evidence, policies + procedures, reports, etc.
 
 - Exporting evidence for a single control
-- Exporting evidence across all controls within the SOC 2 framework, either as a summary, or the entire evidence output
+- Exporting evidence across all controls within the SOC 2 framework, either as a
+  summary, or the entire evidence output
 - Exporting a SOC 2 summary report
 
 ![export-artifacts](../assets/exporting-artifacts.gif)
