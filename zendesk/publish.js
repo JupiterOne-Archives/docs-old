@@ -119,10 +119,13 @@ async function publish() {
         .replace(/<h3 id="(.*)">(.*)<\/h3>/g, anchoredHeaderH3)
         .replace(/<\/table>/g, '</table><br>');
 
-      let toc = '<div class="sidenav">\n<p><b>On this page:</b></p>';
+      let toc = 
+        '<div class="sidenav">\n' +
+        '<p><b>On this page:</b></p>\n' +
+        `<a href="#">${art.title}</a>\n`;
       const headings = html.matchAll(/<h2 id="(.*)">(.*)<a/g);
       for (const h of headings) {
-        toc += `<a href="#${h[1]}">${h[2].trim()}</a>`
+        toc += `<a href="#${h[1]}">${h[2].trim()}</a>\n`;
       }
       toc += '</div>\n';
 
