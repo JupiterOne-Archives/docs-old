@@ -19,7 +19,7 @@ An experimental [node.js client and CLI][1] can be found on Github.
 
 **Endpoint:** `/graphql`
 
-## Querying the graph with J1QL
+### Querying the graph with J1QL
 
 This query will allow you to run J1QL queries for fetching data.
 The GraphQL resolver requires that one parameter is provided:
@@ -148,7 +148,7 @@ Example state responses:
 }
 ```
 
-## Fetching Graph Data
+### Fetching Graph Data
 
 This query will be used for fetching graph data. The returned data includes the
 details of all vertices found on the graph as well as the edges that connect the
@@ -207,7 +207,7 @@ query testQuery {
 }
 ```
 
-## Retrieving a Single Vertex by ID
+### Retrieving a Single Vertex by ID
 
 This query will be used for fetching a vertex and its properties by its ID. The
 query requires one of two parameters:
@@ -259,7 +259,7 @@ Variables:
 }
 ```
 
-## Fetching Neighbors of a Vertex
+### Fetching Neighbors of a Vertex
 
 The `Vertex` type allows you to retrieve vertex and edge neighbors up to a
 certain depth using the `neighbors` field. The return type of the `neighbors`
@@ -306,7 +306,7 @@ Variables:
 
 NOTE: The depth that is supplied must be a value between 1 and 5 (inclusive)
 
-## Retrieving an Edge by ID
+### Retrieving an Edge by ID
 
 This query allows you to fetch an edge, its properties, and the relationship it
 describes by its ID or label and filters. The query requires one or two of three
@@ -364,7 +364,7 @@ Variables:
 }
 ```
 
-## Fetching the Count of Entities Via a \_type and/or \_class
+### Fetching the Count of Entities Via a \_type and/or \_class
 
 This query allows you to fetch the count of entities. The `_id`, `_key`,
 `_type`, or `_class` fields can be supplied as filters. This query only counts
@@ -406,7 +406,7 @@ Example result:
 }
 ```
 
-## Fetching the Count of All Types and Classes
+### Fetching the Count of All Types and Classes
 
 This query returns the entity counts for all types and classes.
 
@@ -434,7 +434,7 @@ Example result:
 }
 ```
 
-## Fetching the Count of All Types With a Set of Classes
+### Fetching the Count of All Types With a Set of Classes
 
 This query returns all types that have the specified classes. The query requires
 two parameters:
@@ -464,7 +464,7 @@ Example result:
 }
 ```
 
-## Listing Vertices Via a \_type and/or \_class
+### Listing Vertices Via a \_type and/or \_class
 
 For fetching entities with specified filters. The `_id`, `_key`, `_type` and
 `_class` fields can be supplied as filters. This query only returns the latest
@@ -535,7 +535,7 @@ Example result
 
 **Endpoint:** `/graphql`
 
-## Create Entity
+### Create Entity
 
 This mutation creates a JupiterOne entity with the given specifications. This
 mutation requires three parameters (with two optional parameters):
@@ -593,7 +593,7 @@ Variables:
 }
 ```
 
-## Updating Entity
+### Updating Entity
 
 This mutation updates an already existing entity (does not create an entity).
 You cannot change the `entityKey`, `entityClass`, or `entityType`.
@@ -644,7 +644,7 @@ Variables:
 }
 ```
 
-## Deleting Entity
+### Deleting Entity
 
 This mutation deletes an existing entity.
 This mutation requires one parameter (with one optional parameter):
@@ -690,7 +690,7 @@ Variables:
 
 **Endpoint:** `/graphql`
 
-## Create Relationship
+### Create Relationship
 
 ```graphql
 mutation CreateRelationship (
@@ -746,7 +746,7 @@ Variables:
 }
 ```
 
-## Update Relationship
+### Update Relationship
 
 ```graphql
 mutation UpdateRelationship (
@@ -790,7 +790,7 @@ Variables:
 }
 ```
 
-## Delete Relationship
+### Delete Relationship
 
 ```graphql
 mutation DeleteRelationship (
@@ -845,7 +845,7 @@ create, update, and delete operations will be automatically determined within
 the given scope. The scope value is stored on the entities and relationships in
 the `_scope` property.
 
-## Integration Job Bookkeeping
+### Integration Job Bookkeeping
 
 While an integration job is running, the persister will need to keep track of
 data as the job progresses.
@@ -858,7 +858,7 @@ This information will be tracked:
 - Job status and progress counters
 - Job metadata (start time, source, etc.)
 
-## Phases of Synchronization
+### Phases of Synchronization
 
 1. **Data Collection:** An integration job or other tools runs and collects all
    data and stores it temporarily on filesystem.
@@ -879,7 +879,7 @@ This information will be tracked:
 
 ## Synchronization API Usage:
 
-## Start a synchronization job
+### Start a synchronization job
 
 **Sample request:**
 
@@ -929,7 +929,7 @@ POST /persister/synchronization/jobs
 }
 ```
 
-## Get status of synchronization job
+### Get status of synchronization job
 
 **Sample request:**
 
@@ -959,7 +959,7 @@ GET /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3
 }
 ```
 
-## Upload batch of entities
+### Upload batch of entities
 
 **Sample request:**
 
@@ -1008,7 +1008,7 @@ POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/entiti
 }
 ```
 
-## Upload batch of relationships
+### Upload batch of relationships
 
 **Sample request:**
 
@@ -1057,7 +1057,7 @@ POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/relati
 }
 ```
 
-## Finalize synchronization job
+### Finalize synchronization job
 
 **Sample request:**
 
@@ -1109,7 +1109,7 @@ POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/finali
 }
 ```
 
-## Synchronization job status upon completion
+### Synchronization job status upon completion
 
 **Sample request:**
 
@@ -1178,7 +1178,7 @@ Variables:
 
 **Endpoint:** `/rules/graphql`
 
-## Create an alert rule
+### Create an alert rule
 
 ```graphql
 mutation CreateQuestionRuleInstance (
@@ -1264,7 +1264,7 @@ Free accounts only have access to the `ONE_WEEK` interval by default, but
 any upgrades to Compliance, Security, or Integrations will provide access
 to the `ONE_DAY` polling interval too.
 
-## Update an alert rule
+### Update an alert rule
 
 ```graphql
 mutation UpdateQuestionRuleInstance (
@@ -1345,7 +1345,7 @@ Note that the only difference here for `update` is the `"id"` property
 associated with the rule instance. All settings of a rule instance can be
 modified.
 
-## Delete an alert rule
+### Delete an alert rule
 
 ```graphql
 mutation DeleteRuleInstance ($id: ID!) {
@@ -1369,7 +1369,7 @@ Note that deleting an alert rule this way will **not** dismiss active alerts
 already triggered by this rule. It is recommended to **Disable** a rule in the
 alerts app UI instead of deleting one.
 
-## Trigger an alert rule on demand
+### Trigger an alert rule on demand
 
 ```graphql
 mutation EvaluateRuleInstance ($id: ID!) {
@@ -1396,7 +1396,7 @@ variables:
 
 **Endpoint:** `/graphql`
 
-## Create a Question
+### Create a Question
 
 ```graphql
   mutation CreateQuestion($question: CreateQuestionInput!) {
@@ -1454,7 +1454,7 @@ variables:
 - `name` should be a single word without special characters
 - queries named `good`, `bad`, and `unkown` are used to determine gaps/issues and to perform continuous compliance assessment
 
-## Update a question
+### Update a question
 
 ```graphql
   mutation UpdateQuestion($id: ID!, $update: QuestionUpdate!) {
@@ -1510,7 +1510,7 @@ variables:
 Note that the only difference here for `update` is the `"id"` property
 associated with the question.
 
-## Delete a question.
+### Delete a question
 
 ```graphql
   mutation DeleteQuestion($id: ID!) {
@@ -1546,7 +1546,7 @@ variables:
 
 ## Integration Operations:
 
-## Finding an Integration Definition based on a type
+### Finding an Integration Definition based on a type
 
 This query returns an Integration Definition. This query requires an Integration Type.
 
@@ -1568,7 +1568,7 @@ query testQuery ($integrationType: String!) {
 }
 ```
 
-## Getting an Integration Definition with an ID
+### Getting an Integration Definition with an ID
 
 This query returns a Integration Definition. This query requires an ID.
 
@@ -1583,7 +1583,7 @@ query getIntegrationDefinition($id: String) {
 }
 ```
 
-## List Integration Definitions
+### List Integration Definitions
 
 This query returns a list of all Integration Definitions.
 
