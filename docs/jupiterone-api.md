@@ -828,7 +828,7 @@ Variables:
 }
 ```
 
-## Entity and Relationship Synchronization
+## Entity and Relationship Synchronization (Bulk Upload)
 
 An integration job is responsible for sending all of the latest entities and
 relationships to the persister and the persister will compare the _new state_ to
