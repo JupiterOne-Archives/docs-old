@@ -117,8 +117,7 @@ async function publish() {
         .replace(/<\/code><\/pre>/g, '</div></pre>')
         .replace(/<h2 id="(.*)">(.*)<\/h2>/g, anchoredHeaderH2)
         .replace(/<h3 id="(.*)">(.*)<\/h3>/g, anchoredHeaderH3)
-        .replace(/<\/table>/g, '</table><br>')
-        .replace(/<i class="fa[srldb]?\sfa-.+"><\/i>/i, `${fontAwesome}\n$&`);
+        .replace(/<\/table>/g, '</table><br>');
 
       let toc = '<div class="sidenav">\n<p><b>On this page:</b></p>';
       const headings = html.matchAll(/<h2 id="(.*)">(.*)<a/g);
@@ -127,9 +126,17 @@ async function publish() {
       }
       toc += '</div>\n';
 
+      let body = html;
+      if (html.match(/<h2/)) {
+        body = tocStyle + toc + html;
+      }
+      if (html.match(/<i class="fa[srldb]?\sfa-.+"><\/i>/i)) {
+        body = fontAwesome + body;
+      }
+
       const article = {
         title: art.title,
-        body: tocStyle + toc + html,
+        body,
         user_segment_id: null,
         permission_group_id: zendesk_managers_agents_group_id
       }
