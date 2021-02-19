@@ -77,12 +77,14 @@ async function publish() {
       }
       const staticAssetsUrl = 'https://github.com/JupiterOne/docs/blob/master/assets/$2.$3?raw=true';
       const anchorIcon = `<img src="https://raw.githubusercontent.com/feathericons/feather/master/icons/link.svg?sanitize=true" width="12" height="12">`;
-      const anchoredHeader = `<h2 id="$1">$2 <a href="#$1">${anchorIcon}</a></a></h2>`;
+      const anchoredHeaderH2 = `<h2 id="$1">$2 <a href="#$1">${anchorIcon}</a></a></h2>`;
+      const anchoredHeaderH3 = `<h3 id="$1">$2 <a href="#$1">${anchorIcon}</a></a></h3>`;
       const html = converter.makeHtml(data)
         .replace(/(\.\.\/)+assets\/(.*)\.(png|jpg|gif|svg)/g, staticAssetsUrl)
         .replace(/<pre><code/g, '<pre><div')
         .replace(/<\/code><\/pre>/g, '</div></pre>')
-        .replace(/<h2 id="(.*)">(.*)<\/h2>/g, anchoredHeader)
+        .replace(/<h2 id="(.*)">(.*)<\/h2>/g, anchoredHeaderH2)
+        .replace(/<h3 id="(.*)">(.*)<\/h3>/g, anchoredHeaderH3)
         .replace(/<\/table>/g, '</table><br>')
         .replace(/<i class="fa[srldb]?\sfa-.+"><\/i>/i, `${fontAwesome}\n$&`);
       const article = {
