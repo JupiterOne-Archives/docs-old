@@ -22,6 +22,38 @@ const pass = process.env.ZENDESK_PASS;
 
 const zendesk_managers_agents_group_id = 554213;
 
+const tocStyle = `
+<style>
+.sidenav {
+  height: 100%; 
+  width: 250px; 
+  position: fixed; 
+  z-index: 1; 
+  top: 250px; 
+  right: 0;
+  background-color: none; 
+  overflow-x: hidden; 
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #333333;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #007797;
+}
+
+@media screen and (max-width: 1024px) {
+  .sidenav { display: none }
+}
+</style>
+`
+
 const request = rp.defaults({
   baseUrl,
   auth: {
@@ -85,11 +117,29 @@ async function publish() {
         .replace(/<\/code><\/pre>/g, '</div></pre>')
         .replace(/<h2 id="(.*)">(.*)<\/h2>/g, anchoredHeaderH2)
         .replace(/<h3 id="(.*)">(.*)<\/h3>/g, anchoredHeaderH3)
-        .replace(/<\/table>/g, '</table><br>')
-        .replace(/<i class="fa[srldb]?\sfa-.+"><\/i>/i, `${fontAwesome}\n$&`);
+        .replace(/<\/table>/g, '</table><br>');
+
+      let toc = 
+        '<div class="sidenav">\n' +
+        '<p><b>On this page:</b></p>\n' +
+        `<a href="#">${art.title}</a>\n`;
+      const headings = html.matchAll(/<h2 id="(.*)">(.*)<a/g);
+      for (const h of headings) {
+        toc += `<a href="#${h[1]}">${h[2].trim()}</a>\n`;
+      }
+      toc += '</div>\n';
+
+      let body = html;
+      if (html.match(/<h2/)) {
+        body = tocStyle + toc + html;
+      }
+      if (html.match(/<i class="fa[srldb]?\sfa-.+"><\/i>/i)) {
+        body = fontAwesome + body;
+      }
+
       const article = {
         title: art.title,
-        body: html,
+        body,
         user_segment_id: null,
         permission_group_id: zendesk_managers_agents_group_id
       }
