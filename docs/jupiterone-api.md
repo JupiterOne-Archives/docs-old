@@ -15,7 +15,7 @@ An experimental [node.js client and CLI][1] can be found on Github.
 
 [1]: https://github.com/JupiterOne/jupiterone-client-nodejs
 
-## Entity and Relationship Queries:
+## Entity and Relationship Queries
 
 **Endpoint:** `/graphql`
 
@@ -531,7 +531,7 @@ Example result
 }
 ```
 
-## Entity Mutations:
+## Entity Mutations
 
 **Endpoint:** `/graphql`
 
@@ -686,7 +686,7 @@ Variables:
 }
 ```
 
-## Relationship Mutations:
+## Relationship Mutations
 
 **Endpoint:** `/graphql`
 
@@ -828,7 +828,7 @@ Variables:
 }
 ```
 
-## Entity and Relationship Synchronization:
+## Entity and Relationship Synchronization
 
 An integration job is responsible for sending all of the latest entities and
 relationships to the persister and the persister will compare the _new state_ to
@@ -877,7 +877,7 @@ This information will be tracked:
    Entities are finalized first and relationships are finalized afterward (since
    relationships might reference new entities).
 
-## Synchronization API Usage:
+## Synchronization API Usage
 
 ### Start a synchronization job
 
@@ -1139,7 +1139,7 @@ GET /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3
 }
 ```
 
-## Building CSV Report:
+## Building CSV Report
 
 **Endpoint:** `/graphql`
 
@@ -1174,7 +1174,7 @@ Variables:
 }
 ```
 
-## Alert and Rules Operations:
+## Alert and Rules Operations
 
 **Endpoint:** `/rules/graphql`
 
@@ -1392,7 +1392,7 @@ variables:
 }
 ```
 
-## Question Operations:
+## Question Operations
 
 **Endpoint:** `/graphql`
 
@@ -1544,7 +1544,7 @@ variables:
 }
 ```
 
-## Integration Operations:
+## Integration Operations
 
 ### Finding an Integration Definition based on a type
 
@@ -1604,7 +1604,7 @@ query testQuery {
 }
 ```
 
-## Example Usage:
+## Example Usage
 
 **Creating entities and a relationship between them**
 NOTE: The following mutations utilize a J1Client.
