@@ -877,9 +877,9 @@ This information will be tracked:
    Entities are finalized first and relationships are finalized afterward (since
    relationships might reference new entities).
 
-### Synchronization API Usage
+## Synchronization API Usage
 
-#### Start a synchronization job
+### Start a synchronization job
 
 **Sample request:**
 
@@ -929,7 +929,7 @@ POST /persister/synchronization/jobs
 }
 ```
 
-#### Get status of synchronization job
+### Get status of synchronization job
 
 **Sample request:**
 
@@ -959,7 +959,7 @@ GET /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3
 }
 ```
 
-#### Upload batch of entities
+### Upload batch of entities
 
 **Sample request:**
 
@@ -1008,7 +1008,7 @@ POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/entiti
 }
 ```
 
-#### Upload batch of relationships
+### Upload batch of relationships
 
 **Sample request:**
 
@@ -1057,7 +1057,7 @@ POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/relati
 }
 ```
 
-#### Finalize synchronization job
+### Finalize synchronization job
 
 **Sample request:**
 
@@ -1109,7 +1109,7 @@ POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/finali
 }
 ```
 
-#### Synchronization job status upon completion
+### Synchronization job status upon completion
 
 **Sample request:**
 
@@ -1255,7 +1255,14 @@ variables:
 ```
 
 Note that the recommended interval for query based alert rules (aka a `question`)
-is `ONE_DAY`. Supported intervals are `THIRTY_MINUTES`, `ONE_HOUR`, and `ONE_DAY`.
+is `ONE_DAY`. \
+Supported intervals for enterprise customers are:
+`DISABLED`, `THIRTY_MINUTES`, `ONE_HOUR`, `FOUR_HOURS`, `EIGHT_HOURS`,
+`TWELVE_HOURS`, `ONE_DAY`, and `ONE_WEEK`.
+
+Free accounts only have access to the `ONE_WEEK` interval by default, but
+any upgrades to Compliance, Security, or Integrations will provide access
+to the `ONE_DAY` polling interval too.
 
 ### Update an alert rule
 
@@ -1503,7 +1510,7 @@ variables:
 Note that the only difference here for `update` is the `"id"` property
 associated with the question.
 
-### Delete a question.
+### Delete a question
 
 ```graphql
   mutation DeleteQuestion($id: ID!) {
@@ -1597,9 +1604,7 @@ query testQuery {
 }
 ```
 
-###
-
-## Example Usages
+## Example Usage
 
 **Creating entities and a relationship between them**
 NOTE: The following mutations utilize a J1Client.
