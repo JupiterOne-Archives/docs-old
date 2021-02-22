@@ -15,18 +15,38 @@ the username and password (or [API token][2] when passwords require MFA) to
 JupiterOne for HTTP Basic Auth as described in the [Jira Security for Other
 Integrations][1] documentation.
 
-1. Create a Jira user for exclusive use by JupiterOne.
-1. Authorize the user to read groups and users by granting the ["Browse Users"
+### Configure a JupiterOne User
+
+**Option 1 - Create a New User**
+
+1. Create a new service account for JupiterOne use or use an existing account.
+1. Login to Jira and navigate to *User Management*.
+1. Send an invite to the service account.
+
+**Option 2 - Leverage an Existing User**
+
+Before you use an existing user, you should verify a couple of things.
+
+- Make sure the appropriate permissions are configured/can be added to the
+   account (see the *Permissions* section below).
+- Make sure you have the ability to login to the user's Jira account.
+
+### Permissions
+
+- Authorize the user to read groups and users by granting the ["Browse Users"
    global permission][5]. This allows JupiterOne to provide visibility into Jira
    access.
-1. Authorize browse access to projects configured in JupiterOne. Use [group,
+- Authorize browse access to projects configured in JupiterOne. Use [group,
    project, role, and issue security features of Jira][3] to manage the user's
-   access. Note that retricting to read-only access will require explicit
+   access. Note that restricting to read-only access will require explicit
    removal of write permissions. Please see the Jira article on [How to Create a
    Read Only User][4].
-1. Authorize "Create Issues" permissions in projects that serve as JupiterOne
+- Authorize "Create Issues" permissions in projects that serve as JupiterOne
    Alert Rule action targets.
-1. Log in to Jira as the JupiterOne user and [create an API token][2].
+
+### Create an API Token
+
+1. Log in to Jira as the JupiterOne user and follow the Jira guide to [create an API token][2].
 
 ## Entities
 
