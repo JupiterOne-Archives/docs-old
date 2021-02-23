@@ -22,6 +22,12 @@ const pass = process.env.ZENDESK_PASS;
 
 const zendesk_managers_agents_group_id = 554213;
 
+const anchorIcon = `
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>`;
+
 const tocStyle = `
 <style>
 .sidenav {
@@ -51,7 +57,7 @@ const tocStyle = `
   .sidenav { display: none }
 }
 </style>
-`
+`;
 
 const request = rp.defaults({
   baseUrl,
@@ -107,7 +113,6 @@ async function publish() {
         match = linksRegex.exec(data);
       }
       const staticAssetsUrl = 'https://github.com/JupiterOne/docs/blob/master/assets/$2.$3?raw=true';
-      const anchorIcon = `<img src="https://raw.githubusercontent.com/feathericons/feather/master/icons/link.svg?sanitize=true" width="12" height="12">`;
       const anchoredHeaderH2 = `<h2 id="$1">$2 <a href="#$1">${anchorIcon}</a></a></h2>`;
       const anchoredHeaderH3 = `<h3 id="$1">$2 <a href="#$1">${anchorIcon}</a></a></h3>`;
       const html = converter.makeHtml(data)
