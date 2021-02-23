@@ -36,18 +36,6 @@ const tocStyle = `
   padding-top: 20px;
 }
 
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 14px;
-  color: #333333;
-  display: block;
-}
-
-.sidenav a:hover {
-  color: #007797;
-}
-
 @media screen and (max-width: 1024px) {
   .sidenav { display: none }
 }
