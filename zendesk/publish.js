@@ -41,6 +41,12 @@ const tocStyle = `
   display: block;
 }
 
+.sidenav a:hover {
+  border-left: solid 2px white;
+  padding: 6px 6px 6px 10px;
+  text-decoration: none;
+}
+
 @media screen and (max-width: 1024px) {
   .sidenav { display: none }
 }
