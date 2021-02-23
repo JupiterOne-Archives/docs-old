@@ -30,22 +30,15 @@ const tocStyle = `
   position: fixed; 
   z-index: 1; 
   top: 250px; 
-  right: 0;
+  left: calc(450px + 100vw/2);
   background-color: none; 
   overflow-x: hidden; 
   padding-top: 20px;
 }
 
 .sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 14px;
-  color: #333333;
+  padding: 6px 6px 6px 12px;
   display: block;
-}
-
-.sidenav a:hover {
-  color: #007797;
 }
 
 @media screen and (max-width: 1024px) {
