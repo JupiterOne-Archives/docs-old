@@ -30,10 +30,15 @@ const tocStyle = `
   position: fixed; 
   z-index: 1; 
   top: 250px; 
-  right: 0;
+  left: calc(450px + 100vw/2);
   background-color: none; 
   overflow-x: hidden; 
   padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 12px;
+  display: block;
 }
 
 @media screen and (max-width: 1024px) {
