@@ -1,4 +1,4 @@
-# SOC 2 using JupiterOne
+# Supporting SOC 2 audits using JupiterOne
 
 ## 1. Configure integrations
 
