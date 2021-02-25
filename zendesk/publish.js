@@ -35,11 +35,12 @@ const tocStyle = `
   width: 250px; 
   position: fixed; 
   z-index: 1; 
-  top: 250px; 
+  top: 170px; 
   left: calc(450px + 100vw/2);
   background-color: none; 
   overflow-x: hidden; 
-  padding-top: 20px;
+  padding-top: 10px;
+  font-size: .9em;
 }
 
 .sidenav a {
@@ -135,10 +136,10 @@ async function publish() {
 
       let body = html;
       if (html.match(/<h2/)) {
-        body = tocStyle + toc + html;
+        body = body + tocStyle + toc;
       }
       if (html.match(/<i class="fa[srldb]?\sfa-.+"><\/i>/i)) {
-        body = fontAwesome + body;
+        body = body + fontAwesome;
       }
 
       const article = {
