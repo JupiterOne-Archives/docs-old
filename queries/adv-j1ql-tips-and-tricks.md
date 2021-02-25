@@ -1,14 +1,20 @@
 # J1QL Tips and Tricks
 
-This guide contains useful topics for creating custom JupiterOne queries within
-your own account. We recommend starting with our wide-array of
+This guide contains tips and tricks that assist in creating J1QL queries in your account.
+If you haven't already, check out our [J1QL Tutorial](https://support.jupiterone.io/hc/en-us/articles/360022720434-4-9-J1QL-Query-Tutorial)
+as well as our [J1QL Language Specs](https://support.jupiterone.io/hc/en-us/articles/360022722014-J1QL-Language-Specs) 
+articles for helpful context.
+
+Before creating your own query, we recommend starting with our wide-array of 
 [pre-canned questions](https://support.jupiterone.io/hc/en-us/articles/360038496974-Packaged-Questions-Catalog),
 tweaking them as needed, then creating your own from scratch.
 
 ## When to Use WITH vs WHERE
 
 `WITH` and `WHERE` are both keywords used to filter the results of your query.
-The filtering of the results happens either pre-traversal or post-traversal. 
+The filtering of the results happens either pre-traversal or post-traversal.
+`WITH` is used for pre-traversal filtering and `WHERE` is used for
+post-traversal filtering.
 
 In a *pre-traversal* filter, the nodes specified in the query are filtered down
 before traversing child nodes and finding matching query results.
@@ -16,6 +22,9 @@ before traversing child nodes and finding matching query results.
 In a *post-traversal* filter, the entire graph is traversed to find potential
 matching query results before filtering occurs on the resulting graph to produce
 the final query result.
+
+**TIP** Use `WITH` over `WHERE` when possible as the `WITH` operation is faster
+and more efficient.
 
 ### WITH
 
@@ -29,19 +38,16 @@ Find User that HAS UserGroup that ASSIGNED AccessRole that (ALLOWS|TRUSTS) Accou
 
 ![j1ql-custom-query-with-example](../assets/j1ql-custom-query-with-example.png)
 
-The query will iterate through the graph database finding any User across your
-environment that is part of a UserGroup, and the UserGroup is assigned an
-AccessRole, and the AccessRole allows or trusts an Account that is tagged as 
-production.
+This query filters all the Account nodes down to just those with a Production
+tag before the query sees if there are AccessRole(s) connected. The query will
+then join any connected UserGroup(s), and finally any User(s) part of the
+UserGroup(s).
 
 ### WHERE
 
-`WHERE` must be used anytime we need to compare two properties across different
-nodes.
-
 1. `WHERE` is used to filter entity **node** properties **post-traversal**.
 
-Let's continue with the previous example.
+Let's continue with the previous `WITH` example.
 
 ```j1ql
 Find User as u1 that HAS UserGroup that ASSIGNED AccessRole that ASSIGNED User as u2 WHERE u1.name=u2.name
@@ -49,9 +55,13 @@ Find User as u1 that HAS UserGroup that ASSIGNED AccessRole that ASSIGNED User a
 
 ![j1ql-custom-query-where-example](../assets/j1ql-custom-query-where-example.png)
 
-This query finds Users that are part of a UserGroup that are assigned an
-AccessRole, but are assigned to that same AccessRole directly as a User outside
-of a UserGroup.
+This query will first find every User that is part of a UserGroup that is
+assigned an AccessRole that is assigned a User. Once the results have been been
+retrieved, the query will take both Users that were assigned an alias (u1 and
+u2), and compare the name property on each. If they match, the filtered result
+will be returned.
+
+**TIP** Node comparisons in this example can only be done using `WHERE`.
 
 2. `WHERE` can also be used to filter the relationship **edge** properties **post-traversal**.
 
@@ -67,14 +77,15 @@ This query checks the edge, `ASSIGNED`, and filters on its properties. In this
 example we find trainings assigned to Users where the `completedOn` date is
 undefined (or incomplete).
 
-**NOTE** Use `WITH` over `WHERE` when possible as the `WITH` operation is more
-efficient.
+**REMINDER** Use `WITH` over `WHERE` when possible as the `WITH` operation is faster
+and more efficient.
 
 ## Variable Placeholders
 
-A variable placeholder is used to prompt a user for a specific value to be
-injected into a pre-saved query. Variable placeholders can be leveraged in J1QL
-using the double curly bracket syntax `{{variable-placeholder-name}}`.
+A variable placeholder(s) is used in the JupiterOne web application to prompt a
+user for a specific value(s) to be injected into a pre-saved query. Variable
+placeholders can be leveraged in J1QL using the double curly bracket syntax
+`{{variable-placeholder-name}}`.
 
 Take the following pre-saved query as an example.
 
@@ -114,27 +125,38 @@ There are two ways to create a new question and add a variable placeholder.
 ![j1ql-custom-query-library](../assets/j1ql-custom-query-library.png)
 ![j1ql-custom-query-duplicate](../assets/j1ql-custom-query-duplicate.png)
 
-**NOTES**
+**REMINDER**
 - One or more placeholders can be used in a single saved query.
 - Placeholders are not supported via the J1 API.
 
 ## Leveraging the Graph for Context
 
-Before leveraging the graph, check out the [Data Model - Overview](https://support.jupiterone.io/hc/en-us/articles/360022903573-Data-Model-Overview)
-document for a comprehensive list of JupiterOne entities, their properties, and their relationships to other entities. The graph is a tool that can be used when these details are unknown.
+Leveraging the graph in JupiterOne to gain context on your cyber security
+environment is one useful way construct a J1QL query. You can start from a basic
+query or use an existing one to customize a more meaningful query. Check out the 
+[J1QL Tutorial](https://support.jupiterone.io/hc/en-us/articles/360022720434-4-9-J1QL-Query-Tutorial)
+for an overview of nodes and relationships as they relate to J1QL.
 
-Also keep in mind that when traversing the graph from a starting node, you may
-not see all the possible relationships to other nodes. For a comprehensive list
-of entities and their relationships for a specific integration, see the
-[integration guides](https://support.jupiterone.io/hc/en-us/sections/360004247473-Integrations).
+Before you jump in, check out the [Data Model - Overview](https://support.jupiterone.io/hc/en-us/articles/360022903573-Data-Model-Overview)
+document for a comprehensive list of JupiterOne entities, their properties, and the relationships between entities. 
+The graph is a tool that can be used when these details are unknown.
 
-**HINT** To see all of the related entities from a single node, use the
-relationship verb `RELATES TO`, which graphs out related entities and the
-relationships between them. See the following example.
+When traversing the graph from a starting node, you will be able to see and
+expand every related node. For a comprehensive list of all entities and
+relationships for a specific integration, see the corresponding [Integration Guide](https://support.jupiterone.io/hc/en-us/sections/360004247473-Integrations).
+
+**TIP** When you are in doubt about which verb to use to traverse an edge, use
+the catch-all verb `RELATES TO`, which graphs out related entities and the
+relationships between them. However, you should not use `RELATES TO` in your
+final/saved query because the query will run slow having to check all nodes as
+possible children instead of just those connected by a specific edge verb. See
+the following example.
 
 ```j1ql
 Find User that RELATES TO *
 ```
+
+### In the JupiterOne App
 
 1. To start, navigate to the Landing page of JupiterOne and type in a basic query,
 replacing `DataStore` with the entity class/type you are interested in.
@@ -178,7 +200,7 @@ Find User that HAS UserGroup
 Find User that ASSIGNED Application
 ```
 
-**Hint** Relationships can be queried bidirectionally. For example, `Find User
+**TIP** Relationships can be queried bidirectionally. For example, `Find User
 that HAS UserGroup` can also be queried as `Find UserGroup that HAS User` and will
 return the same results in the graph. However, the list view will return a list
 of either `User` or `UserGroup` depending on which entity you `Find`.
@@ -203,4 +225,3 @@ Find User that HAS UserGroup that ASSIGNED AccessRole that TRUSTS Account
 ```
 
 ![j1ql-custom-query-full-example](../assets/j1ql-custom-query-full-example.png)
-
