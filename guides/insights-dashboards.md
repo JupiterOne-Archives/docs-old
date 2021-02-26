@@ -1,7 +1,7 @@
 # Getting Started With Insights Dashboards
 This guide will walk through how to:
 1. Import prebuilt Insights Dashboards
-1. Create your own custom dashboard
+1. Create your own custom Insight dashboard
 
 JupiterOne Insights app allows users to build reporting dashboards using J1QL
 queries.
@@ -32,20 +32,20 @@ Click ‘Apps’ + select ’Insights’\
 1. Click into ‘board.json’
 1. Right click on ‘Raw’ -> ‘Save File’\
    ![save-dashboard](../assets/save-dashboard.gif)
-1. Navigate within J1 to ‘Insights’ to add a board:
+1. Navigate within JupiterOne to ‘Insights’ to add a board:
 1. Expand the left sidebar by hitting the ‘>’ carrot 
 1. Hit the ‘Add’ button’ + choose whether you want a personal or team board
-1. Click ‘Upload from JSON schema’ + select the file you previously saved.\
+1. Click ‘Upload From JSON Schema’ + select the file you previously saved\
    ![import-dashboard](../assets/import-dashboard.gif)
 
-## 2. Creating a custom dashboard with custom charts based on queries
+## 2. Creating a custom Insights dashboard with custom charts based on queries
 You can build your own custom dashboard with customized individual charts. Each
 chart is powered by one or more J1QL queries under the hood.
 
-1. Navigate within J1 to ‘Insights’ to add a board:
+1. Navigate within JupiterOne to ‘Insights’ to add a board:
 1. Expand the left sidebar by hitting the ‘>’ carrot 
 1. Hit the ‘Add’ button’ + choose whether you want a personal or team board
-1. Click ‘Start adding charts’. This will open up the ‘add chart’ workflow where
+1. Click ‘Start Adding Charts’. This will open up the ‘Add Chart’ workflow where
    you can customize the details of your query/chart, which include, but aren't
    limited to:\
    -type of visual chart, e.g., number, pie, line, bar, etc.\
@@ -59,7 +59,7 @@ chart is powered by one or more J1QL queries under the hood.
 [J1QL language specs](https://support.jupiterone.io/hc/en-us/articles/360022722014-J1QL-Language-Specs)\
 [All questions + queries](https://ask.us.jupiterone.io/filter?tagFilter=all)
 
-## General Insight dashboard functionality: 
+## General Insights dashboard functionality: 
 -Rename, clone, or delete boards:\
 ![clone-delete-rename](../assets/clone-delete-rename.png)
 
