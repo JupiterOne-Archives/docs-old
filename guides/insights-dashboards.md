@@ -51,15 +51,15 @@ This will open up the ‘add chart’ workflow where you can customize the detai
 [All questions + queries](https://ask.us.jupiterone.io/filter?tagFilter=all)
 
 ## General Insight dashboard functionality: 
--Rename, clone, or delete boards:
-![clone-delete-rename]](../assets/clone-delete-rename.png)
+-Rename, clone, or delete boards:\
+![clone-delete-rename](../assets/clone-delete-rename.png)
 
-Download board schema, share boards (create public links), save or reset board layout, add charts:
-![share-download-add-layout]](../assets/share-download-add-layout.png)
+-Download board schema, share boards (create public links), save or reset board layout, add charts:\
+![share-download-add-layout](../assets/share-download-add-layout.png)
 
-Delete charts:
+-Delete charts:\
 ![delete-widget](../assets/delete-widget.png)
 
-Reorder either charts within a specific board, or the board within the sidepanel by dragging the chart or board to the desired spot:
+-Reorder either charts within a specific board, or the board within the sidepanel by dragging the chart or board to the desired spot:\
 ![reorder](../assets/reorder.gif)
 
