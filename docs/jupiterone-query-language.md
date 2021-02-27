@@ -176,6 +176,28 @@ boundaries obvious to query authors.
 > properties associated with the selected entities are also returned. This may
 > be useful when users desire to perform analysis that involves metadata.
 
+`TO` is used after a relationship verb and is considered a 'filler' word that is
+ignored by the query
+
+> The keyword `to` is supported by J1QL so that the query can be read as a
+> natural language question. Although `to` can be used in a query, if omitted,
+> the returned result will be the same.
+>
+> The following are some example relationship verbs where `to` could be used:\
+>
+> deployed to
+> contributes to
+> connects to
+> assigned to
+> relates to
+> 
+> The following queries will return the same result
+>
+> ```j1ql
+> FIND User that contributes to CodeRepo
+> FIND User that contributes CodeRepo
+> ```
+
 Keep in mind the keywords are _case insensitive_.
 
 ## String Comparisons
