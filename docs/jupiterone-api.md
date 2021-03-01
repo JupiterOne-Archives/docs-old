@@ -839,7 +839,7 @@ testing, and running integrations outside the JupiterOne cloud infrastructure.
 
 The synchronization API also supports synchronizing a _grouping_ of entities and
 relationships from an API source by using a _scope_ property. That is, a group
-of entities and relationships can be loggically grouped together by an arbitrary
+of entities and relationships can be logically grouped together by an arbitrary
 scope value and uploaded to the persister via the synchronization API and the
 create, update, and delete operations will be automatically determined within
 the given scope. The scope value is stored on the entities and relationships in
@@ -1137,6 +1137,65 @@ GET /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3
     "numRelationshipsDeleted": 0
   }
 }
+```
+
+### Bulk Update
+
+Start a new synchronization job:
+
+**Sample request:**
+
+```text
+GET /persister/synchronization/jobs
+```
+
+```json
+{
+    "source": "api",
+    "syncMode": "CREATE_OR_UPDATE"
+}
+```
+
+Once the synchronization job is running, you can update existing
+entities/relationships using the job id of the response.
+
+**Sample request:**
+
+```text
+POST /persister/synchronization/jobs/<jobId>/upload
+```
+
+```json
+{
+  "entities": [
+    {
+      "_key": "some_entity_id",
+      "_type": "fake_entity",
+      "_class": "MyEntity0",
+      "property0": "value0"
+    },
+    {
+      "_key": "some_other_entity_id",
+      "_type": "fake_entity",
+      "_class": "MyEntity1",
+      "property1": "value1"
+    }
+  ], 
+  "relationships": [
+    {
+      "_key": "a",
+      "_type": "new_relationship",
+      "_fromEntityKey": "some_entity_id",
+      "_toEntityKey": "some_other_entity_id"
+    }
+  ]
+}
+```
+
+Last, finalize the job.
+
+```text
+POST /persister/synchronization/jobs/<jobId>/finalize
 ```
 
 ## Building CSV Report
