@@ -42,16 +42,21 @@ Click ‘Apps’ + select ’Insights’\
 You can build your own custom dashboard with customized individual charts. Each
 chart is powered by one or more J1QL queries under the hood.
 
-1. Navigate within JupiterOne to ‘Insights’ to add a board:
+Navigate within JupiterOne to **Insights** to add a board:
+
 1. Expand the left sidebar by hitting the ‘>’ carrot 
-1. Hit the ‘Add’ button’ + choose whether you want a personal or team board
-1. Click ‘Start Adding Charts’. This will open up the ‘Add Chart’ workflow where
+
+1. Hit the **Add** button’ + choose whether you want a personal or team board
+
+1. Click **Start Adding Charts**. This will open up the **Add Chart** workflow where
    you can customize the details of your query/chart, which include, but aren't
-   limited to:\
-   -type of visual chart, e.g., number, pie, line, bar, etc.\
-   -the chart’s query or queries\
-   -formatting options\
-   ![custom-board](../assets/custom-board.gif)
+   limited to:
+   
+   - type of visual chart, e.g., number, pie, line, bar, etc.
+   - the chart’s query or queries
+   - formatting options 
+   
+     ![custom-board](../assets/custom-board.gif)
 
 ### Additional support documentation/resources for writing queries:
 [J1QL query tutorial](https://support.jupiterone.io/hc/en-us/articles/360022720434-4-9-J1QL-Query-Tutorial)\
@@ -73,4 +78,3 @@ layout, add charts:\
 -Reorder either charts within a specific board, or the board within the
 sidepanel by dragging the chart or board to the desired spot:\
 ![reorder](../assets/reorder.gif)
-
