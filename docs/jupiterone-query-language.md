@@ -144,7 +144,6 @@ boundaries obvious to query authors.
 >     (rule.fromPort=22 or rule.toPort=22)
 > ```
 
-
 `RETURN` is used to return specific entities, relationships, or properties
 
 > By default, the entities and their properties found from the start of the
@@ -189,14 +188,16 @@ ignored by the query
 > contributes to
 > connects to
 > assigned to
-> relates to
 > 
-> The following queries will return the same result
+> The following queries will return the same result:\
 >
 > ```j1ql
 > FIND User that contributes to CodeRepo
 > FIND User that contributes CodeRepo
 > ```
+> 
+> **Exception**: For the relationship verb `RELATES TO`, both words must be used
+> together. See the J1QL tips and tricks guide *insert link here* for more info.
 
 Keep in mind the keywords are _case insensitive_.
 
