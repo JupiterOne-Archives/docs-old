@@ -1,5 +1,7 @@
 # Getting Started With Insights Dashboards
+
 This guide will walk through how to:
+
 1. Import prebuilt Insights Dashboards
 1. Create your own custom Insight dashboard
 
@@ -21,10 +23,12 @@ Here are a few example boards and their configurations:
 [https://github.com/JupiterOne/insights-dashboards](https://github.com/JupiterOne/insights-dashboards)
 
 ### Navigating to the Insights app:
+
 Click ‘Apps’ + select ’Insights’\
 ![insights](../assets/insights.png)
 
 ## 1. Import prebuilt Insights Dashboards (from GitHub)
+
 1. Navigate to the specific prebuilt dashboard you’d like to import into your
    JupiterOne account:
    [https://github.com/JupiterOne/insights-dashboards](https://github.com/JupiterOne/insights-dashboards)
@@ -39,6 +43,7 @@ Click ‘Apps’ + select ’Insights’\
    ![import-dashboard](../assets/import-dashboard.gif)
 
 ## 2. Creating a custom Insights dashboard with custom charts based on queries
+
 You can build your own custom dashboard with customized individual charts. Each
 chart is powered by one or more J1QL queries under the hood.
 
@@ -54,23 +59,25 @@ chart is powered by one or more J1QL queries under the hood.
    ![custom-board](../assets/custom-board.gif)
 
 ### Additional support documentation/resources for writing queries:
+
 [J1QL query tutorial](https://support.jupiterone.io/hc/en-us/articles/360022720434-4-9-J1QL-Query-Tutorial)\
 [Search quickstart](https://support.jupiterone.io/hc/en-us/articles/360022705414-2-9-Search-Quickstart)\
 [J1QL language specs](https://support.jupiterone.io/hc/en-us/articles/360022722014-J1QL-Language-Specs)\
 [All questions + queries](https://ask.us.jupiterone.io/filter?tagFilter=all)
 
 ## General Insights dashboard functionality: 
+
 -Rename, clone, or delete boards:\
-![clone-delete-rename](../assets/clone-delete-rename.png)
+  ![clone-delete-rename](../assets/clone-delete-rename.png)
 
 -Download board schema, share boards (create public links), save or reset board
 layout, add charts:\
-![share-download-add-layout](../assets/share-download-add-layout.png)
+  ![share-download-add-layout](../assets/share-download-add-layout.png)
 
 -Delete charts:\
-![delete-widget](../assets/delete-widget.png)
+  ![delete-widget](../assets/delete-widget.png)
 
 -Reorder either charts within a specific board, or the board within the
 sidepanel by dragging the chart or board to the desired spot:\
-![reorder](../assets/reorder.gif)
+  ![reorder](../assets/reorder.gif)
 
