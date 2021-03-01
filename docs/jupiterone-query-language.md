@@ -175,8 +175,10 @@ boundaries obvious to query authors.
 > properties associated with the selected entities are also returned. This may
 > be useful when users desire to perform analysis that involves metadata.
 
-`TO` is used after a relationship verb and is considered a 'filler' word that is
-ignored by the query
+`TO` is used after a relationship verb, and with the exception of `RELATES TO`,
+is considered a 'filler' word that is ignored by the query
+
+*See the J1QL tips and tricks guide (insert link here) for more info on the usage of `RELATES TO`.*
 
 > The keyword `to` is supported by J1QL so that the query can be read as a
 > natural language question. Although `to` can be used in a query, if omitted,
@@ -195,9 +197,6 @@ ignored by the query
 > FIND User that contributes to CodeRepo
 > FIND User that contributes CodeRepo
 > ```
-> 
-> **Exception**: For the relationship verb `RELATES TO`, both words must be used
-> together. See the J1QL tips and tricks guide *insert link here* for more info.
 
 Keep in mind the keywords are _case insensitive_.
 
