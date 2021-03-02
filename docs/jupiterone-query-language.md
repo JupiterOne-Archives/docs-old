@@ -196,7 +196,7 @@ is considered a 'filler' word that is ignored by the interpreter
 > FIND User that contributes CodeRepo
 > ```
 
-Keep in mind the keywords are _case insensitive_.
+**Reminder** J1QL keywords are not case sensitive.
 
 ## String Comparisons
 
