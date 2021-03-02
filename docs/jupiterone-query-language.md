@@ -193,7 +193,7 @@ is considered a 'filler' word that is ignored by the interpreter
 >
 > ```j1ql
 > FIND User THAT CONTRIBUTES TO CodeRepo
-> FIND User that contributes CodeRepo
+> FIND User THAT CONTRIBUTES CodeRepo
 > ```
 
 **Reminder** J1QL keywords are not case sensitive.
