@@ -203,7 +203,7 @@ Find User that ASSIGNED Application
 **TIP** Relationships can be queried bidirectionally. For example, `Find User
 that HAS UserGroup` can also be queried as `Find UserGroup that HAS User` and will
 return the same results in the graph. However, the list view will return a list
-of either `User` or `UserGroup` depending on which entity you `Find`.
+of `User` for the former or `UserGroup` for the latter depending on which entity you `Find`.
 
 6. Continue to expand the query by clicking on and expanding nodes in the
 graph. To do this, select any node and click on the ellipses.
