@@ -33,15 +33,14 @@ and more efficient.
 Take the following example.
 
 ```j1ql
-Find User that HAS UserGroup that ASSIGNED AccessRole that (ALLOWS|TRUSTS) Account WITH tag.Production=true
+Find User with name~='john' that HAS UserGroup that ASSIGNED AccessRole that (ALLOWS|TRUSTS) Account
 ```
 
 ![j1ql-custom-query-with-example](../assets/j1ql-custom-query-with-example.png)
 
-This query filters all the Account nodes down to just those with a Production
-tag before the query sees if there are AccessRole(s) connected. The query will
-then join any connected UserGroup(s), and finally any User(s) part of the
-UserGroup(s).
+The query will find a filtered list of users with a name property that contains
+'john'. The query will then find and join any connected UserGroup(s), then
+AccessRole(s), and finally Account(s).
 
 ### WHERE
 
@@ -63,7 +62,7 @@ will be returned.
 
 **TIP** Node comparisons in this example can only be done using `WHERE`.
 
-2. `WHERE` can also be used to filter the relationship **edge** properties **post-traversal**.
+2. `WHERE` is also used to filter the relationship **edge** properties **post-traversal**.
 
 Let's look at a different example with an edge that has properties.
 
@@ -72,6 +71,8 @@ Find Training as t that ASSIGNED as enrollment User as u WHERE enrollment.comple
 ```
 
 ![j1ql-custom-query-incomplete-trainings](../assets/j1ql-custom-query-incomplete-trainings.png)
+
+
 
 This query checks the edge, `ASSIGNED`, and filters on its properties. In this
 example we find trainings assigned to Users where the `completedOn` date is
