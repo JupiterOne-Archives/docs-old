@@ -2,6 +2,8 @@
 
 <iframe src="https://my.mindnode.com/2ayndotqvjEJ3qAeEfwyy6sgkRciyxRvH1sgpYw4/em#166,242,-3" frameborder="0" marginheight="0" marginwidth="0" style="border: 1px solid rgb(204, 204, 204); width: 720px; height: 720px;" onmousewheel=""></iframe>
 
+## Standards, sections, requirements
+
 **Standards** are, broadly, compliance frameworks or regulations. 
 
     Examples of standards include: HIPAA, ISO 27001, PCI-DSS,  FedRAMP, etc.
@@ -20,7 +22,10 @@ the specification that needs to be met.
 
     Examples of requirements include: HIPAA §164.310(a)(1)(i), ISO 27001 6.1.3 a, PCI-DSS 8.4.b, or FedRAMP AC-2 (7).
 
-### Roughly, you can almost think of an organization’s policies, procedures, and controls to loosely align to the compliance or regulatory standards, sections, and requirements.
+## Policies, procedures, controls, control policies/configurations, vendors
+
+You can think of an organization’s policies, procedures, and controls to loosely
+align to the compliance or regulatory standards, sections, and requirements.
 
 **Policies** are high-level statements of management intent; they are written
 security documents which frequently satisfy external requirements. 
@@ -54,7 +59,7 @@ controls are implemented.
 
 > **Vendors** _provide_ **controls**. 
 
-Vendors are frequently companies, organizations, or people. 
+Vendors are frequently companies, organizations, or people that provide the controls
 
     Examples of vendors include Microsoft Active Directory’s (AD) Group Policy Objects (GPO) for password requirements, Amazon Web Services’ (AWS) Key Management Service (KMS) for encryption at rest, or Checkr for background screens.
 
