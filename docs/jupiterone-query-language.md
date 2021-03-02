@@ -182,7 +182,7 @@ is considered a 'filler' word that is ignored by the interpreter
 > natural language question. Although `to` can be used in a query, if omitted,
 > the returned result will be the same.
 >
-> The following are some example relationship verbs where `to` could be used:\
+> The following are some example relationship verbs where `TO` could be used:
 >
 > deployed to
 > contributes to
