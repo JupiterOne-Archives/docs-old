@@ -24,7 +24,8 @@ Here are a few example boards and their configurations:
 
 ### Navigating to the Insights app:
 
-Click ‘Apps’ + select ’Insights’\
+Click ‘Apps’ + select ’Insights’
+
 ![insights](../assets/insights.png)
 
 ## 1. Import prebuilt Insights Dashboards (from GitHub)
@@ -34,12 +35,14 @@ Click ‘Apps’ + select ’Insights’\
    [https://github.com/JupiterOne/insights-dashboards](https://github.com/JupiterOne/insights-dashboards)
 1. Pick the specific board, e.g., ‘AWS Accounts’
 1. Click into ‘board.json’
-1. Right click on ‘Raw’ -> ‘Save File’\
+1. Right click on ‘Raw’ -> ‘Save File’
+
    ![save-dashboard](../assets/save-dashboard.gif)
 1. Navigate within JupiterOne to ‘Insights’ to add a board:
 1. Expand the left sidebar by hitting the ‘>’ carrot 
 1. Hit the ‘Add’ button’ + choose whether you want a personal or team board
-1. Click ‘Upload From JSON Schema’ + select the file you previously saved\
+1. Click ‘Upload From JSON Schema’ + select the file you previously saved
+
    ![import-dashboard](../assets/import-dashboard.gif)
 
 ## 2. Creating a custom Insights dashboard with custom charts based on queries
@@ -72,17 +75,21 @@ Navigate within JupiterOne to **Insights** to add a board:
 
 ## General Insights dashboard functionality: 
 
--Rename, clone, or delete boards:\
+-Rename, clone, or delete boards:
+
   ![clone-delete-rename](../assets/clone-delete-rename.png)
 
 -Download board schema, share boards (create public links), save or reset board
-layout, add charts:\
+layout, add charts:
+
   ![share-download-add-layout](../assets/share-download-add-layout.png)
 
--Delete charts:\
+-Delete charts:
+
   ![delete-widget](../assets/delete-widget.png)
 
 -Reorder either charts within a specific board, or the board within the
-sidepanel by dragging the chart or board to the desired spot:\
+sidepanel by dragging the chart or board to the desired spot:
+
   ![reorder](../assets/reorder.gif)
 
