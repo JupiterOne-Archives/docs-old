@@ -22,12 +22,6 @@ that have already been built.
 Here are a few example boards and their configurations:
 [https://github.com/JupiterOne/insights-dashboards](https://github.com/JupiterOne/insights-dashboards)
 
-### Navigating to the Insights app:
-
-Click ‘Apps’ + select ’Insights’
-
-![insights](../assets/insights.png)
-
 ## 1. Import prebuilt Insights Dashboards (from GitHub)
 
 1. Navigate to the specific prebuilt dashboard you’d like to import into your
@@ -43,7 +37,9 @@ Click ‘Apps’ + select ’Insights’
 
    ![save-dashboard](../assets/save-dashboard.gif)
 
-1. Navigate within JupiterOne to **Insights** to add a board
+1. Navigate within JupiterOne to **Apps** -> **Insights** to add a board
+
+   ![insights](../assets/insights.png)
 
 1. Expand the left sidebar by hitting the **>** carrot 
 
@@ -58,7 +54,9 @@ Click ‘Apps’ + select ’Insights’
 You can build your own custom dashboard with customized individual charts. Each
 chart is powered by one or more J1QL queries under the hood.
 
-Navigate within JupiterOne to **Insights** to add a board:
+1. Navigate within JupiterOne to **Apps** -> **Insights** to add a board
+
+   ![insights](../assets/insights.png)
 
 1. Expand the left sidebar by hitting the ‘>’ carrot 
 
