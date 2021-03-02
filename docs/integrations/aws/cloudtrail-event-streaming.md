@@ -35,6 +35,7 @@ AWS EventBridge documentation for more details.
 
 - IAM
 - S3
+- EC2
 
 The full list of supported API calls can be found in the [AWS integration's
 CloudFormation project on
