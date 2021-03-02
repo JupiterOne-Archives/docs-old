@@ -61,7 +61,7 @@ retrieved, the query will take both Users that were assigned an alias (u1 and
 u2), and compare the name property on each. If they match, the filtered result
 will be returned.
 
-**TIP** Node comparisons in this example can only be done using `WHERE`.
+**TIP** Property comparisons can only be done using `WHERE`.
 
 2. `WHERE` can also be used to filter the relationship **edge** properties **post-traversal**.
 
