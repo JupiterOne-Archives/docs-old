@@ -83,20 +83,20 @@ Navigate within JupiterOne to **Insights** to add a board:
 
 ## General Insights dashboard functionality: 
 
--Rename, clone, or delete boards:
+- Rename, clone, or delete boards:
 
   ![clone-delete-rename](../assets/clone-delete-rename.png)
 
--Download board schema, share boards (create public links), save or reset board
+- Download board schema, share boards (create public links), save or reset board
 layout, add charts:
 
   ![share-download-add-layout](../assets/share-download-add-layout.png)
 
--Delete charts:
+- Delete charts:
 
   ![delete-widget](../assets/delete-widget.png)
 
--Reorder either charts within a specific board, or the board within the
+- Reorder either charts within a specific board, or the board within the
 sidepanel by dragging the chart or board to the desired spot:
 
   ![reorder](../assets/reorder.gif)
