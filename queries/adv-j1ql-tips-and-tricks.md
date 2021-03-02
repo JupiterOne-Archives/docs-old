@@ -84,7 +84,7 @@ and more efficient.
 
 A variable placeholder(s) is used in the JupiterOne web application to prompt a
 user for a specific value(s) to be injected into a pre-saved query. Variable
-placeholders can be leveraged in J1QL using the double curly bracket syntax
+placeholders can be leveraged in saved J1QL queries using the double curly bracket syntax
 `{{variable-placeholder-name}}`.
 
 Take the following pre-saved query as an example.
