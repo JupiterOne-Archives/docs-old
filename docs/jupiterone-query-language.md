@@ -192,7 +192,7 @@ is considered a 'filler' word that is ignored by the interpreter
 > The following queries will return the same result:\
 >
 > ```j1ql
-> FIND User that contributes to CodeRepo
+> FIND User THAT CONTRIBUTES TO CodeRepo
 > FIND User that contributes CodeRepo
 > ```
 
