@@ -178,8 +178,6 @@ boundaries obvious to query authors.
 `TO` is used after a relationship verb, and with the exception of `RELATES TO`,
 is considered a 'filler' word that is ignored by the query
 
-*See the J1QL tips and tricks guide (insert link here) for more info on the usage of `RELATES TO`.*
-
 > The keyword `to` is supported by J1QL so that the query can be read as a
 > natural language question. Although `to` can be used in a query, if omitted,
 > the returned result will be the same.
