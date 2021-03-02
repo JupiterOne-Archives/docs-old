@@ -137,7 +137,7 @@ query or use an existing one to customize a more meaningful query. Check out the
 [J1QL Tutorial](https://support.jupiterone.io/hc/en-us/articles/360022720434-4-9-J1QL-Query-Tutorial)
 for an overview of nodes and relationships as they relate to J1QL.
 
-Before you jump in, check out the [Data Model - Overview](https://support.jupiterone.io/hc/en-us/articles/360022903573-Data-Model-Overview)
+Check out the [Data Model - Overview](https://support.jupiterone.io/hc/en-us/articles/360022903573-Data-Model-Overview)
 document for a comprehensive list of JupiterOne entities, their properties, and the relationships between entities. 
 The graph is a tool that can be used when these details are unknown.
 
