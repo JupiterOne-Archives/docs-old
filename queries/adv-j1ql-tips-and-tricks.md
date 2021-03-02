@@ -159,7 +159,7 @@ Find User that RELATES TO *
 ### In the JupiterOne App
 
 1. To start, navigate to the Landing page of JupiterOne and type in a basic query,
-replacing `DataStore` with the entity class/type you are interested in.
+in the example below, replace `DataStore` with the entity class/type you are interested in.
 
 ![j1ql-custom-query-landing-bar](../assets/j1ql-custom-query-landing-bar.png)
 
