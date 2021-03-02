@@ -189,7 +189,7 @@ is considered a 'filler' word that is ignored by the interpreter
 > connects to
 > assigned to
 > 
-> The following queries will return the same result:\
+> The following queries will return the same result:
 >
 > ```j1ql
 > FIND User THAT CONTRIBUTES TO CodeRepo
