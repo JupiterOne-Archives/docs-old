@@ -101,7 +101,7 @@ The query will not execute until you enter a value and press the submit button.
 
 ### Create a Question that uses a Placeholder
 
-The placeholder double curly bracket syntax cannot be used in the search bar.
+Variable placeholder syntax cannot be used directly in the search bar.
 There are two ways to create a new question and add a variable placeholder.
 
 1. Save a New Question
