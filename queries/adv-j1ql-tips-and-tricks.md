@@ -72,27 +72,24 @@ Find Training as t that ASSIGNED as enrollment User as u WHERE enrollment.comple
 
 ![j1ql-custom-query-incomplete-trainings](../assets/j1ql-custom-query-incomplete-trainings.png)
 
-
-
 This query checks the edge, `ASSIGNED`, and filters on its properties. In this
 example we find trainings assigned to Users where the `completedOn` date is
 undefined (or incomplete).
 
-**REMINDER** Use `WITH` over `WHERE` when possible as the `WITH` operation is faster
+**TIP** Use `WITH` over `WHERE` when possible as the `WITH` operation is faster
 and more efficient.
 
 ## Variable Placeholders
 
 A variable placeholder(s) is used in the JupiterOne web application to prompt a
 user for a specific value(s) to be injected into a pre-saved query. Variable
-placeholders can be leveraged in saved J1QL queries using the double curly bracket syntax
-`{{variable-placeholder-name}}`.
+placeholders can be leveraged in saved J1QL queries using the double curly
+bracket syntax `{{variable-placeholder-name}}`.
 
-Take the following pre-saved query as an example.
+Take the following example question that is saved to the question library. The
+query searches for an AWS instance with a specific id.
 
-```j1ql
-Find aws_instance with instanceId='{{instance-id}}'
-```
+![j1ql-custom-query-library-example](../assets/j1ql-custom-query-library-example.png)
 
 Running the above query displays a modal that prompts the user to enter a value.
 The query will not execute until you enter a value and press the submit button.
@@ -127,8 +124,8 @@ There are two ways to create a new question and add a variable placeholder.
 ![j1ql-custom-query-duplicate](../assets/j1ql-custom-query-duplicate.png)
 
 **TIPS**
-- One or more placeholders can be used in a single saved query.
 - Placeholders are only supported in pre-saved queries.
+- One or more placeholders can be used in a single saved query.
 
 ## Leveraging the Graph for Context
 
