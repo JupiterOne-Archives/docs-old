@@ -127,7 +127,7 @@ There are two ways to create a new question and add a variable placeholder.
 
 **REMINDER**
 - One or more placeholders can be used in a single saved query.
-- Placeholders are not supported via the J1 API.
+- Placeholders are only supported in pre-saved queries.
 
 ## Leveraging the Graph for Context
 
