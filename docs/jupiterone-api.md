@@ -879,6 +879,41 @@ This information will be tracked:
 
 ## Synchronization API Usage
 
+### Request Flags
+
+ignoreDuplicates:\ 
+
+Instructs the system to not throw an error if there are graph objects with
+duplicate keys. This will allow the latest graph object to be created if there
+are duplicate keys already in use.
+
+### Request Body Properties
+
+`source`:\ 
+
+- 'api' for custom integrations
+- 'integration-managed' for JupiterOne managed integrations
+
+`scope`:\
+
+Required if the sync mode is 'DIFF'. Otherwise, scope is optional.
+
+`syncMode`:\ 
+
+- 'DIFF' is the default value when a syncMode is not specified. This mode will
+  update/replace all of the entities/relationships within a specified scope. The
+  full dataset should be provided, otherwise entities and relationships may be
+  unintentionally deleted.
+- 'CREATE_OR_UPDATE' should be used when you are editing an existing scope of
+  data. Use this mode when you want to add, update, or delete a subset of
+  entities/relationships.
+  
+`integrationInstanceId`:\
+
+Required for JupiterOne managed integrations. Each integration has an ID that
+can be copied from within the integrations configurations setting page of
+JupiterOne.
+
 ### Start a synchronization job
 
 **Sample request:**
@@ -1156,8 +1191,8 @@ GET /persister/synchronization/jobs
 }
 ```
 
-Once the synchronization job is running, you can update existing
-entities/relationships using the job id of the response.
+Once the synchronization job is running, use the job id from the response to
+send a request to update existing entities/relationships.
 
 **Sample request:**
 
