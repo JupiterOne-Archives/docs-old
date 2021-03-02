@@ -179,7 +179,7 @@ boundaries obvious to query authors.
 is considered a 'filler' word that is ignored by the interpreter
 
 > The keyword `TO` is supported in J1QL so that the query can be read as a
-> natural language question. Although `to` can be used in a query, if omitted,
+> natural language question. Although `TO` can be used in a query, if omitted,
 > the returned result will be the same.
 >
 > The following are some example relationship verbs where `TO` could be used:
