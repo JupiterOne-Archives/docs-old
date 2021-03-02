@@ -184,10 +184,10 @@ is considered a 'filler' word that is ignored by the interpreter.
 >
 > The following are some example relationship verbs where `TO` could be used:
 >
-> - DEPLOYED TO 
-> - CONTRIBUTES TO
-> - CONNECTS TO
-> - ASSIGNED TO
+> - `DEPLOYED TO`
+> - `CONTRIBUTES TO`
+> - `CONNECTS TO`
+> - `ASSIGNED TO`
 > 
 > The following queries will return the same result:
 >
