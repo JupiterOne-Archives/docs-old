@@ -32,16 +32,24 @@ Click ‘Apps’ + select ’Insights’
 
 1. Navigate to the specific prebuilt dashboard you’d like to import into your
    JupiterOne account:
-   [https://github.com/JupiterOne/insights-dashboards](https://github.com/JupiterOne/insights-dashboards)
-1. Pick the specific board, e.g., ‘AWS Accounts’
+
+   <https://github.com/JupiterOne/insights-dashboards>
+
+1. Pick the specific board, e.g., "AWS Accounts"
+
 1. Click into ‘board.json’
-1. Right click on ‘Raw’ -> ‘Save File’
+
+1. Right click on **Raw** -> **Save File**
 
    ![save-dashboard](../assets/save-dashboard.gif)
-1. Navigate within JupiterOne to ‘Insights’ to add a board:
-1. Expand the left sidebar by hitting the ‘>’ carrot 
-1. Hit the ‘Add’ button’ + choose whether you want a personal or team board
-1. Click ‘Upload From JSON Schema’ + select the file you previously saved
+
+1. Navigate within JupiterOne to **Insights** to add a board
+
+1. Expand the left sidebar by hitting the **>** carrot 
+
+1. Hit the **Add** button + choose whether you want a personal or team board
+
+1. Click **Upload From JSON Schema** + select the file you previously saved
 
    ![import-dashboard](../assets/import-dashboard.gif)
 
