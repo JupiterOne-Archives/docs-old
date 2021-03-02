@@ -60,7 +60,7 @@ retrieved, the query will take both Users that were assigned an alias (u1 and
 u2), and compare the name property on each. If they match, the filtered result
 will be returned.
 
-**TIP** Node comparisons in this example can only be done using `WHERE`.
+**TIP** Property comparisons can only be done using `WHERE`.
 
 2. `WHERE` is also used to filter the relationship **edge** properties **post-traversal**.
 
@@ -85,7 +85,7 @@ and more efficient.
 
 A variable placeholder(s) is used in the JupiterOne web application to prompt a
 user for a specific value(s) to be injected into a pre-saved query. Variable
-placeholders can be leveraged in J1QL using the double curly bracket syntax
+placeholders can be leveraged in saved J1QL queries using the double curly bracket syntax
 `{{variable-placeholder-name}}`.
 
 Take the following pre-saved query as an example.
@@ -128,7 +128,7 @@ There are two ways to create a new question and add a variable placeholder.
 
 **REMINDER**
 - One or more placeholders can be used in a single saved query.
-- Placeholders are not supported via the J1 API.
+- Placeholders are only supported in pre-saved queries.
 
 ## Leveraging the Graph for Context
 
@@ -138,7 +138,7 @@ query or use an existing one to customize a more meaningful query. Check out the
 [J1QL Tutorial](https://support.jupiterone.io/hc/en-us/articles/360022720434-4-9-J1QL-Query-Tutorial)
 for an overview of nodes and relationships as they relate to J1QL.
 
-Before you jump in, check out the [Data Model - Overview](https://support.jupiterone.io/hc/en-us/articles/360022903573-Data-Model-Overview)
+Check out the [Data Model - Overview](https://support.jupiterone.io/hc/en-us/articles/360022903573-Data-Model-Overview)
 document for a comprehensive list of JupiterOne entities, their properties, and the relationships between entities. 
 The graph is a tool that can be used when these details are unknown.
 
@@ -160,7 +160,7 @@ Find User that RELATES TO *
 ### In the JupiterOne App
 
 1. To start, navigate to the Landing page of JupiterOne and type in a basic query,
-replacing `DataStore` with the entity class/type you are interested in.
+in the example below, replace `DataStore` with the entity class/type you are interested in.
 
 ![j1ql-custom-query-landing-bar](../assets/j1ql-custom-query-landing-bar.png)
 
@@ -204,7 +204,7 @@ Find User that ASSIGNED Application
 **TIP** Relationships can be queried bidirectionally. For example, `Find User
 that HAS UserGroup` can also be queried as `Find UserGroup that HAS User` and will
 return the same results in the graph. However, the list view will return a list
-of either `User` or `UserGroup` depending on which entity you `Find`.
+of `User` for the former or `UserGroup` for the latter depending on which entity you `Find`.
 
 6. Continue to expand the query by clicking on and expanding nodes in the
 graph. To do this, select any node and click on the ellipses.
