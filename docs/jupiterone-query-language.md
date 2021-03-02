@@ -176,7 +176,7 @@ boundaries obvious to query authors.
 > be useful when users desire to perform analysis that involves metadata.
 
 `TO` is used after a relationship verb, and with the exception of `RELATES TO`,
-is considered a 'filler' word that is ignored by the query
+is considered a 'filler' word that is ignored by the interpreter
 
 > The keyword `to` is supported by J1QL so that the query can be read as a
 > natural language question. Although `to` can be used in a query, if omitted,
