@@ -144,7 +144,6 @@ boundaries obvious to query authors.
 >     (rule.fromPort=22 or rule.toPort=22)
 > ```
 
-
 `RETURN` is used to return specific entities, relationships, or properties
 
 > By default, the entities and their properties found from the start of the
@@ -176,7 +175,28 @@ boundaries obvious to query authors.
 > properties associated with the selected entities are also returned. This may
 > be useful when users desire to perform analysis that involves metadata.
 
-Keep in mind the keywords are _case insensitive_.
+`TO` is used after a relationship verb, and with the exception of `RELATES TO`,
+is considered a 'filler' word that is ignored by the interpreter.
+
+> The keyword `TO` is supported in J1QL so that the query can be read as a
+> natural language question. Although `TO` can be used in a query, if omitted,
+> the returned result will be the same.
+>
+> The following are some example relationship verbs where `TO` could be used:
+>
+> - `DEPLOYED TO`
+> - `CONTRIBUTES TO`
+> - `CONNECTS TO`
+> - `ASSIGNED TO`
+> 
+> The following queries will return the same result:
+>
+> ```j1ql
+> FIND User THAT CONTRIBUTES TO CodeRepo
+> FIND User THAT CONTRIBUTES CodeRepo
+> ```
+
+**REMINDER** J1QL keywords are not case sensitive.
 
 ## String Comparisons
 
