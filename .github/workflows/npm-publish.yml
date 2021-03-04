@@ -1,31 +1,49 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
-
-name: Node.js Package
-
-on:
-  release:
-    types: [created]
+name: Publish
+on: [pull_request]
 
 jobs:
-  build:
+  npm:
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
 
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Initialize Output
+        run: echo "::set-output name=didpublishnpm::false"
+
+      - name: Check out source code
+        uses: actions/checkout@v2
+
+      - name: Check if publish needed
+        run: |
+          name="$(jq -r .name package.json)"
+          npmver="$(npm show $name version 2>/dev/null || echo v0.0.0)"
+          pkgver="$(jq -r .version package.json)"
+          if [ "$npmver" = "$pkgver" ]
+          then
+            echo "Package version ($pkgver) is the same as last published NPM version ($npmver), skipping publish."
+          else
+            echo "Package version ($pkgver) is different from latest NPM version ($npmver), publishing!"
+            echo "shouldpublishnpm=true" >> $GITHUB_ENV
+          fi
+      - name: Setup Node
+        if: env.shouldpublishnpm
+        uses: actions/setup-node@v1
         with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm publish
+          node-version: '14'
+
+      - name: Install dependencies
+        if: env.shouldpublishnpm
+        run: yarn
+
+      - name: Bundle module (create ./dist dir)
+        if: env.shouldpublishnpm
+        run: yarn bundle
+
+      - name: Publish
+        if: env.shouldpublishnpm
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > .npmrc
+          npm publish --access public ./dist
+          echo "::set-output name=didpublishnpm::true"
