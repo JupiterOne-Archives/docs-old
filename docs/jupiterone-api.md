@@ -839,7 +839,7 @@ testing, and running integrations outside the JupiterOne cloud infrastructure.
 
 The synchronization API also supports synchronizing a _grouping_ of entities and
 relationships from an API source by using a _scope_ property. That is, a group
-of entities and relationships can be loggically grouped together by an arbitrary
+of entities and relationships can be logically grouped together by an arbitrary
 scope value and uploaded to the persister via the synchronization API and the
 create, update, and delete operations will be automatically determined within
 the given scope. The scope value is stored on the entities and relationships in
@@ -878,6 +878,43 @@ This information will be tracked:
    relationships might reference new entities).
 
 ## Synchronization API Usage
+
+### Request Flags
+
+ignoreDuplicates:
+
+Instructs the system to not throw an error if there are graph objects with
+duplicate keys. This will allow the latest graph object to be created if there
+are duplicate keys already in use.
+
+### Request Body Properties
+
+`source`:
+
+- `api` for ad hoc data.
+- `integration-external` for custom integrations.
+
+`scope`:
+
+- The Scope value can be set to any string. The same value needs to be used in the
+  future for updating entities/relationships/properties within that scope.
+- Scope is required when the `syncMode` is `DIFF`.
+- Scope can only be used when the `source` is `api`.
+
+`syncMode`:
+
+- `DIFF` is the default value when a syncMode is not specified. This mode will
+  update/replace all of the entities/relationships within a specified scope. The
+  full dataset should be provided, otherwise entities and relationships may be
+  unintentionally deleted.
+- `CREATE_OR_UPDATE` should be used when you are editing an existing scope of
+  data. Use this mode when you want to add, update, or delete a subset of
+  entities/relationships.
+  
+`integrationInstanceId`:
+
+- Required when referencing a custom integration (the `scope` is equal to
+  `integration-external`).
 
 ### Start a synchronization job
 
@@ -1138,6 +1175,132 @@ GET /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3
   }
 }
 ```
+
+### Bulk Update
+
+Start a new synchronization job:
+
+**Sample request:**
+
+```text
+POST /persister/synchronization/jobs
+```
+
+```json
+{
+    "source": "api",
+    "syncMode": "CREATE_OR_UPDATE"
+}
+```
+
+Once the synchronization job is running, use the job id from the response to
+send a request to update existing entities/relationships.
+
+**Sample request:**
+
+```text
+POST /persister/synchronization/jobs/<jobId>/upload
+```
+
+```json
+{
+  "entities": [
+    {
+      "_key": "some_entity_id",
+      "_type": "fake_entity",
+      "_class": "MyEntity0",
+      "property0": "value0"
+    },
+    {
+      "_key": "some_other_entity_id",
+      "_type": "fake_entity",
+      "_class": "MyEntity1",
+      "property1": "value1"
+    }
+  ], 
+  "relationships": [
+    {
+      "_key": "a",
+      "_type": "new_relationship",
+      "_fromEntityKey": "some_entity_id",
+      "_toEntityKey": "some_other_entity_id"
+    }
+  ]
+}
+```
+
+Last, finalize the job.
+
+```text
+POST /persister/synchronization/jobs/<jobId>/finalize
+```
+
+### Bulk Delete
+
+Start a new synchronization job:
+
+**Sample request:**
+
+```text
+POST /persister/synchronization/jobs
+```
+
+```json
+{
+    "source": "api",
+    "syncMode": "CREATE_OR_UPDATE"
+}
+```
+
+Once the synchronization job is running, use the job id from the response to
+send a request to delete existing entities/relationships.
+
+**Sample request:**
+
+```text
+POST /persister/synchronization/jobs/<jobId>/upload
+```
+
+```json
+{
+  "deleteEntities": [
+    {
+      "_id": "example-uuid-01"
+    },
+    {
+      "_id": "example-uuid-02"
+    },
+    {
+      "_id": "example-uuid-03"
+    }
+  ], 
+  "deleteRelationships": [
+    {
+      "_id": "example-uuid-04"
+    },
+    {
+      "_id": "example-uuid-05"
+    },
+    {
+      "_id": "example-uuid-06"
+    }
+  ]
+}
+```
+
+Last, finalize the job.
+
+```text
+POST /persister/synchronization/jobs/<jobId>/finalize
+```
+
+NOTE: 
+
+- When you delete an entity, all of the associated relationships will also be
+  deleted. You do not need to call out both unless you are deleting unrelated
+  relationships.
+- You can delete by both `_id` and `_key`. We recommend deleting entities by id
+  because the `_id` is unique across all entities.
 
 ## Building CSV Report
 
