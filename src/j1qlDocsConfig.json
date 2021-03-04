@@ -89,6 +89,10 @@
       "title": "Advanced Query Examples",
       "documents": [
         {
+          "title": "J1QL Tips and Tricks",
+          "markdownUrl": "queries/adv-j1ql-tips-and-tricks.md"
+        },
+        {
           "title": "Query using internal metadata",
           "markdownUrl": "queries/adv-example-query-using-metadata.md"
         },
