@@ -35,15 +35,11 @@ jobs:
         if: env.shouldpublishnpm
         run: yarn
 
-      - name: Bundle module (create ./dist dir)
-        if: env.shouldpublishnpm
-        run: yarn bundle
-
       - name: Publish
         if: env.shouldpublishnpm
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: |
           echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > .npmrc
-          npm publish --access public ./dist
+          npm publish --access public
           echo "::set-output name=didpublishnpm::true"
