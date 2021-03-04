@@ -1,4 +1,4 @@
-# Getting Started With Insights Dashboards
+# Getting Started with Insights Dashboards
 
 This guide will walk through how to:
 
