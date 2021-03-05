@@ -5,7 +5,7 @@ entities, properties, and relationships returned from queries. If these
 suggestions don’t resolve your issue, reach out to the JupiterOne team by
 following the steps under **Reporting an Issue**!
 
-## Troubleshooting 
+## Troubleshooting an Issue
 
 ### 1. I don't see recent changes made to my environment
 
@@ -81,13 +81,14 @@ one final check.
 For all other issues, see the section below on **Reporting an Issue**, providing
 the JupiterOne team with as much detail as possible.
 
-## Reporting
+## Reporting an Issue
 
 To report an issue, please reach out to the JupiterOne team via Slack or Email
 and provide the following information:
 
 - Your name
-- Company name
+- Your JupiterOne account ID (found in the **Account Management** view under
+  **Settings**) or your company name
 - Description of the issue
 - Steps to reproduce 
 - Any error/warnings (if applicable)
