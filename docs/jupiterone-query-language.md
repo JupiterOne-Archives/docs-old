@@ -12,6 +12,7 @@ boundaries obvious to query authors.
 - Language keywords are case-insensitive
 - Inspired by SQL and Cypher and aspires to be as close to natural language as possible
 - Support for variable placeholders
+- Support for bidirectional traversal
 - Return **entities**, **relationships**, and/or traversal **tree**
 - Support for sorting via `ORDER BY` clause (currently only applies to the starting entities of traversal)
 - Support for pagination via `SKIP` and `LIMIT` clauses (currently only applies to the starting entities of traversal)
@@ -121,6 +122,17 @@ boundaries obvious to query authors.
 > Or both Entity and Relationships together. For example:
 >
 > `FIND * THAT (ALLOWS|PERMITS) (Internet|Everyone)`
+>
+
+**Relationship verbs** are bidirectional
+> 
+> `FIND User THAT HAS Device`
+>
+> and
+>
+> `Find Device THAT HAS User`
+>
+> are both acceptable
 
 `AS` is used to define an aliased selector.
 
