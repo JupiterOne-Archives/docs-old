@@ -76,7 +76,33 @@ one final check.
 
 ![troubleshoot-metadata-deleted](../assets/troubleshoot-metadata-deleted.png)
 
-### 4. I have a different issue or the previous suggestions did not resolve my issue
+### 4. My query with a date comparison does not return anything
+
+J1QL can only perform a date comparison on a property's value if that value is
+stored as an epoch number in milliseconds.
+
+To verify that the date value is stored in JupiterOne correctly, use the
+following query as an example way to find out:
+
+```j1ql
+Find {Entity class or type} as x 
+    return x.createdOn, 
+    x.createdOn as storedValue
+```
+
+![troubleshoot-date-filter](../assets/troubleshoot-date-filter.png)
+
+1. The first column shows the date time value formatted for the UI. If the value
+   is being returned in the syntax *yyyy-mm-ddThh:mm:ss.sssZ* then we know that
+   the stored value is an epoch number.
+
+2. The second column shows the value stored in the database. This value should
+   be returned as a 13 digit number.
+
+If either of the above conditions are not true, then the values uploaded to the
+JupiterOne platform should be updated.
+
+### 5. I have a different issue or the previous suggestions did not resolve my issue
 
 For all other issues, see the section below on **Reporting an Issue**, providing
 the JupiterOne team with as much detail as possible.
