@@ -52,7 +52,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: 6odNb0wZPLzW1vyFz25quxmkqow1I3xlVpyFoaHlqcM=
+        hash: 8a5hKQIjyj2rXHfo6ggdCSbjZFWHAUbwlk4WQbxPLbg=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -288,7 +288,7 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: WuAoaPsRYj6yeEobejZUm1X1BwacNMgjZs5hwuYfxto=
+        hash: sM58f3c52HRpDu4evF+UNdq9QYPuZwWrmpjC1P6bPNA=
         id: 360022722014
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722014'
   - name: API Docs
@@ -296,7 +296,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: Jsx24Ws1Ii2udr8lCphe3NaTTA5BjsoyKVG6+R2flx8=
+        hash: PLyNMP49ZzKvcXJuZ1FYLbt7XGisCYXOTdGMiqIgUcU=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Node.js Client and CLI
@@ -372,7 +372,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049346733'
       - title: Data Model for Software Development
         file: ../docs/data-model/development.md
-        hash: uCHaKoDmn/1kEuhok61nnpQSHIAdeyMcdqBs16Zi0Ow=
+        hash: G1ShvZS/auphQZ6EVUgbHtlw+g2tzP+aW1rOb4nUkNE=
         id: 360058212854
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360058212854'
       - title: Data Model for Vulnerability Management
@@ -392,7 +392,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360040954034'
       - title: Data Model for People and Access
         file: ../docs/data-model/people.md
-        hash: id2DAFKgL1BYK9u9PNRMCpgq7VKnNMX9OkVuKpR8jQw=
+        hash: MJXIEKtflTM3AJUgguGec4xkjSmBaBBNP4wKAAeBHj4=
         id: 360058211974
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360058211974'
       - title: 'Data Model for Organization, Account, and Vendor Management'
