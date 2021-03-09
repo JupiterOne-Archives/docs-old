@@ -49,7 +49,12 @@ thought of as control or process descriptions.
 enforce the procedures; they can manifest commonly as a process managed by a
 person/team or as a product/service provided by a vendor. 
 
-    Examples of controls include: password settings, data encryption at rest or in transit,  and pre-employment background checks.
+Examples of controls include: 
+
+- user identity management, access control, multi-factor authentication
+- data encryption at rest or in transit
+- penetration testing, code scanning
+- pre-employment background checks.
 
 > A `ControlPolicy` or `Configuration` _enforces_ or _manages_ a
 > `Control`.
