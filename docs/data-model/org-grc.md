@@ -62,7 +62,11 @@ Examples of controls include:
 **Control Policies** or **configurations** are the technical settings whereby
 controls are implemented. 
 
-    Examples of control policies or configurations include: requiring 12+ characters including a number + a symbol for all passwords, using AES-256 cipher for encryption at rest, and for background checks, specifically looking at federal, criminal, state, county, city, financial, education checks.
+Examples of control policies or configurations include: 
+
+- requiring 12+ characters including a number + a symbol for all passwords
+- using AES-256 cipher for encryption at rest
+- for background checks, specifically include searches for federal, criminal, state, county, city, financial, and education verification
 
 > **Vendors** _provide_ **controls**. 
 
