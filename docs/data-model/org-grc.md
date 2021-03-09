@@ -68,7 +68,11 @@ controls are implemented.
 
 Vendors are frequently companies, organizations, or people that provide the controls
 
-    Examples of vendors include Microsoft Active Directory’s (AD) Group Policy Objects (GPO) for password requirements, Amazon Web Services’ (AWS) Key Management Service (KMS) for encryption at rest, or Checkr for background screens.
+Examples of vendors include:
+
+- Microsoft (the Vendor) for Active Directory (AD), user authentication, and access control
+- Amazon Web Services (AWS, the Vendor) for Key Management Service (KMS)
+- Checkr (the Vendor) for background screens
 
 > **Policies** are _implemented_ by **procedures**; **controls** _implement_
 > **procedures**. A **controlPolicy** or **configuration** _enforces_ or
