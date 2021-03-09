@@ -40,7 +40,11 @@ policies via technology or processes, or a combination of the two;
 the ‘who’, ‘what’, ‘when’, ‘how’, etc; they can be
 thought of as control or process descriptions. 
 
-    Examples of procedures include procedures around: password management, protecting data at rest, and employee screening.
+Examples of procedures (aka control/process descriptions) include: 
+
+- password management
+- protecting data at rest 
+- employee screening
 
 > **Policies** are _implemented_ by **procedures**; **controls** _implement_
 > **procedures**. 
