@@ -4,7 +4,7 @@
 
 ## Standards, sections, requirements
 
-**Standards** are, broadly, compliance frameworks or regulations. 
+**Standards** are, broadly, compliance frameworks, regulations, or industry best practices. 
 
     Examples of standards include: HIPAA, ISO 27001, PCI-DSS,  FedRAMP, etc.
 
