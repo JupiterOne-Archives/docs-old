@@ -8,7 +8,8 @@
 
     Examples of standards include: HIPAA, ISO 27001, PCI-DSS, FedRAMP, NIST CSF, CIS Benchmarks, etc.
 
-> A **standard** _has_ one or more **sections**.
+> A **standard** is a collection of **requirements** grouped by **sections**, 
+> or a collection of **controls** grouped by **domains**.
 
 **Sections** can be considered as parts or components of a standard. 
 
