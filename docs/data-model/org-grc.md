@@ -6,7 +6,7 @@
 
 **Standards** are, broadly, compliance frameworks, regulations, or industry best practices. 
 
-    Examples of standards include: HIPAA, ISO 27001, PCI-DSS,  FedRAMP, etc.
+    Examples of standards include: HIPAA, ISO 27001, PCI-DSS, FedRAMP, NIST CSF, CIS Benchmarks, etc.
 
 > A **standard** _has_ one or more **sections**.
 
