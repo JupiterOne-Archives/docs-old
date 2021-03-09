@@ -36,7 +36,8 @@ security documents which frequently satisfy external requirements.
 > **Policies** are _implemented_ by **procedures**. 
 
 **Procedures** are written security documents which describe how to implement
-policies via processes; the ‘who’, ‘what’, ‘when’, ‘how’, etc; they can be
+policies via technology or processes, or a combination of the two; 
+the ‘who’, ‘what’, ‘when’, ‘how’, etc; they can be
 thought of as control or process descriptions. 
 
     Examples of procedures include procedures around: password management, protecting data at rest, and employee screening.
