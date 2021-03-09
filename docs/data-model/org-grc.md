@@ -51,8 +51,8 @@ person/team or as a product/service provided by a vendor.
 
     Examples of controls include: password settings, data encryption at rest or in transit,  and pre-employment background checks.
 
-> A **controlPolicy** or **configuration** _enforces_ or _manages_ a
-> **control**.
+> A `ControlPolicy` or `Configuration` _enforces_ or _manages_ a
+> `Control`.
 
 **Control Policies** or **configurations** are the technical settings whereby
 controls are implemented. 
