@@ -2,21 +2,11 @@
 
 ## Setup
 
-In this section, please provide details about how to set up the integration with
-JupiterOne. This may require provisioning some resources on the provider's side
-(perhaps a role, app, or api key) and passing information over to JupiterOne.
+JupiterOne provides a managed integration for Rapid7 InsightVM. The integration
+connects directly to Rapid7 InsightVM API to obtain configuration metadata and
+analyze resource relationships.
 
 ## Data Model
-
-Provide an overview here of the resources collected from the integration. Please
-provide a mapping of how the resources collected map to the JupiterOne Data
-Model. The tables below were taken from the Azure integration to provide an
-example of how to display that information.
-
-When you start developing an integration, please clear out the tables below. As
-you add support for new entities and relationships, please update the tables and
-document the addition in the [CHANGELOG.md](../CHANGELOG.md) file at the root of
-the project.
 
 <!-- {J1_DOCUMENTATION_MARKER_START} -->
 <!--
@@ -35,19 +25,32 @@ https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
 
 The following entities are created:
 
-| Resources | Entity `_type` | Entity `_class` |
-| --------- | -------------- | --------------- |
-| Account   | `acme_account` | `Account`       |
+| Resources     | Entity `_type`            | Entity `_class` |
+| ------------- | ------------------------- | --------------- |
+| Account       | `insightvm_account`       | `Account`       |
+| Asset         | `insightvm_asset`         | `Device`        |
+| Finding       | `insightvm_finding`       | `Finding`       |
+| Scan          | `insightvm_scan`          | `Assessment`    |
+| Site          | `insightvm_site`          | `Site`          |
+| User          | `insightvm_user`          | `User`          |
+| Vulnerability | `insightvm_vulnerability` | `Vulnerability` |
 
 ### Relationships
 
 The following relationships are created/mapped:
 
-| Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
-| --------------------- | --------------------- | --------------------- |
-| `acme_account`        | **HAS**               | `acme_user`           |
-| `acme_account`        | **HAS**               | `acme_group`          |
-| `acme_group`          | **HAS**               | `acme_user`           |
+| Source Entity `_type` | Relationship `_class` | Target Entity `_type`     |
+| --------------------- | --------------------- | ------------------------- |
+| `insightvm_account`   | **HAS**               | `insightvm_asset`         |
+| `insightvm_account`   | **HAS**               | `insightvm_site`          |
+| `insightvm_account`   | **HAS**               | `insightvm_user`          |
+| `insightvm_asset`     | **HAS**               | `insightvm_finding`       |
+| `insightvm_finding`   | **IS**                | `insightvm_vulnerability` |
+| `insightvm_scan`      | **MONITORS**          | `insightvm_asset`         |
+| `insightvm_site`      | **HAS**               | `insightvm_asset`         |
+| `insightvm_site`      | **HAS**               | `insightvm_user`          |
+| `insightvm_site`      | **PERFORMED**         | `insightvm_scan`          |
+| `insightvm_user`      | **OWNS**              | `insightvm_asset`         |
 
 <!--
 ********************************************************************************
