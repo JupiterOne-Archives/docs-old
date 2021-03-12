@@ -106,10 +106,8 @@ fetched, meaning error logging would also not take place.
 
 ## Next steps
 
--   Identify if the Cognito SLAs were broken and check if AWS will provide us
-    with any service credits.
+-   Identify if the Cognito SLAs were broken
 
--   [AB-925][0] - Move away from the legacy API keys and adopt the newer tokens
+-   Move away from the legacy API keys and adopt the newer tokens
     issued by `token-service`. This flow avoids the additional calls to Cognito.
 
-[0]: https://dev.azure.com/jupiterone/Platform/_workitems/edit/925
