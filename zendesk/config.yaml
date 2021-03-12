@@ -52,7 +52,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: YUErdpUSXm+4w08a0aoYL+jQbCtdggWSoypO64i2MeI=
+        hash: pfN4MSQpbtElTmnOPbmqTabps0V9xxgQJupizo0Dhrc=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -75,6 +75,11 @@ sections:
         hash: q9nHT9KeSt3K6UDoCw3vyzvNEKR37zTMIqv8PJjblEY=
         id: 360026412514
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412514'
+      - title: Troubleshooting and Reporting Common Data Issues
+        file: ../faqs/faqs-troubleshoot-data-issues.md
+        hash: yJxrfETFZN4s138Jy5iBEQa70Z8A8eYruKFJ6sRyf9k=
+        id: 1500003848502
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500003848502'
       - title: Data Security
         file: ../docs/jupiterone-data-security.md
         hash: YUbLgjkZjpNVShoJIt2EPS9+09oWZ4skSf/8Pr1zEDs=
