@@ -6,7 +6,13 @@ JupiterOne provides a managed integration for Rapid7 InsightVM. The integration
 connects directly to Rapid7 InsightVM API to obtain configuration metadata and
 analyze resource relationships.
 
-## Data Model
+## Authentication
+
+Jupiterone requires the following information to complete authentication:
+1. The InsightVM Security Console Socket Address
+   - The publicly-accessible socket (host:port) of your InsightVM Security Console. e.g. <hostname>:3780.
+2. An InsightVM Username and Password
+   - Use an existing user or create a user that has at least the [Security Manager and Site Owner Role](https://docs.rapid7.com/insightvm/managing-users-and-authentication/#security-manager-and-site-owner)
 
 <!-- {J1_DOCUMENTATION_MARKER_START} -->
 <!--

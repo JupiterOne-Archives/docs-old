@@ -52,7 +52,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: x2DQXJhIYRdT10EEdpjg+BD/wNw1apjkA++8DCwsUU0=
+        hash: 5L4yJ21IBfZOOnXQq7kJnugsijCvaMYEcP6QoDp0CtE=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -602,7 +602,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046952094'
       - title: Rapid7
         file: ../docs/integrations/rapid7/index.md
-        hash: nNgT/31my8lDabTPvQBgD0qti2hAs3qPthf9hXvQBC8=
+        hash: q5Fj+eMFKrSFyDlcjsAmJEQb92ElA/zeJ1uKZM/B/jI=
         id: 360056759853
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360056759853'
       - title: SentinelOne
@@ -687,6 +687,11 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2021.66 Release
+        file: ../release-notes/2021-66.md
+        hash: SgUOnQxJwvU3rH1OLFunpp2ATLDBi5j69ct4YFMOr4o=
+        id: 1500003711441
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500003711441'
       - title: 2021.65 Release
         file: ../release-notes/2021-65.md
         hash: LAWv8wQWDzQz79TTDWByM0yOgYsj+MGtTNKCEfCaJeg=
