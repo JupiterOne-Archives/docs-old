@@ -52,7 +52,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: 8a5hKQIjyj2rXHfo6ggdCSbjZFWHAUbwlk4WQbxPLbg=
+        hash: pfN4MSQpbtElTmnOPbmqTabps0V9xxgQJupizo0Dhrc=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -75,6 +75,11 @@ sections:
         hash: q9nHT9KeSt3K6UDoCw3vyzvNEKR37zTMIqv8PJjblEY=
         id: 360026412514
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412514'
+      - title: Troubleshooting and Reporting Common Data Issues
+        file: ../faqs/faqs-troubleshoot-data-issues.md
+        hash: yJxrfETFZN4s138Jy5iBEQa70Z8A8eYruKFJ6sRyf9k=
+        id: 1500003848502
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500003848502'
       - title: Data Security
         file: ../docs/jupiterone-data-security.md
         hash: YUbLgjkZjpNVShoJIt2EPS9+09oWZ4skSf/8Pr1zEDs=
@@ -415,6 +420,11 @@ sections:
         hash: qpMROwx+isMUp8E5QhsdmNpGnjDCEgVlCohtB+oUiDc=
         id: 360041763713
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041763713'
+      - title: atSpoke
+        file: ../docs/integrations/atspoke/index.md
+        hash: 2zlYT8VowC4cul2YF9Ygnyc7jKMQ6cKR8wid1r6EG1Y=
+        id: 360062101514
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360062101514'
       - title: AWS
         file: ../docs/integrations/aws/index.md
         id: 360022721054
@@ -597,7 +607,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046952094'
       - title: Rapid7
         file: ../docs/integrations/rapid7/index.md
-        hash: wj2vsUG6kxuiGXfusINpugiBZHnbawo6NxgdnOfj6RM=
+        hash: q5Fj+eMFKrSFyDlcjsAmJEQb92ElA/zeJ1uKZM/B/jI=
         id: 360056759853
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360056759853'
       - title: SentinelOne
@@ -682,6 +692,11 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2021.66 Release
+        file: ../release-notes/2021-66.md
+        hash: jkTy22BROdbrc55jj/Im5ql7jMW/02v8TvROlCAWx8I=
+        id: 1500003711441
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500003711441'
       - title: 2021.65 Release
         file: ../release-notes/2021-65.md
         hash: LAWv8wQWDzQz79TTDWByM0yOgYsj+MGtTNKCEfCaJeg=
