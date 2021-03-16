@@ -84,8 +84,8 @@ in the future.
 
 -   What went well?
 
-    -   AWS acknowledged the issue fairly quickly and got Cognito back into a
-        working state within an hour.
+    -   AWS acknowledged the Cognito service disruption in a timely manner and restored all
+        service capabilities within an hour.
     -   Our internal monitor identified the issue proactively at 4:59 PM EST, almost the
         the same time JupiterOne employees and customers noticed the issue.
 
