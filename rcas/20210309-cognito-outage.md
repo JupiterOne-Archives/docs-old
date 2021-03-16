@@ -86,8 +86,8 @@ in the future.
 
     -   AWS acknowledged the Cognito service disruption in a timely manner and restored all
         service capabilities within an hour.
-    -   Our internal monitor identified the issue proactively at 4:59 PM EST, almost the
-        the same time JupiterOne employees and customers noticed the issue.
+    -   Internal JupiterOne monitoring services provided early identification of the issue,
+        just ahead of reports from employees and customers.
 
 -   What went badly?
 
