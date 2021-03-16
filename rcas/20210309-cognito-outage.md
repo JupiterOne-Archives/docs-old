@@ -91,7 +91,7 @@ in the future.
 
 -   What went badly?
 
-    -   There was not significant action that could be taken to rectify the issue faster.
+    -   No significant action could be taken by JupiterOne to reduce time to recovery.
     -   Customers were actively trying to use the product while the outage
         occurred.
     -   Customers reported their automations broken because they were unable
