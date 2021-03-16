@@ -6,45 +6,43 @@
 
 ## Timeline
 
-4:58 PM EST - An issue with logging in is noticed by JupiterOne Sales
+4:58 PM EST - JupiterOne notices an issue with logging into the JupiterOne web app
 
 5:00 PM EST - A customer reports authentication issues and their automation
-failing
+failing (API access)
 
-5:02 PM EST - Issue with logging in and automation failure reported by
-JupiterOne Support
+5:02 PM EST - JupiterOne identifies additional authentication issues related to login and API access
 
-5:08 PM EST - A developer notifies customers via the community `#status`
+5:08 PM EST - JupiterOne confirms the issue and notifies customers via the community `#status`
 channel.
 
-5:11 PM EST - AWS posts a message in our Personal Health Dashboard that Cognito
-error rates were increasing in the `us-east-2` region.
+5:11 PM EST - AWS posts a message in the Personal Health Dashboard of JupiterOne's production AWS account.
+The message indicates that Cognito error rates were increasing in the `us-east-2` region, 
+which is where JupiterOne's production environment is located.
 
-5:17 PM EST - A developer notes that they were able to access J1 APIs via the J1
-CLI tool.
+5:17 PM EST - JupiterOne confirms the authentication issues are directly related to the AWS cognito error
 
-5:20 PM EST - Another developer posts an update in the community Slack `#status`
+5:20 PM EST - JupiterOne makes an additional update in the community Slack `#status`
 channel that Cognito is in a degraded state and that the team is trying to
 identify workarounds.
 
-5:46 PM EST - A JupiterOne employee notes that they are able to get back into
-the app.
+5:46 PM EST - JupiterOne continues to monitor the sutiation and notices that logins are working again
 
-5:54 PM PST - AWS posts an update identifying the root cause and notifies us
-that the bad change has been rolled back.
+5:54 PM PST - AWS posts an update identifying the root cause and notifies us that the bad change
+has been rolled back. JupiterOne works on confirming the update from AWS. 
 
 > We can confirm increased Cognito User Pool API errors in the US-EAST-2 Region.
 > We have confirmed the root cause to be a subsystem deployment which we are now
 > in the process of rolling back. We are observing steady signs of recovery as
 > the rollback has progressed.
 
-6:00 PM EST - A JupiterOne employee posts an update to the community `#status`
+6:00 PM EST - JupiterOne confirms the fix is in place and posts an update to the community `#status`
 channel that the issue was resolved.
 
 ## Summary
 
-The AWS Cognito Service broke and made it so that users could no longer
-authenticate and access the JupiterOne app and APIs. The outage lasted
+The AWS Cognito Service had a brief outage and caused authentication failures
+to the JupiterOne app and APIs. The outage lasted
 approximately one hour. Calls to Cognito for authenticating or fetching a token
 if already authenticated consistently failed until AWS rolled back the change.
 
@@ -65,21 +63,20 @@ fetch Cognito's well known JSON Web Key Sets (JWKS) via the
 used to verify that the API key, which is encoded as a JSON Web Token (JWT), was
 signed by either `account-service` or Cognito.
 
-A J1 developer noted that they were able to still access J1 APIs via the CLI
+During the outage a J1 developer noted that they were able to still access J1 APIs via the CLI
 tool. The reason why this occurred was because the lambda authorizer caches the
 public keys associated with the issuer. The developer that used the CLI tool
-must have gotten lucky and hit a warmed lambda instance that had the values
+must have exercised a warmed lambda instance that had the values
 cached. It is also possible that API Gateway had decided to accept the request
 and avoid invoking the authorizer due to it's built in authorization caching.
 However, the latter is a less likely scenario considering the default TTL is 5
 minutes and the developer that noted that successful usage of the CLI had posted
 the message at 5:17 EST, almost 20 minutes into the outage.
 
-It's difficult to present concrete evidence to pinpoint the exact issue since
-logging in via the authorizer is not perfect and the lambda timeout is set to 2
-seconds. Since calls to Cognito were resulting in 504 errors, it's very possible
-that authorizer started to time out in situations where the JWKS needed to be
-fetched, meaning error logging would also not take place.
+The underlying root cause for the authentication issues was the AWS Cognito outage.
+JuipterOne could not provide a workaround withing the timespan of this outage,
+but JupiterOne has active plans to avoid Cognito JKWS calls for API usage
+in the future.
 
 ## Resolution
 
@@ -89,12 +86,12 @@ fetched, meaning error logging would also not take place.
 
     -   AWS acknowledged the issue fairly quickly and got Cognito back into a
         working state within an hour.
-    -   The monitor started erroring and alerting around 4:59 PM EST, almost the
-        the same time J1 employees noticed the issue.
+    -   Our internal monitor identified the issue proactively at 4:59 PM EST, almost the
+        the same time JupiterOne employees and customers noticed the issue.
 
 -   What went badly?
 
-    -   There was not much that could have been done to rectify the issue.
+    -   There was not significant action that could be taken to rectify the issue faster.
     -   Customers were actively trying to use the product while the outage
         occurred.
     -   Customers reported that their automation broken because they were unable
@@ -108,6 +105,6 @@ fetched, meaning error logging would also not take place.
 
 -   Identify if the Cognito SLAs were broken
 
--   Move away from the legacy API keys and adopt the newer tokens
-    issued by `token-service`. This flow avoids the additional calls to Cognito.
-
+-   Move away from the legacy API keys associated with individual users and adopt the newer tokens
+    issued by JuipterOne's `token-service`. This flow avoids the additional calls to Cognito JKWS.
+    This would allow API keys to continue to function even while Cognito authentication is down.
