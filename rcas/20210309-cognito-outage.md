@@ -94,7 +94,7 @@ in the future.
     -   There was not significant action that could be taken to rectify the issue faster.
     -   Customers were actively trying to use the product while the outage
         occurred.
-    -   Customers reported that their automation broken because they were unable
+    -   Customers reported their automations broken because they were unable
         to access J1 APIs via API keys.
 
 *   Where did we get lucky?
