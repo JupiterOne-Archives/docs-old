@@ -106,5 +106,5 @@ in the future.
 -   Identify if the Cognito SLAs were broken
 
 -   Move away from the legacy API keys associated with individual users and adopt the newer tokens
-    issued by JuipterOne's `token-service`. This flow avoids the additional calls to Cognito JKWS.
+    issued by JupiterOne's `token-service`. This flow avoids the additional calls to Cognito JKWS.
     This would allow API keys to continue to function even while Cognito authentication is down.
