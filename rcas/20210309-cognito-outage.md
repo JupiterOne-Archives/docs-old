@@ -74,7 +74,7 @@ minutes and the developer that noted that successful usage of the CLI had posted
 the message at 5:17 EST, almost 20 minutes into the outage.
 
 The underlying root cause for the authentication issues was the AWS Cognito outage.
-JuipterOne could not provide a workaround withing the timespan of this outage,
+JupiterOne could not provide a workaround within the timespan of this outage,
 but JupiterOne has active plans to avoid Cognito JKWS calls for API usage
 in the future.
 
