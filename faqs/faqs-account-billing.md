@@ -29,16 +29,27 @@ The following entities are not counted for billing/usage calculation:
 - **Images, NetworkInterfaces, and IpAddress** -- these entities are also not
   counted against the usage or billing.
 
-Run the following query in your account to get a count:
+- **Records** -- records such as DNS records, Jira issues are not considered
+  as billable.
+
+Billable entities count is averaged daily, and again monthly. This can be viewed
+by going to **Settings** -> **Account Management** in the JupiterOne web UI.
+
+There is a soft-limit on non-billable entitites. Depending on your JupiterOne
+subscription plan, the soft-limit is 2x, 5x or 10x of the total billable
+entities limit.
+
+You can also Run the following query in your account to get a live count of your
+billable entities:
 
 ```j1ql
 Find * with
   _source !^= 'system-' and
   _class !=
-    ('Finding' and 'PR' and 'Image' and 'NetworkInterface' and 'IpAddress')
+    ('Finding' and 'PR' and 'Image' and 'NetworkInterface' and 'IpAddress' and 'Record')
   as e
 return
-  count(e) as entityCount
+  count(e) as billableEntityCount
 ```
 
 ## What are the limitations of the `COMMUNITY` Edition of JupiterOne? 

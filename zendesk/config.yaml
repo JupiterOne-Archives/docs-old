@@ -52,7 +52,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: pfN4MSQpbtElTmnOPbmqTabps0V9xxgQJupizo0Dhrc=
+        hash: xef6eptuYWYnjaG/EBlP6NUhQIQjuBcM8D2bSHTrFos=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -321,7 +321,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049348293'
       - title: Alert Rule Schema
         file: ../docs/schemas/alert-rule.md
-        hash: hk3cIECT/AU8Iq38KqZprawUTrUGM19EaTa0zP0RW6Y=
+        hash: 3d5kftgu/XSpR1ech09dqP4U5PdJsscKHu7G2VzQZlY=
         id: 360039711354
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360039711354'
       - title: Policies and Compliance related data schema
