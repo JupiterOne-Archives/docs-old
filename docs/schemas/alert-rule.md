@@ -236,12 +236,17 @@ Example:
 
 > Sends a Slack message to a given Slack webhook URL.
 
-| Property                | Type     | Description                                                                           |
-| ----------------------- | -------- | --------------------------------------------------------------------------------------|
-| `integrationInstanceId` | `string` | The `id` of the JupiterOne Jira integration that should be used to create the ticket. |
-| `type`                  | `string` | Rule operation action type: `SEND_SLACK_MESSAGE`                                      |
-| `channels`              | `string` | A string or list of strings begining with a `#` denoting Slack channels to send to    |
-| `webhookUrl`            | `string` | Webhook URL for the account/channel that this message should be delivered to.         |
+| Property                | Type     | Description                                                                                  |
+| ----------------------- | -------- | -------------------------------------------------------------------------------------------- |
+| `integrationInstanceId` | `string` | The `id` of the JupiterOne Jira integration that should be used to create the ticket.        |
+| `type`                  | `string` | Rule operation action type: `SEND_SLACK_MESSAGE`                                             |
+| `channels`              | `string` | A string or list of strings begining with a `#` denoting Slack channels to send to           |
+| `webhookUrl`            | `string` | Webhook URL for the account/channel that this message should be delivered to.                |
+| `severity`              | `string` | Optional severity of this alert that will determine the color of the message shown in Slack. |
+
+**NOTE**: By default, the color of the alert shown in Slack is derived from the
+value of the `alertLevel` that can be created in a `SET_PROPERTY` action. The
+color of the alert can be overridden using the `severity` property.
 
 Example:
 
