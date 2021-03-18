@@ -39,6 +39,9 @@ There is a soft-limit on non-billable entitites. Depending on your JupiterOne
 subscription plan, the soft-limit is 2x, 5x or 10x of the total billable
 entities limit.
 
+> For example, if your purchased the Enterprise Premier plan with 50,000 billable
+> entities, you can have up to 500,000 non-billable entities.
+
 You can also Run the following query in your account to get a live count of your
 billable entities:
 
