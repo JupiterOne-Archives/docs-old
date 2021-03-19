@@ -23,7 +23,7 @@ Now use your favorite infrastructure-as-code method to systematically generate a
 sub-accounts. Be sure to name the IAM Role identically, attach the same policies, and use the same external trust ID 
 as was used with the master account configuration.
 
-Finally, make sure that in the JupiterOne application you have selected a polling inverval and select the option 
+Finally, make sure that in the JupiterOne application you have selected a polling interval and select the option 
 to "Auto-configure additional integrations..." in your master account configuration.
 
 If these steps are done correctly, JupiterOne will automatically pull in all
