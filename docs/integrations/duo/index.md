@@ -6,12 +6,22 @@ JupiterOne provides a managed integration for Duo. The integration connects
 directly to Duo REST APIs to obtain configuration metadata and analyze resource
 relationships.
 
-You will need to create an API key (`integration key` + `secret key`) from your
+You will need to create an API key (`Integration Key` + `Secret Key`) from your
 Duo Admin Panel. You may need to contact Duo Support to request API access. See
-instructions in [Duo Support Docs][1].
+up-to-date instructions in [Duo Support Docs][1].
 
-Configure JupiterOne Duo integration with the `api hostname`, `integration key`,
-and `secret key`.
+### Required API Permissions
+
+JupiterOne requires at a minimum the following API permissions be enabled:
+
+- Grant administrators
+- Grant settings
+- Grant read resource
+
+### JupiterOne Configuration
+
+Configure the Duo integration in JupiterOne by copying over the `API Hostname`,
+`Integration Key`, and `Secret Key` from Duo.
 
 [1]: https://duo.com/docs/adminapi
 
