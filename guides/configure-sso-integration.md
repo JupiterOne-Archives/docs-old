@@ -1,9 +1,7 @@
 # How to configure SAML SSO integration with JupiterOne
 
 Single Sign On is supported via a custom authentication client configured within
-a JupiterOne account. This feature is available to all enterprise customers upon
-request. To request SSO integration to be enabled for your account, please open
-a support ticket or contact your technical account manager.
+a JupiterOne account. This feature is available to all enterprise customers.
 
 ## Supported Features
 
