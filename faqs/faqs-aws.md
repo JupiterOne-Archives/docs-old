@@ -35,6 +35,44 @@ To skip certain sub-accounts when auto-configuring JupiterOne AWS integrations
 from an Organizations master account, add the optional `j1-integration: SKIP` tag 
 to the sub-account in your infrastructure-as-code or from the AWS Organizations web console.
 
+## How can I bypass a Service Control Policy blocking the JupiterOne Integration?
+
+See the (AWS Service control policies documentation)[https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html]
+for the latest information.
+
+Errors may occur after configuring one or many AWS integrations if there is a
+Service Control Policy (SCP) blocking specified services across regions. Any AWS
+services that are blocking JupiterOne ingestion can be found within the logs of
+the *Integration Jobs* (Integrations > Configurations > Settings > Jobs).
+
+For each SCP that is blocking a JupiterOne service, you can add the following
+arn as an exception: `arn:aws:iam::*:role/JupiterOne*`. (See the example below)
+
+**Note** Make sure the last part of the ARN `/JupiterOne*` matches the
+JupiterOne role you created during setup of the integration.
+
+*Example*
+
+```json
+{
+  "Version": "...",
+  "Statement": {
+    "Sid": "...",
+    "Effect": "...",
+    "Action": "...",
+    "NotAction": "...",
+    "Resource": "...",
+    "Condition": {
+      "ArnNotLike": {
+        "aws:PrincipalARN": [
+            "arn:aws:iam::*:role/JupiterOne*",
+        ]
+      }
+    }
+  }
+}
+```
+
 ## I have a Network marked as "public", what does that mean?
 
 The `public` property on a Network entity means the network is publicly
