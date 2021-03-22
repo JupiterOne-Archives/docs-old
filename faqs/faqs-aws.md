@@ -57,7 +57,7 @@ your JupiterOne AWS integration.
 "Condition": {
   "ArnNotLike": {
     "aws:PrincipalARN": [
-        "arn:aws:iam::*:role/JupiterOne*",
+        "arn:aws:iam::*:role/JupiterOne*"
     ]
   }
 }
