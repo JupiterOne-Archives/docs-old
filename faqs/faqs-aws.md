@@ -37,38 +37,28 @@ to the sub-account in your infrastructure-as-code or from the AWS Organizations 
 
 ## How can I bypass a Service Control Policy blocking the JupiterOne Integration?
 
-See the (AWS Service control policies documentation)[https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html]
+See the [AWS Service control policies documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html)
 for the latest information.
 
 Errors may occur after configuring one or many AWS integrations if there is a
-Service Control Policy (SCP) blocking specified services across regions. Any AWS
-services that are blocking JupiterOne ingestion can be found within the logs of
+Service Control Policy (SCP) blocking specified services or regions. Any AWS
+Services that cannot be ingested by JupiterOne can be found within the logs of
 the *Integration Jobs* (Integrations > Configurations > Settings > Jobs).
 
-For each SCP that is blocking a JupiterOne service, you can add the following
-arn as an exception: `arn:aws:iam::*:role/JupiterOne*`. (See the example below)
+![Integration Jobs](../assets/faq-integration-jobs.png)
 
-**Note** Make sure the last part of the ARN `/JupiterOne*` matches the
-JupiterOne role you created during setup of the integration.
+For each SCP that is blocking JupiterOne ingestion, add the following condition
+element to your SCP JSON: 
 
-*Example*
+**Note** Make sure the ARN below matches the IAM Role ARN you used to configure
+your JupiterOne AWS integration.
 
 ```json
-{
-  "Version": "...",
-  "Statement": {
-    "Sid": "...",
-    "Effect": "...",
-    "Action": "...",
-    "NotAction": "...",
-    "Resource": "...",
-    "Condition": {
-      "ArnNotLike": {
-        "aws:PrincipalARN": [
-            "arn:aws:iam::*:role/JupiterOne*",
-        ]
-      }
-    }
+"Condition": {
+  "ArnNotLike": {
+    "aws:PrincipalARN": [
+        "arn:aws:iam::*:role/JupiterOne*",
+    ]
   }
 }
 ```
