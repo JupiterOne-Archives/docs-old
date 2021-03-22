@@ -438,6 +438,7 @@ Find (User | UserGroup)
   that allows as permission *
 where permission.admin=true
 return TREE
+```
 
 **Optional traversals can also be chained.** The combined results from
 each previous optional traversal will be used in the next optional
