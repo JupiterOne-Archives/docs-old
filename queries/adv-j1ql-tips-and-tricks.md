@@ -74,7 +74,9 @@ will be returned.
 Let's look at a different example with an edge that has properties.
 
 ```j1ql
-Find Training as t that ASSIGNED as enrollment User as u WHERE enrollment.completedOn = undefined
+Find Training
+  that ASSIGNED User
+WHERE ASSIGNED.completedOn = undefined
 ```
 
 ![j1ql-custom-query-incomplete-trainings](../assets/j1ql-custom-query-incomplete-trainings.png)
