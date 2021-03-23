@@ -1,16 +1,20 @@
 # AWS Organizations
 
 The JupiterOne Application supports the ability to ingest multiple AWS Accounts
-that are managed by AWS Organizations through a single Integration *Create Configuration*. 
+that are managed by AWS Organizations by configuring a single Integration on the
+AWS master account of the Organization. 
 
 ![aws-organizations-configure-checkbox](../../../assets/aws-organizations-configure-checkbox.png)
 
 ## Organizations Setup
 
-Before selecting the checkbox, you will want to make sure that each of your AWS
-sub-accounts is configured with the same JupiterOne IAM role, policies, and
-external trust ID. If using Terraform, there is a setup option *Using Terraform*
-under *Setup Instructions*. 
+Before selecting the checkbox, you will want to make sure that each AWS account
+in the organization is configured with the same JupiterOne IAM role, policies,
+and external trust ID. If you are using Terraform in your AWS environment, there
+are setup instructions within the JupiterOne app under the AWS *Setup
+Instructions*. 
+
+![aws-organizations-terraform-setup](../../../assets/aws-organizations-terraform-setup.png)
 
 For more detailed instructions, see 
 [How can I add/configure all the sub-accounts in my AWS Organization?](https://support.jupiterone.io/hc/en-us/articles/360026412494-AWS-Specific-Questions#howcaniaddconfigureallthesubaccountsinmyawsorganization)
