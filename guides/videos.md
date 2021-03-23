@@ -5,7 +5,7 @@ gallery](https://info.jupiterone.com/community?submissionGuid=a634e4ba-ea04-4cd5
 for numerous videos on tips + tricks using J1 in variety of use cases.
 
 ## Examining your AWS environment:
-1. Examine public EC 2 instances
+1. Examine public EC2 instances
 1. Interrogate a CDN
 1. Unencrypted S3 buckets containing CloudTrail logs
 1. Unapproved AMIs
