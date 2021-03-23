@@ -1800,8 +1800,8 @@ Headers:
 {
   "Content-Type": "application/json",
   "Accept": "application/json",
-  "JupiterOne-Account": "{Account ID}",
-  "Authorization": "Bearer {API Key}"
+  "JupiterOne-Account": "{Account_ID}",
+  "Authorization": "Bearer {API_Key}"
 }
 ```
 
@@ -1809,13 +1809,15 @@ Body:
 
 ```json
 {
-  "query":"mutation Invoke {\n  invokeIntegrationInstance(id: \"{INTEGRATION_INSTANCE_ID}\") {\n    success\n  }\n}\n"
+  "query": "mutation Invoke {
+    invokeIntegrationInstance(id: \"{INTEGRATION_INSTANCE_ID}\") {
+      success
+    }
+  }"
 }
 ```
 
-<!-- curl 'https://api.us.jupiterone.io/graphql' -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'JupiterOne-Account: {ACCOUNT}' -H 'Authorization: Bearer {API_KEY}' -d '{"query":"mutation Invoke {\n  invokeIntegrationInstance(id: \"{INTEGRATION_INSTANCE_ID}\") {\n    success\n  }\n}\n"}' -->
-
-## Example Usage
+## Additional API Examples
 
 **Creating entities and a relationship between them**
 NOTE: The following mutations utilize a J1Client.
