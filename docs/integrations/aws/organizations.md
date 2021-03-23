@@ -18,7 +18,7 @@ under the AWS Specific Questions article. Once all sub-accounts are configured
 correctly in AWS, if you check the option *Configure Organization Accounts*, 
 data for each sub-account will be pulled into your JupiterOne account.
 
-To exclude an sub-account, you can assign the tag `j1-integration:SKIP` to that 
+To exclude an AWS account, you can assign the tag `j1-integration:SKIP` to that 
 specific account within AWS Organizations. See the question 
 [How can I skip certain sub-accounts when auto-configuring my AWS Organization?](https://support.jupiterone.io/hc/en-us/articles/360026412494-AWS-Specific-Questions#howcaniskipcertainsubaccountswhenautoconfiguringmyawsorganization)
 
@@ -26,7 +26,7 @@ specific account within AWS Organizations. See the question
 
 The CIS Benchmark expects that a contact email is associated with an AWS account
 in the case of a breach or security compromise. The `email` property for an
-`aws_account` is only ingested if the AWS Organizations integration is configured. 
+`aws_account` is only ingested when an AWS integration configuration for the master account has the box checked to enable auto configuration of AWS Organization accounts. 
 
 If an incorrect/unexpected email address is tied to an AWS account, refer to the following AWS article: 
 [How do I change the email address that's associated with my AWS account?](https://aws.amazon.com/premiumsupport/knowledge-center/change-email-address/)
@@ -46,8 +46,8 @@ The following properties are created on the master account and sub-accounts:
 | `joinedMethod`: The method by which the account joined the organization   |
 | `joinedOn`: The date the account became a part of the organization        |
 | `name`: The friendly name of the account                                  |
-| `orgAccountArn`: Amazon resource name of the master account               |
-| `orgAccountName`: The friendly name of the master account (gap)           |
+| `orgAccountArn`: The ARN of this Account within the Organization           |
+| `orgAccountName`: The name of this Account as seen in the Organizations UI |
 | `status`: The status of the account in the organization                   |
 
 ## Relationships 
