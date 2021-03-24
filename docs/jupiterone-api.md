@@ -1810,7 +1810,7 @@ Body:
 ```json
 {
   "query": "mutation Invoke {
-    invokeIntegrationInstance(id: "{INTEGRATION_INSTANCE_ID}") {
+    invokeIntegrationInstance(id: INTEGRATION_INSTANCE_ID) {
       success
     }
   }"
