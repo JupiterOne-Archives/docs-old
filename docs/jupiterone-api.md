@@ -1302,6 +1302,136 @@ NOTE:
 - You can delete by both `_id` and `_key`. We recommend deleting entities by id
   because the `_id` is unique across all entities.
 
+## Retrieve Entity Metadata and Versions
+
+Before making a request to the following endpoints, update the *ENTITY_ID*
+placeholder with the `_id` metadata property of a given entity.  
+
+### Get metadata about the latest raw data entries for a given entity
+
+**Endpoint**
+
+```text
+GET https://api.us.jupiterone.io/entities/${ENTITY_ID}/raw-data
+```
+
+**Example Return**
+
+```json
+{
+  "entries": {
+    "exampleEntry": {
+      "beginOn": 1579116466000,
+      "contentType": "application/json",
+      "contentLength": 256,
+      "createdOn": 0,
+      "deleted": false,
+      "versionId": "@H7JL4jgxSX9Cv5jTGvbz_xHDiVOKuRvd"
+    }
+  }
+}
+```
+
+### Get all version metadata for raw data entries for a given entity
+
+**Endpoint** 
+
+```text
+GET https://api.us.jupiterone.io/entities/${ENTITY_ID}/raw-data-versions
+```
+
+**Example Return**
+
+```json
+{
+  "entries": {
+    "exampleEntry1": [
+      {
+        "beginOn": 1593026714000,
+        "contentType": "application/json",
+        "contentLength": 15,
+        "createdOn": 1593115669000,
+        "deleted": false,
+        "versionId": "id1"
+      }
+    ],
+    "exampleEntry2": [
+      {
+        "beginOn": 1593114913000,
+        "contentType": "application/json",
+        "contentLength": 18,
+        "createdOn": 1593114913000,
+        "deleted": false,
+        "versionId": "id2"
+      },
+      {
+        "beginOn": 1593113910000,
+        "contentType": "application/json",
+        "contentLength": 21,
+        "createdOn": 1593114913000,
+        "deleted": false,
+        "versionId": "id1"
+      }
+    ]
+  }
+}
+```
+
+### Get version metadata for specific entry for a given entity
+
+Before making a request to the following endpoints, update the *ENTRY_NAME*
+placeholder with on the of example entries returned in the previous example
+(exampleEntry1/exampleEntry2).
+
+**Endpoint**
+
+```text
+GET https://api.us.jupiterone.io/entities/${ENTITY_ID}/raw-data/${ENTRY_NAME}/versions
+```
+
+**Example Return**
+
+```json
+{
+  "versions": [
+    {
+      "beginOn": 1593114913000,
+      "contentType": "application/json",
+      "contentLength": 18,
+      "createdOn": 1593114913000,
+      "deleted": false,
+      "versionId": "id2"
+    },
+    {
+      "beginOn": 1593113910000,
+      "contentType": "application/json",
+      "contentLength": 21,
+      "createdOn": 1593114913000,
+      "deleted": false,
+      "versionId": "id1"
+    }  
+  ]
+}
+```
+
+### Download raw data for a given entry of a given entity
+
+**Endpoint**
+
+```text
+GET https://api.us.jupiterone.io/entities/${ENTITY_ID}/raw-data/${ENTRY_NAME}/versions/latest
+```
+
+**Example Return**
+
+```json
+{
+  "teamId": "exampleTeamId",
+  "teamName": "jupiterone-demo",
+  "appId": "exampleAppId"
+}
+```
+
 ## Building CSV Report
 
 **Endpoint:** `/graphql`
