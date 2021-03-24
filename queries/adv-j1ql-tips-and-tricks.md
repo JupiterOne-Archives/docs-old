@@ -33,7 +33,10 @@ and more efficient.
 Take the following example.
 
 ```j1ql
-Find User with name~='john' that HAS UserGroup that ASSIGNED AccessRole that (ALLOWS|TRUSTS) Account
+Find User with name~='john' 
+  that HAS UserGroup
+  that ASSIGNED AccessRole 
+  that (ALLOWS|TRUSTS) Account
 ```
 
 ![j1ql-custom-query-with-example](../assets/j1ql-custom-query-with-example.png)
@@ -49,7 +52,11 @@ AccessRole(s), and finally Account(s).
 Let's continue with the previous `WITH` example.
 
 ```j1ql
-Find User as u1 that HAS UserGroup that ASSIGNED AccessRole that ASSIGNED User as u2 WHERE u1.name=u2.name
+Find User as u1 
+  that HAS UserGroup 
+  that ASSIGNED AccessRole 
+  that ASSIGNED User as u2 
+WHERE u1.name=u2.name
 ```
 
 ![j1ql-custom-query-where-example](../assets/j1ql-custom-query-where-example.png)
@@ -67,7 +74,9 @@ will be returned.
 Let's look at a different example with an edge that has properties.
 
 ```j1ql
-Find Training as t that ASSIGNED as enrollment User as u WHERE enrollment.completedOn = undefined
+Find Training
+  that ASSIGNED User
+WHERE ASSIGNED.completedOn = undefined
 ```
 
 ![j1ql-custom-query-incomplete-trainings](../assets/j1ql-custom-query-incomplete-trainings.png)
@@ -193,8 +202,11 @@ These relationships can be used to craft queries.
 
 ```j1ql
 Find User that ASSIGNED AccessRole
+
 Find User that IS Person
+
 Find User that HAS UserGroup
+
 Find User that ASSIGNED Application
 ```
 
@@ -219,7 +231,10 @@ Our final query could be something similar to the following example, adding in f
 See [J1QL Language Specs](https://support.jupiterone.io/hc/en-us/articles/360022722014-J1QL-Language-Specs) to understand the query language features.
 
 ```j1ql
-Find User that HAS UserGroup that ASSIGNED AccessRole that TRUSTS Account
+Find User 
+  that HAS UserGroup 
+  that ASSIGNED AccessRole 
+  that TRUSTS Account
 ```
 
 ![j1ql-custom-query-full-example](../assets/j1ql-custom-query-full-example.png)
