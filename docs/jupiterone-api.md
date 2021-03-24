@@ -1780,7 +1780,7 @@ Settings under Account Management.
 
 ![API Account ID](../assets/api-account-id.png)
 
-`INTEGRATION_INSTANCE_ID` - This value is the ID of the specific integration job
+`INTEGRATION_INSTANCE_ID` - This value is the ID of the specific integration instance
 that will be triggered, found in Settings under Integrations and then selecting
 the specific integration that has been configured (Integrations - Configurations - Settings).
 
