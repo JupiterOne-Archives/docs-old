@@ -52,7 +52,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: KDTnJgAe7xdD7a4B+af/ucQtDZGg7QP6qNG7p2V2h4w=
+        hash: TdaXFioYNquuwUZV4UMcKOhi1aTgMnrTiuUKj4taCxM=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
