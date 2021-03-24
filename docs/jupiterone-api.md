@@ -1767,7 +1767,57 @@ query testQuery {
 }
 ```
 
-## Example Usage
+## Trigger an Integration Job via API
+
+The following values are required in order to trigger an integration job via API:
+
+`API_KEY` - An API Key must be configured before leveraging the JupiterOne API. Review 
+[Enable API Key Access](https://support.jupiterone.io/hc/en-us/articles/360025847594-Enable-API-Key-Access)
+for a guide in creating a JupiterOne API Key.
+
+`ACCOUNT_ID` - This value is the unique ID of your JupiterOne Account, found in
+Settings under Account Management.
+
+![API Account ID](../assets/api-account-id.png)
+
+`INTEGRATION_INSTANCE_ID` - This value is the ID of the specific integration instance
+that will be triggered, found in Settings under Integrations and then selecting
+the specific integration that has been configured (Integrations - Configurations - Settings).
+
+![API Integration Instance ID](../assets/api-integration-instance-id.png)
+
+**Sample request:**
+
+Endpoint:
+
+```text
+POST https://api.us.jupiterone.io/graphql
+```
+
+Headers:
+
+```json
+{
+  "Content-Type": "application/json",
+  "Accept": "application/json",
+  "JupiterOne-Account": "{Account_ID}",
+  "Authorization": "Bearer {API_Key}"
+}
+```
+
+Body:
+
+```json
+{
+  "query": "mutation Invoke {
+    invokeIntegrationInstance(id: INTEGRATION_INSTANCE_ID) {
+      success
+    }
+  }"
+}
+```
+
+## Additional API Examples
 
 **Creating entities and a relationship between them**
 NOTE: The following mutations utilize a J1Client.
