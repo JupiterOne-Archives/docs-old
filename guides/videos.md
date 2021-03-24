@@ -5,7 +5,7 @@ gallery](https://info.jupiterone.com/community)
 for numerous videos on tips + tricks using J1 in variety of use cases.
 
 ## Examining your AWS environment:
-1. [Examine public EC 2 instances](https://www.youtube.com/watch?v=xLn6LkiQdbY)
+1. [Examine public EC2 instances](https://www.youtube.com/watch?v=xLn6LkiQdbY)
 1. [Interrogate a CDN](https://www.youtube.com/watch?v=phKvrHRcvPE)
 1. [Unencrypted S3 buckets containing CloudTrail logs](https://www.youtube.com/watch?v=JyTHCfF6hFI)
 1. [Unapproved AMIs](https://www.youtube.com/watch?v=CPlvNosBgsA)
