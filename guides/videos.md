@@ -1,7 +1,6 @@
 # Video Gallery
 
-Check out our JupiterOne [video
-gallery](https://info.jupiterone.com/community)
+Check out our JupiterOne [video gallery](https://info.jupiterone.com/community)
 for numerous videos on tips + tricks using J1 in variety of use cases.
 
 ## Examining your AWS environment:
@@ -29,6 +28,6 @@ for numerous videos on tips + tricks using J1 in variety of use cases.
 1. [AWS-specific dashboards]()
 1. [General security dashboards]()
 
- And much more!
+And much more!
 
 ![video-gallery](../assets/video-gallery.png)
