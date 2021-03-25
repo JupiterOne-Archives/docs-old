@@ -52,7 +52,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: KDTnJgAe7xdD7a4B+af/ucQtDZGg7QP6qNG7p2V2h4w=
+        hash: pAwoiEcIV7yaG5IQXiP2NxyqC0eXfFC+eF9cG50tHyA=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -62,7 +62,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022879453'
       - title: AWS Specific Questions
         file: ../faqs/faqs-aws.md
-        hash: D9ycZcj/ASTnXr3Xw4QBkKTPGcRiuOkQtq1j8JCHBl0=
+        hash: dNrq+1Amm5H+dxev7RdHHNQ/ve6x2DcYD00hs2Nxeks=
         id: 360026412494
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412494'
       - title: Query Related Questions
@@ -301,7 +301,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: PLyNMP49ZzKvcXJuZ1FYLbt7XGisCYXOTdGMiqIgUcU=
+        hash: GOxd+Vl8Jh3OSvn4CEicT0k4GiRb2A2PvvgVEDoerLc=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Node.js Client and CLI
@@ -407,7 +407,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041436913'
       - title: 'Data Model for Governance, Risk, and Compliance (GRC)'
         file: ../docs/data-model/org-grc.md
-        hash: uvYisjwJfo5FZzMeFMszQRyz6WxorZ/9GxLfLkbANQE=
+        hash: fYKz9hi3iqZ7LSul0jdO9D6Jjap838mjHjNBEi+tixM=
         id: 360041436933
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041436933'
   - name: Data Model Entity Reference
@@ -440,15 +440,20 @@ sections:
         hash: swD2ELSck/CIAfrhMTPQKBW2x2Y4WDnHVUo/5RaGQ5o=
         id: 360024909213
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909213'
+      - title: Azure DevOps
+        file: ../docs/integrations/azure-devops/index.md
+        hash: Uv3KXkJ68h5JyIbScUpc/DtpWHeangxKYGuc32pMH+o=
+        id: 1500004935101
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500004935101'
       - title: BambooHR
         file: ../docs/integrations/bamboohr/index.md
         hash: 7NlgQfI5JamAykhexhaZH5PGIN3MCp7SKeA8TFICYiA=
         id: 360056759813
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360056759813'
-      - title: BitBucket
+      - title: Bitbucket
         file: ../docs/integrations/bitbucket/bitbucket.md
         id: 360022721074
-        hash: YyNzKWtTx6IdCQJHqibX3PYOaDLBiA96sxL97egxhhU=
+        hash: uswDkYqauZ0Ko2YT92KoQSlEAC149kUiZHBY7Y4YOeo=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721074'
       - title: Bugcrowd
         file: ../docs/integrations/bugcrowd/index.md
@@ -570,6 +575,11 @@ sections:
         hash: KnNa5FPEx4tztAU2Zv5+ryaUqOpK6nO9u/53yGan5Lk=
         id: 360023741834
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360023741834'
+      - title: Microsoft 365
+        file: ../docs/integrations/microsoft365/index.md
+        hash: wmu9mvyLodk//+c6MZLCwc43zVyQfp90dB44kPcJZWk=
+        id: 1500005029222
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005029222'
       - title: NPM
         file: ../docs/integrations/npm/index.md
         hash: JhP0dPxaGP9A3BK0sq3ZQrwVPAjrLOQRZgA5Weqv1f8=
@@ -692,6 +702,11 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2021.67 Release
+        file: ../release-notes/2021-67.md
+        hash: 93cPmKbELGCL1r0KRBcqOGDPy1vunboCysWHNjxxrT0=
+        id: 1500005028742
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005028742'
       - title: 2021.66 Release
         file: ../release-notes/2021-66.md
         hash: jkTy22BROdbrc55jj/Im5ql7jMW/02v8TvROlCAWx8I=
@@ -699,7 +714,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500003711441'
       - title: 2021.65 Release
         file: ../release-notes/2021-65.md
-        hash: LAWv8wQWDzQz79TTDWByM0yOgYsj+MGtTNKCEfCaJeg=
+        hash: TiOVi/ifpNMHEgZtuLx1am64+KXs7OGVAdvl0jbdnw4=
         id: 360063391873
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360063391873'
       - title: 2021.64 Release
