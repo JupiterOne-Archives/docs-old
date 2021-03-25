@@ -82,7 +82,7 @@ function parseLinks() {
   for (const section of config.sections || []) {
     for (const art of section.articles || []) {
       linksMap[art.file.substr(art.file.indexOf('/', 3)+1).replace('.md', '')] = art.webLink;
-      linksRegexStr += `(${art.file.replace(/\.\.\/(docs|guides|queries|dashboards)\//, '').replace(/\//g, '\\/').replace(/\.md/, '')})|`;
+      linksRegexStr += `(${art.file.replace(/\.\.\/(docs|faqs|guides|queries|dashboards)\//, '').replace(/\//g, '\\/').replace(/\.md/, '')})|`;
     }
   }
   linksRegexStr = linksRegexStr.slice(0, -1) + ')(\\.md)';

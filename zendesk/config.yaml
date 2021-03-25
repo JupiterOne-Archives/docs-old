@@ -52,7 +52,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: pAwoiEcIV7yaG5IQXiP2NxyqC0eXfFC+eF9cG50tHyA=
+        hash: jDHzsn138lWvrGvp4XsjSYcBN4OYydjHzxkuoGtYKTg=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -248,6 +248,11 @@ sections:
   - name: User Guides
     id: 360002297174
     articles:
+      - title: Videos Gallery
+        file: ../guides/videos.md
+        hash: QEjmkpvIETH2vq7IIg8Gte/gRFjnIQsFjnyHpO9Yb1o=
+        id: 1500005037902
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005037902'
       - title: Getting Started with Insights Dashboards
         file: ../guides/insights-dashboards.md
         hash: kV5JCEj4jEQdjXSeNJ5NM8PmzNofQiniF/L63+iJW74=
