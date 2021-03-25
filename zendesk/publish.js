@@ -78,7 +78,7 @@ function sha256(object) {
 
 function parseLinks() {
   let linksMap = {};
-  let linksRegexStr = '((\\.|\\.\\.)\\/)+((docs|guides|queries|dashboards)\\/)?(';
+  let linksRegexStr = '((\\.|\\.\\.)\\/)+((docs|faqs|guides|queries|dashboards)\\/)?(';
   for (const section of config.sections || []) {
     for (const art of section.articles || []) {
       linksMap[art.file.substr(art.file.indexOf('/', 3)+1).replace('.md', '')] = art.webLink;

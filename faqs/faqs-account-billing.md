@@ -88,7 +88,7 @@ _Notes:_
 
 ## I see a user named "Callisto" on my account. Who is that?
 
-"Callisto <callisto@jupiterone.io>" is the account for JupiterOne Support. The
+"Callisto" \<callisto@jupiterone.io\> is the account for JupiterOne Support. The
 Support User is by default added to a new account during free trial,
 proof-of-concept evaluation, or initial account onboarding. This is to
 facilitate better support and training on using the platform.
