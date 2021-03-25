@@ -52,7 +52,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: f1yyD+6mXJLzC9ANyx+yZyx+91ZpHROEO+0xsBZa9j8=
+        hash: Zbr3HEQNE7r5yVWNt+7eGkvGMm3zEABBepjxxaX4ehY=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -699,7 +699,7 @@ sections:
     articles:
       - title: 2021.67 Release
         file: ../release-notes/2021-67.md
-        hash: +4R47ZfgqlghmmvV8LdHV/3ksjVsLUFdPR75lOmifDI=
+        hash: vFq8GLH0xfNX4FwVHS1hJs26tT1OSDEfs3516RBrGd8=
         id: 1500005028742
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005028742'
       - title: 2021.66 Release
