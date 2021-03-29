@@ -206,7 +206,7 @@ and training on using the platform. Any users that have access to your
 JupiterOne account will show up in Settings under *Users and Access*.
 
 - The Security Engineer/Architect designated to your account (support user) will
-  appear as `firstname.lastname@jupiterone.io`.
+  appear as `firstname.lastname@jupiterone.com`.
 - The support user can be removed by an account administrator at any time,
   should you determine that ongoing regular support is no longer needed.
 - You have the option and administrative privilege to add the support user back
