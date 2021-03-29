@@ -200,14 +200,13 @@ along with request to act on behalf of that user.
 
 ### Support Access to Your JupiterOne Account(s)
 
-A JupiterOne Support User is by default added to a new account during free
-trial, proof-of-concept evaluation, or initial account onboarding. This is to
-facilitate better support and training on using the platform.
+A JupiterOne Support User can be added to any account to assist with a
+proof-of-concept evaluation, help with initial onboarding, or facilitate support
+and training on using the platform. Any users that have access to your
+JupiterOne account will show up in Settings under *Users and Access*.
 
-- The support user's login can either be the individual Security
-  Engineer/Architect designated to your account (e.g.
-  `firstname.lastname@jupiterone.io`) or the general support login (i.e.
-  `callisto@jupiterone.io`).
+- The Security Engineer/Architect designated to your account (support user) will
+  appear as `firstname.lastname@jupiterone.com`.
 - The support user can be removed by an account administrator at any time,
   should you determine that ongoing regular support is no longer needed.
 - You have the option and administrative privilege to add the support user back
