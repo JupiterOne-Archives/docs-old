@@ -1304,7 +1304,7 @@ NOTE:
 
 ## Retrieve Entity Metadata and Versions
 
-Before making a request to the following endpoints, update the *ENTITY_ID*
+Before making a request to the following endpoints, update the `${ENTITY_ID}`
 placeholder with the `_id` metadata property of a given entity.  
 
 ### Get metadata about the latest raw data entries for a given entity
@@ -1379,9 +1379,10 @@ GET https://api.us.jupiterone.io/entities/${ENTITY_ID}/raw-data-versions
 
 ### Get version metadata for specific entry for a given entity
 
-Before making a request to the following endpoints, update the *ENTRY_NAME*
-placeholder with on the of example entries returned in the previous example
-(exampleEntry1/exampleEntry2).
+Before making a request to the following endpoints, update the `${ENTRY_NAME}`
+placeholder with one of the example entries returned in the previous example
+(exampleEntry1/exampleEntry2). Make sure you update the `${ENTITY_ID}` as well
+like in the previous examples.
 
 **Endpoint**
 
