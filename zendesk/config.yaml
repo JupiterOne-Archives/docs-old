@@ -82,7 +82,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500003848502'
       - title: Data Security
         file: ../docs/jupiterone-data-security.md
-        hash: YUbLgjkZjpNVShoJIt2EPS9+09oWZ4skSf/8Pr1zEDs=
+        hash: MFjHu21ZBkaU1YgMyOrRxCgNGkbkQc1N8nATVQ/5P0s=
         id: 360024092813
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024092813'
   - name: Common Questions and Queries
@@ -440,6 +440,11 @@ sections:
         hash: SBknW+QeuT+DmkDiIjWdLYw1mfgqlFRC22Xe4AAnpUY=
         id: 360051794213
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360051794213'
+      - title: AWS Organizations
+        file: ../docs/integrations/aws/organizations.md
+        hash: RloVfQdMPbH4UglWgumYrzE9le+6flxFtUn/27jpdPs=
+        id: 1500005364921
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005364921'
       - title: Azure
         file: ../docs/integrations/azure/graph-azure.md
         hash: swD2ELSck/CIAfrhMTPQKBW2x2Y4WDnHVUo/5RaGQ5o=
