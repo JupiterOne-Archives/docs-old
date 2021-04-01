@@ -15,8 +15,8 @@ property for querying purposes.
 ## Setup
 
 Click on the gear/settings icon and select *Power Ups*. Select *Configure
-Resource Whitelisting* (See screenshot below). Populate each whitelist following the instructions in
-the corresponding section below.
+Resource Whitelisting* (See screenshot below). Populate each whitelist following
+the instructions in the corresponding section below.
 
 ![resource-whitelist-setup](../assets/resource-whitelist-setup.png)
 
@@ -26,10 +26,16 @@ When an `Application` entity is created in JupiterOne, the property `approved`
 is set equal to `true` if the `name` of the application matches a value listed
 under the Whitelist **Approved Applications**.
 
-![approved-applications-whitelist](../assets/approved-applications-whitelist.png)
+Applications you approve should be added to the list by name, like so:
 
-Once configured, you can then run the following query to find non-approved
-applications installed on any device:
+```json
+Google Chrome.app
+zoom.us.app
+```
+
+Once configured, your application data will automatically be enriched, and you
+can run useful queries like the following to find non-approved applications
+installed on any device:
 
 ```j1ql
 Find Device 
@@ -39,14 +45,21 @@ Find Device
 ## Configure Internal IP Addresses Whitelist
 
 When a `Host` or `Network` entity is created in JupiterOne, the property
-`internal` is set equal to `true` if the `ipAddress` or `privateIpAddress`
-of the host or network matches a value listed under the Whitelist
-**Internal IP Addresses**.
+`internal` is set equal to `true` if the `ipAddress` or `privateIpAddress` of
+the host or network matches a value listed under the Whitelist **Internal IP
+Addresses**.
 
-![internal-ip-addresses-whitelist](../assets/internal-ip-addresses-whitelist.png)
+Internal IP Addresses you own should be added to the list in CIDR notation, like
+so:
 
-Once configured, you can then run the following query to find a list of external
-IP hosts and networks in your account:
+```json
+16.5.4.3/32
+16.5.4.0/24
+```
+
+Once configured, your application data will automatically be enriched, and you
+can run useful queries like the following to find a list of external IP hosts
+and networks in your account:
 
 ```j1ql
 FIND (Host|Network) 
@@ -56,14 +69,21 @@ FIND (Host|Network)
 ## Configure Trusted External IP Addresses Whitelist
 
 When a `Host` or `Network` entity is created in JupiterOne, the property
-`trusted` is set equal to `true` if the `ipAddress` or `privateIpAddress`
-of the host or network matches a value listed under the Whitelist
-**Trusted External IP Addresses**.
+`trusted` is set equal to `true` if the `ipAddress` or `privateIpAddress` of the
+host or network matches a value listed under the Whitelist **Trusted External IP
+Addresses**.
 
-![external-ip-addresses-whitelist](../assets/external-ip-addresses-whitelist.png)
+External IP Addresses you trust should be added to the list in CIDR notation,
+like so:
 
-Once configured, you can then run the following query to see a graph of
-untrusted sources that have inbound SSH access to your environment:
+```json
+16.5.4.3/32
+16.5.4.0/24
+```
+
+Once configured, your application data will automatically be enriched, and you
+can run useful queries like the following to see a graph of untrusted sources
+that have inbound SSH access to your environment:
 
 ```j1ql
 FIND Firewall that ALLOWS as rule (Host|Network)
