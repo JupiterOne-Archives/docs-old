@@ -72,7 +72,7 @@ perform the following actions.
 5. Add the following **API scopes** (comma separated):
 
    ```text
-   https://www.googleapis.com/auth/admin.directory.domain.readonly, https://www.googleapis.com/auth/admin.directory.user.readonly, https://www.googleapis.com/auth/admin.directory.group.readonly, https://www.googleapis.com/auth/admin.directory.user.security
+   https://www.googleapis.com/auth/admin.directory.domain.readonly, https://www.googleapis.com/auth/admin.directory.user.readonly, https://www.googleapis.com/auth/admin.directory.group.readonly, https://www.googleapis.com/auth/admin.directory.user.security, https://www.googleapis.com/auth/apps.groups.settings
    ```
 
 6. Click **Authorize**.
@@ -96,8 +96,8 @@ Account will impersonate:
    Retain the temporary generated password for the next step.
 
 4. In another browser (or using Chrome's Incognito feature), **Log in** as the
-   new user to set a complex password and **accept the G Suite Terms of
-   Service**.
+   new user to set a complex password and **accept the Google Workspaces Terms
+   of Service**.
 
    You may dispose of the password as it will not be used and may be reset by a
    super administrator in the future if necessary.
@@ -114,7 +114,7 @@ permissions required by JupiterOne, and which will include only the
 3. Click **Create custom role** > **Create a new role**.
 
 4. **Name** "JupiterOne System", **Description** "Role for JupiterOne user to
-   enable read-only access to G Suite Admin APIs."
+   enable read-only access to Google Workspaces Admin APIs."
 
 5. In the **Privileges**, **Admin API Privileges** section, check these
    permissions:
@@ -123,6 +123,34 @@ permissions required by JupiterOne, and which will include only the
    - Groups -> Read
    - Domain Management
    - User Security Management
+
+#### Adding Scopes and Privileges
+
+Changes to the integration may include additional data ingestion requiring
+authorization of new scopes and additional Admin API Privileges granted to the
+custom Admin Role.
+
+To authorize additional scopes, log into the Google Workspace **Admin Console**
+as a super administrator to perform the following actions.
+
+1. Click **Security** > **API controls**.
+
+2. In the **Domain wide delegation** pane, select **Manage Domain Wide
+   Delegation**.
+
+3. Identify the JupiterOne Service Account having the client ID
+   `102174985137827290632`. Click **Edit** to add scopes.
+
+4. Click **Authorize**.
+
+To grant additional Admin API Privileges, return to the **Admin console**.
+
+1. Click **Admin roles**, then click on the **"JupiterOne System"** role.
+
+2. Click **Privileges** to add additional privileges to enable JupiterOne to
+   fetch new data.
+
+3. Click **Save**.
 
 ### In JupiterOne
 
@@ -178,14 +206,15 @@ https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
 
 The following entities are created:
 
-| Resources | Entity `_type`   | Entity `_class` |
-| --------- | ---------------- | --------------- |
-| Account   | `google_account` | `Account`       |
-| Domain    | `google_domain`  | `Domain`        |
-| Group     | `google_group`   | `UserGroup`     |
-| Site      | `google_site`    | `Site`          |
-| Token     | `google_token`   | `AccessKey`     |
-| User      | `google_user`    | `User`          |
+| Resources      | Entity `_type`          | Entity `_class` |
+| -------------- | ----------------------- | --------------- |
+| Account        | `google_account`        | `Account`       |
+| Domain         | `google_domain`         | `Domain`        |
+| Group          | `google_group`          | `UserGroup`     |
+| Group Settings | `google_group_settings` | `Configuration` |
+| Site           | `google_site`           | `Site`          |
+| Token          | `google_token`          | `AccessKey`     |
+| User           | `google_user`           | `User`          |
 
 ### Relationships
 
@@ -196,6 +225,7 @@ The following relationships are created/mapped:
 | `google_account`      | **HAS**               | `google_group`                 |
 | `google_account`      | **HAS**               | `google_user`                  |
 | `google_group`        | **HAS**               | `google_group`                 |
+| `google_group`        | **HAS**               | `google_group_settings`        |
 | `google_group`        | **HAS**               | `google_user`                  |
 | `google_site`         | **HAS**               | `google_user`                  |
 | `google_token`        | **ALLOWS**            | `mapped_entity (class Vendor)` |
