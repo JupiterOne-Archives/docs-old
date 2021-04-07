@@ -306,7 +306,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: GOxd+Vl8Jh3OSvn4CEicT0k4GiRb2A2PvvgVEDoerLc=
+        hash: 6H+BPZPxvPq3ZktkX+/7sQj5MlIzMhstCiuwJEVXmnM=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Node.js Client and CLI
@@ -367,12 +367,12 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360034786734'
       - title: Entity Relationship Mapping - Global Rules
         file: ../docs/data-model/mappings-global.md
-        hash: Wv0InYXSkByQ/KaP8+Ys2jx/JaXLf/Ou9dq0PSzabl0=
+        hash: U4XJOcjuiPITJEP0rFbTqYtysrX/v0ZEzph/LXIkIb8=
         id: 360041392074
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041392074'
       - title: Entity Relationship Mapping - Integration Rules
         file: ../docs/data-model/mappings-integrations.md
-        hash: 1RdceUZTT54HtLF/n21PN5xXsRK8CQFPdTeLvFtt1qg=
+        hash: F9hag01ekh2d81nRL2wJCof1V+cG6c6Jw+77Q5SHq48=
         id: 360041392094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041392094'
       - title: Resource Metadata
@@ -543,7 +543,7 @@ sections:
       - title: Google
         file: ../docs/integrations/google/jupiter-integration-google.md
         id: 360022902533
-        hash: uG8hPaATJPBNQW1UK3dKkqwFeA8Xio8a3sO8ZtgrwLg=
+        hash: T6FfyXIL4qormZkhkMg6ukLAJgKbZnrgczD6nHfkXS0=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
@@ -622,7 +622,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046951894'
       - title: Qualys
         file: ../docs/integrations/qualys/index.md
-        hash: K8ZPDiXowxxWVP06BfMsHHJCjcBXlUxQmn9xiA2yLd4=
+        hash: LXYSdcHxFYyMwG0cKnUwT1ZONAAPzlQxL177L/umT9Y=
         id: 360046952094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046952094'
       - title: Rapid7
