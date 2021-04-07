@@ -77,6 +77,7 @@
     "integrations/atspoke/index": "https://support.jupiterone.io/hc/en-us/articles/360062101514",
     "integrations/aws/index": "https://support.jupiterone.io/hc/en-us/articles/360022721054",
     "integrations/aws/cloudtrail-event-streaming": "https://support.jupiterone.io/hc/en-us/articles/360051794213",
+    "integrations/aws/organizations": "https://support.jupiterone.io/hc/en-us/articles/1500005364921",
     "integrations/azure/graph-azure": "https://support.jupiterone.io/hc/en-us/articles/360024909213",
     "integrations/azure-devops/index": "https://support.jupiterone.io/hc/en-us/articles/1500004935101",
     "integrations/bamboohr/index": "https://support.jupiterone.io/hc/en-us/articles/360056759813",
