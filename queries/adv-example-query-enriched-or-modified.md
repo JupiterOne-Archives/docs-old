@@ -71,7 +71,9 @@ property.
 
 ### Reset the value of enriched or modified properties
 
-When you are viewing the properties of an entity, enriched or modified properties will have a `Modified` banner next to them. If the property was modified, when you hover over the property, you will be able to see the original value. If the value was enriched, you will not.
+When you are viewing the properties of an entity, edited properties will have either an `Enriched` banner or a `Modified` banner next to them. If the original value of the property was undefined or null, the property will be flagged as `Enriched`. Otherwise, the property is flagged as `Modified`.
+
+If the property had an original value from a JupiterOne managed integration, when you hover over the chip, you will see the original value in a tooltip.
 
 ![enrich-modify-edit-modified-banner](../assets/enrich-modify-edit-modified-banner.png)
 
