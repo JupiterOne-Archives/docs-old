@@ -5,7 +5,8 @@
 - Visualize PagerDuty services, teams, and users in the JupiterOne graph.
 - PagerDuty users will be mapped to employees in your JupiterOne account.
 - Monitor changes to PagerDuty users using JupiterOne alerts.
-- Produce compliance evidence of system/service monitoring and on-call escalation.
+- Produce compliance evidence of system/service monitoring and on-call
+  escalation.
 
 ## How it Works
 
@@ -16,7 +17,8 @@
 
 ## Requirements
 
-- JupiterOne requires a PagerDuty General Access REST API key
+- JupiterOne requires a PagerDuty General Access REST API key.
+- You must have permission in JupiterOne to install new integrations.
 
 ## Support
 
@@ -51,22 +53,42 @@ If you need help with this integration, please contact
 4. Click the **trash can** icon.
 5. Click the **Remove** button to delete the integration.
 
+<!-- {J1_DOCUMENTATION_MARKER_START} -->
+<!--
+********************************************************************************
+NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
+"j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
+DOCUMENTATION FOR USAGE INFORMATION:
+
+https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+********************************************************************************
+-->
+
 ## Data Model
 
 ### Entities
 
-The following entity resources are ingested when the integration runs.
+The following entities are created:
 
-| Resources | \_type of the Entity | \_class of the Entity |
-| --------- | -------------------- | --------------------- |
-| Teams     | `pagerduty_team`     | `Team`                |
-| User      | `pagerduty_user`     | `User`                |
-| Service   | `pagerduty_service`  | `Service`             |
+| Resources | Entity `_type`      | Entity `_class` |
+| --------- | ------------------- | --------------- |
+| Service   | `pagerduty_service` | `Service`       |
+| Team      | `pagerduty_team`    | `Team`          |
+| User      | `pagerduty_user`    | `User`          |
 
 ### Relationships
 
-| From             | Edge         | To                  |
-| ---------------- | ------------ | ------------------- |
-| `pagerduty_team` | **HAS**      | `pagerduty_user`    |
-| `pagerduty_team` | **ASSIGNED** | `pagerduty_service` |
-| `pagerduty_user` | **ONCALL**   | `pagerduty_service` |
+The following relationships are created/mapped:
+
+| Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
+| --------------------- | --------------------- | --------------------- |
+| `pagerduty_service`   | **ASSIGNED**          | `pagerduty_team`      |
+| `pagerduty_team`      | **HAS**               | `pagerduty_user`      |
+| `pagerduty_user`      | **MONITORS**          | `pagerduty_service`   |
+
+<!--
+********************************************************************************
+END OF GENERATED DOCUMENTATION AFTER BELOW MARKER
+********************************************************************************
+-->
+<!-- {J1_DOCUMENTATION_MARKER_END} -->

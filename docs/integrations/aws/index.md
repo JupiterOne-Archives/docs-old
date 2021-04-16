@@ -1,34 +1,86 @@
-# AWS
+# Integration with JupiterOne
 
-## Overview
+## AWS + JupiterOne Integration Benefits
 
-JupiterOne provides a managed integration with Amazon Web Services. The
-integration connects directly to AWS APIs to obtain infrastructure metadata and
-analyze resource relationships. Customers authorize read-only, security audit
-access by establishing an IAM trust relationship that allows JupiterOne to
-assume a role in their account.
+- Visualize AWS cloud resources across several services in the JupiterOne graph.
+- Map AWS users to employees in your JupiterOne account.
+- Monitor visibility and governance of your AWS cloud environment by leveraging
+  hundreds of out of the box queries.
+- Monitor compliance against the AWS CIS Framework and other security benchmarks
+  using the JupiterOne compliance app.
+- Monitor AWS vulnerabilities and findings from multiple services within the
+  alerts app.
+- Monitor changes to your AWS cloud resources using multiple JupiterOne alert
+  rule packs specific to AWS.
+- Monitor several out of the box dashboards of your security across AWS services.  
+- Create automated workflows in JupiterOne alerts using SNS & SQS to remediate
+  configuration gaps in AWS.
 
-Information is ingested from all AWS regions that do not require additional
+## How it Works
+
+- JupiterOne periodically fetches users and cloud resources from AWS to update 
+the graph.
+- Enable CloudTrail event delivery through EventBridge to capture additional 
+details on supported entities. See the setup guide
+[AWS CloudTrail Event Streaming](https://support.jupiterone.io/hc/en-us/articles/360051794213-AWS-CloudTrail-Event-Streaming).
+- Enable configuration of AWS accounts through Organizations and ingest 
+Organization specific data. See the setup guide
+[AWS Organizations](https://support.jupiterone.io/hc/en-us/articles/1500005364921-AWS-Organizations).
+- Write JupiterOne queries to review and monitor updates to the graph, or leverage
+ existing queries.
+- Configure alerts to take action when the JupiterOne graph changes, or leverage 
+existing alerts.
+
+*Information is ingested from all AWS regions that do not require additional
 contractual arrangements with AWS. Please submit a JupiterOne support request if
 you need to monitor additional regions.
 
-## Integration Instance Configuration
+## Requirements
 
-The integration is triggered by an event containing the information for a
-specific integration instance.
+- JupiterOne provides a policy statement that defines the needed AWS permissions.
+An AWS IAM Role must be configured for JupiterOne that allows reading 
+configuration details of supported resources. The Role must be configured 
+to include an External ID provided by JupiterOne.
+- You must have permission in JupiterOne to install new integrations.
+
+## Support
+
+If you need help with this integration, please contact
+[JupiterOne Support](https://support.jupiterone.io).
+
+## Integration Walkthrough
 
 The integration instance configuration requires the customer's `roleArn` to
 assume in order to read infrastructure information through AWS APIs. The role is
 configured to require an `externalId`; this also must be maintained in the
 instance configuration.
 
-Detailed setup instructions and a pre-built CloudFormation Stack are provided in
+### In AWS
+
+1. Detailed setup instructions and a pre-built CloudFormation Stack are provided in
 the application and maintained in the public [JupiterOne AWS CloudFormation][1]
-project on Github.
+project on Github. Follow the steps under **In JupiterOne** to capture the 
+auto-generated **External ID** specific to the integration instance.
 
 [1]: https://github.com/jupiterone/jupiterone-aws-integration
 
-## Permissions
+### In JupiterOne
+
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **AWS** integration tile and click it.
+3. Click the **Add Configuration** button and configure the following settings:
+- Enter the **Account Name** by which you'd like to identify this AWS
+   account in JupiterOne. Ingested entities will have this value stored in
+   `tag.AccountName` when **Tag with Account Name** is checked.
+- Enter a **Description** that will further assist your team when identifying
+   the integration instance.
+- Select a **Polling Interval** that you feel is sufficient for your monitoring
+   needs. You may leave this as `DISABLED` and manually execute the integration.
+- Enter the **Role ARN** of the IAM role to assume in order to authenticate with 
+AWS.
+4. Click **Create Configuration** once all values are provided.
+
+### Permissions
 
 The AWS integration requires security auditor permissions into the target AWS
 account, as defined by a combination of the [SecurityAudit][2] IAM policy
@@ -40,7 +92,17 @@ on Github.
 [2]:
   https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/SecurityAudit
 
-## Entities
+## How to Uninstall
+
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **AWS** integration tile and click it.
+3. Identify and click the **integration to delete**.
+4. Click the **trash can** icon.
+5. Click the **Remove** button to delete the integration.
+
+## Data Model
+
+### Entities
 
 The following entity resources and their meta data (not actual contents) are
 ingested when the integration runs:
@@ -134,11 +196,11 @@ ingested when the integration runs:
 | WorkSpaces      | Workspace                 | `aws_workspace` : `Host`                                                 |
 |                 | Bundle                    | `aws_workspaces_bundle` : `Configuration`                                |
 
-## Relationships
+### Relationships
 
 The following relationships are created/mapped:
 
-### Basic relationships within the integration instance account/resources
+#### Basic relationships within the integration instance account/resources
 
 | Relationships                                                             |
 | ------------------------------------------------------------------------- |
@@ -321,12 +383,12 @@ on the actions and resources specified by the policy document.
 
 - Configure your integration name to be the same as your AWS account alias.
 
-## Multi-region Support
+### Multi-region Support
 
 Multi-region support is built-in to the integration to ensure maximum
 visibility, especially to discover resources in an unauthorized region.
 
-### Supported Regions
+#### Supported Regions
 
 **Americas:**
 
