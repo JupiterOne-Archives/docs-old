@@ -1,21 +1,68 @@
-# OneLogin
+# Integration with JupiterOne
 
-## Overview
+## OneLogin + JupiterOne Integration Benefits
 
-JupiterOne provides a managed integration with OneLogin. The integration
-connects directly to OneLogin APIs to obtain account metadata and analyze
-resource relationships. Customers authorize access by creating an API token in
-your target OneLogin account and providing that credential to JupiterOne.
+- Visualize OneLogin users, groups, roles, devices, applications, 
+and services in the JupiterOne graph.
+- Map OneLogin users to employees in your JupiterOne account.
+- Monitor changes to OneLogin users and access management data using 
+JupiterOne alerts.
+- Create an employee entity that is used to map users across your 
+organization to an employee 
+via a matching email property.
 
-## Integration Instance Configuration
+## How it Works
 
-The integration is triggered by an event containing the information for a
-specific integration instance.
+- JupiterOne periodically fetches OneLogin users, groups, and access 
+management data to update the graph.
+- Write JupiterOne queries to review and monitor updates to the graph.
+- Configure alerts to take action when the JupiterOne graph changes.
+
+## Requirements
+
+- JupiterOne requires the API client id and API client secret used to 
+authenticate with OneLogin.
+- You must have permission in JupiterOne to install new integrations.
+
+## Support
+
+If you need help with this integration, please contact
+[JupiterOne Support](https://support.jupiterone.io).
+
+## Integration Walkthrough
+
+### In OneLogin
 
 Instructions on creating an API token within your OneLogin account can be found
 [here][1].
 
-## Entities
+### In JupiterOne
+
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **OneLogin** integration tile and click it.
+3. Click the **Add Configuration** button and configure the following settings:
+- Enter the **Account Name** by which you'd like to identify this OneLogin
+   account in JupiterOne. Ingested entities will have this value stored in
+   `tag.AccountName` when **Tag with Account Name** is checked.
+- Enter a **Description** that will further assist your team when identifying
+   the integration instance.
+- Select a **Polling Interval** that you feel is sufficient for your monitoring
+   needs. You may leave this as `DISABLED` and manually execute the integration.
+- Enter the **API Client ID** used to authenticate with OneLogin.
+- Enter the **API Client Secret** associated with the client ID.
+4. Click **Create Configuration** once all values are provided.
+
+## How to Uninstall
+
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **OneLogin** integration tile and click it.
+3. Identify and click the **integration to delete**.
+4. Click the **trash can** icon.
+5. Click the **Remove** button to delete the integration.
+
+## Data Model
+
+### Entities
 
 The following entity resources are ingested when the integration runs:
 
@@ -30,7 +77,7 @@ The following entity resources are ingested when the integration runs:
 | Personal Device          | `mfa_device` : `[Key, AccessKey]`               |
 | Service (SSO & MFA)      | `onelogin_service` : `['Service', 'Control']`   |
 
-## Relationships
+### Relationships
 
 The following relationships are created/mapped:
 

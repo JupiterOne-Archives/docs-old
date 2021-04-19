@@ -1,9 +1,33 @@
 # Integration with JupiterOne
 
-## Setup
+## GoDaddy + JupiterOne Integration Benefits
 
-JupiterOne provides a managed integration for GoDaddy. The integration connects
-directly to GoDaddy APIs to obtain domain related data.
+- Visualize GoDaddy domains and domain records in the JupiterOne graph.
+- Monitor changes to GoDaddy domains and domain records using JupiterOne alerts.
+
+## How it Works
+
+- JupiterOne periodically fetches domains and domain records from GoDaddy to update 
+the graph.
+- Write JupiterOne queries to review and monitor updates to the graph, or leverage
+ existing queries.
+- Configure alerts to take action when the JupiterOne graph changes, or leverage 
+existing alerts.
+
+## Requirements
+
+- JupiterOne requires a GoDaddy customer number (shopper ID), API key, and API 
+secret to interact with the API.
+- You must have permission in JupiterOne to install new integrations.
+
+## Support
+
+If you need help with this integration, please contact
+[JupiterOne Support](https://support.jupiterone.io).
+
+## Integration Walkthrough
+
+### In GoDaddy
 
 To conigure this integration you should have an account in GoDaddy and create an
 **API Key**. You will also need the **API Key Secret** and the **Customer Number
@@ -14,6 +38,31 @@ To conigure this integration you should have an account in GoDaddy and create an
 
 - The **Customer Number (Shopper ID)** can be obtained for your account on the
   GoDaddy web console.
+
+### In JupiterOne
+
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **GoDaddy** integration tile and click it.
+3. Click the **Add Configuration** button and configure the following settings:
+- Enter the **Account Name** by which you'd like to identify this GoDaddy
+   account in JupiterOne. Ingested entities will have this value stored in
+   `tag.AccountName` when **Tag with Account Name** is checked.
+- Enter a **Description** that will further assist your team when identifying
+   the integration instance.
+- Select a **Polling Interval** that you feel is sufficient for your monitoring
+   needs. You may leave this as `DISABLED` and manually execute the integration.
+- Enter the **Customer Number / Shopper ID** for your GoDaddy account.
+- Enter the **API Key** configured in GoDaddy for API access.
+- Enter the **API Key Secret** configured in GoDaddy for API access.
+4. Click **Create Configuration** once all values are provided.
+
+## How to Uninstall
+
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **GoDaddy** integration tile and click it.
+3. Identify and click the **integration to delete**.
+4. Click the **trash can** icon.
+5. Click the **Remove** button to delete the integration.
 
 <!-- {J1_DOCUMENTATION_MARKER_START} -->
 <!--

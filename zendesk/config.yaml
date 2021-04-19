@@ -610,11 +610,6 @@ sections:
         id: 360022721174
         hash: OQ8u3iSIvqZ36uDtKtMIBqOEzNk7xl5xfiYk5NZfVp8=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721174'
-      - title: OpenShift
-        file: ../docs/integrations/openshift/jupiter-integration-openshift.md
-        id: 360022721194
-        hash: 2f434QExvoJL7OM+eUmEJuImveuxcxq8DjvBFO/SfAw=
-        webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721194'
       - title: PagerDuty
         file: ../docs/integrations/pagerduty/index.md
         hash: SsoUffjRO3vdFeWCny2N+p3YwzYzvLb1xwGUbrKNyTc=
