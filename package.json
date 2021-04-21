@@ -22,6 +22,6 @@
     "publish:zendesk": "export $(grep -v '^#' .env | xargs); cd zendesk; node -r dotenv/config publish.js"
   },
   "devDependencies": {
-    "dotenv": "^8.0.0"
+    "dotenv": "^8.2.0"
   }
 }
