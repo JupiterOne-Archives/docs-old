@@ -176,6 +176,8 @@ sections:
         hash: FRjmRPmseAjuaUVeDplTghbdE34SlDAQhTNzYqUP+K4=
         id: 360048581914
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360048581914'
+      - title: Query User Enriched or Modified Data
+        file: ../queries/adv-example-query-enriched-or-modified.md
   - name: Managing Policies
     id: 360006891193
     articles:
@@ -495,6 +497,8 @@ sections:
         hash: AqU3xiHSZ7vv8wcaIG25EUsSSqfdJ45hhlVQw18HCGg=
         id: 360048599473
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360048599473'
+      - title: Cobalt
+        file: ../docs/integrations/cobalt/index.md
       - title: CrowdStrike
         file: ../docs/integrations/crowdstrike/index.md
         hash: ZbBuyMLcMkoHvyzjzROGlupdyHcJGE3tfjq3H7migqw=
