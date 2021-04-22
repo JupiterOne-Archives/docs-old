@@ -1948,6 +1948,51 @@ Body:
 }
 ```
 
+## Retrieve JupiterOne Audit Events via API
+
+User events in your JupiterOne account are logged and can be accessed via API.
+
+**Sample request:**
+
+Endpoint:
+
+```text
+POST https://api.us.jupiterone.io/graphql
+```
+
+Headers:
+
+```json
+{
+  "Content-Type": "application/json",
+  "JupiterOne-Account": "{Account_ID}",
+  "Authorization": "Bearer {API_Key}"
+}
+```
+
+Body:
+
+```json
+{
+  "query": "Query($limit: Int, $cursor: String) {
+    getAuditEventsForAccount(limit: $limit, cursor: $cursor) {
+      items {
+        id
+        resourceType
+        resourceId
+        category
+        timestamp
+        performedByUserId
+        data
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }"
+}
+```
+
 ## Additional API Examples
 
 **Creating entities and a relationship between them**
