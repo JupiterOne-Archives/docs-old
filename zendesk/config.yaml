@@ -714,6 +714,11 @@ sections:
         hash: 0f51SHnYpPAR/NTHvwpfIsuMKUgS8eek1OlqwE8VLO8=
         id: 360040105273
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360040105273'
+      - title: Configuring Resource Whitelisting
+        file: ../guides/resource-whitelist-powerup.md
+        hash: mZ3r5zVKR1rqKXeDl4jSpX/T/3FMyRwLtMHnxiE5A/M=
+        id: 1500007990882
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500007990882'
   - name: Release Notes
     id: 360002427353
     articles:
