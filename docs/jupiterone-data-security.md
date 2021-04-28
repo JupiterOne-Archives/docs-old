@@ -115,8 +115,8 @@ You can review our published [security model][security-model] and corresponding
 [policies and procedures][security-psp] for more details on our operational,
 infrastructure, and software development security.
 
-[security-model]: https://security.lifeomic.com/psp/model/
-[security-psp]: https://security.lifeomic.com/psp/
+[security-model]: https://psp.jptr.one/model
+[security-psp]: https://psp.jptr.one
 
 ## Application Access
 
