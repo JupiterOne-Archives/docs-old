@@ -8,8 +8,9 @@ The JupiterOne platform exposes a number of public GraphQL endpoints.
 
 **Endpoint for alert and rules operations**: `/rules/graphql`
 
-**Rate Limits**: rate limiting is enforced per account at 30 query requests per
-minute with an allowable burst of 30 requests at once
+**Rate Limits**: Rate limiting is enforced per account at 30 query requests per
+minute with bursts up to 30 requests. A `429` HTTP response code indicates the
+limit has been reached. The API does not currently return any rate limite headers.
 
 An experimental [node.js client and CLI][1] can be found on Github.
 
