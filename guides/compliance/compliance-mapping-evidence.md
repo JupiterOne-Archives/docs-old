@@ -27,9 +27,7 @@ as an external link to a document hosted outside of JupiterOne (e.g. on
 SharePoint or Google Docs), or via a direct uploaded (e.g. a screenshot or 
 PDF).  
 
-Both external evidence types require a `name` and an optional `description`, 
-in  addition to the `webLink` URL for links or the provided document for 
-uploads.
+Both external evidence types require a name and have an optional description.
 
 ## Notes
 
