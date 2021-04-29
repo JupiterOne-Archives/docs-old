@@ -17,7 +17,11 @@
 
 ## Requirements
 
-- JupiterOne requires a PagerDuty General Access REST API key.
+- JupiterOne requires a PagerDuty
+  [General Access REST API key](https://support.pagerduty.com/docs/generating-api-keys#section-rest-api-keys).
+  **NOTE:** Pagerduty hosts two APIs - General Access REST API
+  (api.pagerduty.com) and Events API (events.pagerduty.com). JupiterOne does not
+  currently ingest data from the Events API.
 - You must have permission in JupiterOne to install new integrations.
 
 ## Support
