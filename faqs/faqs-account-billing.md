@@ -29,7 +29,7 @@ The following entities are not counted for billing/usage calculation:
 - **Images, NetworkInterfaces, and IpAddress** -- these entities are also not
   counted against the usage or billing.
 
-- **Records** -- records such as DNS records, Jira issues are not considered
+- **Records and DomainRecords** -- records such as DNS records, Jira issues are not considered
   as billable.
 
 Billable entities count is averaged daily, and again monthly. This can be viewed
@@ -49,7 +49,7 @@ billable entities:
 Find * with
   _source !^= 'system-' and
   _class !=
-    ('Finding' and 'PR' and 'Image' and 'NetworkInterface' and 'IpAddress' and 'Record')
+    ('Finding' and 'PR' and 'Image' and 'NetworkInterface' and 'IpAddress' and 'Record' and 'DomainRecord')
   as e
 return
   count(e) as billableEntityCount
