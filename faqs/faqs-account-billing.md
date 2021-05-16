@@ -55,6 +55,13 @@ return
   count(e) as billableEntityCount
 ```
 
+<button class="collapsible">Entities Reference Table</button>
+<div class="content">
+
+
+
+</div>
+
 ## What are the limitations of the `COMMUNITY` Edition of JupiterOne? 
 
 JupiterOne `COMMUNITY` Edition is FREE for non-commercial use, non-profit or
