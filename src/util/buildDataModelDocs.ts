@@ -3,8 +3,10 @@ import * as fs from  'fs' ;
 
 const nonBillableEntities = [
   'DomainRecord',
+  'Everyone',
   'Finding',
   'Image',
+  'Internet',
   'IpAddress',
   'NetworkInterface',
   'PR',

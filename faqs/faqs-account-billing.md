@@ -103,7 +103,7 @@ Entity             | Description             | Billable
 `HostAgent`        | A software agent or sensor that runs on a host/endpoint. | Yes 
 `Image`            | A system image. For example, an AWS AMI (Amazon Machine Image). | No 
 `Incident`         | An operational or security incident. | Yes 
-`Internet`         | The Internet node in the graph. There should be only one Internet node. | Yes 
+`Internet`         | The Internet node in the graph. There should be only one Internet node. | No 
 `IpAddress`        | An re-assignable IpAddress resource entity. Do not create an entity for an IP Address _configured_ on a Host. Use this only if the IP Address is a reusable resource, such as an Elastic IP Address object in AWS. | No 
 `Key`              | An ssh-key, access-key, api-key/token, pgp-key, etc. | Yes 
 `Logs`             | A specific repository or destination containing application, network, or system logs. | Yes 
