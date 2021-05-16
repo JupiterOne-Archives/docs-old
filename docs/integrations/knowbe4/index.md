@@ -1,23 +1,68 @@
-# KnowBe4
+# Integration with JupiterOne
 
-## Overview
+## KnowBe4 + JupiterOne Integration Benefits
 
-JupiterOne provides a managed integration with KnowBe4. The integration connects
-directly to KnowBe4 APIs to obtain account metadata and analyze resource
-relationships. You authorize access by providing an API token to the **KnowBe4 Reporting API**.
+- Visualize KnowBe4 user groups, users, training campaigns, and modules in the
+  JupiterOne graph.
+- Map KnowBe4 users and their associated trainings to the JupiterOne employee.
+- Monitor changes to user groups, users, training campaigns, and modules using
+  JupiterOne alerts.
 
-## Acquiring an API Token
-You can generate a new key in your [KnowBe4 Account Settings][] under the API section.
+## How it Works
+
+- JupiterOne periodically fetches KnowBe4 groups, users, and trainings to update the graph.
+- Write JupiterOne queries to review and monitor updates to the graph.
+- Configure alerts to take action when the JupiterOne graph changes.
+
+## Requirements
+
+- JupiterOne requires the site for where your account is located and an API key/token.
+- You must have permission in JupiterOne to install new integrations.
+
+## Support
+
+If you need help with this integration, please contact
+[JupiterOne Support](https://support.jupiterone.io).
+
+## Integration Walkthrough
+
+### In KnowBe4
+
+You can generate a new key in your 
+[KnowBe4 Account Settings](https://training.knowbe4.com/account/info) 
+under the API section.
 Be sure to request a key for the **Reporting API** not the **User Event API**
-KnowBe4 APIs are available to Platinum and Diamond customers.
+KnowBe4 APIs are available to Platinum and Diamond customers. See the 
+[KnowBe4 API Reference Guide](https://developer.knowbe4.com/reporting/) for
+more info.
 
+### In JupiterOne
 
-## Integration Instance Configuration
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **KnowBe4** integration tile and click it.
+3. Click the **Add Configuration** button and configure the following settings:
+- Enter the **Account Name** by which you'd like to identify this KnowBe4
+   account in JupiterOne. Ingested entities will have this value stored in
+   `tag.AccountName` when **Tag with Account Name** is checked.
+- Enter a **Description** that will further assist your team when identifying
+   the integration instance.
+- Select a **Polling Interval** that you feel is sufficient for your monitoring
+   needs. You may leave this as `DISABLED` and manually execute the integration.
+- Enter the **Site** of your KnowBe4 account, either US or EU.
+- Enter the **API Key** configured in your KnowBe4 account.
+4. Click **Create Configuration** once all values are provided.
 
-The integration is triggered by an event containing the information for a
-specific integration instance.
+## How to Uninstall
 
-## Entities
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **KnowBe4** integration tile and click it.
+3. Identify and click the **integration to delete**.
+4. Click the **trash can** icon.
+5. Click the **Remove** button to delete the integration.
+
+## Data Model
+
+### Entities
 
 The following entity resources are ingested when the integration runs:
 
@@ -32,7 +77,7 @@ The following entity resources are ingested when the integration runs:
 _Note a training module from KnowBe4 can be either a "Store Purchase" or an
 "Uploaded Policy"._
 
-## Relationships
+### Relationships
 
 The following relationships are created/mapped:
 

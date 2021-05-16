@@ -8,8 +8,9 @@ The JupiterOne platform exposes a number of public GraphQL endpoints.
 
 **Endpoint for alert and rules operations**: `/rules/graphql`
 
-**Rate Limits**: rate limiting is enforced per account at 30 query requests per
-minute with an allowable burst of 30 requests at once
+**Rate Limits**: Rate limiting is enforced per account at 30 query requests per
+minute with bursts up to 30 requests. A `429` HTTP response code indicates the
+limit has been reached. The API does not currently return any rate limit headers.
 
 An experimental [node.js client and CLI][1] can be found on Github.
 
@@ -1945,6 +1946,51 @@ Body:
       success
     }
   }"
+}
+```
+
+## Retrieve JupiterOne Audit Events via API
+
+User events in your JupiterOne account are logged and can be accessed via API.
+
+**Sample request:**
+
+Endpoint:
+
+```text
+POST https://api.us.jupiterone.io/graphql
+```
+
+Headers:
+
+```json
+{
+  "Content-Type": "application/json",
+  "JupiterOne-Account": "{Account_ID}",
+  "Authorization": "Bearer {API_Key}"
+}
+```
+
+Body:
+
+```json
+{
+  "query": "Query($limit: Int, $cursor: String) {
+    getAuditEventsForAccount(limit: $limit, cursor: $cursor) {
+      items {
+        id
+        resourceType
+        resourceId
+        category
+        timestamp
+        performedByUserId
+        data
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }"
 }
 ```
 

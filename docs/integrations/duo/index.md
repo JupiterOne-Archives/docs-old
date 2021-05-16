@@ -1,5 +1,25 @@
 # Integration with JupiterOne
 
+## Duo + JupiterOne Integration Benefits
+
+- Visualize Duo users, groups, devices, applications, and access keys in the JupiterOne graph.
+- Map Duo users to employees in your JupiterOne account.
+- Monitor changes to Duo users, groups, and access management data using JupiterOne alerts.
+- Create an employee entity that is used to map users across your organization to an employee 
+via a matching email property.
+
+## How it Works
+
+- JupiterOne periodically fetches Duo users, groups, and access management data to update the graph.
+- Write JupiterOne queries to review and monitor updates to the graph.
+- Configure alerts to take action when the JupiterOne graph changes.
+
+## Requirements
+
+- JupiterOne requires the Duo API hostname. JupiterOne also requires the API 
+integration key and API secret key that have been configured for read access. 
+- You must have permission in JupiterOne to install new integrations.
+
 ## Setup
 
 JupiterOne provides a managed integration for Duo. The integration connects

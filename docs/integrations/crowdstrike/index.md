@@ -1,19 +1,65 @@
-# CrowdStrike Falcon
+# Integration with JupiterOne
 
-## Overview
+## CrowdStrike + JupiterOne Integration Benefits
 
-The integration connects directly to CrowdStrike Falcon APIs to obtain account
-metadata and analyze resource relationships. Customers authorize access by
-creating Client API credentials in their CrowdStrike Falcon account and
-providing those credentials when setting up an instance of the integration in
-JupiterOne.
+- Visualize your CrowdStrike endpoint agents and the devices they protect in the
+  JupiterOne graph.
+- Map endpoint agents to devices and devices to the employee who is the owner.  
+- Monitor changes to CrowdStrike endpoints using JupiterOne alerts.
 
-## API Authentication
+## How it Works
 
-CrowdStrike Falcon provides [detailed instructions on creating an API
+- JupiterOne periodically fetches CrowdStrike agents and devices to update the graph.
+- Write JupiterOne queries to review and monitor updates to the graph.
+- Configure alerts to take action when the JupiterOne graph changes.
+
+## Requirements
+
+- JupiterOne requires an API client ID and client secret configured in your 
+CrowdStrike account with the appropriate permissions. 
+- You must have permission in JupiterOne to install new integrations.
+
+## Support
+
+If you need help with this integration, please contact
+[JupiterOne Support](https://support.jupiterone.io).
+
+## Integration Walkthrough
+
+### In CrowdStrike
+
+CrowdStrike Falcon provides [detailed instructions on creating API
 credentials][1].
 
-## Entities
+### In JupiterOne
+
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **CrowdStrike** integration tile and click it.
+3. Click the **Add Configuration** button and configure the following settings:
+- Enter the **Account Name** by which you'd like to identify this CrowdStrike
+   account in JupiterOne. Ingested entities will have this value stored in
+   `tag.AccountName` when **Tag with Account Name** is checked.
+- Enter a **Description** that will further assist your team when identifying
+   the integration instance.
+- Select a **Polling Interval** that you feel is sufficient for your monitoring
+   needs. You may leave this as `DISABLED` and manually execute the integration.
+- Enter the **API client ID** used to authenticate with the CrowdStrike Falcon
+API.
+- Enter the **API client secret** used to authenticate with the CrowdStrike 
+Falcon API.
+4. Click **Create Configuration** once all values are provided.
+
+## How to Uninstall
+
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **CrowdStrike** integration tile and click it.
+3. Identify and click the **integration to delete**.
+4. Click the **trash can** icon.
+5. Click the **Remove** button to delete the integration.
+
+## Data Model
+
+### Entities
 
 These entities are ingested when the integration runs:
 
@@ -26,7 +72,7 @@ These entities are ingested when the integration runs:
 
 Only hosts that have been seen within past 30 days are maintained.
 
-## Relationships
+### Relationships
 
 The following relationships are created/mapped:
 

@@ -1,23 +1,59 @@
-# Veracode
+# Integration with JupiterOne
 
-## Overview
+## Veracode + JupiterOne Integration Benefits
 
-JupiterOne provides a managed integration with Veracode. The integration
-connects directly to Veracode APIs to obtain Vulnerability and Finding metadata
-and analyze resource relationships. Customers authorize access by creating an
-API ID and secret in the their target Veracode account and providing those
-credentials to JupiterOne.
+- Visualize Veracode scans, cwes, vulnerabilities, and findings in the JupiterOne graph.
+- Map Veracode findings to a code repo, project, or application in your JupiterOne account.
+- Monitor Veracode cwes, findings, and vulnerabilities within the alerts app.
+- Monitor changes to Veracode scans using JupiterOne alerts.
 
-## Integration Instance Configuration
+## How it Works
 
-The integration is triggered by an event containing the information for a
-specific integration instance.
+- JupiterOne periodically fetches Veracode scans, cwes, vulerabilities, and findings to update the graph.
+- Write JupiterOne queries to review and monitor updates to the graph.
+- Configure alerts to reduce the noise of findings.
+- Configure alerts to take action when the JupiterOne graph changes.
+
+## Support
+
+If you need help with this integration, please contact
+[JupiterOne Support](https://support.jupiterone.io).
+
+## Integration Walkthrough
+
+### In Veracode
 
 The integration instance configuration requires the customer's API ID and secret
 to authenticate requests to the Veracode REST APIs. Veracode provides [detailed
 instructions for obtaining these credentials][1].
 
-## Entities
+### In JupiterOne
+
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **Veracode** integration tile and click it.
+3. Click the **Add Configuration** button and configure the following settings:
+- Enter the **Account Name** by which you'd like to identify this Veracode
+   account in JupiterOne. Ingested entities will have this value stored in
+   `tag.AccountName` when **Tag with Account Name** is checked.
+- Enter a **Description** that will further assist your team when identifying
+   the integration instance.
+- Select a **Polling Interval** that you feel is sufficient for your monitoring
+   needs. You may leave this as `DISABLED` and manually execute the integration.
+- Enter the **API ID** used to authenticate with Veracode.
+- Enter the **API Secret** used to authenticate with Veracode.
+4. Click **Create Configuration** once all values are provided.
+
+## How to Uninstall
+
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **Veracode** integration tile and click it.
+3. Identify and click the **integration to delete**.
+4. Click the **trash can** icon.
+5. Click the **Remove** button to delete the integration.
+
+## Data Model
+
+### Entities
 
 The following entity resources are ingested when the integration runs:
 
@@ -29,11 +65,11 @@ The following entity resources are ingested when the integration runs:
 | Vulnerability            | `veracode_vulnerability` : `Vulnerability` |
 | Finding                  | `veracode_finding` : `Finding`             |
 
-## Relationships
+### Relationships
 
 The following relationships are created/mapped:
 
-### Intra-Instance
+#### Intra-Instance
 
 | From                     | Type           | To                       |
 | ------------------------ | -------------- | ------------------------ |
@@ -42,7 +78,7 @@ The following relationships are created/mapped:
 | `veracode_vulnerability` | **EXPLOITS**   | `cwe`                    |
 | `veracode_finding`       | **IS**         | `veracode_vulnerability` |
 
-### Extra-Instance / Mapped
+#### Extra-Instance / Mapped
 
 | From                           | Type        | To                                                                                                                                                                                                 |
 | ------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

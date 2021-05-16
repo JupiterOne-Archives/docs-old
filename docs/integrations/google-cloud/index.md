@@ -1,14 +1,43 @@
 # Integration with JupiterOne
 
-## Overview
+## Google Cloud + JupiterOne Integration Benefits
 
-JupiterOne provides a managed integration for Google Cloud. The integration
-connects directly to Google Cloud APIs to obtain metadata and analyze resource
-relationships. Customers authorize access by creating a
+- Visualize Google Cloud resources in the JupiterOne graph.
+- Map Google users to employees in your JupiterOne account.
+- Monitor visibility and governance of your Google Cloud environment by
+  leveraging hundreds of out of the box queries.
+- Monitor compliance against the Google Cloud CIS Framework and other security
+  benchmarks using the JupiterOne compliance app.
+- Monitor changes to your Google Cloud resources using multiple JupiterOne alert
+  rule packs specific to Google Cloud.
+
+## How it Works
+
+- JupiterOne periodically fetches users and cloud resources from Google Cloud
+ to update the graph.
+- Write JupiterOne queries to review and monitor updates to the graph, 
+or leverage existing queries.
+- Configure alerts to take action when the JupiterOne graph changes, 
+or leverage existing alerts.
+
+## Requirements
+
+- JupiterOne requires the contents of a Google Cloud service account key file 
+with the correct API services enabled (see the **Integration Walkthrough**).
+- You must have permission in JupiterOne to install new integrations.
+
+## Support
+
+If you need help with this integration, please contact
+[JupiterOne Support](https://support.jupiterone.io).
+
+## Integration Walkthrough
+
+Customers authorize access by creating a
 [Google Cloud service account](https://cloud.google.com/iam/docs/creating-managing-service-accounts)
 and providing the service account key to JupiterOne.
 
-## Setup
+### In Google Cloud
 
 A
 [Google Cloud service account](https://cloud.google.com/iam/docs/creating-managing-service-accounts)
@@ -20,8 +49,8 @@ data into JupiterOne.
 
 Google Cloud has most API services disabled by default. When a Google Cloud
 service API is disabled, the JupiterOne integration will not ingest the data
-from that API. The following Google Cloud service APIs that must be enabled to
-ingest all of the supported data into JupiterOne:
+from that API. The following Google Cloud service APIs must be enabled to ingest
+all of the supported data into JupiterOne:
 
 | Service Name                                                                                                     | Service API                         |
 | ---------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
@@ -32,16 +61,28 @@ ingest all of the supported data into JupiterOne:
 | [Cloud Resource Manager](https://console.developers.google.com/apis/library/cloudresourcemanager.googleapis.com) | cloudresourcemanager.googleapis.com |
 | [Cloud Engine](https://console.developers.google.com/apis/library/compute.googleapis.com)                        | compute.googleapis.com              |
 | [Cloud Key Management Service (KMS)](https://console.developers.google.com/apis/library/cloudkms.googleapis.com) | cloudkms.googleapis.com             |
+| [Cloud SQL](https://console.developers.google.com/apis/library/sqladmin.googleapis.com)                          | sqladmin.googleapis.com             |
+| [BigQuery](https://console.developers.google.com/apis/library/bigquery.googleapis.com)                           | bigquery.googleapis.com             |
+| [Cloud DNS](https://console.developers.google.com/apis/library/dns.googleapis.com)                               | dns.googleapis.com                  |
+| [Kubernetes Engine](https://console.developers.google.com/apis/library/container.googleapis.com)                 | container.googleapis.com            |
+| [Cloud Logging](https://console.developers.google.com/apis/library/logging.googleapis.com)                       | logging.googleapis.com              |
+| [Stackdriver Monitoring](https://console.developers.google.com/apis/library/monitoring.googleapis.com)           | monitoring.googleapis.com           |
+| [Binary Authorization](https://console.developers.google.com/apis/library/binaryauthorization.googleapis.com)    | binaryauthorization.googleapis.com  |
+| [Cloud Pub/Sub](https://console.developers.google.com/apis/library/pubsub.googleapis.com)                        | pubsub.googleapis.com               |
+| [App Engine Admin](https://console.developers.google.com/apis/library/appengine.googleapis.com)                  | appengine.googleapis.com            |
+| [Cloud Run](https://console.developers.google.com/apis/library/run.googleapis.com)                               | run.googleapis.com                  |
+| [Cloud Memorystore for Redis](https://console.developers.google.com/apis/library/redis.googleapis.com)           | redis.googleapis.com                |
+| [Cloud Memorystore for Memcached](https://console.developers.google.com/apis/library/memcache.googleapis.com)    | memcache.googleapis.com             |
 
 Google Cloud service APIs can be enabled using one of the following methods:
 
-### Enabling Google Cloud Service API from Google Cloud Console
+#### Enabling Google Cloud Service API from Google Cloud Console
 
 1. Click on the service name link that you'd like to enable from the table above
 2. Select your Google Cloud project from the project dropdown menu
 3. Click the "Enable" button
 
-### Enabling Google Cloud Service API from `gcloud` CLI
+#### Enabling Google Cloud Service API from `gcloud` CLI
 
 Instructions on how to setup the
 [`gcloud` CLI](https://cloud.google.com/sdk/gcloud) can be found in the
@@ -62,10 +103,19 @@ gcloud services enable \
   cloudkms.googleapis.com \
   sqladmin.googleapis.com \
   bigquery.googleapis.com \
-  dns.googleapis.com
+  container.googleapis.com \
+  dns.googleapis.com \
+  logging.googleapis.com \
+  monitoring.googleapis.com \
+  binaryauthorization.googleapis.com \
+  pubsub.googleapis.com \
+  appengine.googleapis.com \
+  run.googleapis.com \
+  redis.googleapis.com \
+  memcache.googleapis.com
 ```
 
-### Creating Google Cloud project service account
+#### Creating Google Cloud project service account
 
 - See the
   [Google Cloud service account documentation](https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating)
@@ -84,7 +134,7 @@ NOTE: You may also create a service account using the
 how to leverage the CLI in the
 [JupiterOne Google Cloud integration developer documentation](https://github.com/JupiterOne/graph-google-cloud/blob/master/docs/development.md).
 
-### Generate a service account key
+#### Generate a service account key
 
 - See the
   [Google Cloud service account key documentation](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys)
@@ -96,14 +146,14 @@ NOTE: You may also create a service account key using the
 how to leverage the CLI in the
 [Google Cloud integration developer documentation](https://github.com/JupiterOne/graph-google-cloud/blob/master/docs/development.md).
 
-### JupiterOne + Google Cloud Organization
+#### JupiterOne + Google Cloud Organization
 
 A CLI is exposed from the
 [`graph-google-cloud` project on GitHub](https://github.com/JupiterOne/graph-google-cloud)
 that can be leveraged to create individual integration instances for every
 project that is under a specific Google Cloud organization.
 
-#### Install Dependencies
+##### Install Dependencies
 
 The following dependencies are needed in order to run the CLI:
 
@@ -111,7 +161,7 @@ The following dependencies are needed in order to run the CLI:
 - [Yarn package manager](https://yarnpkg.com/)
 - [gcloud CLI](https://cloud.google.com/sdk/gcloud)
 
-#### Running
+##### Running
 
 The following shows all of the options that are exposed by the CLI.
 
@@ -128,16 +178,17 @@ For more info, run any command with the `--help` flag:
   $ JupiterOne Google Cloud Organization Integration Setup --help
 
 Options:
-  --jupiterone-account-id <jupiteroneAccountId>             (Required) JupiterOne Account ID
-  --jupiterone-api-key <jupiteroneApiKey>                   (Required) JupiterOne API Key
-  --google-access-token <googleAccessToken>                 (Required) Google Cloud Access Token
-  --organization-id [organizationId]                        (Optional) Array of organization IDs to collect projects from
-  --project-id [projectId]                                  (Optional) Array of project IDs to create integration instances with
-  --skip-project-id [projectId]                             (Optional) Array of project IDs to skip creating integration instances for
-  --skip-system-projects [skipSystemProjects]               (Optional) Skips creation of any projects that have an ID that start with "sys-" (default: true)
-  --rotate-service-account-keys [rotateServiceAccountKeys]  (Optional) Creates a new service account key for the JupiterOne service account and PUTs the JupiterOne integration instance (default: false)
-  --skip-project-id-regex [skipProjectIdRegex]              (Optional) Project IDs discovered that match this regex will be skipped
-  -h, --help                                                Display this message
+  --jupiterone-account-id <jupiteroneAccountId>                         (Required) JupiterOne Account ID
+  --jupiterone-api-key <jupiteroneApiKey>                               (Required) JupiterOne API Key
+  --google-access-token <googleAccessToken>                             (Required) Google Cloud Access Token
+  --organization-id [organizationId]                                    (Optional) Array of organization IDs to collect projects from
+  --project-id [projectId]                                              (Optional) Array of project IDs to create integration instances with
+  --skip-project-id [projectId]                                         (Optional) Array of project IDs to skip creating integration instances for
+  --skip-system-projects [skipSystemProjects]                           (Optional) Skips creation of any projects that have an ID that start with "sys-" (default: true)
+  --rotate-service-account-keys [rotateServiceAccountKeys]              (Optional) Creates a new service account key for the JupiterOne service account and PUTs the JupiterOne integration instance (default: false)
+  --skip-project-id-regex [skipProjectIdRegex]                          (Optional) Project IDs discovered that match this regex will be skipped
+  --integration-instance-name-pattern [integrationInstanceNamePattern]  (Optional) Naming pattern for how the integration instances that are created will be named. Example: 'gcp-{{projectId}}'
+  -h, --help                                                            Display this message
 ```
 
 Example usage to create integration instances for every project that is under a
@@ -176,7 +227,7 @@ yarn jupiterone-organization-setup \
   --project-id MY_GOOGLE_CLOUD_PROJECT_ID_HERE_3
 ```
 
-#### How it works
+##### How it works
 
 The following is the overall flow of how the CLI creates an integration instance
 for each project:
