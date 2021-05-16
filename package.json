@@ -20,6 +20,7 @@
   },
   "scripts": {
     "buildDocs": "yarn ts-node src/util/buildDataModelDocs.ts",
+    "precommit": "yarn buildDocs",
     "publish:zendesk": "export $(grep -v '^#' .env | xargs); cd zendesk; node -r dotenv/config publish.js"
   },
   "devDependencies": {

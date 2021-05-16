@@ -36,7 +36,12 @@ an `aws_s3_bucket` is a `DataStore`, and an `aws_iam_user` a `User`.
 
 ### Common Entity Properties
 
-Most Entities will have the following common properties.
+Most Entities will have the following common properties:
+
+<details>
+  <summary style='cursor: pointer;'><strong>Click to expand Common Entity Properties table</strong></summary>
+<!--THE FOLLOW SECTION IS AUTO-GENERATED. DO NOT EDIT.-->
+<!--BEGIN Common Entity Properties table-->
 
 Property           | Type      | Description
 ---------          | --------  | ------------
@@ -70,6 +75,9 @@ Property           | Type      | Description
 `tags`             | `array` | An array of unnamed tags
 `notes`            | `array` | User provided notes about this entity
 
+<!--END Common Entity Properties table-->
+</details>
+
 ### Class Specific Entity Properties
 
 Each specific class of Entity also has its own defined properties. For example,
@@ -86,6 +94,11 @@ by the individual or team managing the resource.
 ### Defined Entities
 
 Here is a list of reference entities defined by the JupiterOne Data Model, each with its own defined set of properties in addition to the shared common properties:
+
+<details>
+  <summary style='cursor: pointer;'><strong>Click to expand Defined Entities table</strong></summary>
+<!--THE FOLLOW SECTION IS AUTO-GENERATED. DO NOT EDIT.-->
+<!--BEGIN Defined Entities table-->
 
 Entity             | Description
 ------             | -----------
@@ -152,7 +165,6 @@ Entity             | Description
 `Project`          | A software development project. Can be used for other generic projects as well but the defined properties are geared towards software development projects.
 `Queue`            | A scheduling queue of computing processes or devices.
 `Record`           | A DNS record; or an official record (e.g. Risk); or a written document (e.g. Policy/Procedure); or a reference (e.g. Vulnerability/Weakness). The exact record type is captured in the _type property of the Entity.
-`RecordEntity`     | A node in the graph database that represents a Record Entity, with a set of different defined common properties than standard (resource) entities.
 `Repository`       | A repository that contains resources. For example, a Docker container registry repository hosting Docker container images.
 `Requirement`      | An individual requirement for security, compliance, regulation or design.
 `Resource`         | A generic assignable resource. A resource is typically non-functional by itself unless used by or attached to a host or workload.
@@ -178,6 +190,9 @@ Entity             | Description
 `Vulnerability`    | A security vulnerability (application or system or infrastructure). A single vulnerability may relate to multiple findings and impact multiple resources. The `IMPACTS` relationship between the Vulnerability and the resource entity that was impacted serves as the record of the finding. The `IMPACTS` relationship carries properties such as 'identifiedOn', 'remediatedOn', 'remediationDueOn', 'issueLink', etc.
 `Weakness`         | A security weakness.
 `Workload`         | A virtual compute instance, it could be an aws-ec2-instance, a docker-container, an aws-lambda-function, an application-process, or a vmware-instance. The exact workload type is described in the _type property of the Entity.
+
+<!--END Defined Entities table-->
+</details>
 
 #### Special Entities
 

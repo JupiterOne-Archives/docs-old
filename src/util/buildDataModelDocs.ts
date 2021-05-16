@@ -100,9 +100,30 @@ function addSpaces(x: number, y: number) {
 
 
 function buildDocs() {
-  fs.writeFileSync('./work/entities.md', buildEntitiesTable(), 'utf8');
-  fs.writeFileSync('./work/billable-entities.md', buildEntitiesBillingTable(), 'utf8');
-  fs.writeFileSync('./work/entity-properties.md', buildEntityPropertiesTable(), 'utf8');
+  const billingDocPath = './faqs/faqs-account-billing.md';
+  let billingDoc = fs.readFileSync(billingDocPath, 'utf8');
+  const billingRefTableRegex = /<!--BEGIN Entity Billing Reference table-->(.*\n)*<!--END Entity Billing Reference table-->/gm;
+  const billingRefTable = `<!--BEGIN Entity Billing Reference table-->\n${buildEntitiesBillingTable()}\n<!--END Entity Billing Reference table-->`;
+  billingDoc = billingDoc.replace(billingRefTableRegex, billingRefTable);
+
+  fs.writeFileSync(billingDocPath, billingDoc, 'utf8');
+
+  const dataModelDocPath = './docs/jupiterone-data-model.md';
+  let dataModelDoc = fs.readFileSync(dataModelDocPath, 'utf8');
+
+  const entitiesTableRegex = /<!--BEGIN Defined Entities table-->(.*\n)*<!--END Defined Entities table-->/gm;
+  const entitiesTable = `<!--BEGIN Defined Entities table-->\n${buildEntitiesTable()}\n<!--END Defined Entities table-->`;
+  const entityPropertiesTableRegex = /<!--BEGIN Common Entity Properties table-->(.*\n)*<!--END Common Entity Properties table-->/gm;
+  const entityPropertiesTable = `<!--BEGIN Common Entity Properties table-->\n${buildEntityPropertiesTable()}\n<!--END Common Entity Properties table-->`;
+  dataModelDoc = dataModelDoc.replace(entitiesTableRegex, entitiesTable);
+  dataModelDoc = dataModelDoc.replace(entityPropertiesTableRegex, entityPropertiesTable);
+
+  fs.writeFileSync(dataModelDocPath, dataModelDoc, 'utf8');
+
+  // FOR LOCAL DEBUG
+  // fs.writeFileSync('./work/entities.md', buildEntitiesTable(), 'utf8');
+  // fs.writeFileSync('./work/billable-entities.md', buildEntitiesBillingTable(), 'utf8');
+  // fs.writeFileSync('./work/entity-properties.md', buildEntityPropertiesTable(), 'utf8');
 }
 
 buildDocs();

@@ -58,6 +58,9 @@ return
 <details>
   <summary style='cursor: pointer;'><strong>🚩 Entity Reference Table</strong></summary>
 
+<!--THE FOLLOW SECTION IS AUTO-GENERATED. DO NOT EDIT.-->
+<!--BEGIN Entity Billing Reference table-->
+
 Entity             | Description             | Billable
 ------             | -----------             | --------
 `AccessKey`        | A key used to grant access, such as ssh-key, access-key, api-key/token, mfa-token/device, etc. | Yes 
@@ -151,6 +154,8 @@ Entity             | Description             | Billable
 \[System Mapped Entities\]   | Entities with `_source='system-mapper'`   | No 
 \[System Internal Entities\] | Entities with `_source='system-internal'` | No 
 \[Custom Created Entities\]  | Entities created with a custom-defined _class or _type | Yes 
+
+<!--END Entity Billing Reference table-->
 
 </details>
 
