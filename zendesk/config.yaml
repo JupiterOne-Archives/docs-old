@@ -52,7 +52,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: KIDsOVV1qq8Q4oDUQ9ON4usTkDVE26Y+UgQ5/76dSFg=
+        hash: FEeM5u1zK3V/j/6P+6frI6dAtwc2GbcVLZAw7G3izAo=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -362,7 +362,7 @@ sections:
     articles:
       - title: Data Model - Overview
         file: ../docs/jupiterone-data-model.md
-        hash: zNKMMHEmvtp65iIeO5FMLgiCujLcZ/ldtOgyGAuowBk=
+        hash: r3egdTV1bHX1zNEw2sxZbNM2TXrr+bM+w7hwD571Mtw=
         id: 360022903573
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903573'
       - title: Entity Relationship Mapping
