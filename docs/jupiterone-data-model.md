@@ -39,7 +39,7 @@ an `aws_s3_bucket` is a `DataStore`, and an `aws_iam_user` a `User`.
 Most Entities will have the following common properties:
 
 <details>
-  <summary style='cursor: pointer;'><strong>🚩 Click to expand Common Entity Properties table</strong></summary>
+  <summary class="collapsible">🚩 Click to expand Common Entity Properties table</summary>
 <!--THE FOLLOW SECTION IS AUTO-GENERATED. DO NOT EDIT.-->
 <!--BEGIN Common Entity Properties table-->
 
@@ -96,7 +96,7 @@ by the individual or team managing the resource.
 Here is a list of reference entities defined by the JupiterOne Data Model, each with its own defined set of properties in addition to the shared common properties:
 
 <details>
-  <summary style='cursor: pointer;'><strong>🚩 Click to expand Defined Entities table</strong></summary>
+  <summary class="collapsible">🚩 Click to expand Defined Entities table</summary>
 <!--THE FOLLOW SECTION IS AUTO-GENERATED. DO NOT EDIT.-->
 <!--BEGIN Defined Entities table-->
 
@@ -367,3 +367,23 @@ defined by the data model.
 [schema-repo]: https://github.com/JupiterOne/data-model
 
 [person-team]: ./person-team-relationship.md
+
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+</style>

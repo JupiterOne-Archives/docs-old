@@ -56,7 +56,7 @@ return
 ```
 
 <details>
-  <summary style='cursor: pointer;'><strong>🚩 Entity Reference Table</strong></summary>
+  <summary class="collapsible">🚩 Entity Reference Table</summary>
 
 <!--THE FOLLOW SECTION IS AUTO-GENERATED. DO NOT EDIT.-->
 <!--BEGIN Entity Billing Reference table-->
@@ -201,3 +201,23 @@ facilitate better support and training on using the platform.
   should you determine that ongoing regular support is no longer needed.
 - You have the option and administrative privilege to add the support user back
   at any time, when support is needed in the future.
+
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+</style>
