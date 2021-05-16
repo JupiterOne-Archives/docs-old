@@ -75,7 +75,7 @@ Entity             | Description             | Billable
 `Certificate`      | A digital Certificate such as an SSL or S/MIME certificate. | Yes 
 `Channel`          | A communication channel, such as a Slack channel or AWS SNS topic. | Yes 
 `Cluster`          | A cluster of compute or database resources/workloads. | Yes 
-`CodeCommit`       | A code commit to a repo. The commit id is captured in the _id property of the Entity. | Yes 
+`CodeCommit`       | A code commit to a repo. The commit id is captured in the _id property of the Entity. | No 
 `CodeDeploy`       | A code deploy job. | Yes 
 `CodeModule`       | A software module. Such as an npm_module or java_library. | Yes 
 `CodeRepo`         | A source code repository. A CodeRepo is also a DataRepository therefore should carry all the required properties of DataRepository. | Yes 
@@ -85,7 +85,7 @@ Entity             | Description             | Billable
 `Control`          | A security or IT Control. A control can be implemented by a vendor/service, a person/team, a program/process, an automation code/script/configuration, or a system/host/device. Therefore, this is most likely an additional Class applied to a Service (e.g. Okta SSO), a Device (e.g. a physical firewall), or a HostAgent (e.g. Carbon Black CbDefense Agent). Controls are mapped to security policy procedures and compliance standards/requirements. | Yes 
 `ControlPolicy`    | An technical or operational policy with rules that govern (or enforce, evaluate, monitor) a security control. | Yes 
 `CryptoKey`        | A key used to perform cryptographic functions, such as an encryption key. | Yes 
-`DataObject`       | An individual data object, such as an aws-s3-object, sharepoint-document, source-code, or a file (on disk). The exact data type is described in the _type property of the Entity. | Yes 
+`DataObject`       | An individual data object, such as an aws-s3-object, sharepoint-document, source-code, or a file (on disk). The exact data type is described in the _type property of the Entity. | No 
 `DataStore`        | A virtual repository where data is stored, such as aws-s3-bucket, aws-rds-cluster, aws-dynamodb-table, bitbucket-repo, sharepoint-site, docker-registry. The exact type is described in the _type property of the Entity. | Yes 
 `Database`         | A database cluster/instance. | Yes 
 `Deployment`       | A deployment of code, application, infrastructure or service. For example, a Kubernetes deployment. An auto scaling group is also considered a deployment. | Yes 

@@ -2,6 +2,8 @@ import { entitySchemas } from '@jupiterone/data-model';
 import * as fs from  'fs' ;
 
 const nonBillableEntities = [
+  'CodeCommit',
+  'DataObject',
   'DomainRecord',
   'Everyone',
   'Finding',
