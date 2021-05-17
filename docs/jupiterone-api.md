@@ -42,8 +42,9 @@ the same `type`, `data`, and `cursor` fields that the non-deferred
 GraphQL response would contain.
 Allowed values are `DISABLED` and `FORCE`.
 
-**Note:** When paging through data, it is _highly_ recommended that cursors
-are leveraged instead of adding `limit` and `skip` clauses to queries.
+!!! note
+    When paging through data, it is _highly_ recommended that cursors
+    are leveraged instead of adding `limit` and `skip` clauses to queries.
 
 Example GraphQL query:
 
@@ -155,8 +156,9 @@ This query will be used for fetching graph data. The returned data includes the
 details of all vertices found on the graph as well as the edges that connect the
 vertices.
 
-Note: At the moment, a canned query for IAM Role data is run. No input variables
-need to be provided.
+!!! note
+    At the moment, a canned query for IAM Role data is run. No input variables
+    need to be provided.
 
 ```graphql
 query testQuery {
@@ -218,9 +220,10 @@ query requires one of two parameters:
 
 The example below contains all of the currently available filters.
 
-NOTE: Only one of the variables (`id` or `filters`) is required. Specifying both
-is allowed but somewhat redundant unless you want to assert that a vertex with
-the specified `id` exists *and* has specific entity properties.
+!!! note
+    Only one of the variables (`id` or `filters`) is required. Specifying both
+    is allowed but somewhat redundant unless you want to assert that a vertex with
+    the specified `id` exists *and* has specific entity properties.
 
 ```graphql
 query VertexQuery($id: String!, $filters: VertexFilters) {
@@ -305,7 +308,8 @@ Variables:
 }
 ```
 
-NOTE: The depth that is supplied must be a value between 1 and 5 (inclusive)
+!!! note
+    The depth that is supplied must be a value between 1 and 5 (inclusive)
 
 ### Retrieving an Edge by ID
 
@@ -319,10 +323,11 @@ parameters:
 
 The example below contains all of the currently available filters.
 
-NOTE: Only one of the variables (`id`, `label`, or `filters`) is required.
-Specifying `label` and `filters` with `id` is allowed but somewhat redundant
-unless you want to assert that a vertex with the specified `id` exists *and* has
-the specific label and properties.
+!!! note
+    Only one of the variables (`id`, `label`, or `filters`) is required.
+    Specifying `label` and `filters` with `id` is allowed but somewhat redundant
+    unless you want to assert that a vertex with the specified `id` exists *and* has
+    the specific label and properties.
 
 ```graphql
 query VertexQuery($id: String!) {
@@ -380,7 +385,8 @@ If `OR` is specified as the filter type, any entity that has any class in the
 filter will be included in the count. By default, the query uses `AND`, which
 only includes entities that have _all_ of the specified classes in the count.
 
-Note: This resolver uses the `JSON` scalar as the return type.
+!!! note
+    This resolver uses the `JSON` scalar as the return type.
 
 ```graphql
 query testQuery($filters: VertexFilters, $filterType: FilterType) {
@@ -388,8 +394,8 @@ query testQuery($filters: VertexFilters, $filterType: FilterType) {
 }
 ```
 
-Note: Use field aliases to request the counts of
-multiple different entities.
+!!! note
+    Use field aliases to request the counts of multiple different entities.
 
 ```graphql
 query testQuery {
@@ -411,7 +417,8 @@ Example result:
 
 This query returns the entity counts for all types and classes.
 
-Note: This resolver uses the `JSON` scalar as the return type.
+!!! note
+    This resolver uses the `JSON` scalar as the return type.
 
 ```graphql
 query testQuery {
@@ -447,7 +454,8 @@ If `OR` is specified as the filter type, any entity that has any class in the
 filter will be included in the count. By default, the query uses `AND`, which
 only includes entities that have _all_ of the specified classes in the count.
 
-Note: This resolver uses the `JSON` scalar as the return type.
+!!! note
+    This resolver uses the `JSON` scalar as the return type.
 
 ```graphql
 query testQuery ($classes: [String], filterType: FilterType) {
@@ -1295,13 +1303,13 @@ Last, finalize the job.
 POST /persister/synchronization/jobs/<jobId>/finalize
 ```
 
-NOTE: 
+!!! note
 
-- When you delete an entity, all of the associated relationships will also be
-  deleted. You do not need to call out both unless you are deleting unrelated
-  relationships.
-- You can delete by both `_id` and `_key`. We recommend deleting entities by id
-  because the `_id` is unique across all entities.
+    - When you delete an entity, all of the associated relationships will also be
+      deleted. You do not need to call out both unless you are deleting unrelated
+      relationships.
+    - You can delete by both `_id` and `_key`. We recommend deleting entities by id
+      because the `_id` is unique across all entities.
 
 ## Retrieve Entity Metadata and Versions
 
@@ -1997,7 +2005,9 @@ Body:
 ## Additional API Examples
 
 **Creating entities and a relationship between them**
-NOTE: The following mutations utilize a J1Client.
+
+!!! note
+    The following mutations utilize a J1Client.
 
 ```
 const CREATE_ENTITY = gql`

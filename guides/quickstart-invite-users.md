@@ -24,12 +24,10 @@ process. To send an invite, follow these steps:
 
 [4]: https://raw.githubusercontent.com/feathericons/feather/master/icons/send.svg?sanitize=true
 
-*Notes:*
+!!! note
 
-- You need to be a member of the **Administrators** group to be able to invite
-  other users.
+    - You need to be a member of the **Administrators** group to be able to invite
+    other users.
 
-- If you are an **Enterprise** customer and use SAML SSO, see the instructions
-  [here][5].
-
-[5]: ./configure-sso-integration.md
+    - If you are an **Enterprise** customer and use SAML SSO, see the instructions
+    [here](./configure-sso-integration.md).

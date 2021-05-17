@@ -123,7 +123,8 @@ infrastructure, and software development security.
 Access to the JupiterOne application and your accounts/data on the platform is
 enabled over HTTPS, through either the JupiterOne web apps or the public APIs.
 
-*Note:* `*.us.jupiterone.io` is the current production domain.
+!!! note
+    `*.us.jupiterone.io` is the current production domain.
 
 ### User Logins
 
@@ -195,8 +196,6 @@ building a native app which can securely perform client credentials flow.
 
 Additionally, each user on the platform can create an API key that can be passed
 along with request to act on behalf of that user.
-
-*Note: the UI for self-service configuration of OAuth and user API key is targeted to be available in 1Q2019.*
 
 ### Support Access to Your JupiterOne Account(s)
 

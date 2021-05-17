@@ -98,7 +98,8 @@ receive an "Access Denied" error message when attempting to navigate to the app.
 The full list of the apps is here, along with shared permissions that may be
 used by features in each app:
 
-_Note: you may see a subset of these apps in your settings based on your account subscription level._
+!!! note 
+    You may see a subset of these apps in your settings based on your account subscription level.
 
 - Landing (the base/root page - `/`)
   
