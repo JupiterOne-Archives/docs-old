@@ -111,7 +111,8 @@ async function publish() {
 
   for (const section of config.sections || []) {
     for (const art of section.articles || []) {
-      let data = fs.readFileSync(art.file, 'utf8')
+      const path = '../' + art.file;
+      let data = fs.readFileSync(path, 'utf8')
         .replace(/^#(.*)$/m, '') // removes title
         .replace(/^ {2}(-|\*)/gm, '    -'); // fixes sublist indentation
       
@@ -125,6 +126,7 @@ async function publish() {
       if (options.admonitions) {
         match = admonitionRegex.exec(data);
         while (match) {
+          const summ = match[3] ? match[3].replace(/"|'/g, '') : match[2];
           const blob = match[4].replace(/^[ ]{4}/gm, '');
           if (match[1] === '!!!') {
             data = data.replace(admonitionRegex, 
@@ -132,7 +134,7 @@ async function publish() {
           }
           else if (match[1] === '???') {
             data = data.replace(admonitionRegex, 
-              `<details class="${match[2]}"><summary>${match[3].replace(/"|'/g, '')}</summary>\n\n${blob}\n\n</details>`);
+              `<details class="${match[2]}"><summary>${summ}</summary>\n\n${blob}\n\n</details>`);
           }
           match = admonitionRegex.exec(data);
         }

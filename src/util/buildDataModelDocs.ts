@@ -103,7 +103,7 @@ function addSpaces(x: number, y: number) {
 }
 
 
-function buildDocs() {
+export function buildDocs() {
   const billingDocPath = './faqs/faqs-account-billing.md';
   let billingDoc = fs.readFileSync(billingDocPath, 'utf8');
   const billingRefTableRegex = /<!--BEGIN Entity Billing Reference table-->(.*\n)*<!--END Entity Billing Reference table-->/gm;
