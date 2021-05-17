@@ -349,7 +349,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360034159914'
       - title: SecOps Artifacts as Code
         file: ../guides/secops-artifacts-in-j1.md
-        hash: I6nmLDCcU541QzWFy3/wZTmEk/SOqUes7nGK+0Isyck=
+        hash: hX2LLEOQwnEabUr4pBYJtiLiPEJZ3HeWR6KNfw9Y2lE=
         id: 360022721954
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721954'
       - title: Detect Suspicious Code Commits
@@ -722,6 +722,11 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2021.70 Release
+        file: ../release-notes/2021-70.md
+        id: 1500009305341
+        hash: aRP7LGwJuD/vi1+tXk5D+FPk5ZC77HuLelj6mydrw00=
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500009305341'
       - title: 2021.69 Release
         file: ../release-notes/2021-69.md
         hash: QID/2jJZk0caWkgHoS/Dje6nXcfPhw7boeNixnr1WWQ=
