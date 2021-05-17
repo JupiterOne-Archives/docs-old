@@ -183,12 +183,11 @@ A paid subscription is required for the following capabilities:
 - Full API access
 - SAML Single Sign On
 
-_Notes:_
+!!! note
 
-- Account in active trial have access to all paid subscription features.
-- Trial accounts are automatically converted into `COMMUNITY` edition after
-  trial expires.
-- The entity limit for a paid account depends on the subscription tier.
+    - Account in active trial have access to all paid subscription features.
+    - Trial accounts are automatically converted into `COMMUNITY` edition after trial expires.
+    - The entity limit for a paid premium/enterprise account depends on the subscription tier.
 
 ## I see a user named "Callisto" on my account. Who is that?
 
