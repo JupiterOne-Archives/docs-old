@@ -329,7 +329,7 @@ Find Person that performed Assessment that identified (Risk|Finding) return tree
 Lastly, these artifacts are automatically tracked and mapped to the supported
 compliance requirements as evidences for conducting the necessary assessments.
 
-![risk-assessments](../assets/compliance-hitrust-risk-assessments.png)
+![risk-assessments](../assets/compliance-risk-assessments.png)
 
 **PDF:**
 

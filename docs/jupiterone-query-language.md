@@ -238,8 +238,9 @@ Find Host with tag.AccountName~='demo'
 
 The above query would return entities of the `Host` class with any of the following examples of `tag.AccountName`: `xyz_demo`, `demo_xyz`, `abc_demo_xyz`.
 
-*Note: These string evaluations are case-sensitive. So 'Demo' and
-'demo' will yield distinct sets of results.*
+!!! warning
+    These string evaluations are case-sensitive. So `'Demo'` and `'demo'` 
+    will yield distinct sets of results.
 
 ## Date Comparisons
 
@@ -300,7 +301,8 @@ FIND Person WITH manager = undefined as u
   ORDER BY u.username SKIP 10 LIMIT 5
 ```
 
-_Note: query returns up to 250 results by default if LIMIT is not set._
+!!! note
+    Query returns up to 250 results by default if `LIMIT` is not set.
 
 ## Aggregation Functions: `COUNT`, `MIN`, `MAX`, `AVG` and `SUM`
 
@@ -427,10 +429,11 @@ Return
 
 ## Optional traversals (Beta)
 
-Note: This is a beta feature and the syntax for describing optional
-traversals may change in the future to help improve clarity.
-Any changes made to the language will be
-backwards compatible.
+!!! note
+    This is a beta feature and the syntax for describing optional
+    traversals may change in the future to help improve clarity.
+    Any changes made to the language will be
+    backwards compatible.
 
 In situations where it is useful to optionally find related entities
 and include them in the results, J1QL allows for portions of a query to be

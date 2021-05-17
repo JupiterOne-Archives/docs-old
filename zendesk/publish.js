@@ -22,6 +22,14 @@ const pass = process.env.ZENDESK_PASS;
 
 const zendesk_managers_agents_group_id = 554213;
 
+const options = {
+  createAnchor: false,
+  createTOC: false,
+  admonitions: true,
+};
+
+const admonitionRegex = /(!!!|\?\?\?) (note|reference|warning)\s?(".*")?((?:\n*[ ]{4}.*)*)/i;
+
 const anchorIcon = `
 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
@@ -113,38 +121,61 @@ async function publish() {
         data = data.replace(linksRegex, linksMap[match[5]]);
         match = linksRegex.exec(data);
       }
+
+      if (options.admonitions) {
+        match = admonitionRegex.exec(data);
+        while (match) {
+          const blob = match[4].replace(/^[ ]{4}/gm, '');
+          if (match[1] === '!!!') {
+            data = data.replace(admonitionRegex, 
+              `<div class="${match[2]}">\n\n${converter.makeHtml(blob)}\n\n</div>`);
+          }
+          else if (match[1] === '???') {
+            data = data.replace(admonitionRegex, 
+              `<details class="${match[2]}"><summary>${match[3].replace(/"|'/g, '')}</summary>\n\n${blob}\n\n</details>`);
+          }
+          match = admonitionRegex.exec(data);
+        }
+      }
+
       const staticAssetsUrl = 'https://github.com/JupiterOne/docs/blob/master/assets/$2.$3?raw=true';
-      const anchoredHeaderH2 = `<h2 id="$1">$2 <a href="#$1">${anchorIcon}</a></a></h2>`;
-      const anchoredHeaderH3 = `<h3 id="$1">$2 <a href="#$1">${anchorIcon}</a></a></h3>`;
-      const html = converter.makeHtml(data)
+      
+      let html = converter.makeHtml(data)
         .replace(/(\.\.\/)+assets\/(.*)\.(png|jpg|gif|svg)/g, staticAssetsUrl)
         .replace(/<pre><code/g, '<pre><div')
         .replace(/<\/code><\/pre>/g, '</div></pre>')
-        .replace(/<h2 id="(.*)">(.*)<\/h2>/g, anchoredHeaderH2)
-        .replace(/<h3 id="(.*)">(.*)<\/h3>/g, anchoredHeaderH3)
         .replace(/<\/table>/g, '</table><br>');
 
-      let toc = 
-        '<div class="sidenav">\n' +
-        '<p><b>On this page:</b></p>\n' +
-        `<a href="#">${art.title}</a>\n`;
-      const headings = html.matchAll(/<h2 id="(.*)">(.*)<a/g);
-      for (const h of headings) {
-        toc += `<a href="#${h[1]}">${h[2].trim()}</a>\n`;
-      }
-      toc += '</div>\n';
+      const anchoredHeaderH2 = `<h2 id="$1">$2 <a href="#$1">${anchorIcon}</a></a></h2>`;
+      const anchoredHeaderH3 = `<h3 id="$1">$2 <a href="#$1">${anchorIcon}</a></a></h3>`;
 
-      let body = html;
-      if (html.match(/<h2/)) {
-        body = body + tocStyle + toc;
+      if (options.createAnchor) {
+        html = html
+          .replace(/<h2 id="(.*)">(.*)<\/h2>/g, anchoredHeaderH2)
+          .replace(/<h3 id="(.*)">(.*)<\/h3>/g, anchoredHeaderH3);
+      }
+
+      if (options.createTOC && html.match(/<h2/)) {
+        let toc = 
+          '<div class="sidenav">\n' +
+          '<p><b>On this page:</b></p>\n' +
+          `<a href="#">${art.title}</a>\n`;
+
+        const headings = html.matchAll(/<h2 id="(.*)">(.*)<a/g);
+        for (const h of headings) {
+          toc += `<a href="#${h[1]}">${h[2].trim()}</a>\n`;
+        }
+        toc += '</div>\n';  
+
+        html = html + tocStyle + toc;
       }
       if (html.match(/<i class="fa[srldb]?\sfa-.+"><\/i>/i)) {
-        body = body + fontAwesome;
+        html = html + fontAwesome;
       }
 
       const article = {
         title: art.title,
-        body,
+        body: html,
         user_segment_id: null,
         permission_group_id: zendesk_managers_agents_group_id
       }

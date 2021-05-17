@@ -595,8 +595,10 @@ The `mapTemplate` transform exposes additional input variable to the template:
 | `itemCount` | `number` | The total count of items in the array.       |
 | `itemIndex` | `number` | The index of the current `item` in the array |
 
-NOTE: The properties that are accessible on the `item` property are pulled from the `properties` object and the `entity` object if the `item` matches
-the schema for an entity.
+!!! note 
+    The properties that are accessible on the `item` property are pulled
+    from the `properties` object and the `entity` object if the `item` matches
+    the schema for an entity.
 
 Example operation:
 

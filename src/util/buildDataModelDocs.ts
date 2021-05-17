@@ -4,6 +4,7 @@ import * as fs from  'fs' ;
 const nonBillableEntities = [
   'CodeCommit',
   'DataObject',
+  'Document',
   'DomainRecord',
   'Everyone',
   'Finding',
@@ -23,27 +24,27 @@ const ignoreFromDocs = [
 ]
 
 const entityTableHeader = `
-Entity             | Description
-------             | -----------
+    Entity             | Description
+    ------             | -----------
 `;
 
 const entityBillingTableHeader = `
-Entity             | Description             | Billable
-------             | -----------             | --------
+    Entity             | Description             | Billable
+    ------             | -----------             | --------
 `;
 
 const entityPropertiesHeader = `
-Property           | Type      | Description
----------          | --------  | ------------
+    Property           | Type      | Description
+    ---------          | --------  | ------------
 `;
 
 function buildEntitiesTable() {
-  let markdown = entityTableHeader;
+  let markdown = '??? reference "Defined Entities Table"\n' + entityTableHeader;
 
   for (const key of Object.keys(entitySchemas).sort()) {
     if (!ignoreFromDocs.includes(key)) {
       const val = entitySchemas[key];
-      markdown += `\`${key}\`${addSpaces(16, key.length)} | ${val.description}\n`;
+      markdown += `    \`${key}\`${addSpaces(16, key.length)} | ${val.description}\n`;
     }
   }
 
@@ -51,28 +52,29 @@ function buildEntitiesTable() {
 }
 
 function buildEntitiesBillingTable() {
-  let markdown = entityBillingTableHeader;
+  let markdown = '??? reference "Billable Entities Table"\n' + entityBillingTableHeader;
 
   for (const key of Object.keys(entitySchemas).sort()) {
     if (!ignoreFromDocs.includes(key)) {
       const val = entitySchemas[key];
       const billable = nonBillableEntities.includes(key) ? 'No' : 'Yes';
-      markdown += `\`${key}\`${addSpaces(16, key.length)} | ${val.description} | ${billable} \n`;
+      markdown += `    \`${key}\`${addSpaces(16, key.length)} | ${val.description} | ${billable} \n`;
     }
   }
 
-  markdown += `\\[System Mapped Entities\\]   | Entities with \`_source='system-mapper'\`   | No \n`;
-  markdown += `\\[System Internal Entities\\] | Entities with \`_source='system-internal'\` | No \n`;
-  markdown += `\\[Custom Created Entities\\]  | Entities created with a custom-defined _class or _type | Yes \n`;
+  markdown += `    \\[System Mapped Entities\\]   | Entities with \`_source='system-mapper'\`   | No \n`;
+  markdown += `    \\[System Internal Entities\\] | Entities with \`_source='system-internal'\` | No \n`;
+  markdown += `    \\[Custom Created Entities\\]  | Entities created with a custom-defined _class or _type | Yes \n`;
 
   return markdown;
 }
 
 function buildEntityPropertiesTable() {
-  let markdown = entityPropertiesHeader;
+  let markdown = '??? reference "Common Entity Properties Table"\n' + entityPropertiesHeader;
+
   const properties = entitySchemas.Entity.allOf.find(item => item.properties);
   for (const [key, val] of Object.entries(properties.properties)) {
-    markdown += `\`${key}\`${addSpaces(16, key.length)} | ${getPropertyTyle(val)} | ${val.description}\n`;
+    markdown += `    \`${key}\`${addSpaces(16, key.length)} | ${getPropertyTyle(val)} | ${val.description}\n`;
   }
 
   return markdown;
