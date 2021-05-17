@@ -45,6 +45,22 @@ function getIntegrationDocFileBaseName(projectName: string) {
   return split.join('-');
 }
 
+async function createDirIfNotExist(dirPath: string): Promise<void> {
+  try {
+    const dir = await fs.stat(dirPath);
+
+    if (!dir.isDirectory()) {
+      throw new Error(`A file that is not a directory already exists at this path (path=${dirPath})`);
+    }
+  } catch (err) {
+    if (err.code == 'ENOENT') {
+      await fs.mkdir(dirPath);
+    } else {
+      throw err;
+    }
+  }
+}
+
 async function generateRenderableIntegrationConfigs(
   integrationConfigs: IntegrationProjectConfig[]
 ): Promise<IntegrationProjectConfigRenderable[]> {
@@ -82,13 +98,7 @@ function generateIntegrationPageContents(
   integrationName: string,
   githubFileContents: string
 ) {
-  return `
----
-name: ${integrationName};
----
-
-${githubFileContents}
-`;
+  return `${githubFileContents}`;
 }
 
 async function createAllIntegrationProjectDocFilesFromConfig(
@@ -99,9 +109,16 @@ async function createAllIntegrationProjectDocFilesFromConfig(
   await pMap(
     renderableConfigs,
     async (config) => {
-      const docFilePath = path.join(
+      const docDirPath = path.join(
         __dirname,
-        `../pages/integrations/${getIntegrationDocFileBaseName(config.projectName)}.mdx`
+        `../../docs/integrations/${getIntegrationDocFileBaseName(config.projectName)}`
+      );
+
+      await createDirIfNotExist(docDirPath);
+
+      const docFilePath = path.join(
+        docDirPath,
+        `index.md`
       );
 
       await fs.writeFile(
@@ -133,10 +150,10 @@ async function readDocsConfig(docsConfigFilePath: string): Promise<DocsConfig> {
 
 ;(async () => {
   const docsConfig = await readDocsConfig(
-    path.join(__dirname, '../docs.config.yaml')
+    path.join(__dirname, '../integrations.config.yaml')
   );
 
   await createAllIntegrationProjectDocFilesFromConfig(docsConfig.integrations);
 })().catch((err) => {
-  console.error('Error generating integraiton docs: ', err);
+  console.error('Error generating integration docs: ', err);
 });
