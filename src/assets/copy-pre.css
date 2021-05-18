@@ -4,7 +4,8 @@
 .pre-wrapper pre{
 	padding-top: 25px;
 }
-.pre-wrapper .copy-snippet {
+.pre-wrapper .copy-snippet, 
+.pre-wrapper .pre-language {
 	border-radius: 0;
 	min-width:55px;
 	background: none repeat scroll 0 0 transparent;
@@ -20,9 +21,16 @@
 	text-decoration: none;
 	text-indent: 0;
 	position:absolute;
-	background:#3CE3B5;
 	top:0;
+}
+.pre-wrapper .copy-snippet {
+	background:#3CE3B5;
+	cursor:pointer;
 	right:0;
+}
+.pre-wrapper .pre-language {
+	background:#1DDDFF;
+	right:56px;
 }
 .pre-wrapper .copy-snippet:disabled{
 	color:#555;
