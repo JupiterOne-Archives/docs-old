@@ -143,7 +143,7 @@ async function readDocsConfig(docsConfigFilePath: string): Promise<DocsConfig> {
 
 ;(async () => {
   const docsConfig = await readDocsConfig(
-    path.join(__dirname, '../integrations.config.yaml')
+    path.join(__dirname, './integrations.config.yaml')
   );
 
   await createAllIntegrationProjectDocFilesFromConfig(docsConfig.integrations);
