@@ -1,16 +1,16 @@
 integrations:
 - projectName: graph-airwatch
-  displayName: AirWatch
+  displayName: Airwatch
 - projectName: graph-artifactory
-  displayName: JFrog Artifactory
+  displayName: Artifactory
 - projectName: graph-azure
   displayName: Azure
 - projectName: graph-bamboohr
-  displayName: BambooHR
+  displayName: Bamboohr
 - projectName: graph-bugcrowd
   displayName: Bugcrowd
 - projectName: graph-cbdefense
-  displayName: CbDefense
+  displayName: Cbdefense
 - projectName: graph-cisco-amp
   displayName: Cisco Amp
 - projectName: graph-cisco-meraki
@@ -18,11 +18,11 @@ integrations:
 - projectName: graph-cloudflare
   displayName: Cloudflare
 - projectName: graph-crowdstrike
-  displayName: CrowdStrike
+  displayName: Crowdstrike
 - projectName: graph-detectify
   displayName: Detectify
 - projectName: graph-digicert
-  displayName: DigiCert
+  displayName: Digicert
 - projectName: graph-duo
   displayName: Duo
 - projectName: graph-fastly
@@ -34,13 +34,13 @@ integrations:
 - projectName: graph-gitleaks-findings
   displayName: Gitleaks Findings
 - projectName: graph-godaddy
-  displayName: GoDaddy
+  displayName: Godaddy
 - projectName: graph-google
   displayName: Google
 - projectName: graph-google-cloud
   displayName: Google Cloud
 - projectName: graph-hackerone
-  displayName: HackerOne
+  displayName: Hackerone
 - projectName: graph-heroku
   displayName: Heroku
 - projectName: graph-jamf
@@ -48,7 +48,7 @@ integrations:
 - projectName: graph-jira
   displayName: Jira
 - projectName: graph-jumpcloud
-  displayName: JumpCloud
+  displayName: Jumpcloud
 - projectName: graph-knowbe4
   displayName: Knowbe4
 - projectName: graph-malwarebytes
@@ -58,25 +58,25 @@ integrations:
 - projectName: graph-nmap
   displayName: Nmap
 - projectName: graph-nowsecure
-  displayName: NowSecure
+  displayName: Nowsecure
 - projectName: graph-npm
-  displayName: NPM
+  displayName: Npm
 - projectName: graph-okta
   displayName: Okta
 - projectName: graph-onelogin
-  displayName: OneLogin
+  displayName: Onelogin
 - projectName: graph-openshift
-  displayName: OpenShift
+  displayName: Openshift
 - projectName: graph-pagerduty
-  displayName: PagerDuty
+  displayName: Pagerduty
 - projectName: graph-qualys
   displayName: Qualys
 - projectName: graph-rapid7
   displayName: Rapid7
 - projectName: graph-sentinelone
-  displayName: SentinelOne
+  displayName: Sentinelone
 - projectName: graph-servicenow
-  displayName: ServiceNow
+  displayName: Servicenow
 - projectName: graph-slack
   displayName: Slack
 - projectName: graph-snipe-it
@@ -88,7 +88,7 @@ integrations:
 - projectName: graph-tenable-cloud
   displayName: Tenable Cloud
 - projectName: graph-threatstack
-  displayName: ThreatStack
+  displayName: Threatstack
 - projectName: graph-trend-micro
   displayName: Trend Micro
 - projectName: graph-veracode
@@ -98,6 +98,6 @@ integrations:
 - projectName: graph-wazuh
   displayName: Wazuh
 - projectName: graph-whitehat
-  displayName: WhiteHat
+  displayName: Whitehat
 - projectName: graph-whois
   displayName: Whois
