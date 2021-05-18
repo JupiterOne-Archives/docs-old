@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: CNVKZ1szU3r7HGrRt2rNY1k+/6onxM1OdaPOuqrL/d4=
+        hash: TG7VpQDArFC0sXEqY1z98m/SgOnM9HjkxKf6Nwar8G8=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Node.js Client and CLI
@@ -754,7 +754,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005028742'
       - title: 2021.66 Release
         file: ../release-notes/2021-66.md
-        hash: Dm3A7VoN1OHo28Rk4l4+yz4Sj7rtvG0QnsTZm9TBaz8=
+        hash: 28ZOeL826HCAwAIZ9xZZHZklojY0DKMm0AVwWG/rSzU=
         id: 1500003711441
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500003711441'
       - title: 2021.65 Release
