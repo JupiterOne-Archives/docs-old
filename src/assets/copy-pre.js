@@ -4,10 +4,12 @@ jQuery(document).ready(function($){
     var copyid = 0;
 		$('pre').each(function(){
 			copyid++;
+			var lang = $(this).attr('class').trim().replace('language-','');
 			$(this).attr('data-copyid', copyid).wrap('<div class="pre-wrapper" />');
 			$(this).parent().css('margin', $(this).css('margin'));
 			$(this).parent().css('width',  $(this).width() + 'px');
-			$('<button class="copy-snippet">Copy</button>').insertAfter( $(this) ).data('copytarget', copyid);
+			$('<button class="copy-snippet">Copy</button>').insertAfter( $(this)).data('copytarget', copyid);
+			$('<button class="pre-language">'+lang+'</button>').insertAfter( $(this));
 		});
   });
 	
