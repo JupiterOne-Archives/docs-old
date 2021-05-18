@@ -35,7 +35,7 @@ function buildGithubDocFileUrl(projectName: string) {
  * Example output: google-cloud
  */
 function getIntegrationDocFileBaseName(displayName: string) {
-  return displayName.toLowerCase().replace(/ /g, '-')
+  return displayName.trim().toLowerCase().replace(/ /g, '-')
 }
 
 async function createDirIfNotExist(dirPath: string): Promise<void> {
@@ -104,7 +104,7 @@ async function createAllIntegrationProjectDocFilesFromConfig(
     async (config) => {
       const docDirPath = path.join(
         __dirname,
-        `../../docs/integrations/${getIntegrationDocFileBaseName(config.displayName.trim().toLowerCase().replace(' ', '-'))}`
+        `../../docs/integrations/${getIntegrationDocFileBaseName(config.displayName)}`
       );
 
       await createDirIfNotExist(docDirPath);
