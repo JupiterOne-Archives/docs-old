@@ -1711,6 +1711,7 @@ variables:
         name
         query
         version
+        resultsAre
       }
       variables {
         name
@@ -1732,13 +1733,19 @@ variables:
 ```json
 {
   "question": {
-    "title": "What are my production resources?",
+    "title": "What are my production data stores and their encryption status?",
     "tags": ["SecOps"],
     "description": "Returns a list of all production entities.",
     "queries": [
       {
-        "name": "prodresources",
-        "query": "Find * with tag.Production=true"
+        "name": "prod-datastores-encrypted",
+        "query": "Find * with tag.Production=true and encrypted=true",
+        "resultsAre": "GOOD"
+      },
+      {
+        "name": "prod-datastores-unencrypted",
+        "query": "Find * with tag.Production=true and encrypted!=true",
+        "resultsAre": "BAD"
       }
     ],
     "compliance": [
@@ -1751,11 +1758,12 @@ variables:
 }
 ```
 
-**Notes on "named queries":**
-
-- `name` field is optional
-- `name` should be a single word without special characters
-- queries named `good`, `bad`, and `unkown` are used to determine gaps/issues and to perform continuous compliance assessment
+!!! note
+    - `name` field is optional
+    - `name` is recommended to be a single word without special characters
+    - `resultsAre` with values `GOOD`, `BAD`, and `UNKNOWN` are used to  
+      determine gaps/issues and to perform continuous compliance assessment. 
+      `INFORMATIVE` is the default value.
 
 ### Update a question
 
@@ -1769,6 +1777,7 @@ variables:
         name
         query
         version
+        resultsAre
       }
       variables {
         name
@@ -1791,13 +1800,19 @@ variables:
 {
   "id": "sj3j9f0j2ndlsj300swdjfjs",
   "update": {
-    "title": "What are my production resources?",
+    "title": "What are my production data stores and their encryption status?",
     "tags": ["SecOps"],
     "description": "Returns a list of all production entities.",
     "queries": [
       {
-        "name": "prodresources",
-        "query": "Find * with tag.Production=true"
+        "name": "prod-datastores-encrypted",
+        "query": "Find * with tag.Production=true and encrypted=true",
+        "resultsAre": "GOOD"
+      },
+      {
+        "name": "prod-datastores-unencrypted",
+        "query": "Find * with tag.Production=true and encrypted!=true",
+        "resultsAre": "BAD"
       }
     ],
     "compliance": [
@@ -1890,7 +1905,7 @@ query getIntegrationDefinition($id: String) {
 
 This query returns a list of all Integration Definitions.
 
-```
+```graphql
 query testQuery {
   integrationDefinitions {
     definitions {
@@ -2009,7 +2024,7 @@ Body:
 !!! note
     The following mutations utilize a J1Client.
 
-```
+```graphql
 const CREATE_ENTITY = gql`
   mutation createEntity (
     $entityKey: String!
