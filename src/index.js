@@ -1,1 +1,1 @@
-export const docsLinks = require('../zendesk/links.json');
+export const docsLinks = require('./zendesk/links.json');

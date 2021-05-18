@@ -1,5 +1,5 @@
 import { entitySchemas } from '@jupiterone/data-model';
-import * as fs from  'fs' ;
+import { promises as fs } from 'fs';
 
 const nonBillableEntities = [
   'CodeCommit',
@@ -73,14 +73,14 @@ function buildEntityPropertiesTable() {
   let markdown = '??? reference "Common Entity Properties Table"\n' + entityPropertiesHeader;
 
   const properties = entitySchemas.Entity.allOf.find(item => item.properties);
-  for (const [key, val] of Object.entries(properties.properties)) {
+  for (const [key, val] of Object.entries(properties?.properties!)) {
     markdown += `    \`${key}\`${addSpaces(16, key.length)} | ${getPropertyTyle(val)} | ${val.description}\n`;
   }
 
   return markdown;
 }
 
-function getPropertyTyle(property) {
+function getPropertyTyle(property: any) {
   if (property.anyOf) {
     return property.anyOf.map(item => '`'+item.type+'`');
   }
@@ -103,17 +103,17 @@ function addSpaces(x: number, y: number) {
 }
 
 
-function buildDocs() {
+export async function buildDocs() {
   const billingDocPath = './faqs/faqs-account-billing.md';
-  let billingDoc = fs.readFileSync(billingDocPath, 'utf8');
+  let billingDoc = await fs.readFile(billingDocPath, 'utf8');
   const billingRefTableRegex = /<!--BEGIN Entity Billing Reference table-->(.*\n)*<!--END Entity Billing Reference table-->/gm;
   const billingRefTable = `<!--BEGIN Entity Billing Reference table-->\n${buildEntitiesBillingTable()}\n<!--END Entity Billing Reference table-->`;
   billingDoc = billingDoc.replace(billingRefTableRegex, billingRefTable);
 
-  fs.writeFileSync(billingDocPath, billingDoc, 'utf8');
+  await fs.writeFile(billingDocPath, billingDoc, 'utf8');
 
   const dataModelDocPath = './docs/jupiterone-data-model.md';
-  let dataModelDoc = fs.readFileSync(dataModelDocPath, 'utf8');
+  let dataModelDoc = await fs.readFile(dataModelDocPath, 'utf8');
 
   const entitiesTableRegex = /<!--BEGIN Defined Entities table-->(.*\n)*<!--END Defined Entities table-->/gm;
   const entitiesTable = `<!--BEGIN Defined Entities table-->\n${buildEntitiesTable()}\n<!--END Defined Entities table-->`;
@@ -122,7 +122,7 @@ function buildDocs() {
   dataModelDoc = dataModelDoc.replace(entitiesTableRegex, entitiesTable);
   dataModelDoc = dataModelDoc.replace(entityPropertiesTableRegex, entityPropertiesTable);
 
-  fs.writeFileSync(dataModelDocPath, dataModelDoc, 'utf8');
+  await fs.writeFile(dataModelDocPath, dataModelDoc, 'utf8');
 
   // FOR LOCAL DEBUG
   // fs.writeFileSync('./work/entities.md', buildEntitiesTable(), 'utf8');

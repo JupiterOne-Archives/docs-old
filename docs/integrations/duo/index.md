@@ -20,17 +20,20 @@ via a matching email property.
 integration key and API secret key that have been configured for read access. 
 - You must have permission in JupiterOne to install new integrations.
 
-## Setup
+## Support
 
-JupiterOne provides a managed integration for Duo. The integration connects
-directly to Duo REST APIs to obtain configuration metadata and analyze resource
-relationships.
+If you need help with this integration, please contact
+[JupiterOne Support](https://support.jupiterone.io).
+
+## Integration Walkthrough
+
+### In Duo
 
 You will need to create an API key (`Integration Key` + `Secret Key`) from your
 Duo Admin Panel. You may need to contact Duo Support to request API access. See
 up-to-date instructions in [Duo Support Docs][1].
 
-### Required API Permissions
+#### Required API Permissions
 
 JupiterOne requires at a minimum the following API permissions be enabled:
 
@@ -38,10 +41,30 @@ JupiterOne requires at a minimum the following API permissions be enabled:
 - Grant settings
 - Grant read resource
 
-### JupiterOne Configuration
+### In JupiterOne
 
-Configure the Duo integration in JupiterOne by copying over the `API Hostname`,
-`Integration Key`, and `Secret Key` from Duo.
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **Duo** integration tile and click it.
+3. Click the **Add Configuration** button and configure the following settings:
+- Enter the **Account Name** by which you'd like to identify this Duo
+   account in JupiterOne. Ingested entities will have this value stored in
+   `tag.AccountName` when **Tag with Account Name** is checked.
+- Enter a **Description** that will further assist your team when identifying
+   the integration instance.
+- Select a **Polling Interval** that you feel is sufficient for your monitoring
+   needs. You may leave this as `DISABLED` and manually execute the integration.
+- Enter the **API Hostname** of your Duo account.
+- Enter the **API Integration Key** configured with read access in Duo.
+- Enter the **Secret Key** configured with read access in Duo.
+4. Click **Create Configuration** once all values are provided.
+
+## How to Uninstall
+
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **Duo** integration tile and click it.
+3. Identify and click the **integration to delete**.
+4. Click the **trash can** icon.
+5. Click the **Remove** button to delete the integration.
 
 [1]: https://duo.com/docs/adminapi
 

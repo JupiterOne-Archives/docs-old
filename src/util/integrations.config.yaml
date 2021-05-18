@@ -1,0 +1,103 @@
+integrations:
+- projectName: graph-airwatch
+  displayName: AirWatch
+- projectName: graph-artifactory
+  displayName: JFrog Artifactory
+- projectName: graph-azure
+  displayName: Azure
+- projectName: graph-bamboohr
+  displayName: BambooHR
+- projectName: graph-bugcrowd
+  displayName: Bugcrowd
+- projectName: graph-cbdefense
+  displayName: CbDefense
+- projectName: graph-cisco-amp
+  displayName: Cisco Amp
+- projectName: graph-cisco-meraki
+  displayName: Cisco Meraki
+- projectName: graph-cloudflare
+  displayName: Cloudflare
+- projectName: graph-crowdstrike
+  displayName: CrowdStrike
+- projectName: graph-detectify
+  displayName: Detectify
+- projectName: graph-digicert
+  displayName: DigiCert
+- projectName: graph-duo
+  displayName: Duo
+- projectName: graph-fastly
+  displayName: Fastly
+- projectName: graph-feroot
+  displayName: Feroot
+- projectName: graph-gitlab
+  displayName: Gitlab
+- projectName: graph-gitleaks-findings
+  displayName: Gitleaks Findings
+- projectName: graph-godaddy
+  displayName: GoDaddy
+- projectName: graph-google
+  displayName: Google
+- projectName: graph-google-cloud
+  displayName: Google Cloud
+- projectName: graph-hackerone
+  displayName: HackerOne
+- projectName: graph-heroku
+  displayName: Heroku
+- projectName: graph-jamf
+  displayName: Jamf
+- projectName: graph-jira
+  displayName: Jira
+- projectName: graph-jumpcloud
+  displayName: JumpCloud
+- projectName: graph-knowbe4
+  displayName: Knowbe4
+- projectName: graph-malwarebytes
+  displayName: Malwarebytes
+- projectName: graph-microsoft-365
+  displayName: Microsoft 365
+- projectName: graph-nmap
+  displayName: Nmap
+- projectName: graph-nowsecure
+  displayName: NowSecure
+- projectName: graph-npm
+  displayName: NPM
+- projectName: graph-okta
+  displayName: Okta
+- projectName: graph-onelogin
+  displayName: OneLogin
+- projectName: graph-openshift
+  displayName: OpenShift
+- projectName: graph-pagerduty
+  displayName: PagerDuty
+- projectName: graph-qualys
+  displayName: Qualys
+- projectName: graph-rapid7
+  displayName: Rapid7
+- projectName: graph-sentinelone
+  displayName: SentinelOne
+- projectName: graph-servicenow
+  displayName: ServiceNow
+- projectName: graph-slack
+  displayName: Slack
+- projectName: graph-snipe-it
+  displayName: Snipe It
+- projectName: graph-snowflake
+  displayName: Snowflake
+- projectName: graph-snyk
+  displayName: Snyk
+- projectName: graph-tenable-cloud
+  displayName: Tenable Cloud
+- projectName: graph-threatstack
+  displayName: ThreatStack
+- projectName: graph-trend-micro
+  displayName: Trend Micro
+- projectName: graph-veracode
+  displayName: Veracode
+- projectName: graph-vuls-findings
+  displayName: Vuls Findings
+- projectName: graph-wazuh
+  displayName: Wazuh
+- projectName: graph-whitehat
+  displayName: WhiteHat
+- projectName: graph-whois
+  displayName: Whois

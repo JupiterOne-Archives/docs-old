@@ -18,20 +18,22 @@
     "request-promise-native": "^1.0.7",
     "showdown": "^1.9.0"
   },
-  "husky": { 
-    "hooks": {
-       "pre-commit": "yarn buildDocs"
-    }
-  },
   "scripts": {
-    "buildDocs": "yarn ts-node src/util/buildDataModelDocs.ts",
-    "publish:zendesk": "export $(grep -v '^#' .env | xargs); cd zendesk; node -r dotenv/config publish.js"
+    "buildDocs": "yarn build:docs:data-model && yarn build:docs:integrations",
+    "build:docs:data-model": "yarn ts-node src/util/buildDataModelDocs.ts",
+    "build:docs:integrations": "yarn ts-node src/util/buildIntegrationDocs.ts",
+    "publish:zendesk": "export $(grep -v '^#' .env | xargs); cd src/zendesk; node -r dotenv/config publish.js"
   },
   "devDependencies": {
     "@jupiterone/data-model": "^0.22.0",
+    "@jupiterone/typescript-tools": "^14.0.2",
+    "@types/js-yaml": "^4.0.1",
     "@types/node": "^15.3.0",
+    "@types/node-fetch": "^2.5.10",
     "dotenv": "^8.2.0",
     "husky": "^6.0.0",
+    "node-fetch": "^2.6.1",
+    "p-map": "^4",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   }
