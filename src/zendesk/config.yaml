@@ -451,8 +451,8 @@ sections:
         id: 1500005364921
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005364921'
       - title: Azure
-        file: ../docs/integrations/azure/graph-azure.md
-        hash: 7PjDAcUjp+dWWXmuRHC2EQgpUY/LshlyTLwIva1t3aY=
+        file: ../docs/integrations/azure/index.md
+        hash: ga/BZWJexxwEJQu7luoC3Lk6+k3FbqF/H4X7OFQtSaI=
         id: 360024909213
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909213'
       - title: Azure DevOps
@@ -522,7 +522,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047438713'
       - title: Duo
         file: ../docs/integrations/duo/index.md
-        hash: P7x6LdPPdzbzGxTz/G6qNk2LzhzhA7TdZodeXgxtDq0=
+        hash: UZt3duTmIUF7gGImKdYGDWn2U63ufXVHfo/0n0d/S+g=
         id: 360047594893
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047594893'
       - title: Fastly
@@ -551,13 +551,13 @@ sections:
         id: 360056759833
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360056759833'
       - title: Google
-        file: ../docs/integrations/google/jupiter-integration-google.md
+        file: ../docs/integrations/google/index.md
         id: 360022902533
         hash: BKTt96LqBJkQzlRBHS1WUg9VwDWN1YXK4VgLtCUaWQ0=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
-        hash: EFA2QMjlFqVHXS1rmMkjpCIFVOiJuGqnq+u0hCEYce4=
+        hash: pGJuaVxhBG4rTusbXkn0VPlVpRQAWmr+cmSECBmHcxc=
         id: 360052241514
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360052241514'
       - title: HackerOne
@@ -586,7 +586,7 @@ sections:
         hash: 2pTHZrFK184bKh64lJW6bD0WwgObKqaqCr+xwxa7i3Q=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721154'
       - title: JumpCloud
-        file: ../docs/integrations/jumpcloud/graph-jumpcloud.md
+        file: ../docs/integrations/jumpcloud/index.md
         hash: 4hWGdp9xdqyiByY4T5d7E6ykzsz0YXwwKdeBtGvoZZY=
         id: 360037319533
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360037319533'
@@ -595,9 +595,14 @@ sections:
         hash: erh5pNBQ2HQlxuRwfljDd1kjzaNH8tzMFoOetRicYPs=
         id: 360023741834
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360023741834'
+      - title: Malwarebyes
+        file: ../docs/integrations/malwarebytes/index.md
+        hash: 88U1aFkgBWv+5pscKMbc5jr5/UhfB3DnngyVrnuFts0=
+        id: 1500011165082
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500011165082'
       - title: Microsoft 365
-        file: ../docs/integrations/microsoft365/index.md
-        hash: Ugup1k0MIFyeX18qH/ZvqxumXjIy7WOplV8HPKckjpk=
+        file: ../docs/integrations/microsoft-365/index.md
+        hash: ZyiWbHeagFeeqhZFO8Nt4VjjGcOa/br9Vy6zgbEkRWM=
         id: 1500005029222
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005029222'
       - title: NPM
@@ -636,10 +641,15 @@ sections:
         id: 360056759853
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360056759853'
       - title: SentinelOne
-        file: ../docs/integrations/sentinelone/jupiter-integration-sentinelone.md
+        file: ../docs/integrations/sentinelone/index.md
         id: 360022721214
         hash: C1ENt0t/7Idvrkzm/Lgb0yIxz8KbFfhfTZ5gB9JRXE0=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721214'
+      - title: ServiceNow
+        file: ../docs/integrations/servicenow/index.md
+        hash: 3IQYgX6IbBvmtpUO+0OAbAWhIi7Iw6rMkQ/rC8C+MDw=
+        id: 1500011204241
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500011204241'
       - title: Slack
         file: ../docs/integrations/slack/index.md
         hash: bP/85DYkHSq1Sr6mDsosgqIkdRf2wwUj/Y3074lXclU=
@@ -697,7 +707,7 @@ sections:
         hash: 2IbqfuK9PorHUqa2dyPSaHN7ynEJN7QI8HOABrh/8EY=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721274'
       - title: Whois
-        file: ../docs/integrations/whois/jupiter-integration-whois.md
+        file: ../docs/integrations/whois/index.md
         hash: P9AnIb7alB/MSMNqA6oKmQufR3HxDLHd5wvXwFpLRh4=
         id: 360062764753
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360062764753'
@@ -734,22 +744,22 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500007928441'
       - title: 2021.68 Release
         file: ../release-notes/2021-68.md
-        hash: rIWX4OfQZX0Tb/JOIQTNVIIHRmykrCdsKUywbZrbxBc=
+        hash: bjk2yGKS3mJPbPtqJhuc1wzSB4nUESE/P6iFk+sfKUM=
         id: 1500006373441
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500006373441'
       - title: 2021.67 Release
         file: ../release-notes/2021-67.md
-        hash: B4VPesGaJO+Lz5umPN8fEN0kQf29tSsgj2G0X+jDAV0=
+        hash: y8VStoj9VcQ8vMiAsoipQ94CuesLv7RUJIok4G/EdYE=
         id: 1500005028742
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005028742'
       - title: 2021.66 Release
         file: ../release-notes/2021-66.md
-        hash: fbSmtUBoE7JmFP7pX/YP9sH8c0Ef/7LBRhmrR894OPQ=
+        hash: Dm3A7VoN1OHo28Rk4l4+yz4Sj7rtvG0QnsTZm9TBaz8=
         id: 1500003711441
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500003711441'
       - title: 2021.65 Release
         file: ../release-notes/2021-65.md
-        hash: G9GPKq5Cc3jxUsU1eU50yVPBWCEfFVOzqqX1lalP5bc=
+        hash: KETAHryE1VTagzp26HFDa2gyDHRz59au0akA4GB8qqM=
         id: 360063391873
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360063391873'
       - title: 2021.64 Release
@@ -819,7 +829,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360053240354'
       - title: 2020.51 Release
         file: ../release-notes/2020-51.md
-        hash: f+X7fbMJaofgBzhmjGJbrafATHJLzBJN16CdGLPXsmw=
+        hash: T80Pq5yGpIaHkFLy2RWq2Xp50ViMOR3B6wnlZSsRdNs=
         id: 360053046773
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360053046773'
       - title: 2020.50 Release
@@ -864,7 +874,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046143514'
       - title: 2020.42 Release
         file: ../release-notes/2020-42.md
-        hash: 7UW1j6WPbNSjm8CZP/UZ208ncBVIrJ9MBaetl0XBw0w=
+        hash: WGa1jg1Z3vLyTvmECbfsxDfso9jt+RcSkF7S7IpCM2I=
         id: 360045946753
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360045946753'
       - title: 2020.41 Release
@@ -904,12 +914,12 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360039700274'
       - title: 2019.34 Release
         file: ../release-notes/2019-34.md
-        hash: JXQSwpzfmQLIwkq3iYxaTygfJQ3/TlG7Qu230SyKuRo=
+        hash: fHTB7C29FCz6zsHVamofqfZX/29lK46L4TwtmH56fBw=
         id: 360039644233
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360039644233'
       - title: 2019.33 Release
         file: ../release-notes/2019-33.md
-        hash: VpD+JfCQUKkWzJFiRS15LOZ/F1WaM+r60JXCzXly6Hw=
+        hash: J7xZVc9YdUaTc0Vp1nBgam9h4qGJhsLdPjnpo9eKO8A=
         id: 360038804353
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360038804353'
       - title: 2019.32 Release
@@ -919,12 +929,12 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360037570514'
       - title: 2019.31 Release
         file: ../release-notes/2019-31.md
-        hash: kuObxX84xQhKecpqKyEA855i8WwpNeS4o6jkAwyWIGc=
+        hash: 6ImUXoMHW5/H2gKNCI+sVGgFA+nA2TOKrhZLERG9xIo=
         id: 360036923794
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360036923794'
       - title: 2019.30 Release
         file: ../release-notes/2019-30.md
-        hash: 10sNIe53WreK4rLB78IkxfsrSq2sVZVQni/A8EXzMJo=
+        hash: 3aXIkBRH2ascl6wPySMvfpmcU/FPgBSToFpmcivLCPk=
         id: 360036146014
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360036146014'
       - title: 2019.29 Release

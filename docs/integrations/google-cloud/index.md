@@ -13,17 +13,17 @@
 
 ## How it Works
 
-- JupiterOne periodically fetches users and cloud resources from Google Cloud
- to update the graph.
-- Write JupiterOne queries to review and monitor updates to the graph, 
-or leverage existing queries.
-- Configure alerts to take action when the JupiterOne graph changes, 
-or leverage existing alerts.
+- JupiterOne periodically fetches users and cloud resources from Google Cloud to
+  update the graph.
+- Write JupiterOne queries to review and monitor updates to the graph, or
+  leverage existing queries.
+- Configure alerts to take action when the JupiterOne graph changes, or leverage
+  existing alerts.
 
 ## Requirements
 
-- JupiterOne requires the contents of a Google Cloud service account key file 
-with the correct API services enabled (see the **Integration Walkthrough**).
+- JupiterOne requires the contents of a Google Cloud service account key file
+  with the correct API services enabled (see the **Integration Walkthrough**).
 - You must have permission in JupiterOne to install new integrations.
 
 ## Support
@@ -73,6 +73,9 @@ all of the supported data into JupiterOne:
 | [Cloud Run](https://console.developers.google.com/apis/library/run.googleapis.com)                               | run.googleapis.com                  |
 | [Cloud Memorystore for Redis](https://console.developers.google.com/apis/library/redis.googleapis.com)           | redis.googleapis.com                |
 | [Cloud Memorystore for Memcached](https://console.developers.google.com/apis/library/memcache.googleapis.com)    | memcache.googleapis.com             |
+| [API Gateway](https://console.developers.google.com/apis/library/apigateway.googleapis.com)                      | apigateway.googleapis.com           |
+| [Cloud Spanner](https://console.developers.google.com/apis/library/spanner.googleapis.com)                       | spanner.googleapis.com              |
+| [Certificate Authority](https://console.developers.google.com/apis/library/privateca.googleapis.com)             | privateca.googleapis.com            |
 
 Google Cloud service APIs can be enabled using one of the following methods:
 
@@ -112,7 +115,10 @@ gcloud services enable \
   appengine.googleapis.com \
   run.googleapis.com \
   redis.googleapis.com \
-  memcache.googleapis.com
+  memcache.googleapis.com \
+  apigateway.googleapis.com \
+  spanner.googleapis.com \
+  privateca.googleapis.com
 ```
 
 #### Creating Google Cloud project service account
@@ -243,6 +249,32 @@ for each project:
   - Create a JupiterOne integration instance using the newly generated service
     account key file
 
+### In JupiterOne
+
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **Google Cloud** integration tile and click it.
+3. Click the **Add Configuration** button and configure the following settings:
+
+- Enter the **Account Name** by which you'd like to identify this Google Cloud
+  account in JupiterOne. Ingested entities will have this value stored in
+  `tag.AccountName` when **Tag with Account Name** is checked.
+- Enter a **Description** that will further assist your team when identifying
+  the integration instance.
+- Select a **Polling Interval** that you feel is sufficient for your monitoring
+  needs. You may leave this as `DISABLED` and manually execute the integration.
+- Enter the **Servce Account Key File** contents of the Google Cloud service
+  account.
+
+4. Click **Create Configuration** once all values are provided.
+
+## How to Uninstall
+
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **Google Cloud** integration tile and click it.
+3. Identify and click the **integration to delete**.
+4. Click the **trash can** icon.
+5. Click the **Remove** button to delete the integration.
+
 <!-- {J1_DOCUMENTATION_MARKER_START} -->
 <!--
 ********************************************************************************
@@ -260,49 +292,129 @@ https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
 
 The following entities are created:
 
-| Resources                     | Entity `_type`                   | Entity `_class`     |
-| ----------------------------- | -------------------------------- | ------------------- |
-| Big Query Dataset             | `google_bigquery_dataset`        | `DataStore`         |
-| Cloud API Service             | `google_cloud_api_service`       | `Service`           |
-| Cloud Function                | `google_cloud_function`          | `Function`          |
-| Cloud Storage Bucket          | `google_storage_bucket`          | `DataStore`         |
-| Compute Disk                  | `google_compute_disk`            | `DataStore`, `Disk` |
-| Compute Firewalls             | `google_compute_firewall`        | `Firewall`          |
-| Compute Instance              | `google_compute_instance`        | `Host`              |
-| Compute Networks              | `google_compute_network`         | `Network`           |
-| Compute Project               | `google_compute_project`         | `Project`           |
-| Compute Subnetwork            | `google_compute_subnetwork`      | `Network`           |
-| DNS Managed Zone              | `google_dns_managed_zone`        | `DomainZone`        |
-| IAM Role                      | `google_iam_role`                | `AccessRole`        |
-| IAM Service Account           | `google_iam_service_account`     | `User`              |
-| IAM Service Account Key       | `google_iam_service_account_key` | `AccessKey`         |
-| IAM User                      | `google_user`                    | `User`              |
-| KMS Crypto Key                | `google_kms_crypto_key`          | `Key`, `CryptoKey`  |
-| KMS Key Ring                  | `google_kms_key_ring`            | `Vault`             |
-| Project                       | `google_cloud_project`           | `Account`           |
-| SQL Admin MySQL Instance      | `google_sql_mysql_instance`      | `Database`          |
-| SQL Admin Postgres Instance   | `google_sql_postgres_instance`   | `Database`          |
-| SQL Admin SQL Server Instance | `google_sql_sql_server_instance` | `Database`          |
+| Resources                         | Entity `_type`                             | Entity `_class`                    |
+| --------------------------------- | ------------------------------------------ | ---------------------------------- |
+| Api Gateway Api                   | `google_api_gateway_api`                   | `Service`                          |
+| Api Gateway Api Config            | `google_api_gateway_api_config`            | `Configuration`                    |
+| Api Gateway Gateway               | `google_api_gateway_gateway`               | `Gateway`                          |
+| AppEngine Application             | `google_app_engine_application`            | `Application`                      |
+| AppEngine Instance                | `google_app_engine_instance`               | `Host`                             |
+| AppEngine Service                 | `google_app_engine_service`                | `Container`                        |
+| AppEngine Version                 | `google_app_engine_version`                | `Service`                          |
+| Big Query Dataset                 | `google_bigquery_dataset`                  | `DataStore`                        |
+| Binary Authorization Policy       | `google_binary_authorization_policy`       | `AccessPolicy`                     |
+| Cloud API Service                 | `google_cloud_api_service`                 | `Service`                          |
+| Cloud Function                    | `google_cloud_function`                    | `Function`                         |
+| Cloud Run Configuration           | `google_cloud_run_configuration`           | `Configuration`                    |
+| Cloud Run Route                   | `google_cloud_run_route`                   | `Configuration`                    |
+| Cloud Run Service                 | `google_cloud_run_service`                 | `Service`                          |
+| Cloud Storage Bucket              | `google_storage_bucket`                    | `DataStore`                        |
+| Compute Backend Bucket            | `google_compute_backend_bucket`            | `Gateway`                          |
+| Compute Backend Service           | `google_compute_backend_service`           | `Service`                          |
+| Compute Disk                      | `google_compute_disk`                      | `DataStore`, `Disk`                |
+| Compute Firewalls                 | `google_compute_firewall`                  | `Firewall`                         |
+| Compute Health Check              | `google_compute_health_check`              | `Service`                          |
+| Compute Image                     | `google_compute_image`                     | `Image`                            |
+| Compute Instance                  | `google_compute_instance`                  | `Host`                             |
+| Compute Instance Group            | `google_compute_instance_group`            | `Group`                            |
+| Compute Instance Group Named Port | `google_compute_instance_group_named_port` | `Configuration`                    |
+| Compute Load Balancer             | `google_compute_url_map`                   | `Gateway`                          |
+| Compute Networks                  | `google_compute_network`                   | `Network`                          |
+| Compute Project                   | `google_compute_project`                   | `Project`                          |
+| Compute SSL Policy                | `google_compute_ssl_policy`                | `Policy`                           |
+| Compute Subnetwork                | `google_compute_subnetwork`                | `Network`                          |
+| Compute Target HTTP Proxy         | `google_compute_target_http_proxy`         | `Gateway`                          |
+| Compute Target HTTPS Proxy        | `google_compute_target_https_proxy`        | `Gateway`                          |
+| Compute Target SSL Proxy          | `google_compute_target_ssl_proxy`          | `Gateway`                          |
+| Container Cluster                 | `google_container_cluster`                 | `Cluster`                          |
+| Container Node Pool               | `google_container_node_pool`               | `Group`                            |
+| DNS Managed Zone                  | `google_dns_managed_zone`                  | `DomainZone`                       |
+| IAM Managed Role                  | `google_iam_role`                          | `AccessRole`                       |
+| IAM Service Account               | `google_iam_service_account`               | `User`                             |
+| IAM Service Account Key           | `google_iam_service_account_key`           | `AccessKey`                        |
+| IAM User                          | `google_user`                              | `User`                             |
+| KMS Crypto Key                    | `google_kms_crypto_key`                    | `Key`, `CryptoKey`                 |
+| KMS Key Ring                      | `google_kms_key_ring`                      | `Vault`                            |
+| Logging Metric                    | `google_logging_metric`                    | `Configuration`                    |
+| Logging Project Sink              | `google_logging_project_sink`              | `Logs`                             |
+| Memcache Instance                 | `google_memcache_instance`                 | `Database`, `DataStore`, `Cluster` |
+| Memcache Instance Node            | `google_memcache_instance_node`            | `Database`, `DataStore`, `Host`    |
+| Monitoring Alert Policy           | `google_monitoring_alert_policy`           | `Policy`                           |
+| Private CA Certificate            | `google_privateca_certificate`             | `Certificate`                      |
+| Private CA Certificate Authority  | `google_privateca_certificate_authority`   | `Service`                          |
+| Project                           | `google_cloud_project`                     | `Account`                          |
+| PubSub Subscription               | `google_pubsub_subscription`               | `Service`                          |
+| PubSub Topic                      | `google_pubsub_topic`                      | `Channel`                          |
+| Redis Instance                    | `google_redis_instance`                    | `Database`, `DataStore`, `Host`    |
+| SQL Admin MySQL Instance          | `google_sql_mysql_instance`                | `Database`                         |
+| SQL Admin Postgres Instance       | `google_sql_postgres_instance`             | `Database`                         |
+| SQL Admin SQL Server Instance     | `google_sql_sql_server_instance`           | `Database`                         |
+| Spanner Instance                  | `google_spanner_instance`                  | `Database`, `Cluster`              |
+| Spanner Instance Config           | `google_spanner_instance_config`           | `Configuration`                    |
+| Spanner Instance Database         | `google_spanner_database`                  | `Database`                         |
 
 ### Relationships
 
 The following relationships are created/mapped:
 
-| Source Entity `_type`        | Relationship `_class` | Target Entity `_type`            |
-| ---------------------------- | --------------------- | -------------------------------- |
-| `internet`                   | **ALLOWS**            | `google_compute_firewall`        |
-| `google_cloud_project`       | **HAS**               | `google_cloud_api_service`       |
-| `google_compute_firewall`    | **PROTECTS**          | `google_compute_network`         |
-| `google_compute_instance`    | **TRUSTS**            | `google_iam_service_account`     |
-| `google_compute_instance`    | **USES**              | `google_compute_disk`            |
-| `google_compute_network`     | **CONTAINS**          | `google_compute_subnetwork`      |
-| `google_compute_network`     | **HAS**               | `google_compute_firewall`        |
-| `google_compute_project`     | **HAS**               | `google_compute_instance`        |
-| `google_compute_subnetwork`  | **HAS**               | `google_compute_instance`        |
-| `google_iam_service_account` | **ASSIGNED**          | `google_iam_role`                |
-| `google_iam_service_account` | **HAS**               | `google_iam_service_account_key` |
-| `google_kms_key_ring`        | **HAS**               | `google_kms_crypto_key`          |
-| `google_user`                | **ASSIGNED**          | `google_iam_role`                |
+| Source Entity `_type`                    | Relationship `_class` | Target Entity `_type`                |
+| ---------------------------------------- | --------------------- | ------------------------------------ |
+| `google_api_gateway_api_config`          | **USES**              | `google_iam_service_account`         |
+| `google_api_gateway_api`                 | **HAS**               | `google_api_gateway_gateway`         |
+| `google_api_gateway_api`                 | **USES**              | `google_api_gateway_api_config`      |
+| `google_app_engine_application`          | **HAS**               | `google_app_engine_service`          |
+| `google_app_engine_application`          | **USES**              | `google_storage_bucket`              |
+| `google_app_engine_service`              | **HAS**               | `google_app_engine_version`          |
+| `google_app_engine_version`              | **HAS**               | `google_app_engine_instance`         |
+| `google_cloud_api_service`               | **HAS**               | `google_iam_role`                    |
+| `internet`                               | **ALLOWS**            | `google_compute_firewall`            |
+| `google_cloud_function`                  | **USES**              | `google_iam_service_account`         |
+| `google_cloud_project`                   | **HAS**               | `google_cloud_api_service`           |
+| `google_cloud_project`                   | **HAS**               | `google_binary_authorization_policy` |
+| `google_cloud_run_service`               | **MANAGES**           | `google_cloud_run_configuration`     |
+| `google_cloud_run_service`               | **MANAGES**           | `google_cloud_run_route`             |
+| `google_compute_backend_bucket`          | **HAS**               | `google_storage_bucket`              |
+| `google_compute_backend_service`         | **HAS**               | `google_compute_health_check`        |
+| `google_compute_backend_service`         | **HAS**               | `google_compute_instance_group`      |
+| `google_compute_backend_service`         | **HAS**               | `google_compute_target_ssl_proxy`    |
+| `google_compute_disk`                    | **USES**              | `google_compute_image`               |
+| `google_compute_firewall`                | **PROTECTS**          | `google_compute_network`             |
+| `google_compute_image`                   | **USES**              | `google_kms_crypto_key`              |
+| `google_compute_instance_group`          | **HAS**               | `google_compute_instance`            |
+| `google_compute_url_map`                 | **HAS**               | `google_compute_backend_service`     |
+| `google_compute_instance`                | **TRUSTS**            | `google_iam_service_account`         |
+| `google_compute_instance`                | **USES**              | `google_compute_disk`                |
+| `google_compute_network`                 | **CONTAINS**          | `google_compute_subnetwork`          |
+| `google_compute_network`                 | **HAS**               | `google_compute_firewall`            |
+| `google_compute_project`                 | **HAS**               | `google_compute_instance`            |
+| `google_compute_subnetwork`              | **HAS**               | `google_compute_instance`            |
+| `google_compute_target_https_proxy`      | **HAS**               | `google_compute_ssl_policy`          |
+| `google_compute_target_ssl_proxy`        | **HAS**               | `google_compute_ssl_policy`          |
+| `google_compute_url_map`                 | **HAS**               | `google_compute_backend_bucket`      |
+| `google_compute_url_map`                 | **HAS**               | `google_compute_backend_service`     |
+| `google_compute_url_map`                 | **HAS**               | `google_compute_target_http_proxy`   |
+| `google_compute_url_map`                 | **HAS**               | `google_compute_target_https_proxy`  |
+| `google_container_cluster`               | **HAS**               | `google_container_node_pool`         |
+| `google_container_node_pool`             | **HAS**               | `google_compute_instance_group`      |
+| `google_group`                           | **ASSIGNED**          | `google_iam_role`                    |
+| `google_iam_service_account`             | **ASSIGNED**          | `google_iam_role`                    |
+| `google_iam_service_account`             | **CREATED**           | `google_app_engine_version`          |
+| `google_iam_service_account`             | **HAS**               | `google_iam_service_account_key`     |
+| `google_kms_key_ring`                    | **HAS**               | `google_kms_crypto_key`              |
+| `google_logging_metric`                  | **HAS**               | `google_monitoring_alert_policy`     |
+| `google_logging_project_sink`            | **USES**              | `google_storage_bucket`              |
+| `google_memcache_instance`               | **HAS**               | `google_memcache_instance_node`      |
+| `google_memcache_instance`               | **USES**              | `google_compute_network`             |
+| `google_privateca_certificate_authority` | **CREATED**           | `google_privateca_certificate`       |
+| `google_privateca_certificate_authority` | **USES**              | `google_storage_bucket`              |
+| `google_pubsub_subscription`             | **USES**              | `google_pubsub_topic`                |
+| `google_pubsub_topic`                    | **USES**              | `google_kms_crypto_key`              |
+| `google_redis_instance`                  | **USES**              | `google_compute_network`             |
+| `google_spanner_database`                | **USES**              | `google_kms_crypto_key`              |
+| `google_spanner_instance`                | **HAS**               | `google_spanner_database`            |
+| `google_spanner_instance`                | **USES**              | `google_spanner_instance_config`     |
+| `google_user`                            | **ASSIGNED**          | `google_iam_role`                    |
+| `google_user`                            | **CREATED**           | `google_app_engine_version`          |
 
 <!--
 ********************************************************************************

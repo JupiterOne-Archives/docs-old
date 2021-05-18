@@ -104,7 +104,7 @@ async function createAllIntegrationProjectDocFilesFromConfig(
     async (config) => {
       const docDirPath = path.join(
         __dirname,
-        `../../docs/integrations/${getIntegrationDocFileBaseName(config.displayName.trim().toLowerCase().replaceAll(' ', '-'))}`
+        `../../docs/integrations/${getIntegrationDocFileBaseName(config.displayName.trim().toLowerCase().replace(' ', '-'))}`
       );
 
       await createDirIfNotExist(docDirPath);
