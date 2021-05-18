@@ -31,18 +31,11 @@ function buildGithubDocFileUrl(projectName: string) {
 }
 
 /**
- * Example input: graph-google-cloud
+ * Example input: Google Cloud
  * Example output: google-cloud
  */
-function getIntegrationDocFileBaseName(projectName: string) {
-  const split = projectName.split('-');
-
-  if (!split.length) {
-    throw new Error(`Invalid project name supplied to "getIntegrationDocFilePath" (projectName=${projectName})`);
-  }
-
-  split.shift()
-  return split.join('-');
+function getIntegrationDocFileBaseName(displayName: string) {
+  return displayName.toLowerCase().replace(/ /g, '-')
 }
 
 async function createDirIfNotExist(dirPath: string): Promise<void> {
@@ -111,7 +104,7 @@ async function createAllIntegrationProjectDocFilesFromConfig(
     async (config) => {
       const docDirPath = path.join(
         __dirname,
-        `../../docs/integrations/${getIntegrationDocFileBaseName(config.projectName)}`
+        `../../docs/integrations/${getIntegrationDocFileBaseName(config.displayName)}`
       );
 
       await createDirIfNotExist(docDirPath);
