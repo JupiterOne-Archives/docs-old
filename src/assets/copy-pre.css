@@ -1,0 +1,29 @@
+.pre-wrapper{
+	position:relative;
+}
+.pre-wrapper pre{
+	padding-top: 25px;
+}
+.pre-wrapper .copy-snippet {
+	border-radius: 0;
+	min-width:55px;
+	background: none repeat scroll 0 0 transparent;
+	border: 0px;
+	color: #000;
+	font-family: 'HELEVETICA',sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 1.42rem;
+	margin: 0;
+	padding: 0px 5px;
+	text-align: center;
+	text-decoration: none;
+	text-indent: 0;
+	position:absolute;
+	background:#3CE3B5;
+	top:0;
+	right:0;
+}
+.pre-wrapper .copy-snippet:disabled{
+	color:#555;
+}

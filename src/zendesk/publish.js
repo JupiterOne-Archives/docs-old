@@ -144,8 +144,6 @@ async function publish() {
       
       let html = converter.makeHtml(data)
         .replace(/(\.\.\/)+assets\/(.*)\.(png|jpg|gif|svg)/g, staticAssetsUrl)
-        .replace(/<pre><code/g, '<pre><div')
-        .replace(/<\/code><\/pre>/g, '</div></pre>')
         .replace(/<\/table>/g, '</table><br>');
 
       const anchoredHeaderH2 = `<h2 id="$1">$2 <a href="#$1">${anchorIcon}</a></a></h2>`;

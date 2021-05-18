@@ -1,0 +1,74 @@
+.top-link {
+  transition: all .25s ease-in-out;
+  position: fixed;
+  bottom: 0;
+  right: calc(50vw - 550px);
+  display: inline-flex;
+  z-index: 10000;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	margin: 0 0 3em 0;
+	border-radius: 50%;
+	padding: .25em;
+	width: 80px;
+	height: 80px;
+  background-color: #F8F8F8;
+  font-size: 30px;
+}
+
+.top-link svg {
+  fill: #000;
+  width: 24px;
+  height: 12px;
+}
+
+a.top-link.show {
+  visibility: visible;
+  opacity: 1;
+}
+  
+a.top-link.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+a.top-link:hover {
+  background-color: #E8E8E8;
+  text-decoration: none;
+}
+
+a.top-link:hover svg {
+  fill: #000000;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	position: absolute;
+	clip-path: inset(50%);
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	word-wrap: normal !important;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+.screen-reader-text:focus {
+  display: block;
+  top: 5px;
+  left: 5px;
+  z-index: 100000; /* Above WP toolbar */
+  clip-path: none;
+  background-color: #eee;
+  padding: 15px 23px 14px;
+  width: auto;
+  height: auto;
+  text-decoration: none;
+  line-height: normal;
+  color: #444;
+  font-size: 1em;
+  clip: auto !important;
+}

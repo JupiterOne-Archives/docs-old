@@ -1,0 +1,83 @@
+:root {
+  --color_note: #00B0D0;
+  --color_reference: #3CE3B5;
+  --color_warning: #EF526E;
+}
+
+.note,
+.reference,
+.warning {
+  position: relative;
+  z-index: 1;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0.25rem;
+}
+
+.note::before,
+.reference::before,
+.warning::before {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.note::after,
+.reference::after,
+.warning::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.05;
+  width: 100%;
+  height: 100%;
+}
+
+.note {
+  border-left: 4px solid var(--color_note);
+}
+
+.note::before {
+  content: "$note_title";
+  color: var(--color_note);
+}
+
+.note::before:empty {
+  display: none;
+}
+
+.note::after {
+  background-color: var(--color_note);
+}
+
+.reference {
+  border-left: 4px solid var(--color_reference);
+}
+
+.reference::before {
+  content: "Reference";
+  color: var(--color_reference);
+}
+
+.reference::before:empty {
+  display: none;
+}
+
+.reference::after {
+  background-color: var(--color_reference);
+}
+
+.warning {
+  border-left: 4px solid var(--color_warning);
+}
+
+.warning::before {
+  content: "$warning_title";
+  color: var(--color_warning);
+}
+
+.warning::after {
+  background-color: var(--color_warning);
+}

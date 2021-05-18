@@ -73,14 +73,14 @@ function buildEntityPropertiesTable() {
   let markdown = '??? reference "Common Entity Properties Table"\n' + entityPropertiesHeader;
 
   const properties = entitySchemas.Entity.allOf.find(item => item.properties);
-  for (const [key, val] of Object.entries(properties.properties)) {
+  for (const [key, val] of Object.entries(properties?.properties!)) {
     markdown += `    \`${key}\`${addSpaces(16, key.length)} | ${getPropertyTyle(val)} | ${val.description}\n`;
   }
 
   return markdown;
 }
 
-function getPropertyTyle(property) {
+function getPropertyTyle(property: any) {
   if (property.anyOf) {
     return property.anyOf.map(item => '`'+item.type+'`');
   }

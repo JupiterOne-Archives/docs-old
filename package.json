@@ -18,13 +18,8 @@
     "request-promise-native": "^1.0.7",
     "showdown": "^1.9.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn buildDocs"
-    }
-  },
   "scripts": {
-    "buildDocs": "yarn ts-node src/util/buildDataModelDocs.ts",
+    "buildDocs": "yarn ts-node src/util/buildDataModelDocs.ts; yarn ts-node src/util/buildIntegrationDocs.ts",
     "publish:zendesk": "export $(grep -v '^#' .env | xargs); cd src/zendesk; node -r dotenv/config publish.js"
   },
   "devDependencies": {
