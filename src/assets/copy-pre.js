@@ -11,6 +11,13 @@ jQuery(document).ready(function($){
 			$('<button class="copy-snippet">Copy</button>').insertAfter( $(this)).data('copytarget', copyid);
 			$('<button class="pre-language">'+lang+'</button>').insertAfter( $(this));
 		});
+
+		/* bonus, change background to red for HTTP error codes */
+		$('code').each(function(){
+			if (/^[1-5][0-9][0-9]$/.test($(this).text())) {
+				$(this).css('background-color', '#EF526E85');
+			}
+		});
   });
 	
 	$('body').on( 'click', '.copy-snippet', function(ev){
