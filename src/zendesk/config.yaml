@@ -732,6 +732,11 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2021.71 Release
+        file: ../release-notes/2021-71.md
+        hash: CaKTpfSLAqJoOUIDKYlBD67zKWsrbVMIgqXYuDHr+jM=
+        id: 1500011345781
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500011345781'
       - title: 2021.70 Release
         file: ../release-notes/2021-70.md
         id: 1500009305341
