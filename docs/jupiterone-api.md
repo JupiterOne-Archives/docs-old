@@ -36,9 +36,11 @@ information.
 be included in the results.
 - `deferredResponse`: This option allows for a deferred response to be
 returned. When a deferred response is returned, a `url` pointing
-the state of the query is provided. Upon completion of the query, the `url`
-will provide a link to the query results. The results contain
-the same `type`, `data`, and `cursor` fields that the non-deferred
+the state of the query is provided. API consumers should poll the status of
+the deferred query by requesting the given `url` until the `status` property of the
+returned JSON document has a value of `COMPLETED` (see example below).
+Upon completion of the query, the `url` will provide a link to the query results.
+The results contain the same `type`, `data`, and `cursor` fields that the non-deferred
 GraphQL response would contain.
 Allowed values are `DISABLED` and `FORCE`.
 
@@ -46,7 +48,19 @@ Allowed values are `DISABLED` and `FORCE`.
     When paging through data, it is _highly_ recommended that cursors
     are leveraged instead of adding `limit` and `skip` clauses to queries.
 
-Example GraphQL query:
+!!! note
+    Be sure to include `cursor` in the GraphQL response if you need to
+    paginate through the results. The returned `cursor` will be `null`
+    if there are no more pages available.
+
+!!! note
+    Queries that may take longer than 30 seconds should use the `FORCE` option
+    for `deferredResponse` to avoid request timeouts. You should only use the
+    `DISABLED` option when testing a simple query. It is _highly_ recommended
+    that all automated processes use the the `FORCE` option when issuing
+    J1QL queries.
+
+**Example GraphQL query:**
 
 ```graphql
 query J1QL(
@@ -66,7 +80,7 @@ query J1QL(
 }
 ```
 
-Example variables:
+**Example variables:**
 
 ```json
 {
@@ -78,7 +92,7 @@ Example variables:
 }
 ```
 
-Example `queryV1` resolver result:
+**Example `queryV1` resolver result:**
 
 ```json
 {
@@ -90,7 +104,7 @@ Example `queryV1` resolver result:
 }
 ```
 
-Example GraphQL query using with deferred responses:
+**Example GraphQL query using with deferred responses:**
 
 ```graphql
 query J1QL(
@@ -111,7 +125,7 @@ query J1QL(
 }
 ```
 
-Example variables:
+**Example variables:**
 
 ```json
 {
@@ -124,7 +138,7 @@ Example variables:
 }
 ```
 
-Example `queryV1` resolver result when using a deferred response:
+**Example `queryV1` resolver result when using a deferred response:**
 
 ```json
 {
@@ -133,7 +147,7 @@ Example `queryV1` resolver result when using a deferred response:
 }
 ```
 
-Example state responses:
+**Example state responses:**
 
 ```json
 {
@@ -919,7 +933,7 @@ are duplicate keys already in use.
 - `CREATE_OR_UPDATE` should be used when you are editing an existing scope of
   data. Use this mode when you want to add, update, or delete a subset of
   entities/relationships.
-  
+
 `integrationInstanceId`:
 
 - Required when referencing a custom integration (the `scope` is equal to
@@ -1226,7 +1240,7 @@ POST /persister/synchronization/jobs/<jobId>/upload
       "_class": "MyEntity1",
       "property1": "value1"
     }
-  ], 
+  ],
   "relationships": [
     {
       "_key": "a",
@@ -1282,7 +1296,7 @@ POST /persister/synchronization/jobs/<jobId>/upload
     {
       "_id": "example-uuid-03"
     }
-  ], 
+  ],
   "deleteRelationships": [
     {
       "_id": "example-uuid-04"
@@ -1314,7 +1328,7 @@ POST /persister/synchronization/jobs/<jobId>/finalize
 ## Retrieve Entity Metadata and Versions
 
 Before making a request to the following endpoints, update the `${ENTITY_ID}`
-placeholder with the `_id` metadata property of a given entity.  
+placeholder with the `_id` metadata property of a given entity.
 
 ### Get metadata about the latest raw data entries for a given entity
 
@@ -1343,7 +1357,7 @@ GET https://api.us.jupiterone.io/entities/${ENTITY_ID}/raw-data
 
 ### Get all version metadata for raw data entries for a given entity
 
-**Endpoint** 
+**Endpoint**
 
 ```text
 GET https://api.us.jupiterone.io/entities/${ENTITY_ID}/raw-data-versions
@@ -1419,7 +1433,7 @@ GET https://api.us.jupiterone.io/entities/${ENTITY_ID}/raw-data/${ENTRY_NAME}/ve
       "createdOn": 1593114913000,
       "deleted": false,
       "versionId": "id1"
-    }  
+    }
   ]
 }
 ```
@@ -1761,8 +1775,8 @@ variables:
 !!! note
     - `name` field is optional
     - `name` is recommended to be a single word without special characters
-    - `resultsAre` with values `GOOD`, `BAD`, and `UNKNOWN` are used to  
-      determine gaps/issues and to perform continuous compliance assessment. 
+    - `resultsAre` with values `GOOD`, `BAD`, and `UNKNOWN` are used to
+      determine gaps/issues and to perform continuous compliance assessment.
       `INFORMATIVE` is the default value.
 
 ### Update a question
@@ -1926,7 +1940,7 @@ query testQuery {
 
 The following values are required in order to trigger an integration job via API:
 
-`API_KEY` - An API Key must be configured before leveraging the JupiterOne API. Review 
+`API_KEY` - An API Key must be configured before leveraging the JupiterOne API. Review
 [Enable API Key Access](https://support.jupiterone.io/hc/en-us/articles/360025847594-Enable-API-Key-Access)
 for a guide in creating a JupiterOne API Key.
 
