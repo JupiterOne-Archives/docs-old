@@ -224,7 +224,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042195394'
       - title: Compliance Evidence Mapping
         file: ../guides/compliance/compliance-mapping-evidence.md
-        hash: eTEfqrWYVH3myMG72bMAYJNtmGlgXb7/chtJ9i7emwk=
+        hash: v5c6QWxQpJBTQJvBDNTodzXLl7L5fQvIsl/GVa95nr8=
         id: 360042682833
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682833'
       - title: Compliance Gap Analysis
@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: Wuf2wl2Q59ryqTMEesFMBnj1EkqmJyBevcWPJn+/ALM=
+        hash: ogaZ8nC2gmS4EyVYNRxz4jqsSasNJnq198PD972Ktu8=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Node.js Client and CLI
