@@ -2114,3 +2114,174 @@ const relationship = await j1Client.mutate({
   }
 });
 ```
+
+## IAM Operations (beta)
+
+!!! note
+    The IAM API is in beta and only works for accounts configured with SSO.
+
+### Get IAM groups
+
+**Query:**
+
+```graphql
+query Query($limit: Int!, $cursor: String) {
+  iamGroups(limit: $limit, cursor: $cursor) {
+    items {
+      id
+      name
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}
+```
+
+**Sample input:**
+
+```json
+{
+  "limit": 10
+}
+```
+
+**Sample output:**
+
+```json
+{
+  "data": {
+    "iamGroups": {
+      "items": [
+        {
+          "id": "12c2d370-89ef-4280-970b-d520ca1837be",
+          "name": "Users",
+        },
+        {
+          "id": "dd354c7a-1b9b-4579-ac5e-873fe3b2c851",
+          "name": "Administrators",
+        }
+      ],
+      "pageInfo": {
+        "endCursor": "eyJhY2NvdW50I...",
+        "hasNextPage": true
+      }
+    }
+  }
+}
+```
+
+### Get users for IAM group
+
+**Query:**
+
+```graphql
+query Query($groupId: String!, $limit: Int!, $cursor: String) {
+  iamGroupUsers(groupId: $groupId, limit: $limit, cursor: $cursor) {
+    items {
+      email
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}
+```
+
+**Sample input:**
+
+```json
+```
+
+**Sample output:**
+
+```json
+{
+  "data": {
+    "iamGroupUsers": {
+      "items": [
+        {
+          "email": "abc@mycompany.com"
+        },
+        {
+          "email": "def@mycompany.com"
+        }
+      ],
+      "pageInfo": {
+        "endCursor": "eyJ1c2VyIjoiaj...",
+        "hasNextPage": true
+      }
+    }
+  }
+}
+```
+
+### Add IAM user to group
+
+**Mutation:**
+
+```graphql
+mutation Mutation($groupId: String!, $userEmail: String!) {
+  addIamUserToGroupByEmail(groupId: $groupId, userEmail: $userEmail) {
+    userEmail
+    groupId
+  }
+}
+```
+
+**Sample input:**
+
+```json
+{
+	"groupId": "12c2d370-89ef-4280-970b-d520ca1837be",
+	"userEmail": "xyz@mycompany.com"
+}
+```
+
+**Sample output:**
+
+```graphql
+{
+  "data": {
+    "addIamUserToGroupByEmail": {
+      "userEmail": "123@mycompany.com",
+      "groupId": "12c2d370-89ef-4280-970b-d520ca1837be"
+    }
+  }
+}
+```
+
+### Remove IAM user from group
+
+**Mutation:**
+
+```graphql
+mutation Mutation($groupId: String!, $userEmail: String!) {
+  removeIamUserFromGroupByEmail(groupId: $groupId, userEmail: $userEmail) {
+    success
+  }
+}
+```
+
+**Sample input:**
+
+```json
+{
+	"groupId": "12c2d370-89ef-4280-970b-d520ca1837be",
+	"userEmail": "xyz@mycompany.com"
+}
+```
+
+**Sample output:**
+
+```json
+{
+  "data": {
+    "removeIamUserFromGroupByEmail": {
+      "success": true
+    }
+  }
+}
+```
