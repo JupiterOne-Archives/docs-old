@@ -2122,6 +2122,18 @@ const relationship = await j1Client.mutate({
     Please email support@jupiterone.com to enable access to these APIs
     because we will need to verify your company's domain name.
 
+!!! note
+    `accessAdmin` permission is required for all IAM operations.
+
+**All of the IAM operations require the following headers:**
+
+```plain
+Content-Type: application/json
+Accept: application/json
+JupiterOne-Account: {Account_ID}
+Authorization: Bearer {API_Key}
+```
+
 ### Get IAM groups
 
 **Query:**
