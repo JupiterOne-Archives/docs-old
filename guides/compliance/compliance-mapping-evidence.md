@@ -22,14 +22,12 @@ details.
 ## External Evidence
 
 In some cases, compliance evidence cannot be provided via data available in
-JupiterOne. Evidence documents collected and hosted outside of JupiterOne (e.g.
-on SharePoint or Google Docs) may be provided as an external linked to a given
-compliance requirement.
+JupiterOne. There are two ways to provide this evidence for a given control: 
+as an external link to a document hosted outside of JupiterOne (e.g. on 
+SharePoint or Google Docs), or via a direct uploaded (e.g. a screenshot or 
+PDF).  
 
-Each linked evidence can have a `name`, `description`, in addition to the
-`webLink` URL.
-
-_The ability to upload external evidence directly will be added soon._
+Both external evidence types require a name and have an optional description.
 
 ## Notes
 
