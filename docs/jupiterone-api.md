@@ -2130,7 +2130,7 @@ const relationship = await j1Client.mutate({
 POST https://api.us.jupiterone.io/iam/graphql
 ```
 
-**All of the IAM operations require the following headers:**
+**Headers:**
 
 ```plain
 Content-Type: application/json
