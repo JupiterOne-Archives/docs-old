@@ -2124,6 +2124,11 @@ const relationship = await j1Client.mutate({
 
 !!! note
     `accessAdmin` permission is required for all IAM operations.
+    
+**Endpoint:**
+```text
+POST https://api.us.jupiterone.io/iam/graphql
+```
 
 **All of the IAM operations require the following headers:**
 
