@@ -2119,6 +2119,8 @@ const relationship = await j1Client.mutate({
 
 !!! note
     The IAM API is in beta and only works for accounts configured with SSO.
+    Please email support@jupiterone.com to enable access to these APIs
+    because we will need to verify your company's domain name.
 
 ### Get IAM groups
 
