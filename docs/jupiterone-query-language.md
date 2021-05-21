@@ -212,9 +212,9 @@ is considered a 'filler' word that is ignored by the interpreter.
 
 ## String Comparisons
 
-J1QL supports the use of the following operators for string comparisons:
+J1QL supports the use of the following operators for string comparisons, in
+addition to `=` and `!=`:
 
-- `=` : equal to
 - `~=` : contains
 - `^=` : starts with
 - `$=` : ends with
