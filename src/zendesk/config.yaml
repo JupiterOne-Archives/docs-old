@@ -303,7 +303,7 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: icjpkw6K22h7dytX+3CfYVMhSp/Tq9u8eouH3ZAEWJg=
+        hash: FiXbI0qALhF1GAuNu31LfIBr/CqpIEav6de+2+qp44A=
         id: 360022722014
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722014'
   - name: API Docs
@@ -734,7 +734,7 @@ sections:
     articles:
       - title: 2021.71 Release
         file: ../release-notes/2021-71.md
-        hash: CaKTpfSLAqJoOUIDKYlBD67zKWsrbVMIgqXYuDHr+jM=
+        hash: +zdAxnSyndw3QeEOJ/VzRMG+eLIsu+0H+S/14LLfRB8=
         id: 1500011345781
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500011345781'
       - title: 2021.70 Release

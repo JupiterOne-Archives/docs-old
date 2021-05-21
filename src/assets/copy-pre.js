@@ -12,10 +12,16 @@ jQuery(document).ready(function($){
 			$('<button class="pre-language">'+lang+'</button>').insertAfter( $(this));
 		});
 
-		/* bonus, change background to red for HTTP error codes */
+		/* bonus, change background color for HTTP codes */
 		$('code').each(function(){
-			if (/^[1-5][0-9][0-9]$/.test($(this).text())) {
+			if (/^[2][0-9][0-9]$/.test($(this).text())) {
+				$(this).css('background-color', '#BCF3A2');
+			}
+			else if (/^[4-5][0-9][0-9]$/.test($(this).text())) {
 				$(this).css('background-color', '#EF526E85');
+			}
+			else if (/^[1,3][0-9][0-9]$/.test($(this).text())) {
+				$(this).css('background-color', '#EAFCA2');
 			}
 		});
   });
@@ -50,7 +56,7 @@ jQuery(document).ready(function($){
 			// Avoid flash of white box if rendered for any reason.
 			textArea.style.background = 'transparent';
 
-			//Set value to text to be copied
+			// Set value to text to be copied
       var div = document.createElement('div');
       div.innerHTML = $pre.html();
 			textArea.value = div.innerText;
@@ -60,12 +66,16 @@ jQuery(document).ready(function($){
 
 			try {
 				document.execCommand('copy');
-				$copyButton.text('Copied').prop('disabled', true);;
+				$copyButton.text('Copied').prop('disabled', true);
 			} catch (err) {
-				$copyButton.text('FAILED: Could not copy').prop('disabled', true);;
+				$copyButton.text('FAILED: Could not copy').prop('disabled', true);
 			}
+
+			// Hide the textArea
+			textArea.style.visibility = 'hidden';
+
 			setTimeout(function(){
-				$copyButton.text('Copy').prop('disabled', false);;
+				$copyButton.text('Copy').prop('disabled', false);
 			}, 3000);
 		}
 	});
