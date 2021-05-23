@@ -132,9 +132,9 @@ There are two ways to create a new question and add a variable placeholder.
 ![j1ql-custom-query-library](../assets/j1ql-custom-query-library.png)
 ![j1ql-custom-query-duplicate](../assets/j1ql-custom-query-duplicate.png)
 
-**TIPS**
-- Placeholders are only supported in pre-saved queries.
-- One or more placeholders can be used in a single saved query.
+**TIP** Placeholders are only supported in pre-saved queries.
+
+**TIP** One or more placeholders can be used in a single saved query.
 
 ## Leveraging the Graph for Context
 
