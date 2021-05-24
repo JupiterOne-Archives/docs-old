@@ -2276,8 +2276,8 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 
 ```json
 {
-	"groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
-	"userEmail": "xyz@mycompany.com"
+  "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
+  "userEmail": "xyz@mycompany.com"
 }
 ```
 
@@ -2309,8 +2309,8 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 
 ```json
 {
-	"groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
-	"userEmail": "xyz@mycompany.com"
+  "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
+  "userEmail": "xyz@mycompany.com"
 }
 ```
 
