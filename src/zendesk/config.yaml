@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: AdSQnIQ/OLga8QMLIwFjc4OW7cC+RmCjdPaBSOjtaP0=
+        hash: lEOYm7rC+i1+MM+XaAap4Qv/Vxy61M9SD2Nm0YU7yqA=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Node.js Client and CLI
@@ -430,6 +430,11 @@ sections:
         hash: qpMROwx+isMUp8E5QhsdmNpGnjDCEgVlCohtB+oUiDc=
         id: 360041763713
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041763713'
+      - title: Auth0
+        file: ../docs/integrations/auth0/index.md
+        hash: xG0V5I21cOFfSZQcCf4gGPstYenSqDD+A2R1qK+mKzE=
+        id: 1500011942922
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500011942922'
       - title: atSpoke
         file: ../docs/integrations/atspoke/index.md
         hash: Ywpz61h+TZdT7Iiv1bsm7xVm0YcU1C+zO4Mmgmy8Qkg=
@@ -452,7 +457,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005364921'
       - title: Azure
         file: ../docs/integrations/azure/index.md
-        hash: ga/BZWJexxwEJQu7luoC3Lk6+k3FbqF/H4X7OFQtSaI=
+        hash: U6OT9DaB1rsqKrjwz8mE47PjLaVtZDii++W/7W/L/E0=
         id: 360024909213
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909213'
       - title: Azure DevOps
@@ -472,7 +477,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721074'
       - title: Bugcrowd
         file: ../docs/integrations/bugcrowd/index.md
-        hash: V8QvfjMlGh5rj2O7FB6BR40gV70UxiGqFzZDLoaQeyg=
+        hash: 8sIINNRwNeV06CqScML9355lJIeFtAyuubD5dXhRa98=
         id: 360048412194
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360048412194'
       - title: Carbon Black Cloud
@@ -557,7 +562,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
-        hash: pGJuaVxhBG4rTusbXkn0VPlVpRQAWmr+cmSECBmHcxc=
+        hash: DtfhPjudr7WL8f1guMdl4g/j+0k+O8xhMs7dSclRf/w=
         id: 360052241514
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360052241514'
       - title: HackerOne
@@ -616,9 +621,9 @@ sections:
         id: 360049012173
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049012173'
       - title: Okta
-        file: ../docs/integrations/okta/graph-okta.md
+        file: ../docs/integrations/okta/index.md
         id: 360022902573
-        hash: Eu8SbhRfKD3LV6GowGp+Rv2zC7Ygsd1A0bVaiqiveX8=
+        hash: fwEGKXxa+tnkV/4CHP9D41S3c5OjoXUmXMj9s7Stg2o=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902573'
       - title: OneLogin
         file: ../docs/integrations/onelogin/jupiter-integration-onelogin.md

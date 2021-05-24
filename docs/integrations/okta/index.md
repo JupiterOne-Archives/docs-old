@@ -2,21 +2,25 @@
 
 ## Okta + JupiterOne Integration Benefits
 
-- Visualize Okta users, groups, devices, applications, and services in the JupiterOne graph.
+- Visualize Okta users, groups, devices, applications, and services in the
+  JupiterOne graph.
 - Map Okta users to employees in your JupiterOne account.
-- Monitor changes to Okta users and access management data using JupiterOne alerts.
-- Create an employee entity that is used to map users across your organization to an employee 
-via a matching email property.
+- Monitor changes to Okta users and access management data using JupiterOne
+  alerts.
+- Create an employee entity that is used to map users across your organization
+  to an employee via a matching email property.
 
 ## How it Works
 
-- JupiterOne periodically fetches Okta users, groups, and access management data to update the graph.
+- JupiterOne periodically fetches Okta users, groups, and access management data
+  to update the graph.
 - Write JupiterOne queries to review and monitor updates to the graph.
 - Configure alerts to take action when the JupiterOne graph changes.
 
 ## Requirements
 
-- JupiterOne requires the organization URL and an API key used to authenticate with Okta.
+- JupiterOne requires the organization URL and an API key used to authenticate
+  with Okta.
 - You must have permission in JupiterOne to install new integrations.
 
 ## Support
@@ -35,15 +39,17 @@ Create an [Okta API Token][1] with `Read-Only Admin` permission.
 1. From the configuration **Gear Icon**, select **Integrations**.
 2. Scroll to the **Okta** integration tile and click it.
 3. Click the **Add Configuration** button and configure the following settings:
-- Enter the **Account Name** by which you'd like to identify this Okta
-   account in JupiterOne. Ingested entities will have this value stored in
-   `tag.AccountName` when **Tag with Account Name** is checked.
+
+- Enter the **Account Name** by which you'd like to identify this Okta account
+  in JupiterOne. Ingested entities will have this value stored in
+  `tag.AccountName` when **Tag with Account Name** is checked.
 - Enter a **Description** that will further assist your team when identifying
-   the integration instance.
+  the integration instance.
 - Select a **Polling Interval** that you feel is sufficient for your monitoring
-   needs. You may leave this as `DISABLED` and manually execute the integration.
+  needs. You may leave this as `DISABLED` and manually execute the integration.
 - Enter the **Organization URL** unique to your Okta organization.
 - Enter the **API Key** used to authenticate with Okta.
+
 4. Click **Create Configuration** once all values are provided.
 
 ## How to Uninstall
