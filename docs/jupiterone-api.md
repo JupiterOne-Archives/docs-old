@@ -2115,6 +2115,9 @@ const relationship = await j1Client.mutate({
 });
 ```
 
+
+
+
 ## IAM Operations (beta)
 
 !!! note
@@ -2127,7 +2130,7 @@ const relationship = await j1Client.mutate({
     
 **Endpoint:**
 ```text
-POST https://api.us.jupiterone.io/iam/graphql
+POST https://api.us.jupiterone.io/graphql
 ```
 
 **Headers:**
@@ -2139,16 +2142,29 @@ JupiterOne-Account: {Account_ID}
 Authorization: Bearer {API_Key}
 ```
 
+**Resource Response Types**
+```typescript 
+type User = {
+  id: string;
+  email: string;
+}
+```
+```typescript 
+type Group = {
+  id: string;
+  name: string;
+  description?: string;
+}
+```
 ### Get IAM groups
 
-**Query: iamGroups**
+**Query: iamGroups** returns collection of `Group` items for all IAM groups in account.
 ```graphql
 query Query($limit: Int!, $cursor: String) {
   iamGroups(limit: $limit, cursor: $cursor) {
     items {
       id
       name
-      type
       description
     }
     pageInfo {
@@ -2158,9 +2174,6 @@ query Query($limit: Int!, $cursor: String) {
   }
 }
 ```
-Note: `type` and `description` are optional and may be null.
-
-
 **Sample input:**
 
 ```json
@@ -2179,7 +2192,7 @@ Note: `type` and `description` are optional and may be null.
         {
           "id": "12c2d370-89ef-4280-970b-d520ca1837be",
           "name": "Users",
-	  "description": "Group for users"
+          "description": "Group for users"
         },
         {
           "id": "dd354c7a-1b9b-4579-ac5e-873fe3b2c851",
@@ -2197,8 +2210,7 @@ Note: `type` and `description` are optional and may be null.
 
 ### Get users for IAM group
 
-**Query: iamGroupUsers**
-
+**Query: iamGroupUsers** returns collection of `User` items for all users that are members of group.
 ```graphql
 query Query($groupId: String!, $limit: Int!, $cursor: String) {
   iamGroupUsers(groupId: $groupId, limit: $limit, cursor: $cursor) {
@@ -2213,8 +2225,6 @@ query Query($groupId: String!, $limit: Int!, $cursor: String) {
   }
 }
 ```
-Note: `email` is optional and may be null for users' provisioned without an email address.
-
 
 **Sample input:**
 
@@ -2233,11 +2243,11 @@ Note: `email` is optional and may be null for users' provisioned without an emai
     "iamGroupUsers": {
       "items": [
         {
-	  "id": "xxx-accountid-xxx_abc@mycompany.com",
+          "id": "111-accountid-111_abc@mycompany.com",
           "email": "abc@mycompany.com"
         },
         {
-	  "id": "xxx-accountid-xxx_def@mycompany.com",
+          "id": "111-accountid-111_def@mycompany.com",
           "email": "def@mycompany.com"
         }
       ],
@@ -2252,7 +2262,7 @@ Note: `email` is optional and may be null for users' provisioned without an emai
 
 ### Add IAM user to group
 
-**Mutation: addIamUserToGroupByEmail**
+**Mutation: addIamUserToGroupByEmail** creates or updates a group membership; returns `success` status.
 
 ```graphql
 mutation Mutation($groupId: String!, $userEmail: String!) {
@@ -2285,7 +2295,7 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 
 ### Remove IAM user from group
 
-**Mutation: removeIamUserFromGroupByEmail**
+**Mutation: removeIamUserFromGroupByEmail** deletes a group membership; returns `success` status.
 
 ```graphql
 mutation Mutation($groupId: String!, $userEmail: String!) {
