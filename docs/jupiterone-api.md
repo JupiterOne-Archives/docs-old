@@ -2141,14 +2141,15 @@ Authorization: Bearer {API_Key}
 
 ### Get IAM groups
 
-**Query:**
-
+**Query: iamGroups**
 ```graphql
 query Query($limit: Int!, $cursor: String) {
   iamGroups(limit: $limit, cursor: $cursor) {
     items {
       id
       name
+      type
+      description
     }
     pageInfo {
       endCursor
@@ -2157,6 +2158,8 @@ query Query($limit: Int!, $cursor: String) {
   }
 }
 ```
+Note: `type` and `description` are optional and may be null.
+
 
 **Sample input:**
 
@@ -2176,6 +2179,7 @@ query Query($limit: Int!, $cursor: String) {
         {
           "id": "12c2d370-89ef-4280-970b-d520ca1837be",
           "name": "Users",
+	  "description": "Group for users"
         },
         {
           "id": "dd354c7a-1b9b-4579-ac5e-873fe3b2c851",
@@ -2193,12 +2197,13 @@ query Query($limit: Int!, $cursor: String) {
 
 ### Get users for IAM group
 
-**Query:**
+**Query: iamGroupUsers**
 
 ```graphql
 query Query($groupId: String!, $limit: Int!, $cursor: String) {
   iamGroupUsers(groupId: $groupId, limit: $limit, cursor: $cursor) {
     items {
+      id
       email
     }
     pageInfo {
@@ -2208,6 +2213,8 @@ query Query($groupId: String!, $limit: Int!, $cursor: String) {
   }
 }
 ```
+Note: `email` is optional and may be null for users' provisioned without an email address.
+
 
 **Sample input:**
 
@@ -2226,9 +2233,11 @@ query Query($groupId: String!, $limit: Int!, $cursor: String) {
     "iamGroupUsers": {
       "items": [
         {
+	  "id": "xxx-accountid-xxx_abc@mycompany.com",
           "email": "abc@mycompany.com"
         },
         {
+	  "id": "xxx-accountid-xxx_def@mycompany.com",
           "email": "def@mycompany.com"
         }
       ],
@@ -2243,13 +2252,12 @@ query Query($groupId: String!, $limit: Int!, $cursor: String) {
 
 ### Add IAM user to group
 
-**Mutation:**
+**Mutation: addIamUserToGroupByEmail**
 
 ```graphql
 mutation Mutation($groupId: String!, $userEmail: String!) {
   addIamUserToGroupByEmail(groupId: $groupId, userEmail: $userEmail) {
-    userEmail
-    groupId
+    success
   }
 }
 ```
@@ -2269,8 +2277,7 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 {
   "data": {
     "addIamUserToGroupByEmail": {
-      "userEmail": "123@mycompany.com",
-      "groupId": "22c2d370-89ef-4280-970b-d520ca1837be"
+      "success":true
     }
   }
 }
@@ -2278,7 +2285,7 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 
 ### Remove IAM user from group
 
-**Mutation:**
+**Mutation: removeIamUserFromGroupByEmail**
 
 ```graphql
 mutation Mutation($groupId: String!, $userEmail: String!) {
@@ -2299,11 +2306,11 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 
 **Sample output:**
 
-```json
+```graphql
 {
   "data": {
     "removeIamUserFromGroupByEmail": {
-      "success": true
+      "success":true
     }
   }
 }
