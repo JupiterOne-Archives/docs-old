@@ -423,7 +423,7 @@ Find (Firewall | Gateway) with category='network'
 Find aws_security_group that PROTECTS aws_instance return tree
 ```
 
-> Pro Tip: selecting an edge in the graph to see the security group rule details
+> **TIP** Selecting an edge in the graph to see the security group rule details
 > (i.e. properties on the edge)
 
 ## Part 3 - User and Access Analysis
@@ -445,11 +445,11 @@ Find User that !is Person
 > `Person` (`_type: 'employee'`) entity, when there is at least one Identity
 > Provider (IdP) integration configuration - such as Okta or OneLogin.
 >
-> Pro Tip 1: Set the `userType` property of the user profile in your IdP account
+> **TIP** Set the `userType` property of the user profile in your IdP account
 > to `'system' or 'generic' or 'bot'` will prevent JupiterOne from creating a
 > `Person` entity for that user.
 >
-> Pro Tip 2: Set the `username` of your `aws_iam_user` or other non-IdP users to
+> **TIP** Set the `username` of your `aws_iam_user` or other non-IdP users to
 > be the email address of a Person / employee will allow JupiterOne to
 > automatically map that User to its corresponding Person. Alternatively, you
 > can add an `email` tag to your `aws_iam_user` for the mapping to work.

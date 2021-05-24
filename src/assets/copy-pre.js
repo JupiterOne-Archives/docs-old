@@ -24,6 +24,18 @@ jQuery(document).ready(function($){
 				$(this).css('background-color', '#EAFCA2');
 			}
 		});
+
+		$('strong').each(function(){
+			if ($(this).text() === 'TIP') {
+				$(this).css('background-color', '#6647FF');
+				$(this).css('border-radius', '0.25em');
+				$(this).css('padding', '0.325em 0.75em');
+				$(this).css('color', 'white');
+				$(this).css('font-family', 'Inter');
+				$(this).css('font-weight', 'bold');
+				$(this).css('font-size', '0.75em');
+			}
+		});
   });
 	
 	$('body').on( 'click', '.copy-snippet', function(ev){

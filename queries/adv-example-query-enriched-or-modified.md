@@ -28,7 +28,7 @@ resources returned by following these steps:
 
 ![enrich-modify-edit-page](../assets/enrich-modify-edit-page.png)
 
-**TIP -** Keep in mind that when you enrich/modify a property in JupiterOne,
+**TIP** Keep in mind that when you enrich/modify a property in JupiterOne,
 these changes are only reflected in JupiterOne, and not to the properties of a
 entity at the source. It is recommended to make changes at the data source when
 possible.
@@ -67,7 +67,7 @@ Find * with
 If an `@` property exists, this means that manual edit has been done to the
 property.
 
-**TIP -** The `[]` must be used when querying with special characters like `@`.
+**TIP** The `[]` must be used when querying with special characters like `@`.
 
 ### Reset the value of enriched or modified properties
 
