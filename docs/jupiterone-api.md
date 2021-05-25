@@ -2142,23 +2142,9 @@ JupiterOne-Account: {Account_ID}
 Authorization: Bearer {API_Key}
 ```
 
-**Resource Response Types**
-```typescript 
-type User = {
-  id: string;
-  email: string;
-}
-```
-```typescript 
-type Group = {
-  id: string;
-  name: string;
-  description?: string;
-}
-```
 ### Get IAM groups
 
-**Query: iamGroups** returns collection of `Group` items for all IAM groups in account.
+**Query: iamGroups** returns all groups.
 ```graphql
 query Query($limit: Int!, $cursor: String) {
   iamGroups(limit: $limit, cursor: $cursor) {
@@ -2210,7 +2196,7 @@ query Query($limit: Int!, $cursor: String) {
 
 ### Get users for IAM group
 
-**Query: iamGroupUsers** returns collection of `User` items for all users that are members of group.
+**Query: iamGroupUsers** returns all users that are members of group.
 ```graphql
 query Query($groupId: String!, $limit: Int!, $cursor: String) {
   iamGroupUsers(groupId: $groupId, limit: $limit, cursor: $cursor) {
@@ -2262,7 +2248,7 @@ query Query($groupId: String!, $limit: Int!, $cursor: String) {
 
 ### Add IAM user to group
 
-**Mutation: addIamUserToGroupByEmail** creates or updates a group membership; returns `success` status.
+**Mutation: addIamUserToGroupByEmail** creates or updates a group membership.
 
 ```graphql
 mutation Mutation($groupId: String!, $userEmail: String!) {
@@ -2295,7 +2281,7 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 
 ### Remove IAM user from group
 
-**Mutation: removeIamUserFromGroupByEmail** deletes a group membership; returns `success` status.
+**Mutation: removeIamUserFromGroupByEmail** deletes a group membership.
 
 ```graphql
 mutation Mutation($groupId: String!, $userEmail: String!) {
