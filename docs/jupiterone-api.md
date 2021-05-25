@@ -1021,9 +1021,9 @@ GET /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3
 
 ### Upload batch of entities and relationships
 
-Batch upload accepts the formats: `json`, `csv`, and `yaml` sent as text the
+Batch upload accepts the formats: `json`, `csv`, and `yaml` sent as text in the
 request body. The following `Content-Type` request headers should be set
-accordingly for the intended type:
+according to the intended type:
 
 | Format | Content-Type         |
 | :----: | -------------------- |
