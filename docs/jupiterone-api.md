@@ -1033,7 +1033,7 @@ accordingly for the intended type:
 
 In the case of a `csv`, the type of graph object ("entity" or "relationship") is
 inferred by the presence of one or more of the following the columns:
-`_fromEntityKey`, `_toEntityKey`.
+`_fromEntityKey`, `_fromEntityId`, `_toEntityKey`, `_toEntityId`.
 
 **Sample request:**
 
@@ -1041,7 +1041,7 @@ inferred by the presence of one or more of the following the columns:
 POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/upload
 ```
 
-**Entity Relationship JSON:**
+**Entity / Relationship JSON:**
 
 ```json
 {
@@ -1076,7 +1076,7 @@ POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/upload
 }
 ```
 
-**Entity Relationship CSV**
+**Entity / Relationship CSV**
 
 ```csv
 "_type","_class","_key","displayName","_fromEntityKey","_toEntityKey"
@@ -1249,12 +1249,11 @@ JupiterOne will infer primitive types (e.g. strings, numbers, booleans) within
 columns automatically. If the value can be converted to a number or boolean, it
 will be converted during the upload process.
 
-To include complex JSON structures (e.g. arrays or objects) within a csv column,
-there are two acceptable ways to express these structures:
+To include JSON arrays within a csv column, there are two acceptable ways to express these structures:
 
 **Double Quote Format**
 
-Use double quotes `""` to escape quotes within an JSON array or object. This
+Use double quotes `""` to escape quotes within an JSON array. This
 format is the most common way to express and escape quote characters when
 embedding JSON within a csv column.
 
@@ -1265,31 +1264,17 @@ _JSON Array_:
 "my_type","my_class","my_key","my_id","[""my_value"",100,true]"
 ```
 
-_JSON Object_:
-
-```csv
-type,class,key,custom
-my_type,my_class,my_key,"{""my_string"": ""my_value"",""my_number"":100,""my_boolean"":true}"
-```
-
 **Column Dot Notation**
 
-JSON arrays and objects can also be described by using the value's JSON path
-(via dot notation) within the name of the column. Each property or element of
-that JSON would then receive its own column.
+JSON arrays can also be described by using the value's JSON path
+(via dot notation) within the name of the column. Each element of
+that JSON array would then receive its own column with a zero indexed number specifying its location in the array.
 
 _JSON Array_:
 
 ```csv
 "_type","_class","_key","_id","custom.0","custom.1","custom.2"
 "my_type","my_class","my_key","my_id","my_value","100","true"
-```
-
-_JSON Object_:
-
-```csv
-"_type","_class","_key","_id","_custom"
-"my_type","my_class","my_key","my_id","{""my_string"": ""my_value"",""my_number"":100,""my_boolean"":true}"
 ```
 
 **Sample response:**
@@ -1304,20 +1289,6 @@ _JSON Array_:
     "_key": "my_key",
     "_id": "my_id",
     "custom": ["my_value", 100, true]
-  }
-]
-```
-
-_JSON Object_:
-
-```json
-[
-  {
-    "_type": "my_type",
-    "_class": "my_class",
-    "_key": "my_key",
-    "_id": "my_id",
-    "custom": { "my_string": "my_value", "my_number": 100, "my_boolean": true }
   }
 ]
 ```
