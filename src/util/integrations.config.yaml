@@ -3,6 +3,8 @@ integrations:
   displayName: AirWatch
 - projectName: graph-artifactory
   displayName: JFrog Artifactory
+- projectName: graph-auth0
+  displayName: Auth0
 - projectName: graph-azure
   displayName: Azure
 - projectName: graph-bamboohr
