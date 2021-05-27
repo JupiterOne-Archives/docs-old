@@ -603,7 +603,7 @@ To be added.
 
 ## Create/Update/Delete Control/Requirement Evidence - Uploads
 
-Currently not supported.
+Currently not supported via API.
 
 ## Create/Update/Delete Control/Requirement Evidence - Notes
 
