@@ -75,6 +75,7 @@
     "data-model/org-mgmt": "https://support.jupiterone.io/hc/en-us/articles/360041436913",
     "data-model/org-grc": "https://support.jupiterone.io/hc/en-us/articles/360041436933",
     "integrations/integrations-roadmap": "https://support.jupiterone.io/hc/en-us/articles/360041763713",
+    "integrations/auth0/index": "https://support.jupiterone.io/hc/en-us/articles/1500011942922",
     "integrations/atspoke/index": "https://support.jupiterone.io/hc/en-us/articles/360062101514",
     "integrations/aws/index": "https://support.jupiterone.io/hc/en-us/articles/360022721054",
     "integrations/aws/cloudtrail-event-streaming": "https://support.jupiterone.io/hc/en-us/articles/360051794213",
