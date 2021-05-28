@@ -12,35 +12,37 @@
   alerts app.
 - Monitor changes to your AWS cloud resources using multiple JupiterOne alert
   rule packs specific to AWS.
-- Monitor several out of the box dashboards of your security across AWS services.  
+- Monitor several out of the box dashboards of your security across AWS
+  services.
 - Create automated workflows in JupiterOne alerts using SNS & SQS to remediate
   configuration gaps in AWS.
 
 ## How it Works
 
-- JupiterOne periodically fetches users and cloud resources from AWS to update 
-the graph.
-- Enable CloudTrail event delivery through EventBridge to capture additional 
-details on supported entities. See the setup guide
-[AWS CloudTrail Event Streaming](https://support.jupiterone.io/hc/en-us/articles/360051794213-AWS-CloudTrail-Event-Streaming).
-- Enable configuration of AWS accounts through Organizations and ingest 
-Organization specific data. See the setup guide
-[AWS Organizations](https://support.jupiterone.io/hc/en-us/articles/1500005364921-AWS-Organizations).
-- Write JupiterOne queries to review and monitor updates to the graph, or leverage
- existing queries.
-- Configure alerts to take action when the JupiterOne graph changes, or leverage 
-existing alerts.
+- JupiterOne periodically fetches users and cloud resources from AWS to update
+  the graph.
+- Enable CloudTrail event delivery through EventBridge to capture additional
+  details on supported entities. See the setup guide
+  [AWS CloudTrail Event Streaming](https://support.jupiterone.io/hc/en-us/articles/360051794213-AWS-CloudTrail-Event-Streaming).
+- Enable configuration of AWS accounts through Organizations and ingest
+  Organization specific data. See the setup guide
+  [AWS Organizations](https://support.jupiterone.io/hc/en-us/articles/1500005364921-AWS-Organizations).
+- Write JupiterOne queries to review and monitor updates to the graph, or
+  leverage existing queries.
+- Configure alerts to take action when the JupiterOne graph changes, or leverage
+  existing alerts.
 
-*Information is ingested from all AWS regions that do not require additional
-contractual arrangements with AWS. Please submit a JupiterOne support request if
-you need to monitor additional regions.
+!!! note
+    Information is ingested from all AWS regions that do not require additional
+    contractual arrangements with AWS. Please submit a JupiterOne support request if
+    you need to monitor additional regions.
 
 ## Requirements
 
-- JupiterOne provides a policy statement that defines the needed AWS permissions.
-An AWS IAM Role must be configured for JupiterOne that allows reading 
-configuration details of supported resources. The Role must be configured 
-to include an External ID provided by JupiterOne.
+- JupiterOne provides a policy statement that defines the needed AWS
+  permissions. An AWS IAM Role must be configured for JupiterOne that allows
+  reading configuration details of supported resources. The Role must be
+  configured to include an External ID provided by JupiterOne.
 - You must have permission in JupiterOne to install new integrations.
 
 ## Support
@@ -57,10 +59,11 @@ instance configuration.
 
 ### In AWS
 
-1. Detailed setup instructions and a pre-built CloudFormation Stack are provided in
-the application and maintained in the public [JupiterOne AWS CloudFormation][1]
-project on Github. Follow the steps under **In JupiterOne** to capture the 
-auto-generated **External ID** specific to the integration instance.
+1. Detailed setup instructions and a pre-built CloudFormation Stack are provided
+   in the application and maintained in the public [JupiterOne AWS
+   CloudFormation][1] project on Github. Follow the steps under **In
+   JupiterOne** to capture the auto-generated **External ID** specific to the
+   integration instance.
 
 [1]: https://github.com/jupiterone/jupiterone-aws-integration
 
@@ -69,15 +72,17 @@ auto-generated **External ID** specific to the integration instance.
 1. From the configuration **Gear Icon**, select **Integrations**.
 2. Scroll to the **AWS** integration tile and click it.
 3. Click the **Add Configuration** button and configure the following settings:
-- Enter the **Account Name** by which you'd like to identify this AWS
-   account in JupiterOne. Ingested entities will have this value stored in
-   `tag.AccountName` when **Tag with Account Name** is checked.
+
+- Enter the **Account Name** by which you'd like to identify this AWS account in
+  JupiterOne. Ingested entities will have this value stored in `tag.AccountName`
+  when **Tag with Account Name** is checked.
 - Enter a **Description** that will further assist your team when identifying
-   the integration instance.
+  the integration instance.
 - Select a **Polling Interval** that you feel is sufficient for your monitoring
-   needs. You may leave this as `DISABLED` and manually execute the integration.
-- Enter the **Role ARN** of the IAM role to assume in order to authenticate with 
-AWS.
+  needs. You may leave this as `DISABLED` and manually execute the integration.
+- Enter the **Role ARN** of the IAM role to assume in order to authenticate with
+  AWS.
+
 4. Click **Create Configuration** once all values are provided.
 
 ### Permissions
@@ -280,12 +285,13 @@ The following relationships are created/mapped:
 | `aws_security_group` **PROTECTS** `aws_elasticache_cluster_node`          |
 | `aws_security_group` **PROTECTS** `aws_elasticsearch_domain`              |
 | `aws_alb` **USES** `aws_acm_certificate`                                  |
-| `aws_alb` or `aws_nlb` or `aws_elb` **CONNECTS** `aws_lb_target_group`    |
+| `aws_alb` or `aws_nlb` **CONNECTS** `aws_lb_target_group`                 |
+| `aws_elb` **CONNECTS** `aws_instance`                                     |
 | `aws_lb_target_group` **HAS** `aws_instance` or `aws_lambda_function`     |
 | `aws_lb_target_group` **HAS** `aws_eip` or `aws_eni`                      |
 | `aws_guardduty_detector` **IDENTIFIED** `aws_guardduty_finding`           |
 | `aws_instance` **HAS** `aws_guardduty_finding`                            |
-| `aws_iam` **HAS** `aws_iam_managed_policy`                                |
+| `aws_iam` **HAS** `aws_iam_policy`                                        |
 | `aws_iam` **HAS** `aws_iam_role`                                          |
 | `aws_iam` **HAS** `aws_iam_role_policy`                                   |
 | `aws_iam` **HAS** `aws_iam_user`                                          |
@@ -294,10 +300,10 @@ The following relationships are created/mapped:
 | `aws_iam` **HAS** `aws_iam_group_policy`                                  |
 | `aws_iam_group` **HAS** `aws_iam_group_policy`                            |
 | `aws_iam_group` **CONTAINS** `aws_iam_user`                               |
-| `aws_iam_group` **HAS** `aws_iam_managed_policy`                          |
+| `aws_iam_group` **HAS** `aws_iam_policy`                                  |
 | `aws_iam_role` **HAS** `aws_iam_role_policy`                              |
-| `aws_iam_role` **HAS** `aws_iam_managed_policy`                           |
-| `aws_iam_user` **HAS** `aws_iam_managed_policy`                           |
+| `aws_iam_role` **HAS** `aws_iam_policy`                                   |
+| `aws_iam_user` **HAS** `aws_iam_policy`                                   |
 | `aws_iam_user` **HAS** `aws_iam_user_policy`                              |
 | `aws_accessanalyzer_analyzer` **IDENTIFIED** `aws_accessanalyzer_finding` |
 | `aws_inspector_assessment` **IDENTIFIED** `aws_inspector_finding`         |
