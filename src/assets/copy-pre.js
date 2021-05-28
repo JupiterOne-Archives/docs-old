@@ -31,7 +31,7 @@ jQuery(document).ready(function($){
 				$(this).css('border-radius', '0.25em');
 				$(this).css('padding', '0.325em 0.75em');
 				$(this).css('color', 'white');
-				$(this).css('font-family', 'Inter');
+				$(this).css('font-family', 'Inter, sans-serif');
 				$(this).css('font-weight', 'bold');
 				$(this).css('font-size', '0.75em');
 			}
