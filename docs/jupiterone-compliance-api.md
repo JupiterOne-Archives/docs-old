@@ -30,33 +30,33 @@ This query retrieves a list of all frameworks (benchmarks, compliance standards,
 
 ```graphql
 query ListStandards($size: Int, $cursor: String) {
-    complianceStandards(size: $size, cursor: $cursor) {
-      complianceStandards {
-        id
-        name
-        standard
-        accountId
-        createTimestamp
-        lastUpdatedTimestamp
-        filters {
-          key
-          values
-        }
-        specDetails {
-          version
-          type
-          webLink
-          auditTracking
-          hasDomains
-          hasSections
-        }
+  complianceStandards(size: $size, cursor: $cursor) {
+    complianceStandards {
+      id
+      name
+      standard
+      accountId
+      createTimestamp
+      lastUpdatedTimestamp
+      filters {
+        key
+        values
       }
-      pageInfo {
-        endCursor
-        hasNextPage
+      specDetails {
+        version
+        type
+        webLink
+        auditTracking
+        hasDomains
+        hasSections
       }
     }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
   }
+}
 ```
 
 ## Get Framework
@@ -73,16 +73,41 @@ assignments.
 
 ```graphql
 query ComplianceStandard($id: ID!) {
-    complianceStandard(id: $id) {
-      id
-      name
+  complianceStandard(id: $id) {
+    id
+    name
+    standard
+    filters {
+      key
+      values
+    }
+    specification {
+      recurringReviewAssignment {
+        reviewFrequency
+        currentReviewIsComplete
+        ownerAssignments {
+          allChildrenAssigned
+          ownerHasCompletedCurrentReview
+          owner {
+            id
+            userCreateDate
+            type
+            mfaSettings
+            profile {
+              email
+              emailVerified
+              givenName
+              familyName
+            }
+          }
+        }
+      }
       standard
-      filters {
-        key
-        values
-      },
-      specification {
-          recurringReviewAssignment {
+      type
+      version
+      webLink
+      sections {
+        recurringReviewAssignment {
           reviewFrequency
           currentReviewIsComplete
           ownerAssignments {
@@ -102,104 +127,79 @@ query ComplianceStandard($id: ID!) {
             }
           }
         }
-        standard
-        type
-        version
-        webLink
-        sections {
-          recurringReviewAssignment {
-            reviewFrequency
-            currentReviewIsComplete
-            ownerAssignments {
-              allChildrenAssigned
-              ownerHasCompletedCurrentReview
-              owner {
-                id
-                userCreateDate
-                type
-                mfaSettings
-                profile {
-                  email
-                  emailVerified
-                  givenName
-                  familyName
-                }
-              }
-            }
-          }
+        title
+        description
+        requirements {
+          ref
           title
-          description
-          requirements {
-            ref
-            title
-            summary
-            appliesIf
-            applicable
-            control
-            response
-            status
-            hasEvidence
-            auditStatus
-            procedures {
-              id
-            }
+          summary
+          appliesIf
+          applicable
+          control
+          response
+          status
+          hasEvidence
+          auditStatus
+          procedures {
+            id
           }
         }
-        domains {
-          recurringReviewAssignment {
-            reviewFrequency
-            currentReviewIsComplete
-            ownerAssignments {
-              allChildrenAssigned
-              ownerHasCompletedCurrentReview
-              owner {
-                id
-                userCreateDate
-                type
-                mfaSettings
-                profile {
-                  email
-                  emailVerified
-                  givenName
-                  familyName
-                }
-              }
-            }
-          }
-          title
-          description
-          controls {
-            requirement
-            ref
-            title
-            summary
-            appliesIf
-            applicable
-            response
-            status
-            hasEvidence
-            auditStatus
-            procedures {
-              id
-            }
-          }
-        }
-        auditTracking
-        unlocked
-      },
-      specDetails {
-        version
-        type
-        webLink
-        auditTracking
-        hasDomains
-        hasSections
       }
-      createTimestamp
-      lastUpdatedTimestamp
-      rawSpecification
+      domains {
+        recurringReviewAssignment {
+          reviewFrequency
+          currentReviewIsComplete
+          ownerAssignments {
+            allChildrenAssigned
+            ownerHasCompletedCurrentReview
+            owner {
+              id
+              userCreateDate
+              type
+              mfaSettings
+              profile {
+                email
+                emailVerified
+                givenName
+                familyName
+              }
+            }
+          }
+        }
+        title
+        description
+        controls {
+          requirement
+          ref
+          title
+          summary
+          appliesIf
+          applicable
+          response
+          status
+          hasEvidence
+          auditStatus
+          procedures {
+            id
+          }
+        }
+      }
+      auditTracking
+      unlocked
     }
+    specDetails {
+      version
+      type
+      webLink
+      auditTracking
+      hasDomains
+      hasSections
+    }
+    createTimestamp
+    lastUpdatedTimestamp
+    rawSpecification
   }
+}
 ```
 
 ## Create Framework
@@ -224,26 +224,51 @@ and edited via the API.
 
 ```graphql
 mutation UpdateStandard($id: ID!, $update: ComplianceStandardUpdateInput!) {
-    updateComplianceStandard(id: $id, update: $update) {
-      id
-      name
+  updateComplianceStandard(id: $id, update: $update) {
+    id
+    name
+    standard
+    accountId
+    createTimestamp
+    lastUpdatedTimestamp
+    filters {
+      key
+      values
+    }
+    specDetails {
+      version
+      type
+      webLink
+      auditTracking
+      hasDomains
+      hasSections
+    }
+    specification {
+      recurringReviewAssignment {
+        reviewFrequency
+        currentReviewIsComplete
+        ownerAssignments {
+          allChildrenAssigned
+          ownerHasCompletedCurrentReview
+          owner {
+            id
+            userCreateDate
+            type
+            mfaSettings
+            profile {
+              email
+              emailVerified
+              givenName
+              familyName
+            }
+          }
+        }
+      }
       standard
-      accountId
-      createTimestamp
-      lastUpdatedTimestamp
-      filters {
-        key
-        values
-      }
-      specDetails {
-        version
-          type
-          webLink
-          auditTracking
-          hasDomains
-          hasSections
-      }
-      specification {
+      type
+      version
+      webLink
+      sections {
         recurringReviewAssignment {
           reviewFrequency
           currentReviewIsComplete
@@ -264,94 +289,68 @@ mutation UpdateStandard($id: ID!, $update: ComplianceStandardUpdateInput!) {
             }
           }
         }
-        standard
-        type
-        version
-        webLink
-        sections {
-          recurringReviewAssignment {
-            reviewFrequency
-            currentReviewIsComplete
-            ownerAssignments {
-              allChildrenAssigned
-              ownerHasCompletedCurrentReview
-              owner {
-                id
-                userCreateDate
-                type
-                mfaSettings
-                profile {
-                  email
-                  emailVerified
-                  givenName
-                  familyName
-                }
-              }
-            }
-          }
+        title
+        description
+        requirements {
+          ref
           title
-          description
-          requirements {
-            ref
-            title
-            summary
-            appliesIf
-            applicable
-            control
-            response
-            status
-            hasEvidence
-            auditStatus
-            procedures {
-              id
-            }
+          summary
+          appliesIf
+          applicable
+          control
+          response
+          status
+          hasEvidence
+          auditStatus
+          procedures {
+            id
           }
         }
-        domains {
-          recurringReviewAssignment {
-            reviewFrequency
-            currentReviewIsComplete
-            ownerAssignments {
-              allChildrenAssigned
-              ownerHasCompletedCurrentReview
-              owner {
-                id
-                userCreateDate
-                type
-                mfaSettings
-                profile {
-                  email
-                  emailVerified
-                  givenName
-                  familyName
-                }
-              }
-            }
-          }
-          title
-          description
-          controls {
-            
-            requirement
-            ref
-            title
-            summary
-            appliesIf
-            applicable
-            response
-            status
-            hasEvidence
-            auditStatus
-            procedures {
-              id
-            }
-          }
-        }
-        auditTracking
-        unlocked
       }
+      domains {
+        recurringReviewAssignment {
+          reviewFrequency
+          currentReviewIsComplete
+          ownerAssignments {
+            allChildrenAssigned
+            ownerHasCompletedCurrentReview
+            owner {
+              id
+              userCreateDate
+              type
+              mfaSettings
+              profile {
+                email
+                emailVerified
+                givenName
+                familyName
+              }
+            }
+          }
+        }
+        title
+        description
+        controls {
+          requirement
+          ref
+          title
+          summary
+          appliesIf
+          applicable
+          response
+          status
+          hasEvidence
+          auditStatus
+          procedures {
+            id
+          }
+        }
+      }
+      auditTracking
+      unlocked
     }
   }
+}
 ```
 
 ## Update Review Configurations
@@ -387,15 +386,9 @@ links (the domain of your JupiterOne account).
 ### Update Review Configurations - Framework
 
 ```graphql
-mutation ConfigureRecurringComplianceReviewsForStandard(
-    $complianceStandardId: ID!
-    $input: ConfigureRecurringComplianceReviewInput!
-  ) {
-    configureRecurringComplianceReviewsForStandard(
-      complianceStandardId: $complianceStandardId
-      input: $input
-    )
-  }
+mutation ConfigureRecurringComplianceReviewsForStandard($complianceStandardId: ID!, $input: ConfigureRecurringComplianceReviewInput!) {
+  configureRecurringComplianceReviewsForStandard(complianceStandardId: $complianceStandardId, input: $input)
+}
 ```
 
 ### Update Review Configurations - Section
@@ -405,17 +398,9 @@ mutation ConfigureRecurringComplianceReviewsForStandard(
 - `sectionTitle`: The title property of the section.
 
 ```graphql
-mutation ConfigureRecurringComplianceReviewsForSection(
-    $complianceStandardId: ID!
-    $sectionTitle: String!
-    $input: ConfigureRecurringComplianceReviewInput!
-  ) {
-    configureRecurringComplianceReviewsForSection(
-      complianceStandardId: $complianceStandardId
-      sectionTitle: $sectionTitle
-      input: $input
-    )
-  }
+mutation ConfigureRecurringComplianceReviewsForSection($complianceStandardId: ID!, $sectionTitle: String!, $input: ConfigureRecurringComplianceReviewInput!) {
+  configureRecurringComplianceReviewsForSection(complianceStandardId: $complianceStandardId, sectionTitle: $sectionTitle, input: $input)
+}
 ```
 
 ### Update Review Configurations - Domain
@@ -425,17 +410,9 @@ mutation ConfigureRecurringComplianceReviewsForSection(
 - `domainTitle`: The title property of the domain.
 
 ```graphql
-mutation ConfigureRecurringComplianceReviewsForDomain(
-    $complianceStandardId: ID!
-    $domainTitle: String!
-    $input: ConfigureRecurringComplianceReviewInput!
-  ) {
-    configureRecurringComplianceReviewsForDomain(
-      complianceStandardId: $complianceStandardId
-      domainTitle: $domainTitle
-      input: $input
-    )
-  }
+mutation ConfigureRecurringComplianceReviewsForDomain($complianceStandardId: ID!, $domainTitle: String!, $input: ConfigureRecurringComplianceReviewInput!) {
+  configureRecurringComplianceReviewsForDomain(complianceStandardId: $complianceStandardId, domainTitle: $domainTitle, input: $input)
+}
 ```
 
 ### Update Review Configurations - Requirement/Control
@@ -448,17 +425,9 @@ mutation ConfigureRecurringComplianceReviewsForDomain(
 **Query**
 
 ```graphql
-mutation ConfigureRecurringComplianceReviewForRef(
-    $complianceStandardId: ID!
-    $ref: String!
-    $input: ConfigureRecurringComplianceReviewInput!
-  ) {
-    configureRecurringComplianceReviewForRef(
-      complianceStandardId: $complianceStandardId
-      ref: $ref
-      input: $input
-    )
-  }
+mutation ConfigureRecurringComplianceReviewForRef($complianceStandardId: ID!, $ref: String!, $input: ConfigureRecurringComplianceReviewInput!) {
+  configureRecurringComplianceReviewForRef(complianceStandardId: $complianceStandardId, ref: $ref, input: $input)
+}
 ```
 
 ## Add Queries to Compliance Framework
@@ -479,34 +448,26 @@ have been attached to a control/requirement as evidence.
   requirement/control.
 
 ```graphql
-query solo_ListQuestions(
-    $complianceStandard: String!
-    $complianceStandardRecordId: String!
-    $complianceStandardRequirement: String!
-  ) {
-    complianceRequirement(
-      complianceStandard: $complianceStandard
-      complianceStandardRecordId: $complianceStandardRecordId
-      complianceStandardRequirement: $complianceStandardRequirement
-    ) {
-      questions {
-        id
-        title
-        description
-        tags
-        queries {
-          name
-          query
-          version
-          resultsAre
-          lastResult {
-            recordCount
-            lastUpdatedTimestamp
-          }
+query solo_ListQuestions($complianceStandard: String!, $complianceStandardRecordId: String!, $complianceStandardRequirement: String!) {
+  complianceRequirement(complianceStandard: $complianceStandard, complianceStandardRecordId: $complianceStandardRecordId, complianceStandardRequirement: $complianceStandardRequirement) {
+    questions {
+      id
+      title
+      description
+      tags
+      queries {
+        name
+        query
+        version
+        resultsAre
+        lastResult {
+          recordCount
+          lastUpdatedTimestamp
         }
       }
     }
   }
+}
 ```
 
 ## Get Control/Requirement Evidence - Links
@@ -522,18 +483,18 @@ control/requirement as evidence.
 
 ```graphql
 query GetRequirementEvidenceLinks($requirementId: String!) {
-    listComplianceUserEvidencesForRequirement(requirementId: $requirementId) {
-      evidences {
-        id
-        type
-        name
-        createTimestamp
-        lastUpdatedTimestamp
-        description
-        linkUrl
-      }
+  listComplianceUserEvidencesForRequirement(requirementId: $requirementId) {
+    evidences {
+      id
+      type
+      name
+      createTimestamp
+      lastUpdatedTimestamp
+      description
+      linkUrl
     }
   }
+}
 ```
 
 ## Get Control/Requirement Evidence - Uploads
@@ -549,26 +510,23 @@ a control/requirement as evidence.
 
 ```graphql
 query GetRequirementEvidenceUploads($requirementId: String!) {
-    complianceUserEvidences(
-      requirementId: $requirementId
-      type: EXTERNAL_UPLOAD
-    ) {
-      evidences {
-        id
-        type
-        name
-        createTimestamp
-        lastUpdatedTimestamp
-        description
-        ... on ComplianceUserEvidenceWithExternalUpload {
-          uploadDetails {
-            id
-            filename
-          }
+  complianceUserEvidences(requirementId: $requirementId, type: EXTERNAL_UPLOAD) {
+    evidences {
+      id
+      type
+      name
+      createTimestamp
+      lastUpdatedTimestamp
+      description
+      ... on ComplianceUserEvidenceWithExternalUpload {
+        uploadDetails {
+          id
+          filename
         }
       }
     }
   }
+}
 ```
 
 ## Get Control/Requirement Evidence - Notes
@@ -584,17 +542,17 @@ control/requirement as evidence.
 
 ```graphql
 query GetRequirementEvidenceNotes($requirementId: String!) {
-    listComplianceNotesForRequirement(requirementId: $requirementId) {
-      notes {
-        id
-        userId
-        email
-        createTimestamp
-        lastUpdatedTimestamp
-        body
-      }
+  listComplianceNotesForRequirement(requirementId: $requirementId) {
+    notes {
+      id
+      userId
+      email
+      createTimestamp
+      lastUpdatedTimestamp
+      body
     }
   }
+}
 ```
 
 ## Create/Update/Delete Control/Requirement Evidence - Links
