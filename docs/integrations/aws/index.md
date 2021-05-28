@@ -33,6 +33,7 @@
   existing alerts.
 
 !!! note
+
     Information is ingested from all AWS regions that do not require additional
     contractual arrangements with AWS. Please submit a JupiterOne support request if
     you need to monitor additional regions.
@@ -345,13 +346,15 @@ The following relationships are created/mapped:
 | `Domain` **HAS** `aws_route53_zone` _See Note 2_           |
 | `aws_vpc` **CONNECTS** `aws_vpc` (VPC Peering Connections) |
 
-\*\*Note 1: This is mapped automatically only when the IAM user has an `Email`
-tag, or the `username` of the IAM User is an email that matches that of a Person
-entity in the graph.
+!!! note
 
-\*\*Note 2: `Domain` entities include domains registered on AWS Route53 (i.e.
-`aws_route53_domain`) and those registered outside of AWS and added into
-JupiterOne separately (e.g. a domain registered on GoDaddy).
+    1. This is mapped automatically only when the IAM user has an `Email`
+       tag, or the `username` of the IAM User is an email that matches that of a
+       `Person` entity in the graph.
+
+    2. `Domain` entities include domains registered on AWS Route53 (i.e.
+       `aws_route53_domain`) and those registered outside of AWS and added into
+       JupiterOne separately (e.g. a domain registered on GoDaddy).
 
 ### Advanced mappings
 
@@ -362,12 +365,22 @@ assume role trust policies to determine the following mapping:
 | ------------------------------------------------------------------------------------------- |
 | `aws_iam_role` **TRUSTS** `aws_iam_user` or `aws_<service>` (within the same account)       |
 | `aws_iam_role` **TRUSTS** `aws_iam_role` or `aws_iam_user` or `aws_account` (cross-account) |
-| `aws_iam_policy` **ALLOWS** `<Resource>` _See Note 3_                                       |
+| `aws_iam_policy` **ALLOWS** `<Resource>` _See notes below_                                  |
 
-\*\*Note 3: This creates permission relationships from an IAM policy (including
-both managed policies and inline polices -- i.e. `aws_iam_user_policy`,
-`aws_iam_group_policy` and `aws_iam_role_policy`) -- to other AWS entities based
-on the actions and resources specified by the policy document.
+!!! note
+
+    This creates permission relationships from an IAM policy -- including
+    both managed policies (i.e. `aws_iam_policy`) and inline polices (i.e.
+    `aws_iam_user_policy`, `aws_iam_group_policy` and `aws_iam_role_policy`) -- to
+    other AWS entities based on the actions and resources specified by the policy
+    document.
+
+    **TIP** Use `AccessPolicy` class in a query to easily include all types of IAM policies.
+
+    **TIP** The `actions` property on the permissions relationships/edges are normalized to 
+    this pattern: `"s3:GetObject"`
+    (lowercase service ID, uppercase first letter of the action -- `G`, with double quotes).
+    This is the standard documented by AWS in all their IAM policy examples.
 
 ### ProTips and Best Practices
 
