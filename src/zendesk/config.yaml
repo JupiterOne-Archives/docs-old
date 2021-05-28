@@ -314,6 +314,8 @@ sections:
         hash: z10riEPmWT9dWneKnGIp85O2YnQlYX9I30ERHVHcL7Q=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
+      - title: JupiterOne Compliance API
+        file: ../docs/jupiterone-compliance-api.md
       - title: JupiterOne Node.js Client and CLI
         file: ../guides/j1-client-and-cli.md
         hash: JNe7AYja41kdJ3HFoW0Y98l94XgEfgMyggyG+iwuSIk=
