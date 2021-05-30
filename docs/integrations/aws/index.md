@@ -378,9 +378,8 @@ assume role trust policies to determine the following mapping:
     **TIP** Use `AccessPolicy` class in a query to easily include all types of IAM policies.
 
     **TIP** The `actions` property on the permissions relationships/edges are normalized to 
-    this pattern: `"s3:GetObject"`
-    (lowercase service ID, uppercase first letter of the action -- `G`, with double quotes).
-    This is the standard documented by AWS in all their IAM policy examples.
+    all lowercase and stored in `normalizedActions` property. Use this property for case
+    insensitive querying of IAM permissions.
 
 ### ProTips and Best Practices
 

@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: MWTD5hlYrYn2p1wnjtXPu79eX2t0IJGTRf1V9ff8RNo=
+        hash: goDY2kuDNmq4+1XvA+tHBLM4c698/aCFyW+n0EreG10=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -448,7 +448,7 @@ sections:
       - title: AWS
         file: ../docs/integrations/aws/index.md
         id: 360022721054
-        hash: RPcDUBp+oylbviklessYCUtNNF+gCYD4SGb5H4z2vvE=
+        hash: BtE/3Ik+89lVy1YYYZBdpcK+LeO9MU41Wc0U2KOPoTs=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721054'
       - title: AWS CloudTrail Event Streaming
         file: ../docs/integrations/aws/cloudtrail-event-streaming.md
