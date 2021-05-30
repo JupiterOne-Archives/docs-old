@@ -311,9 +311,14 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: SdY8BPHkqFuBsTUDIxj8/fJ8GCJQ4IVPth7ONY8NM/M=
+        hash: goDY2kuDNmq4+1XvA+tHBLM4c698/aCFyW+n0EreG10=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
+      - title: JupiterOne Compliance API
+        file: ../docs/jupiterone-compliance-api.md
+        hash: srqjCqWuZCtLSZq/kML6HwFSZBEurpIbBGuZ1IbVK3k=
+        id: 1500012606601
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500012606601'
       - title: JupiterOne Node.js Client and CLI
         file: ../guides/j1-client-and-cli.md
         hash: JNe7AYja41kdJ3HFoW0Y98l94XgEfgMyggyG+iwuSIk=
