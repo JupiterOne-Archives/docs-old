@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: n3tYnAYGYHmQIB5/Tzmw48jF9KDysc3c1A247H0tsY0=
+        hash: NaKDbCcd/XEAY3VQkSseOn+6apqB+oBEko6+hLLCGNQ=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -567,7 +567,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
-        hash: m39X2ub7a/qMP4K83Nt5efSbocNfsphZqjMyv6EaXu0=
+        hash: rGwbU6R2njlYalBHYoIeGTJ9Y2+OXxRCKRTPhLAjm4M=
         id: 360052241514
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360052241514'
       - title: HackerOne
@@ -628,7 +628,7 @@ sections:
       - title: Okta
         file: ../docs/integrations/okta/index.md
         id: 360022902573
-        hash: gftKTJfNpDizoNnDoKY71HrJ3W5C8+K9e+qVPtjFrJ4=
+        hash: z7HI880ofPJgT29C3hVPgYj+wEN3t3us5Ts+dUpYr6w=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902573'
       - title: OneLogin
         file: ../docs/integrations/onelogin/jupiter-integration-onelogin.md
