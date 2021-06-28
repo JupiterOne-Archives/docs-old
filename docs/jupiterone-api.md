@@ -2141,14 +2141,15 @@ Authorization: Bearer {API_Key}
 
 ### Get IAM groups
 
-**Query:**
+**Query: iamGroups**
 
 ```graphql
 query Query($limit: Int!, $cursor: String) {
-  iamGroups(limit: $limit, cursor: $cursor) {
+  iamGroups(limit: $limit,cursor: $cursor) {
     items {
       id
       name
+      description
     }
     pageInfo {
       endCursor
@@ -2176,10 +2177,12 @@ query Query($limit: Int!, $cursor: String) {
         {
           "id": "12c2d370-89ef-4280-970b-d520ca1837be",
           "name": "Users",
+          "description": ""
         },
         {
           "id": "dd354c7a-1b9b-4579-ac5e-873fe3b2c851",
           "name": "Administrators",
+          "description": "Admin users"
         }
       ],
       "pageInfo": {
@@ -2193,19 +2196,20 @@ query Query($limit: Int!, $cursor: String) {
 
 ### Get users for IAM group
 
-**Query:**
-
+**Query: iamGroupUsers**
+> Note: The item.`id` property in the response is JupiterOne's unique user identifier. 
 ```graphql
-query Query($groupId: String!, $limit: Int!, $cursor: String) {
+query Query($groupId: String!, $limit: Int!, $cursor: String){
   iamGroupUsers(groupId: $groupId, limit: $limit, cursor: $cursor) {
-    items {
-      email
+      items {
+        id
+        email
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
     }
-    pageInfo {
-      endCursor
-      hasNextPage
-    }
-  }
 }
 ```
 
@@ -2226,9 +2230,11 @@ query Query($groupId: String!, $limit: Int!, $cursor: String) {
     "iamGroupUsers": {
       "items": [
         {
+          "id":"222xxx222_abc",
           "email": "abc@mycompany.com"
         },
         {
+          "id":"222xxx222_def@mycompany.com",
           "email": "def@mycompany.com"
         }
       ],
@@ -2243,13 +2249,15 @@ query Query($groupId: String!, $limit: Int!, $cursor: String) {
 
 ### Add IAM user to group
 
-**Mutation:**
+**Mutation: addIamUserToGroupByEmail**
 
 ```graphql
 mutation Mutation($groupId: String!, $userEmail: String!) {
-  addIamUserToGroupByEmail(groupId: $groupId, userEmail: $userEmail) {
-    userEmail
-    groupId
+  addIamUserToGroupByEmail(
+    groupId: $groupId, 
+    userEmail: $userEmail
+  ) {
+    success
   }
 }
 ```
@@ -2259,18 +2267,17 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 ```json
 {
   "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
-  "userEmail": "xyz@mycompany.com"
+  "userEmail": "abc@mycompany.com"
 }
 ```
 
 **Sample output:**
 
-```graphql
+```json
 {
   "data": {
     "addIamUserToGroupByEmail": {
-      "userEmail": "123@mycompany.com",
-      "groupId": "22c2d370-89ef-4280-970b-d520ca1837be"
+      "success": true
     }
   }
 }
@@ -2278,11 +2285,14 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 
 ### Remove IAM user from group
 
-**Mutation:**
+**Mutation: removeIamUserFromGroupByEmail**
 
 ```graphql
 mutation Mutation($groupId: String!, $userEmail: String!) {
-  removeIamUserFromGroupByEmail(groupId: $groupId, userEmail: $userEmail) {
+  removeIamUserFromGroupByEmail(
+    groupId: $groupId,
+    userEmail: $userEmail
+  ) {
     success
   }
 }
@@ -2310,7 +2320,7 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 ```
 ### Create IAM Group
 
-**Mutation:**
+**Mutation: createIamGroup**
 
 ```graphql
 mutation Mutation($groupName: String!, $groupType: String, $groupDescription: String) {
