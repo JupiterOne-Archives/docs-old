@@ -2213,8 +2213,8 @@ query Query($groupId: String!, $limit: Int!, $cursor: String) {
 
 ```json
 {
-	"groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
-	"limit": 5
+  "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
+  "limit": 5
 }
 ```
 
@@ -2258,8 +2258,8 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 
 ```json
 {
-	"groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
-	"userEmail": "xyz@mycompany.com"
+  "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
+  "userEmail": "xyz@mycompany.com"
 }
 ```
 
@@ -2292,8 +2292,8 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 
 ```json
 {
-	"groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
-	"userEmail": "xyz@mycompany.com"
+  "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
+  "userEmail": "xyz@mycompany.com"
 }
 ```
 
@@ -2326,8 +2326,8 @@ mutation Mutation($groupName: String!, $groupType: String, $groupDescription: St
 
 ```json
 {
-	"groupName": "Users X",
-	"groupDescription": "Users with access to X"
+  "groupName": "Users X",
+  "groupDescription": "Users with access to X"
 }
 ```
 
