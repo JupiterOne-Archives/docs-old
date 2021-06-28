@@ -2308,3 +2308,39 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
   }
 }
 ```
+### Create IAM Group
+
+**Mutation:**
+
+```graphql
+mutation Mutation($groupName: String!, $groupType: String, $groupDescription: String) {
+  createIamGroup(groupName: $groupName, groupType: $groupType, groupDescription: $groupDescription) {
+    id
+    name
+    description
+  }
+}
+```
+
+**Sample input:**
+
+```json
+{
+	"groupName": "Users X",
+	"groupDescription": "Users with access to X"
+}
+```
+
+**Sample output:**
+
+```json
+{
+  "data": {
+    "createIamGroup": {
+      "id": "11c2d370-89ef-4280-970b-d520ca1837be",
+      "name": "Users X",
+      "description": "Users with access to X"
+    }
+  }
+}
+```
