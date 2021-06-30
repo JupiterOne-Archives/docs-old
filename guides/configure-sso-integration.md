@@ -12,7 +12,7 @@ a JupiterOne account. This feature is available to all enterprise customers.
   tries to access a resource in JupiterOne or login directly to the JupiterOne
   account.
 
-- **JIT (Just In Time) Provisioning**
+- **JIT (Just In Time) Provisioning** a;lsdkjflajsdfk
 
   Users are created/updated on the fly using the SAML attributes sent as part of
   the SAML response coming from the Identity Provider (IdP). The user is created
