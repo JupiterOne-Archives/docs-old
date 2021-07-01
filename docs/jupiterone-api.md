@@ -2342,7 +2342,7 @@ mutation Mutation(
   }
 }
 ```
-The `[PolicyRecord]` input-type is an array of simple *key:data* objects:
+The `[PolicyRecord]` input type is an array of simple *key:data* objects:
 ```
 [ 
   {
