@@ -18,8 +18,8 @@
 
 ## Requirements
 
-- Salesforce supports the OAuth2 Web Server flow, with a connected app
-  configured to allow for this flow.
+- JupiterOne is a Salesforce Connected App that will require a user authorized
+  to grant access to your Salesforce org’s data.
 - You must have permission in JupiterOne to install new integrations.
 
 ## Support
@@ -83,7 +83,7 @@ The following entities are created:
 
 | Resources     | Entity `_type`              | Entity `_class` |
 | ------------- | --------------------------- | --------------- |
-| GROUP         | `salesforce_group`          | `Group`         |
+| Group         | `salesforce_group`          | `Group`         |
 | PermissionSet | `salesforce_permission_set` | `AccessPolicy`  |
 | Profile       | `salesforce_profile`        | `Account`       |
 | User          | `salesforce_user`           | `User`          |
@@ -99,9 +99,9 @@ The following relationships are created/mapped:
 | `salesforce_group`     | **HAS**               | `salesforce_user`           |
 | `salesforce_group`     | **HAS**               | `salesforce_user_role`      |
 | `salesforce_profile`   | **HAS**               | `salesforce_permission_set` |
-| `salesforce_user`      | **HAS**               | `salesforce_permission_set` |
+| `salesforce_user`      | **ASSIGNED**          | `salesforce_permission_set` |
 | `salesforce_user`      | **HAS**               | `salesforce_profile`        |
-| `salesforce_user`      | **HAS**               | `salesforce_user_role`      |
+| `salesforce_user`      | **ASSIGNED**          | `salesforce_user_role`      |
 | `salesforce_user_role` | **HAS**               | `salesforce_user_role`      |
 
 <!--
