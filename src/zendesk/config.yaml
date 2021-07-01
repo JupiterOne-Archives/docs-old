@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: AvA0ZJFkP+YaBh5qQn1Bo9mHRakN5ebdBYuYnRFjjp4=
+        hash: h7xydRpYPUrnpvbRp9zZZN7OyXXP1fi+Su2jjUTAzgk=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -462,7 +462,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005364921'
       - title: Azure
         file: ../docs/integrations/azure/index.md
-        hash: U6OT9DaB1rsqKrjwz8mE47PjLaVtZDii++W/7W/L/E0=
+        hash: X7N93kwuSVoO3TJSKK/wZ5CW7rBYZo3QiyYLSgpxhVc=
         id: 360024909213
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909213'
       - title: Azure DevOps
@@ -567,7 +567,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
-        hash: DtfhPjudr7WL8f1guMdl4g/j+0k+O8xhMs7dSclRf/w=
+        hash: rGwbU6R2njlYalBHYoIeGTJ9Y2+OXxRCKRTPhLAjm4M=
         id: 360052241514
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360052241514'
       - title: HackerOne
@@ -628,7 +628,7 @@ sections:
       - title: Okta
         file: ../docs/integrations/okta/index.md
         id: 360022902573
-        hash: fwEGKXxa+tnkV/4CHP9D41S3c5OjoXUmXMj9s7Stg2o=
+        hash: z7HI880ofPJgT29C3hVPgYj+wEN3t3us5Ts+dUpYr6w=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902573'
       - title: OneLogin
         file: ../docs/integrations/onelogin/jupiter-integration-onelogin.md
@@ -742,6 +742,16 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2021.74 Release
+        file: ../release-notes/2021-74.md
+        hash: SOWu05VETOfZ4OP79NlSrhuGVETuXv3KviwNbeFpf4M=
+        id: 4402976791187
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4402976791187'
+      - title: 2021.73 Release
+        file: ../release-notes/2021-73.md
+        hash: nzm+ORYzwsEQJjuYbSrQTUOcOLscqjq4EXGnJf0LQ4A=
+        id: 4402403417747
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4402403417747'
       - title: 2021.72 Release
         file: ../release-notes/2021-72.md
         hash: AQp7xLFjhTpCwxp9mpOne2ZuM5dqFCBcSY9rYHQDrgY=
