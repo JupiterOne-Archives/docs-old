@@ -2321,27 +2321,80 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 ### Create IAM Group
 
 **Mutation: createIamGroup**
+> Groups require a unique `name` property.
 
 ```graphql
-mutation Mutation($groupName: String!, $groupType: String, $groupDescription: String) {
-  createIamGroup(groupName: $groupName, groupType: $groupType, groupDescription: $groupDescription) {
+mutation Mutation(
+  $groupName: String!, 
+  $groupType: String, 
+  $groupDescription: String, 
+  $groupQueryPolicy: [PolicyRecord!]
+) {
+  createIamGroup(
+    groupName: $groupName,
+    groupType: $groupType,
+    groupDescription: $groupDescription,
+    groupQueryPolicy: $groupQueryPolicy
+  ) {
     id
     name
     description
   }
 }
 ```
+The `[PolicyRecord]` input type is an array of simple *key:value* objects:
+```
+[ 
+  {
+    key:  String,
+    value: Primitive | Array<Primitive>
+  }
+] 
+```
+The `Primitive` type is one of `String`, `Number`, or `Boolean`.
 
-**Sample input:**
+
+**Sample input 1:**
+
+```json
+{
+  "groupName": "Users",
+}
+```
+**Sample output 1:**
+
+```json
+{
+  "data": {
+    "createIamGroup": {
+      "id": "90909-11ef-4280-970b-4444ca1837be",
+      "name": "Users",
+    }
+  }
+}
+```
+
+**Sample input 2:**
 
 ```json
 {
   "groupName": "Users X",
-  "groupDescription": "Users with access to X"
+  "groupDescription": "Users with access to X",
+  "groupQueryPolicy": [
+    {
+      "key": "_type",
+      "value": [
+        "aws_ecr_image",
+        "aws_ecs_task_definition",
+        "bitbucket_pullrequest",
+        "test_stream_acme_user",
+      ],
+    }
+  ]
 }
 ```
 
-**Sample output:**
+**Sample output 2:**
 
 ```json
 {
@@ -2350,6 +2403,32 @@ mutation Mutation($groupName: String!, $groupType: String, $groupDescription: St
       "id": "11c2d370-89ef-4280-970b-d520ca1837be",
       "name": "Users X",
       "description": "Users with access to X"
+    }
+  }
+}
+```
+
+**Sample input 3:**
+
+```json
+{
+  "groupName": "Users Y",
+  "groupQueryPolicy": [
+    {
+      "key": "_class",
+      "value": "Account",
+    }
+  ]
+}
+```
+**Sample output 3:**
+
+```json
+{
+  "data": {
+    "createIamGroup": {
+      "id": "65435-89ef-4280-970b-d520ca1837be",
+      "name": "Users Y",
     }
   }
 }
