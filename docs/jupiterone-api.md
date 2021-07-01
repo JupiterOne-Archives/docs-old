@@ -2382,7 +2382,7 @@ The `Primitive` type is one of `String`, `Number`, or `Boolean`.
   "groupDescription": "Users with access to X",
   "groupQueryPolicy": [
     {
-      "key": "_types",
+      "key": "_type",
       "data": [
         "aws_ecr_image",
         "aws_ecs_task_definition",
