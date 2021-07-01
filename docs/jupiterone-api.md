@@ -2342,12 +2342,12 @@ mutation Mutation(
   }
 }
 ```
-The `[PolicyRecord]` input type is an array of simple *key:data* objects:
+The `[PolicyRecord]` input type is an array of simple *key:value* objects:
 ```
 [ 
   {
     key:  String,
-    data: Primitive | Array<Primitive>
+    value: Primitive | Array<Primitive>
   }
 ] 
 ```
@@ -2383,7 +2383,7 @@ The `Primitive` type is one of `String`, `Number`, or `Boolean`.
   "groupQueryPolicy": [
     {
       "key": "_type",
-      "data": [
+      "value": [
         "aws_ecr_image",
         "aws_ecs_task_definition",
         "bitbucket_pullrequest",
@@ -2416,7 +2416,7 @@ The `Primitive` type is one of `String`, `Number`, or `Boolean`.
   "groupQueryPolicy": [
     {
       "key": "_class",
-      "data": "Account",
+      "value": "Account",
     }
   ]
 }
