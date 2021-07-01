@@ -2337,15 +2337,16 @@ mutation Mutation(
 }
 ```
 The `[PolicyRecord]` input-type is an array of simple *key:data* objects:
-```json
+```
 [ 
   {
-    key: String,
+    key:  String,
     data: Primitive | Array<Primitive>
   }
 ] 
 ```
 where `Primitive` type is one of: `String`, `Number`, or `Boolean`  
+
 
 **Sample input 1:**
 
@@ -2375,13 +2376,12 @@ where `Primitive` type is one of: `String`, `Number`, or `Boolean`
   "groupDescription": "Users with access to X",
   "groupQueryPolicy": [
     {
-      key: '_types',
-      data: [
-        'aws_ecr_image',
-        'aws_ecs_task_definition',
-        'bitbucket_pullrequest',
-        'test_stream_acme_user',
-        'jira_issue',
+      "key": "_types",
+      "data": [
+        "aws_ecr_image",
+        "aws_ecs_task_definition",
+        "bitbucket_pullrequest",
+        "test_stream_acme_user",
       ],
     }
   ]
@@ -2409,8 +2409,8 @@ where `Primitive` type is one of: `String`, `Number`, or `Boolean`
   "groupName": "Users Y",
   "groupQueryPolicy": [
     {
-      key: '_class',
-      data: 'Account',
+      "key": "_class",
+      "data": "Account",
     }
   ]
 }
