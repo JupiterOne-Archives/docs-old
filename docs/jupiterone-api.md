@@ -2351,7 +2351,7 @@ The `[PolicyRecord]` input-type is an array of simple *key:data* objects:
   }
 ] 
 ```
-where `Primitive` type is one of: `String`, `Number`, or `Boolean`  
+The `Primitive` type is one of `String`, `Number`, or `Boolean`.
 
 
 **Sample input 1:**
