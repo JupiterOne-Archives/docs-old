@@ -2328,8 +2328,14 @@ mutation Mutation(
   $groupName: String!, 
   $groupType: String, 
   $groupDescription: String, 
-  $groupQueryPolicy: [PolicyRecord!]) {
-  createIamGroup(groupName: $groupName, groupType: $groupType, groupDescription: $groupDescription, groupQueryPolicy: PolicyRecord) {
+  $groupQueryPolicy: [PolicyRecord!]
+) {
+  createIamGroup(
+    groupName: $groupName,
+    groupType: $groupType,
+    groupDescription: $groupDescription,
+    groupQueryPolicy: $groupQueryPolicy
+  ) {
     id
     name
     description
@@ -2427,4 +2433,3 @@ where `Primitive` type is one of: `String`, `Number`, or `Boolean`
   }
 }
 ```
-
