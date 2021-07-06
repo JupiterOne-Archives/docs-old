@@ -77,9 +77,6 @@ perform the following actions.
 
 6. Click **Authorize**.
 
-7. Return to the **Admin console** home page. Click **Security** > **API
-   Permissions** and **Enable API access**.
-
 Continuing in the **Admin console**, create a user the JupiterOne Service
 Account will impersonate:
 
