@@ -95,14 +95,14 @@ The following relationships are created/mapped:
 
 | Source Entity `_type`  | Relationship `_class` | Target Entity `_type`       |
 | ---------------------- | --------------------- | --------------------------- |
+| `salesforce_group`     | **ASSIGNED**          | `salesforce_user_role`      |
 | `salesforce_group`     | **HAS**               | `salesforce_group`          |
 | `salesforce_group`     | **HAS**               | `salesforce_user`           |
-| `salesforce_group`     | **HAS**               | `salesforce_user_role`      |
 | `salesforce_profile`   | **HAS**               | `salesforce_permission_set` |
 | `salesforce_user`      | **ASSIGNED**          | `salesforce_permission_set` |
-| `salesforce_user`      | **HAS**               | `salesforce_profile`        |
 | `salesforce_user`      | **ASSIGNED**          | `salesforce_user_role`      |
-| `salesforce_user_role` | **HAS**               | `salesforce_user_role`      |
+| `salesforce_user`      | **HAS**               | `salesforce_profile`        |
+| `salesforce_user_role` | **CONTAINS**          | `salesforce_user_role`      |
 
 <!--
 ********************************************************************************
