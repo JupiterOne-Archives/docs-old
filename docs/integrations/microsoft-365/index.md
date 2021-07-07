@@ -33,7 +33,7 @@ If you need help with this integration, please contact
 
 ### In JupiterOne
 
-1. From the configuration **Gear Icon**, select **Integrations**.
+1. From the configuration **Gear Icon**, select **Integrations**. 
 
    <img src="./images/LandingPage.png" alt="drawing" width="200"/>
 
