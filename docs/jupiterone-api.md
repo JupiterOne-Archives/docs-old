@@ -2250,9 +2250,6 @@ query Query($groupId: String!, $limit: Int!, $cursor: String){
 }
 ```
 
-### **IAM User-Group Management**
-Users can either be added (`addIamUserToGroupByEmail`) or removed (`removeIamUserFromGroupByEmail`) to/from a `group` using the APIs defined in this section. 
-
 <br>
 
 ### Add IAM User to Group
@@ -2326,26 +2323,6 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
   }
 }
 ```
-
-### **IAM Group Management**
-Groups can either be created (`createIamGroup`) or updated (`updateIamGroup`) using the APIs defined in this section. 
-- IAM `Group` can be uniquely identified by its global `id` or user-defined `name` property. 
-- IAM `Group` can be assigned query policies on create and update operations.
-
-**API Type Definitions**
-```typescript
-type Group = {
-  id: string,
-  name: string,
-  description: string
-}
-
-type QueryPolicy = Policy[];
-type Policy = { 
-  [key: string]: string | number | boolean || (string | number | boolean)[]; 
-}
-```
-
 ### Create IAM Group
 **Mutation: `createIamGroup`**
 
@@ -2369,6 +2346,13 @@ mutation Mutation(
     name
     description
   }
+}
+```
+**API Type Definitions**
+```typescript
+type QueryPolicy = Policy[];
+type Policy = { 
+  [key: string]: string | number | boolean || (string | number | boolean)[]; 
 }
 ```
 **API Samples**
@@ -2481,6 +2465,13 @@ mutation Mutation(
   ) {
     success
   }
+}
+```
+**API Type Definitions**
+```typescript
+type QueryPolicy = Policy[];
+type Policy = { 
+  [key: string]: string | number | boolean || (string | number | boolean)[]; 
 }
 ```
 **API Samples**
