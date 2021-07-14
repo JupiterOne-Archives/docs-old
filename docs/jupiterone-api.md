@@ -2350,8 +2350,8 @@ mutation Mutation(
 ```
 **API Type Definitions**
 ```typescript
-type QueryPolicy = Policy[];
-type Policy = { 
+type QueryPolicy = PolicyEntry[];
+type PolicyEntry = { 
   [key: string]: string | number | boolean || (string | number | boolean)[]; 
 }
 ```
@@ -2463,14 +2463,16 @@ mutation Mutation(
     description: $description
     queryPolicy: $queryPolicy
   ) {
-    success
+    id
+    name
+    description
   }
 }
 ```
 **API Type Definitions**
 ```typescript
-type QueryPolicy = Policy[];
-type Policy = { 
+type QueryPolicy = PolicyEntry[];
+type PolicyEntry = { 
   [key: string]: string | number | boolean || (string | number | boolean)[]; 
 }
 ```
@@ -2487,7 +2489,9 @@ type Policy = {
 {
   "data": {
     "updateIamGroup": {
-      "success": true
+      "id": "90909-11ef-4280-970b-4444ca1837be",
+      "name": "Users",
+      "description": "original description.."
     }
   }
 }
@@ -2504,7 +2508,9 @@ type Policy = {
 {
   "data": {
     "updateIamGroup": {
-      "success": true
+      "id": "90909-11ef-4280-970b-4444ca",
+      "name": "UsersX",
+      "description": "A group for X users"
     }
   }
 }
@@ -2524,7 +2530,9 @@ type Policy = {
 {
   "data": {
     "updateIamGroup": {
-      "success": true
+      "id": "90909-11ef-4280-970b-4444ca",
+      "name": "UsersX",
+      "description": "A group for X users"
     }
   }
 }
@@ -2541,7 +2549,7 @@ type Policy = {
       "_class": "Account"
     },
     {
-      "_custom_": true
+      "_integrationType": ["whitehat"]
     }
   ] 
 }
@@ -2549,7 +2557,9 @@ type Policy = {
 {
   "data": {
     "updateIamGroup": {
-      "success": true
+      "id": "90909-11ef-4280-970b-4444ca",
+      "name": "UsersX",
+      "description": "allow account class",
     }
   }
 }
