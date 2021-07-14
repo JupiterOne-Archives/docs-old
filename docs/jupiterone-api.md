@@ -2455,7 +2455,7 @@ mutation Mutation(
   $id: String!
   $name: String
   $description: String
-  $queryPolicy: [JSON!]
+  $queryPolicy: QueryPolicy
 ) {
   updateIamGroup(
     id: $id
