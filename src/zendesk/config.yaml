@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: h7xydRpYPUrnpvbRp9zZZN7OyXXP1fi+Su2jjUTAzgk=
+        hash: KezysJoYA6RF5fNnVkwRnpslh9FOaRNVplNfZ/ENhRA=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -497,7 +497,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500002908841'
       - title: Cisco AMP for Endpoints
         file: ../docs/integrations/cisco-amp/index.md
-        hash: +hlokWMYovTC0BczX1HoKxRfJ0sqnDdpB1evTztKUW8=
+        hash: WFW1WD8w8dEVq1FG4PvP0NeyKxOslc4ekJoNLwnt/Do=
         id: 360047840954
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047840954'
       - title: Cisco Meraki
@@ -563,11 +563,11 @@ sections:
       - title: Google
         file: ../docs/integrations/google/index.md
         id: 360022902533
-        hash: BKTt96LqBJkQzlRBHS1WUg9VwDWN1YXK4VgLtCUaWQ0=
+        hash: 7qcTyQgUQUTtQC8vOZ3R7ereP4zYMPE3Hp43MOjqKA4=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
-        hash: rGwbU6R2njlYalBHYoIeGTJ9Y2+OXxRCKRTPhLAjm4M=
+        hash: gyAnJyapYLDk80NxvhOK54Gup0LVL0MuBLyHAJl3sz0=
         id: 360052241514
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360052241514'
       - title: HackerOne
@@ -577,7 +577,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902553'
       - title: Heroku
         file: ../docs/integrations/heroku/index.md
-        hash: G1UvrQjZToZPBLqJFL6DJUEeBwgOlNAUgVtn0Zj5Cmo=
+        hash: km1I9MfytxvqFt97sM4RUkSE3kbMEhikH9eaz+aZEeg=
         id: 360046951874
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046951874'
       - title: Jamf
@@ -617,7 +617,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005029222'
       - title: NPM
         file: ../docs/integrations/npm/index.md
-        hash: 7jIltReTMb+0KDQPaayqo2If0sihIdBlZwExzzZYT+Y=
+        hash: AvqTt6xUoklyCGnt62HguvBNzIK2AKcCUbY1rINEhQg=
         id: 360047514553
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047514553'
       - title: NowSecure
@@ -672,7 +672,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049012193'
       - title: Snowflake
         file: ../docs/integrations/snowflake/index.md
-        hash: LM6snHVkIvRo1kA9+eN6Ca5Ysutw9cX1XjbwR8XESVM=
+        hash: Al/lnovmYl8egJONmNrsQQvQnsO0sx1zPxL0CjXVO3k=
         id: 360047070294
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047070294'
       - title: Snyk
@@ -693,7 +693,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360023924853'
       - title: Trend Micro
         file: ../docs/integrations/trend-micro/index.md
-        hash: FL1JQzcZAVaFz0ukOD663LHHCGOxx6CqraT0UwWc8LA=
+        hash: KcNcon2ejscmYxJyw4go4EHB5xmW3uNl5BZPSd9Bmjc=
         id: 360046874134
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046874134'
       - title: Veracode
@@ -742,6 +742,11 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2021.75 Release
+        file: ../release-notes/2021-75.md
+        hash: 9hvzOsryGKUICoWYgCQZxUUVZmtxi4JHK7zR3ALGe/I=
+        id: 4403667970067
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4403667970067'
       - title: 2021.74 Release
         file: ../release-notes/2021-74.md
         hash: SOWu05VETOfZ4OP79NlSrhuGVETuXv3KviwNbeFpf4M=

@@ -5,20 +5,20 @@
 - Visualize Cisco AMP endpoint agents and the devices they protect in the
   JupiterOne graph.
 - Map Cisco AMP endpoint agents to devices and devices to the employee who is
-  the owner.  
+  the owner.
 - Monitor changes to Cisco AMP endpoints using JupiterOne alerts.
 
 ## How it Works
 
-- JupiterOne periodically fetches Cisco AMP endpoints and the devices they 
-protect to update the graph.
+- JupiterOne periodically fetches Cisco AMP endpoints and the devices they
+  protect to update the graph.
 - Write JupiterOne queries to review and monitor updates to the graph.
 - Configure alerts to take action when the JupiterOne graph changes.
 
 ## Requirements
 
-- JupiterOne requires the endpoint hostname of the Cisco AMP account. 
-The API Client ID and Key are also required.
+- JupiterOne requires the endpoint hostname of the Cisco AMP account. The API
+  Client ID and Key are also required.
 - You must have permission in JupiterOne to install new integrations.
 
 ## Support
@@ -28,10 +28,10 @@ If you need help with this integration, please contact
 
 ## Integration Walkthrough
 
-The integration connects directly to [Cisco AMP for Endpoints REST API][1] 
-to obtain endpoint protection and configuration information.
+The integration connects directly to [Cisco AMP for Endpoints REST API][1] to
+obtain endpoint protection and configuration information.
 
-## In Cisco AMP 
+## In Cisco AMP
 
 To generate a Client ID and API Key:
 
@@ -50,16 +50,19 @@ Valid API Endpoints include:
 1. From the configuration **Gear Icon**, select **Integrations**.
 2. Scroll to the **Cisco AMP** integration tile and click it.
 3. Click the **Add Configuration** button and configure the following settings:
+
 - Enter the **Account Name** by which you'd like to identify this Cisco AMP
-   account in JupiterOne. Ingested entities will have this value stored in
-   `tag.AccountName` when **Tag with Account Name** is checked.
+  account in JupiterOne. Ingested entities will have this value stored in
+  `tag.AccountName` when **Tag with Account Name** is checked.
 - Enter a **Description** that will further assist your team when identifying
-   the integration instance.
+  the integration instance.
 - Select a **Polling Interval** that you feel is sufficient for your monitoring
-   needs. You may leave this as `DISABLED` and manually execute the integration.
+  needs. You may leave this as `DISABLED` and manually execute the integration.
 - Enter the **API Endpoint Hostname** associated with your Cisco AMP account.
 - Enter the **API Client ID"** configured in your Cisco AMP account.
-- Enter the **API Key** associated with the Client ID, configured for read access.
+- Enter the **API Key** associated with the Client ID, configured for read
+  access.
+
 4. Click **Create Configuration** once all values are provided.
 
 ## How to Uninstall
@@ -70,29 +73,42 @@ Valid API Endpoints include:
 4. Click the **trash can** icon.
 5. Click the **Remove** button to delete the integration.
 
+[1]: https://api-docs.amp.cisco.com/
+
+<!-- {J1_DOCUMENTATION_MARKER_START} -->
+<!--
+********************************************************************************
+NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
+"j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
+DOCUMENTATION FOR USAGE INFORMATION:
+
+https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+********************************************************************************
+-->
+
 ## Data Model
 
 ### Entities
 
-The following entity resources are ingested when the integration runs.
+The following entities are created:
 
-| Cisco AMP Resources | \_type of the Entity | \_class of the Entity |
-| ------------------- | -------------------- | --------------------- |
-| Account             | `cisco_amp_account`  | `Account`             |
-| Computer            | `cisco_amp_endpoint` | `HostAgent`           |
+| Resources | Entity `_type`       | Entity `_class` |
+| --------- | -------------------- | --------------- |
+| Account   | `cisco_amp_account`  | `Account`       |
+| Computer  | `cisco_amp_endpoint` | `HostAgent`     |
 
 ### Relationships
 
-The following relationships are created:
+The following relationships are created/mapped:
 
-| From                | Relationship | To                   |
-| ------------------- | ------------ | -------------------- |
-| `cisco_amp_account` | **HAS**      | `cisco_amp_endpoint` |
+| Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
+| --------------------- | --------------------- | --------------------- |
+| `cisco_amp_account`   | **HAS**               | `cisco_amp_endpoint`  |
+| `cisco_amp_endpoint`  | **PROTECTS**          | `user_endpoint`       |
 
-The following relationships are mapped:
-
-| From                 | Relationship | To              |
-| -------------------- | ------------ | --------------- |
-| `cisco_amp_endpoint` | **Protects** | `user_endpoint` |
-
-[1]: https://api-docs.amp.cisco.com/
+<!--
+********************************************************************************
+END OF GENERATED DOCUMENTATION AFTER BELOW MARKER
+********************************************************************************
+-->
+<!-- {J1_DOCUMENTATION_MARKER_END} -->
