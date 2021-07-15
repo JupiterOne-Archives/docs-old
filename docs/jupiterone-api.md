@@ -2138,10 +2138,14 @@ Accept: application/json
 JupiterOne-Account: {Account_ID}
 Authorization: Bearer {API_Key}
 ```
+<br/>
 
 ### Get IAM groups
-
 **Query: iamGroups**
+
+Retrieves all account `groups` within the query limit. 
+- `limit`: (required) max number of records to return
+- `cursor`: (optional) continuation token
 
 ```graphql
 query Query($limit: Int!, $cursor: String) {
@@ -2158,18 +2162,15 @@ query Query($limit: Int!, $cursor: String) {
   }
 }
 ```
+**API Samples**
 
-**Sample input:**
-
+(sample 1)
 ```json
+//request: 
 {
   "limit": 10
 }
-```
-
-**Sample output:**
-
-```json
+//response:
 {
   "data": {
     "iamGroups": {
@@ -2193,11 +2194,15 @@ query Query($limit: Int!, $cursor: String) {
   }
 }
 ```
-
-### Get users for IAM group
-
+### Get Users of IAM group
 **Query: iamGroupUsers**
-> Note: The item.`id` property in the response is JupiterOne's unique user identifier. 
+
+Retrieves all group members of the specified `group` (by `id`) within the query limit. 
+- `groupId`: (required) unique group identifier
+- `limit`: (required) max number of records to return
+- `cursor`: (optional) continuation token
+> Note: The item.`id` property in the response is the JupiterOne `uid`. 
+
 ```graphql
 query Query($groupId: String!, $limit: Int!, $cursor: String){
   iamGroupUsers(groupId: $groupId, limit: $limit, cursor: $cursor) {
@@ -2213,18 +2218,16 @@ query Query($groupId: String!, $limit: Int!, $cursor: String){
 }
 ```
 
-**Sample input:**
+**API Samples**
 
+(sample 1)
 ```json
+//request: 
 {
   "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
   "limit": 5
 }
-```
-
-**Sample output:**
-
-```json
+//response:
 {
   "data": {
     "iamGroupUsers": {
@@ -2247,9 +2250,14 @@ query Query($groupId: String!, $limit: Int!, $cursor: String){
 }
 ```
 
-### Add IAM user to group
+<br>
 
+### Add IAM User to Group
 **Mutation: addIamUserToGroupByEmail**
+
+Adds a `user` to a `group` using the specified email and group ID. 
+- `groupId`: (required)
+- `userEmail`: (required)
 
 ```graphql
 mutation Mutation($groupId: String!, $userEmail: String!) {
@@ -2261,19 +2269,16 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
   }
 }
 ```
+**API Samples**
 
-**Sample input:**
-
+(sample 1)
 ```json
+//request: 
 {
   "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
   "userEmail": "abc@mycompany.com"
 }
-```
-
-**Sample output:**
-
-```json
+//response:
 {
   "data": {
     "addIamUserToGroupByEmail": {
@@ -2284,8 +2289,11 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 ```
 
 ### Remove IAM user from group
-
 **Mutation: removeIamUserFromGroupByEmail**
+
+Removes a `user` from a `group` using the specified email and group ID. 
+- `groupId`: (required)
+- `userEmail`: (required)
 
 ```graphql
 mutation Mutation($groupId: String!, $userEmail: String!) {
@@ -2297,19 +2305,16 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
   }
 }
 ```
+**API Samples**
 
-**Sample input:**
-
+(sample 1)
 ```json
+//request: 
 {
   "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
   "userEmail": "xyz@mycompany.com"
 }
-```
-
-**Sample output:**
-
-```json
+//response:
 {
   "data": {
     "removeIamUserFromGroupByEmail": {
@@ -2319,22 +2324,23 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 }
 ```
 ### Create IAM Group
+**Mutation: `createIamGroup`**
 
-**Mutation: createIamGroup**
-> Groups require a unique `name` property.
+Creates a new `group` with a specified `name`, `description`, and `queryPolicy`. 
+- `name`: (required) must be unique to all other groups.
+- `description`: (optional)
+- `queryPolicy`: (optional)
 
 ```graphql
 mutation Mutation(
-  $groupName: String!, 
-  $groupType: String, 
-  $groupDescription: String, 
-  $groupQueryPolicy: [PolicyRecord!]
+  $name: String!
+  $description: String
+  $queryPolicy: QueryPolicy
 ) {
   createIamGroup(
-    groupName: $groupName,
-    groupType: $groupType,
-    groupDescription: $groupDescription,
-    groupQueryPolicy: $groupQueryPolicy
+    name: $name
+    description: $description
+    queryPolicy: $queryPolicy
   ) {
     id
     name
@@ -2342,28 +2348,22 @@ mutation Mutation(
   }
 }
 ```
-The `[PolicyRecord]` input type is an array of simple *key:value* objects:
-```
-[ 
-  {
-    key:  String,
-    value: Primitive | Array<Primitive>
-  }
-] 
-```
-The `Primitive` type is one of `String`, `Number`, or `Boolean`.
-
-
-**Sample input 1:**
-
-```json
-{
-  "groupName": "Users",
+**API Type Definitions**
+```typescript
+type QueryPolicy = PolicyEntry[];
+type PolicyEntry = { 
+  [key: string]: string | number | boolean || (string | number | boolean)[]; 
 }
 ```
-**Sample output 1:**
+**API Samples**
 
+(sample 1)
 ```json
+//request: 
+{
+  "name": "Users",
+}
+//response:
 {
   "data": {
     "createIamGroup": {
@@ -2373,63 +2373,195 @@ The `Primitive` type is one of `String`, `Number`, or `Boolean`.
   }
 }
 ```
-
-**Sample input 2:**
-
+(sample 2)
 ```json
+//request: 
 {
-  "groupName": "Users X",
-  "groupDescription": "Users with access to X",
-  "groupQueryPolicy": [
-    {
-      "key": "_type",
-      "value": [
-        "aws_ecr_image",
-        "aws_ecs_task_definition",
-        "bitbucket_pullrequest",
-        "test_stream_acme_user",
-      ],
-    }
-  ]
+  "name": "UsersX",
+  "description": "A group for X users"
 }
-```
-
-**Sample output 2:**
-
-```json
+//response 
 {
   "data": {
     "createIamGroup": {
       "id": "11c2d370-89ef-4280-970b-d520ca1837be",
-      "name": "Users X",
-      "description": "Users with access to X"
+      "name": "UsersX",
+      "description": "A group for X users"
     }
   }
 }
 ```
-
-**Sample input 3:**
-
+(sample 3)
 ```json
+//request: 
 {
-  "groupName": "Users Y",
-  "groupQueryPolicy": [
+  "name": "Support",
+  "description": "A group for support users",
+  "queryPolicy": [ 
     {
-      "key": "_class",
-      "value": "Account",
+      "_type": ["aws_ecr_image", "bitbucket_pullrequest"]
     }
-  ]
+  ] 
 }
-```
-**Sample output 3:**
-
-```json
+//response: 
 {
   "data": {
     "createIamGroup": {
-      "id": "65435-89ef-4280-970b-d520ca1837be",
-      "name": "Users Y",
+      "id": "23434-454-45656-65656-4564564565",
+      "name": "Support",
+      "description": "A group for support users"
     }
   }
 }
+```
+(sample 4)
+```json
+//request:
+{
+  "name": "Admins",
+  "queryPolicy": [ 
+    {
+      "_type": "aws_ecs_task_definition",
+      "_class": "Account"
+    },
+    {
+      "_type": "aws_ecr_image"
+    }
+  ] 
+}
+//response:
+{
+  "data": {
+    "createIamGroup": {
+      "id": "87787-6787-678678-778-6786786",
+      "name": "Admins",
+    }
+  }
+}
+
+```
+
+### Update IAM Group
+**Mutation: `updateIamGroup`**
+
+Updates an existing `group` (by `id`) with a specified `name`, `description`, or `queryPolicy`. 
+- `id`: (required) must tie to an existing group.
+- `name`: (optional) must be unique to all other groups.
+- `description`: (optional)
+- `queryPolicy`: (optional)
+
+```graphql
+mutation Mutation(
+  $id: String!
+  $name: String
+  $description: String
+  $queryPolicy: QueryPolicy
+) {
+  updateIamGroup(
+    id: $id
+    name: $name
+    description: $description
+    queryPolicy: $queryPolicy
+  ) {
+    id
+    name
+    description
+  }
+}
+```
+**API Type Definitions**
+```typescript
+type QueryPolicy = PolicyEntry[];
+type PolicyEntry = { 
+  [key: string]: string | number | boolean || (string | number | boolean)[]; 
+}
+```
+**API Samples**
+
+(sample 1)
+```json
+//request: 
+{
+  "id": "90909-11ef-4280-970b-4444ca1837be",
+  "name": "Users",
+}
+//response:
+{
+  "data": {
+    "updateIamGroup": {
+      "id": "90909-11ef-4280-970b-4444ca1837be",
+      "name": "Users",
+      "description": "original description.."
+    }
+  }
+}
+```
+(sample 2)
+```json
+//request: 
+{
+  "id": "90909-11ef-4280-970b-4444ca",
+  "name": "UsersX",
+  "description": "A group for X users"
+}
+//response 
+{
+  "data": {
+    "updateIamGroup": {
+      "id": "90909-11ef-4280-970b-4444ca",
+      "name": "UsersX",
+      "description": "A group for X users"
+    }
+  }
+}
+```
+(sample 3)
+```json
+//request: 
+{
+  "id": "90909-11ef-4280-970b-4444ca",
+  "queryPolicy": [ 
+    {
+      "_type": "aws_ecs_task_definition"
+    }
+  ] 
+}
+//response: 
+{
+  "data": {
+    "updateIamGroup": {
+      "id": "90909-11ef-4280-970b-4444ca",
+      "name": "UsersX",
+      "description": "A group for X users"
+    }
+  }
+}
+```
+(sample 4)
+```json
+//request:
+{
+  "id": "90909-11ef-4280-970b-4444ca",
+  "description": "allow account class",
+  "queryPolicy": [ 
+    {
+      "_type": "aws_ecs_task_definition",
+      "_class": "Account"
+    },
+    {
+      "_integrationType": ["whitehat"]
+    }
+  ] 
+}
+//response:
+{
+  "data": {
+    "updateIamGroup": {
+      "id": "90909-11ef-4280-970b-4444ca",
+      "name": "UsersX",
+      "description": "allow account class",
+    }
+  }
+}
+
 ```
