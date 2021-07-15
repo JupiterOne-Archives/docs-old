@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: h7xydRpYPUrnpvbRp9zZZN7OyXXP1fi+Su2jjUTAzgk=
+        hash: A5PqFiWt7XQcQsBZl0agNSo27MR4YM3AzuEZIveiboM=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -563,7 +563,7 @@ sections:
       - title: Google
         file: ../docs/integrations/google/index.md
         id: 360022902533
-        hash: BKTt96LqBJkQzlRBHS1WUg9VwDWN1YXK4VgLtCUaWQ0=
+        hash: 7qcTyQgUQUTtQC8vOZ3R7ereP4zYMPE3Hp43MOjqKA4=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
@@ -612,7 +612,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500011165082'
       - title: Microsoft 365
         file: ../docs/integrations/microsoft-365/index.md
-        hash: ZyiWbHeagFeeqhZFO8Nt4VjjGcOa/br9Vy6zgbEkRWM=
+        hash: w7YbLw2BI+aruRj1HeF7WVdeYAycuKZIVJ9ulKje9GY=
         id: 1500005029222
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005029222'
       - title: NPM
