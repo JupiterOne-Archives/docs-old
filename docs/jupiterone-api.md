@@ -2165,11 +2165,14 @@ query Query($limit: Int!, $cursor: String) {
 **API Samples**
 
 (sample 1)
+
+Request Variables
 ```json
-//request: 
 {
-  "limit": 10
+  "limit": 5
 }
+```
+```json
 //response:
 {
   "data": {
@@ -2221,12 +2224,15 @@ query Query($groupId: String!, $limit: Int!, $cursor: String){
 **API Samples**
 
 (sample 1)
+
+Request Variables
 ```json
-//request: 
 {
   "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
   "limit": 5
 }
+```
+```json
 //response:
 {
   "data": {
@@ -2272,12 +2278,15 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 **API Samples**
 
 (sample 1)
+
+Request Variables
 ```json
-//request: 
 {
   "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
   "userEmail": "abc@mycompany.com"
 }
+```
+```json
 //response:
 {
   "data": {
@@ -2308,12 +2317,15 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 **API Samples**
 
 (sample 1)
+
+Request Variables
 ```json
-//request: 
 {
   "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
   "userEmail": "xyz@mycompany.com"
 }
+```
+```json
 //response:
 {
   "data": {
@@ -2335,7 +2347,7 @@ Creates a new `group` with a specified `name`, `description`, and `queryPolicy`.
 mutation Mutation(
   $name: String!
   $description: String
-  $queryPolicy: QueryPolicy
+  $queryPolicy: [JSON!]
 ) {
   createIamGroup(
     name: $name
@@ -2349,20 +2361,25 @@ mutation Mutation(
 }
 ```
 **API Type Definitions**
+
+`$queryPolicy` defines a list of `JSON` objects with primitive values or an array or primitive values.   
+
 ```typescript
-type QueryPolicy = PolicyEntry[];
-type PolicyEntry = { 
+type JSON = { 
   [key: string]: string | number | boolean || (string | number | boolean)[]; 
 }
 ```
 **API Samples**
 
 (sample 1)
+
+Request Variables
 ```json
-//request: 
 {
   "name": "Users",
 }
+```
+```json
 //response:
 {
   "data": {
@@ -2374,12 +2391,15 @@ type PolicyEntry = {
 }
 ```
 (sample 2)
+
+Request Variables
 ```json
-//request: 
 {
   "name": "UsersX",
   "description": "A group for X users"
 }
+```
+```json
 //response 
 {
   "data": {
@@ -2392,8 +2412,9 @@ type PolicyEntry = {
 }
 ```
 (sample 3)
+
+Request Variables
 ```json
-//request: 
 {
   "name": "Support",
   "description": "A group for support users",
@@ -2403,6 +2424,8 @@ type PolicyEntry = {
     }
   ] 
 }
+```
+```json
 //response: 
 {
   "data": {
@@ -2415,8 +2438,9 @@ type PolicyEntry = {
 }
 ```
 (sample 4)
+
+Request Variables
 ```json
-//request:
 {
   "name": "Admins",
   "queryPolicy": [ 
@@ -2429,6 +2453,8 @@ type PolicyEntry = {
     }
   ] 
 }
+```
+```json
 //response:
 {
   "data": {
@@ -2455,7 +2481,7 @@ mutation Mutation(
   $id: String!
   $name: String
   $description: String
-  $queryPolicy: QueryPolicy
+  $queryPolicy: [JSON!]
 ) {
   updateIamGroup(
     id: $id
@@ -2470,21 +2496,26 @@ mutation Mutation(
 }
 ```
 **API Type Definitions**
+
+`$queryPolicy` defines a list of `JSON` objects with primitive values or an array or primitive values.   
+
 ```typescript
-type QueryPolicy = PolicyEntry[];
-type PolicyEntry = { 
+type JSON = { 
   [key: string]: string | number | boolean || (string | number | boolean)[]; 
 }
 ```
 **API Samples**
 
 (sample 1)
+
+Request Variables
 ```json
-//request: 
 {
   "id": "90909-11ef-4280-970b-4444ca1837be",
   "name": "Users",
 }
+```
+```json
 //response:
 {
   "data": {
@@ -2497,13 +2528,16 @@ type PolicyEntry = {
 }
 ```
 (sample 2)
+
+Request Variables
 ```json
-//request: 
 {
   "id": "90909-11ef-4280-970b-4444ca",
   "name": "UsersX",
   "description": "A group for X users"
 }
+```
+```json
 //response 
 {
   "data": {
@@ -2516,8 +2550,9 @@ type PolicyEntry = {
 }
 ```
 (sample 3)
+
+Request Variables
 ```json
-//request: 
 {
   "id": "90909-11ef-4280-970b-4444ca",
   "queryPolicy": [ 
@@ -2526,6 +2561,8 @@ type PolicyEntry = {
     }
   ] 
 }
+```
+```json
 //response: 
 {
   "data": {
@@ -2538,8 +2575,9 @@ type PolicyEntry = {
 }
 ```
 (sample 4)
+
+Request Variables
 ```json
-//request:
 {
   "id": "90909-11ef-4280-970b-4444ca",
   "description": "allow account class",
@@ -2553,6 +2591,8 @@ type PolicyEntry = {
     }
   ] 
 }
+```
+```json
 //response:
 {
   "data": {
@@ -2563,5 +2603,4 @@ type PolicyEntry = {
     }
   }
 }
-
 ```
