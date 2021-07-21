@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: h7xydRpYPUrnpvbRp9zZZN7OyXXP1fi+Su2jjUTAzgk=
+        hash: sc+Db2pbym3zvzGv8PhyO4gECDRqNgHhD9KeMIBLSWk=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -563,7 +563,7 @@ sections:
       - title: Google
         file: ../docs/integrations/google/index.md
         id: 360022902533
-        hash: BKTt96LqBJkQzlRBHS1WUg9VwDWN1YXK4VgLtCUaWQ0=
+        hash: 7qcTyQgUQUTtQC8vOZ3R7ereP4zYMPE3Hp43MOjqKA4=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
@@ -612,7 +612,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500011165082'
       - title: Microsoft 365
         file: ../docs/integrations/microsoft-365/index.md
-        hash: ZyiWbHeagFeeqhZFO8Nt4VjjGcOa/br9Vy6zgbEkRWM=
+        hash: aLrLmY/2g5Svm2VK25ywKiwofHfjMTikigfylQu5BpY=
         id: 1500005029222
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005029222'
       - title: NPM
@@ -742,6 +742,11 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2021.75 Release
+        file: ../release-notes/2021-75.md
+        hash: QOLgBa0c+/mX+DQOYZKBYWRPIqKf1qUOMHnDC5QE/T8=
+        id: 4404027713555
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4404027713555'
       - title: 2021.74 Release
         file: ../release-notes/2021-74.md
         hash: SOWu05VETOfZ4OP79NlSrhuGVETuXv3KviwNbeFpf4M=
