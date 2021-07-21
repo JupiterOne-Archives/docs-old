@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: zxfTJ5gVfmqDHraRAqyWMW1j0Nn+IZClX/l2v5/hqqE=
+        hash: 90jdVYi45GOyqdoABo9HFVqkuQ2Es/ef9U2+U0J1HOw=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
