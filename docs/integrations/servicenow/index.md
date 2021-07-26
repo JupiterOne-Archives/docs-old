@@ -16,17 +16,17 @@ Follow the steps below or the steps provided in the
 [ServiceNow Product Documentation](https://docs.servicenow.com/bundle/paris-platform-administration/page/administer/users-and-groups/task/t_CreateAUser.html).
 
 1. Navigate to **User Administration > Users**:
-   ![create-new-user](../docs/integrations/servicenow/images/create-new-user.png)
+   ![create-new-user](./images/create-new-user.png)
 
 1. Create a new user to be used to authenticate your JupiterOne integration, and
-   click Submit: ![create-j1-user](../docs/integrations/servicenow/images/create-j1-user.png)
+   click Submit: ![create-j1-user](./images/create-j1-user.png)
 
-1. Edit your new user: ![edit-user](../docs/integrations/servicenow/images/edit-user.png)
+1. Edit your new user: ![edit-user](./images/edit-user.png)
 
-1. Navigate to **Roles > Edit**: ![edit-user-role](../docs/integrations/servicenow/images/edit-user-role.png)
+1. Navigate to **Roles > Edit**: ![edit-user-role](./images/edit-user-role.png)
 
 1. Add the **admin** role to your new user:
-   ![add-admin-role](../docs/integrations/servicenow/images/add-admin-role.png)
+   ![add-admin-role](./images/add-admin-role.png)
 
 <!-- {J1_DOCUMENTATION_MARKER_START} -->
 <!--
