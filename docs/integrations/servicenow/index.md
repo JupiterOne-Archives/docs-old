@@ -16,17 +16,17 @@ Follow the steps below or the steps provided in the
 [ServiceNow Product Documentation](https://docs.servicenow.com/bundle/paris-platform-administration/page/administer/users-and-groups/task/t_CreateAUser.html).
 
 1. Navigate to **User Administration > Users**:
-   ![create-new-user](../assets/snow-create-new-user.png)
+   ![create-new-user](../../../assets/snow-create-new-user.png)
 
 1. Create a new user to be used to authenticate your JupiterOne integration, and
-   click Submit: ![create-j1-user](../assets/snow-create-j1-user.png)
+   click Submit: ![create-j1-user](../../../assets/snow-create-j1-user.png)
 
-1. Edit your new user: ![edit-user](../assets/snow-edit-user.png)
+1. Edit your new user: ![edit-user](../../../assets/snow-edit-user.png)
 
-1. Navigate to **Roles > Edit**: ![edit-user-role](../assets/snow-edit-user-role.png)
+1. Navigate to **Roles > Edit**: ![edit-user-role](../../../assets/snow-edit-user-role.png)
 
 1. Add the **admin** role to your new user:
-   ![add-admin-role](../assets/snow-add-admin-role.png)
+   ![add-admin-role](../../../assets/snow-add-admin-role.png)
 
 <!-- {J1_DOCUMENTATION_MARKER_START} -->
 <!--
