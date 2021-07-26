@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: 7EkHNNu4Lwxdsyuw6kErHC344N8bsIfVLX+2n4bBnV0=
+        hash: u2w66xhimjpP7ilLxGjmq4l7QiIyYVoYQBCe3557uE8=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -462,7 +462,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005364921'
       - title: Azure
         file: ../docs/integrations/azure/index.md
-        hash: X7N93kwuSVoO3TJSKK/wZ5CW7rBYZo3QiyYLSgpxhVc=
+        hash: sGLOUjzFUfwxqUObAxUfFo8c+H40wueXtSf50TKkMHU=
         id: 360024909213
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909213'
       - title: Azure DevOps
@@ -612,7 +612,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500011165082'
       - title: Microsoft 365
         file: ../docs/integrations/microsoft-365/index.md
-        hash: 8jAzHaHtbOTh5hegasWnsT78sjn5Dj0APlKkeEmoOqk=
+        hash: Up0axEsaCIb9yiD2T4uaJBXr4fmSCWLh3D9sbq/BQ70=
         id: 1500005029222
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005029222'
       - title: NPM
@@ -657,7 +657,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721214'
       - title: ServiceNow
         file: ../docs/integrations/servicenow/index.md
-        hash: GRYTQ45HZF2HMmmAhc1cbfzqYEtPQSJ9zJPfBT5rqsY=
+        hash: 414+WuTqb9VO9WNYaXZOQBBfOQ71ohhMR4GvKlI2Tb8=
         id: 1500011204241
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500011204241'
       - title: Slack
