@@ -35,15 +35,15 @@ If you need help with this integration, please contact
 
 1. From the configuration **Gear Icon**, select **Integrations**. 
 
-   ![Gear Icon](./images/LandingPage.png)
+   ![Gear Icon](../docs/integrations/microsoft-365/images/LandingPage.png)
 
 2. Scroll to the **Microsoft-365** integration tile and click it.
 
-   ![Microsoft-365](./images/DefinitionsPage.png)
+   ![Microsoft-365](../docs/integrations/microsoft-365/images/DefinitionsPage.png)
 
 3. Click the **Add Configuration** button.
 
-   ![Add Configuration](./images/InstancesPage.png)
+   ![Add Configuration](../docs/integrations/microsoft-365/images/InstancesPage.png)
 
 4. Enter the **Account Name** by which you'd like to identify this Microsoft 365
    account in JupiterOne. Ingested entities will have this value stored in
@@ -54,27 +54,27 @@ If you need help with this integration, please contact
    needs. You may leave this as `DISABLED` and manually execute the integration.
 7. Click **Create Configuration** once all values are provided.
 
-   ![Create Configuration](./images/CompleteConfiguration.png)
-   ![Create Configuration](./images/IntegrationCreatedDialog.png)
+   ![Create Configuration](../docs/integrations/microsoft-365/images/CompleteConfiguration.png)
+   ![Create Configuration](../docs/integrations/microsoft-365/images/IntegrationCreatedDialog.png)
 
 8. When prompted, click "Complete Offsite" in the dialog.
 
-   ![Complete Offsite](./images/OffsiteDialog.png)
+   ![Complete Offsite](../docs/integrations/microsoft-365/images/OffsiteDialog.png)
 
 9. You will be directed to Microsoft's identity platform, where you must login
    in as an administrator in the Microsoft organization you intend to integrate
    with.
 
-      ![directed to Microsoft's identity platform](./images/PickAnAccount.png)
+      ![directed to Microsoft's identity platform](../docs/integrations/microsoft-365/images/PickAnAccount.png)
 
    NOTE: You must select a business account which are indicated by badge icons.
    If you select a personal account, you will recieve the below error messaage.
 
-      ![select a business account](./images/PersonalAccountError.png)
+      ![select a business account](../docs/integrations/microsoft-365/images/PersonalAccountError.png)
 
 10. Review requested permissions (which are described below) and grant consent.
 
-      ![Review requested permissions](./images/PickAnAccount.png)
+      ![Review requested permissions](../docs/integrations/microsoft-365/images/PickAnAccount.png)
 
 ## Permissions
 
