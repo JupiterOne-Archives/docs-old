@@ -77,6 +77,7 @@ perform the following actions.
 
 6. Click **Authorize**.
 
+
 Continuing in the **Admin console**, create a user the JupiterOne Service
 Account will impersonate:
 

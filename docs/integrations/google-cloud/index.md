@@ -140,7 +140,7 @@ Google Cloud:
 
 - [`roles/iam.securityReviewer`](https://cloud.google.com/iam/docs/understanding-roles#iam.securityReviewer)
 - [`roles/iam.roleViewer`](https://cloud.google.com/iam/docs/understanding-roles#iam.roleViewer)
-- [`roles/bigquery.dataViewer`](https://cloud.google.com/iam/docs/understanding-roles#bigquery.dataViewer)
+- [`roles/bigquery.metadataViewer`](https://cloud.google.com/bigquery/docs/access-control#bigquery.metadataViewer)
 
 Some additional data may be optionally ingested by the JupiterOne Google Cloud
 integration by configuring a custom role with the following permissions:
@@ -324,7 +324,7 @@ The following entities are created:
 | DNS Managed Zone                                         | `google_dns_managed_zone`                                         | `DomainZone`                       |
 | Folder                                                   | `google_cloud_folder`                                             | `Group`                            |
 | IAM Binding                                              | `google_iam_binding`                                              | `AccessPolicy`                     |
-| IAM Managed Role                                         | `google_iam_role`                                                 | `AccessRole`                       |
+| IAM Role                                                 | `google_iam_role`                                                 | `AccessRole`                       |
 | IAM Service Account                                      | `google_iam_service_account`                                      | `User`                             |
 | IAM Service Account Key                                  | `google_iam_service_account_key`                                  | `AccessKey`                        |
 | IAM User                                                 | `google_user`                                                     | `User`                             |
@@ -413,6 +413,11 @@ The following relationships are created/mapped:
 | `google_container_node_pool`                                     | **HAS**               | `google_compute_instance_group`                                   |
 | `google_cloud_folder`                                            | **HAS**               | `google_cloud_project`                                            |
 | `google_group`                                                   | **ASSIGNED**          | `google_iam_role`                                                 |
+| `google_iam_binding`                                             | **ALLOWS**            | `ANY_RESOURCE`                                                    |
+| `google_iam_binding`                                             | **ASSIGNED**          | `google_group`                                                    |
+| `google_iam_binding`                                             | **ASSIGNED**          | `google_iam_service_account`                                      |
+| `google_iam_binding`                                             | **ASSIGNED**          | `google_user`                                                     |
+| `google_iam_binding`                                             | **USES**              | `google_iam_role`                                                 |
 | `google_iam_service_account`                                     | **ASSIGNED**          | `google_iam_role`                                                 |
 | `google_iam_service_account`                                     | **CREATED**           | `google_app_engine_version`                                       |
 | `google_iam_service_account`                                     | **HAS**               | `google_iam_service_account_key`                                  |
