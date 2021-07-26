@@ -95,18 +95,19 @@ The following entities are created:
 
 The following relationships are created/mapped:
 
-| Source Entity `_type`           | Relationship `_class` | Target Entity `_type`                |
-| ------------------------------- | --------------------- | ------------------------------------ |
-| `tenable_account`               | **HAS**               | `tenable_container`                  |
-| `tenable_account`               | **HAS**               | `tenable_user`                       |
-| `tenable_container`             | **HAS**               | `tenable_container_report`           |
-| `tenable_container_report`      | **IDENTIFIED**        | `tenable_container_finding`          |
-| `tenable_container_report`      | **IDENTIFIED**        | `tenable_container_malware`          |
-| `tenable_container_report`      | **IDENTIFIED**        | `tenable_container_unwanted_program` |
-| `tenable_scan`                  | **IDENTIFIED**        | `tenable_vulnerability_finding`      |
-| `tenable_scan`                  | **IDENTIFIED**        | `tenable_vulnerability`              |
-| `tenable_user`                  | **OWNS**              | `tenable_scan`                       |
-| `tenable_vulnerability_finding` | **IS**                | `vulnerability`                      |
+| Source Entity `_type`           | Relationship `_class` | Target Entity `_type`                                         |
+| ------------------------------- | --------------------- | ------------------------------------------------------------- |
+| `tenable_account`               | **HAS**               | `tenable_container`                                           |
+| `tenable_account`               | **HAS**               | `tenable_user`                                                |
+| `tenable_container`             | **HAS**               | `tenable_container_report`                                    |
+| `tenable_container_report`      | **IDENTIFIED**        | `tenable_container_finding`                                   |
+| `tenable_container_report`      | **IDENTIFIED**        | `tenable_container_malware`                                   |
+| `tenable_container_report`      | **IDENTIFIED**        | `tenable_container_unwanted_program`                          |
+| `tenable_scan`                  | **IDENTIFIED**        | `tenable_vulnerability_finding`                               |
+| `tenable_scan`                  | **IDENTIFIED**        | `tenable_vulnerability`                                       |
+| `tenable_scan`                  | **SCANS**             | `aws_instance,azure_vm,google_compute_instance,tenable_asset` |
+| `tenable_user`                  | **OWNS**              | `tenable_scan`                                                |
+| `tenable_vulnerability_finding` | **IS**                | `vulnerability`                                               |
 
 <!--
 ********************************************************************************

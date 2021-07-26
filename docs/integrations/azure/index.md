@@ -61,7 +61,7 @@ To create the App Registration:
 1. Copy the **Directory (tenant) ID**
 1. Navigate to the **Certificates & secrets** section
 1. Create a new client secret
-1. Copy the generated secret **Value** (you only get one chance!)
+1. Copy the generated secret (you only get one chance!)
 
 #### API Permissions (Azure Active Directory)
 

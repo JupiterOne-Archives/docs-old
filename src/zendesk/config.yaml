@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: 7EkHNNu4Lwxdsyuw6kErHC344N8bsIfVLX+2n4bBnV0=
+        hash: 6fVZ0P+24C0AwiMLxJqaMqru6bBOF7iLlAjwbEQ9LqQ=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -497,7 +497,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500002908841'
       - title: Cisco AMP for Endpoints
         file: ../docs/integrations/cisco-amp/index.md
-        hash: +hlokWMYovTC0BczX1HoKxRfJ0sqnDdpB1evTztKUW8=
+        hash: WFW1WD8w8dEVq1FG4PvP0NeyKxOslc4ekJoNLwnt/Do=
         id: 360047840954
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047840954'
       - title: Cisco Meraki
@@ -567,7 +567,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
-        hash: rGwbU6R2njlYalBHYoIeGTJ9Y2+OXxRCKRTPhLAjm4M=
+        hash: mc7JMw9Y4eCp/H2L0avlsUe8CJmJi+kI8JBsI9N3SLA=
         id: 360052241514
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360052241514'
       - title: HackerOne
@@ -577,7 +577,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902553'
       - title: Heroku
         file: ../docs/integrations/heroku/index.md
-        hash: G1UvrQjZToZPBLqJFL6DJUEeBwgOlNAUgVtn0Zj5Cmo=
+        hash: km1I9MfytxvqFt97sM4RUkSE3kbMEhikH9eaz+aZEeg=
         id: 360046951874
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046951874'
       - title: Jamf
@@ -612,12 +612,12 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500011165082'
       - title: Microsoft 365
         file: ../docs/integrations/microsoft-365/index.md
-        hash: 8jAzHaHtbOTh5hegasWnsT78sjn5Dj0APlKkeEmoOqk=
+        hash: Up0axEsaCIb9yiD2T4uaJBXr4fmSCWLh3D9sbq/BQ70=
         id: 1500005029222
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005029222'
       - title: NPM
         file: ../docs/integrations/npm/index.md
-        hash: 7jIltReTMb+0KDQPaayqo2If0sihIdBlZwExzzZYT+Y=
+        hash: AvqTt6xUoklyCGnt62HguvBNzIK2AKcCUbY1rINEhQg=
         id: 360047514553
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047514553'
       - title: NowSecure
@@ -628,7 +628,7 @@ sections:
       - title: Okta
         file: ../docs/integrations/okta/index.md
         id: 360022902573
-        hash: z7HI880ofPJgT29C3hVPgYj+wEN3t3us5Ts+dUpYr6w=
+        hash: zBorFTgUSqjZgvm+8UVUxbQD7nsa5GI+zU6M5Exj07M=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902573'
       - title: OneLogin
         file: ../docs/integrations/onelogin/jupiter-integration-onelogin.md
@@ -657,7 +657,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721214'
       - title: ServiceNow
         file: ../docs/integrations/servicenow/index.md
-        hash: GRYTQ45HZF2HMmmAhc1cbfzqYEtPQSJ9zJPfBT5rqsY=
+        hash: 414+WuTqb9VO9WNYaXZOQBBfOQ71ohhMR4GvKlI2Tb8=
         id: 1500011204241
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500011204241'
       - title: Slack
@@ -672,7 +672,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049012193'
       - title: Snowflake
         file: ../docs/integrations/snowflake/index.md
-        hash: LM6snHVkIvRo1kA9+eN6Ca5Ysutw9cX1XjbwR8XESVM=
+        hash: Al/lnovmYl8egJONmNrsQQvQnsO0sx1zPxL0CjXVO3k=
         id: 360047070294
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047070294'
       - title: Snyk
@@ -693,7 +693,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360023924853'
       - title: Trend Micro
         file: ../docs/integrations/trend-micro/index.md
-        hash: FL1JQzcZAVaFz0ukOD663LHHCGOxx6CqraT0UwWc8LA=
+        hash: KcNcon2ejscmYxJyw4go4EHB5xmW3uNl5BZPSd9Bmjc=
         id: 360046874134
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046874134'
       - title: Veracode
