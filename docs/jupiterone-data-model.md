@@ -212,7 +212,7 @@ For example, `CodeRepo -- DEPLOYED TO -> Host` may have `version` as a property
 on the `DEPLOYED` relationship. This represents the mapping between a code
 repo to multiple deployment targets, while one deployment may be of a different
 version of the code than another. Storing the version as a relationship
-property allows us to void duplicate instances of the code repo entity to be
+property allows us to avoid duplicate instances of the code repo entity to be
 created to represent different versions.
 
 Relationships have the same metadata properties as entities, which are managed
