@@ -178,7 +178,7 @@
 
 > **Target Filters**
 >
->   * `userId = [toLowerCase(source.id),toLowerCase(source.userId),toLowerCase(source.username)]`
+>   * `username = toLowerCase(source.username)`
 
 ## `User -IS-> Person`
 
@@ -217,10 +217,6 @@
 >   * `employeeId = [toLowerCase(source.managerId),toLowerCase(source.manager)]`
 
 ## `Person <-MANAGES- Person`
-
-> **Target Filters**
->
->   * `userId = [toLowerCase(source.managerId),toLowerCase(source.manager)]`
 
 ## `Person <-MANAGES- Person`
 
@@ -427,6 +423,16 @@
 >
 >   * `name = source.targets`
 
+## `Finding <-HAS- (Application)`
+
+> **Source Filters**
+>
+>   * `_integrationType = !qualys`
+
+> **Target Filters**
+>
+>   * `id = source.targets`
+
 ## `(Finding|Vulnerability) <-HAD- (CodeRepo|Project|Application)`
 
 > **Source Filters**
@@ -480,11 +486,17 @@
 >
 >   * `_key = source.assessment`
 
+## `ThreatIntel <-HAS- Finding`
+
+> **Target Filters**
+>
+>   * `qid = source.qid`
+
 ## `ThreatIntel <-HAS- Vulnerability`
 
 > **Target Filters**
 >
->   * `id = source.vulnId`
+>   * `qid = source.qid`
 
 ## `Assessment <-PERFORMED- Person`
 
@@ -511,10 +523,6 @@
 >   * `userId = [toLowerCase(source.username),toLowerCase(source.userId)]`
 
 ## `Device <-HAS- Person`
-
-> **Target Filters**
->
->   * `userId = toLowerCase(source.users)`
 
 ## `Device <-HAS- Person`
 
