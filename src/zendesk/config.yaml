@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: 6fVZ0P+24C0AwiMLxJqaMqru6bBOF7iLlAjwbEQ9LqQ=
+        hash: nyODmUS4inNA/GiIE5OsP3EO+O61zQ9WGsM3x0jBQ/I=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -631,9 +631,9 @@ sections:
         hash: zBorFTgUSqjZgvm+8UVUxbQD7nsa5GI+zU6M5Exj07M=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902573'
       - title: OneLogin
-        file: ../docs/integrations/onelogin/jupiter-integration-onelogin.md
+        file: ../docs/integrations/onelogin/index.md
         id: 360022721174
-        hash: ZxC70euJeeIyaw1ABf+Qo7gOQqi2PgT/RxZ0xJRwmb4=
+        hash: GHiXDbCLDGbsaZIp02Ub/k2M64oZlh5cQ/crkT1er7o=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721174'
       - title: PagerDuty
         file: ../docs/integrations/pagerduty/index.md
@@ -642,7 +642,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046951894'
       - title: Qualys
         file: ../docs/integrations/qualys/index.md
-        hash: SGBUoUHy7B1vkxpF1zsMo/AocCaT9xn0uy0HIeBySNI=
+        hash: JTKVi8wmVNH8TGFSZd6+FHWJPBKAsPGrMFC5h3836tU=
         id: 360046952094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046952094'
       - title: Rapid7
@@ -742,6 +742,11 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2021.76 Release
+        file: ../release-notes/2021-76.md
+        hash: y5x4219scPjwS0+FXXxpFCyXg2uhchc7WqJXwI5ZPI0=
+        id: 4404383303059
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4404383303059'
       - title: 2021.75 Release
         file: ../release-notes/2021-75.md
         hash: QOLgBa0c+/mX+DQOYZKBYWRPIqKf1qUOMHnDC5QE/T8=
@@ -1030,7 +1035,7 @@ sections:
       - title: 2019.18 Release
         file: ../release-notes/2019-18.md
         id: 360022721494
-        hash: sOvJz/W0Y5pPKFZ+VBeJdZgwNSeGcyyB+kaNCeDXUk0=
+        hash: L2KlwB7q3dF8kX/o8RvvBHqalJyZHzERZAYXLDsH/6E=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721494'
       - title: 2019.17 Release
         file: ../release-notes/2019-17.md
