@@ -142,6 +142,29 @@ information:
 
 4. Click **Create Configuration** once all values are provided.
 
+### Troubleshooting
+
+#### Authentication Errors
+
+If the Azure integration does not complete, and you encounter a message like
+`[validation_failure] Error occurred while validating integration configuration`
+in your job log, check the following common configuration errors:
+
+- **Verify the Application (client) ID and Application (client) Secret:** Make
+  sure that you've verified the proper value for client ID and client secret.
+  The client secret has both a **Value** property and a **Secret ID** property.
+  The **Secret ID** is unused - make sure you haven't accidentally used the
+  **Secret ID** as the **Client ID**.
+- **Verify that you've enabled the proper API permissions:** Make sure the
+  required API permissions (described above) are enabled for the application.
+- **Verify that the API permissions have been granted as "Application" and not
+  "Delegated":** The integration requires API Permissions of type
+  **Application**. Permissions of type **Delegated** will cause issues in your
+  integration.
+- **Verify that your permissions have been "Grant(ed) admin consent for
+  Directory":** If you have added API Permissions to the application, but have
+  not granted Admin Consent, the permissions are not yet active.
+
 <!-- {J1_DOCUMENTATION_MARKER_START} -->
 <!--
 ********************************************************************************
