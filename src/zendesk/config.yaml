@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: nyODmUS4inNA/GiIE5OsP3EO+O61zQ9WGsM3x0jBQ/I=
+        hash: rpqTTrsHvKxcSGAMJZsFexhOnB7wjdchebUmBCNj+uk=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -377,7 +377,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360034786734'
       - title: Entity Relationship Mapping - Global Rules
         file: ../docs/data-model/mappings-global.md
-        hash: ELigNS3I2f+JEjFXI3uHmGfjayZJpzRzuRYx4Dkbc5E=
+        hash: FeFqdApXalYF7IIhxzh2wXnNiFwdivMw73NTum6vUIE=
         id: 360041392074
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041392074'
       - title: Entity Relationship Mapping - Integration Rules
@@ -462,7 +462,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005364921'
       - title: Azure
         file: ../docs/integrations/azure/index.md
-        hash: X7N93kwuSVoO3TJSKK/wZ5CW7rBYZo3QiyYLSgpxhVc=
+        hash: 9PWqSNYYoKEoe1HikC6W5GW+I+UIvqmGk+a9r+B4SeY=
         id: 360024909213
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909213'
       - title: Azure DevOps
