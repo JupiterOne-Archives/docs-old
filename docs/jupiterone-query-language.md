@@ -20,7 +20,8 @@ boundaries obvious to query authors.
 - Aliasing of selectors via `AS` keyword
 - Pre-traversal filtering using property values via `WITH` clause
 - Post-traversal filtering using property values or union comparison via `WHERE` clause
-- Support aggregates including `COUNT`, `MIN`, `MAX`, `AVG` and `SUM`.
+- Support aggregates including `COUNT`, `MIN`, `MAX`, `AVG` and `SUM`
+- Row level scalar functions including `CONCAT`
 
 ## Basic Keywords
 
@@ -318,7 +319,7 @@ requested via the `RETURN` clause.
 The following aggregating functions are supported:
 
 - `count(selector)`
-- `count(selector.field)` _future development_
+- `count(selector.field)` 
 - `min(selector.field)`
 - `max(selector.field)`
 - `avg(selector.field)`
@@ -354,6 +355,31 @@ _Future development:_
 >
 > - `count(*)` - for determining the count of all other entities related to a
 >   given entity.
+
+## Scalar Functions: `CONCAT`
+
+The ability to format and/or to perform calculations on row level columns can be accomplished through **Scalar Functions**. 
+
+### `CONCAT`
+
+The scalar function `CONCAT()` empowers users to concatenate or join one or more values into a single string. Currently, `CONCAT` can be used in the `RETURN` to clause of your function, will future development planned for use in the `WHERE` clause.
+
+> Note: If this function receives a number or boolean value, the `concat` will intuitively convert these values to strings. Additionally, if `concat` processes an empty selector field, it will evaluate that field as an empty string.  
+
+`CONCAT` supports the following parameters, separated by comma:
+- Selector Fields: e.g. `selector.field`
+- String values: e.g. `'your string'` or `"your string"`
+- Number values: e.g. `123`
+- Boolean values: e.g. `true`
+
+A few examples:
+
+```j1ql
+FIND 
+  aws_s3_bucket as s3 
+RETURN 
+  CONCAT(s3.bucketSizeBytes / 1000, ' kb') as size
+```
 
 ## De-duplicate results with `UNIQUE` and `RETURN`
 
