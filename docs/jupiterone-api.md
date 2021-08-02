@@ -2164,16 +2164,16 @@ query Query($limit: Int!, $cursor: String) {
 ```
 **API Samples**
 
-(sample 1)
+Sample (S1): `iamGroups`
 
-Request Variables
+(S1): Request
 ```json
 {
   "limit": 5
 }
 ```
+(S1): Response
 ```json
-//response:
 {
   "data": {
     "iamGroups": {
@@ -2220,20 +2220,19 @@ query Query($groupId: String!, $limit: Int!, $cursor: String){
     }
 }
 ```
-
 **API Samples**
 
-(sample 1)
+Sample (S1): `iamGroupUsers`
 
-Request Variables
+(S1): Request
 ```json
 {
   "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
   "limit": 5
 }
 ```
+(S1): Response
 ```json
-//response:
 {
   "data": {
     "iamGroupUsers": {
@@ -2277,17 +2276,17 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 ```
 **API Samples**
 
-(sample 1)
+Sample (S1): `addIamUserToGroupByEmail`
 
-Request Variables
+(S1): Request
 ```json
 {
   "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
   "userEmail": "abc@mycompany.com"
 }
 ```
+(S1): Response
 ```json
-//response:
 {
   "data": {
     "addIamUserToGroupByEmail": {
@@ -2316,17 +2315,17 @@ mutation Mutation($groupId: String!, $userEmail: String!) {
 ```
 **API Samples**
 
-(sample 1)
+Sample (S1): `removeIamUserFromGroupByEmail`
 
-Request Variables
+(S1): Request
 ```json
 {
   "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
   "userEmail": "xyz@mycompany.com"
 }
 ```
+(S1): Response
 ```json
-//response:
 {
   "data": {
     "removeIamUserFromGroupByEmail": {
@@ -2338,20 +2337,23 @@ Request Variables
 ### Create IAM Group
 **Mutation: `createIamGroup`**
 
-Creates a new `group` with a specified `name`, `description`, and `queryPolicy`. 
+Creates a new `group` with a specified `name` and optionally: `description`, `queryPolicy`, and/or `abacPermissions`. 
 - `name`: (required) must be unique to all other groups.
 - `description`: (optional)
+- `abacPermissions`: (optional)
 - `queryPolicy`: (optional)
 
 ```graphql
 mutation Mutation(
   $name: String!
   $description: String
+  $abacPermissions: [String!]
   $queryPolicy: [JSON!]
 ) {
   createIamGroup(
     name: $name
     description: $description
+    abacPermissions: $abacPermissions
     queryPolicy: $queryPolicy
   ) {
     id
@@ -2362,25 +2364,76 @@ mutation Mutation(
 ```
 **API Type Definitions**
 
-`$queryPolicy` defines a list of `JSON` objects with primitive values or an array or primitive values.   
+**queryPolicy**
 
+Description: Group Query Policies define query access for members of a particular group. Setting this property via the IAM API will **overwrite** any existing queryPolicy for the given group. If updating this property, *always* define the full `queryPolicy` to enforce.     
+
+Type: list of `JSON` objects with primitive values or an array or primitive values.   
 ```typescript
+type queryPolicy = [JSON!];
 type JSON = { 
   [key: string]: string | number | boolean || (string | number | boolean)[]; 
 }
 ```
+
+**abacPermissions**
+
+Description: ABAC permissions define application access for members of a perticular group. Setting this property via the IAM API will **overwrite** any existing permissions for the given group. If updating this property, *always* define the full list of `permissions` that should be granted.   
+
+Type: list of valid `permission` strings (see table below).    
+```typescript
+type abacPermissions = [permission!]
+type permission = string // must be a valid permission string
+```
+**Permission Strings: READ-ONLY**
+
+| DISPLAY NAME (J1 APP)    | ACCESS |                 PERMISSION |
+| :----------------------- | :----: | -------------------------: |
+| *All Apps And Resources* |  READ  |           `fullReadAccess` |
+| *Shared: Questions*      |  READ  |            `readQuestions` |
+| *GraphData*              |  READ  |                `readGraph` |
+| *Landing*                |  READ  |            `accessLanding` |
+| *My Security*            |  READ  |         `accessMySecurity` |
+| *Assets*                 |  READ  |             `accessAssets` |
+| *Policies*               |  READ  |           `accessPolicies` |
+| *Compliance*             |  READ  |         `accessCompliance` |
+| *Alerts*                 |  READ  |              `accessRules` |
+| *GraphViewer*            |  READ  |             `accessGalaxy` |
+| *Insights*               |  READ  |           `accessInsights` |
+| *Integrations*           |  READ  |       `accessIntegrations` |
+| *Endpoint Compliance*    |  READ  | `accessEndpointCompliance` |
+
+**Permission Strings: ADMIN**
+
+| DISPLAY NAME (J1 APP)    | ACCESS |                PERMISSION |
+| :----------------------- | :----: | ------------------------: |
+| *All Apps And Resources* | ADMIN  |             `accessAdmin` |
+| *Shared: Questions*      | ADMIN  |          `writeQuestions` |
+| *GraphData*              | ADMIN  |              `writeGraph` |
+| *Landing*                | ADMIN  |            `adminLanding` |
+| *MySecurity*             | ADMIN  |         `adminMySecurity` |
+| *Assets*                 | ADMIN  |             `adminAssets` |
+| *Policies*               | ADMIN  |           `adminPolicies` |
+| *Compliance*             | ADMIN  |         `adminCompliance` |
+| *Alerts*                 | ADMIN  |              `adminRules` |
+| *GraphViewer*            | ADMIN  |             `adminGalaxy` |
+| *Insights*               | ADMIN  |           `adminInsights` |
+| *Integrations*           | ADMIN  |       `adminIntegrations` |
+| *Endpoint Compliance*    | ADMIN  | `adminEndpointCompliance` |
+| *ENABLE API KEY ACCESS*  |   *    |              `apiKeyUser` |
+
 **API Samples**
 
-(sample 1)
+Sample (S1): `createIamGroup`
 
-Request Variables
+(S1): Request
 ```json
 {
   "name": "Users",
 }
 ```
+(S1): Response
 ```json
-//response:
 {
   "data": {
     "createIamGroup": {
@@ -2390,17 +2443,17 @@ Request Variables
   }
 }
 ```
-(sample 2)
+Sample (S2): `createIamGroup`
 
-Request Variables
+(S2): Request
 ```json
 {
   "name": "UsersX",
   "description": "A group for X users"
 }
 ```
+(S2): Response
 ```json
-//response 
 {
   "data": {
     "createIamGroup": {
@@ -2411,9 +2464,9 @@ Request Variables
   }
 }
 ```
-(sample 3)
+Sample (S3): `createIamGroup`
 
-Request Variables
+(S3): Request
 ```json
 {
   "name": "Support",
@@ -2425,8 +2478,8 @@ Request Variables
   ] 
 }
 ```
-```json
-//response: 
+(S3): Response
+```json 
 {
   "data": {
     "createIamGroup": {
@@ -2437,9 +2490,9 @@ Request Variables
   }
 }
 ```
-(sample 4)
+Sample (S4): `createIamGroup`
 
-Request Variables
+(S4): Request
 ```json
 {
   "name": "Admins",
@@ -2454,8 +2507,8 @@ Request Variables
   ] 
 }
 ```
+(S4): Response
 ```json
-//response:
 {
   "data": {
     "createIamGroup": {
@@ -2470,23 +2523,26 @@ Request Variables
 ### Update IAM Group
 **Mutation: `updateIamGroup`**
 
-Updates an existing `group` (by `id`) with a specified `name`, `description`, or `queryPolicy`. 
+Updates a `group`'s properties: `name`, `description`, `queryPolicy`, and/or `abacPermissions`. 
 - `id`: (required) must tie to an existing group.
 - `name`: (optional) must be unique to all other groups.
 - `description`: (optional)
+- `abacPermissions`: (optional)
 - `queryPolicy`: (optional)
-
+  
 ```graphql
 mutation Mutation(
   $id: String!
   $name: String
   $description: String
+  $abacPermissions: [String!]
   $queryPolicy: [JSON!]
 ) {
   updateIamGroup(
     id: $id
     name: $name
     description: $description
+    abacPermissions: $abacPermissions
     queryPolicy: $queryPolicy
   ) {
     id
@@ -2497,26 +2553,77 @@ mutation Mutation(
 ```
 **API Type Definitions**
 
-`$queryPolicy` defines a list of `JSON` objects with primitive values or an array or primitive values.   
+**queryPolicy**
 
+Description: Group Query Policies define query access for members of a particular group. Setting this property via the IAM API will **overwrite** any existing queryPolicy for the given group. If updating this property, *always* define the full `queryPolicy` to enforce.     
+
+Type: list of `JSON` objects with primitive values or an array or primitive values.   
 ```typescript
+type queryPolicy = [JSON!];
 type JSON = { 
   [key: string]: string | number | boolean || (string | number | boolean)[]; 
 }
 ```
+
+**abacPermissions**
+
+Description: ABAC permissions define application access for members of a perticular group. Setting this property via the IAM API will **overwrite** any existing permissions for the given group. If updating this property, *always* define the full list of `permissions` that should be granted.   
+
+Type: list of valid `permission` strings (see table below).    
+```typescript
+type abacPermissions = [permission!];
+type permission = string; // must be a valid permission string
+```
+**Permission Strings: READ-ONLY**
+
+| DISPLAY NAME (J1 APP)    | ACCESS |                 PERMISSION |
+| :----------------------- | :----: | -------------------------: |
+| *All Apps And Resources* |  READ  |           `fullReadAccess` |
+| *Shared: Questions*      |  READ  |            `readQuestions` |
+| *GraphData*              |  READ  |                `readGraph` |
+| *Landing*                |  READ  |            `accessLanding` |
+| *My Security*            |  READ  |         `accessMySecurity` |
+| *Assets*                 |  READ  |             `accessAssets` |
+| *Policies*               |  READ  |           `accessPolicies` |
+| *Compliance*             |  READ  |         `accessCompliance` |
+| *Alerts*                 |  READ  |              `accessRules` |
+| *GraphViewer*            |  READ  |             `accessGalaxy` |
+| *Insights*               |  READ  |           `accessInsights` |
+| *Integrations*           |  READ  |       `accessIntegrations` |
+| *Endpoint Compliance*    |  READ  | `accessEndpointCompliance` |
+
+**Permission Strings: ADMIN**
+
+| DISPLAY NAME (J1 APP)    | ACCESS |                PERMISSION |
+| :----------------------- | :----: | ------------------------: |
+| *All Apps And Resources* | ADMIN  |             `accessAdmin` |
+| *Shared: Questions*      | ADMIN  |          `writeQuestions` |
+| *GraphData*              | ADMIN  |              `writeGraph` |
+| *Landing*                | ADMIN  |            `adminLanding` |
+| *MySecurity*             | ADMIN  |         `adminMySecurity` |
+| *Assets*                 | ADMIN  |             `adminAssets` |
+| *Policies*               | ADMIN  |           `adminPolicies` |
+| *Compliance*             | ADMIN  |         `adminCompliance` |
+| *Alerts*                 | ADMIN  |              `adminRules` |
+| *GraphViewer*            | ADMIN  |             `adminGalaxy` |
+| *Insights*               | ADMIN  |           `adminInsights` |
+| *Integrations*           | ADMIN  |       `adminIntegrations` |
+| *Endpoint Compliance*    | ADMIN  | `adminEndpointCompliance` |
+| *ENABLED API KEY ACCESS* |   *    |              `apiKeyUser` |
+
 **API Samples**
 
-(sample 1)
+Sample (S1): `updateIamGroup`
 
-Request Variables
+(S1): Request
 ```json
 {
   "id": "90909-11ef-4280-970b-4444ca1837be",
   "name": "Users",
 }
 ```
+(S1): Response
 ```json
-//response:
 {
   "data": {
     "updateIamGroup": {
@@ -2527,9 +2634,9 @@ Request Variables
   }
 }
 ```
-(sample 2)
+Sample (S2): `updateIamGroup`
 
-Request Variables
+(S2): Request
 ```json
 {
   "id": "90909-11ef-4280-970b-4444ca",
@@ -2537,8 +2644,8 @@ Request Variables
   "description": "A group for X users"
 }
 ```
+(S2): Response
 ```json
-//response 
 {
   "data": {
     "updateIamGroup": {
@@ -2549,12 +2656,17 @@ Request Variables
   }
 }
 ```
-(sample 3)
+Sample (S3): `updateIamGroup`
 
-Request Variables
+(S3): Request
 ```json
 {
   "id": "90909-11ef-4280-970b-4444ca",
+  "abacPermissions": [
+    "accessPolicies", 
+    "writeQuestions",
+    "accessGalaxy"
+  ],
   "queryPolicy": [ 
     {
       "_type": "aws_ecs_task_definition"
@@ -2562,8 +2674,8 @@ Request Variables
   ] 
 }
 ```
-```json
-//response: 
+(S3): Response
+```json 
 {
   "data": {
     "updateIamGroup": {
@@ -2574,9 +2686,9 @@ Request Variables
   }
 }
 ```
-(sample 4)
+Sample (S4): `updateIamGroup`
 
-Request Variables
+(S4): Request
 ```json
 {
   "id": "90909-11ef-4280-970b-4444ca",
@@ -2592,8 +2704,8 @@ Request Variables
   ] 
 }
 ```
+(S4): Response
 ```json
-//response:
 {
   "data": {
     "updateIamGroup": {
