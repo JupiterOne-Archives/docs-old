@@ -96,7 +96,7 @@ query J1QL(
 
 ```json
 {
-  "type": "list",
+  "type": "table",
   "data": [
     { "Person.name": "Mochi" }
   ],
