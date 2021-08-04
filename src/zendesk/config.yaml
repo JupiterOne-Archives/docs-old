@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: S0isBm1mLIEhKFZypNzb3urk1i+ZYs3kPaWuaxta4X8=
+        hash: l1m9jMMHGZJByLfZ99Mply7947LFc+paPCrzqohUwSQ=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -462,7 +462,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005364921'
       - title: Azure
         file: ../docs/integrations/azure/index.md
-        hash: 9PWqSNYYoKEoe1HikC6W5GW+I+UIvqmGk+a9r+B4SeY=
+        hash: YCU7Vj/xG8lyCUn0OW1YtDuycapWRZTYRq3ksKmR0TY=
         id: 360024909213
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024909213'
       - title: Azure DevOps
@@ -681,10 +681,9 @@ sections:
         id: 360024788554
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024788554'
       - title: Tenable Cloud
-        file: >-
-          ../docs/integrations/tenable-cloud/jupiter-integration-tenable-cloud.md
+        file: ../docs/integrations/tenable-cloud/index.md
         id: 360022902593
-        hash: JHpnz6oadax8q43mabfHeyXM6PdCdbg3kHx1fEKG+ck=
+        hash: kdG/s8olyNOuYHsvjCiH7SLZJthJTo/u4cGqo/LS8Pc=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902593'
       - title: Threat Stack
         file: ../docs/integrations/threatstack/index.md

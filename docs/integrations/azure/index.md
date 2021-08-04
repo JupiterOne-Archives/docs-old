@@ -77,9 +77,10 @@ Grant permission to read Microsoft Graph information:
 
    **Optional**
 
-   | Permission        | Endpoint(s)                                                                                                                                                                   |
-   | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | `Policy.Read.All` | [/policies/identitySecurityDefaultsEnforcementPolicy](https://docs.microsoft.com/en-us/graph/api/identitysecuritydefaultsenforcementpolicy-get?view=graph-rest-1.0&tabs=http) |
+   | Permission         | Endpoint(s)                                                                                                                                                                    |
+   | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+   | `Policy.Read.All`  | [/policies/identitySecurityDefaultsEnforcementPolicy](https://docs.microsoft.com/en-us/graph/api/identitysecuritydefaultsenforcementpolicy-get?view=graph-rest-1.0&tabs=http)  |
+   | `Reports.Read.All` | [/beta/reports/credentialUserRegistrationDetails](https://docs.microsoft.com/en-us/graph/api/reportroot-list-credentialuserregistrationdetails?view=graph-rest-beta&tabs=http) |
 
 1. Grant admin consent for this directory for the permissions above
 
