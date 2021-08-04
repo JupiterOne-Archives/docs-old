@@ -11,15 +11,16 @@
 
 ## How it Works
 
-- JupiterOne periodically fetches Slack teams, channels, and users to update the graph.
+- JupiterOne periodically fetches Slack teams, channels, and users to update the
+  graph.
 - Write JupiterOne queries to review and monitor updates to the graph.
 - Configure alerts to use the Slack workflow option to notify a channel or user.
 - Configure alerts to take action when the JupiterOne graph changes.
 
 ## Requirements
 
-- JupiterOne requires the JupiterOne Slack app be installed in your Slack 
-account with the requested OAuth scopes selected. 
+- JupiterOne requires the JupiterOne Slack app be installed in your Slack
+  account with the requested OAuth scopes selected.
 - You must have permission in JupiterOne to install new integrations.
 
 ## Support
@@ -38,7 +39,7 @@ ingesting relevant information and send notifications via the
 ### In Slack
 
 1. First navigate to the JupiterOne Slack integration configuration page (see
-detailed steps in the **In JupiterOne** section below)
+   detailed steps in the **In JupiterOne** section below)
 2. Fill out relavant integration instance form information and OAuth scopes that
    you'd like the Slack app to request. All read scopes are used to ingest data
    into the JupiterOne graph and the write scopes are used for enabling the
@@ -60,15 +61,17 @@ detailed steps in the **In JupiterOne** section below)
 1. From the configuration **Gear Icon**, select **Integrations**.
 2. Scroll to the **Slack** integration tile and click it.
 3. Click the **Add Configuration** button and configure the following settings:
-- Enter the **Account Name** by which you'd like to identify this Slack
-   account in JupiterOne. Ingested entities will have this value stored in
-   `tag.AccountName` when **Tag with Account Name** is checked.
+
+- Enter the **Account Name** by which you'd like to identify this Slack account
+  in JupiterOne. Ingested entities will have this value stored in
+  `tag.AccountName` when **Tag with Account Name** is checked.
 - Enter a **Description** that will further assist your team when identifying
-   the integration instance.
+  the integration instance.
 - Select a **Polling Interval** that you feel is sufficient for your monitoring
-   needs. You may leave this as `DISABLED` and manually execute the integration.
+  needs. You may leave this as `DISABLED` and manually execute the integration.
 - Select the **Slack OAuth Scopes** or permissions the JupiterOne Slack app
-should request. (See the section **In Slack** above).
+  should request. (See the section **In Slack** above).
+
 4. Click **Create Configuration** once all values are provided.
 
 ### JupiterOne Alert Rule Slack Notification
@@ -81,12 +84,13 @@ Additionally, see the
 for technical details on alert rule/action properties.
 
 JupiterOne can deliver Slack messages directly to any channel or to specific
-users in a Slack Channel once the JupiterOne Slack integration has been configured
-via the JupiterOne web app. This will prompt the JupiterOne Slack app to be installed
-in your Workspace.
+users in a Slack Channel once the JupiterOne Slack integration has been
+configured via the JupiterOne web app. This will prompt the JupiterOne Slack app
+to be installed in your Workspace.
 
-Be sure to include specify the channel in the format `#channel`.
-You can alert to private channels as well if you have invited the JupiterOne Slack app to the private channel as well.
+Be sure to include specify the channel in the format `#channel`. You can alert
+to private channels as well if you have invited the JupiterOne Slack app to the
+private channel as well.
 
 ## How to Uninstall
 
