@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: DR1pXmNRW6nPenZrokc6T5Xae81cHPfXhLjU45bsYfE=
+        hash: fC485ii5kxMcfKoIq4v5M4B8FFZdQvcUR5bFaKGLoXE=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -602,7 +602,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360037319533'
       - title: KnowBe4
         file: ../docs/integrations/knowbe4/index.md
-        hash: NlSYTmVmVTx+CTTKdSocIeH2tIAZHA+AIJ6gzd81poA=
+        hash: NOKv840VgGJYAI9inXbK6g5OspCCipgbgagc9jrcU94=
         id: 360023741834
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360023741834'
       - title: Malwarebyes
