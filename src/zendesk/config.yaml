@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: fC485ii5kxMcfKoIq4v5M4B8FFZdQvcUR5bFaKGLoXE=
+        hash: S0isBm1mLIEhKFZypNzb3urk1i+ZYs3kPaWuaxta4X8=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -1019,12 +1019,12 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024035693'
       - title: 2019.21 Release
         file: ../release-notes/2019-21.md
-        hash: Actuvm+TOYNP1bj+sQCWz5Ynk22eNB4T0/H4Dy4ApCs=
+        hash: TsmXEM1R+iHteS1PK+HAfm2YTvXa3yU7GkCP21Qty9s=
         id: 360022903253
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903253'
       - title: 2019.20 Release
         file: ../release-notes/2019-20.md
-        hash: MvZrs4VXI6mDrw/O1tWjkGink3FutibXpBFq+jaGPp4=
+        hash: 22QiyLus7Hkvn15JXpqBaKqLvMGB9xH4m22t2yfcf2I=
         id: 360022903213
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903213'
       - title: 2019.19 Release
@@ -1035,7 +1035,7 @@ sections:
       - title: 2019.18 Release
         file: ../release-notes/2019-18.md
         id: 360022721494
-        hash: L2KlwB7q3dF8kX/o8RvvBHqalJyZHzERZAYXLDsH/6E=
+        hash: Tw7fmGVCx3L9Kzaa+bSfM3PVK8MfOQ5JAOhI74VIZvk=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721494'
       - title: 2019.17 Release
         file: ../release-notes/2019-17.md
