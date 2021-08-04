@@ -63,37 +63,6 @@ more info.
 4. Click the **trash can** icon.
 5. Click the **Remove** button to delete the integration.
 
-## Data Model
-
-### Entities
-
-The following entity resources are ingested when the integration runs:
-
-| Example Entity Resource | \_type : \_class of the Entity           |
-| ----------------------- | ---------------------------------------- |
-| Account                 | `knowbe4_account` : `Account`            |
-| User                    | `knowbe4_user` : `User`                  |
-| User Group              | `knowbe4_user_group` : `UserGroup`       |
-| Training Campaign       | `training_campaign` : `Training`         |
-| Training Module         | `training_module` : `Training`, `Module` |
-
-_Note a training module from KnowBe4 can be either a "Store Purchase" or an
-"Uploaded Policy"._
-
-### Relationships
-
-The following relationships are created/mapped:
-
-| From                 | Edge          | To                   |
-| -------------------- | ------------- | -------------------- |
-| `knowbe4_account`    | **HAS**       | `knowbe4_user`       |
-| `knowbe4_account`    | **HAS**       | `knowbe4_user_group` |
-| `knowbe4_user_group` | **HAS**       | `knowbe4_user`       |
-| `training_campaign`  | **HAS**       | `training_module`    |
-| `training_campaign`  | **ASSIGNED**  | `knowbe4_user_group` |
-| `training_module`    | **ASSIGNED**  | `knowbe4_user`       |
-| `knowbe4_user`       | **COMPLETED** | `training_module`    |
-
 [knowbe4 account settings]: https://training.knowbe4.com/account/info
 
 <!-- {J1_DOCUMENTATION_MARKER_START} -->
