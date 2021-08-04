@@ -81,6 +81,7 @@ The following entities are created:
 | Resources                  | Entity `_type`                       | Entity `_class`         |
 | -------------------------- | ------------------------------------ | ----------------------- |
 | Account                    | `tenable_account`                    | `Account`               |
+| Asset                      | `tenable_asset`                      | `HostAgent`             |
 | Container                  | `tenable_container`                  | `Image`                 |
 | Container Finding          | `tenable_container_finding`          | `Finding`               |
 | Container Malware          | `tenable_container_malware`          | `Finding`               |
