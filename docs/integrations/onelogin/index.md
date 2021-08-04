@@ -32,8 +32,12 @@ If you need help with this integration, please contact
 
 ### In OneLogin
 
-Instructions on creating an API token within your OneLogin account can be found
-[here][1].
+1. Log in to OneLogin as an administrator.
+2. Navigate to **Administration** > **Developers** > **API Credentials**
+3. Create a new API credential with the **Read All** scope.
+
+Further instructions on creating an API token within your OneLogin account can
+be found [here][1].
 
 ### In JupiterOne
 
@@ -53,6 +57,24 @@ Instructions on creating an API token within your OneLogin account can be found
 - Enter your **Organization URL** in the format YOURDOMAIN.onelogin.com.
 
 4. Click **Create Configuration** once all values are provided.
+
+### Troubleshooting
+
+#### Authentication Errors
+
+This integration's authentication is achieved by fetching an OAuth token from
+OneLogin. You can reproduce this authentication strategy by running the
+following curl, replacing `<CLIENT_ID>` and `<CLIENT_SECRET>` with your own:
+
+```
+curl --request POST \
+  --url https://api.us.onelogin.com/auth/oauth2/v2/token \
+  --header 'authorization: client_id:<CLIENT_ID>, client_secret:<CLIENT_SECRET>' \
+  --header 'content-type: application/json' \
+  --data '{
+	"grant_type":"client_credentials"
+}'
+```
 
 ## How to Uninstall
 
