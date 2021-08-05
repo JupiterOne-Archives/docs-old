@@ -303,7 +303,7 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: FiXbI0qALhF1GAuNu31LfIBr/CqpIEav6de+2+qp44A=
+        hash: lyCrqlw8bRhZgbp/QsNarS3STWp82vmjhKc22skIw5Y=
         id: 360022722014
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722014'
   - name: API Docs
@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: l1m9jMMHGZJByLfZ99Mply7947LFc+paPCrzqohUwSQ=
+        hash: nCPyY/YbzQuS63CIB/ceIcvmAczDugcaOvS8k1s9trc=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -680,6 +680,11 @@ sections:
         hash: 3T34FDHmoWKVBO+z6ncKMWwelIxy0PK1ELLQtt5k3E4=
         id: 360024788554
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024788554'
+      - title: SonarQube
+        file: ../docs/integrations/sonarqube/index.md
+        hash: glSEL4645hUPvtNuOG3lvumTXj7BIvt8WU/vqxyNH9g=
+        id: 4404828273171
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4404828273171'
       - title: Tenable Cloud
         file: ../docs/integrations/tenable-cloud/index.md
         id: 360022902593
