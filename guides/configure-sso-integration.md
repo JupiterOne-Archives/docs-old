@@ -150,6 +150,44 @@ Assigning an app role to a user in Azure AD is shown in the following
 screen shot:
 ![User assigned Azure AD App role](../assets/sso-azure-app-user-and-groups.png)
 
+### Google Workspace Example
+
+Before beginning configuration through Google Workspace, have access to the **SSO URL** and your **Audience URI** before proceeding to the Google Admin Console:
+
+![j1-sso-config-initial](../assets/sso-google-prestep.png)
+
+The IdP configuration page on the Google Admin Console can be found here: <https://admin.google.com/ac/apps/unified?hl=en>
+
+From the *Add App* drop down menu, select *Add custom SAML app*:
+
+![sso-google-add-app](../assets/sso-google-add-app.png)
+
+1. Set *App name* to **JupiterOne**.
+
+  ![sso-google-app-details](../assets/sso-google-app-details.png)
+
+2. Click *DOWNLOAD METADATA*, which will download an XML metadata file that will be used later.
+
+  ![sso-google-idp-details-metadata](../assets/sso-google-idp-details-metadata.png)
+
+3. In the *ACS URL* field, paste your **SSO URL**. In the *Entity ID* field, paste your **Audience URI**. Set *Name ID format* to **EMAIL**, and set *Name ID* to **Primary email**.
+
+  ![sso-google-service-povider](../assets/sso-google-service-povider.png)
+
+4. When adding directory attributes, make sure to use the support names in the *App attributes* fields. Note, the `group_names` is optional:
+
+    - *Primary email* > `email`
+
+    - *Last name* > `family_name`
+
+    - *First name* > `given_name`
+
+  ![sso-google-attibute-mapping](../assets/sso-google-attibute-mapping.png)
+
+5. Paste the downloaded XML metadata file contents into the *SAML Metadata File* field
+
+  ![sso-google-poststep](../assets/sso-google-poststep.png)
+
 ## Removing Users
 
 When you unassign / remove a user from the JupiterOne app within your IdP, the
