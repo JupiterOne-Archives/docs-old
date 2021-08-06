@@ -280,7 +280,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721914'
       - title: Configure SAML SSO Integration
         file: ../guides/configure-sso-integration.md
-        hash: oEKjBk3woBlUFp2cV+CbIudIUfRhSGTaNOUYS00VxdY=
+        hash: xrOq+fbvUiypeEmDCD3v7KbqP5yEyQl/pFq80KGD8qQ=
         id: 360022903353
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903353'
       - title: Configure User Access Control
@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: nCPyY/YbzQuS63CIB/ceIcvmAczDugcaOvS8k1s9trc=
+        hash: NpCxIXk7jB9daHNQUIAXzmR9vqCY3mXB0k/MbuVWBJU=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
