@@ -154,4 +154,4 @@ mutation Mutation($name: String!) {
 
 ## Referencing Parameters
 
-Parameters can be references in [rules' configurations](./schemas/alert-rule.md) or any [query expression](./jupiterone-query-language.md), though the syntax is slightly different.  Inside of queries, the dollar-sign-bracket syntax can be used to reference objects; the `param` object is a special member, which when invoked, will fetch from the parameter-storing service to retrieve values.  In the case of both rules and queries, references to parameters which don't exist will cause errors and abandon execution.
+Parameters can be referenced in [rules' configurations](./schemas/alert-rule.md) or any [query expression](./jupiterone-query-language.md), though the syntax is slightly different.  Inside of queries, the dollar-sign-bracket syntax can be used to reference objects; the `param` object is a special member, which when invoked, will fetch from the parameter-storing service to retrieve values.  In the case of both rules and queries, references to parameters which don't exist will cause errors and abandon execution.
