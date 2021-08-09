@@ -4,8 +4,7 @@ Previously, some use-cases of JupiterOne required referencing a value as a *lite
 
  - Long or unwieldy values (*e.g.* a long URL)
  - Sensitive values (*e.g.* a private key or API token)
- - Commonly-used but often-rotated values (*e.g.* a public key)
- - Common values (*e.g.* dates) we may want to change in many places at once
+ - Common values (*e.g.* dates, keys) we may want to change in many places at once
 
  Today, a better alternative exists: parameters can be stored and referenced in rules and queries with a special syntax.
 
