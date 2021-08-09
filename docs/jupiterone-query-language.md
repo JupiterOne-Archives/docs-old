@@ -12,7 +12,7 @@ boundaries obvious to query authors.
 - Language keywords are case-insensitive
 - Inspired by SQL and Cypher and aspires to be as close to natural language as possible
 - Support for variable placeholders
-- Support for `parameters`: replacement variables stored server-side
+- Support for parameters: replacement variables stored server-side
 - Support for bidirectional traversal
 - Return **entities**, **relationships**, and/or traversal **tree**
 - Support for sorting via `ORDER BY` clause (currently only applies to the starting entities of traversal)
