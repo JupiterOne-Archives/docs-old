@@ -140,7 +140,7 @@ async function publish() {
         }
       }
 
-      const staticAssetsUrl = 'https://github.com/JupiterOne/docs/blob/master/assets/$2.$3?raw=true';
+      const staticAssetsUrl = 'https://github.com/JupiterOne/docs/blob/main/assets/$2.$3?raw=true';
       
       let html = converter.makeHtml(data)
         .replace(/(\.\.\/)+assets\/(.*)\.(png|jpg|gif|svg)/g, staticAssetsUrl)
