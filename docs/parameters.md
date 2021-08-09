@@ -33,7 +33,7 @@ A parameter is an object stored in the parameter-service which follows the follo
 | ------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`               | `string`          | The parameter **key** or "name" |
 | `value`          | `string` \| `number` \| `boolean` \| `list`[*](#list-types)          | The parameter **value** to be stored/retrieved 
-| `isSecret`               | `boolean`          | **Flag** to treat value as sensitive data |
+| `isSecret`[*](#secret-parameters)              | `boolean`          | **Flag** to treat value as sensitive data |
 | `lastUpdatedOn`               | `date`          | **Date** which indicates last update  |
 
 #### List Types: 
@@ -155,3 +155,9 @@ mutation Mutation($name: String!) {
 ## Referencing Parameters
 
 Parameters can be referenced in [rules' configurations](./schemas/alert-rule.md) or any [query expression](./jupiterone-query-language.md), though the syntax is slightly different.  Inside of queries, the dollar-sign-bracket syntax can be used to reference objects; the `param` object is a special member, which when invoked, will fetch from the parameter-storing service to retrieve values.  In the case of both rules and queries, references to parameters which don't exist will cause errors and abandon execution.
+
+## Secret Parameters
+
+Any parameters set with `isSecret` to be `true` are considered write-only and not readable from the API; only evaluations of the query will access these parameters' values.  This is to allow the storage of sensitive parameters like API keys which the users of JupiterOne should not be able to themselves see.
+
+By design, a parameter which has had `isSecret` set to true cannot be updated to `isSecret: false` without also changing the value in the same request.
