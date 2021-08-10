@@ -28,10 +28,10 @@ Use three back ticks followed by the code language for a code block/snippet.
 For example: 
 
 ```markdown
-```j1ql
-FIND User as u that IS Person as p
+  ```j1ql
+  FIND User as u that IS Person as p
   RETURN u.username, p.firstName, p.lastName, p.email
-```
+  ```
 ```
 
 This ensures a code lang chip is added to the code block styling. 
