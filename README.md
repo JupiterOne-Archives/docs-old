@@ -40,6 +40,12 @@ This ensures a code lang chip is added to the code block styling.
 
 ### Line Breaks
 
-Use an empty line between every line of text.
+Use an empty line between every body of text 
+(e.g. between bullet lists, paragraphs, sections, etc.).
 
-Use line breaks instead of relying on text wrapping.
+Use hard line breaks (at 80 chars per line) instead of relying on soft 
+text wrapping to make the text earlier to read for PR reviews. 
+[Rewrap](1) extension in VSCode makes this easy. Not so easy via the 
+Github online editor, unfortunately.
+
+[1]: http://stkb.github.io/Rewrap/#/
