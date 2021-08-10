@@ -38,6 +38,8 @@ _IdP-initiated SSO is currently unsupported due to a limitation of Amazon Cognit
 
     - **Single Sign On URL**
     - **Audience URI (SP Entity ID)**
+  
+    ![sso-setup-page](../assets/sso-setup-page.png)
 
 1. In your IdP Account, add a new SAML Application and name it "JupiterOne".
 
@@ -88,11 +90,63 @@ The following attribute mappings are supported:
 Users without `group_names` mapping are assigned to the **Users** group within
 your JupiterOne account by default.
 
-### Okta Example
+## Okta Configuration
 
-Here's an example of attribute mapping configuration in Okta:
+To configure SSO for Okta, Admin access is required. In addition, make sure to have access to the **SSO URL** and your **Audience URI** before proceeding.
 
-![okta-attribute-mappings](../assets/okta-attribute-mappings.png)
+1. From the Okta Applications menu, select *Create App Integration*.
+
+  ![Okta-Create-App-Integration](../assets/okta-create-app-integration.png)
+
+2. Select *SAML 2.0* and click *Next* to proceed.
+
+  ![okta-saml-select](../assets/okta-saml-select.png)
+
+3. Create a name in the *App Name* field.  The name `JupiterOne` was used in the example below. Click *Next* to proceed.
+
+  ![okta-sso-general-settings](../assets/okta-sso-general-settings.png)
+
+4. Within the *SAML Settings* sections several values must be set to proceed. 
+    - In the *Single sign on URL* field, enter your **SSO URL**
+    - In the *Audience URI (SP Entity ID)* field, enter your **Audience URI**
+    - Set the *Name ID format* field to **EmailAddress**
+    - Set the *Application username* field to **Email**
+  
+  ![okta-saml-settings](../assets/okta-saml-settings.png)
+
+5. Attribute mappings is configured within the *Attribute Statements* section. At minimum, the *email* attribute must be set.
+
+    - `email` > `user.email`
+    - `family_name` > `user.lastName`
+    - `given_name` > `user.firstName`
+    - `name` > `user.displayName`
+    - `group_names` > `appuser.jupiterone_groups` where `jupiterone_groups` is optional naming. 
+      - The group attribute will need to be configured in the *Profile Editor* in the *Directory* menu, then assigned after configuration.
+  
+    ![okta-saml-mapping](../assets/okta-saml-mapping.png)
+
+6. After mapping attributes, proceed by clicking *Next*
+
+    ![okta-saml-next](../assets/okta-saml-next.png)
+
+7. In the *Feedback* menu, select *I'm an Okta Customer adding an internal app*. Click *Finish* to proceed.
+
+    ![okta-saml-feedback](../assets/okta-saml-feedback.png)
+
+8. In the *Settings* section of the *Sign On* menu, right-click the *ddd* link and *Copy Link Address*
+
+    ![okta-metadata-link](../assets/okta-metadata-link.png)
+
+9. Paste the link into the *SAML Metadata Document URL* field.
+
+    ![okta-metadata-field](../assets/okta-metadata-field.png)
+
+10. Save your configuration by clicking the floppy disk. If your configuration was done correctly, you will see a green pop-up with *Successfully created client!* in the lower left corner.
+
+    ![okta-sso-save](../assets/okta-sso-save.png)
+    ![okta-sso-success](../assets/okta-sso-success.png)
+
+### Okta Group Attribute Configuration
 
 We highly recommend adding a custom *group attribute* to the JupiterOne app
 profile in your IdP account (e.g. Okta). This is typically added using the
@@ -111,7 +165,7 @@ Below is an example within Okta:
 
 ![okta-app-group-assignment](../assets/okta-app-group-assignment.png)
 
-### Azure AD Example
+## Azure AD Example
 
 Here's an example of attribute mapping configuration in Azure AD:
 ![azure-ad-attribute-mappings](../assets/sso-azure-user-attr-claims.png)
@@ -150,7 +204,7 @@ Assigning an app role to a user in Azure AD is shown in the following
 screen shot:
 ![User assigned Azure AD App role](../assets/sso-azure-app-user-and-groups.png)
 
-### Google Workspace Example
+## Google Workspace Configuration
 
 Before beginning configuration through Google Workspace, have access to the **SSO URL** and your **Audience URI** before proceeding to the Google Admin Console:
 
