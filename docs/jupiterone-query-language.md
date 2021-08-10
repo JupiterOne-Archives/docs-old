@@ -82,7 +82,7 @@ boundaries obvious to query authors.
   >
   >  Find Host WITH tag.Environment = ('A' or 'B' or 'C')
   >
-  >  Find DataStore WITH classification != ('critical' and 'restricted')
+  >  Find DataStore WITH classification != ('critical' or 'restricted')
   >  ```
 
 - Property filters are evaluated according the following **order of operations**:
