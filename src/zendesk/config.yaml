@@ -52,7 +52,7 @@ sections:
     articles:
       - title: Account and Billing Questions
         file: ../faqs/faqs-account-billing.md
-        hash: U5It8KtSceS88DrvdTagEKqibH9pqfERgdG2RfGOIX4=
+        hash: rYF95/DpJorWQYRqmdvtwpes30AspWqo3V9P/xDv7wk=
         id: 360026412374
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412374'
       - title: Integrations and Mapping Related Questions
@@ -311,7 +311,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: TgCmbZmg7XHu0ZrqevPKYhgGsy/R4fvdD/V2I2Nyyu0=
+        hash: RGMQGD2wcL4tTpeuHBZgLxJe8ufGHQKWZiRobX8uLwM=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -748,6 +748,9 @@ sections:
     articles:
       - title: 2021.77 Release
         file: ../release-notes/2021-77.md
+        hash: 8PAucPojvBBVJj8UkbgALIUIp8qlYWy+4gvSNU6DYFM=
+        id: 4405085006227
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405085006227'
       - title: 2021.76 Release
         file: ../release-notes/2021-76.md
         hash: y5x4219scPjwS0+FXXxpFCyXg2uhchc7WqJXwI5ZPI0=
