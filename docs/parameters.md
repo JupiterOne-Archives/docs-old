@@ -16,7 +16,7 @@ Previously, some use-cases of JupiterOne required referencing a value as a *lite
 Consider the use-case of a very long URL which may not be (easily) human-readable and maybe referenced in many rules, queries, or questions: 
 
 ```
-FIND Application WHERE loginUrl = ${ param.maybeLongURL }
+FIND Application WITH loginUrl = ${ param.maybeLongURL }
 ```
 Here, the service will hydrate the value of `maybeLongUrl` and the query will be evaluated with the remote contents rather than the parameter expression.  This same pattern can be leveraged for different types of parameters and comparisons, explained below.
 <hr>
@@ -32,8 +32,8 @@ A parameter is an object stored in the parameter-service which follows the follo
 | Property           | Type              | Description                                                                                                                                                         |
 | ------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`               | `string`          | The parameter **key** or "name" |
-| `value`          | `string` \| `number` \| `boolean` \| `list`[*](#list-types)          | The parameter **value** to be stored/retrieved 
-| `isSecret`[*](#secret-parameters)              | `boolean`          | **Flag** to treat value as sensitive data |
+| `value`          | `string` \| `number` \| `boolean` \| `list`[*](#listtypes)          | The parameter **value** to be stored/retrieved 
+| `isSecret`[*](#secretparameters)              | `boolean`          | **Flag** to treat value as sensitive data |
 | `lastUpdatedOn`               | `date`          | **Date** which indicates last update  |
 
 #### List Types: 
@@ -46,13 +46,13 @@ Lists are considered to be Arrays of `string`, `number`, or `boolean` types
 
 |Queriable fields:||
 |--|--|
-| [parameter](#graphql-query-parameter)|Individual `QUERY` for one parameter|
-|[parameterList](#graphql-query-parameterlist)|Bulk `QUERY` for parameters|
+| [parameter](#queryparameter)|Individual `QUERY` for one parameter|
+|[parameterList](#queryparameterlist)|Bulk `QUERY` for parameters|
 
 |Mutations:||
 |--|--|
-| [setParameter](#graphql-mutation-setparameter)|Create/update a remote parameter|
-|[deleteParameter](#graphql-mutation-deleteparameter)|Remove a parameter from the remote store|
+| [setParameter](#mutationsetparameter)|Create/update a remote parameter|
+|[deleteParameter](#mutationdeleteparameter)|Remove a parameter from the remote store|
 
 <br>
 
@@ -66,7 +66,7 @@ Lists are considered to be Arrays of `string`, `number`, or `boolean` types
 |--|--|--|
 | name | `string` | Yes |
 
-***Returns***: [Parameter](#usage-schema)
+***Returns***: [Parameter](#usageschema)
 
 ***Example***: 
 ```gql
@@ -87,7 +87,7 @@ query Query($name: String!) {
 |--|--|--|
 | names | `Array<string>` | Yes |
 
-***Returns***: Paginated<[Parameter](#usage-schema)>
+***Returns***: Paginated<[Parameter](#usageschema)>
 
 ***Example***: 
 ```gql
@@ -113,7 +113,7 @@ query Query($limit: Int, $cursor: String) {
 |*Argument*|*Type*|*Required?*|*Default*
 |--|--|--|--|
 | name | `string` |Yes| n/a |
-| value | `string` \| `number` \| `boolean` \| `list`[*](#list-types)  | Yes | n/a
+| value | `string` \| `number` \| `boolean` \| `list`[*](#listtypes)  | Yes | n/a
 | isSecret | `boolean` |No| `false` |
 
 ### ***Returns***: 

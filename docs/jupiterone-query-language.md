@@ -249,8 +249,10 @@ The above query would return entities of the `Host` class with any of the follow
 The query language supports [parameters](./parameters.md) for referencing values stored on the server-side.  Parameter expressions are allowed in places one might include a literal value otherwise.
 
 ```j1ql
-FIND Application WHERE loginUrl = ${ param.loginUrl }
+FIND Application WITH loginUrl = ${ param.loginUrl }
 ```
+
+Currently, there is no support for referencing parameters which contain arrays (though the rules and alerts do allow this functionality).  Future iterations of the J1QL may contain array-traversing operators, which will work out of the box with parameters.
 
 ## Date Comparisons
 
