@@ -38,3 +38,8 @@ This ensures a code lang chip is added to the code block styling.
 
 ![image](https://user-images.githubusercontent.com/28784384/128935815-4ce73691-9d32-490a-8a75-2c0687e36d32.png)
 
+### Line Breaks
+
+Use an empty line between every line of text.
+
+Use line breaks instead of relying on text wrapping.
