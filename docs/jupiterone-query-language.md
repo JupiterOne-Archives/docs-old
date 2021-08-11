@@ -12,6 +12,7 @@ boundaries obvious to query authors.
 - Language keywords are case-insensitive
 - Inspired by SQL and Cypher and aspires to be as close to natural language as possible
 - Support for variable placeholders
+- Support for parameters: replacement variables stored server-side
 - Support for bidirectional traversal
 - Return **entities**, **relationships**, and/or traversal **tree**
 - Support for sorting via `ORDER BY` clause (currently only applies to the starting entities of traversal)
@@ -242,6 +243,17 @@ The above query would return entities of the `Host` class with any of the follow
 !!! warning
     These string evaluations are case-sensitive. So `'Demo'` and `'demo'` 
     will yield distinct sets of results.
+
+
+## Parameters
+
+The query language supports [parameters](./parameters.md) for referencing values stored on the server-side.  Parameter expressions are allowed in places one might include a literal value otherwise.
+
+```j1ql
+FIND Application WITH loginUrl = ${ param.loginUrl }
+```
+
+Currently, there is no support for referencing parameters which contain arrays (though the rules and alerts do allow this functionality).  Future iterations of the J1QL may contain array-traversing operators, which will work out of the box with parameters.
 
 ## Date Comparisons
 
