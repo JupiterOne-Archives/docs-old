@@ -2393,7 +2393,6 @@ type permission = string // must be a valid permission string
 | *Shared: Questions*      |  READ  |            `readQuestions` |
 | *GraphData*              |  READ  |                `readGraph` |
 | *Landing*                |  READ  |            `accessLanding` |
-| *My Security*            |  READ  |         `accessMySecurity` |
 | *Assets*                 |  READ  |             `accessAssets` |
 | *Policies*               |  READ  |           `accessPolicies` |
 | *Compliance*             |  READ  |         `accessCompliance` |
@@ -2411,7 +2410,6 @@ type permission = string // must be a valid permission string
 | *Shared: Questions*      | ADMIN  |          `writeQuestions` |
 | *GraphData*              | ADMIN  |              `writeGraph` |
 | *Landing*                | ADMIN  |            `adminLanding` |
-| *MySecurity*             | ADMIN  |         `adminMySecurity` |
 | *Assets*                 | ADMIN  |             `adminAssets` |
 | *Policies*               | ADMIN  |           `adminPolicies` |
 | *Compliance*             | ADMIN  |         `adminCompliance` |
@@ -2582,7 +2580,6 @@ type permission = string; // must be a valid permission string
 | *Shared: Questions*      |  READ  |            `readQuestions` |
 | *GraphData*              |  READ  |                `readGraph` |
 | *Landing*                |  READ  |            `accessLanding` |
-| *My Security*            |  READ  |         `accessMySecurity` |
 | *Assets*                 |  READ  |             `accessAssets` |
 | *Policies*               |  READ  |           `accessPolicies` |
 | *Compliance*             |  READ  |         `accessCompliance` |
@@ -2600,7 +2597,6 @@ type permission = string; // must be a valid permission string
 | *Shared: Questions*      | ADMIN  |          `writeQuestions` |
 | *GraphData*              | ADMIN  |              `writeGraph` |
 | *Landing*                | ADMIN  |            `adminLanding` |
-| *MySecurity*             | ADMIN  |         `adminMySecurity` |
 | *Assets*                 | ADMIN  |             `adminAssets` |
 | *Policies*               | ADMIN  |           `adminPolicies` |
 | *Compliance*             | ADMIN  |         `adminCompliance` |
