@@ -1,6 +1,5 @@
 # Glossary of Terms
 
-Exception
 
 | Term              | Description                                          |
 | ----------------- | ---------------------------------------------------- |
