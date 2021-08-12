@@ -303,15 +303,20 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: lyCrqlw8bRhZgbp/QsNarS3STWp82vmjhKc22skIw5Y=
+        hash: LLuhYfuWbGWQyat8A/cTRPuP5ebeS3UIQMPPaAAqgwo=
         id: 360022722014
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722014'
+      - title: External Parameters and Secrets in J1QL
+        file: ../docs/parameters.md
+        hash: Ng+pUOwzIdJhH31KbHny7YEG5nWP9/CvHRdE1CsTcUI=
+        id: 4405138084243
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405138084243'
   - name: API Docs
     id: 360002424353
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: 9x2R+fentBLXWvoXpSDIvYbIXTbGJ8BPoZCEEiUGEIw=
+        hash: t0DYRwcT1RqLZnAaSKJSZZuAuk0DCHlfsfRAvp4RY9E=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -336,7 +341,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049348293'
       - title: Alert Rule Schema
         file: ../docs/schemas/alert-rule.md
-        hash: mdFF6KVIe2sDk/Ib10c6MSTPnTlxYp3z4joHDX9pgCI=
+        hash: g+my21DqPuAqC5zJl3Ysx+P6yaaci+JKSAylkWgnvas=
         id: 360039711354
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360039711354'
       - title: Policies and Compliance related data schema
