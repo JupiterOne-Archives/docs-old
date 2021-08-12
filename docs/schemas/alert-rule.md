@@ -518,6 +518,12 @@ because it contains multiple expressions:
 {{age + 10}} is my age and my name is {{firstName + " " + lastName}}
 ```
 
+All templating expressions support reference to  [account parameters](#parametersinrules), as well:
+
+```
+My name is {{param.myFirstName}} and I am {{age}}
+```
+
 ### Unary Operators
 
 | Operation | Symbol |
@@ -711,3 +717,38 @@ Example of default if no `separator` is passed to `join`:
   "recipients": ["no-reply@jupiterone.io"]
 }
 ```
+
+## Parameters in Rules
+
+Rules support reference to parameter values stored at the account-level.  These parameters simplify the task of referencing long, sensitive, or widely re-used values in rules or queries.  Take for example the following action trigger, which is nearly identical to [the slack webhook](#actionwebhook) example:
+
+
+```json
+{
+  "type": "WEBHOOK",
+  "method": "POST",
+  "body": {
+    "name": "Jon"
+  },
+  "headers": {
+    "Authorization": "Bearer {{param.SlackAuthToken}}"
+  }
+}
+```
+
+This showcases a primary use-case of parameter storage: a value which is long, not human-readable, and may represent a sensitive value which should ideally not be leaked in configuration.
+
+Here, `param.SlackAuthToken` invokes a parameter stored at the account-level which will be referenced when the rule is evaluated.  These parameters always are referenced with the preceding token `param.`; the subsequent string (without special characters) identifies the name of a parameter.
+
+Today parameters are supported anywhere that [Operation Templating](#operationtemplating) is supported, and the value of a parameter can be any type of [native type](#nativetypes) with the **exclusion of objects**, which support comparison *against* parameters but cannot be the contents of a parameter.  Additionally, parameters can store lists of native types, and template expressions can invoke  parameter lists similarly to examples above.  For example, [given the email example](#actionsend_email), we might want to parameterize the recipient list:
+
+```js
+{
+  "type": "SEND_EMAIL",
+  "body": "{{queries.query0.data|mapTemplate('emailBody')|join(' ')}}",
+  // a stored list of email strings:
+  "recipients": "{{param.alertEmailRecipientList}}" 
+}
+```
+
+For more info on JupiterOne parameters, [reference the documentation](../../docs/parameters.md).
