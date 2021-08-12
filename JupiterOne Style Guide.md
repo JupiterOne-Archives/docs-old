@@ -14,4 +14,5 @@ Contractions and abbreviations: For plain English reasons, spell out contraction
 
 ## Spelling and Punctuation
 
-Single Sign-On
+- Single Sign-On
+- Use Cases
