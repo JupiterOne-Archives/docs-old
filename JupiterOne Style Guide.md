@@ -12,7 +12,16 @@
 
 Contractions and abbreviations: For plain English reasons, spell out contraction and avoid using abbreviations such as "e.g., etc.".
 
+
+
+## Formatting
+
+Use bold for all UI controls, such as buttons and tabs.
+
+
+
 ## Spelling and Punctuation
 
 - Single Sign-On
 - Use Cases
+
