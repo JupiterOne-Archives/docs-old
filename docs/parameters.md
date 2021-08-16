@@ -24,7 +24,7 @@ The service hydrates the value of `longUrl` and the query is evaluated with the 
 
 ## Usage: Schema
 
-Currently, the storage of parameters is only accessible from public-facing GraphQL endpoints.  In the future, a user interface will be available to account users but, currently, only the API exists.
+Currently, the storage of parameters is only accessible from public-facing GraphQL endpoints. In the future, a user interface will be available to account users but, currently, only the API exists.
 
 A parameter is an object stored in the parameter-service which uses the following schema:
 
