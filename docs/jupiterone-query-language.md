@@ -253,7 +253,7 @@ The query language supports [parameters](./parameters.md) for referencing values
 FIND Application WITH loginUrl = ${ param.loginUrl }
 ```
 
-Currently, there is no support for referencing parameters that contain arrays, even though the rules and alerts do allow this functionality).  Future iterations of the J1QL may contain array-traversing operators, which work out of the box with parameters.
+Currently, there is no support for referencing parameters that contain arrays, even though the rules and alerts do allow this functionality.  Future iterations of the J1QL may contain array-traversing operators, which work out of the box with parameters.
 
 ## Date Comparisons
 
