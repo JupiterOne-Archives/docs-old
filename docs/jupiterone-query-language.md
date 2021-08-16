@@ -247,17 +247,18 @@ The above query would return entities of the `Host` class with any of the follow
 
 ## Parameters
 
-The query language supports [parameters](./parameters.md) for referencing values stored on the server side.  Parameter expressions are allowed in places which could otherwise include a literal value.
+The query language supports [parameters](./parameters.md) for referencing values stored on the server side. Parameter expressions are allowed in places which could otherwise include a literal value.
 
 ```j1ql
 FIND Application WITH loginUrl = ${ param.loginUrl }
 ```
 
-Currently, there is no support for referencing parameters that contain arrays, even though the rules and alerts do allow this functionality.  Future iterations of the J1QL may contain array-traversing operators, which work out of the box with parameters.
+Currently, there is no support for referencing parameters that contain arrays, even though the rules and alerts do allow this functionality. Future iterations of the J1QL may contain array-traversing operators, which work out of the box with parameters.
 
 ## Date Comparisons
 
-The query language supports both relative and static data comparisons on any timestamp property. The timestamp property used for date comparison must be  stored as an epoch number in milliseconds.
+The query language supports both relative and static data comparisons on any 
+timestamp property. The timestamp property used for date comparison must be stored as an epoch number in milliseconds.
 
 ### Relative Date Comparison
 
