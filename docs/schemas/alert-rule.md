@@ -1,6 +1,8 @@
 # JupiterOne Alert Rule Schema
 
-A rule uses the results of one or more queries to execute one or more actions. The basic alert workflows are described here: [JupiterOne Alert Rule configuration documentation](https://support.jupiterone.io/hc/en-us/articles/360022720474-6-9-Alerts-and-Alert-Rules). You can also directly edit the JSON that defines a rule for more advanced workflow execution.
+A rule uses the results of one or more queries to execute one or more actions.
+The basic alert workflows are described here: [JupiterOne Alert Rule configuration documentation](https://support.jupiterone.io/hc/en-us/articles/360022720474-6-9-Alerts-and-Alert-Rules). 
+You can also directly edit the JSON that defines a rule for more advanced workflow execution.
 
 ## Configuring a Rule
 
@@ -61,7 +63,8 @@ JSON Example:
 
 ### Type: PollingInterval
 
-Enumeration of the scheduled frequencies on which rules can automatically be evaluated. Possible values:
+Enumeration of the scheduled frequencies on which rules can 
+automatically be evaluated. Possible values:
 
 ```
 ONE_DAY
@@ -72,7 +75,8 @@ DISABLED
 
 ### Type: RuleOperation
 
-A `RuleOperation` is a single `condition` and series of `action`s that are executed when the `condition` is met.
+A `RuleOperation` is a single `condition` and series of `action`s that are 
+executed when the `condition` is met.
 
 | Property  | Type                                               | Description                                                  |
 | --------- | -------------------------------------------------- | ------------------------------------------------------------ |
@@ -81,7 +85,8 @@ A `RuleOperation` is a single `condition` and series of `action`s that are execu
 
 ### Type: Question
 
-A Question contains a collection of named queries that should be executed during the rule evaluation process and whose responses can be used in any `RuleOperation`.
+A Question contains a collection of named queries that should be executed 
+during the rule evaluation process and whose responses can be used in any `RuleOperation`.
 
 | Property  | Type              | Description                                                  |
 | --------- | ----------------- | ------------------------------------------------------------ |
@@ -89,7 +94,8 @@ A Question contains a collection of named queries that should be executed during
 
 ### Type: QuestionQuery
 
-A named query that should be executed during the rule evaluation process and whose responses can be used in any `RuleOperation`.
+A named query that should be executed during the rule evaluation process and 
+whose responses can be used in any `RuleOperation`.
 
 | Property  | Type     | Description                                                  |
 | --------- | -------- | ------------------------------------------------------------ |
@@ -99,7 +105,8 @@ A named query that should be executed during the rule evaluation process and who
 
 ### Type: RuleOperationCondition
 
-The condition that determines whether the associated actions should be executed. The type of `RuleOperationCondition` is determined using the `type` property.
+The condition that determines whether the associated actions should be executed. 
+The type of `RuleOperationCondition` is determined using the `type` property.
 
 #### Type: FilterRuleOperationCondition
 
@@ -110,7 +117,8 @@ The condition that determines whether the associated actions should be executed.
 
 ### Type: RuleOperationAction
 
-Action that is executed when a corresponding condition is met. The type of `RuleOperationAction` is determined using the `type` property.
+Action that is executed when a corresponding condition is met. 
+The type of `RuleOperationAction` is determined using the `type` property.
 
 ---
 
@@ -156,7 +164,8 @@ Example:
 
 #### Action: `SEND_EMAIL`
 
-> Sends an email to a list of recipients with details related to alerts that are created during the rule evaluation.
+> Sends an email to a list of recipients with details related to alerts that are
+>  created during the rule evaluation.
 
 | Property     | Type       | Description                                        |
 | ------------ | ---------- | -------------------------------------------------- |
@@ -233,7 +242,9 @@ Example:
 | `webhookUrl`            | `string` | Webhook URL for the account/channel that this message should be delivered to. |
 | `severity`              | `string` | Optional severity of this alert that determined the color of the message shown in Slack. |
 
-**NOTE**: By default, the color of the alert in Slack is derived from the value of the `alertLevel` that is created in a `SET_PROPERTY` action. You can override the color of the alert using the `severity` property.
+**NOTE**: By default, the color of the alert in Slack is derived from the 
+value of the `alertLevel` that is created in a `SET_PROPERTY` action. 
+You can override the color of the alert using the `severity` property.
 
 Example:
 
@@ -246,7 +257,8 @@ integration instance page, which looks similar to `d1549f40-b9fd-447a-bec5-4360c
    denoting the destinations. The following is an example alert rule configuration with the
    `SEND_SLACK_MESSAGE` action:
 
-**NOTE**: For the JupiterOne Slack bot to deliver messages to a private Slack channel, the JupiterOne Slack bot must be a member of that private channel.
+**NOTE**: For the JupiterOne Slack bot to deliver messages to a private Slack channel, 
+the JupiterOne Slack bot must be a member of that private channel.
 
 ```json
 {
@@ -406,9 +418,13 @@ Example:
 
 ## Operation Templating
 
-You can use templates inside any property under the `operations` property on a rule. The templates can contain a JavaScript-like syntax that automatically have input variables injected for usage.
+You can use templates inside any property under the `operations` property on a rule. 
+The templates can contain a JavaScript-like syntax that automatically 
+have input variables injected for usage.
 
-For example, `FilterRuleOperationCondition`s are often used with rules as the condition for whether rule actions should be executed. You can use query response data inside of the rule conditions:
+For example, `FilterRuleOperationCondition`s are often used with rules as the 
+condition for whether rule actions should be executed. 
+You can use query response data inside of the rule conditions:
 
 ```js
 {
@@ -429,7 +445,8 @@ For example, `FilterRuleOperationCondition`s are often used with rules as the co
 }
 ```
 
-You can use data from query results inside of rule operations by referencing the `query.query0.data` property and custom templating transforms. For example:
+You can use data from query results inside of rule operations by referencing the 
+`query.query0.data` property and custom templating transforms. For example:
 
 ```js
 {
@@ -445,7 +462,8 @@ You can use data from query results inside of rule operations by referencing the
     "queries": [
       {
         "name": "query0",
-        "query": "Find aws_lambda_function with runtime='nodejs6.10' as f return f.name as functionName, f.version as version, f.tag.AccountName as account, f.tag.Project as project order by account",
+        "query": "Find aws_lambda_function with runtime='nodejs6.10' as f return f.name 
+        as functionName, f.version as version, f.tag.AccountName as account, f.tag.Project as project order by account",
         "version": "v1"
       }
     ]
@@ -481,15 +499,21 @@ You can use data from query results inside of rule operations by referencing the
 
 ## Rule Evaluation Templating Language
 
-You can create a template in any `RuleOperation` using the `{{...}}` syntax. Inside the `{{...}}` is a JavaScript-like language that allows for powerful rule evaluation functionality. Additionally, if the template contains exactly one expression and nothing else, the original type of the computed value is preserved. If multiple expressions are used, the entire value is casted to a string.
+You can create a template in any `RuleOperation` using the `{{...}}` syntax. 
+Inside the `{{...}}` is a JavaScript-like language that allows for powerful 
+rule evaluation functionality. Additionally, if the template contains exactly 
+one expression and nothing else, the original type of the computed value is 
+preserved. If multiple expressions are used, the entire value is casted to a string.
 
-The following is an example where the type `boolean` is preserved because there is only a single expression:
+The following is an example where the type `boolean` is preserved because 
+there is only a single expression:
 
 ```
 {{true}}
 ```
 
-The following is an example where the entire value would be cast to a string because it contains multiple expressions:
+The following is an example where the entire value would be cast to a 
+string because it contains multiple expressions:
 
 ```
 {{age + 10}} is my age and my name is {{firstName + " " + lastName}}
@@ -566,7 +590,9 @@ Some custom transforms are exposed in the rule templating language.
 
 #### `mapTemplate(templateName: string)` Custom Transform
 
-`mapTemplate` is separates and reuses templates inside of a rule. The transform expects a single array and the first argument should be a string whose value matches a template in rule `templates` object.
+`mapTemplate` is separates and reuses templates inside of a rule. 
+The transform expects a single array and the first argument should 
+be a string whose value matches a template in rule `templates` object.
 
 The `mapTemplate` transform exposes additional input variable to the template:
 
@@ -577,7 +603,8 @@ The `mapTemplate` transform exposes additional input variable to the template:
 | `itemIndex` | `number` | The index of the current `item` in the array |
 
 !!! note 
-The properties that are accessible on the `item` property are pulled     from the `properties` object and the `entity` object if the `item` matches the schema for an entity.
+The properties that are accessible on the `item` property are pulled 
+from the `properties` object and the `entity` object if the `item` matches the schema for an entity.
 
 Example operation:
 
@@ -600,9 +627,13 @@ Example `templates`:
 
 #### `mapProperty(...properties: string)` Custom Transform
 
-Allows for mapping individual properties from an array. You can supply a single or multiple properties. The properties that are
-accessible are pulled from the `properties` object and the `entity` object if the `item` matches the schema for an entity.
-If the array that is being evaluated with `mapProperty` matches the schema of an entity, the the rule evaluator attempts to pull properties passed to `mapProperty` from the entity properties.
+Allows for mapping individual properties from an array. You can supply 
+a single or multiple properties. The properties that are
+accessible are pulled from the `properties` object and the 
+`entity` object if the `item` matches the schema for an entity.
+If the array that is being evaluated with `mapProperty` matches the 
+schema of an entity, the the rule evaluator attempts to pull 
+properties passed to `mapProperty` from the entity properties.
 
 Example query data:
 
@@ -660,7 +691,10 @@ This is an example accessing `entity` data using `mapProperty` and the above dat
 
 #### `join(separator?: string)` Custom Transform
 
-This function is similar to the `Array.prototype.join` function in JavaScript. It returns a new string by concatenating all of the elements in an array. If the `separator`argument is not passed to `join`, the array elements are separated by a comma, by default.
+This function is similar to the `Array.prototype.join` function in JavaScript. 
+It returns a new string by concatenating all of the elements in an array. 
+If the `separator`argument is not passed to `join`, the array elements 
+are separated by a comma, by default.
 
 This transform is often used with `mapTemplate` or `mapProperty`.
 
@@ -686,7 +720,10 @@ Example of default if no `separator` is passed to `join`:
 
 ## Parameters in Rules
 
-Rules support reference to parameter values stored at the account-level.  These parameters simplify the task of referencing long, sensitive, or widely reused values in rules or queries.  For example, the following action trigger is nearly identical to [the slack webhook](#actionwebhook) example:
+Rules support reference to parameter values stored at the account-level.
+These parameters simplify the task of referencing long, sensitive, or 
+widely reused values in rules or queries.  For example, the following 
+action trigger is nearly identical to [the slack webhook](#actionwebhook) example:
 
 
 ```json
@@ -702,11 +739,23 @@ Rules support reference to parameter values stored at the account-level.  These 
 }
 ```
 
-This showcases a primary use case of parameter storage: a value that is long, not human-readable, and may represent a sensitive value which should not be leaked in the configuration.
+This showcases a primary use case of parameter storage: a value that is 
+long, not human-readable, and may represent a sensitive value which 
+should not be leaked in the configuration.
 
-`param.SlackAuthToken` invokes a parameter stored at the account level, which is referenced when the rule is evaluated.  These parameters are always referenced with the preceding token `param.`. The subsequent string (without special characters) identifies the name of a parameter.
+`param.SlackAuthToken` invokes a parameter stored at the account level, 
+which is referenced when the rule is evaluated. These parameters are 
+always referenced with the preceding token `param.`. The subsequent 
+string (without special characters) identifies the name of a parameter.
 
-Parameters are supported anywhere that [Operation Templating](#operationtemplating) is supported, and the value of a parameter can be any type of [native type](#nativetypes) with the **exclusion of objects**, which support comparison *against* parameters but cannot be the contents of a parameter.  Additionally, parameters can store lists of native types, and template expressions can invoke  parameter lists similarly to examples above.  For example, [using the email example](#actionsend_email), we can parameterize the recipient list:
+Parameters are supported anywhere that [Operation Templating](#operationtemplating) 
+is supported, and the value of a parameter can be any type of 
+[native type](#nativetypes) with the **exclusion of objects**, 
+which support comparison *against* parameters but cannot be the 
+contents of a parameter.  Additionally, parameters can store 
+lists of native types, and template expressions can invoke 
+parameter lists similarly to examples above. For example, 
+[using the email example](#actionsend_email), we can parameterize the recipient list:
 
 ```js
 {
