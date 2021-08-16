@@ -108,11 +108,6 @@ used by features in each app:
   > respectively. Optionally **Write Graph Data** for editing entities from
   > query results.
 
-- My Security (URL ending with `/mysecurity`)
-  
-  > Shared permissions used by this app: **Read Graph Data** for populating
-  > table / widgets
-
 - Assets Inventory (URL ending with `/inventory`)
   
   > Shared permissions used by this app: **Read / Write Graph Data**
