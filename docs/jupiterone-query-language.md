@@ -248,8 +248,8 @@ The above query would return entities of the `Host` class with any of the follow
 ## Parameters
 
 The query language supports [parameters](./parameters.md) for referencing values 
-stored on the server side. Parameter expressions are allowed in places, 
-which could otherwise include a literal value.
+stored on the server side. Parameter expressions are allowed in places 
+that could otherwise include a literal value.
 
 ```j1ql
 FIND Application WITH loginUrl = ${ param.loginUrl }
