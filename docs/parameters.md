@@ -6,7 +6,7 @@ Previously, some JupiterOne use cases required referencing as a *literal* value 
  - Sensitive values (such as a private key or API token)
  - Common values (such as dates, keys) that you may want to change in many places at one time
 
- A better alternative exists as parameters that can be stored and referenced in rules and queries with a special syntax.
+ A better alternative exists in the form of parameters that can be stored and referenced in rules and queries with a special syntax.
 
 <br>
 <hr>
@@ -158,10 +158,12 @@ mutation Mutation($name: String!) {
 
 ## Parameter References
 
-You can reference parameters in [rules configurations](./schemas/alert-rule.md) or any [query expression](./jupiterone-query-language.md), although the syntax is slightly different.  Inside of queries, you can use the dollar-sign-bracket syntax to reference objects. The `param` object is a special member which, when invoked, fetches values from the parameter-storing service.  In the case of both rules and queries, references to parameters which do not exist causes errors and abandons execution.
+You can reference parameters in [rules configurations](./schemas/alert-rule.md) or any [query expression](./jupiterone-query-language.md), although the syntax is slightly different. Inside of queries, you can use the dollar-sign-bracket syntax to reference objects. 
+
+'param' is a special keyword in queries that, when invoked, fetches values from the parameter-storing service. In the case of both rules and queries, references to parameters that do not exist causes errors and abandons execution.
 
 ## Secret Parameters
 
-Any parameters set with `isSecret` to be `true` are considered write-only and not readable from the API. Only evaluations of the query can access these parameter values.  This usage enables the storage of sensitive parameters such as API keys that  JupiterOne users should not be able to see.
+Any parameters set with `isSecret` to be `true` are considered write-only and not readable from the API. Only evaluations of the query can access these parameter values.  This usage enables the storage of sensitive parameters such as API keys that JupiterOne users should not be able to see.
 
 By design, you cannot update a parameter that has had `isSecret` set to true to `isSecret: false` without also changing the value in the same request.
