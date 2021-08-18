@@ -1,6 +1,7 @@
 # JupiterOne Parameter Service
 
-Previously, some JupiterOne use cases required referencing as a *literal* value that is more suited to reference as a *variable* or a **parameter**.  Some common values that could be better stored and retrieved at runtime instead of saved literally include:
+Previously, some JupiterOne use cases required referencing as a *literal* value that is more suited to reference as a *variable* or a **parameter**.  
+Some common values that could be better stored and retrieved at runtime instead of saved literally include:
 
  - Long or unwieldy values (such as a long URL)
  - Sensitive values (such as a private key or API token)
@@ -18,13 +19,15 @@ In the use case of a very long URL, which may not be easily human-readable and m
 ```
 FIND Application WITH loginUrl = ${ param.longURL }
 ```
-The service hydrates the value of `longUrl` and the query is evaluated with the remote contents instead of the parameter expression.  You can leverage this same pattern for different types of parameters and comparisons, explained below.
+The service hydrates the value of `longUrl` and the query is evaluated with the remote contents instead of the parameter expression.  
+You can leverage this same pattern for different types of parameters and comparisons, explained below.
 <hr>
 <br>
 
 ## Usage: Schema
 
-Currently, the storage of parameters is only accessible from public-facing GraphQL endpoints. In the future, a user interface will be available to account users but, currently, only the API exists.
+Currently, the storage of parameters is only accessible from public-facing GraphQL endpoints. 
+In the future, a user interface will be available to account users but, currently, only the API exists.
 
 A parameter is an object stored in the parameter-service which uses the following schema:
 
@@ -158,12 +161,15 @@ mutation Mutation($name: String!) {
 
 ## Parameter References
 
-You can reference parameters in [rules configurations](./schemas/alert-rule.md) or any [query expression](./jupiterone-query-language.md), although the syntax is slightly different. Inside of queries, you can use the dollar-sign-bracket syntax to reference objects. 
+You can reference parameters in [rules configurations](./schemas/alert-rule.md) or any [query expression](./jupiterone-query-language.md), although the 
+syntax is slightly different. Inside of queries, you can use the dollar-sign-bracket syntax to reference objects. 
 
-'param' is a special keyword in queries that, when invoked, fetches values from the parameter-storing service. In the case of both rules and queries, references to parameters that do not exist causes errors and abandons execution.
+'param' is a special keyword in queries that, when invoked, fetches values from the parameter-storing service. In the case of both rules and queries, 
+references to parameters that do not exist causes errors and abandons execution.
 
 ## Secret Parameters
 
-Any parameters set with `isSecret` to be `true` are considered write-only and not readable from the API. Only evaluations of the query can access these parameter values.  This usage enables the storage of sensitive parameters such as API keys that JupiterOne users should not be able to see.
+Any parameters set with `isSecret` to be `true` are considered write-only and not readable from the API. Only evaluations of the query can access 
+these parameter values.  This usage enables the storage of sensitive parameters such as API keys that JupiterOne users should not be able to see.
 
 By design, you cannot update a parameter that has had `isSecret` set to true to `isSecret: false` without also changing the value in the same request.
