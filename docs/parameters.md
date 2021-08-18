@@ -1,32 +1,35 @@
 # JupiterOne Parameter Service
 
-Previously, some use-cases of JupiterOne required referencing a value as a *literal* that is more suited to reference as a *variable* or **parameter**.  Some common values that might be better stored and retrieved at run-time rather than saved literally:
+Previously, some JupiterOne use cases required referencing as a *literal* value that is more suited to reference as a *variable* or a **parameter**.  
+Some common values that could be better stored and retrieved at runtime instead of saved literally include:
 
- - Long or unwieldy values (*e.g.* a long URL)
- - Sensitive values (*e.g.* a private key or API token)
- - Common values (*e.g.* dates, keys) we may want to change in many places at once
+ - Long or unwieldy values (such as a long URL)
+ - Sensitive values (such as a private key or API token)
+ - Common values (such as dates, keys) that you may want to change in many places at one time
 
- Today, a better alternative exists: parameters can be stored and referenced in rules and queries with a special syntax.
+ A better alternative exists in the form of parameters that can be stored and referenced in rules and queries with a special syntax.
 
 <br>
 <hr>
 
-## Example:
+## Example
 
-Consider the use-case of a very long URL which may not be (easily) human-readable and maybe referenced in many rules, queries, or questions: 
+In the use case of a very long URL, which may not be easily human-readable and may be referenced in many rules, queries, or questions, use: 
 
 ```
-FIND Application WITH loginUrl = ${ param.maybeLongURL }
+FIND Application WITH loginUrl = ${ param.longURL }
 ```
-Here, the service will hydrate the value of `maybeLongUrl` and the query will be evaluated with the remote contents rather than the parameter expression.  This same pattern can be leveraged for different types of parameters and comparisons, explained below.
+The service hydrates the value of `longUrl` and the query is evaluated with the remote contents instead of the parameter expression.  
+You can leverage this same pattern for different types of parameters and comparisons, explained below.
 <hr>
 <br>
 
 ## Usage: Schema
 
-Currently, the storage of parameters is only accessible from public-facing GraphQL endpoints.  In the future a user interface will be made available to account users, but currently, only the API exists.
+Currently, the storage of parameters is only accessible from public-facing GraphQL endpoints. 
+In the future, a user interface will be available to account users but, currently, only the API exists.
 
-A parameter is an object stored in the parameter-service which follows the following schema:
+A parameter is an object stored in the parameter-service which uses the following schema:
 
 
 | Property           | Type              | Description                                                                                                                                                         |
@@ -36,13 +39,14 @@ A parameter is an object stored in the parameter-service which follows the follo
 | `isSecret`[*](#secretparameters)              | `boolean`          | **Flag** to treat value as sensitive data |
 | `lastUpdatedOn`               | `date`          | **Date** which indicates last update  |
 
-#### List Types: 
-Lists are considered to be Arrays of `string`, `number`, or `boolean` types
+#### List Types 
+Lists are considered to be arrays of `string`, `number`, or `boolean` types
 
 <br>
+
 <hr>
 
-## Usage: API Operations & Queries
+## Usage: API Operations and Queries
 
 |Queriable fields:||
 |--|--|
@@ -83,9 +87,10 @@ query Query($name: String!) {
 
 ### Query: `parameterList`
 
-|*Argument*|*Type*|*Required?*|
-|--|--|--|
-| names | `Array<string>` | Yes |
+|*Argument*|*Type*|*Required?*|*Default*|
+|--|--|--|--|
+| limit | `number` | No | 100 |
+| cursor | `string` | No (unless paginating) | n/a |
 
 ***Returns***: Paginated<[Parameter](#usageschema)>
 
@@ -116,12 +121,13 @@ query Query($limit: Int, $cursor: String) {
 | value | `string` \| `number` \| `boolean` \| `list`[*](#listtypes)  | Yes | n/a
 | isSecret | `boolean` |No| `false` |
 
-### ***Returns***: 
+### ***Returns***
 ```ts
 { success: boolean }
 
 ```
-***Example***: 
+***Example*** 
+
 ```gql
 mutation Mutation($name: String!, $value: ParameterValue!) {
     setParameter(name: $name, value: $value) {
@@ -138,11 +144,12 @@ mutation Mutation($name: String!, $value: ParameterValue!) {
 |--|--|--|
 | name | `Array<string>` |Yes|
 
-#### ***Returns***: 
+#### ***Returns***
 ```ts
 { success: boolean }
 ```
-***Example***: 
+***Example***
+
 ```gql
 mutation Mutation($name: String!) {
     deleteParameter(name: $name) {
@@ -152,12 +159,17 @@ mutation Mutation($name: String!) {
 ```
 <br>
 
-## Referencing Parameters
+## Parameter References
 
-Parameters can be referenced in [rules' configurations](./schemas/alert-rule.md) or any [query expression](./jupiterone-query-language.md), though the syntax is slightly different.  Inside of queries, the dollar-sign-bracket syntax can be used to reference objects; the `param` object is a special member, which when invoked, will fetch from the parameter-storing service to retrieve values.  In the case of both rules and queries, references to parameters which don't exist will cause errors and abandon execution.
+You can reference parameters in [rules configurations](./schemas/alert-rule.md) or any [query expression](./jupiterone-query-language.md), although the 
+syntax is slightly different. Inside of queries, you can use the dollar-sign-bracket syntax to reference objects. 
+
+'param' is a special keyword in queries that, when invoked, fetches values from the parameter-storing service. In the case of both rules and queries, 
+references to parameters that do not exist causes errors and abandons execution.
 
 ## Secret Parameters
 
-Any parameters set with `isSecret` to be `true` are considered write-only and not readable from the API; only evaluations of the query will access these parameters' values.  This is to allow the storage of sensitive parameters like API keys which the users of JupiterOne should not be able to themselves see.
+Any parameters set with `isSecret` to be `true` are considered write-only and not readable from the API. Only evaluations of the query can access 
+these parameter values.  This usage enables the storage of sensitive parameters such as API keys that JupiterOne users should not be able to see.
 
-By design, a parameter which has had `isSecret` set to true cannot be updated to `isSecret: false` without also changing the value in the same request.
+By design, you cannot update a parameter that has had `isSecret` set to true to `isSecret: false` without also changing the value in the same request.
