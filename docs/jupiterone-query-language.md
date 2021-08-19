@@ -51,7 +51,7 @@ boundaries obvious to query authors.
 > Supported operators include:
 >
 > - `=` or `!=` for **String** value, **Boolean**, **Number**, or **Date**
-  comparison.
+>   comparison.
 > - `>` or `<` for **Number** or **Date** comparison.
 >
 > Note:
@@ -78,13 +78,13 @@ boundaries obvious to query authors.
 
 - You can filter multiple property values like this (similar to `IN` in SQL):
 
-  >  ```j1ql
-  >  FIND user_endpoint WITH platform = ('darwin' OR 'linux')
+  > ```j1ql
+  > FIND user_endpoint WITH platform = ('darwin' OR 'linux')
   >
-  >  Find Host WITH tag.Environment = ('A' or 'B' or 'C')
+  > Find Host WITH tag.Environment = ('A' or 'B' or 'C')
   >
-  >  Find DataStore WITH classification != ('critical' and 'restricted')
-  >  ```
+  > Find DataStore WITH classification != ('critical' and 'restricted')
+  > ```
 
 - Property filters are evaluated according the following **order of operations**:
 
@@ -124,10 +124,9 @@ boundaries obvious to query authors.
 > Or both Entity and Relationships together. For example:
 >
 > `FIND * THAT (ALLOWS|PERMITS) (Internet|Everyone)`
->
 
 **Relationship verbs** are bidirectional
-> 
+
 > `FIND User THAT HAS Device`
 >
 > and
@@ -202,7 +201,7 @@ is considered a 'filler' word that is ignored by the interpreter.
 > - `CONTRIBUTES TO`
 > - `CONNECTS TO`
 > - `ASSIGNED TO`
-> 
+>
 > The following queries will return the same result:
 >
 > ```j1ql
@@ -235,35 +234,34 @@ Find Person with firstName^='J'
 The above query would return all entities of the `Person` class that have a `firstName` beginning with the character 'J'.
 
 ```j1ql
-Find Host with tag.AccountName~='demo' 
+Find Host with tag.AccountName~='demo'
 ```
 
 The above query would return entities of the `Host` class with any of the following examples of `tag.AccountName`: `xyz_demo`, `demo_xyz`, `abc_demo_xyz`.
 
 !!! warning
-    These string evaluations are case-sensitive. So `'Demo'` and `'demo'` 
-    will yield distinct sets of results.
-
+These string evaluations are case-sensitive. So `'Demo'` and `'demo'`
+will yield distinct sets of results.
 
 ## Parameters
 
-The query language supports [parameters](./parameters.md) for referencing values 
-stored on the server side. Parameter expressions are allowed in places 
+The query language supports [parameters](./parameters.md) for referencing values
+stored on the server side. Parameter expressions are allowed in places
 that could otherwise include a literal value.
 
 ```j1ql
 FIND Application WITH loginUrl = ${ param.loginUrl }
 ```
 
-Currently, there is no support for referencing parameters that contain arrays, 
-even though the rules and alerts do allow this functionality. 
-Future iterations of the J1QL may contain array-traversing operators, 
+Currently, there is no support for referencing parameters that contain arrays,
+even though the rules and alerts do allow this functionality.
+Future iterations of the J1QL may contain array-traversing operators,
 which work out of the box with parameters.
 
 ## Date Comparisons
 
-The query language supports both relative and static data comparisons on any 
-timestamp property. The timestamp property used for date comparison must 
+The query language supports both relative and static data comparisons on any
+timestamp property. The timestamp property used for date comparison must
 be stored as an epoch number in milliseconds.
 
 ### Relative Date Comparison
@@ -320,7 +318,7 @@ FIND Person WITH manager = undefined as u
 ```
 
 !!! note
-    Query returns up to 250 results by default if `LIMIT` is not set.
+Query returns up to 250 results by default if `LIMIT` is not set.
 
 ## Aggregation Functions: `COUNT`, `MIN`, `MAX`, `AVG` and `SUM`
 
@@ -336,7 +334,7 @@ requested via the `RETURN` clause.
 The following aggregating functions are supported:
 
 - `count(selector)`
-- `count(selector.field)` 
+- `count(selector.field)`
 - `min(selector.field)`
 - `max(selector.field)`
 - `avg(selector.field)`
@@ -375,20 +373,21 @@ _Future development:_
 
 ## Scalar Functions: `CONCAT`
 
-The ability to format and/or to perform calculations on row level columns can be 
-accomplished through **Scalar Functions**. 
+The ability to format and/or to perform calculations on row level columns can be
+accomplished through **Scalar Functions**.
 
 ### `CONCAT`
 
-The scalar function `CONCAT()` empowers users to concatenate or join one or more 
-values into a single string. Currently, `CONCAT` can be used in the `RETURN` to 
+The scalar function `CONCAT()` empowers users to concatenate or join one or more
+values into a single string. Currently, `CONCAT` can be used in the `RETURN` to
 clause of your function, will future development planned for use in the `WHERE` clause.
 
-> Note: If this function receives a number or boolean value, the `concat` will 
-> intuitively convert these values to strings. Additionally, if `concat` 
-> processes an empty selector field, it will evaluate that field as an empty string.  
+> Note: If this function receives a number or boolean value, the `concat` will
+> intuitively convert these values to strings. Additionally, if `concat`
+> processes an empty selector field, it will evaluate that field as an empty string.
 
 `CONCAT` supports the following parameters, separated by comma:
+
 - Selector Fields: e.g. `selector.field`
 - String values: e.g. `'your string'` or `"your string"`
 - Number values: e.g. `123`
@@ -397,9 +396,9 @@ clause of your function, will future development planned for use in the `WHERE` 
 A few examples:
 
 ```j1ql
-FIND 
-  aws_s3_bucket as s3 
-RETURN 
+FIND
+  aws_s3_bucket as s3
+RETURN
   CONCAT(s3.bucketSizeBytes / 1000, ' kb') as size
 ```
 
@@ -478,10 +477,10 @@ Return
 ## Optional traversals (Beta)
 
 !!! note
-    This is a beta feature and the syntax for describing optional
-    traversals may change in the future to help improve clarity.
-    Any changes made to the language will be
-    backwards compatible.
+This is a beta feature and the syntax for describing optional
+traversals may change in the future to help improve clarity.
+Any changes made to the language will be
+backwards compatible.
 
 In situations where it is useful to optionally find related entities
 and include them in the results, J1QL allows for portions of a query to be
@@ -560,6 +559,38 @@ Find User with name = 'test'
   that owns Device
 return userOrPerson, Device
 ```
+
+## Smart classes (beta)
+
+Smart classes are a mechanism for applying a set of entity filters with a shorthand syntax. There are two categories of smart class:
+
+1. JupiterOne application classes
+   At present, the only supported instance is `#CriticalAsset`, which maps to the configured definition of critical assets in the Assets application.
+
+   ```j1ql
+   FIND #CriticalAsset that has Finding
+   ```
+
+2. Tag-derived values
+   These will match entities where the tag value equals the provided smart class.
+
+   ```j1ql
+   FIND #Production Application
+   ```
+
+Assuming you have defined a critical asset tas follows, here are some
+example smart class queries and their equivalencies.
+
+![](../assets/j1ql-critical-asset-def.png)
+
+| Smart class Query                             | Equivalent Expanded Query                                                                                                      |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `FIND #CriticalAsset`                         | `FIND * WITH ((_class = ('Application' or 'DataStore') and tags.Production = true) or tags = 'CriticalAsset'`)                 |
+| `FIND #CriticalAsset THAT HAS Finding`        | `FIND * WITH ((_class = ('Application' or 'DataStore') and tag.Production = true) or tags = 'CriticalAsset') THAT HAS Finding` |
+| `FIND Finding THAT RELATES TO #CriticalAsset` | `FIND Finding THAT HAS * WITH ((_class = ('Application' or 'DataStore') and tag.Production = true) or tags = 'CriticalAsset')` |
+| `FIND #Production Application`                | `FIND Application WITH tags = 'Production'`                                                                                    |
+
+Returned entities will reflect their underlying classes, not the queried smart class.
 
 ## Examples
 
