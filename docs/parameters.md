@@ -186,7 +186,7 @@ All changes (including creation and deletion) of parameters is captured by an au
 
 ## Secret Parameters
 
-Any parameters set with `isSecret` to be `true` have write-only values and not readable from the API. Only evaluations of the query can access 
+Any parameters set with `isSecret` to be `true` have write-only values and are not readable from the API. Only evaluations of the query can access 
 these parameter values.  This usage enables the storage of sensitive parameters such as API keys that JupiterOne users should not be able to see.  All read access to these secret parameters will contain redacted values, but metadata is able to be read.
 
 !!! note
