@@ -272,19 +272,24 @@ The above query would return entities of the `Host` class with any of the follow
 
 ## Parameters
 
-The query language supports [parameters](./parameters.md) for referencing values stored on the server-side.  Parameter expressions are allowed in places one might include a literal value otherwise.
+The query language supports [parameters](./parameters.md) for referencing values 
+stored on the server side. Parameter expressions are allowed in places 
+that could otherwise include a literal value.
 
 ```j1ql
 FIND Application WITH loginUrl = ${ param.loginUrl }
 ```
 
-Currently, there is no support for referencing parameters which contain arrays (though the rules and alerts do allow this functionality).  Future iterations of the J1QL may contain array-traversing operators, which will work out of the box with parameters.
+Currently, there is no support for referencing parameters that contain arrays, 
+even though the rules and alerts do allow this functionality. 
+Future iterations of the J1QL may contain array-traversing operators, 
+which work out of the box with parameters.
 
 ## Date Comparisons
 
-The query language supports both relative and static data comparisons on any
-timestamp property. The timestamp property used for date comparison must be
-stored as an epoch number in milliseconds.
+The query language supports both relative and static data comparisons on any 
+timestamp property. The timestamp property used for date comparison must 
+be stored as an epoch number in milliseconds.
 
 ### Relative Date Comparison
 
@@ -395,13 +400,18 @@ _Future development:_
 
 ## Scalar Functions: `CONCAT`
 
-The ability to format and/or to perform calculations on row level columns can be accomplished through **Scalar Functions**. 
+The ability to format and/or to perform calculations on row level columns can be 
+accomplished through **Scalar Functions**. 
 
 ### `CONCAT`
 
-The scalar function `CONCAT()` empowers users to concatenate or join one or more values into a single string. Currently, `CONCAT` can be used in the `RETURN` to clause of your function, will future development planned for use in the `WHERE` clause.
+The scalar function `CONCAT()` empowers users to concatenate or join one or more 
+values into a single string. Currently, `CONCAT` can be used in the `RETURN` to 
+clause of your function, will future development planned for use in the `WHERE` clause.
 
-> Note: If this function receives a number or boolean value, the `concat` will intuitively convert these values to strings. Additionally, if `concat` processes an empty selector field, it will evaluate that field as an empty string.  
+> Note: If this function receives a number or boolean value, the `concat` will 
+> intuitively convert these values to strings. Additionally, if `concat` 
+> processes an empty selector field, it will evaluate that field as an empty string.  
 
 `CONCAT` supports the following parameters, separated by comma:
 - Selector Fields: e.g. `selector.field`
