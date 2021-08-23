@@ -78,18 +78,43 @@ boundaries obvious to query authors.
 
 - You can filter multiple property values like this (similar to `IN` in SQL):
 
-  >  ```j1ql
-  >  FIND user_endpoint WITH platform = ('darwin' OR 'linux')
-  >
-  >  Find Host WITH tag.Environment = ('A' or 'B' or 'C')
-  >
-  >  Find DataStore WITH classification != ('critical' or 'restricted')
-  >  ```
+>  ```j1ql
+>  FIND user_endpoint WITH platform = ('darwin' OR 'linux')
+>
+>  Find Host WITH tag.Environment = ('A' or 'B' or 'C')
+>
+>  Find DataStore WITH classification != ('critical' or 'restricted')
+>  ```
 
 - Property filters are evaluated according the following **order of operations**:
 
-  > Parenthesis first, comparisons (`=`, `>=`, `<=`, `!=`) after, `AND` and then
-  > `OR`.
+> Parenthesis first, comparisons (`=`, `>=`, `<=`, `!=`) after, `AND` and then
+> `OR`.
+
+
+Filtering multiple property values is often called "shorthand" filtering, because it allows you to filter a single property by multiple values.
+
+Below is a table to help illustrate how "shorthand" filters are evaluated:
+
+`_type`               | `_type = "fruit"` | `_type = "nut-filled"` | `_type = ("fruit" AND "nut-filled")` | `_type = ("fruit" OR "nut-filled")`
+--------------------- | :---------------: | :--------------------: | :----------------------------------: | :---------------------------------:
+"fruit"               | true              | false                  | false                                | true
+"nut-filled"          | false             | true                   | false                                | true
+"fruit", "nut-filled" | true              | true                   | true                                 | true
+"non-fruit"           | false             | false                  | false                                | false
+"non-fruit", "plain"  | false             | false                  | false                                | false
+undefined             | false             | false                  | false                                | false
+
+When using a _negated_ "shorthand" filter, such as with the `!=` comparison, you can expect J1QL to evaluate values in the following manner:
+
+`_type`               | `_type != "fruit"` | `type != "nut-filled"` | `_type != ("fruit" AND "nut-filled")` | `_type != ("fruit" OR "nut-filled")`
+--------------------- | :----------------: | :--------------------: | :-----------------------------------: | :---------------------------------:
+"fruit"               | false              | true                   | true                                  | false
+"nut-filled"          | true               | false                  | true                                  | false
+"fruit", "nut-filled" | false              | false                  | false                                 | false
+"non-fruit"           | true               | true                   | true                                  | true
+"non-fruit", "plain"  | true               | true                   | true                                  | true
+undefined             | true               | true                   | true                                  | true 
 
 `THAT` is followed by a **Relationship verb**.
 
