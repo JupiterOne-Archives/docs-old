@@ -217,6 +217,30 @@ This query is the equivalent of:
 
 J1QL interprets the query to return all `jira_user` entities, excluding those that have an `accountType` value of 'atlassian' or 'app' or 'customer'.
 
+The following table shows the resulting truth values of a complex statement that are all possible for a simple statement.
+
+**Truth Table**
+
+| Entity                | "fruit" | "nut-filled" | =("fruit" AND "nut-filled") | =("fruit" OR "nut-filled") |
+| --------------------- | :-----: | :----------: | :-------------------------: | :------------------------: |
+| "fruit"               |  true   |    false     |            false            |            true            |
+| "nut-filled"          |  false  |     true     |            false            |            true            |
+| "fruit", "nut-filled" |  true   |     true     |            true             |            true            |
+| "non-fruit"           |  false  |    false     |            false            |           false            |
+| "non-fruit", "plain"  |  false  |    false     |            false            |           false            |
+| undefined             |  false  |    false     |            false            |           false            |
+
+**Negated Queries**
+
+| Entity                | "fruit" | "nut-filled" | !=("fruit" AND "nut-filled") | !=("fruit" OR "nut-filled") |
+| --------------------- | :-----: | :----------: | :--------------------------: | :-------------------------: |
+| "fruit"               |  true   |    false     |             true             |            false            |
+| "nut-filled"          |  false  |     true     |             true             |            false            |
+| "fruit", "nut-filled" |  true   |     true     |            false             |            false            |
+| "non-fruit"           |  false  |    false     |             true             |            true             |
+| "non-fruit", "plain"  |  false  |    false     |             true             |            true             |
+| undefined             |  false  |    false     |             true             |            true             |
+
 ### Property Filtering
 
 You can filter multiple property values like this (similar to `IN` in SQL):
