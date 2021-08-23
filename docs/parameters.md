@@ -175,11 +175,9 @@ mutation Mutation($name: String!) {
 
 ## Parameter References
 
-You can reference parameters in [rules configurations](./schemas/alert-rule.md) or any [query expression](./jupiterone-query-language.md), although the 
-syntax is slightly different. Inside of queries, you can use the dollar-sign-bracket syntax to reference objects. 
+You can reference parameters in [rules' configurations](./schemas/alert-rule.md) or any [query expression](./jupiterone-query-language.md), although the syntax is [slightly different](#example) between the two. 
 
-'param' is a special keyword in queries that, when invoked, fetches values from the parameter-storing service. In the case of both rules and queries, 
-references to parameters that do not exist causes errors and abandons execution.
+'param' is a special keyword that, when invoked, fetches values from the parameter-storing service. In the case of both rules and queries, referencing a nonexistent parameter will cause an error and abandon execution.
 
 ## Auditing & Security
 
@@ -187,7 +185,7 @@ All changes (including creation and deletion) of parameters is captured by an au
 
 ## Secret Parameters
 
-Any parameters set with `isSecret` to be `true` are considered write-only and not readable from the API. Only evaluations of the query can access 
+Any parameters set with `isSecret` to be `true` have write-only values and not readable from the API. Only evaluations of the query can access 
 these parameter values.  This usage enables the storage of sensitive parameters such as API keys that JupiterOne users should not be able to see.  All read access to these secret parameters will contain redacted values, but metadata is able to be read.
 
 By design, you cannot update a parameter that has had `isSecret` set to true to `isSecret: false` without also changing the value in the same request.
