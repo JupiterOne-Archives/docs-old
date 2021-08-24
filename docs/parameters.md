@@ -1,7 +1,7 @@
 # JupiterOne Parameter Service
 
 Previously, some use cases of JupiterOne required referencing a *literal* value that is better suited to reference as a *variable* or a **parameter**.  
-Some common values that could be better stored and retrieved at runtime instead of saved literally include:
+Some common values that are better stored and retrieved at runtime instead of saved literally include:
 
  - Long or unwieldy values (such as a long URL)
  - Sensitive values (such as a private key or API token)
@@ -31,8 +31,8 @@ FIND Application WITH loginUrl = ${ param.longURL }
 ```
 
 The service hydrates the value of `longUrl` or `secretApiKey` and evaluates it against the 
-remote contents instead of the parameter expression.  You can leverage this same pattern for 
-different types of parameter types and comparisons, explained below.  As shown above, the 
+remote contents instead of the parameter expression. You can leverage this same pattern for 
+different types of parameter types and comparisons, explained below. As shown above, the 
 syntax between rules and queries differs slightly, but is consistent with variables (in the
 case of queries) and expressions (in the case of rules).
 <hr>
@@ -178,16 +178,16 @@ mutation Mutation($name: String!) {
 You can reference parameters in [rules' configurations](./schemas/alert-rule.md) or any [query expression](./jupiterone-query-language.md), although the syntax is [slightly different](#example) between the two. `param` is a special keyword that, when invoked, fetches values from the parameter-storing service. 
 
 !!! warning
-      In the case of both rules and queries, referencing a nonexistent parameter will cause an error and abandon execution.
+      In the case of both rules and queries, referencing a nonexistent parameter causes an error and abandon execution.
 
 ## Auditing & Security
 
-All changes (including creation and deletion) of parameters is captured by an audit trail providing visibility into the historic usage and access of these values.  In addition, all parameters are encrypted-at-rest and in-transit, subject to log redaction, and are subject to either ABAC or IAM-based fine-grained permissions.
+All changes (including creation and deletion) of parameters is captured by an audit trail providing visibility into the historic usage and access of these values. In addition, all parameters are encrypted-at-rest and in-transit, subject to log redaction, and are subject to either ABAC or IAM-based fine-grained permissions.
 
 ## Secret Parameters
 
 Any parameters set with `isSecret` to be `true` have write-only values and are not readable from the API. Only evaluations of the query can access 
-these parameter values.  This usage enables the storage of sensitive parameters such as API keys that JupiterOne users should not be able to see.  All read access to these secret parameters will contain redacted values, but metadata is able to be read.
+these parameter values.  This usage enables the storage of sensitive parameters such as API keys that JupiterOne users should not be able to see.  All read access to these secret parameters contains redacted values, but metadata is able to be read.
 
 !!! note
     By design, you cannot update a parameter that has had `isSecret` set to true to `isSecret: false` without also changing the value in the same request.
