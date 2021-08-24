@@ -308,7 +308,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722014'
       - title: External Parameters and Secrets in J1QL
         file: ../docs/parameters.md
-        hash: 2ynD5/KS73HPCMWB8QKPjsmerZdi+JhQ6/GkoWs74As=
+        hash: oMLfT26NRg7BQwW2CSA29fLu0yMS66lTbnEVFNAAmrI=
         id: 4405138084243
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405138084243'
   - name: API Docs
@@ -316,7 +316,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: TCDY+rJ3XsdHmaUmekeOvizGwjw0eX2+YtudFlLm1PU=
+        hash: /yeF9RVDz44Hu002AAyIYehf1s6/zU60ziSOYymPXNU=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -341,7 +341,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049348293'
       - title: Alert Rule Schema
         file: ../docs/schemas/alert-rule.md
-        hash: vTgK7uCrEB28Scp0bl5L3DEld5WTA1uzS8JMTC8RnR0=
+        hash: CcLtHxA6f7ywAbuGBWIthRXjrgUAdjq+w4dnmNxZDbI=
         id: 360039711354
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360039711354'
       - title: Policies and Compliance related data schema
