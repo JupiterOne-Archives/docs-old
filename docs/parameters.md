@@ -36,7 +36,7 @@ A parameter is an object stored in the parameter-service which uses the followin
 | ------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`               | `string`          | The parameter **key** or "name" |
 | `value`          | `string` \| `number` \| `boolean` \| `list`[*](#listtypes)          | The parameter **value** to be stored/retrieved 
-| `isSecret`[*](#secretparameters)              | `boolean`          | **Flag** to treat value as sensitive data |
+| `secret`[*](#secretparameters)              | `boolean`          | **Flag** to treat value as sensitive data |
 | `lastUpdatedOn`               | `date`          | **Date** which indicates last update  |
 
 #### List Types 
@@ -78,7 +78,7 @@ query Query($name: String!) {
     parameter(name: $name) {
         name
         value
-        isSecret
+        secret
         lastUpdatedOn
     }
 }
@@ -101,7 +101,7 @@ query Query($limit: Int, $cursor: String) {
         items {
             name
             value
-            isSecret
+            secret
             lastUpdatedOn
         }
         pageInfo {
@@ -119,7 +119,7 @@ query Query($limit: Int, $cursor: String) {
 |--|--|--|--|
 | name | `string` |Yes| n/a |
 | value | `string` \| `number` \| `boolean` \| `list`[*](#listtypes)  | Yes | n/a
-| isSecret | `boolean` |No| `false` |
+| secret | `boolean` |No| `false` |
 
 ### ***Returns***
 ```ts
@@ -169,7 +169,7 @@ references to parameters that do not exist causes errors and abandons execution.
 
 ## Secret Parameters
 
-Any parameters set with `isSecret` to be `true` are considered write-only and not readable from the API. Only evaluations of the query can access 
+Any parameters set with `secret` to be `true` are considered write-only and not readable from the API. Only evaluations of the query can access 
 these parameter values.  This usage enables the storage of sensitive parameters such as API keys that JupiterOne users should not be able to see.
 
-By design, you cannot update a parameter that has had `isSecret` set to true to `isSecret: false` without also changing the value in the same request.
+By design, you cannot update a parameter that has had `secret` set to true to `secret: false` without also changing the value in the same request.
