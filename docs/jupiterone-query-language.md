@@ -202,14 +202,14 @@ is considered a 'filler' word that is ignored by the interpreter.
 > - `CONNECTS TO`
 > - `ASSIGNED TO`
 >
-> The following queries will return the same result:
+> The following queries return the same result:
 >
 > ```j1ql
 > FIND User THAT CONTRIBUTES TO CodeRepo
 > FIND User THAT CONTRIBUTES CodeRepo
 > ```
 
-**REMINDER** J1QL keywords are not case sensitive.
+**REMINDER** J1QL keywords are not case-sensitive.
 
 ## String Comparisons
 
@@ -231,17 +231,17 @@ These operators only work for string comparisons.
 Find Person with firstName^='J'
 ```
 
-The above query would return all entities of the `Person` class that have a `firstName` beginning with the character 'J'.
+The above query returns all entities of the `Person` class that have a `firstName` beginning with the character 'J'.
 
 ```j1ql
 Find Host with tag.AccountName~='demo'
 ```
 
-The above query would return entities of the `Host` class with any of the following examples of `tag.AccountName`: `xyz_demo`, `demo_xyz`, `abc_demo_xyz`.
+The above query returns entities of the `Host` class with any of the following examples of `tag.AccountName`: `xyz_demo`, `demo_xyz`, `abc_demo_xyz`.
 
 !!! warning
 These string evaluations are case-sensitive. So `'Demo'` and `'demo'`
-will yield distinct sets of results.
+yields distinct sets of results.
 
 ## Parameters
 
@@ -255,8 +255,7 @@ FIND Application WITH loginUrl = ${ param.loginUrl }
 
 Currently, there is no support for referencing parameters that contain arrays,
 even though the rules and alerts do allow this functionality.
-Future iterations of the J1QL may contain array-traversing operators,
-which work out of the box with parameters.
+Future iterations of the J1QL may contain array-traversing operators that immediately work with parameters.
 
 ## Date Comparisons
 
@@ -382,9 +381,9 @@ The scalar function `CONCAT()` empowers users to concatenate or join one or more
 values into a single string. Currently, `CONCAT` can be used in the `RETURN` to
 clause of your function, will future development planned for use in the `WHERE` clause.
 
-> Note: If this function receives a number or boolean value, the `concat` will
-> intuitively convert these values to strings. Additionally, if `concat`
-> processes an empty selector field, it will evaluate that field as an empty string.
+> Note: If this function receives a number or boolean value, the `concat`
+> intuitively converts these values to strings. Additionally, if `concat`
+> processes an empty selector field, it evaluates that field as an empty string.
 
 `CONCAT` supports the following parameters, separated by comma:
 
@@ -477,10 +476,9 @@ Return
 ## Optional traversals (Beta)
 
 !!! note
-This is a beta feature and the syntax for describing optional
+Optional traversals is a beta feature and the syntax for describing optional
 traversals may change in the future to help improve clarity.
-Any changes made to the language will be
-backwards compatible.
+Any changes made to the language will be backwards compatible.
 
 In situations where it is useful to optionally find related entities
 and include them in the results, J1QL allows for portions of a query to be
@@ -565,20 +563,20 @@ return userOrPerson, Device
 Smart classes are a mechanism for applying a set of entity filters with a shorthand syntax. There are two categories of smart class:
 
 1. JupiterOne application classes
-   At present, the only supported instance is `#CriticalAsset`, which maps to the configured definition of critical assets in the Assets application.
+   Currently, the only supported instance is `#CriticalAsset`, which maps to the configured definition of critical assets in the Assets application.
 
    ```j1ql
    FIND #CriticalAsset that has Finding
    ```
 
 2. Tag-derived values
-   These will match entities where the tag value equals the provided smart class.
+   These values match entities where the tag value equals the provided smart class.
 
    ```j1ql
    FIND #Production Application
    ```
 
-Assuming you have defined a critical asset tas follows, here are some
+Assuming you have defined a critical asset as follows, here are some
 example smart class queries and their equivalencies.
 
 ![](../assets/j1ql-critical-asset-def.png)
@@ -590,7 +588,7 @@ example smart class queries and their equivalencies.
 | `FIND Finding THAT RELATES TO #CriticalAsset` | `FIND Finding THAT HAS * WITH ((_class = ('Application' or 'DataStore') and tag.Production = true) or tags = 'CriticalAsset')` |
 | `FIND #Production Application`                | `FIND Application WITH tags = 'Production'`                                                                                    |
 
-Returned entities will reflect their underlying classes, not the queried smart class.
+Returned entities reflect their underlying classes, not the queried smart class.
 
 ## Examples
 
