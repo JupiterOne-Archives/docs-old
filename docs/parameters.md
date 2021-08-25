@@ -50,7 +50,7 @@ A parameter is an object stored in the parameter-service which uses the followin
 | ------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`               | `string`          | The parameter **key** or "name" |
 | `value`          | `string` \| `number` \| `boolean` \| `list`[*](#listtypes)          | The parameter **value** to be stored/retrieved 
-| `isSecret`[*](#secretparameters)              | `boolean`          | **Flag** to treat value as sensitive data |
+| `secret`[*](#secretparameters)              | `boolean`          | **Flag** to treat value as sensitive data |
 | `lastUpdatedOn`               | `date`          | **Date** which indicates last update  |
 
 #### List Types 
@@ -92,7 +92,7 @@ query Query($name: String!) {
     parameter(name: $name) {
         name
         value
-        isSecret
+        secret
         lastUpdatedOn
     }
 }
@@ -115,7 +115,7 @@ query Query($limit: Int, $cursor: String) {
         items {
             name
             value
-            isSecret
+            secret
             lastUpdatedOn
         }
         pageInfo {
@@ -133,7 +133,7 @@ query Query($limit: Int, $cursor: String) {
 |--|--|--|--|
 | name | `string` |Yes| n/a |
 | value | `string` \| `number` \| `boolean` \| `list`[*](#listtypes)  | Yes | n/a
-| isSecret | `boolean` |No| `false` |
+| secret | `boolean` |No| `false` |
 
 ### ***Returns***
 ```ts
