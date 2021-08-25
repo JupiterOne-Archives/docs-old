@@ -18,6 +18,7 @@ boundaries obvious to query authors.
 - Support for sorting via `ORDER BY` clause (currently only applies to the starting entities of traversal)
 - Support for pagination via `SKIP` and `LIMIT` clauses (currently only applies to the starting entities of traversal)
 - Multi-step graph traversals through relationships via `THAT` clause
+- Specifying relationship direction can be done with double arrows,`<<` and `>>` 
 - Aliasing of selectors via `AS` keyword
 - Pre-traversal filtering using property values via `WITH` clause
 - Post-traversal filtering using property values or union comparison via `WHERE` clause
@@ -126,15 +127,25 @@ boundaries obvious to query authors.
 > `FIND * THAT (ALLOWS|PERMITS) (Internet|Everyone)`
 >
 
-**Relationship verbs** are bidirectional
-> 
+**Relationship verbs** are bidirectional by default
+> Both Queries will yield the same results:
+>
 > `FIND User THAT HAS Device`
->
-> and
->
+> 
 > `Find Device THAT HAS User`
+
+**Relationship direction** can be specified with double arrows (i.e. `<<` or `>>`) _after_ the verb
+> Will find Entities with a `HAS` relationship from User to Device:
+> 
+> `FIND User THAT HAS >> Device`
+> 
+> `Find Device THAT HAS << User`
+
+> Will find Entities with a `HAS` relationship from Device to User:
 >
-> are both acceptable
+> `FIND User THAT HAS << Device`
+>
+> `Find Device THAT HAS >> User`
 
 `AS` is used to define an aliased selector.
 
