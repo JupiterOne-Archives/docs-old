@@ -71,7 +71,7 @@ boundaries obvious to query authors.
 > For example:
 >
 > ```j1ql
-> FIND DataStore WITH encrypted = false AND tag.Production = true
+> FIND DataStore WITH encrypted = false AND (tag.Production = true and classification = 'critical')
 >
 > FIND user_endpoint WITH platform = 'darwin' OR platform = 'linux'
 > ```
@@ -560,33 +560,56 @@ return userOrPerson, Device
 
 ## Smart classes (beta)
 
-Smart classes are a mechanism for applying a set of entity filters with a shorthand syntax. There are two categories of smart class:
+Smart classes are a mechanism for applying a set of entity filters with a
+shorthand syntax. There are two categories of smart class:
 
 1. JupiterOne application classes
-   Currently, the only supported instance is `#CriticalAsset`, which maps to the configured definition of critical assets in the Assets application.
+   Currently, the only supported instance is `#CriticalAsset`, which maps to
+   the configured definition of critical assets in the Assets application.
 
    ```j1ql
    FIND #CriticalAsset that has Finding
    ```
 
+   The default definition of a critical asset is an entity with one of the
+   following classes:
+
+   - Application
+   - CodeRepo
+   - DataStore
+   - Function
+   - Host
+   - Logs
+
+   and the following attributes:
+
+   - tag.Production = 'true'
+   - classification = 'critical'
+
+   Critical Assets are defined by an administrator in the Assets app by
+   clicking the gear icon in the Assets title bar.
+
 2. Tag-derived values
-   These values match entities where the tag value equals the provided smart class.
+   These values match entities where an entity's tags contains the provided smart
+   class (case sensitive).
 
    ```j1ql
    FIND #Production Application
    ```
 
-Assuming you have defined a critical asset as follows, here are some
+   Tags are populated via integrations, and can also be added directly to an entity
+   via J1 as enriched data. Note that, for key-value pair tags, the tag value must
+   be `true` in order to match the smart class.
+
+Assuming you have defined a critical asset as per the above default, here are some
 example smart class queries and their equivalencies.
 
-![](../assets/j1ql-critical-asset-def.png)
-
-| Smart class Query                             | Equivalent Expanded Query                                                                                                      |
-| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `FIND #CriticalAsset`                         | `FIND * WITH ((_class = ('Application' or 'DataStore') and tags.Production = true) or tags = 'CriticalAsset'`)                 |
-| `FIND #CriticalAsset THAT HAS Finding`        | `FIND * WITH ((_class = ('Application' or 'DataStore') and tag.Production = true) or tags = 'CriticalAsset') THAT HAS Finding` |
-| `FIND Finding THAT RELATES TO #CriticalAsset` | `FIND Finding THAT HAS * WITH ((_class = ('Application' or 'DataStore') and tag.Production = true) or tags = 'CriticalAsset')` |
-| `FIND #Production Application`                | `FIND Application WITH tags = 'Production'`                                                                                    |
+| Smart class Query                             | Equivalent Expanded Query                                                                                                                                                                                        |
+| --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `FIND #CriticalAsset`                         | `FIND * WITH ((_class = ('Application' or 'CodeRepo' or 'DataStore' or 'Function' or 'Host' or 'Logs') and (tag.Production = true and classification = 'critical')) or tags = 'CriticalAsset'`)                  |
+| `FIND #CriticalAsset THAT HAS Finding`        | `FIND * WITH ((_class = ('Application' or 'CodeRepo' or 'DataStore' or 'Function' or 'Host' or 'Logs') and (tag.Production = true and classification = 'critical')) or tags = 'CriticalAsset') THAT HAS Finding` |
+| `FIND Finding THAT RELATES TO #CriticalAsset` | `FIND Finding THAT HAS * WITH ((_class = ('Application' or 'CodeRepo' or 'DataStore' or 'Function' or 'Host' or 'Logs') and (tag.Production = true and classification = 'critical')) or tags = 'CriticalAsset')` |
+| `FIND #Production Application`                | `FIND Application WITH tags = 'Production'`                                                                                                                                                                      |
 
 Returned entities reflect their underlying classes, not the queried smart class.
 
