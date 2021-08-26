@@ -128,28 +128,28 @@ boundaries obvious to query authors.
 >
 
 **Relationship verbs** are bidirectional by default
-> Both Queries will yield the same results:
+> Both queries yield the same results:
 >
 > `FIND User THAT HAS Device`
 > 
-> `Find Device THAT HAS User`
+> `FIND Device THAT HAS User`
 
-**Relationship direction** can be specified with double arrows (i.e. `<<` or `>>`) _after_ the verb
-> Will find Entities with a `HAS` relationship from User to Device:
+**Relationship direction** can be specified with double arrows ( `<<` or `>>`) _after_ the verb
+> Finds Entities with a `HAS` relationship from User to Device:
 > 
 > `FIND User THAT HAS >> Device`
 > 
 > `Find Device THAT HAS << User`
 
-> Will find Entities with a `HAS` relationship from Device to User:
+> Finds Entities with a `HAS` relationship from Device to User:
 >
 > `FIND User THAT HAS << Device`
 >
 > `Find Device THAT HAS >> User`
 
-`AS` is used to define an aliased selector.
+`AS` defines an aliased selector.
 
-> Defines an aliased selector to be used in the `WHERE` or `RETURN` portion of a
+> Defines an aliased selector to use in the `WHERE` or `RETURN` portion of a
 > query. For example:
 >
 > - **Without** selectors: `FIND Firewall THAT ALLOWS *`
