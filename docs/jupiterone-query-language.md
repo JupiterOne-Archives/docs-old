@@ -1,9 +1,9 @@
 # JupiterOne Query Language (J1QL)
 
-The JupiterOne Query Language (aka "J1QL") is a query language for querying data
-stored by JupiterOne. The execution of a J1QL query will seamlessly query full
-text search, entity-relationship graph, and any other future data stores as
-needed. By design, the query language does not intend to make these data store
+The JupiterOne Query Language (J1QL) is a query language for querying data
+stored by JupiterOne. The execution of a J1QL query seamlessly queries full
+text search, an entity-relationship graph, and any other future datastores, as
+needed. By design, the query language does not intend to make these datastore
 boundaries obvious to query authors.
 
 ## Language Features
@@ -450,10 +450,10 @@ J1QL supports basic math operations on the return values.
 
   > parenthesis -> multiplication or division -> addition or subtraction
 
-- The operation only works against number values. It will not work against
+- The operation only works against number values. It does not work against
   strings or strings that represent numbers:
 
-  > `'1'` will not work, has to be `1`
+  > `'1'` does not work, it has to be `1`
 
 Example query:
 
@@ -561,11 +561,11 @@ return userOrPerson, Device
 ## Smart classes (beta)
 
 Smart classes are a mechanism for applying a set of entity filters with a
-shorthand syntax. There are two categories of smart class:
+shorthand syntax. There are two categories of smart classes:
 
 1. JupiterOne application classes
    Currently, the only supported instance is `#CriticalAsset`, which maps to
-   the configured definition of critical assets in the Assets application.
+   the configured definition of critical assets in the Assets app.
 
    ```j1ql
    FIND #CriticalAsset that has Finding
@@ -586,12 +586,12 @@ shorthand syntax. There are two categories of smart class:
    - tag.Production = 'true'
    - classification = 'critical'
 
-   Critical Assets are defined by an administrator in the Assets app by
+   Adminitrators define critical assets in the Assets app by
    clicking the gear icon in the Assets title bar.
 
 2. Tag-derived values
-   These values match entities where an entity's tags contains the provided smart
-   class (case sensitive).
+   These values match entities where the tags of an entity contain the provided smart
+   class (case-sensitive).
 
    ```j1ql
    FIND #Production Application
@@ -599,7 +599,7 @@ shorthand syntax. There are two categories of smart class:
 
    Tags are populated via integrations, and can also be added directly to an entity
    via J1 as enriched data. Note that, for key-value pair tags, the tag value must
-   be `true` in order to match the smart class.
+   be `true` to match the smart class.
 
 Assuming you have defined a critical asset as per the above default, here are some
 example smart class queries and their equivalencies.
