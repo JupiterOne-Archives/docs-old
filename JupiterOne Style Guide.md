@@ -25,3 +25,13 @@ Use bold for all UI controls, such as buttons and tabs.
 - Single Sign-On
 - Use Cases
 
+## Plain English Word Usage
+
+| Use This: | Instead of This: |
+| --------- | ---------------- |
+| After...  | Once...          |
+|           |                  |
+|           |                  |
+|           |                  |
+|           |                  |
+
