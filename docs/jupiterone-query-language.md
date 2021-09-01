@@ -1,9 +1,9 @@
 # JupiterOne Query Language (J1QL)
 
 The JupiterOne Query Language (J1QL) is a query language for querying data
-stored by JupiterOne. The execution of a J1QL query seamlessly queries full
-text search, an entity-relationship graph, and any other future datastores, as
-needed. By design, the query language does not intend to make these datastore
+stored by JupiterOne. The execution of a J1QL query seamlessly queries a full
+text search, entity-relationship graph, and any other future data stores, as
+needed. By design, the query language does not intend to make these data store
 boundaries obvious to query authors.
 
 ## Language Features
@@ -21,7 +21,7 @@ boundaries obvious to query authors.
 - Aliasing of selectors via `AS` keyword
 - Pre-traversal filtering using property values via `WITH` clause
 - Post-traversal filtering using property values or union comparison via `WHERE` clause
-- Support aggregates including `COUNT`, `MIN`, `MAX`, `AVG` and `SUM`
+- Support aggregates including `COUNT`, `MIN`, `MAX`, `AVG`, and `SUM`
 - Row level scalar functions including `CONCAT`
 
 ## Basic Keywords
@@ -75,21 +75,6 @@ boundaries obvious to query authors.
 >
 > FIND user_endpoint WITH platform = 'darwin' OR platform = 'linux'
 > ```
-
-- You can filter multiple property values like this (similar to `IN` in SQL):
-
-  > ```j1ql
-  > FIND user_endpoint WITH platform = ('darwin' OR 'linux')
-  >
-  > Find Host WITH tag.Environment = ('A' or 'B' or 'C')
-  >
-  > Find DataStore WITH classification != ('critical' and 'restricted')
-  > ```
-
-- Property filters are evaluated according the following **order of operations**:
-
-  > Parenthesis first, comparisons (`=`, `>=`, `<=`, `!=`) after, `AND` and then
-  > `OR`.
 
 `THAT` is followed by a **Relationship verb**.
 
@@ -176,12 +161,11 @@ boundaries obvious to query authors.
 > wrap the property name in `[]`.
 > For example: `RETURN p.[special-name]='something'`
 >
-> Wildcard can be used to
-> return all properties. For example:
+> Wildcard can be used to return all properties. For example:
 >
 > ```j1ql
 > FIND User as u that IS Person as p
->   RETURN u.*, p.*
+> RETURN u.*, p.*
 > ```
 >
 > A side effect of using wildcard to return all properties is that all metadata
@@ -210,6 +194,68 @@ is considered a 'filler' word that is ignored by the interpreter.
 > ```
 
 **REMINDER** J1QL keywords are not case-sensitive.
+
+## Filtering Behavior
+
+JupiterOne aligns its query language with De Morgan's Law. This standard
+mathematical theory is two sets of rules or laws developed from Boolean expressions
+for AND, OR, and NOT gates, using two input variables, A and B. These two rules or
+theorems allow the input variables to be negated and converted from one form of
+a Boolean function into an opposite form. J1QL uses this law in filtering the results of queries.
+
+When you use a `!=` followed by a set of arguments offset by parentheses, such as
+`!= (A or B or C)`, it is equivalent to the expression `!= A and != B and != C`.
+
+**Example:**
+
+`FIND jira_user WITH accountType != ('atlassian' OR 'app' OR 'customer')`
+
+This query is the equivalent of:
+
+`FIND jira_user WITH accountType != 'atlassian' AND accountType != 'app' AND accountType != 'customer'`
+
+J1QL interprets the query to return all `jira_user` entities, excluding those that have an `accountType` value of 'atlassian' or 'app' or 'customer'.
+
+The following table shows the resulting truth values of a complex statement that are all possible for a simple statement.
+
+**Truth Table**
+
+| Entity                | "fruit" | "nut-filled" | =("fruit" AND "nut-filled") | =("fruit" OR "nut-filled") |
+| --------------------- | :-----: | :----------: | :-------------------------: | :------------------------: |
+| "fruit"               |  true   |    false     |            false            |            true            |
+| "nut-filled"          |  false  |     true     |            false            |            true            |
+| "fruit", "nut-filled" |  true   |     true     |            true             |            true            |
+| "non-fruit"           |  false  |    false     |            false            |           false            |
+| "non-fruit", "plain"  |  false  |    false     |            false            |           false            |
+| undefined             |  false  |    false     |            false            |           false            |
+
+**Negated Queries**
+
+| Entity                | "fruit" | "nut-filled" | !=("fruit" AND "nut-filled") | !=("fruit" OR "nut-filled") |
+| --------------------- | :-----: | :----------: | :--------------------------: | :-------------------------: |
+| "fruit"               |  true   |    false     |             true             |            false            |
+| "nut-filled"          |  false  |     true     |             true             |            false            |
+| "fruit", "nut-filled" |  true   |     true     |            false             |            false            |
+| "non-fruit"           |  false  |    false     |             true             |            true             |
+| "non-fruit", "plain"  |  false  |    false     |             true             |            true             |
+| undefined             |  false  |    false     |             true             |            true             |
+
+### Property Filtering
+
+You can filter multiple property values like this (similar to `IN` in SQL):
+
+> ```j1ql
+> FIND user_endpoint WITH platform = ('darwin' OR 'linux')
+>
+> Find Host WITH tag.Environment = ('A' or 'B' or 'C')
+>
+> Find DataStore WITH classification != ('critical' and 'restricted')
+> ```
+
+Property filters are evaluated according the following **order of operations**:
+
+> Parenthesis first, comparisons (`=`, `>=`, `<=`, `!=`) after, `AND` and then
+> `OR`.
 
 ## String Comparisons
 
