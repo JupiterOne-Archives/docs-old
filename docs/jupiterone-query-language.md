@@ -168,9 +168,9 @@ boundaries obvious to query authors.
 > RETURN u.*, p.*
 > ```
 >
-> A side effect of using wildcard to return all properties is that all metadata
-> properties associated with the selected entities are also returned. This may
-> be useful when users desire to perform analysis that involves metadata.
+>Using a wildcard to return all properties also returns all metadata
+> properties associated with the selected entities. This feature is
+ useful when you want to perform an analysis that involves metadata.
 
 `TO` is used after a relationship verb, and with the exception of `RELATES TO`,
 is considered a 'filler' word that is ignored by the interpreter.
