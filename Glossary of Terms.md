@@ -1,7 +1,9 @@
 # Glossary of Terms
 
+NOTE: This is a draft and is <u>not</u> published anywhere yet. Please feel free to add terms and definitions.
 
-| Term              | Description                                                  |
+
+| Term              | Definition                                                   |
 | ----------------- | ------------------------------------------------------------ |
 | Alert             |                                                              |
 | Class             | The class of an asset is an abstract label that defines what the asset is within the concept of security operations. Class names are always written in Pascal case (upper camel case). Examples: User, AccessPolicy, NetworkInterface. |
