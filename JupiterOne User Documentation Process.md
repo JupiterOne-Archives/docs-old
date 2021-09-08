@@ -6,7 +6,7 @@ To be able to capture all user documentation requirements, it is crucial that we
 
 Process:
 
-1. If you need user documentation, in the epic Jira ticket, click Yes in the Documentation Required? field.
+1. If you need user documentation, in the epic Jira ticket, click Yes in the **Documentation Required?** field.
 2. During epic grooming/planning, the team lead/scrum master creates a Jira ticket in the DOC project to capture what exactly we need to add to the documentation. 
    - From the point of view of the J1 user, explain what has been added, changed, or deleted from the J1 app, integration, or API.
    - Provide the context and benefit to the user for the change by linking the dev tickets and references to any RFCs.

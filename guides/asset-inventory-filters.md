@@ -14,13 +14,13 @@ Click **Critical Assets** in the top banner to go directly to the most important
 
 ![](../assets/asset-critical.png)
 
-Critical assets is a class of entity for which you can create queries and alerts to quickly access
+Critical assets is a class of asset for which you can create queries and alerts to quickly access
 the most crucial data. By default, JupiterOne determines which criteria defines an asset as 
-the most important and, therefor, the most at risk but an administrator can edit this definition.
+the most important and, therefore, the most at risk but an administrator can edit this definition.
 
-Click ![](C:\Users\lynch\Documents\GitHub\docs\assets\icons\gear.png)to edit the critical asset definition default values. You can use classes, properties, and values 
+Click ![](../assets/icons/gear.png)to edit the critical asset definition default values. You can use classes, properties, and values 
 to define what is critical.
-![](C:\Users\lynch\Documents\GitHub\docs\assets\asset-definition.png)
+![](../assets/asset-definition.png)
 
 Add asset classes and properties that your organization comprises a critical
 asset, and click **UPDATE DEFINITION**.
@@ -48,7 +48,7 @@ _The **Type** of an entity represents the specific type of entity as defined by
 its source. For more details, see the JupiterOne Data Model documentation._
 
 You can also expand the Class filter to get a more detailed, dashboard-like view
-of the entiites/assets with a count for each class.
+of the entities/assets with a count for each class.
 
 ![](../assets/asset-quick-filter-class-expanded.png)
 
