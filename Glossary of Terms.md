@@ -10,32 +10,7 @@
 | Exception         | Outlier circumstance.                                        |
 | Exemption         | (To be created feature) Permitting of asset and/or relationship that would count as a gap on a compliance requirement but is exempt from inclusion due to user documented circumstances. |
 | Smart Class       | A class-like query language shortcut to a defined set of entity filters or tags. |
-| Type              | The type of an asset represents the specific type of asset as defined by its source. Type names are always written in snake case. Examples: jupiterone_user,  aws_iam_policy, aws_eni. |
+| Type              | The type of an asset represents the specific type of asset as defined by its source. Type names are always written in snake case. Examples: jupiterone_user, aws_iam_policy, aws_eni. |
 | Query             |                                                              |
 | Workload          | Capitalized?                                                 |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
-|                   |                                                              |
 
