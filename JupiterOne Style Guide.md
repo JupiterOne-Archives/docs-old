@@ -18,10 +18,13 @@ Contractions and abbreviations: For plain English reasons, spell out contraction
 
 Use bold for all UI controls, such as buttons and tabs.
 
+## Punctuation
 
+Always use the Oxford (serial) comma. 
 
-## Spelling and Punctuation
+## Spelling
 
+- Enduser
 - Single Sign-On
 - Use Cases
 

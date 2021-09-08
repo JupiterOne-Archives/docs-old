@@ -303,12 +303,12 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: ZCp4QHtx57z/uI1Vd2MceYXjDiYUQkRQRSaLx+coV84=
+        hash: /GJAFoTmc+T5R9LxkWp1XEqmTbt2RODiFUE68CDEX6Y=
         id: 360022722014
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722014'
       - title: External Parameters and Secrets in J1QL
         file: ../docs/parameters.md
-        hash: WaOs49s8NaC1qQ4FdbCGIdHPvzlkKPOWbGCJs1Z93kY=
+        hash: gg5gZ4oLKmcRt0H/jZjGv8auYMsMwzhU8Upt6MmXO8E=
         id: 4405138084243
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405138084243'
   - name: API Docs
@@ -316,7 +316,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: YuiOfxaqKxXU7ePl+PuAuOvsl7g8QXzHD2RitBhKpV0=
+        hash: g83yN6N4C5LfIewbbFU5vKr/3lYsiiKnavZ68P4Vag8=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -372,7 +372,7 @@ sections:
     articles:
       - title: Data Model - Overview
         file: ../docs/jupiterone-data-model.md
-        hash: 9VPvDSRjbv2sAooDsN0Q2IDKPBWRqnLMAu17+u6csK0=
+        hash: ANf/5bsXu0RuEleAzNuJlbyFrUkzqy9mIcS673rSSdY=
         id: 360022903573
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903573'
       - title: Entity Relationship Mapping
@@ -753,7 +753,7 @@ sections:
     articles:
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: Ls9HCdOVSxMMjfxNgJouaiQdDek+fPjq+PO9HDDBCNo=
+        hash: Hodnar/ivhUJnmiBt94cEl6oqSTbIw7rU+Jc0AZVWfc=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
