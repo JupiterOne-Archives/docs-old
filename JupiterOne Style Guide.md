@@ -28,3 +28,13 @@ Always use the Oxford (serial) comma.
 - Single Sign-On
 - Use Cases
 
+## Plain English Word Usage
+
+| Use This: | Instead of This: |
+| --------- | ---------------- |
+| After...  | Once...          |
+|           |                  |
+|           |                  |
+|           |                  |
+|           |                  |
+
