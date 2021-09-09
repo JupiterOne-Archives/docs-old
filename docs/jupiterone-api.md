@@ -892,10 +892,9 @@ This information will be tracked:
 
 1. **Finalization:** Once an integration has uploaded all data to the persister
    "finalization" is triggered. During the "finalization" phase, the persister
-   will compare the "new state" with "old state" and determine changes. Any
-   changes that are detected will cause operations to be produced will persisted
-   during the run of the finalization task (they will not be enqueued on a
-   Kinesis stream).
+   will compare the "new state" with the "old state" and determine changes. The
+   persister will immediately perform any changes that are detected during the
+   run of the finalization task (they will not be enqueued on a Kinesis stream).
 
    Entities are finalized first and relationships are finalized afterward (since
    relationships might reference new entities).
@@ -1114,6 +1113,30 @@ POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/relati
     "numRelationshipsUpdated": 0,
     "numRelationshipsDeleted": 0
   }
+}
+```
+
+### Get a bulk upload URL for synchronization job
+
+A bulk upload URL may be used to upload a file that has the same structure as
+the body of a normal upload request. The persister will process this file during
+finalization. Currently, the persister only allows one bulk upload per
+synchronization job. If you request a bulk upload URL more than once, the
+persister will return the same URL until it expires. Upload URLs expire in one
+hour.
+
+**Sample request:**
+
+```text
+POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/uploadUrl
+```
+
+**Sample response:**
+
+```json
+{
+  "uploadUrl": "{a very long signed S3 URL}",
+  "expiresAt": 1631198730000
 }
 ```
 
