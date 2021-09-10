@@ -25,7 +25,7 @@ sections:
       - title: 5/9 Using Asset Inventory Filters
         file: ../guides/asset-inventory-filters.md
         id: 360022720454
-        hash: Ev8rWp/6v1ocxgHIPcBctvlohuq0KO21RGusM5DXQ+U=
+        hash: eEofL2YChVpTAJPDevST1zsRJvH2afuQjh7WiYpiqsU=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720454'
       - title: 6/9 Alerts and Alert Rules
         file: ../guides/manage-alerts.md
@@ -303,7 +303,7 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: /GJAFoTmc+T5R9LxkWp1XEqmTbt2RODiFUE68CDEX6Y=
+        hash: xyVQXVEV/EiuHcn6leJG1TWY4U/FiTMy/J1WSgzUOPA=
         id: 360022722014
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722014'
       - title: External Parameters and Secrets in J1QL
@@ -316,7 +316,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: g83yN6N4C5LfIewbbFU5vKr/3lYsiiKnavZ68P4Vag8=
+        hash: UOCcuKJEt/r90S61Ny0sgAoPiJU/pBuQ6mWDpX7dLEk=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -751,9 +751,14 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2021.79 Release
+        file: ../release-notes/2021-79.md
+        hash: 0N/qLEUMy9YWR2P5j9pbAk1F9iQg8aMZhRnQmnDW2bw=
+        id: 4406699567635
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: Hodnar/ivhUJnmiBt94cEl6oqSTbIw7rU+Jc0AZVWfc=
+        hash: lom6LFEDQx6CI+yeTrRS7bkSkO5Q1g1yObBBsQW/Igo=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
