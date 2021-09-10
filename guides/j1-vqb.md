@@ -51,11 +51,16 @@ The VQB workspace consists of a:
 3. Click and drag from one asset or asset group box to another asset or asset group box 
    to create a relationship. 
 
-   - Each relationship has an identifier. 
-   - Click the relationship identifier to see its details in the right information pane.
-   - Relationship classes default to all available verbs. J1QL shows all possible verbs that could apply to that relationship. You can toggle between relationship classes to determine how you 
-     want the query to search.<img src="C:\Users\lynch\Documents\GitHub\docs\assets\vqb-relationship.png" style="zoom: 67%;" />
+   1. Each relationship has an identifier. 
+   2. Click the relationship identifier to see its details in the right information pane.
+   3. Relationship classes default to all available verbs. J1QL shows all possible verbs that could 
+       apply to that relationship. You can toggle between relationship classes to determine how you 
+       want the query to search.
+       `!!!` note The verb RELATES TO covers any and all relationship verbs. However, It is highly recommended to use specific relationship verbs for faster query performance.
    
+
+<img src="../assets/vqb-relationship.png" style="zoom: 67%;" />
+
 4. Continue to drag over assets and create groups and the relationships between them.
 
 #### Using Wildcards
@@ -73,10 +78,6 @@ For example, in the following example, the text asset Security is the root asset
 You can create filters that are based on all the properties you have for the selected asset on the canvas. You can also apply AND OR conditions to the filters.
 
 <img src="../assets/vbq-filters.png" style="zoom:67%;" />
-
-### Messages
-
-This query contains 2+ generic relationship traversals (using RELATES TO). This may cause undesirably slow query performance or potential timeouts, especially on large datasets. - What is the corrective action?
 
 
 
