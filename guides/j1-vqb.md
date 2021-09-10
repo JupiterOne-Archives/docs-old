@@ -3,7 +3,7 @@
 
 
 JupiterOne Visual Query Builder (VQB) provides a no-code, drag-and-drop, visual interface for building 
-JupiterOne queries without having to learn JupiterOne Query Language (J1QL) syntax.
+JupiterOne queries without needing to learn JupiterOne Query Language (J1QL) syntax.
 
 ### Permissions
 
@@ -11,11 +11,11 @@ You need the accessLanding and readGraph roles to use VQB.
 
 ### Prerequisites
 
-Your organization must have already used an integration to import data in to JupiterOne.
+Your organization must have already used an integration to import your data in to JupiterOne.
 
 ### Creating Queries Using VQB
 
-To access VQB, from the Landing page, click <img src="C:\Users\lynch\Documents\GitHub\docs\assets\icons\vqb-button.png" style="zoom:50%;" />.<img src="C:\Users\lynch\Documents\GitHub\docs\assets\vqb-access.png" style="zoom: 67%;" />
+To access VQB, from the Landing page, click <img src="../assets/icons/vqb-button.png" style="zoom:50%;" />.<img src="../assets/vqb-access.png" style="zoom: 67%;" />
 
 The VQB workspace consists of a:
 
@@ -36,7 +36,7 @@ The VQB workspace consists of a:
    right pane. 
 
    If you want your query to do a full-text search of your entire graph on a custom text string, 
-   click **Other** and drag over the Text asset. You are prompted to enter your custom text. 
+   click **Other** in the left pane and drag over the Text asset. You are prompted to enter your custom text. 
    You can only do this step at the very beginning of your query build because the custom text string 
    is always the root asset.
 
@@ -53,23 +53,30 @@ The VQB workspace consists of a:
 
    - Each relationship has an identifier. 
    - Click the relationship identifier to see its details in the right information pane.
-   - Relationship classes default to all available verbs. J1QL shows all possible verbs that could
-     apply to that relationship. You can toggle between relationship classes to determine how you 
+   - Relationship classes default to all available verbs. J1QL shows all possible verbs that could apply to that relationship. You can toggle between relationship classes to determine how you 
      want the query to search.<img src="C:\Users\lynch\Documents\GitHub\docs\assets\vqb-relationship.png" style="zoom: 67%;" />
-
+   
 4. Continue to drag over assets and create groups and the relationships between them.
+
+#### Using Wildcards
 
 There is a wildcard asset that you can use to represent a relationship with anything. Click ***(any entity)** and drag it to the canvas. Then, in the right pane deselect the relationships that you do not want in your query. If you use the wildcard asset, it overrides all child assets in an asset group of which the wildcard asset is a member.
 
-For example, in the following example, the text asset Security is the root asset. The query searches all alerts and all JupiterOne alerts assets with the word security in any of the properties. The wildcard asset lists all possible relationships, from which you can toggle on or off the options listed in the right pane according to the information you are seeking.
+For example, in the following example, the text asset Security is the root asset. The query does a full text search on all alerts and all JupiterOne alerts assets with the word security in any of the properties. The wildcard asset lists all possible relationships, from which you can toggle on or off the options listed in the right pane according to the information you are seeking.
 
-![](C:\Users\lynch\Documents\GitHub\docs\assets\vqb-wildcard.png)
+<img src="../assets/vqb-wildcard.png"/>
 
 **Note:** When connecting relationships between assets or asset groups, you must start with the lower number (such as e1) and drag it to the next incremental asset (such as e2) and then on to the next increment (such as e4).
 
+### Filtering
+
+You can create filters that are based on all the properties you have for the selected asset on the canvas. You can also apply AND OR conditions to the filters.
+
+<img src="../assets/vbq-filters.png" style="zoom:67%;" />
+
 ### Messages
 
-This query contains 2+ generic relationship traversals (using RELATES TO ). This may cause undesirably slow query performance or potential timeouts, especially on large datasets. - What is the corrective action?
+This query contains 2+ generic relationship traversals (using RELATES TO). This may cause undesirably slow query performance or potential timeouts, especially on large datasets. - What is the corrective action?
 
 
 
