@@ -30,7 +30,7 @@ sections:
       - title: 6/9 Alerts and Alert Rules
         file: ../guides/manage-alerts.md
         id: 360022720474
-        hash: 9EocX6mP+cI1m2JIGOkFj2K4Fn9qDI2uSHFnKXHr/3k=
+        hash: ovanEnbVtCBZ+TjF7T9GffyAOm6VPhNxS+OkaVx27Gg=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720474'
       - title: 7/9 Manage Findings
         file: ../guides/manage-findings.md
@@ -316,7 +316,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: LthTrn3JOgMHInYoqJ36/HVtHOayPAQ7KBYk2iPQuvw=
+        hash: k3bLDuNen5he7z+h0hu7gSnNsy886PzkIb2bwuTzzaI=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -758,7 +758,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: xIISEpxdaNnjk+SYe+uCNUG/we3B7Y0RSZckkLXscRE=
+        hash: EFTqF06Ps3cYgBwKyY0mV9EAzmZqeeO2i/rKJwgQu6M=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
