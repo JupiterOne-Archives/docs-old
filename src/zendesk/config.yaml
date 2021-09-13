@@ -62,7 +62,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022879453'
       - title: AWS Specific Questions
         file: ../faqs/faqs-aws.md
-        hash: Nz3RNcnDMtSvinRBDDEwe+Y2t03LhMBnVxyu55b7YIM=
+        hash: dUluTOetOTzy5GpJ1IpDME/6oExNwQOD9RSHZGZz3jQ=
         id: 360026412494
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412494'
       - title: Query Related Questions
@@ -316,7 +316,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: xfRQt+3BL1qUjSUoA4wl4Ihq+NHGTLbZwtera0fJNns=
+        hash: XNndne4QmQ2Ed/qA9KB6TU8eY+eaYyz2f31MkFG8Q4w=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -758,7 +758,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: RcpY4o5iB9oWjTzGVH6hrdcMmeF7ZbYrpEpAM9JwzNw=
+        hash: ykAa5DMPccEL7YaHx64ad/e9Tcz6e1GW4uhQoimV3z0=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
