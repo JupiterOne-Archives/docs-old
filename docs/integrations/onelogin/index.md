@@ -5,6 +5,7 @@
 - Visualize OneLogin users, groups, roles, devices, applications, and services
   in the JupiterOne graph.
 - Map OneLogin users to employees in your JupiterOne account.
+- Map OneLogin users to their AWS IAM Roles where applicable.
 - Monitor changes to OneLogin users and access management data using JupiterOne
   alerts.
 - Create an employee entity that is used to map users across your organization
@@ -64,11 +65,12 @@ be found [here][1].
 
 This integration's authentication is achieved by fetching an OAuth token from
 OneLogin. You can reproduce this authentication strategy by running the
-following curl, replacing `<CLIENT_ID>` and `<CLIENT_SECRET>` with your own:
+following curl, replacing `<CLIENT_ID>` and `<CLIENT_SECRET>` with your own.
+`<API_HOSTNAME>` defaults to `https://api.us.onelogin.com`:
 
 ```
 curl --request POST \
-  --url https://api.us.onelogin.com/auth/oauth2/v2/token \
+  --url <API_HOSTNAME> \
   --header 'authorization: client_id:<CLIENT_ID>, client_secret:<CLIENT_SECRET>' \
   --header 'content-type: application/json' \
   --data '{
@@ -84,40 +86,13 @@ curl --request POST \
 4. Click the **trash can** icon.
 5. Click the **Remove** button to delete the integration.
 
-## Data Model
+## Notes on mapping to AWS IAM roles
 
-### Entities
-
-The following entity resources are ingested when the integration runs:
-
-| OneLogin Entity Resource | \_type : \_class of the Entity                  |
-| ------------------------ | ----------------------------------------------- |
-| Account                  | `onelogin_account` : `Account`                  |
-| Group                    | `onelogin_group` : `UserGroup`                  |
-| OneLogin Role            | `onelogin_role` : `AccessRole`                  |
-| User                     | `onelogin_user` : `User`                        |
-| App                      | `onelogin_application` : `Application`          |
-| Personal App             | `onelogin_personal_application` : `Application` |
-| Personal Device          | `mfa_device` : `[Key, AccessKey]`               |
-| Service (SSO & MFA)      | `onelogin_service` : `['Service', 'Control']`   |
-
-### Relationships
-
-The following relationships are created/mapped:
-
-| From               | Type         | To                              |
-| ------------------ | ------------ | ------------------------------- |
-| `onelogin_account` | **HAS**      | `onelogin_group`                |
-| `onelogin_account` | **HAS**      | `onelogin_role`                 |
-| `onelogin_account` | **HAS**      | `onelogin_user`                 |
-| `onelogin_account` | **HAS**      | `onelogin_application`          |
-| `onelogin_account` | **HAS**      | `onelogin_service`              |
-| `onelogin_user`    | **ASSIGNED** | `onelogin_application`          |
-| `onelogin_user`    | **ASSIGNED** | `onelogin_group`                |
-| `onelogin_user`    | **HAS**      | `onelogin_personal_application` |
-| `onelogin_user`    | **ASSIGNED** | `onelogin_role`                 |
-| `onelogin_user`    | **ASSIGNED** | `mfa_device`                    |
-| `onelogin_group`   | **HAS**      | `onelogin_user`                 |
+The integration assumes that users who map to AWS IAM Roles do so via Role ARNs
+included in the SAML Role parameter. It is further assumed that these ARNs are
+mapped to the user by a Rule in the OneLogin AWS application. Currently, the
+integration supports mapping by Rule conditions based on OneLogin Roles, Group,
+or MemberOf properties.
 
 [1]:
   https://developers.onelogin.com/api-docs/1/getting-started/working-with-api-credentials
@@ -129,7 +104,7 @@ NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
 "j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
 DOCUMENTATION FOR USAGE INFORMATION:
 
-https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md
 ********************************************************************************
 -->
 
@@ -143,6 +118,7 @@ The following entities are created:
 | ----------------------------- | ------------------------------- | -------------------- |
 | Onelogin Account              | `onelogin_account`              | `Account`            |
 | Onelogin Application          | `onelogin_application`          | `Application`        |
+| Onelogin Application Rule     | `onelogin_application_rule`     | `Configuration`      |
 | Onelogin Group                | `onelogin_group`                | `UserGroup`          |
 | Onelogin Personal Application | `onelogin_personal_application` | `Application`        |
 | Onelogin Personal Device      | `mfa_device`                    | `Key`, `AccessKey`   |
@@ -154,19 +130,21 @@ The following entities are created:
 
 The following relationships are created/mapped:
 
-| Source Entity `_type` | Relationship `_class` | Target Entity `_type`           |
-| --------------------- | --------------------- | ------------------------------- |
-| `onelogin_account`    | **HAS**               | `onelogin_application`          |
-| `onelogin_account`    | **HAS**               | `onelogin_group`                |
-| `onelogin_account`    | **HAS**               | `onelogin_role`                 |
-| `onelogin_account`    | **HAS**               | `onelogin_service`              |
-| `onelogin_account`    | **HAS**               | `onelogin_user`                 |
-| `onelogin_group`      | **HAS**               | `onelogin_user`                 |
-| `onelogin_user`       | **ASSIGNED**          | `onelogin_application`          |
-| `onelogin_user`       | **ASSIGNED**          | `onelogin_group`                |
-| `onelogin_user`       | **ASSIGNED**          | `mfa_device`                    |
-| `onelogin_user`       | **ASSIGNED**          | `onelogin_role`                 |
-| `onelogin_user`       | **HAS**               | `onelogin_personal_application` |
+| Source Entity `_type`  | Relationship `_class` | Target Entity `_type`           |
+| ---------------------- | --------------------- | ------------------------------- |
+| `onelogin_account`     | **HAS**               | `onelogin_application`          |
+| `onelogin_account`     | **HAS**               | `onelogin_group`                |
+| `onelogin_account`     | **HAS**               | `onelogin_role`                 |
+| `onelogin_account`     | **HAS**               | `onelogin_service`              |
+| `onelogin_account`     | **HAS**               | `onelogin_user`                 |
+| `onelogin_application` | **HAS**               | `onelogin_application_rule`     |
+| `onelogin_group`       | **HAS**               | `onelogin_user`                 |
+| `onelogin_user`        | **ASSIGNED**          | `onelogin_application`          |
+| `onelogin_user`        | **ASSIGNED**          | `aws_iam_role`                  |
+| `onelogin_user`        | **ASSIGNED**          | `onelogin_group`                |
+| `onelogin_user`        | **ASSIGNED**          | `mfa_device`                    |
+| `onelogin_user`        | **ASSIGNED**          | `onelogin_role`                 |
+| `onelogin_user`        | **HAS**               | `onelogin_personal_application` |
 
 <!--
 ********************************************************************************
