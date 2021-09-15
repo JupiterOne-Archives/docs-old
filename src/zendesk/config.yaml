@@ -25,7 +25,7 @@ sections:
       - title: 5/9 Using Asset Inventory Filters
         file: ../guides/asset-inventory-filters.md
         id: 360022720454
-        hash: Ev8rWp/6v1ocxgHIPcBctvlohuq0KO21RGusM5DXQ+U=
+        hash: eEofL2YChVpTAJPDevST1zsRJvH2afuQjh7WiYpiqsU=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720454'
       - title: 6/9 Alerts and Alert Rules
         file: ../guides/manage-alerts.md
@@ -62,7 +62,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022879453'
       - title: AWS Specific Questions
         file: ../faqs/faqs-aws.md
-        hash: Nz3RNcnDMtSvinRBDDEwe+Y2t03LhMBnVxyu55b7YIM=
+        hash: dUluTOetOTzy5GpJ1IpDME/6oExNwQOD9RSHZGZz3jQ=
         id: 360026412494
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360026412494'
       - title: Query Related Questions
@@ -303,12 +303,12 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: ZCp4QHtx57z/uI1Vd2MceYXjDiYUQkRQRSaLx+coV84=
+        hash: xyVQXVEV/EiuHcn6leJG1TWY4U/FiTMy/J1WSgzUOPA=
         id: 360022722014
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722014'
       - title: External Parameters and Secrets in J1QL
         file: ../docs/parameters.md
-        hash: oMLfT26NRg7BQwW2CSA29fLu0yMS66lTbnEVFNAAmrI=
+        hash: gg5gZ4oLKmcRt0H/jZjGv8auYMsMwzhU8Upt6MmXO8E=
         id: 4405138084243
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405138084243'
   - name: API Docs
@@ -316,7 +316,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: 3QW5NarSfes3cNHtYAhmak7imTyWQd5rNlDPwy58gmo=
+        hash: XNndne4QmQ2Ed/qA9KB6TU8eY+eaYyz2f31MkFG8Q4w=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -372,7 +372,7 @@ sections:
     articles:
       - title: Data Model - Overview
         file: ../docs/jupiterone-data-model.md
-        hash: 9VPvDSRjbv2sAooDsN0Q2IDKPBWRqnLMAu17+u6csK0=
+        hash: ANf/5bsXu0RuEleAzNuJlbyFrUkzqy9mIcS673rSSdY=
         id: 360022903573
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903573'
       - title: Entity Relationship Mapping
@@ -751,9 +751,14 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2021.79 Release
+        file: ../release-notes/2021-79.md
+        hash: K3JYSN/2hHpYmFeDQQd/4smxN0EyorA1kKOl3vSAxPM=
+        id: 4406699567635
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: AsgLWpRqK3F+vTCQ/M4M5OX6gUhk9pRCscg6s6+kicw=
+        hash: ykAa5DMPccEL7YaHx64ad/e9Tcz6e1GW4uhQoimV3z0=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release

@@ -1,8 +1,8 @@
 # JupiterOne Query Language (J1QL)
 
-The JupiterOne Query Language (aka "J1QL") is a query language for querying data
-stored by JupiterOne. The execution of a J1QL query will seamlessly query full
-text search, entity-relationship graph, and any other future data stores as
+The JupiterOne Query Language (J1QL) is a query language for querying data
+stored by JupiterOne. The execution of a J1QL query seamlessly queries a full
+text search, entity-relationship graph, and any other future data stores, as
 needed. By design, the query language does not intend to make these data store
 boundaries obvious to query authors.
 
@@ -22,7 +22,7 @@ boundaries obvious to query authors.
 - Aliasing of selectors via `AS` keyword
 - Pre-traversal filtering using property values via `WITH` clause
 - Post-traversal filtering using property values or union comparison via `WHERE` clause
-- Support aggregates including `COUNT`, `MIN`, `MAX`, `AVG` and `SUM`
+- Support aggregates including `COUNT`, `MIN`, `MAX`, `AVG`, and `SUM`
 - Row level scalar functions including `CONCAT`
 
 ## Basic Keywords
@@ -52,7 +52,7 @@ boundaries obvious to query authors.
 > Supported operators include:
 >
 > - `=` or `!=` for **String** value, **Boolean**, **Number**, or **Date**
-  comparison.
+>   comparison.
 > - `>` or `<` for **Number** or **Date** comparison.
 >
 > Note:
@@ -72,25 +72,10 @@ boundaries obvious to query authors.
 > For example:
 >
 > ```j1ql
-> FIND DataStore WITH encrypted = false AND tag.Production = true
+> FIND DataStore WITH encrypted = false AND (tag.Production = true and classification = 'critical')
 >
 > FIND user_endpoint WITH platform = 'darwin' OR platform = 'linux'
 > ```
-
-- You can filter multiple property values like this (similar to `IN` in SQL):
-
-  >  ```j1ql
-  >  FIND user_endpoint WITH platform = ('darwin' OR 'linux')
-  >
-  >  Find Host WITH tag.Environment = ('A' or 'B' or 'C')
-  >
-  >  Find DataStore WITH classification != ('critical' and 'restricted')
-  >  ```
-
-- Property filters are evaluated according the following **order of operations**:
-
-  > Parenthesis first, comparisons (`=`, `>=`, `<=`, `!=`) after, `AND` and then
-  > `OR`.
 
 `THAT` is followed by a **Relationship verb**.
 
@@ -125,7 +110,6 @@ boundaries obvious to query authors.
 > Or both Entity and Relationships together. For example:
 >
 > `FIND * THAT (ALLOWS|PERMITS) (Internet|Everyone)`
->
 
 **Relationship verbs** are bidirectional by default
 > Both queries yield the same results:
@@ -188,17 +172,16 @@ boundaries obvious to query authors.
 > wrap the property name in `[]`.
 > For example: `RETURN p.[special-name]='something'`
 >
-> Wildcard can be used to
-> return all properties. For example:
+> Wildcard can be used to return all properties. For example:
 >
 > ```j1ql
 > FIND User as u that IS Person as p
->   RETURN u.*, p.*
+> RETURN u.*, p.*
 > ```
 >
-> A side effect of using wildcard to return all properties is that all metadata
-> properties associated with the selected entities are also returned. This may
-> be useful when users desire to perform analysis that involves metadata.
+>Using a wildcard to return all properties also returns all metadata
+> properties associated with the selected entities. This feature is
+ useful when you want to perform an analysis that involves metadata.
 
 `TO` is used after a relationship verb, and with the exception of `RELATES TO`,
 is considered a 'filler' word that is ignored by the interpreter.
@@ -213,15 +196,77 @@ is considered a 'filler' word that is ignored by the interpreter.
 > - `CONTRIBUTES TO`
 > - `CONNECTS TO`
 > - `ASSIGNED TO`
-> 
-> The following queries will return the same result:
+>
+> The following queries return the same result:
 >
 > ```j1ql
 > FIND User THAT CONTRIBUTES TO CodeRepo
 > FIND User THAT CONTRIBUTES CodeRepo
 > ```
 
-**REMINDER** J1QL keywords are not case sensitive.
+**REMINDER** J1QL keywords are not case-sensitive.
+
+## Filtering Behavior
+
+JupiterOne aligns its query language with De Morgan's Law. This standard
+mathematical theory is two sets of rules or laws developed from Boolean expressions
+for AND, OR, and NOT gates, using two input variables, A and B. These two rules or
+theorems allow the input variables to be negated and converted from one form of
+a Boolean function into an opposite form. J1QL uses this law in filtering the results of queries.
+
+When you use a `!=` followed by a set of arguments offset by parentheses, such as
+`!= (A or B or C)`, it is equivalent to the expression `!= A and != B and != C`.
+
+**Example:**
+
+`FIND jira_user WITH accountType != ('atlassian' OR 'app' OR 'customer')`
+
+This query is the equivalent of:
+
+`FIND jira_user WITH accountType != 'atlassian' AND accountType != 'app' AND accountType != 'customer'`
+
+J1QL interprets the query to return all `jira_user` entities, excluding those that have an `accountType` value of 'atlassian' or 'app' or 'customer'.
+
+The following table shows the resulting truth values of a complex statement that are all possible for a simple statement.
+
+**Truth Table**
+
+| Entity                | "fruit" | "nut-filled" | =("fruit" AND "nut-filled") | =("fruit" OR "nut-filled") |
+| --------------------- | :-----: | :----------: | :-------------------------: | :------------------------: |
+| "fruit"               |  true   |    false     |            false            |            true            |
+| "nut-filled"          |  false  |     true     |            false            |            true            |
+| "fruit", "nut-filled" |  true   |     true     |            true             |            true            |
+| "non-fruit"           |  false  |    false     |            false            |           false            |
+| "non-fruit", "plain"  |  false  |    false     |            false            |           false            |
+| undefined             |  false  |    false     |            false            |           false            |
+
+**Negated Queries**
+
+| Entity                | "fruit" | "nut-filled" | !=("fruit" AND "nut-filled") | !=("fruit" OR "nut-filled") |
+| --------------------- | :-----: | :----------: | :--------------------------: | :-------------------------: |
+| "fruit"               |  true   |    false     |             true             |            false            |
+| "nut-filled"          |  false  |     true     |             true             |            false            |
+| "fruit", "nut-filled" |  true   |     true     |            false             |            false            |
+| "non-fruit"           |  false  |    false     |             true             |            true             |
+| "non-fruit", "plain"  |  false  |    false     |             true             |            true             |
+| undefined             |  false  |    false     |             true             |            true             |
+
+### Property Filtering
+
+You can filter multiple property values like this (similar to `IN` in SQL):
+
+> ```j1ql
+> FIND user_endpoint WITH platform = ('darwin' OR 'linux')
+>
+> Find Host WITH tag.Environment = ('A' or 'B' or 'C')
+>
+> Find DataStore WITH classification != ('critical' and 'restricted')
+> ```
+
+Property filters are evaluated according the following **order of operations**:
+
+> Parenthesis first, comparisons (`=`, `>=`, `<=`, `!=`) after, `AND` and then
+> `OR`.
 
 ## String Comparisons
 
@@ -243,38 +288,36 @@ These operators only work for string comparisons.
 Find Person with firstName^='J'
 ```
 
-The above query would return all entities of the `Person` class that have a `firstName` beginning with the character 'J'.
+The above query returns all entities of the `Person` class that have a `firstName` beginning with the character 'J'.
 
 ```j1ql
-Find Host with tag.AccountName~='demo' 
+Find Host with tag.AccountName~='demo'
 ```
 
-The above query would return entities of the `Host` class with any of the following examples of `tag.AccountName`: `xyz_demo`, `demo_xyz`, `abc_demo_xyz`.
+The above query returns entities of the `Host` class with any of the following examples of `tag.AccountName`: `xyz_demo`, `demo_xyz`, `abc_demo_xyz`.
 
 !!! warning
-    These string evaluations are case-sensitive. So `'Demo'` and `'demo'` 
-    will yield distinct sets of results.
-
+These string evaluations are case-sensitive. So `'Demo'` and `'demo'`
+yields distinct sets of results.
 
 ## Parameters
 
-The query language supports [parameters](./parameters.md) for referencing values 
-stored on the server side. Parameter expressions are allowed in places 
+The query language supports [parameters](./parameters.md) for referencing values
+stored on the server side. Parameter expressions are allowed in places
 that could otherwise include a literal value.
 
 ```j1ql
 FIND Application WITH loginUrl = ${ param.loginUrl }
 ```
 
-Currently, there is no support for referencing parameters that contain arrays, 
-even though the rules and alerts do allow this functionality. 
-Future iterations of the J1QL may contain array-traversing operators, 
-which work out of the box with parameters.
+Currently, there is no support for referencing parameters that contain arrays,
+even though the rules and alerts do allow this functionality.
+Future iterations of the J1QL may contain array-traversing operators that immediately work with parameters.
 
 ## Date Comparisons
 
-The query language supports both relative and static data comparisons on any 
-timestamp property. The timestamp property used for date comparison must 
+The query language supports both relative and static data comparisons on any
+timestamp property. The timestamp property used for date comparison must
 be stored as an epoch number in milliseconds.
 
 ### Relative Date Comparison
@@ -331,7 +374,7 @@ FIND Person WITH manager = undefined as u
 ```
 
 !!! note
-    Query returns up to 250 results by default if `LIMIT` is not set.
+Query returns up to 250 results by default if `LIMIT` is not set.
 
 ## Aggregation Functions: `COUNT`, `MIN`, `MAX`, `AVG` and `SUM`
 
@@ -347,7 +390,7 @@ requested via the `RETURN` clause.
 The following aggregating functions are supported:
 
 - `count(selector)`
-- `count(selector.field)` 
+- `count(selector.field)`
 - `min(selector.field)`
 - `max(selector.field)`
 - `avg(selector.field)`
@@ -386,20 +429,21 @@ _Future development:_
 
 ## Scalar Functions: `CONCAT`
 
-The ability to format and/or to perform calculations on row level columns can be 
-accomplished through **Scalar Functions**. 
+The ability to format and/or to perform calculations on row level columns can be
+accomplished through **Scalar Functions**.
 
 ### `CONCAT`
 
-The scalar function `CONCAT()` empowers users to concatenate or join one or more 
-values into a single string. Currently, `CONCAT` can be used in the `RETURN` to 
+The scalar function `CONCAT()` empowers users to concatenate or join one or more
+values into a single string. Currently, `CONCAT` can be used in the `RETURN` to
 clause of your function, will future development planned for use in the `WHERE` clause.
 
-> Note: If this function receives a number or boolean value, the `concat` will 
-> intuitively convert these values to strings. Additionally, if `concat` 
-> processes an empty selector field, it will evaluate that field as an empty string.  
+> Note: If this function receives a number or boolean value, the `concat`
+> intuitively converts these values to strings. Additionally, if `concat`
+> processes an empty selector field, it evaluates that field as an empty string.
 
 `CONCAT` supports the following parameters, separated by comma:
+
 - Selector Fields: e.g. `selector.field`
 - String values: e.g. `'your string'` or `"your string"`
 - Number values: e.g. `123`
@@ -463,10 +507,10 @@ J1QL supports basic math operations on the return values.
 
   > parenthesis -> multiplication or division -> addition or subtraction
 
-- The operation only works against number values. It will not work against
+- The operation only works against number values. It does not work against
   strings or strings that represent numbers:
 
-  > `'1'` will not work, has to be `1`
+  > `'1'` does not work, it has to be `1`
 
 Example query:
 
@@ -489,10 +533,9 @@ Return
 ## Optional traversals (Beta)
 
 !!! note
-    This is a beta feature and the syntax for describing optional
-    traversals may change in the future to help improve clarity.
-    Any changes made to the language will be
-    backwards compatible.
+Optional traversals is a beta feature and the syntax for describing optional
+traversals may change in the future to help improve clarity.
+Any changes made to the language will be backwards compatible.
 
 In situations where it is useful to optionally find related entities
 and include them in the results, J1QL allows for portions of a query to be
@@ -571,6 +614,61 @@ Find User with name = 'test'
   that owns Device
 return userOrPerson, Device
 ```
+
+## Smart classes (beta)
+
+Smart classes are a mechanism for applying a set of entity filters with a
+shorthand syntax. There are two categories of smart classes:
+
+1. JupiterOne application classes
+   Currently, the only supported instance is `#CriticalAsset`, which maps to
+   the configured definition of critical assets in the Assets app.
+
+   ```j1ql
+   FIND #CriticalAsset that has Finding
+   ```
+
+   The default definition of a critical asset is an entity with one of the
+   following classes:
+
+   - Application
+   - CodeRepo
+   - DataStore
+   - Function
+   - Host
+   - Logs
+
+   and the following attributes:
+
+   - tag.Production = 'true'
+   - classification = 'critical'
+
+   Adminitrators define critical assets in the Assets app by
+   clicking the gear icon in the Assets title bar.
+
+2. Tag-derived values
+   These values match entities where the tags of an entity contain the provided smart
+   class (case-sensitive).
+
+   ```j1ql
+   FIND #Production Application
+   ```
+
+   Tags are populated via integrations, and can also be added directly to an entity
+   via J1 as enriched data. Note that, for key-value pair tags, the tag value must
+   be `true` to match the smart class.
+
+Assuming you have defined a critical asset as per the above default, here are some
+example smart class queries and their equivalencies.
+
+| Smart class Query                             | Equivalent Expanded Query                                                                                                                                                                                        |
+| --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `FIND #CriticalAsset`                         | `FIND * WITH ((_class = ('Application' or 'CodeRepo' or 'DataStore' or 'Function' or 'Host' or 'Logs') and (tag.Production = true and classification = 'critical')) or tags = 'CriticalAsset'`)                  |
+| `FIND #CriticalAsset THAT HAS Finding`        | `FIND * WITH ((_class = ('Application' or 'CodeRepo' or 'DataStore' or 'Function' or 'Host' or 'Logs') and (tag.Production = true and classification = 'critical')) or tags = 'CriticalAsset') THAT HAS Finding` |
+| `FIND Finding THAT RELATES TO #CriticalAsset` | `FIND Finding THAT HAS * WITH ((_class = ('Application' or 'CodeRepo' or 'DataStore' or 'Function' or 'Host' or 'Logs') and (tag.Production = true and classification = 'critical')) or tags = 'CriticalAsset')` |
+| `FIND #Production Application`                | `FIND Application WITH tags = 'Production'`                                                                                                                                                                      |
+
+Returned entities reflect their underlying classes, not the queried smart class.
 
 ## Examples
 

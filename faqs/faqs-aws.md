@@ -142,3 +142,54 @@ Find AccessPolicy
 ```
 
 [jupiterone-aws-integration]: https://github.com/jupiterone/jupiterone-aws-integration
+
+## How do I check the status of S3 server access logging vs bucket object logging?
+
+To check logging status specifically for **Server Access Logging**:
+
+```j1ql
+Find aws_s3_bucket that logs to aws_s3_bucket
+return tree
+```
+
+To check logging status specifically for **Object Level Logging**:
+
+```j1ql
+Find aws_s3_bucket 
+that sends aws_cloudtrail 
+that logs to * 
+return TREE
+```
+
+!!! note
+    Object level logging is done via CloudTrail
+
+To check for if a bucket does not have any logging enabled:
+
+```j1ql
+Find aws_s3_bucket with loggingEnabled != true
+```
+
+!!! note
+    Either server access logging or object level logging will result 
+    in `loggingEnabled = true`
+
+**Bonus:** to check for S3 buckets that publish **inventory reports**:
+
+```j1ql
+find aws_s3_bucket that publishes to aws_s3_bucket
+return tree
+```
+
+!!! note
+    There are additional properties captured on the edge in each case, 
+    which can be used for additional filtering (see screenshots). 
+    For example:
+
+    ```j1ql
+    find aws_s3_bucket 
+    that sends aws_cloudtrail 
+    that logs to * 
+    where logs.read=true and logs.write=true
+    return TREE
+    ```
