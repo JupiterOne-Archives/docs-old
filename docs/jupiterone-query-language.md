@@ -452,10 +452,10 @@ clause of your function, will future development planned for use in the `WHERE` 
 A few examples:
 
 ```j1ql
-FIND
-  aws_s3_bucket as s3
-RETURN
-  CONCAT(s3.bucketSizeBytes / 1000, ' kb') as size
+FIND 
+  aws_s3_bucket as s3 
+RETURN 
+  CONCAT(s3.bucketSizeBytes, ' bytes') as size
 ```
 
 ## De-duplicate results with `UNIQUE` and `RETURN`
