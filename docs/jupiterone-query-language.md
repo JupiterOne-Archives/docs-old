@@ -411,7 +411,7 @@ A few examples:
 FIND 
   aws_s3_bucket as s3 
 RETURN 
-  CONCAT(s3.bucketSizeBytes / 1000, ' kb') as size
+  CONCAT(s3.bucketSizeBytes, ' bytes') as size
 ```
 
 ## De-duplicate results with `UNIQUE` and `RETURN`
