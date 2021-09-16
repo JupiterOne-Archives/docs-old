@@ -12,7 +12,23 @@ The JupiterOne platform exposes a number of public GraphQL endpoints.
 HTTP response code indicates the limit has been reached. The API does not
 currently return any rate limit headers.
 
-An experimental [node.js client and CLI][1] can be found on Github.
+**Authentication**: The JupiterOne APIs use a Bearer Token to authenticate. Include the API key in the header as a Bearer Token. You also need to include `JupiterOne-Account` as a header parameter. You can find the `Jupiterone-Account` value in your account by running the following J1QL query:
+
+```j1ql
+FIND jupiterone_account as a return a._accountId
+```
+
+**Example cURL command with authentication**
+
+```curl
+curl --location --request POST 'https://api.us.jupiterone.io/graphql' \
+--header 'JupiterOne-Account: accountId' \
+--header 'Authorization: Bearer 123456abcdef' \
+--header 'Content-Type: application/json' \
+--data-raw '{"query":...}
+```
+
+An experimental [node.js client and CLI][1] is available on Github.
 
 [1]: https://github.com/JupiterOne/jupiterone-client-nodejs
 
