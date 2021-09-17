@@ -13,15 +13,16 @@
 
 ## How it Works
 
-- JupiterOne periodically fetches Jira projects, users, and issues to update the graph.
+- JupiterOne periodically fetches Jira projects, users, and issues to update the
+  graph.
 - Write JupiterOne queries to review and monitor updates to the graph.
 - Configure alerts to take action when the JupiterOne graph changes.
 
 ## Requirements
 
-- JupiterOne requires the hostname for your Jira organization. JupiterOne also requires the 
-email and password for a user that has the correct permissions enabled. Use an API key instead
-of a user's password when MFA is enabled.
+- JupiterOne requires the hostname for your Jira organization. JupiterOne also
+  requires the email and password for a user that has the correct permissions
+  enabled. Use an API key instead of a user's password when MFA is enabled.
 - You must have permission in JupiterOne to install new integrations.
 
 ## Support
@@ -43,7 +44,7 @@ Integrations][1] documentation.
 **Option 1 - Create a New User**
 
 1. Create a new service account for JupiterOne use or use an existing account.
-1. Login to Jira and navigate to *User Management*.
+1. Login to Jira and navigate to _User Management_.
 1. Send an invite to the service account.
 
 **Option 2 - Leverage an Existing User**
@@ -51,43 +52,46 @@ Integrations][1] documentation.
 Before you use an existing user, you should verify a couple of things.
 
 - Make sure the appropriate permissions are configured/can be added to the
-   account (see the *Permissions* section below).
+  account (see the _Permissions_ section below).
 - Make sure you have the ability to login to the user's Jira account.
 
 #### Permissions
 
 - Authorize the user to read groups and users by granting the ["Browse Users"
-   global permission][5]. This allows JupiterOne to provide visibility into Jira
-   access.
+  global permission][5]. This allows JupiterOne to provide visibility into Jira
+  access.
 - Authorize browse access to projects configured in JupiterOne. Use [group,
-   project, role, and issue security features of Jira][3] to manage the user's
-   access. Note that restricting to read-only access will require explicit
-   removal of write permissions. Please see the Jira article on [How to Create a
-   Read Only User][4].
+  project, role, and issue security features of Jira][3] to manage the user's
+  access. Note that restricting to read-only access will require explicit
+  removal of write permissions. Please see the Jira article on [How to Create a
+  Read Only User][4].
 - Authorize "Create Issues" permissions in projects that serve as JupiterOne
-   Alert Rule action targets.
+  Alert Rule action targets.
 
 #### Create an API Token
 
-1. Log in to Jira as the JupiterOne user and follow the Jira guide to [create an API token][2].
+1. Log in to Jira as the JupiterOne user and follow the Jira guide to [create an
+   API token][2].
 
 ### In JupiterOne
 
 1. From the configuration **Gear Icon**, select **Integrations**.
 2. Scroll to the **Jira** integration tile and click it.
 3. Click the **Add Configuration** button and configure the following settings:
-- Enter the **Account Name** by which you'd like to identify this Jira
-   account in JupiterOne. Ingested entities will have this value stored in
-   `tag.AccountName` when **Tag with Account Name** is checked.
+
+- Enter the **Account Name** by which you'd like to identify this Jira account
+  in JupiterOne. Ingested entities will have this value stored in
+  `tag.AccountName` when **Tag with Account Name** is checked.
 - Enter a **Description** that will further assist your team when identifying
-   the integration instance.
+  the integration instance.
 - Select a **Polling Interval** that you feel is sufficient for your monitoring
-   needs. You may leave this as `DISABLED` and manually execute the integration.
+  needs. You may leave this as `DISABLED` and manually execute the integration.
 - Enter the **Hostname** of your organization.
 - Enter the **User Email** used to authenticate with Jira.
 - Enter the **User Password** associated with the user email, or the **API Key**
-if the password requires MFA.
+  if the password requires MFA.
 - Enter the **Project Keys** that the integration will retrieve data from.
+
 4. Click **Create Configuration** once all values are provided.
 
 ## How to Uninstall
@@ -148,3 +152,46 @@ integration will parse and translate them to the corresponding entity class:
 - `Incident`
 - `Risk`
 - `Vulnerability`
+
+<!-- {J1_DOCUMENTATION_MARKER_START} -->
+<!--
+********************************************************************************
+NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
+"j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
+DOCUMENTATION FOR USAGE INFORMATION:
+
+https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+********************************************************************************
+-->
+
+## Data Model
+
+### Entities
+
+The following entities are created:
+
+| Resources    | Entity `_type` | Entity `_class` |
+| ------------ | -------------- | --------------- |
+| Account      | `jira_account` | `Account`       |
+| Jira Issue   | `jira_issue`   | `Record`        |
+| Jira Project | `jira_project` | `Project`       |
+| Jira User    | `jira_user`    | `User`          |
+
+### Relationships
+
+The following relationships are created/mapped:
+
+| Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
+| --------------------- | --------------------- | --------------------- |
+| `jira_account`        | **HAS**               | `jira_project`        |
+| `jira_account`        | **HAS**               | `jira_user`           |
+| `jira_project`        | **HAS**               | `jira_issue`          |
+| `jira_user`           | **CREATED**           | `jira_issue`          |
+| `jira_user`           | **REPORTED**          | `jira_issue`          |
+
+<!--
+********************************************************************************
+END OF GENERATED DOCUMENTATION AFTER BELOW MARKER
+********************************************************************************
+-->
+<!-- {J1_DOCUMENTATION_MARKER_END} -->

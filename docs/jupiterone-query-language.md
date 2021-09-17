@@ -18,6 +18,7 @@ boundaries obvious to query authors.
 - Support for sorting via `ORDER BY` clause (currently only applies to the starting entities of traversal)
 - Support for pagination via `SKIP` and `LIMIT` clauses (currently only applies to the starting entities of traversal)
 - Multi-step graph traversals through relationships via `THAT` clause
+- Specifying relationship direction can be done with double arrows,`<<` and `>>` 
 - Aliasing of selectors via `AS` keyword
 - Pre-traversal filtering using property values via `WITH` clause
 - Post-traversal filtering using property values or union comparison via `WHERE` clause
@@ -110,19 +111,29 @@ boundaries obvious to query authors.
 >
 > `FIND * THAT (ALLOWS|PERMITS) (Internet|Everyone)`
 
-**Relationship verbs** are bidirectional
-
+**Relationship verbs** are bidirectional by default
+> Both queries yield the same results:
+>
 > `FIND User THAT HAS Device`
->
-> and
->
-> `Find Device THAT HAS User`
->
-> are both acceptable
+> 
+> `FIND Device THAT HAS User`
 
-`AS` is used to define an aliased selector.
+**Relationship direction** can be specified with double arrows ( `<<` or `>>`) _after_ the verb
+> Finds Entities with a `HAS` relationship from User to Device:
+> 
+> `FIND User THAT HAS >> Device`
+> 
+> `Find Device THAT HAS << User`
 
-> Defines an aliased selector to be used in the `WHERE` or `RETURN` portion of a
+> Finds Entities with a `HAS` relationship from Device to User:
+>
+> `FIND User THAT HAS << Device`
+>
+> `Find Device THAT HAS >> User`
+
+`AS` defines an aliased selector.
+
+> Defines an aliased selector to use in the `WHERE` or `RETURN` portion of a
 > query. For example:
 >
 > - **Without** selectors: `FIND Firewall THAT ALLOWS *`
@@ -441,10 +452,10 @@ clause of your function, will future development planned for use in the `WHERE` 
 A few examples:
 
 ```j1ql
-FIND
-  aws_s3_bucket as s3
-RETURN
-  CONCAT(s3.bucketSizeBytes / 1000, ' kb') as size
+FIND 
+  aws_s3_bucket as s3 
+RETURN 
+  CONCAT(s3.bucketSizeBytes, ' bytes') as size
 ```
 
 ## De-duplicate results with `UNIQUE` and `RETURN`
