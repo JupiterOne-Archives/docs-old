@@ -7,7 +7,7 @@ JupiterOne queries without needing to learn JupiterOne Query Language (J1QL) syn
 
 ### Permissions
 
-You need the accessLanding and readGraph roles to use VQB.
+You must have at least the accessLanding and readGraph roles to use VQB.
 
 ### Prerequisites
 
@@ -20,7 +20,7 @@ To access VQB, from the Landing page, click ![](../assets/icons/vqb-button.png")
 The VQB workspace consists of a:
 
 - Left pane containing:
-  - Asset classes [default list or based on user data?]
+  - Default asset classes
   - J1QL-specific, data model asset types
   - Other entities, including text search and * wildcard
     Note: You cannot use a text search asset and a wildcard asset in the same query.
@@ -40,25 +40,26 @@ The VQB workspace consists of a:
    If you want your query to do a full-text search of your entire graph on a custom 
    text string, click **Other** in the left pane and drag over the Text asset. You are 
    prompted to enter your custom text. You can only do this step at the very 
-   beginning of your query build because the custom text string is always the root asset.
+   beginning of your query build because the custom text string must be the root asset.
 
 2. Drag over all the Class and Type assets between which you want to build relationships.
 
    - If you want to group assets, drag assets on top of each other to form a group. 
    - Each asset or asset group has a J1 alias identifier in the top-left corner. 
    - Click the asset group to see its details in the right information pane. 
-   - The first asset you drag over or asset group you create becomes the root asset or asset group, 
-     unless it is a text asset from the Other menu.
+   - The first asset you drag over or asset group you create becomes the root asset 
+     or asset group, unless it is a text asset from the Other menu.
 
 3. Click and drag from one asset or asset group box to another asset or asset group box 
    to create a relationship. 
 
    1. Each relationship has an identifier. 
    2. Click the relationship identifier to see its details in the right information pane.
-   3. Relationship classes default to all available verbs. J1QL shows all possible verbs that could 
+   3. Relationship classes default to all available verbs. J1QL shows all the verbs that you can 
        apply to that relationship. You can toggle between relationship classes to determine how you 
        want the query to search.
-       `!!!` note The verb RELATES TO covers any and all relationship verbs. However, It is highly recommended to use specific relationship verbs for faster query performance.
+       `!!!` note The verb RELATES TO covers any and all relationship verbs. However, It is highly recommended 
+       to use specific relationship verbs for faster query performance.
    
 
 ![](../assets/vqb-relationship.png)
@@ -73,7 +74,7 @@ For example, in the following example, the text asset Security is the root asset
 
 ![](../assets/vqb-wildcard.png)
 
-**Note:** When connecting relationships between assets or asset groups, you must start with the lower number (such as e1) and drag it to the next incremental asset (such as e2) and then on to the next increment (such as e4).
+**Note:** When connecting relationships between assets or asset groups, you must start with the root asset (such as e1) and drag it to the related asset (such as e4), and then connect the other assets as required.
 
 ### Filtering
 
