@@ -34,19 +34,36 @@ When enabled, to configure access permissions, go to Settings:
 
 ### Query Permissions
 
-Enterprise customers can set query permissions for a user group. A query permission applies a filter constraint on the data users in that group are allowed to query. You can configure permission filters by:
+Enterprise customers can set query permissions for a user group. A query 
+permission applies the filter constraints on the data that users in the group are 
+allowed to query. You can configure permission filters by:
 
 - Entity class
-
 - Entity type
-
 - Integration class
-
 - Integration type
-
 - Integration configuration instance
 
-  
+You can add as many filters as you want to the permission set. To configure 
+query permissions:
+
+1. Go to **Settings** ![settings](../assets/icons/gear.png" style="zoom:75%;") -> **Users & Access**.
+2. Select the user group you want to edit and click the <img src="../assets/icons/shield.png" style="zoom:67%;" />. 
+3. In the permission set modal, select and add the type and values for each 
+   filter you want in the set. 
+
+J1 enables queries on data that meet ALL of the filters in the permission set. In this
+example, J1 enables queries on data that is in GitHub AND in Jira issues AND linked to 
+digital certificate users. 
+
+![](../assets/user-edit-query-permiss.png)
+
+
+
+
+
+If you want to set up queries based on sets of filters that you want to then link by OR logic, create 
+separate permission sets.
 
 ### App Permissions
 
