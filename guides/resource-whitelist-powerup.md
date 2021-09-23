@@ -1,15 +1,15 @@
-# JupiterOne Resource Whitelist
+# JupiterOne Resource Allowlist
 
-JupiterOne provides a resource whitelisting tool as a "Power Up" for all
-Enterprise customers and all Premium customers that have added the *Power Up
-Pack*.
+JupiterOne provides a resource allowlisting tool as a Power Up for all
+Enterprise customers and all Premium customers who have added the 
+*Power Up Pack*.
 
-This Power Up allows users of JupiterOne to list out the applications, internal
-IP addresses, and external IP addresses that are approved, in-use, and trusted
+This Power Up allows you to list the applications, internal IP addresses, 
+and external IP addresses that are approved, in use, and trusted
 by the organization. When an entity is created by the System Mapper (created by
 JupiterOne during the analysis of roles and policies in your account, most
 likely external entities) or uploaded via API, the entity is checked against the
-whitelist. When a match is found, the entity is updated with an additional
+allowlist. When a match is found, the entity is updated with an additional
 property for querying purposes.
 
 ## Setup
