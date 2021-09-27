@@ -29,14 +29,16 @@ of cyber assets you have, and the relationships between them.
 
 ### Policies
 
-The JupiterOne Policies app provides 120+ [policy and procedure templates](manage-policies/policies-app.md) to 
-help your organization build your security program and operations. These 
-templates derive from JupiterOne company internal policies and procedures, 
-and have been through several rounds of compliance assessments.
+The JupiterOne Policies app enbales you to articulate your organization policies and associate them to your compliance requirements. 
 
 Each policy and procedure document is written in its own individual Markdown file, 
 and you can configure each policy file to link to other files. The templates are 
 open-source that you can edit directly online using the Policies app.
+
+To help you get started, JupiterOne provides 120+ [policy and procedure templates](manage-policies/policies-app.md) to 
+help your organization build your security program and operations. These 
+templates derive from JupiterOne company internal policies and procedures, 
+and have been through several rounds of compliance assessments.
 
 ### Alerts
 
@@ -48,7 +50,7 @@ also create custom rules.
 
 ### Compliance
 
-JupiterOne provides a flexible platform for you to import and manage any 
+JupiterOne provides a flexible platform for you to manage any 
 compliance standard or framework as a set of controls or requirements. The platform 
 enables you to:
 
@@ -77,13 +79,6 @@ can save a team board layout as the default for other users.
 
 You can build your own custom dashboards or utilize any of the existing boards that 
 JupiterOne has already built.
-
-### My Security
-
-My Security provides a very focused view for every individual member of an organization. 
-especially developers. The app contains widgets that help distribute security tasks and 
-their status to each team member in an effort to make security the responsibility of everyone
-in your organization.
 
 ## Query Library
 
