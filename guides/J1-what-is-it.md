@@ -16,7 +16,7 @@ to import the data to J1 and understand the data model and mapping.
 ## J1 Apps
 
 JupiterOne has separate apps that assist you in all the major components of
-security management. Click ![](../assets/icons/apps.png)to view the apps.
+security management. Click ![](../assets/icons/apps.png) to view the apps.
 
 ![](../assets/jl-apps.png)
 
@@ -29,7 +29,8 @@ of cyber assets you have, and the relationships between them.
 
 ### Policies
 
-The JupiterOne Policies app enbales you to articulate your organization policies and associate them to your compliance requirements. 
+The JupiterOne Policies app enables you to articulate your organization policies 
+and associate them to your compliance requirements. 
 
 Each policy and procedure document is written in its own individual Markdown file, 
 and you can configure each policy file to link to other files. The templates are 
@@ -51,8 +52,8 @@ also create custom rules.
 ### Compliance
 
 JupiterOne provides a flexible platform for you to manage any 
-compliance standard or framework as a set of controls or requirements. The platform 
-enables you to:
+compliance standard or framework as a set of controls or requirements. 
+The platform enables you to:
 
 - [Import a compliance standard or security questionnaire](compliance/compliance-import.md)
 - [Map policy procedures to each control or requirement](compliance/compliance-mapping-policies.md)
