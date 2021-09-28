@@ -72,7 +72,7 @@ perform the following actions.
 5. Add the following **API scopes** (comma separated):
 
    ```text
-   https://www.googleapis.com/auth/admin.directory.domain.readonly, https://www.googleapis.com/auth/admin.directory.user.readonly, https://www.googleapis.com/auth/admin.directory.group.readonly, https://www.googleapis.com/auth/admin.directory.user.security, https://www.googleapis.com/auth/apps.groups.settings
+   https://www.googleapis.com/auth/admin.directory.domain.readonly, https://www.googleapis.com/auth/admin.directory.user.readonly, https://www.googleapis.com/auth/admin.directory.group.readonly, https://www.googleapis.com/auth/admin.directory.user.security, https://www.googleapis.com/auth/apps.groups.settings, https://www.googleapis.com/auth/admin.directory.rolemanagement.readonly
    ```
 
 6. Click **Authorize**.
@@ -116,10 +116,10 @@ permissions required by JupiterOne, and which will include only the
 5. In the **Privileges**, **Admin API Privileges** section, check these
    permissions:
 
-   - Users -> Read
-   - Groups -> Read
-   - Domain Management
-   - User Security Management
+    - Users -> Read
+    - Groups -> Read
+    - Domain Management
+    - User Security Management
 
 #### Adding Scopes and Privileges
 
@@ -209,6 +209,7 @@ The following entities are created:
 | Domain         | `google_domain`         | `Domain`        |
 | Group          | `google_group`          | `UserGroup`     |
 | Group Settings | `google_group_settings` | `Configuration` |
+| Role           | `google_role`           | `AccessRole`    |
 | Site           | `google_site`           | `Site`          |
 | Token          | `google_token`          | `AccessKey`     |
 | User           | `google_user`           | `User`          |
@@ -220,6 +221,7 @@ The following relationships are created/mapped:
 | Source Entity `_type` | Relationship `_class` | Target Entity `_type`          |
 | --------------------- | --------------------- | ------------------------------ |
 | `google_account`      | **HAS**               | `google_group`                 |
+| `google_account`      | **HAS**               | `google_role`                  |
 | `google_account`      | **HAS**               | `google_user`                  |
 | `google_group`        | **HAS**               | `google_group`                 |
 | `google_group`        | **HAS**               | `google_group_settings`        |
