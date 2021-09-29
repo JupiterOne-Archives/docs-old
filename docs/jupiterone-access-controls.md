@@ -34,9 +34,10 @@ When enabled, to configure access permissions, go to Settings:
 
 ### Query Permissions
 
-Enterprise customers can set query permissions for a user group. A query 
-permission applies the filter constraints on the data that users in the group are 
-allowed to query. You can configure permission filters by:
+Enterprise customers can set query permissions for a user group if you are in 
+the Administrators group. A query permission applies the filter constraints on 
+the data that users in the group are allowed to query. You can configure 
+permission filters by:
 
 - Entity class
 - Entity type
