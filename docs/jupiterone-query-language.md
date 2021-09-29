@@ -834,10 +834,8 @@ hours:
 Find CodeRepo with _beginOn > date.now-24hr and _version=1
 ```
 
-For more details on metadata properties, see the [JupiterOne Data Model][1]
-documentation.
+For more details on metadata properties, see the  JupiterOne [data model documentation](jupiterone-data-model.md).
 
-[1]: jupiterone-data-model.md
 
 ## Advanced Notes and Use Cases
 
