@@ -48,8 +48,8 @@ permission filters by:
 You can add as many filters as you want to the permission set. To configure 
 query permissions:
 
-1. Go to **Settings** ![settings](../assets/icons/gear.png" style="zoom:75%;") -> **Users & Access**.
-2. Select the user group you want to edit and click the <img src="../assets/icons/shield.png" style="zoom:67%;" />. 
+1. Go to **Settings** ![settings](../assets/icons/gear.png) -> **Users & Access**.
+2. Select the user group you want to edit and click ![shieldicon](../assets/icons/shield.png). 
 3. In the permission set modal, select and add the type and values for each 
    filter you want in the set. 
 
@@ -63,8 +63,8 @@ digital certificate users.
 
 
 
-If you want to set up queries based on sets of filters that you want to then link by OR logic, create 
-separate permission sets.
+If you want to set up queries based on sets of filters that you want to 
+then link by OR logic, create separate permission sets.
 
 ### App Permissions
 
