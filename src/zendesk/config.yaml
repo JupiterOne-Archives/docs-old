@@ -2,9 +2,9 @@ sections:
   - name: Getting started
     id: 360004204294
     articles:
-      - title: 0/9 Intro to JupiterOne
+      - title: 0/10 Intro to JupiterOne
         file: ../guides/J1-what-is-it.md
-        hash: DoJGe31R/pCf3Wr59H0hRXZqjLvo9PJZYou01fBL1+Y=
+        hash: ADE9eUAANqEPY9xRf8NZIYRB4lS4tFid3/g6FIFNheU=
         id: 4407857686163
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4407857686163'
       - id: 360022884813
@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: 7MtQtl4zOrj+J8zfnn0pHOeKrr77juXh1dhMJW3XP1M=
+        hash: Qmki/n6Hj1j+PYRETQmEl+uLoy65KmYBSorqbh23lQo=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -773,7 +773,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: MVcHIPi/IzDTmQYO0fH42VZRqJ33fVOoy+fC7aG65PI=
+        hash: 8waEYt8dJKKEnMew1/B36XGj2Pm2hi+Y7uALJmYy34U=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release

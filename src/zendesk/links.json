@@ -1,11 +1,13 @@
 {
   "linksMap": {
+    "J1-what-is-it": "https://support.jupiterone.io/hc/en-us/articles/4407857686163",
     "configure-integrations": "https://support.jupiterone.io/hc/en-us/articles/360022884813",
     "quickstart-search": "https://support.jupiterone.io/hc/en-us/articles/360022705414",
     "quickstart-graph": "https://support.jupiterone.io/hc/en-us/articles/360022890073",
     "tutorial-j1ql": "https://support.jupiterone.io/hc/en-us/articles/360022720434",
     "asset-inventory-filters": "https://support.jupiterone.io/hc/en-us/articles/360022720454",
     "manage-alerts": "https://support.jupiterone.io/hc/en-us/articles/360022720474",
+    "j1-vqb": "https://support.jupiterone.io/hc/en-us/articles/4407871506707",
     "manage-findings": "https://support.jupiterone.io/hc/en-us/articles/360022901893",
     "manage-policies/policies-app": "https://support.jupiterone.io/hc/en-us/articles/360041809413",
     "quickstart-invite-users": "https://support.jupiterone.io/hc/en-us/articles/360023317474",
