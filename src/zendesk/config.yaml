@@ -2,49 +2,59 @@ sections:
   - name: Getting started
     id: 360004204294
     articles:
+      - title: 00/10 Intro to JupiterOne
+        file: ../guides/J1-what-is-it.md
+        hash: ULqpthvk7qllHFpJjXKDfLdjCTRv6SpckWxZkP3by5s=
+        id: 4407857686163
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4407857686163'
       - id: 360022884813
-        title: 1/9 Configure Integrations
+        title: 01/10 Configure Integrations
         file: ../guides/configure-integrations.md
-        hash: UxyyEJcBYa5nFEtXwn6G6/1OviuRBT42VL+7KfbdT5M=
+        hash: NhEvx48wTzxbrCGzGz8A03G8NrMivEthyL6Vd6B1/d4=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022884813'
       - id: 360022705414
-        title: 2/9 Search Quickstart
+        title: 02/10 Search Quickstart
         file: ../guides/quickstart-search.md
-        hash: +17/8FBPr/n+6Qm9pZx1jwt6nHX8h6uBW+2j3y8kUZs=
+        hash: Utv82EpfFq0jfH/sO1FYqqagdVbLI9jPChY0gjC/A+I=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022705414'
       - id: 360022890073
-        title: 3/9 Navigate the Graph
+        title: 03/10 Navigate the Graph
         file: ../guides/quickstart-graph.md
-        hash: LsPzqW+c9NsIZ/0wLggtlz33ZHthft5IBTDTCt7l4QI=
+        hash: WO8SSL/RCC2WLhG8kL8/+sn3riXgqczvFSYs2Z1T1f8=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022890073'
-      - title: 4/9 J1QL Query Tutorial
+      - title: 04/10 J1QL Query Tutorial
         file: ../guides/tutorial-j1ql.md
         id: 360022720434
-        hash: XVu9UvuohY3UaLKfRQc/RMjmZIm5H5hMk9jpoFswwR0=
+        hash: XFfHVyu5jPYlshjO+rmF/FO4aJUxC2Ash2CR1yEZEfY=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720434'
-      - title: 5/9 Using Asset Inventory Filters
+      - title: 05/10 Using Asset Inventory Filters
         file: ../guides/asset-inventory-filters.md
         id: 360022720454
-        hash: eEofL2YChVpTAJPDevST1zsRJvH2afuQjh7WiYpiqsU=
+        hash: iyws2VwnIlNBDmYxwbOpG2FJFNvp+VsnXIdnKYtFK8A=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720454'
-      - title: 6/9 Alerts and Alert Rules
+      - title: 06/10 Alerts and Alert Rules
         file: ../guides/manage-alerts.md
         id: 360022720474
-        hash: ovanEnbVtCBZ+TjF7T9GffyAOm6VPhNxS+OkaVx27Gg=
+        hash: blVTPUtcmIkbG1T5QV6CVrDETsO3VKdNBvUzwbhpAiA=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720474'
-      - title: 7/9 Manage Findings
+      - title: 07/10 Visual Query Builder
+        file: ../guides/j1-vqb.md
+        hash: o/ErOmHsfGTAQ5fprdSuAhf14FfgZonjegleyoNY0Dk=
+        id: 4407871506707
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4407871506707'
+      - title: 08/10 Manage Findings
         file: ../guides/manage-findings.md
         id: 360022901893
-        hash: VgQmyXxlRbBqSSQTdaWlaBT4cO0JvY8iLSV5n+E3V2g=
+        hash: 9FzHj9Zly2SDdkGSMK2NT1YDerdAYkIgkzBSSJFqRA8=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022901893'
-      - title: 8/9 Manage Policies and Procedure Documents
+      - title: 09/10 Manage Policies and Procedure Documents
         file: ../guides/manage-policies/policies-app.md
-        hash: iOqB+9+9gpmyag34Vwgo2RIKrHIferT6cG9W+TvfFP4=
+        hash: sJGO4UcViNaKnstIH42RdSSvUhOTQ0Ke28yzS1Pn2Ew=
         id: 360033968753
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360033968753'
-      - title: 9/9 Invite Your Team Members
+      - title: 10/10 Invite Your Team Members
         file: ../guides/quickstart-invite-users.md
-        hash: z8sKHDsKCjE1rBstTrBRnfRWnv8jp7qweOHqHXkseCk=
+        hash: ZKPqFs7vVrE71TbiVIVl/ctoIPnBDGBpgdpMDWJDO3I=
         id: 360023317474
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360023317474'
   - name: FAQs
@@ -285,7 +295,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903353'
       - title: Configure User Access Control
         file: ../docs/jupiterone-access-controls.md
-        hash: J0o/uOAPnnOYNdXccrP+m4g6XiuX7fuyprLByFznMEs=
+        hash: s7AY9hQ+FYhpGYxSSRtu+Pg46IuYnJl/JyieLwpgjWw=
         id: 360046093834
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046093834'
       - title: Enable API Key Access
@@ -303,7 +313,7 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: RT37KxtzrFhnAX8AGt0swslIZLtVN9IJdUiK96J9VsU=
+        hash: bLiG/fVNVev2XYAgaUYs9Ny/ZEPVIB6xAkLKbtFJJv0=
         id: 360022722014
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722014'
       - title: External Parameters and Secrets in J1QL
@@ -316,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: xj8he0qYjlEaLlwfMmw6WXdQsF9YzHsUrXdauXYVd9c=
+        hash: BRb9yIOGtqWgLJsoIBMh0wP6kmEp495Clmyalu3i+Z8=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -568,7 +578,7 @@ sections:
       - title: Google
         file: ../docs/integrations/google/index.md
         id: 360022902533
-        hash: QQvpDhZiIohtFVit4n9k0wLDjXUPN9znRGCAURsAB0Q=
+        hash: R1SbUxl2IVCGfasr+F4QOIsu+TsS687qyHZMlWO3GEI=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
@@ -763,7 +773,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: tZUn/WXqiYQJ2rEXboleMlxVMAwidcahN782utfNB/c=
+        hash: Y1AXP+zxvSMyznjwcLL1lIXzi3vzwd9kXeqh8ELJ09M=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
