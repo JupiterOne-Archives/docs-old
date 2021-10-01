@@ -295,7 +295,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903353'
       - title: Configure User Access Control
         file: ../docs/jupiterone-access-controls.md
-        hash: s7AY9hQ+FYhpGYxSSRtu+Pg46IuYnJl/JyieLwpgjWw=
+        hash: WjSOErKIdpjkFd0M13rBRQUk0W88hI3GJOtzFIoDqeA=
         id: 360046093834
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046093834'
       - title: Enable API Key Access
@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: BRb9yIOGtqWgLJsoIBMh0wP6kmEp495Clmyalu3i+Z8=
+        hash: pHPNbFwOv60gkwdg8NLqURpOt8Niujig86Nr1tLUztg=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -773,7 +773,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: Y1AXP+zxvSMyznjwcLL1lIXzi3vzwd9kXeqh8ELJ09M=
+        hash: nhXt0Xsf/O61hb2aNY7um44IqidU8bTQilWlP0vzK+A=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
