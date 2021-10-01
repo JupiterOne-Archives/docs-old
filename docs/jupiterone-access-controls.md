@@ -1,10 +1,10 @@
 # JupiterOne Access Controls
 
-Each JupiterOne account has either one of the following two access control
-configurations applied:
+Each JupiterOne account has one of the following two access control
+configurations:
 
-- **Standard Access Control** (default on all accounts)
-- **Granular Access Control** (available upon request to all PLUS/ENTERPRISE
+- **Standard access control** (default on all accounts)
+- **Granular access control** (available upon request to all PLUS/ENTERPRISE
   tier accounts)
 
 ## Standard Access Control
@@ -15,28 +15,62 @@ accounts. There are two access levels across all resources:
 - Users in the **Administrators** group have **full admin access** to all
   resources
 
-- All other users (users in other groups) have **read-only access** to all
-  resources, plus the permission to **save queries as questions**.
+- All other users in other groups have **read-only access** to all
+  resources, as well as the permission to **save queries as questions**.
 
-This is similar to the **Top Level Permissions** in Granular Access Control,
-as explained further below.
+Standard access control is similar to the **Top Level Permissions** in Granular Access Control.
 
 ## Granular Access Control
 
 **Granular access control** is available to all PLUS and ENTERPRISE tier
-accounts. It allows more fine grain access configuration at each User Group
+accounts. It allows more fine grain access configuration at each user group
 level to achieve role-based access control (RBAC).
 
-When enabled, access permissions can be configured by navigating to:
+When enabled, to configure access permissions, go to Settings:
 
-**Settings** (cogwheel icon on top nav bar) -> **Users & Access** -> Select the
-**user group** to be edited -> Then clicking on the **Shield icon**.
+**Settings** ![settings](../assets/icons/gear.png" style="zoom:75%;") -> **Users & Access**  and select the user group you want to edit. Then, click the <img src="../assets/icons/shield.png" style="zoom:67%;" />.
 
   ![app-permissions](../assets/app-permissions.png)
 
-Permissions are configured per group, and any users in a group will be able to
+### Query Permissions
+
+Enterprise customers can set query permissions for a user group if you are in 
+the Administrators group. A query permission applies the filter constraints on 
+the data that users in the group are allowed to query. You can configure 
+permission filters by:
+
+- Entity class
+- Entity type
+- Integration class
+- Integration type
+- Integration configuration instance
+
+You can add as many filters as you want to the permission set. To configure 
+query permissions:
+
+1. Go to **Settings** ![settings](../assets/icons/gear.png) -> **Users & Access**.
+2. Select the user group you want to edit and click ![shieldicon](../assets/icons/shield.png). 
+3. In the permission set modal, select and add the type and values for each 
+   filter you want in the set. 
+
+J1 enables queries on data that meet ALL of the filters in the permission set. In this
+example, J1 enables queries on data that is in GitHub AND in Jira issues AND linked to 
+digital certificate users. 
+
+![](../assets/user-edit-query-permiss.png)
+
+
+
+
+
+If you want to set up queries based on sets of filters that you want to 
+then link by OR logic, create separate permission sets.
+
+### App Permissions
+
+Permissions are configured per group, and any users in a group can
 perform the actions assigned by the permissions editor.  Permissions may take up
-to 5 minutes to propagate.
+to five minutes to propagate.
 
 Each **app level category** has two permissions: **Read-only** and **Admin**.
 **Admin** permissions will allow all actions included in the **Read-only**
@@ -74,10 +108,11 @@ List of shared permissions:
 - **Questions** (saved J1 queries used in the Landing page Questions Library and
   in Compliance app for mapping to compliance requirements)
   
-Some of these permission will be needed for an app to function fully. For
-example, you will not have much luck using the Insights app without read
-permissions for Graph Data as the dashboards and widgets won't be able to load
-the data!
+
+Some of these permissions are needed for an app to function fully. For
+example, you are not able to use the Insights app without read
+permissions for Graph Data because the dashboards and widgets cannot load
+the data.
 
 ### App Level Permissions
 
