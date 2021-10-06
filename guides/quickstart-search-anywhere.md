@@ -16,11 +16,11 @@ When you first log in to your account, you can:
 
 ### Enabling the J1 Playground
 
-As part of your onboarding resources, J1 provides a sandbox account 
-and demo data to give you the opportunity to get familiar with J1 
+As part of your onboarding resources, J1 provides a [sandbox account 
+and demo data](quickstart-sample-data.md) to give you the opportunity to get familiar with J1 
 before you start working with your organization data. Click the Resources
-icon <img src="C:\Users\lynch\Documents\GitHub\docs\assets\icons\resources.png" style="zoom:50%;" /> and select **Onboarding**. In the top-right of the screen, click the 
-sample data icon <img src="C:\Users\lynch\Documents\GitHub\docs\assets\icons\sample-data.png" style="zoom:50%;" />and follow the instructions on the screen.
+icon ![resourcesicon](../assets/icons/resources.png) and select **Onboarding**. In the top-right of the screen, click 
+the sample data icon ![sampledata](../assets/icons/sample-data.png) and follow the instructions on the screen.
 
 ### Asking Questions
 
