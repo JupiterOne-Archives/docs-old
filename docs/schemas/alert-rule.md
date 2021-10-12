@@ -404,11 +404,8 @@ Example:
 }
 ```
 
-```
 !!! warning
-```
-
-`data` is stringified in the payload. For example:
+      `data` is stringified in the payload. For example:
 
 ```js
 {
