@@ -1064,15 +1064,21 @@ POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/upload
   "entities": [
     {
       "_key": "1",
-      "_type": "fake_entity"
+      "_class": "DataStore",
+      "_type": "fake_entity",
+      "displayName": "my_datastore"
     },
     {
       "_key": "2",
-      "_type": "fake_entity"
+      "_class": "Database",
+      "_type": "fake_entity",
+      "displayName": "my_database"
     },
     {
       "_key": "3",
-      "_type": "fake_entity"
+      "_class": "Domain",
+      "_type": "fake_entity",
+      "displayName": "my_domain"
     }
   ],
   "relationships": [
