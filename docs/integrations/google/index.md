@@ -116,10 +116,10 @@ permissions required by JupiterOne, and which will include only the
 5. In the **Privileges**, **Admin API Privileges** section, check these
    permissions:
 
-    - Users -> Read
-    - Groups -> Read
-    - Domain Management
-    - User Security Management
+   - Users -> Read
+   - Groups -> Read
+   - Domain Management
+   - User Security Management
 
 #### Adding Scopes and Privileges
 
