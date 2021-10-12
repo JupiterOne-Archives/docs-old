@@ -51,9 +51,9 @@ billable entities:
 Find * with
   _source !^= 'system-' and
   _class != (
-    'Finding' and 'PR' and 'Image' and 
-    'NetworkInterface' and 'IpAddress' and 
-    'Record' and 'DomainRecord'
+    'Finding' or 'PR' or 'Image' or 
+    'NetworkInterface' or 'IpAddress' or 
+    'Record' or 'DomainRecord'
   ) as e
 return
   count(e) as billableEntityCount
@@ -159,14 +159,14 @@ return
 
 <!--END Entity Billing Reference table-->
 
-## What are the limitations of the `COMMUNITY` Edition of JupiterOne? 
+## What are the limitations of the Community Edition of JupiterOne? 
 
-JupiterOne `COMMUNITY` Edition is FREE for non-commercial use, non-profit or
+JupiterOne Community Edition is FREE for non-commercial use, non-profit companies, or
 small teams. It comes with the following features and limitations:
 
 - Configure up to *five* integration instances
 - Integrations are limited to WEEKLY scheduled polling or on-demand runs
-- Up to 500 entities
+- Up to 1,000 entities
 - Up to 10 users
 - Full featured access to Asset Inventory / CMDB, search, query and 
   graph visualization from query results
@@ -181,7 +181,7 @@ A paid subscription is required for the following capabilities:
 - Full policy management (build/edit/export policies and procedures) and 
   compliance mapping
 - Full API access
-- SAML Single Sign On
+- SAML Single Sign-On
 
 !!! note
 

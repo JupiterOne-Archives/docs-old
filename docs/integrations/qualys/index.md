@@ -14,8 +14,8 @@
 
 ## Requirements
 
-- JupiterOne requires the username and password of a Qualys user that has permission
- to access to the API. JupiterOne also requires the url of the API.
+- JupiterOne requires the username and password of a Qualys user that has
+  permission to access to the API. JupiterOne also requires the url of the API.
 - You must have permission in JupiterOne to install new integrations.
 
 ## Support
@@ -29,7 +29,7 @@ If you need help with this integration, please contact
 
 The Qualys API requires usage of a username and password associated with a user.
 Also, by default, trial users do not have access to the Qualys API so you must
-request access to the API. See 
+request access to the API. See
 [Qualys API docs](https://debug.qualys.com/qwebhelp/fo_portal/api_doc/scans/index.htm#t=get_started%2Fget_started.htm)
 for more information.
 
@@ -43,16 +43,18 @@ controlled by a license setting.
 1. From the configuration **Gear Icon**, select **Integrations**.
 2. Scroll to the **Qualys** integration tile and click it.
 3. Click the **Add Configuration** button and configure the following settings:
-- Enter the **Account Name** by which you'd like to identify this Qualys
-   account in JupiterOne. Ingested entities will have this value stored in
-   `tag.AccountName` when **Tag with Account Name** is checked.
+
+- Enter the **Account Name** by which you'd like to identify this Qualys account
+  in JupiterOne. Ingested entities will have this value stored in
+  `tag.AccountName` when **Tag with Account Name** is checked.
 - Enter a **Description** that will further assist your team when identifying
-   the integration instance.
+  the integration instance.
 - Select a **Polling Interval** that you feel is sufficient for your monitoring
-   needs. You may leave this as `DISABLED` and manually execute the integration.
+  needs. You may leave this as `DISABLED` and manually execute the integration.
 - Enter the **Qualys Username** of a user configured for read access.
 - Enter the **Qualys Password** of a user configured for read access.
 - Enter the **API URL** for your Qualys account.
+
 4. Click **Create Configuration** once all values are provided.
 
 ## How to Uninstall
@@ -111,3 +113,15 @@ END OF GENERATED DOCUMENTATION AFTER BELOW MARKER
 ********************************************************************************
 -->
 <!-- {J1_DOCUMENTATION_MARKER_END} -->
+
+## ThreatIntel Mappings
+
+There are two global mapping rules defined to map `ThreatIntel` to `Finding` and
+`Vulnerability` entities in Qualys using `qid`.
+
+These global mappings are defined as follows:
+
+| Source Entity `_class` | Source Property | Relationship `_class` | Target Entity `_class` | Target Property |
+| ---------------------- | --------------- | --------------------- | ---------------------- | --------------- |
+| `ThreatIntel`          | `qid`           | **HAS**               | `Finding`              | `qid`           |
+| `ThreatIntel`          | `qid`           | **HAS**               | `Vulnerability`        | `qid`           |

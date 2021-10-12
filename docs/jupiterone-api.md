@@ -8,11 +8,27 @@ The JupiterOne platform exposes a number of public GraphQL endpoints.
 
 **Endpoint for alert and rules operations**: `/rules/graphql`
 
-**Rate Limits**: Rate limiting is enforced per account at 30 query requests per
-minute with bursts up to 30 requests. A `429` HTTP response code indicates the
-limit has been reached. The API does not currently return any rate limit headers.
+**Rate Limits**: Rate limiting is enforced based on your account tier. A `429`
+HTTP response code indicates the limit has been reached. The API does not
+currently return any rate limit headers.
 
-An experimental [node.js client and CLI][1] can be found on Github.
+**Authentication**: The JupiterOne APIs use a Bearer Token to authenticate. Include the API key in the header as a Bearer Token. You also need to include `JupiterOne-Account` as a header parameter. You can find the `Jupiterone-Account` value in your account by running the following J1QL query:
+
+```j1ql
+FIND jupiterone_account as a return a._accountId
+```
+
+**Example cURL command with authentication**
+
+```curl
+curl --location --request POST 'https://api.us.jupiterone.io/graphql' \
+--header 'JupiterOne-Account: accountId' \
+--header 'Authorization: Bearer 123456abcdef' \
+--header 'Content-Type: application/json' \
+--data-raw '{"query":...}
+```
+
+An experimental [node.js client and CLI][1] is available on Github.
 
 [1]: https://github.com/JupiterOne/jupiterone-client-nodejs
 
@@ -96,7 +112,7 @@ query J1QL(
 
 ```json
 {
-  "type": "list",
+  "type": "table",
   "data": [
     { "Person.name": "Mochi" }
   ],
@@ -2314,17 +2330,22 @@ Accept: application/json
 JupiterOne-Account: {Account_ID}
 Authorization: Bearer {API_Key}
 ```
+<br/>
 
 ### Get IAM groups
+**Query: iamGroups**
 
-**Query:**
+Retrieves all account `groups` within the query limit. 
+- `limit`: (required) max number of records to return
+- `cursor`: (optional) continuation token
 
 ```graphql
 query Query($limit: Int!, $cursor: String) {
-  iamGroups(limit: $limit, cursor: $cursor) {
+  iamGroups(limit: $limit,cursor: $cursor) {
     items {
       id
       name
+      description
     }
     pageInfo {
       endCursor
@@ -2333,17 +2354,17 @@ query Query($limit: Int!, $cursor: String) {
   }
 }
 ```
+**API Samples**
 
-**Sample input:**
+Sample (S1): `iamGroups`
 
+(S1): Request
 ```json
 {
-  "limit": 10
+  "limit": 5
 }
 ```
-
-**Sample output:**
-
+(S1): Response
 ```json
 {
   "data": {
@@ -2352,10 +2373,12 @@ query Query($limit: Int!, $cursor: String) {
         {
           "id": "12c2d370-89ef-4280-970b-d520ca1837be",
           "name": "Users",
+          "description": ""
         },
         {
           "id": "dd354c7a-1b9b-4579-ac5e-873fe3b2c851",
           "name": "Administrators",
+          "description": "Admin users"
         }
       ],
       "pageInfo": {
@@ -2366,45 +2389,52 @@ query Query($limit: Int!, $cursor: String) {
   }
 }
 ```
+### Get Users of IAM group
+**Query: iamGroupUsers**
 
-### Get users for IAM group
-
-**Query:**
+Retrieves all group members of the specified `group` (by `id`) within the query limit. 
+- `groupId`: (required) unique group identifier
+- `limit`: (required) max number of records to return
+- `cursor`: (optional) continuation token
+> Note: The item.`id` property in the response is the JupiterOne `uid`. 
 
 ```graphql
-query Query($groupId: String!, $limit: Int!, $cursor: String) {
+query Query($groupId: String!, $limit: Int!, $cursor: String){
   iamGroupUsers(groupId: $groupId, limit: $limit, cursor: $cursor) {
-    items {
-      email
+      items {
+        id
+        email
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
     }
-    pageInfo {
-      endCursor
-      hasNextPage
-    }
-  }
 }
 ```
+**API Samples**
 
-**Sample input:**
+Sample (S1): `iamGroupUsers`
 
+(S1): Request
 ```json
 {
-	"groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
-	"limit": 5
+  "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
+  "limit": 5
 }
 ```
-
-**Sample output:**
-
+(S1): Response
 ```json
 {
   "data": {
     "iamGroupUsers": {
       "items": [
         {
+          "id":"222xxx222_abc",
           "email": "abc@mycompany.com"
         },
         {
+          "id":"222xxx222_def@mycompany.com",
           "email": "def@mycompany.com"
         }
       ],
@@ -2417,69 +2447,459 @@ query Query($groupId: String!, $limit: Int!, $cursor: String) {
 }
 ```
 
-### Add IAM user to group
+<br>
 
-**Mutation:**
+### Add IAM User to Group
+**Mutation: addIamUserToGroupByEmail**
+
+Adds a `user` to a `group` using the specified email and group ID. 
+- `groupId`: (required)
+- `userEmail`: (required)
 
 ```graphql
 mutation Mutation($groupId: String!, $userEmail: String!) {
-  addIamUserToGroupByEmail(groupId: $groupId, userEmail: $userEmail) {
-    userEmail
-    groupId
+  addIamUserToGroupByEmail(
+    groupId: $groupId, 
+    userEmail: $userEmail
+  ) {
+    success
   }
 }
 ```
+**API Samples**
 
-**Sample input:**
+Sample (S1): `addIamUserToGroupByEmail`
 
+(S1): Request
 ```json
 {
-	"groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
-	"userEmail": "xyz@mycompany.com"
+  "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
+  "userEmail": "abc@mycompany.com"
 }
 ```
-
-**Sample output:**
-
-```graphql
+(S1): Response
+```json
 {
   "data": {
     "addIamUserToGroupByEmail": {
-      "userEmail": "123@mycompany.com",
-      "groupId": "22c2d370-89ef-4280-970b-d520ca1837be"
+      "success": true
     }
   }
 }
 ```
 
 ### Remove IAM user from group
+**Mutation: removeIamUserFromGroupByEmail**
 
-**Mutation:**
+Removes a `user` from a `group` using the specified email and group ID. 
+- `groupId`: (required)
+- `userEmail`: (required)
 
 ```graphql
 mutation Mutation($groupId: String!, $userEmail: String!) {
-  removeIamUserFromGroupByEmail(groupId: $groupId, userEmail: $userEmail) {
+  removeIamUserFromGroupByEmail(
+    groupId: $groupId,
+    userEmail: $userEmail
+  ) {
     success
   }
 }
 ```
+**API Samples**
 
-**Sample input:**
+Sample (S1): `removeIamUserFromGroupByEmail`
 
+(S1): Request
 ```json
 {
-	"groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
-	"userEmail": "xyz@mycompany.com"
+  "groupId": "22c2d370-89ef-4280-970b-d520ca1837be",
+  "userEmail": "xyz@mycompany.com"
 }
 ```
-
-**Sample output:**
-
+(S1): Response
 ```json
 {
   "data": {
     "removeIamUserFromGroupByEmail": {
       "success": true
+    }
+  }
+}
+```
+### Create IAM Group
+**Mutation: `createIamGroup`**
+
+Creates a new `group` with a specified `name` and optionally: `description`, `queryPolicy`, and/or `abacPermissions`. 
+- `name`: (required) must be unique to all other groups.
+- `description`: (optional)
+- `abacPermissions`: (optional)
+- `queryPolicy`: (optional)
+
+```graphql
+mutation Mutation(
+  $name: String!
+  $description: String
+  $abacPermissions: [String!]
+  $queryPolicy: [JSON!]
+) {
+  createIamGroup(
+    name: $name
+    description: $description
+    abacPermissions: $abacPermissions
+    queryPolicy: $queryPolicy
+  ) {
+    id
+    name
+    description
+  }
+}
+```
+**API Type Definitions**
+
+**queryPolicy**
+
+Description: Group Query Policies define query access for members of a particular group. Setting this property via the IAM API will **overwrite** any existing queryPolicy for the given group. If updating this property, *always* define the full `queryPolicy` to enforce.     
+
+Type: list of `JSON` objects with primitive values or an array or primitive values.   
+```typescript
+type queryPolicy = [JSON!];
+type JSON = { 
+  [key: string]: string | number | boolean || (string | number | boolean)[]; 
+}
+```
+
+**abacPermissions**
+
+Description: ABAC permissions define application access for members of a perticular group. Setting this property via the IAM API will **overwrite** any existing permissions for the given group. If updating this property, *always* define the full list of `permissions` that should be granted.   
+
+Type: list of valid `permission` strings (see table below).    
+```typescript
+type abacPermissions = [permission!]
+type permission = string // must be a valid permission string
+```
+**Permission Strings: READ-ONLY**
+
+| DISPLAY NAME (J1 APP)    | ACCESS |                 PERMISSION |
+| :----------------------- | :----: | -------------------------: |
+| *All Apps And Resources* |  READ  |           `fullReadAccess` |
+| *Shared: Questions*      |  READ  |            `readQuestions` |
+| *GraphData*              |  READ  |                `readGraph` |
+| *Landing*                |  READ  |            `accessLanding` |
+| *Assets*                 |  READ  |             `accessAssets` |
+| *Policies*               |  READ  |           `accessPolicies` |
+| *Compliance*             |  READ  |         `accessCompliance` |
+| *Alerts*                 |  READ  |              `accessRules` |
+| *GraphViewer*            |  READ  |             `accessGalaxy` |
+| *Insights*               |  READ  |           `accessInsights` |
+| *Integrations*           |  READ  |       `accessIntegrations` |
+| *Endpoint Compliance*    |  READ  | `accessEndpointCompliance` |
+
+**Permission Strings: ADMIN**
+
+| DISPLAY NAME (J1 APP)    | ACCESS |                PERMISSION |
+| :----------------------- | :----: | ------------------------: |
+| *All Apps And Resources* | ADMIN  |             `accessAdmin` |
+| *Shared: Questions*      | ADMIN  |          `writeQuestions` |
+| *GraphData*              | ADMIN  |              `writeGraph` |
+| *Landing*                | ADMIN  |            `adminLanding` |
+| *Assets*                 | ADMIN  |             `adminAssets` |
+| *Policies*               | ADMIN  |           `adminPolicies` |
+| *Compliance*             | ADMIN  |         `adminCompliance` |
+| *Alerts*                 | ADMIN  |              `adminRules` |
+| *GraphViewer*            | ADMIN  |             `adminGalaxy` |
+| *Insights*               | ADMIN  |           `adminInsights` |
+| *Integrations*           | ADMIN  |       `adminIntegrations` |
+| *Endpoint Compliance*    | ADMIN  | `adminEndpointCompliance` |
+| *ENABLE API KEY ACCESS*  |   *    |              `apiKeyUser` |
+
+**API Samples**
+
+Sample (S1): `createIamGroup`
+
+(S1): Request
+```json
+{
+  "name": "Users",
+}
+```
+(S1): Response
+```json
+{
+  "data": {
+    "createIamGroup": {
+      "id": "90909-11ef-4280-970b-4444ca1837be",
+      "name": "Users",
+    }
+  }
+}
+```
+Sample (S2): `createIamGroup`
+
+(S2): Request
+```json
+{
+  "name": "UsersX",
+  "description": "A group for X users"
+}
+```
+(S2): Response
+```json
+{
+  "data": {
+    "createIamGroup": {
+      "id": "11c2d370-89ef-4280-970b-d520ca1837be",
+      "name": "UsersX",
+      "description": "A group for X users"
+    }
+  }
+}
+```
+Sample (S3): `createIamGroup`
+
+(S3): Request
+```json
+{
+  "name": "Support",
+  "description": "A group for support users",
+  "queryPolicy": [ 
+    {
+      "_type": ["aws_ecr_image", "bitbucket_pullrequest"]
+    }
+  ] 
+}
+```
+(S3): Response
+```json 
+{
+  "data": {
+    "createIamGroup": {
+      "id": "23434-454-45656-65656-4564564565",
+      "name": "Support",
+      "description": "A group for support users"
+    }
+  }
+}
+```
+Sample (S4): `createIamGroup`
+
+(S4): Request
+```json
+{
+  "name": "Admins",
+  "queryPolicy": [ 
+    {
+      "_type": "aws_ecs_task_definition",
+      "_class": "Account"
+    },
+    {
+      "_type": "aws_ecr_image"
+    }
+  ] 
+}
+```
+(S4): Response
+```json
+{
+  "data": {
+    "createIamGroup": {
+      "id": "87787-6787-678678-778-6786786",
+      "name": "Admins",
+    }
+  }
+}
+
+```
+
+### Update IAM Group
+**Mutation: `updateIamGroup`**
+
+Updates a `group`'s properties: `name`, `description`, `queryPolicy`, and/or `abacPermissions`. 
+- `id`: (required) must tie to an existing group.
+- `name`: (optional) must be unique to all other groups.
+- `description`: (optional)
+- `abacPermissions`: (optional)
+- `queryPolicy`: (optional)
+  
+```graphql
+mutation Mutation(
+  $id: String!
+  $name: String
+  $description: String
+  $abacPermissions: [String!]
+  $queryPolicy: [JSON!]
+) {
+  updateIamGroup(
+    id: $id
+    name: $name
+    description: $description
+    abacPermissions: $abacPermissions
+    queryPolicy: $queryPolicy
+  ) {
+    id
+    name
+    description
+  }
+}
+```
+**API Type Definitions**
+
+**queryPolicy**
+
+Description: Group Query Policies define query access for members of a particular group. Setting this property via the IAM API will **overwrite** any existing queryPolicy for the given group. If updating this property, *always* define the full `queryPolicy` to enforce.     
+
+Type: list of `JSON` objects with primitive values or an array or primitive values.   
+```typescript
+type queryPolicy = [JSON!];
+type JSON = { 
+  [key: string]: string | number | boolean || (string | number | boolean)[]; 
+}
+```
+
+**abacPermissions**
+
+Description: ABAC permissions define application access for members of a perticular group. Setting this property via the IAM API will **overwrite** any existing permissions for the given group. If updating this property, *always* define the full list of `permissions` that should be granted.   
+
+Type: list of valid `permission` strings (see table below).    
+```typescript
+type abacPermissions = [permission!];
+type permission = string; // must be a valid permission string
+```
+**Permission Strings: READ-ONLY**
+
+| DISPLAY NAME (J1 APP)    | ACCESS |                 PERMISSION |
+| :----------------------- | :----: | -------------------------: |
+| *All Apps And Resources* |  READ  |           `fullReadAccess` |
+| *Shared: Questions*      |  READ  |            `readQuestions` |
+| *GraphData*              |  READ  |                `readGraph` |
+| *Landing*                |  READ  |            `accessLanding` |
+| *Assets*                 |  READ  |             `accessAssets` |
+| *Policies*               |  READ  |           `accessPolicies` |
+| *Compliance*             |  READ  |         `accessCompliance` |
+| *Alerts*                 |  READ  |              `accessRules` |
+| *GraphViewer*            |  READ  |             `accessGalaxy` |
+| *Insights*               |  READ  |           `accessInsights` |
+| *Integrations*           |  READ  |       `accessIntegrations` |
+| *Endpoint Compliance*    |  READ  | `accessEndpointCompliance` |
+
+**Permission Strings: ADMIN**
+
+| DISPLAY NAME (J1 APP)    | ACCESS |                PERMISSION |
+| :----------------------- | :----: | ------------------------: |
+| *All Apps And Resources* | ADMIN  |             `accessAdmin` |
+| *Shared: Questions*      | ADMIN  |          `writeQuestions` |
+| *GraphData*              | ADMIN  |              `writeGraph` |
+| *Landing*                | ADMIN  |            `adminLanding` |
+| *Assets*                 | ADMIN  |             `adminAssets` |
+| *Policies*               | ADMIN  |           `adminPolicies` |
+| *Compliance*             | ADMIN  |         `adminCompliance` |
+| *Alerts*                 | ADMIN  |              `adminRules` |
+| *GraphViewer*            | ADMIN  |             `adminGalaxy` |
+| *Insights*               | ADMIN  |           `adminInsights` |
+| *Integrations*           | ADMIN  |       `adminIntegrations` |
+| *Endpoint Compliance*    | ADMIN  | `adminEndpointCompliance` |
+| *ENABLED API KEY ACCESS* |   *    |              `apiKeyUser` |
+
+**API Samples**
+
+Sample (S1): `updateIamGroup`
+
+(S1): Request
+```json
+{
+  "id": "90909-11ef-4280-970b-4444ca1837be",
+  "name": "Users",
+}
+```
+(S1): Response
+```json
+{
+  "data": {
+    "updateIamGroup": {
+      "id": "90909-11ef-4280-970b-4444ca1837be",
+      "name": "Users",
+      "description": "original description.."
+    }
+  }
+}
+```
+Sample (S2): `updateIamGroup`
+
+(S2): Request
+```json
+{
+  "id": "90909-11ef-4280-970b-4444ca",
+  "name": "UsersX",
+  "description": "A group for X users"
+}
+```
+(S2): Response
+```json
+{
+  "data": {
+    "updateIamGroup": {
+      "id": "90909-11ef-4280-970b-4444ca",
+      "name": "UsersX",
+      "description": "A group for X users"
+    }
+  }
+}
+```
+Sample (S3): `updateIamGroup`
+
+(S3): Request
+```json
+{
+  "id": "90909-11ef-4280-970b-4444ca",
+  "abacPermissions": [
+    "accessPolicies", 
+    "writeQuestions",
+    "accessGalaxy"
+  ],
+  "queryPolicy": [ 
+    {
+      "_type": "aws_ecs_task_definition"
+    }
+  ] 
+}
+```
+(S3): Response
+```json 
+{
+  "data": {
+    "updateIamGroup": {
+      "id": "90909-11ef-4280-970b-4444ca",
+      "name": "UsersX",
+      "description": "A group for X users"
+    }
+  }
+}
+```
+Sample (S4): `updateIamGroup`
+
+(S4): Request
+```json
+{
+  "id": "90909-11ef-4280-970b-4444ca",
+  "description": "allow account class",
+  "queryPolicy": [ 
+    {
+      "_type": "aws_ecs_task_definition",
+      "_class": "Account"
+    },
+    {
+      "_integrationType": ["whitehat"]
+    }
+  ] 
+}
+```
+(S4): Response
+```json
+{
+  "data": {
+    "updateIamGroup": {
+      "id": "90909-11ef-4280-970b-4444ca",
+      "name": "UsersX",
+      "description": "allow account class",
     }
   }
 }

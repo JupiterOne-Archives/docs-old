@@ -63,7 +63,7 @@ To create the App Registration:
 1. Create a new client secret
 1. Copy the generated secret (you only get one chance!)
 
-#### APIPermissions
+#### API Permissions (Azure Active Directory)
 
 Grant permission to read Microsoft Graph information:
 
@@ -77,11 +77,14 @@ Grant permission to read Microsoft Graph information:
 
    **Optional**
 
-   | Permission        | Endpoint(s)                                                                                                                                                                   |
-   | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | `Policy.Read.All` | [/policies/identitySecurityDefaultsEnforcementPolicy](https://docs.microsoft.com/en-us/graph/api/identitysecuritydefaultsenforcementpolicy-get?view=graph-rest-1.0&tabs=http) |
+   | Permission         | Endpoint(s)                                                                                                                                                                    |
+   | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+   | `Policy.Read.All`  | [/policies/identitySecurityDefaultsEnforcementPolicy](https://docs.microsoft.com/en-us/graph/api/identitysecuritydefaultsenforcementpolicy-get?view=graph-rest-1.0&tabs=http)  |
+   | `Reports.Read.All` | [/beta/reports/credentialUserRegistrationDetails](https://docs.microsoft.com/en-us/graph/api/reportroot-list-credentialuserregistrationdetails?view=graph-rest-beta&tabs=http) |
 
 1. Grant admin consent for this directory for the permissions above
+
+#### IAM Roles (Azure Management Groups / Subscriptions)
 
 Please note that minimally [`User.Read` is required][3] even when AD ingestion
 is disabled. The integration will request Organization information to maintain
@@ -90,13 +93,31 @@ the `Account` entity.
 Grant the `Reader` RBAC subscription role to read Azure Resource Manager
 information:
 
-1. Navigate to **Subscriptions**, choose the subscription from which you want to
-   ingest resources
-1. Copy the **Subscription ID**
+1. Navigate to the correct scope for your integration.
+
+   _If configuring a single Azure Subscription:_
+
+   - navigate to **Subscriptions**, choose the subscription from which you want
+     to ingest resources.
+
+   _If configuring all subscriptions for a tenant (using the
+   `Configure Subscription Instances` flag in JupiterOne):_
+
+   - navigate to **Management Groups**, then to the
+     [Tenant Root Group](https://docs.microsoft.com/en-us/azure/governance/management-groups/overview#root-management-group-for-each-directory).
+
 1. Navigate to **Access control (IAM)**, then **Add role assignment**
 1. Select **Role** "Reader", **Assign access to** "Azure AD user, group, or
-   service principal"
-1. Search for the App "JupiterOne"
+   service principal", and select the App "JupiterOne"
+1. Create a custom role called "JupiterOne Reader" with the following
+   permissions:
+   - `Microsoft.PolicyInsights/policyStates/queryResults/action`
+1. Select **Role** "JupiterOne Reader", **Assign access to** "Azure AD user,
+   group, or service principal", and select the app "JupiterOne"
+1. _If configuring all subscriptions for a tenant (using the
+   `Configure Subscription Instances` flag in JupiterOne):_
+
+   - Also assign the "Management Group Reader" role to the App "JupiterOne"
 
 ### In JupiterOne
 
@@ -121,6 +142,29 @@ information:
   This should only be enabled in one integration instance per Directory.
 
 4. Click **Create Configuration** once all values are provided.
+
+### Troubleshooting
+
+#### Authentication Errors
+
+If the Azure integration does not complete, and you encounter a message like
+`[validation_failure] Error occurred while validating integration configuration`
+in your job log, check the following common configuration errors:
+
+- **Verify the Application (client) ID and Application (client) Secret:** Make
+  sure that you've verified the proper value for client ID and client secret.
+  The client secret has both a **Value** property and a **Secret ID** property.
+  The **Secret ID** is unused - make sure you haven't accidentally used the
+  **Secret ID** as the **Client ID**.
+- **Verify that you've enabled the proper API permissions:** Make sure the
+  required API permissions (described above) are enabled for the application.
+- **Verify that the API permissions have been granted as "Application" and not
+  "Delegated":** The integration requires API Permissions of type
+  **Application**. Permissions of type **Delegated** will cause issues in your
+  integration.
+- **Verify that your permissions have been "Grant(ed) admin consent for
+  Directory":** If you have added API Permissions to the application, but have
+  not granted Admin Consent, the permissions are not yet active.
 
 <!-- {J1_DOCUMENTATION_MARKER_START} -->
 <!--
@@ -172,11 +216,12 @@ The following entities are created:
 | [RM] Event Grid Topic                          | `azure_event_grid_topic`                          | `Queue`                            |
 | [RM] Event Grid Topic Subscription             | `azure_event_grid_topic_subscription`             | `Subscription`                     |
 | [RM] Function App                              | `azure_function_app`                              | `Function`                         |
-| [RM] Gallery                                   | `azure_gallery`                                   | `DataStore`                        |
+| [RM] Gallery                                   | `azure_gallery`                                   | `Repository`                       |
 | [RM] Image                                     | `azure_image`                                     | `Image`                            |
 | [RM] Key Vault                                 | `azure_keyvault_service`                          | `Service`                          |
 | [RM] Load Balancer                             | `azure_lb`                                        | `Gateway`                          |
 | [RM] Location                                  | `azure_location`                                  | `Site`                             |
+| [RM] Management Group                          | `azure_management_group`                          | `Group`                            |
 | [RM] MariaDB Database                          | `azure_mariadb_database`                          | `Database`, `DataStore`            |
 | [RM] MariaDB Server                            | `azure_mariadb_server`                            | `Database`, `DataStore`, `Host`    |
 | [RM] Monitor Activity Log Alert                | `azure_monitor_activity_log_alert`                | `Rule`                             |
@@ -219,6 +264,7 @@ The following entities are created:
 | [RM] Service Bus Subscription                  | `azure_service_bus_subscription`                  | `Subscription`                     |
 | [RM] Service Bus Topic                         | `azure_service_bus_topic`                         | `Queue`                            |
 | [RM] Shared Image                              | `azure_shared_image`                              | `Image`                            |
+| [RM] Shared Image Version                      | `azure_shared_image_version`                      | `Image`                            |
 | [RM] Storage Account                           | `azure_storage_account`                           | `Service`                          |
 | [RM] Storage Container                         | `azure_storage_container`                         | `DataStore`                        |
 | [RM] Storage File Share                        | `azure_storage_file_share`                        | `DataStore`                        |
@@ -239,6 +285,7 @@ The following relationships are created/mapped:
 | ---------------------------------- | --------------------- | ------------------------------------------------- |
 | `azure_account`                    | **HAS**               | `azure_user_group`                                |
 | `azure_account`                    | **HAS**               | `azure_keyvault_service`                          |
+| `azure_account`                    | **HAS**               | `azure_management_group`                          |
 | `azure_account`                    | **HAS**               | `azure_user`                                      |
 | `azure_api_management_service`     | **HAS**               | `azure_api_management_api`                        |
 | `azure_security_assessment`        | **IDENTIFIED**        | `azure_advisor_recommendation`                    |
@@ -263,8 +310,10 @@ The following relationships are created/mapped:
 | `azure_user_group`                 | **HAS**               | `azure_user_group`                                |
 | `azure_user_group`                 | **HAS**               | `azure_group_member`                              |
 | `azure_user_group`                 | **HAS**               | `azure_user`                                      |
+| `azure_keyvault_service`           | **ALLOWS**            | `ANY_PRINCIPAL`                                   |
 | `azure_lb`                         | **CONNECTS**          | `azure_nic`                                       |
 | `azure_location`                   | **HAS**               | `azure_network_watcher`                           |
+| `azure_management_group`           | **CONTAINS**          | `azure_management_group`                          |
 | `azure_mariadb_server`             | **HAS**               | `azure_mariadb_database`                          |
 | `azure_monitor_activity_log_alert` | **MONITORS**          | `ANY_SCOPE`                                       |
 | `azure_monitor_log_profile`        | **USES**              | `azure_storage_account`                           |
@@ -320,19 +369,7 @@ The following relationships are created/mapped:
 | `ANY_SCOPE`                        | **HAS**               | `azure_advisor_recommendation`                    |
 | `ANY_SCOPE`                        | **HAS**               | `azure_policy_assignment`                         |
 | `ANY_RESOURCE`                     | **HAS**               | `azure_policy_state`                              |
-| `azure_role_assignment`            | **ALLOWS**            | `azure_api_management_service`                    |
-| `azure_role_assignment`            | **ALLOWS**            | `azure_container_registry`                        |
-| `azure_role_assignment`            | **ALLOWS**            | `azure_cosmosdb_account`                          |
-| `azure_role_assignment`            | **ALLOWS**            | `azure_dns_zone`                                  |
-| `azure_role_assignment`            | **ALLOWS**            | `azure_keyvault_service`                          |
-| `azure_role_assignment`            | **ALLOWS**            | `azure_nic`                                       |
-| `azure_role_assignment`            | **ALLOWS**            | `azure_private_dns_zone`                          |
-| `azure_role_assignment`            | **ALLOWS**            | `azure_public_ip`                                 |
-| `azure_role_assignment`            | **ALLOWS**            | `azure_resource_group`                            |
-| `azure_role_assignment`            | **ALLOWS**            | `azure_security_group`                            |
-| `azure_role_assignment`            | **ALLOWS**            | `azure_storage_account`                           |
-| `azure_role_assignment`            | **ALLOWS**            | `azure_subscription`                              |
-| `azure_role_assignment`            | **ALLOWS**            | `azure_vnet`                                      |
+| `azure_role_assignment`            | **ALLOWS**            | `ANY_SCOPE`                                       |
 | `azure_role_assignment`            | **ASSIGNED**          | `azure_application`                               |
 | `azure_role_assignment`            | **ASSIGNED**          | `azure_directory`                                 |
 | `azure_role_assignment`            | **ASSIGNED**          | `azure_directory_role_template`                   |
@@ -353,6 +390,7 @@ The following relationships are created/mapped:
 | `azure_service_bus_namespace`      | **HAS**               | `azure_service_bus_queue`                         |
 | `azure_service_bus_namespace`      | **HAS**               | `azure_service_bus_topic`                         |
 | `azure_service_bus_topic`          | **HAS**               | `azure_service_bus_subscription`                  |
+| `azure_shared_image`               | **HAS**               | `azure_shared_image_version`                      |
 | `azure_sql_server`                 | **HAS**               | `azure_sql_server_active_directory_admin`         |
 | `azure_sql_server`                 | **HAS**               | `azure_sql_database`                              |
 | `azure_sql_server`                 | **HAS**               | `azure_sql_server_firewall_rule`                  |
@@ -372,11 +410,14 @@ The following relationships are created/mapped:
 | `azure_subscription`               | **HAS**               | `azure_security_center_subscription_pricing`      |
 | `azure_subscription`               | **PERFORMED**         | `azure_security_assessment`                       |
 | `azure_subscription`               | **USES**              | `azure_location`                                  |
+| `azure_vm`                         | **GENERATED**         | `azure_shared_image_version`                      |
 | `azure_vm`                         | **USES**              | `azure_image`                                     |
 | `azure_vm`                         | **USES**              | `azure_managed_disk`                              |
+| `azure_vm`                         | **USES**              | `azure_service_principal`                         |
 | `azure_vm`                         | **USES**              | `azure_nic`                                       |
 | `azure_vm`                         | **USES**              | `azure_public_ip`                                 |
 | `azure_vm`                         | **USES**              | `azure_shared_image`                              |
+| `azure_vm`                         | **USES**              | `azure_shared_image_version`                      |
 | `azure_vm`                         | **USES**              | `azure_storage_account`                           |
 | `azure_vnet`                       | **CONTAINS**          | `azure_subnet`                                    |
 | `azure_web_app`                    | **USES**              | `azure_app_service_plan`                          |

@@ -72,13 +72,10 @@ perform the following actions.
 5. Add the following **API scopes** (comma separated):
 
    ```text
-   https://www.googleapis.com/auth/admin.directory.domain.readonly, https://www.googleapis.com/auth/admin.directory.user.readonly, https://www.googleapis.com/auth/admin.directory.group.readonly, https://www.googleapis.com/auth/admin.directory.user.security, https://www.googleapis.com/auth/apps.groups.settings
+   https://www.googleapis.com/auth/admin.directory.domain.readonly, https://www.googleapis.com/auth/admin.directory.user.readonly, https://www.googleapis.com/auth/admin.directory.group.readonly, https://www.googleapis.com/auth/admin.directory.user.security, https://www.googleapis.com/auth/apps.groups.settings, https://www.googleapis.com/auth/admin.directory.rolemanagement.readonly
    ```
 
 6. Click **Authorize**.
-
-7. Return to the **Admin console** home page. Click **Security** > **API
-   Permissions** and **Enable API access**.
 
 Continuing in the **Admin console**, create a user the JupiterOne Service
 Account will impersonate:
@@ -119,10 +116,10 @@ permissions required by JupiterOne, and which will include only the
 5. In the **Privileges**, **Admin API Privileges** section, check these
    permissions:
 
-   - Users -> Read
-   - Groups -> Read
-   - Domain Management
-   - User Security Management
+    - Users -> Read
+    - Groups -> Read
+    - Domain Management
+    - User Security Management
 
 #### Adding Scopes and Privileges
 
@@ -196,7 +193,7 @@ NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
 "j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
 DOCUMENTATION FOR USAGE INFORMATION:
 
-https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md
 ********************************************************************************
 -->
 
@@ -212,6 +209,7 @@ The following entities are created:
 | Domain         | `google_domain`         | `Domain`        |
 | Group          | `google_group`          | `UserGroup`     |
 | Group Settings | `google_group_settings` | `Configuration` |
+| Role           | `google_role`           | `AccessRole`    |
 | Site           | `google_site`           | `Site`          |
 | Token          | `google_token`          | `AccessKey`     |
 | User           | `google_user`           | `User`          |
@@ -223,12 +221,14 @@ The following relationships are created/mapped:
 | Source Entity `_type` | Relationship `_class` | Target Entity `_type`          |
 | --------------------- | --------------------- | ------------------------------ |
 | `google_account`      | **HAS**               | `google_group`                 |
+| `google_account`      | **HAS**               | `google_role`                  |
 | `google_account`      | **HAS**               | `google_user`                  |
 | `google_group`        | **HAS**               | `google_group`                 |
 | `google_group`        | **HAS**               | `google_group_settings`        |
 | `google_group`        | **HAS**               | `google_user`                  |
 | `google_site`         | **HAS**               | `google_user`                  |
 | `google_token`        | **ALLOWS**            | `mapped_entity (class Vendor)` |
+| `google_user`         | **ASSIGNED**          | `google_role`                  |
 | `google_user`         | **ASSIGNED**          | `google_token`                 |
 
 <!--

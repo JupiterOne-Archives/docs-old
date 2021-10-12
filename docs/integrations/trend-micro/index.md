@@ -6,14 +6,14 @@
 - Visualize Trend Micro endpoint agents and the devices they protect in the
   JupiterOne graph.
 - Map Trend Micro endpoint agents to devices and devices to the employee who is
-  the owner. 
+  the owner.
 - Monitor changes to Trend Micro administrators, endpoint agents, and devices
-  using JupiterOne alerts. 
+  using JupiterOne alerts.
 
 ## How it Works
 
-- JupiterOne periodically fetches Trend Micro administrators, agents, and 
-devices to update the graph.
+- JupiterOne periodically fetches Trend Micro administrators, agents, and
+  devices to update the graph.
 - Write JupiterOne queries to review and monitor updates to the graph.
 - Configure alerts to take action when the JupiterOne graph changes.
 
@@ -39,14 +39,16 @@ For configuring an API key in Trend Micro, see
 1. From the configuration **Gear Icon**, select **Integrations**.
 2. Scroll to the **Trend Micro** integration tile and click it.
 3. Click the **Add Configuration** button and configure the following settings:
+
 - Enter the **Account Name** by which you'd like to identify this Trend Micro
-   account in JupiterOne. Ingested entities will have this value stored in
-   `tag.AccountName` when **Tag with Account Name** is checked.
+  account in JupiterOne. Ingested entities will have this value stored in
+  `tag.AccountName` when **Tag with Account Name** is checked.
 - Enter a **Description** that will further assist your team when identifying
-   the integration instance.
+  the integration instance.
 - Select a **Polling Interval** that you feel is sufficient for your monitoring
-   needs. You may leave this as `DISABLED` and manually execute the integration.
+  needs. You may leave this as `DISABLED` and manually execute the integration.
 - Enter the **API Key** configured in Trend Micro for read access.
+
 4. Click **Create Configuration** once all values are provided.
 
 ## How to Uninstall
@@ -57,25 +59,43 @@ For configuring an API key in Trend Micro, see
 4. Click the **trash can** icon.
 5. Click the **Remove** button to delete the integration.
 
+<!-- {J1_DOCUMENTATION_MARKER_START} -->
+<!--
+********************************************************************************
+NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
+"j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
+DOCUMENTATION FOR USAGE INFORMATION:
+
+https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+********************************************************************************
+-->
+
 ## Data Model
 
 ### Entities
 
-The following entity resources are ingested when the integration runs:
+The following entities are created:
 
-| Resources          | \_type of the Entity             | \_class of the Entity |
-| ------------------ | -------------------------------- | --------------------- |
-| Administrator      | `trend_micro_administrator`      | `User`                |
-| Administrator Role | `trend_micro_administrator_role` | `AccessRole`          |
-| API Key            | `trend_micro_api_key`            | `Key`                 |
-| Computer           | `trend_micro_computer`           | `Host`                |
-| Computer Group     | `trend_micro_computer_group`     | `Group`               |
+| Resources          | Entity `_type`                   | Entity `_class` |
+| ------------------ | -------------------------------- | --------------- |
+| API Key            | `trend_micro_api_key`            | `Key`           |
+| Administrator      | `trend_micro_administrator`      | `User`          |
+| Administrator Role | `trend_micro_administrator_role` | `AccessRole`    |
+| Computer           | `trend_micro_computer`           | `Host`          |
+| Computer Group     | `trend_micro_computer_group`     | `Group`         |
 
 ### Relationships
 
 The following relationships are created/mapped:
 
-| From                         | Edge         | To                               |
-| ---------------------------- | ------------ | -------------------------------- |
-| `trend_micro_computer_group` | **HAS**      | `trend_micro_computer`           |
-| `trend_micro_administrator`  | **ASSIGNED** | `trend_micro_administrator_role` |
+| Source Entity `_type`        | Relationship `_class` | Target Entity `_type`            |
+| ---------------------------- | --------------------- | -------------------------------- |
+| `trend_micro_administrator`  | **ASSIGNED**          | `trend_micro_administrator_role` |
+| `trend_micro_computer_group` | **HAS**               | `trend_micro_computer`           |
+
+<!--
+********************************************************************************
+END OF GENERATED DOCUMENTATION AFTER BELOW MARKER
+********************************************************************************
+-->
+<!-- {J1_DOCUMENTATION_MARKER_END} -->

@@ -8,17 +8,17 @@
 
 ## How it Works
 
-- JupiterOne periodically fetches users and packages from NPM to update 
-the graph.
-- Write JupiterOne queries to review and monitor updates to the graph, or leverage
- existing queries.
-- Configure alerts to take action when the JupiterOne graph changes, or leverage 
-existing alerts.
+- JupiterOne periodically fetches users and packages from NPM to update the
+  graph.
+- Write JupiterOne queries to review and monitor updates to the graph, or
+  leverage existing queries.
+- Configure alerts to take action when the JupiterOne graph changes, or leverage
+  existing alerts.
 
 ## Requirements
 
-- JupiterOne requires the name of your NPM organization and an access token API 
-to interact with the API.
+- JupiterOne requires the name of your NPM organization and an access token API
+  to interact with the API.
 - You must have permission in JupiterOne to install new integrations.
 
 ## Support
@@ -38,16 +38,18 @@ To create an NPM token with **Read Only** access, follow the instructions in the
 1. From the configuration **Gear Icon**, select **Integrations**.
 2. Scroll to the **NPM** integration tile and click it.
 3. Click the **Add Configuration** button and configure the following settings:
-- Enter the **Account Name** by which you'd like to identify this NPM
-   account in JupiterOne. Ingested entities will have this value stored in
-   `tag.AccountName` when **Tag with Account Name** is checked.
+
+- Enter the **Account Name** by which you'd like to identify this NPM account in
+  JupiterOne. Ingested entities will have this value stored in `tag.AccountName`
+  when **Tag with Account Name** is checked.
 - Enter a **Description** that will further assist your team when identifying
-   the integration instance.
+  the integration instance.
 - Select a **Polling Interval** that you feel is sufficient for your monitoring
-   needs. You may leave this as `DISABLED` and manually execute the integration.
+  needs. You may leave this as `DISABLED` and manually execute the integration.
 - Enter the **NPM Organization** of your NPM account.
-- Enter the **Access Token** generated in your NPM account, configured for 
-read access.
+- Enter the **Access Token** generated in your NPM account, configured for read
+  access.
+
 4. Click **Create Configuration** once all values are provided.
 
 ## How to Uninstall
@@ -58,34 +60,43 @@ read access.
 4. Click the **trash can** icon.
 5. Click the **Remove** button to delete the integration.
 
+[1]: https://docs.npmjs.com/creating-and-viewing-authentication-tokens
+
+<!-- {J1_DOCUMENTATION_MARKER_START} -->
+<!--
+********************************************************************************
+NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
+"j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
+DOCUMENTATION FOR USAGE INFORMATION:
+
+https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+********************************************************************************
+-->
+
 ## Data Model
 
 ### Entities
 
-The following entity resources are ingested when the integration runs.
+The following entities are created:
 
-| NPM Resources | \_type of the Entity | \_class of the Entity |
-| ------------- | -------------------- | --------------------- |
-| Organization  | `npm_organization`   | `Organization`        |
-| Team          | `npm_team`           | `UserGroup`           |
-| User          | `npm_user`           | `User`                |
-| Package       | `npm_package`        | `CodeModule`          |
+| Resources | Entity `_type` | Entity `_class` |
+| --------- | -------------- | --------------- |
+| Package   | `npm_package`  | `CodeModule`    |
+| Team      | `npm_team`     | `UserGroup`     |
+| User      | `npm_user`     | `User`          |
 
 ### Relationships
 
-The following relationships are created:
+The following relationships are created/mapped:
 
-| From               | Relationship | To            |
-| ------------------ | ------------ | ------------- |
-| `npm_organization` | **HAS**      | `npm_package` |
-| `npm_organization` | **HAS**      | `npm_team`    |
-| `npm_organization` | **HAS**      | `npm_user`    |
-| `npm_team`         | **HAS**      | `npm_user`    |
+| Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
+| --------------------- | --------------------- | --------------------- |
+| `npm_team`            | **HAS**               | `npm_user`            |
+| `CodeRepo`            | **PUBLISHED**         | `npm_package`         |
 
-The following relationships are mapped:
-
-| From       | Relationship  | To           |
-| ---------- | ------------- | ------------ |
-| `CodeRepo` | **PUBLISHED** | `CodeModule` |
-
-[1]: https://docs.npmjs.com/creating-and-viewing-authentication-tokens
+<!--
+********************************************************************************
+END OF GENERATED DOCUMENTATION AFTER BELOW MARKER
+********************************************************************************
+-->
+<!-- {J1_DOCUMENTATION_MARKER_END} -->

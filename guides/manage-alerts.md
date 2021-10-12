@@ -56,9 +56,9 @@ Check the box on the option you would like to utilize and fill in the required i
 1. Slack: You must configure the Slack integration for JupiterOne by [following these instructions](https://support.jupiterone.io/hc/en-us/articles/360046977154-Slack)
    Be sure to include specify the channel in the format `#channel`.
 1. JIRA: You must configure the JIRA integration for JupiterOne by [following these instructions](https://support.jupiterone.io/hc/en-us/articles/360022721154-Jira)
-1. SNS: The AWS Account you wish to sned to must be configured as an AWS Integration, and the 
+1. SNS: The AWS Account you wish to send to must be configured as an AWS Integration, and the 
    JupiterOne IAM Role for the AWS Account you want to publish to must have the `SNS:Publish` permission
-1. SQS: The AWS Account you wish to sned to must be configured as an AWS Integration, and the 
+1. SQS: The AWS Account you wish to send to must be configured as an AWS Integration, and the 
    JupiterOne IAM Role for the AWS Account you want to publish to must have the `SQS:SendMessage` permission
 
 ## Managing Alerts
@@ -74,7 +74,7 @@ up in the **Alerts** app in a data grid that looks like this:
 - Click on an individual alert row will expand it to show the alert details.
 - Click on the **DISMISS** button to dismiss an alert.
 
-If an alert is not dismissed, you will not recieve a follow up alert notification unless there are changes to the query result.
+If an alert is not dismissed, you will not receive a follow up alert notification unless there are changes to the query result.
 
 ## Configure Daily Notification Email
 
