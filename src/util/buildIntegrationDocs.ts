@@ -27,7 +27,7 @@ interface IntegrationProjectConfigRenderable extends IntegrationProjectConfig {
 }
 
 function buildGithubDocFileUrl(projectName: string) {
-  return `https://raw.githubusercontent.com/JupiterOne/${projectName}/master/docs/jupiterone.md`;
+  return `https://raw.githubusercontent.com/JupiterOne/${projectName}/main/docs/jupiterone.md`;
 }
 
 /**
