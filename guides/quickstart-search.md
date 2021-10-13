@@ -1,15 +1,17 @@
-# Get started with search
+# Get Started with Search
 
 You can quickly search and get insight across your entire digital environment
-integrated with JupiterOne, right here from the Landing Zone. There are three
-modes of search:
+integrated with JupiterOne, from the Search for Anything landing page. 
+There are three modes of search:
 
-1. **Ask questions** by typing in any keywords to search across all packaged/saved questions
-2. **Full text search** across all entities based on their property values
-3. **JupiterOne query language (J1QL)** for precise querying of entities and relationships
+1. **Ask questions** by entering any keywords to search across all packaged 
+   and saved questions.
+2. Perform a **full-text search** across all assets based on their property values.
+3. Use the **JupiterOne query language (J1QL)** for detailed querying of 
+   assets and relationships
 
-Results can be toggled in four different display modes: **Table**, **Graph**,
-**Raw JSON**, or **Pretty JSON**.
+You can toggle results in four different display modes: **Table**, **Graph**, **Raw JSON**, 
+or **Pretty JSON**.
 
 _Note that for performance reasons, search results are limited to return up to
 250 items. If you believe something is missing from a large result set, try
