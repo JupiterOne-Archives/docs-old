@@ -15,7 +15,7 @@ the asset is updated with an additional property for querying purposes.
 
 To configure the resource allowlist:
 
-1. Click the settings icon ![gear](../assets/icons/gear.png)and select *Power Ups*. 
+1. Click the settings icon ![gear](../assets/icons/gear.png)and select **Power Ups**. 
 2. Select **Configure Resource Whitelisting**. 
 3. Populate each allowlist, following the instructions in the corresponding section.
 
