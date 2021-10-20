@@ -10,12 +10,12 @@ sections:
       - id: 360022884813
         title: 01/10 Configure Integrations
         file: ../guides/configure-integrations.md
-        hash: NhEvx48wTzxbrCGzGz8A03G8NrMivEthyL6Vd6B1/d4=
+        hash: aRdCA0P1H3QRYbVDMaMXj6etXmxyN1mcSpjRtzLLEGg=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022884813'
       - id: 360022705414
         title: 02/10 Search Quickstart
         file: ../guides/quickstart-search.md
-        hash: Utv82EpfFq0jfH/sO1FYqqagdVbLI9jPChY0gjC/A+I=
+        hash: dYFhnrurEFPwtQV6Cb9lYRlpHefDYu1FLFNuv5bnMsI=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022705414'
       - id: 360022890073
         title: 03/10 Navigate the Graph
@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: CHbMGV0MpDGDDNkW/gW/cgBKo29P4gX4xT1NZVO3jlI=
+        hash: epxuf7f4zJjwP1BPoPrnI4X6zdOyDN5P9eBtWMLGNCs=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -755,7 +755,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360040105273'
       - title: Configuring Resource Whitelisting
         file: ../guides/resource-whitelist-powerup.md
-        hash: EoedYql9h83s67jGQRXMvg/R7LSkkd19P6lpILpX6r8=
+        hash: +iW1De1DYJdJ3qocQJ1v4jidfbg5hcG0CcvNlY1iU0I=
         id: 1500007990882
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500007990882'
   - name: Release Notes
@@ -778,7 +778,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: XiUswBUZQEPYWSiYmFsWYcndS1TKVTmC9ZkTQ6ROGF4=
+        hash: PwuMZ5m5pczJNFhHaiK51YL0guXj++fmgmWSRNGCbSM=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
