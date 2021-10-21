@@ -27,6 +27,8 @@ boundaries obvious to query authors.
 
 ## Basic Keywords
 
+#### FIND
+
 `FIND` is followed by an **Entity** `class` or `type` value.
 
 > The value is case sensitive in order to automatically determine if the query
@@ -46,6 +48,8 @@ boundaries obvious to query authors.
 > Note that using the wildcard at the beginning of the query without any
 > pre-traversal filtering -- that is, `FIND * THAT ...` without `WITH` (see
 > below) -- may result in long query execution time.
+
+#### WITH
 
 `WITH` is followed by **property name and values** to filter entities.
 
@@ -67,6 +71,8 @@ boundaries obvious to query authors.
 >   wrap the property name in `[]`.
 >   For example: `[tag.special-name]='something'`
 
+#### AND/OR
+
 `AND`, `OR` for multiple property comparisons are supported.
 
 > For example:
@@ -76,6 +82,8 @@ boundaries obvious to query authors.
 >
 > FIND user_endpoint WITH platform = 'darwin' OR platform = 'linux'
 > ```
+
+#### THAT
 
 `THAT` is followed by a **Relationship verb**.
 
@@ -111,12 +119,16 @@ boundaries obvious to query authors.
 >
 > `FIND * THAT (ALLOWS|PERMITS) (Internet|Everyone)`
 
+#### Bidirectional verbs by default
+
 **Relationship verbs** are bidirectional by default
 > Both queries yield the same results:
 >
 > `FIND User THAT HAS Device`
 > 
 > `FIND Device THAT HAS User`
+
+#### Relationship direction operators
 
 **Relationship direction** can be specified with double arrows ( `<<` or `>>`) _after_ the verb
 > Finds Entities with a `HAS` relationship from User to Device:
@@ -131,6 +143,8 @@ boundaries obvious to query authors.
 >
 > `Find Device THAT HAS >> User`
 
+#### AS
+
 `AS` defines an aliased selector.
 
 > Defines an aliased selector to use in the `WHERE` or `RETURN` portion of a
@@ -143,6 +157,8 @@ boundaries obvious to query authors.
 >
 > - `FIND Firewall AS fw THAT ALLOWS AS rule * AS n`
 
+#### WHERE
+
 `WHERE` is used for post-traversal filtering (requires selector)
 
 > From the example above:
@@ -152,6 +168,8 @@ boundaries obvious to query authors.
 >   WHERE rule.ingress=true AND
 >     (rule.fromPort=22 or rule.toPort=22)
 > ```
+
+#### RETURN
 
 `RETURN` is used to return specific entities, relationships, or properties
 
@@ -182,6 +200,8 @@ boundaries obvious to query authors.
 >Using a wildcard to return all properties also returns all metadata
 > properties associated with the selected entities. This feature is
  useful when you want to perform an analysis that involves metadata.
+
+#### TO
 
 `TO` is used after a relationship verb, and with the exception of `RELATES TO`,
 is considered a 'filler' word that is ignored by the interpreter.
