@@ -313,7 +313,7 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: bLiG/fVNVev2XYAgaUYs9Ny/ZEPVIB6xAkLKbtFJJv0=
+        hash: KcuH2nSeEM8PpGC2o+0jFV8SvnV/O+zxuRaDt08nt/I=
         id: 360022722014
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722014'
       - title: External Parameters and Secrets in J1QL
@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: epxuf7f4zJjwP1BPoPrnI4X6zdOyDN5P9eBtWMLGNCs=
+        hash: ijLxFFxLwC05yadmHehfWbG6ZFfQZ8CM7bwr51aI/TM=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -778,7 +778,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: PwuMZ5m5pczJNFhHaiK51YL0guXj++fmgmWSRNGCbSM=
+        hash: m8101Vefjz4TmkFUjl8Fl9znVzb3DqElQwjkwvI7TP4=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
