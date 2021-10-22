@@ -139,7 +139,7 @@ the integration to be run. We recommend using the following roles managed by
 Google Cloud:
 
 - [`roles/iam.securityReviewer`](https://cloud.google.com/iam/docs/understanding-roles#iam.securityReviewer)
-- [`roles/iam.roleViewer`](https://cloud.google.com/iam/docs/understanding-roles#iam.roleViewer)
+- [`roles/iam.organizationRoleViewer`](https://cloud.google.com/iam/docs/understanding-roles#iam.organizationRoleViewer)
 - [`roles/bigquery.metadataViewer`](https://cloud.google.com/bigquery/docs/access-control#bigquery.metadataViewer)
 
 Some additional data may be optionally ingested by the JupiterOne Google Cloud
