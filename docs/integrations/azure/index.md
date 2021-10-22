@@ -112,6 +112,9 @@ information:
 1. Create a custom role called "JupiterOne Reader" with the following
    permissions:
    - `Microsoft.PolicyInsights/policyStates/queryResults/action`
+1. (Optional) If you'd like integration to be able to fetch auth settings for
+   all Web Apps, add the following permissions to the same custom role:
+   - `Microsoft.Web/sites/config/list/Action`
 1. Select **Role** "JupiterOne Reader", **Assign access to** "Azure AD user,
    group, or service principal", and select the app "JupiterOne"
 1. _If configuring all subscriptions for a tenant (using the

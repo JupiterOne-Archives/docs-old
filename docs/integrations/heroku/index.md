@@ -36,7 +36,6 @@ Users configure the integration by providing an API key obtained from Heroku:
 **Please Note**: The integration currently requires a Heroku Enterprise account
 and the following OAuth scopes:
 
-- `identity`
 - `read`
 
 Optional OAuth scopes:
