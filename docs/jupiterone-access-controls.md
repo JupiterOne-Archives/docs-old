@@ -28,7 +28,7 @@ level to achieve role-based access control (RBAC).
 
 When enabled, to configure access permissions, go to Settings:
 
-**Settings** ![settings](../assets/icons/gear.png" style="zoom:75%;") -> **Users & Access**  and select the user group you want to edit. Then, click the <img src="../assets/icons/shield.png" style="zoom:67%;" />.
+**Settings** <img src="../assets/icons/gear.png" style="zoom:75%;" /> -> **Users & Access**  and select the user group you want to edit. Then, click the <img src="../assets/icons/shield.png" style="zoom:67%;" />.
 
   ![app-permissions](../assets/app-permissions.png)
 
@@ -185,3 +185,23 @@ used by features in each app:
 
   > Shared permissions used by this app: **Read Graph Data**, used to
   > fetch users and devices.
+
+### Recommended Permissions
+
+#### Default User Group
+
+For the default _Users_ group with most limited access, it is recommended to set a minimal **Query Permission Set**. The minimum recommended group is `_class`:`Root`. This permission group will only include the Root organization:
+
+![limited-query-set](../assets/j1acct-limited-query-set.png)
+
+The _Read-only_ permission for **Policies** should be set in **App Permissions** to allow users to _Review & Accept_ organizations policies,
+
+#### Compliance and Audit Group
+
+For a group of users focused on Compliance and Audit processes, Integrations in scope for the audit are recommended for **Query Permissions**.  Recommended **App Permissions** for this group include _Admin_ access to _Compliance_ and _Policies_, as well as _Read-only_ access to _Assets_.
+
+#### Integration Service Admin
+
+For a group where configuration of integrated services is necessary, the recommended **App Permissions** for this group include Admin access to _Integrations_. In cases were _Endpoint Compliance_ is utilized, _Admin_ access will be necessary for this **App Permission** as well. The minimal **Query Permission Set**, `_class`:`Root`, is recommended for this group, but may be necessary to expand in special cases.
+
+It may be necessary to expand access for this group in cases where SAML and SSO configuration must be configured.
