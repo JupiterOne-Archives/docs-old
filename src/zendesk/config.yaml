@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: M6HZ2I6K/fb9wubj9G64vQTkpdYwBijadBFamuKzH/g=
+        hash: OPQEv7J8LlmbHVNrnjztuZJuWWbpBARx9rXEpD0j2nA=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -718,7 +718,7 @@ sections:
       - title: Veracode
         file: ../docs/integrations/veracode/jupiter-integration-veracode.md
         id: 360022721234
-        hash: xpCLEXMBlBZcqbrExmxpVTLPRKjwilmrpsm0hZJ4RvM=
+        hash: NfQNqMYz47Bb88Yj7jDsb6fB0o0q/lqfjlzRAmdnzXE=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721234'
       - title: VMware AirWatch
         file: ../docs/integrations/airwatch/index.md
@@ -783,7 +783,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: CNFBX9KetqjyWd2VAN/0EIrHk6C3iAAnE2FC1RfsU10=
+        hash: iMcsozCba7eqLAwL+zhIdimEOtORqcLSSmG695PcOIc=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
