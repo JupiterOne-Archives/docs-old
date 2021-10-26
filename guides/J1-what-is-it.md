@@ -24,7 +24,7 @@ security management. Click ![](../assets/icons/apps.png) to view the apps.
 
 After you import your data, you can analyze and visualize your complete 
 infrastructure and [security cyber asset inventory](asset-inventory-filters.md) using the J1 Assets app. 
-In addition, the Assets app helps you can understand the types and classes 
+In addition, the Assets app helps you understand the types and classes 
 of cyber assets you have, and the relationships between them. 
 
 ### Policies
@@ -96,7 +96,7 @@ to access the J1 query library.
 In addition to using the J1 query library, from any J1 page or app, you 
 can enter questions in the search bar. By default, J1 autocompletes 
 the text and lists any related questions that you or someone else in
-your organization [??] has asked. ![](../assets/j1-ask-anything.png)
+your organization has asked. ![](../assets/j1-ask-anything.png)
 
 ## JupiterOne Query Language
 
