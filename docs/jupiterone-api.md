@@ -1514,7 +1514,7 @@ Variables:
 ### Create an inline alert rule from J1QL
 
 This operation was formerly named `createQuestionRuleInstance`. That name is
-now deprecated, and all usages should be updated.
+now deprecated, and you should update all usages.
 
 ```graphql
 mutation CreateInlineQuestionRuleInstance (
@@ -1603,7 +1603,7 @@ to the `ONE_DAY` polling interval too.
 ### Update an inline alert rule
 
 This operation was formerly named `updateQuestionRuleInstance`. That name is
-now deprecated, and all usages should be updated.
+now deprecated, and you should update all usages.
 
 ```graphql
 mutation UpdateInlineQuestionRuleInstance (
@@ -1680,9 +1680,8 @@ variables:
 }
 ```
 
-Note that the only difference here for `update` is the `"id"` property
-associated with the rule instance. All settings of a rule instance can be
-modified.
+Note that the only difference for `update` is the `"id"` property
+associated with the rule instance. You can modify all settings of a rule instance.
 
 ### Create an alert rule by referencing a saved question
 
@@ -1749,9 +1748,8 @@ variables:
 }
 ```
 
-Note that either `questionName` or `questionId` is required to be
-specified in the `instance` for creation. If both are specified,
-they must refer to the same question. Once the rule is saved,
+Note that you must specify either `questionName` or `questionId` in the `instance` for creation. 
+If you specify both, they must refer to the same question. After the rule is saved,
 subsequent requests will return both `questionId` and `questionName`.
 
 ### Update an alert rule with a referenced question
@@ -1820,15 +1818,15 @@ variables:
 }
 ```
 
-Note that the only difference here for `update` is the `"id"` property
-associated with the rule instance. All settings of a rule instance can be
-modified. Updates are not required to specify `questionId` or `questionName`,
-but either can be specified for update, and if both are specified then
-they must refer to the same saved question.
+Note that the only difference in `update` is the `"id"` property
+associated with the rule instance. You can modify any of the settings of 
+a rule instance. Updates are not required to specify `questionId` or `questionName`,
+but you can specify either for `update`, and if you specify both they must refer to 
+the same saved question.
 
 ### Delete an alert rule
 
-This an be used to delete any rule instance, regardless of whether it uses
+You can use this operation to delete any rule instance, regardless of whether it uses
 an inline question or a referenced question.
 
 ```graphql
@@ -1849,9 +1847,9 @@ variables:
 }
 ```
 
-Note that deleting an alert rule this way will **not** dismiss active alerts
-already triggered by this rule. It is recommended to **Disable** a rule in the
-alerts app UI instead of deleting one.
+Note that deleting an alert rule this way does **not** dismiss active alerts
+already triggered by this rule. It is recommended that you **Disable** a rule in the
+Alerts app UI instead of deleting one.
 
 ### Trigger an alert rule on demand
 
