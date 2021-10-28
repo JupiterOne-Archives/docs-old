@@ -2,22 +2,25 @@
 
 ## Duo + JupiterOne Integration Benefits
 
-- Visualize Duo users, groups, devices, applications, and access keys in the JupiterOne graph.
+- Visualize Duo users, groups, devices, applications, and access keys in the
+  JupiterOne graph.
 - Map Duo users to employees in your JupiterOne account.
-- Monitor changes to Duo users, groups, and access management data using JupiterOne alerts.
-- Create an employee entity that is used to map users across your organization to an employee 
-via a matching email property.
+- Monitor changes to Duo users, groups, and access management data using
+  JupiterOne alerts.
+- Create an employee entity that is used to map users across your organization
+  to an employee via a matching email property.
 
 ## How it Works
 
-- JupiterOne periodically fetches Duo users, groups, and access management data to update the graph.
+- JupiterOne periodically fetches Duo users, groups, and access management data
+  to update the graph.
 - Write JupiterOne queries to review and monitor updates to the graph.
 - Configure alerts to take action when the JupiterOne graph changes.
 
 ## Requirements
 
-- JupiterOne requires the Duo API hostname. JupiterOne also requires the API 
-integration key and API secret key that have been configured for read access. 
+- JupiterOne requires the Duo API hostname. JupiterOne also requires the API
+  integration key and API secret key that have been configured for read access.
 - You must have permission in JupiterOne to install new integrations.
 
 ## Support
@@ -46,16 +49,18 @@ JupiterOne requires at a minimum the following API permissions be enabled:
 1. From the configuration **Gear Icon**, select **Integrations**.
 2. Scroll to the **Duo** integration tile and click it.
 3. Click the **Add Configuration** button and configure the following settings:
-- Enter the **Account Name** by which you'd like to identify this Duo
-   account in JupiterOne. Ingested entities will have this value stored in
-   `tag.AccountName` when **Tag with Account Name** is checked.
+
+- Enter the **Account Name** by which you'd like to identify this Duo account in
+  JupiterOne. Ingested entities will have this value stored in `tag.AccountName`
+  when **Tag with Account Name** is checked.
 - Enter a **Description** that will further assist your team when identifying
-   the integration instance.
+  the integration instance.
 - Select a **Polling Interval** that you feel is sufficient for your monitoring
-   needs. You may leave this as `DISABLED` and manually execute the integration.
+  needs. You may leave this as `DISABLED` and manually execute the integration.
 - Enter the **API Hostname** of your Duo account.
 - Enter the **API Integration Key** configured with read access in Duo.
 - Enter the **Secret Key** configured with read access in Duo.
+
 4. Click **Create Configuration** once all values are provided.
 
 ## How to Uninstall
@@ -75,7 +80,7 @@ NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
 "j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
 DOCUMENTATION FOR USAGE INFORMATION:
 
-https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md
 ********************************************************************************
 -->
 
@@ -97,7 +102,7 @@ The following entities are created:
 
 ### Relationships
 
-The following relationships are created/mapped:
+The following relationships are created:
 
 | Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
 | --------------------- | --------------------- | --------------------- |

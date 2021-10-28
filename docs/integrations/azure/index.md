@@ -112,6 +112,9 @@ information:
 1. Create a custom role called "JupiterOne Reader" with the following
    permissions:
    - `Microsoft.PolicyInsights/policyStates/queryResults/action`
+1. (Optional) If you'd like integration to be able to fetch auth settings for
+   all Web Apps, add the following permissions to the same custom role:
+   - `Microsoft.Web/sites/config/list/Action`
 1. Select **Role** "JupiterOne Reader", **Assign access to** "Azure AD user,
    group, or service principal", and select the app "JupiterOne"
 1. _If configuring all subscriptions for a tenant (using the
@@ -173,7 +176,7 @@ NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
 "j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
 DOCUMENTATION FOR USAGE INFORMATION:
 
-https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md
 ********************************************************************************
 -->
 
@@ -279,7 +282,7 @@ The following entities are created:
 
 ### Relationships
 
-The following relationships are created/mapped:
+The following relationships are created:
 
 | Source Entity `_type`              | Relationship `_class` | Target Entity `_type`                             |
 | ---------------------------------- | --------------------- | ------------------------------------------------- |

@@ -10,7 +10,7 @@
 
 **Internationalization**: Keep your content in plain English, avoid colloquialisms, and other jargon not recognized outside the US. Remember that not all customers will be native English speakers and we don't want to slow down their comprehension. 
 
-Contractions and abbreviations: For plain English reasons, spell out contraction and avoid using abbreviations such as "e.g., etc.".
+**Contractions and abbreviations**: For plain English reasons, spell out contractions and avoid using abbreviations such as "e.g., etc." Write out all words and phrases - avoid writing as if you are sending an SMS. 
 
 
 
@@ -20,11 +20,25 @@ Use bold for all UI controls, such as buttons and tabs.
 
 ## Punctuation
 
-Always use the Oxford (serial) comma. 
+- Always use the Oxford (serial) comma. 
+- Always hyphenate compound adjectives, such as third-party software.
+- Do not use contractions.
+- Do not use the possessive.
+- Do not use & when you want to use and.
+- Do not use quotations marks unless it is part of your code phrase or you are directly quoting someone.
 
-## Spelling
+## Spelling/Capitalization
 
 - Enduser
+- Bearer Token
 - Single Sign-On
 - Use Cases
+
+## Plain English Word Usage
+
+| Use This: | Instead of This: |
+| --------- | ---------------- |
+| After     | Once             |
+| Because   | Since            |
+| Using     | Via              |
 

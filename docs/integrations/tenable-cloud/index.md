@@ -68,7 +68,7 @@ NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
 "j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
 DOCUMENTATION FOR USAGE INFORMATION:
 
-https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md
 ********************************************************************************
 -->
 
@@ -78,37 +78,42 @@ https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
 
 The following entities are created:
 
-| Resources                  | Entity `_type`                       | Entity `_class`         |
-| -------------------------- | ------------------------------------ | ----------------------- |
-| Account                    | `tenable_account`                    | `Account`               |
-| Asset                      | `tenable_asset`                      | `HostAgent`             |
-| Container                  | `tenable_container`                  | `Image`                 |
-| Container Finding          | `tenable_container_finding`          | `Finding`               |
-| Container Malware          | `tenable_container_malware`          | `Finding`               |
-| Container Report           | `tenable_container_report`           | `Assessment`            |
-| Container Unwanted Program | `tenable_container_unwanted_program` | `Finding`               |
-| Scan                       | `tenable_scan`                       | `Assessment`, `Service` |
-| User                       | `tenable_user`                       | `User`                  |
-| Vulnerability              | `tenable_vulnerability`              | `Vulnerability`         |
-| Vulnerability Finding      | `tenable_vulnerability_finding`      | `Finding`               |
+| Resources                  | Entity `_type`                       | Entity `_class` |
+| -------------------------- | ------------------------------------ | --------------- |
+| Account                    | `tenable_account`                    | `Account`       |
+| Asset                      | `tenable_asset`                      | `Record`        |
+| Container                  | `tenable_container`                  | `Image`         |
+| Container Finding          | `tenable_container_finding`          | `Finding`       |
+| Container Malware          | `tenable_container_malware`          | `Finding`       |
+| Container Report           | `tenable_container_report`           | `Assessment`    |
+| Container Unwanted Program | `tenable_container_unwanted_program` | `Finding`       |
+| User                       | `tenable_user`                       | `User`          |
+| Vulnerability              | `tenable_vulnerability_finding`      | `Finding`       |
 
 ### Relationships
 
 The following relationships are created/mapped:
 
-| Source Entity `_type`           | Relationship `_class` | Target Entity `_type`                                         |
-| ------------------------------- | --------------------- | ------------------------------------------------------------- |
-| `tenable_account`               | **HAS**               | `tenable_container`                                           |
-| `tenable_account`               | **HAS**               | `tenable_user`                                                |
-| `tenable_container`             | **HAS**               | `tenable_container_report`                                    |
-| `tenable_container_report`      | **IDENTIFIED**        | `tenable_container_finding`                                   |
-| `tenable_container_report`      | **IDENTIFIED**        | `tenable_container_malware`                                   |
-| `tenable_container_report`      | **IDENTIFIED**        | `tenable_container_unwanted_program`                          |
-| `tenable_scan`                  | **IDENTIFIED**        | `tenable_vulnerability_finding`                               |
-| `tenable_scan`                  | **IDENTIFIED**        | `tenable_vulnerability`                                       |
-| `tenable_scan`                  | **SCANS**             | `aws_instance,azure_vm,google_compute_instance,tenable_asset` |
-| `tenable_user`                  | **OWNS**              | `tenable_scan`                                                |
-| `tenable_vulnerability_finding` | **IS**                | `vulnerability`                                               |
+| Source Entity `_type`      | Relationship `_class` | Target Entity `_type`                |
+| -------------------------- | --------------------- | ------------------------------------ |
+| `tenable_account`          | **HAS**               | `tenable_asset`                      |
+| `tenable_account`          | **HAS**               | `tenable_container`                  |
+| `tenable_account`          | **HAS**               | `tenable_user`                       |
+| `tenable_asset`            | **HAS**               | `tenable_vulnerability_finding`      |
+| `tenable_container`        | **HAS**               | `tenable_container_report`           |
+| `tenable_container_report` | **IDENTIFIED**        | `tenable_container_finding`          |
+| `tenable_container_report` | **IDENTIFIED**        | `tenable_container_malware`          |
+| `tenable_container_report` | **IDENTIFIED**        | `tenable_container_unwanted_program` |
+
+### Mapped Relationships
+
+The following mapped relationships are created:
+
+| Source Entity `_type`           | Relationship `_class` | Target Entity `_type` | Direction |
+| ------------------------------- | --------------------- | --------------------- | --------- |
+| `tenable_vulnerability_finding` | **HAS**               | `*host*`              | REVERSE   |
+| `tenable_asset`                 | **IS**                | `*host*`              | FORWARD   |
+| `tenable_vulnerability_finding` | **IS**                | `*cve*`               | FORWARD   |
 
 <!--
 ********************************************************************************

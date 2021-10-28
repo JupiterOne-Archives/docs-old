@@ -139,7 +139,7 @@ the integration to be run. We recommend using the following roles managed by
 Google Cloud:
 
 - [`roles/iam.securityReviewer`](https://cloud.google.com/iam/docs/understanding-roles#iam.securityReviewer)
-- [`roles/iam.roleViewer`](https://cloud.google.com/iam/docs/understanding-roles#iam.roleViewer)
+- [`roles/iam.organizationRoleViewer`](https://cloud.google.com/iam/docs/understanding-roles#iam.organizationRoleViewer)
 - [`roles/bigquery.metadataViewer`](https://cloud.google.com/bigquery/docs/access-control#bigquery.metadataViewer)
 
 Some additional data may be optionally ingested by the JupiterOne Google Cloud
@@ -265,7 +265,7 @@ NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
 "j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
 DOCUMENTATION FOR USAGE INFORMATION:
 
-https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md
 ********************************************************************************
 -->
 
@@ -294,6 +294,13 @@ The following entities are created:
 | Big Query Dataset                                        | `google_bigquery_dataset`                                         | `DataStore`, `Database`            |
 | Big Query Model                                          | `google_bigquery_model`                                           | `Model`                            |
 | Big Query Table                                          | `google_bigquery_table`                                           | `DataCollection`                   |
+| Bigtable AppProfile                                      | `google_bigtable_app_profile`                                     | `Configuration`                    |
+| Bigtable Backup                                          | `google_bigtable_backup`                                          | `Backup`                           |
+| Bigtable Cluster                                         | `google_bigtable_cluster`                                         | `Cluster`                          |
+| Bigtable Instance                                        | `google_bigtable_instance`                                        | `Database`                         |
+| Bigtable Table                                           | `google_bigtable_table`                                           | `DataCollection`                   |
+| Billing Account                                          | `google_billing_account`                                          | `Account`                          |
+| Billing Budget                                           | `google_billing_budget`                                           | `Ruleset`                          |
 | Binary Authorization Policy                              | `google_binary_authorization_policy`                              | `AccessPolicy`                     |
 | Cloud API Service                                        | `google_cloud_api_service`                                        | `Service`                          |
 | Cloud Function                                           | `google_cloud_function`                                           | `Function`                         |
@@ -326,12 +333,13 @@ The following entities are created:
 | Container Cluster                                        | `google_container_cluster`                                        | `Cluster`                          |
 | Container Node Pool                                      | `google_container_node_pool`                                      | `Group`                            |
 | DNS Managed Zone                                         | `google_dns_managed_zone`                                         | `DomainZone`                       |
+| DNS Policy                                               | `google_dns_policy`                                               | `Ruleset`                          |
+| Dataproc Cluster                                         | `google_dataproc_cluster`                                         | `Cluster`                          |
 | Folder                                                   | `google_cloud_folder`                                             | `Group`                            |
 | IAM Binding                                              | `google_iam_binding`                                              | `AccessPolicy`                     |
-| IAM Role                                                 | `google_iam_role`                                                 | `AccessRole`                       |
+| IAM Custom Role                                          | `google_iam_role`                                                 | `AccessRole`                       |
 | IAM Service Account                                      | `google_iam_service_account`                                      | `User`                             |
 | IAM Service Account Key                                  | `google_iam_service_account_key`                                  | `AccessKey`                        |
-| IAM User                                                 | `google_user`                                                     | `User`                             |
 | KMS Crypto Key                                           | `google_kms_crypto_key`                                           | `Key`, `CryptoKey`                 |
 | KMS Key Ring                                             | `google_kms_key_ring`                                             | `Vault`                            |
 | Logging Metric                                           | `google_logging_metric`                                           | `Configuration`                    |
@@ -355,7 +363,7 @@ The following entities are created:
 
 ### Relationships
 
-The following relationships are created/mapped:
+The following relationships are created:
 
 | Source Entity `_type`                                            | Relationship `_class` | Target Entity `_type`                                             |
 | ---------------------------------------------------------------- | --------------------- | ----------------------------------------------------------------- |
@@ -378,12 +386,21 @@ The following relationships are created/mapped:
 | `google_bigquery_dataset`                                        | **HAS**               | `google_bigquery_model`                                           |
 | `google_bigquery_dataset`                                        | **HAS**               | `google_bigquery_table`                                           |
 | `google_bigquery_dataset`                                        | **USES**              | `google_kms_crypto_key`                                           |
+| `google_bigtable_cluster`                                        | **HAS**               | `google_bigtable_backup`                                          |
+| `google_bigtable_cluster`                                        | **USES**              | `google_kms_crypto_key`                                           |
+| `google_bigtable_instance`                                       | **HAS**               | `google_bigtable_app_profile`                                     |
+| `google_bigtable_instance`                                       | **HAS**               | `google_bigtable_cluster`                                         |
+| `google_bigtable_instance`                                       | **HAS**               | `google_bigtable_table`                                           |
+| `google_bigtable_table`                                          | **HAS**               | `google_bigtable_backup`                                          |
+| `google_billing_account`                                         | **HAS**               | `google_billing_budget`                                           |
+| `google_cloud_api_service`                                       | **HAS**               | `ANY_RESOURCE`                                                    |
 | `google_cloud_api_service`                                       | **HAS**               | `google_iam_role`                                                 |
 | `internet`                                                       | **ALLOWS**            | `google_compute_firewall`                                         |
 | `google_cloud_folder`                                            | **HAS**               | `google_cloud_folder`                                             |
 | `google_cloud_function`                                          | **USES**              | `google_iam_service_account`                                      |
 | `google_cloud_organization`                                      | **HAS**               | `google_cloud_folder`                                             |
 | `google_cloud_project`                                           | **HAS**               | `google_cloud_api_service`                                        |
+| `google_cloud_project`                                           | **HAS**               | `google_billing_budget`                                           |
 | `google_cloud_project`                                           | **HAS**               | `google_binary_authorization_policy`                              |
 | `google_cloud_run_service`                                       | **MANAGES**           | `google_cloud_run_configuration`                                  |
 | `google_cloud_run_service`                                       | **MANAGES**           | `google_cloud_run_route`                                          |
@@ -416,6 +433,7 @@ The following relationships are created/mapped:
 | `google_compute_network`                                         | **CONNECTS**          | `google_compute_network`                                          |
 | `google_compute_network`                                         | **CONTAINS**          | `google_compute_subnetwork`                                       |
 | `google_compute_network`                                         | **HAS**               | `google_compute_address`                                          |
+| `google_compute_network`                                         | **HAS**               | `google_dns_policy`                                               |
 | `google_compute_network`                                         | **HAS**               | `google_compute_firewall`                                         |
 | `google_compute_network`                                         | **HAS**               | `google_compute_global_address`                                   |
 | `google_compute_project`                                         | **HAS**               | `google_compute_instance`                                         |
@@ -431,16 +449,19 @@ The following relationships are created/mapped:
 | `google_compute_url_map`                                         | **HAS**               | `google_compute_target_https_proxy`                               |
 | `google_container_cluster`                                       | **HAS**               | `google_container_node_pool`                                      |
 | `google_container_node_pool`                                     | **HAS**               | `google_compute_instance_group`                                   |
-| `google_domain`                                                  | **ASSIGNED**          | `google_iam_role`                                                 |
+| `google_dataproc_cluster`                                        | **USES**              | `google_compute_image`                                            |
+| `google_dataproc_cluster`                                        | **USES**              | `google_kms_crypto_key`                                           |
+| `google_dataproc_cluster`                                        | **USES**              | `google_storage_bucket`                                           |
 | `google_cloud_folder`                                            | **HAS**               | `google_cloud_project`                                            |
-| `google_group`                                                   | **ASSIGNED**          | `google_iam_role`                                                 |
 | `google_iam_binding`                                             | **ALLOWS**            | `ANY_RESOURCE`                                                    |
+| `google_iam_binding`                                             | **ASSIGNED**          | `google_cloud_authenticated_users`                                |
 | `google_iam_binding`                                             | **ASSIGNED**          | `google_domain`                                                   |
+| `google_iam_binding`                                             | **ASSIGNED**          | `everyone`                                                        |
 | `google_iam_binding`                                             | **ASSIGNED**          | `google_group`                                                    |
+| `google_iam_binding`                                             | **ASSIGNED**          | `google_iam_role`                                                 |
 | `google_iam_binding`                                             | **ASSIGNED**          | `google_iam_service_account`                                      |
 | `google_iam_binding`                                             | **ASSIGNED**          | `google_user`                                                     |
 | `google_iam_binding`                                             | **USES**              | `google_iam_role`                                                 |
-| `google_iam_service_account`                                     | **ASSIGNED**          | `google_iam_role`                                                 |
 | `google_iam_service_account`                                     | **CREATED**           | `google_app_engine_version`                                       |
 | `google_iam_service_account`                                     | **HAS**               | `google_iam_service_account_key`                                  |
 | `google_kms_key_ring`                                            | **HAS**               | `google_kms_crypto_key`                                           |
@@ -460,7 +481,6 @@ The following relationships are created/mapped:
 | `google_sql_mysql_instance`                                      | **USES**              | `google_kms_crypto_key`                                           |
 | `google_sql_postgres_instance`                                   | **USES**              | `google_kms_crypto_key`                                           |
 | `google_sql_sql_server_instance`                                 | **USES**              | `google_kms_crypto_key`                                           |
-| `google_user`                                                    | **ASSIGNED**          | `google_iam_role`                                                 |
 | `google_user`                                                    | **CREATED**           | `google_app_engine_version`                                       |
 
 <!--

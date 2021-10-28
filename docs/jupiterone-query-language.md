@@ -18,6 +18,7 @@ boundaries obvious to query authors.
 - Support for sorting via `ORDER BY` clause (currently only applies to the starting entities of traversal)
 - Support for pagination via `SKIP` and `LIMIT` clauses (currently only applies to the starting entities of traversal)
 - Multi-step graph traversals through relationships via `THAT` clause
+- Specifying relationship direction can be done with double arrows,`<<` and `>>` 
 - Aliasing of selectors via `AS` keyword
 - Pre-traversal filtering using property values via `WITH` clause
 - Post-traversal filtering using property values or union comparison via `WHERE` clause
@@ -25,6 +26,8 @@ boundaries obvious to query authors.
 - Row level scalar functions including `CONCAT`
 
 ## Basic Keywords
+
+#### FIND
 
 `FIND` is followed by an **Entity** `class` or `type` value.
 
@@ -46,6 +49,8 @@ boundaries obvious to query authors.
 > pre-traversal filtering -- that is, `FIND * THAT ...` without `WITH` (see
 > below) -- may result in long query execution time.
 
+#### WITH
+
 `WITH` is followed by **property name and values** to filter entities.
 
 > Supported operators include:
@@ -66,6 +71,8 @@ boundaries obvious to query authors.
 >   wrap the property name in `[]`.
 >   For example: `[tag.special-name]='something'`
 
+#### AND/OR
+
 `AND`, `OR` for multiple property comparisons are supported.
 
 > For example:
@@ -75,6 +82,8 @@ boundaries obvious to query authors.
 >
 > FIND user_endpoint WITH platform = 'darwin' OR platform = 'linux'
 > ```
+
+#### THAT
 
 `THAT` is followed by a **Relationship verb**.
 
@@ -110,19 +119,35 @@ boundaries obvious to query authors.
 >
 > `FIND * THAT (ALLOWS|PERMITS) (Internet|Everyone)`
 
-**Relationship verbs** are bidirectional
+#### Bidirectional verbs by default
 
+**Relationship verbs** are bidirectional by default
+> Both queries yield the same results:
+>
 > `FIND User THAT HAS Device`
->
-> and
->
-> `Find Device THAT HAS User`
->
-> are both acceptable
+> 
+> `FIND Device THAT HAS User`
 
-`AS` is used to define an aliased selector.
+#### Relationship direction operators
 
-> Defines an aliased selector to be used in the `WHERE` or `RETURN` portion of a
+**Relationship direction** can be specified with double arrows ( `<<` or `>>`) _after_ the verb
+> Finds Entities with a `HAS` relationship from User to Device:
+> 
+> `FIND User THAT HAS >> Device`
+> 
+> `Find Device THAT HAS << User`
+
+> Finds Entities with a `HAS` relationship from Device to User:
+>
+> `FIND User THAT HAS << Device`
+>
+> `Find Device THAT HAS >> User`
+
+#### AS
+
+`AS` defines an aliased selector.
+
+> Defines an aliased selector to use in the `WHERE` or `RETURN` portion of a
 > query. For example:
 >
 > - **Without** selectors: `FIND Firewall THAT ALLOWS *`
@@ -131,6 +156,8 @@ boundaries obvious to query authors.
 > Selectors can also be defined on a relationship:
 >
 > - `FIND Firewall AS fw THAT ALLOWS AS rule * AS n`
+
+#### WHERE
 
 `WHERE` is used for post-traversal filtering (requires selector)
 
@@ -141,6 +168,8 @@ boundaries obvious to query authors.
 >   WHERE rule.ingress=true AND
 >     (rule.fromPort=22 or rule.toPort=22)
 > ```
+
+#### RETURN
 
 `RETURN` is used to return specific entities, relationships, or properties
 
@@ -171,6 +200,8 @@ boundaries obvious to query authors.
 >Using a wildcard to return all properties also returns all metadata
 > properties associated with the selected entities. This feature is
  useful when you want to perform an analysis that involves metadata.
+
+#### TO
 
 `TO` is used after a relationship verb, and with the exception of `RELATES TO`,
 is considered a 'filler' word that is ignored by the interpreter.
@@ -441,10 +472,10 @@ clause of your function, will future development planned for use in the `WHERE` 
 A few examples:
 
 ```j1ql
-FIND
-  aws_s3_bucket as s3
-RETURN
-  CONCAT(s3.bucketSizeBytes / 1000, ' kb') as size
+FIND 
+  aws_s3_bucket as s3 
+RETURN 
+  CONCAT(s3.bucketSizeBytes, ' bytes') as size
 ```
 
 ## De-duplicate results with `UNIQUE` and `RETURN`
@@ -823,10 +854,8 @@ hours:
 Find CodeRepo with _beginOn > date.now-24hr and _version=1
 ```
 
-For more details on metadata properties, see the [JupiterOne Data Model][1]
-documentation.
+For more details on metadata properties, see the  JupiterOne [data model documentation](jupiterone-data-model.md).
 
-[1]: jupiterone-data-model.md
 
 ## Advanced Notes and Use Cases
 
