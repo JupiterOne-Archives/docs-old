@@ -4,7 +4,7 @@ sections:
     articles:
       - title: 00/10 Intro to JupiterOne
         file: ../guides/J1-what-is-it.md
-        hash: ULqpthvk7qllHFpJjXKDfLdjCTRv6SpckWxZkP3by5s=
+        hash: svHM6Ij2gbZU9SywsoFMp8s9Ls1RHFZhvTLWKwWnAW4=
         id: 4407857686163
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4407857686163'
       - id: 360022884813
@@ -39,7 +39,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720474'
       - title: 07/10 Visual Query Builder
         file: ../guides/j1-vqb.md
-        hash: o/ErOmHsfGTAQ5fprdSuAhf14FfgZonjegleyoNY0Dk=
+        hash: 4EM+XMlDJEc9RRHR07stHEwjrbo+AaOvK298LiVouyU=
         id: 4407871506707
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4407871506707'
       - title: 08/10 Manage Findings
@@ -92,7 +92,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500003848502'
       - title: Data Security
         file: ../docs/jupiterone-data-security.md
-        hash: HxyjLE718d78KLrlIjlVB6kjO7RYwh/6lNBLpg1zItY=
+        hash: NKnS4MvZy79WwiG54/x4964t4BOj+RShBvO9E1+QKKk=
         id: 360024092813
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024092813'
   - name: Common Questions and Queries
@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: OPQEv7J8LlmbHVNrnjztuZJuWWbpBARx9rXEpD0j2nA=
+        hash: dC4xOPj1sua38ivVPy6UxyYz9aZTahT6iLo2YgZBNuM=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -783,7 +783,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: iMcsozCba7eqLAwL+zhIdimEOtORqcLSSmG695PcOIc=
+        hash: xRABXvoHLpKQQKn/RhBN5P0ibiEe2LEHU0ymdmiVACU=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
