@@ -48,10 +48,6 @@ and relationships are the **JupiterOne CORE Data Model**.
 JupiterOne then uses this data model to inventory for and provide insight into
 your digital infrastructure across all of your connected environments.
 
-More information on the JupiterOne Data Model can be found [here][data-model].
-
-[data-model]: https://support.jupiterone.io/hc/en-us/articles/360011556113-JupiterOne-Data-Model
-
 For more details on data ingested for each managed integration, see their
 corresponding documentation in the **Integrations** section.
 
@@ -64,7 +60,7 @@ In general, JupiterOne only requires read-only, security-auditor-type access
 permissions to your environments. Additionally, this read-only access only
 applies to configurations and meta data, not the actual data content. For
 example, we do **NOT** read S3 objects data from a connected AWS account, or the
-actual source code of a connected Bitbucket/Github account.
+actual source code of a connected Bitbucket/GitHub account.
 
 Additional level of access may be needed for workflow automation. For example,
 integration with Jira to automatically create an issue when a new Vulnerability
@@ -86,7 +82,7 @@ Additionally, JupiterOne supports the ability for you to add custom data by
 ## Data Ownership and Access
 
 You retain full ownership of all data that is ingested via integrations, API or
-manual importing/creation. Data is stored in JupiterOne's production environment
+manual importing/creation. Data is stored in the JupiterOne production environment
 in AWS, protected via encryption and replication as specified in the first
 section.
 
@@ -111,12 +107,8 @@ infrastructure-as-code operational model and automated change management process
 allows us to deploy security patches within minutes of identification and
 remediation of an issue.
 
-You can review our published [security model][security-model] and corresponding
-[policies and procedures][security-psp] for more details on our operational,
-infrastructure, and software development security.
-
-[security-model]: https://security.lifeomic.com/psp/model/
-[security-psp]: https://security.lifeomic.com/psp/
+You can review the JupiterOne [policies and procedures](https://psp.jptr.one/) for more details on 
+the JupiterOne operational, infrastructure, and software development security.
 
 ## Application Access
 
@@ -133,8 +125,8 @@ may be invited to one or multiple organizational accounts on JupiterOne.
 
 #### Password Policy
 
-Users are required to select a strong password meeting the following password
-policy requirements in order to create a login and authenticate to the system:
+Users are required to select a strong password that meets the following password
+policy requirements to create a login and authenticate to the system:
 
 - Minimum of 8 characters
 - Must contain an uppercase letter
@@ -142,9 +134,9 @@ policy requirements in order to create a login and authenticate to the system:
 - Must contain a number
 - Must contain a special character
 
-#### Single Sign On (SSO)
+#### Single Sign-On (SSO)
 
-JupiterOne currently supports single sign on (SSO) via:
+JupiterOne currently supports single sign-on (SSO) via:
 
 - Google
 - SAML
@@ -158,7 +150,7 @@ OneLogin).
 
 ### Access Control
 
-In order to support potential complex access control use cases, JupiterOne
+To support potential complex access control use cases, the JupiterOne
 platform implements Attribute Based Access Control (ABAC).
 
 A good general overview of ABAC is sections 1 and 2 of NIST's [Guide to
