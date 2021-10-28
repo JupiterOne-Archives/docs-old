@@ -107,8 +107,8 @@ infrastructure-as-code operational model and automated change management process
 allows us to deploy security patches within minutes of identification and
 remediation of an issue.
 
-You can review the JupiterOne [policies and procedures](https://psp.jptr.one/) for more details on 
-the JupiterOne operational, infrastructure, and software development security.
+You can review the JupiterOne [data model](jupiterone-data-model.md) and [policies and procedures](https://psp.jptr.one/) for 
+more details on the JupiterOne operational, infrastructure, and software development security.
 
 ## Application Access
 
