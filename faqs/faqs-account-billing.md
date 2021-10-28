@@ -51,9 +51,9 @@ billable entities:
 Find * with
   _source !^= 'system-' and
   _class != (
-    'Finding' and 'PR' and 'Image' and 
-    'NetworkInterface' and 'IpAddress' and 
-    'Record' and 'DomainRecord'
+    'Finding' or 'PR' or 'Image' or 
+    'NetworkInterface' or 'IpAddress' or 
+    'Record' or 'DomainRecord'
   ) as e
 return
   count(e) as billableEntityCount

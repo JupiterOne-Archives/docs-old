@@ -1511,13 +1511,16 @@ Variables:
 
 **Endpoint:** `/rules/graphql`
 
-### Create an alert rule
+### Create an inline alert rule from J1QL
+
+This operation was formerly named `createQuestionRuleInstance`. That name is
+now deprecated, and you should update all usages.
 
 ```graphql
-mutation CreateQuestionRuleInstance (
-  $instance: CreateQuestionRuleInstanceInput!
+mutation CreateInlineQuestionRuleInstance (
+  $instance: CreateInlineQuestionRuleInstanceInput!
 ) {
-  createQuestionRuleInstance (
+  createInlineQuestionRuleInstance (
     instance: $instance
   ) {
     id
@@ -1597,13 +1600,16 @@ Free accounts only have access to the `ONE_WEEK` interval by default, but
 any upgrades to Compliance, Security, or Integrations will provide access
 to the `ONE_DAY` polling interval too.
 
-### Update an alert rule
+### Update an inline alert rule
+
+This operation was formerly named `updateQuestionRuleInstance`. That name is
+now deprecated, and you should update all usages.
 
 ```graphql
-mutation UpdateQuestionRuleInstance (
-  $instance: UpdateQuestionRuleInstanceInput!
+mutation UpdateInlineQuestionRuleInstance (
+  $instance: UpdateInlineQuestionRuleInstanceInput!
 ) {
-  updateQuestionRuleInstance (
+  updateInlineQuestionRuleInstance (
     instance: $instance
   ) {
     id
@@ -1674,11 +1680,154 @@ variables:
 }
 ```
 
-Note that the only difference here for `update` is the `"id"` property
-associated with the rule instance. All settings of a rule instance can be
-modified.
+Note that the only difference for `update` is the `"id"` property
+associated with the rule instance. You can modify all settings of a rule instance.
+
+### Create an alert rule by referencing a saved question
+
+```graphql
+mutation CreateReferencedQuestionRuleInstance (
+  $instance: CreateReferencedQuestionRuleInstanceInput!
+) {
+  createReferencedQuestionRuleInstance (
+    instance: $instance
+  ) {
+    id
+    name
+    description
+    version
+    pollingInterval
+    questionId
+    questionName
+    operations {
+      when
+      actions
+    }
+    outputs
+  }
+}
+```
+
+variables:
+
+```json
+{
+  "instance": {
+    "name": "unencrypted-prod-data",
+    "description": "Data stores in production tagged critical and unencrypted",
+    "version": "v1",
+    "pollingInterval": "ONE_DAY",
+    "outputs": [
+      "alertLevel"
+    ],
+    "operations": [
+      {
+        "when": {
+          "type": "FILTER",
+          "version": 1,
+          "condition": [
+            "AND",
+            [ "queries.unencryptedCriticalData.total", "!=", 0 ]
+          ]
+        },
+        "actions": [
+          {
+            "type": "SET_PROPERTY",
+            "targetProperty": "alertLevel",
+            "targetValue": "CRITICAL"
+          },
+          {
+            "type": "CREATE_ALERT"
+          }
+        ]
+      }
+    ],
+    "questionId": "uuid-of-saved-question",
+    "questionName": "name-of-saved-question" // either questionId or questionName must be specified
+  }
+}
+```
+
+Note that you must specify either `questionName` or `questionId` in the `instance` for creation. 
+If you specify both, they must refer to the same question. After the rule is saved,
+subsequent requests will return both `questionId` and `questionName`.
+
+### Update an alert rule with a referenced question
+
+```graphql
+mutation UpdateReferencedQuestionRuleInstance (
+  $instance: UpdateReferencedQuestionRuleInstanceInput!
+) {
+  updateReferencedQuestionRuleInstance (
+    instance: $instance
+  ) {
+    id
+    name
+    description
+    version
+    pollingInterval
+    questionId
+    questionName
+    operations {
+      when
+      actions
+    }
+    outputs
+  }
+}
+```
+
+variables:
+
+```json
+{
+  "instance": {
+    "id": "b1c0f75d-770d-432a-95f5-6f59b4239c72",
+    "name": "unencrypted-prod-data",
+    "description": "Data stores in production tagged critical and unencrypted",
+    "version": "v1",
+    "pollingInterval": "ONE_DAY",
+    "outputs": [
+      "alertLevel"
+    ],
+    "operations": [
+      {
+        "when": {
+          "type": "FILTER",
+          "version": 1,
+          "condition": [
+            "AND",
+            [ "queries.unencryptedCriticalData.total", "!=", 0 ]
+          ]
+        },
+        "actions": [
+          {
+            "type": "SET_PROPERTY",
+            "targetProperty": "alertLevel",
+            "targetValue": "CRITICAL"
+          },
+          {
+            "type": "CREATE_ALERT"
+          }
+        ]
+      }
+    ],
+    "questionId": "uuid-of-saved-question",
+    "questionName": "name-of-saved-question"
+  }
+}
+```
+
+Note that the only difference in `update` is the `"id"` property
+associated with the rule instance. You can modify any of the settings of 
+a rule instance. Updates are not required to specify `questionId` or `questionName`,
+but you can specify either for `update`, and if you specify both they must refer to 
+the same saved question.
 
 ### Delete an alert rule
+
+You can use this operation to delete any rule instance, regardless of whether it uses
+an inline question or a referenced question.
 
 ```graphql
 mutation DeleteRuleInstance ($id: ID!) {
@@ -1698,9 +1847,9 @@ variables:
 }
 ```
 
-Note that deleting an alert rule this way will **not** dismiss active alerts
-already triggered by this rule. It is recommended to **Disable** a rule in the
-alerts app UI instead of deleting one.
+Note that deleting an alert rule this way does **not** dismiss active alerts
+already triggered by this rule. It is recommended that you **Disable** a rule in the
+Alerts app UI instead of deleting one.
 
 ### Trigger an alert rule on demand
 
