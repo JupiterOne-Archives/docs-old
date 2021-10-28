@@ -33,7 +33,15 @@ If you need help with this integration, please contact
 Users configure the integration by providing an API key obtained from Heroku:
 <https://devcenter.heroku.com/articles/platform-api-quickstart#authentication>.
 
-**Please Note**: the integration currently requires a Heroku Enterprise account.
+**Please Note**: The integration currently requires a Heroku Enterprise account
+and the following OAuth scopes:
+
+- `read`
+
+Optional OAuth scopes:
+
+- `global`
+  - Allows for fetching members of a Heroku team
 
 ### In JupiterOne
 
@@ -67,7 +75,7 @@ NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
 "j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
 DOCUMENTATION FOR USAGE INFORMATION:
 
-https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md
 ********************************************************************************
 -->
 
@@ -87,7 +95,7 @@ The following entities are created:
 
 ### Relationships
 
-The following relationships are created/mapped:
+The following relationships are created:
 
 | Source Entity `_type` | Relationship `_class` | Target Entity `_type`   |
 | --------------------- | --------------------- | ----------------------- |

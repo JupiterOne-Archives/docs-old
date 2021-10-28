@@ -27,6 +27,8 @@ boundaries obvious to query authors.
 
 ## Basic Keywords
 
+#### FIND
+
 `FIND` is followed by an **Entity** `class` or `type` value.
 
 > The value is case sensitive in order to automatically determine if the query
@@ -47,6 +49,8 @@ boundaries obvious to query authors.
 > pre-traversal filtering -- that is, `FIND * THAT ...` without `WITH` (see
 > below) -- may result in long query execution time.
 
+#### WITH
+
 `WITH` is followed by **property name and values** to filter entities.
 
 > Supported operators include:
@@ -66,6 +70,8 @@ boundaries obvious to query authors.
 > - If a property name contains special characters (e.g. `-` or `:`), you can
 >   wrap the property name in `[]`.
 >   For example: `[tag.special-name]='something'`
+
+#### AND/OR
 
 `AND`, `OR` for multiple property comparisons are supported.
 
@@ -117,6 +123,9 @@ When using a _negated_ "shorthand" filter, such as with the `!=` comparison, you
 "non-fruit", "plain"  | true               | true                   | true                                  | true
 undefined             | true               | true                   | true                                  | true 
 
+
+#### THAT
+
 `THAT` is followed by a **Relationship verb**.
 
 > The verb is the `class` value of a **Relationship** -- that is, the edge
@@ -151,12 +160,16 @@ undefined             | true               | true                   | true      
 >
 > `FIND * THAT (ALLOWS|PERMITS) (Internet|Everyone)`
 
+#### Bidirectional verbs by default
+
 **Relationship verbs** are bidirectional by default
 > Both queries yield the same results:
 >
 > `FIND User THAT HAS Device`
 > 
 > `FIND Device THAT HAS User`
+
+#### Relationship direction operators
 
 **Relationship direction** can be specified with double arrows ( `<<` or `>>`) _after_ the verb
 > Finds Entities with a `HAS` relationship from User to Device:
@@ -171,6 +184,8 @@ undefined             | true               | true                   | true      
 >
 > `Find Device THAT HAS >> User`
 
+#### AS
+
 `AS` defines an aliased selector.
 
 > Defines an aliased selector to use in the `WHERE` or `RETURN` portion of a
@@ -183,6 +198,8 @@ undefined             | true               | true                   | true      
 >
 > - `FIND Firewall AS fw THAT ALLOWS AS rule * AS n`
 
+#### WHERE
+
 `WHERE` is used for post-traversal filtering (requires selector)
 
 > From the example above:
@@ -192,6 +209,8 @@ undefined             | true               | true                   | true      
 >   WHERE rule.ingress=true AND
 >     (rule.fromPort=22 or rule.toPort=22)
 > ```
+
+#### RETURN
 
 `RETURN` is used to return specific entities, relationships, or properties
 
@@ -222,6 +241,8 @@ undefined             | true               | true                   | true      
 >Using a wildcard to return all properties also returns all metadata
 > properties associated with the selected entities. This feature is
  useful when you want to perform an analysis that involves metadata.
+
+#### TO
 
 `TO` is used after a relationship verb, and with the exception of `RELATES TO`,
 is considered a 'filler' word that is ignored by the interpreter.
