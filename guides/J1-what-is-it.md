@@ -91,12 +91,12 @@ to access the J1 query library.
 
  ![](../assets/j1-query-library.png)
 
-## Ask Anything
+## Search for Anything
 
 In addition to using the J1 query library, from any J1 page or app, you 
 can enter questions in the search bar. By default, J1 autocompletes 
 the text and lists any related questions that you or someone else in
-your organization [??] has asked. ![](../assets/j1-ask-anything.png)
+your organization has asked. ![](../assets/j1-ask-anything.png)
 
 ## JupiterOne Query Language
 
