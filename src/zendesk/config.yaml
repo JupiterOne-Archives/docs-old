@@ -290,12 +290,12 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721914'
       - title: Configure SAML SSO Integration
         file: ../guides/configure-sso-integration.md
-        hash: xVxoR4MlAjAvLctFhddZ3x8m5CQKfhNNmKrXCTOnJA4=
+        hash: /5JHieehwLmjRSQNhcIJrpjLrHzGrsIXmJB0r7Pt2XI=
         id: 360022903353
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903353'
       - title: Configure User Access Control
         file: ../docs/jupiterone-access-controls.md
-        hash: WjSOErKIdpjkFd0M13rBRQUk0W88hI3GJOtzFIoDqeA=
+        hash: ocn4P/uDEvAXb/QLWkiTZlESv+WNIxEUT9P8xXjTL4s=
         id: 360046093834
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046093834'
       - title: Enable API Key Access
@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: CfUxTQ25WAfkvNhvGLrsf6U2dmNzKEcAoZ/Ij9v04xI=
+        hash: PbnSgJbardHgWJtMlPj/DtR2+vIGDQ8QgnPT9Cq22SM=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -783,7 +783,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: 6Q10oYSGNiSs5jnXp7Q+zI/vI1BrQgZNPsO/xMFbXJs=
+        hash: ajbuO2a6Yhq1bpmJzts231DdbtobsfCb3L/RELXOnWU=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
