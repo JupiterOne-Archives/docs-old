@@ -15,7 +15,7 @@ Your organization must have already used an integration to import your data in t
 
 ### Creating Queries Using VQB
 
-To access VQB, from the Landing page, click ![](../assets/icons/vqb-button.png").![](../assets/vqb-access.png").
+To access VQB, from the Landing page, click ![](../assets/icons/vqb-button.png).![](../assets/vqb-access.png)
 
 The VQB workspace consists of a:
 

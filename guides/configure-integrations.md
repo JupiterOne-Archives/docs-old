@@ -1,28 +1,27 @@
 # Configure Managed Integrations
 
-You will need to have data in the JupiterOne platform to take advantage of its
-capabilities. The more data, the more powerful these capabilities become.
+To get started using the JupiterOne (J1) platform, you must first pull your data into J1.
+The more data, the more powerful the J1 capabilities become.
 
-There are over a dozen managed integrations available out-of-the-box for turnkey
-configuration. More are added regularly.
+There are multiple, managed integrations available, out-of-the-box, for turnkey
+configuration. 
 
 Each integration may have a slightly different mechanism for authentication and
 configuration, as required by the provider. For example, the AWS integration
-uses an IAM Role and Assume Role Trust policies for access. Other integrations
+uses an IAM role and assume role trust policies for access. Other integrations
 may use an API key/token, OAuth, or Basic Auth.
 
-This recording below shows an example of how to configure an AWS integration.
+This video shows an example of how to configure an AWS integration.
 
 ![configure-aws-integration](../assets/integrations-aws.gif)
 
-For details on other integrations, please see their corresponding documentation
-page under the **Managed Integrations** section.
+For details on other integrations, see the respective documentation under 
+**Managed Integrations**.
 
 ## Other Data
 
-Additionally, you can upload data outside of these managed integrations using
-the JupiterOne [API Client or CLI][1]. This allows you to centrally track,
-monitor and visualize any of your data such as on-premise systems and security /
+In addition,, you can upload data outside of these managed integrations using
+the JupiterOne [API client or CLI](j1-client-and-cli.md). This feature allows you to centrally track,
+monitor, and visualize any of your data, such as on-premise systems and security and
 compliance artifacts.
 
-[1]: ./j1-client-and-cli.md

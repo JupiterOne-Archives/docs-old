@@ -906,14 +906,13 @@ This information will be tracked:
    persister and associated with an integration job identifier. The "new state"
    will consist of entities, relationships, and raw data.
 
-1. **Finalization:** Once an integration has uploaded all data to the persister
+1. **Finalization:** After an integration has uploaded all data to the persister,
    "finalization" is triggered. During the "finalization" phase, the persister
-   will compare the "new state" with "old state" and determine changes. Any
-   changes that are detected will cause operations to be produced will persisted
-   during the run of the finalization task (they will not be enqueued on a
-   Kinesis stream).
+   compares the "new state" with the "old state" and determines changes. The
+   persister immediately performs any changes that are detected during the
+   run of the finalization task (they are not queued on a Kinesis stream).
 
-   Entities are finalized first and relationships are finalized afterward (since
+   Entities are finalized first and relationships are finalized afterward (because
    relationships might reference new entities).
 
 ## Synchronization API Usage
@@ -1265,6 +1264,7 @@ POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/relati
 }
 ```
 
+
 ### CSV Upload Data Types
 
 JupiterOne will infer primitive types (e.g. strings, numbers, booleans) within
@@ -1297,7 +1297,6 @@ _JSON Array_:
 ```csv
 "_type","_class","_key","_id","custom.0","custom.1","custom.2"
 "my_type","my_class","my_key","my_id","my_value","100","true"
-```
 
 **Sample response:**
 
@@ -1313,6 +1312,29 @@ _JSON Array_:
     "custom": ["my_value", 100, true]
   }
 ]
+```
+
+### Getting Bulk Upload URLs for Synchronization Jobs
+
+You can use a bulk upload URL to upload a file that has the same structure as
+the body of a normal upload request. The persister processes this file during
+finalization. Currently, the persister only allows one bulk upload per
+synchronization job. If you request a bulk upload URL more than once, the
+persister returns the same URL until it expires. Upload URLs expire in one
+hour.
+
+**Sample request:**
+
+```text
+POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/uploadUrl
+```
+
+**Sample response:**
+```json
+{
+  "uploadUrl": "{a very long signed S3 URL}",
+  "expiresAt": 1631198730000
+}
 ```
 
 ### Finalize synchronization job
@@ -1693,13 +1715,16 @@ Variables:
 
 **Endpoint:** `/rules/graphql`
 
-### Create an alert rule
+### Create an inline alert rule from J1QL
+
+This operation was formerly named `createQuestionRuleInstance`. That name is
+now deprecated, and you should update all usages.
 
 ```graphql
-mutation CreateQuestionRuleInstance (
-  $instance: CreateQuestionRuleInstanceInput!
+mutation CreateInlineQuestionRuleInstance (
+  $instance: CreateInlineQuestionRuleInstanceInput!
 ) {
-  createQuestionRuleInstance (
+  createInlineQuestionRuleInstance (
     instance: $instance
   ) {
     id
@@ -1779,13 +1804,16 @@ Free accounts only have access to the `ONE_WEEK` interval by default, but
 any upgrades to Compliance, Security, or Integrations will provide access
 to the `ONE_DAY` polling interval too.
 
-### Update an alert rule
+### Update an inline alert rule
+
+This operation was formerly named `updateQuestionRuleInstance`. That name is
+now deprecated, and you should update all usages.
 
 ```graphql
-mutation UpdateQuestionRuleInstance (
-  $instance: UpdateQuestionRuleInstanceInput!
+mutation UpdateInlineQuestionRuleInstance (
+  $instance: UpdateInlineQuestionRuleInstanceInput!
 ) {
-  updateQuestionRuleInstance (
+  updateInlineQuestionRuleInstance (
     instance: $instance
   ) {
     id
@@ -1856,11 +1884,154 @@ variables:
 }
 ```
 
-Note that the only difference here for `update` is the `"id"` property
-associated with the rule instance. All settings of a rule instance can be
-modified.
+Note that the only difference for `update` is the `"id"` property
+associated with the rule instance. You can modify all settings of a rule instance.
+
+### Create an alert rule by referencing a saved question
+
+```graphql
+mutation CreateReferencedQuestionRuleInstance (
+  $instance: CreateReferencedQuestionRuleInstanceInput!
+) {
+  createReferencedQuestionRuleInstance (
+    instance: $instance
+  ) {
+    id
+    name
+    description
+    version
+    pollingInterval
+    questionId
+    questionName
+    operations {
+      when
+      actions
+    }
+    outputs
+  }
+}
+```
+
+variables:
+
+```json
+{
+  "instance": {
+    "name": "unencrypted-prod-data",
+    "description": "Data stores in production tagged critical and unencrypted",
+    "version": "v1",
+    "pollingInterval": "ONE_DAY",
+    "outputs": [
+      "alertLevel"
+    ],
+    "operations": [
+      {
+        "when": {
+          "type": "FILTER",
+          "version": 1,
+          "condition": [
+            "AND",
+            [ "queries.unencryptedCriticalData.total", "!=", 0 ]
+          ]
+        },
+        "actions": [
+          {
+            "type": "SET_PROPERTY",
+            "targetProperty": "alertLevel",
+            "targetValue": "CRITICAL"
+          },
+          {
+            "type": "CREATE_ALERT"
+          }
+        ]
+      }
+    ],
+    "questionId": "uuid-of-saved-question",
+    "questionName": "name-of-saved-question" // either questionId or questionName must be specified
+  }
+}
+```
+
+Note that you must specify either `questionName` or `questionId` in the `instance` for creation. 
+If you specify both, they must refer to the same question. After the rule is saved,
+subsequent requests will return both `questionId` and `questionName`.
+
+### Update an alert rule with a referenced question
+
+```graphql
+mutation UpdateReferencedQuestionRuleInstance (
+  $instance: UpdateReferencedQuestionRuleInstanceInput!
+) {
+  updateReferencedQuestionRuleInstance (
+    instance: $instance
+  ) {
+    id
+    name
+    description
+    version
+    pollingInterval
+    questionId
+    questionName
+    operations {
+      when
+      actions
+    }
+    outputs
+  }
+}
+```
+
+variables:
+
+```json
+{
+  "instance": {
+    "id": "b1c0f75d-770d-432a-95f5-6f59b4239c72",
+    "name": "unencrypted-prod-data",
+    "description": "Data stores in production tagged critical and unencrypted",
+    "version": "v1",
+    "pollingInterval": "ONE_DAY",
+    "outputs": [
+      "alertLevel"
+    ],
+    "operations": [
+      {
+        "when": {
+          "type": "FILTER",
+          "version": 1,
+          "condition": [
+            "AND",
+            [ "queries.unencryptedCriticalData.total", "!=", 0 ]
+          ]
+        },
+        "actions": [
+          {
+            "type": "SET_PROPERTY",
+            "targetProperty": "alertLevel",
+            "targetValue": "CRITICAL"
+          },
+          {
+            "type": "CREATE_ALERT"
+          }
+        ]
+      }
+    ],
+    "questionId": "uuid-of-saved-question",
+    "questionName": "name-of-saved-question"
+  }
+}
+```
+
+Note that the only difference in `update` is the `"id"` property
+associated with the rule instance. You can modify any of the settings of 
+a rule instance. Updates are not required to specify `questionId` or `questionName`,
+but you can specify either for `update`, and if you specify both they must refer to 
+the same saved question.
 
 ### Delete an alert rule
+
+You can use this operation to delete any rule instance, regardless of whether it uses
+an inline question or a referenced question.
 
 ```graphql
 mutation DeleteRuleInstance ($id: ID!) {
@@ -1880,9 +2051,9 @@ variables:
 }
 ```
 
-Note that deleting an alert rule this way will **not** dismiss active alerts
-already triggered by this rule. It is recommended to **Disable** a rule in the
-alerts app UI instead of deleting one.
+Note that deleting an alert rule this way does **not** dismiss active alerts
+already triggered by this rule. It is recommended that you **Disable** a rule in the
+Alerts app UI instead of deleting one.
 
 ### Trigger an alert rule on demand
 

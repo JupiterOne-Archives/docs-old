@@ -26,9 +26,7 @@ Standard access control is similar to the **Top Level Permissions** in Granular 
 accounts. It allows more fine grain access configuration at each user group
 level to achieve role-based access control (RBAC).
 
-When enabled, to configure access permissions, go to Settings:
-
-**Settings** ![settings](../assets/icons/gear.png" style="zoom:75%;") -> **Users & Access**  and select the user group you want to edit. Then, click the <img src="../assets/icons/shield.png" style="zoom:67%;" />.
+When enabled, to configure access permissions, go to **Settings** [Settings](../assets/icons/gear.png) -> **Users & Access**  and select the user group you want to edit. Then, click the [](../assets/icons/shield.png.
 
   ![app-permissions](../assets/app-permissions.png)
 
@@ -185,3 +183,26 @@ used by features in each app:
 
   > Shared permissions used by this app: **Read Graph Data**, used to
   > fetch users and devices.
+
+### Recommended Permissions
+
+#### Default User Group
+
+For the default _Users_ group with the most limited access, set a minimum **Query Permission Set**. The minimum recommended group 
+is `_class`:`Root`. This permission group only includes the root organization:
+
+![limited-query-set](../assets/j1acct-limited-query-set.png)
+
+Set the _Read-only_ permission for **Policies** in **App Permissions** to allow users to _Review & Accept_ organizations policies.
+
+#### Compliance and Audit Group
+
+For a group of users focused on compliance and audit processes, the integrations relevant to the scope of the audit must be included 
+in the query permissions. It is recommended that **App Permissions** for this group include _Admin_ access to _Compliance_ and _Policies_, 
+as well as _Read-only_ access to _Assets_.
+
+#### Integration Service Admin
+
+For a group where configuration of integrated services is necessary, the recommended **App Permissions** for this group include Admin access to _Integrations_. In cases were _Endpoint Compliance_ is used, _Admin_ access is necessary for this **App Permission** as well. The minimum **Query Permission Set**, `_class`:`Root`, is recommended for this group, but may be necessary to expand in special cases.
+
+It may be necessary to expand access for this group in cases where SAML and SSO configuration must be configured.

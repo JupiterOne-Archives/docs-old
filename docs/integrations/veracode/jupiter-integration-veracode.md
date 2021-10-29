@@ -2,22 +2,22 @@
 
 ## Veracode + JupiterOne Integration Benefits
 
-- Visualize Veracode scans, cwes, vulnerabilities, and findings in the JupiterOne graph.
+- Visualize Veracode scans, CWEs, vulnerabilities, and findings in the JupiterOne graph.
 - Map Veracode findings to a code repo, project, or application in your JupiterOne account.
-- Monitor Veracode cwes, findings, and vulnerabilities within the alerts app.
+- Monitor Veracode CWEs, findings, and vulnerabilities within the Alerts app.
 - Monitor changes to Veracode scans using JupiterOne alerts.
 
 ## How it Works
 
-- JupiterOne periodically fetches Veracode scans, cwes, vulerabilities, and findings to update the graph.
+- JupiterOne periodically fetches Veracode scans, CWEs, vulnerabilities, 
+  and findings to update the graph.
 - Write JupiterOne queries to review and monitor updates to the graph.
 - Configure alerts to reduce the noise of findings.
 - Configure alerts to take action when the JupiterOne graph changes.
 
 ## Support
 
-If you need help with this integration, please contact
-[JupiterOne Support](https://support.jupiterone.io).
+If you need help with this integration, contact [JupiterOne Support](https://support.jupiterone.io).
 
 ## Integration Walkthrough
 
@@ -25,7 +25,7 @@ If you need help with this integration, please contact
 
 The integration instance configuration requires the customer's API ID and secret
 to authenticate requests to the Veracode REST APIs. Veracode provides [detailed
-instructions for obtaining these credentials][1].
+instructions for obtaining these credentials](https://help.veracode.com/r/c_veracode_integrations).
 
 ### In JupiterOne
 
@@ -83,6 +83,3 @@ The following relationships are created/mapped:
 | From                           | Type        | To                                                                                                                                                                                                 |
 | ------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `CodeRepo/Project/Application` | **HAS/HAD** | `veracode_finding` <br> Note: This is mapped automatically only when the name of the Veracode Application the finding belongs to matches the name of a CodeRepo/Project/Application in JupiterOne. |
-
-[1]:
-  https://help.veracode.com/reader/lsoDk5r2cv~YrwLQSI7lfw/6UdIc6di0T5_Lo6qTHTpNA
