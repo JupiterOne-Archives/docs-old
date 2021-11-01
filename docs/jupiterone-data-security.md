@@ -48,7 +48,7 @@ and relationships are the **JupiterOne CORE data model**.
 JupiterOne then uses this data model to inventory for and provide insight into
 your digital infrastructure across all of your connected environments.
 
-More information on the JupiterOne data model is available [here](jupiterone-data-model.md).
+More information on the JupiterOne data model is available [here](../jupiterone-data-model.md).
 
 For more details on data ingested for each managed integration, see their
 corresponding documentation in the **Integrations** section.
@@ -109,7 +109,7 @@ infrastructure-as-code operational model and automated change management process
 allows us to deploy security patches within minutes of identification and
 remediation of an issue.
 
-You can review the JupiterOne [data model](jupiterone-data-model.md) and [policies and procedures](https://psp.jptr.one/) for 
+You can review the JupiterOne [data model](../jupiterone-data-model.md) and [policies and procedures](https://psp.jptr.one/) for 
 more details on the JupiterOne operational, infrastructure, and software 
 development security.
 
