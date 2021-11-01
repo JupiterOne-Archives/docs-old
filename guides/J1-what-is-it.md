@@ -99,7 +99,7 @@ the text and lists any questions related to your keywords. ![](../assets/j1-ask-
 
 ## JupiterOne Query Language
 
-The [JupiterOne Query Language](../docs/jupiterone-query-language) (J1QL) is a query language for 
+The [JupiterOne Query Language](../docs/jupiterone-query-language.md) (J1QL) is a query language for 
 finding the entities and relationships within your digital 
 environment. J1QL blends together the capabilities of 
 asking questions, performing full text search, and querying 
