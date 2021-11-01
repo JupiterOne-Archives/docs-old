@@ -4,13 +4,13 @@ sections:
     articles:
       - title: 00/10 Intro to JupiterOne
         file: ../guides/J1-what-is-it.md
-        hash: SinJVI9hJSHoa/Lxciqpl23ioUwXub4ZHRJ2UKAL2J8=
+        hash: ZAfTpC0DENdk8TfWKF2a/DID/HOQ9/dOm0d+7719kmw=
         id: 4407857686163
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4407857686163'
       - id: 360022884813
         title: 01/10 Configure Integrations
         file: ../guides/configure-integrations.md
-        hash: aRdCA0P1H3QRYbVDMaMXj6etXmxyN1mcSpjRtzLLEGg=
+        hash: tYNh0BaD/n2jFYiAYFa3fWddfr8lCtBBlNwC5TZ3+xQ=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022884813'
       - id: 360022705414
         title: 02/10 Search Quickstart
@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: KVx5AKZ8SjEcm0/qfP6/9VjHu4CISK6T+pbMFclWE/s=
+        hash: TAFwkEPMu0S0yZYukIaq1cneArTbV+Atc3oPzu4Br9k=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -783,7 +783,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: b+7NKdHM2swTN1Ec8E9uQAABy/B3HKMXLgvGmrs8pT4=
+        hash: WeUnsVuj3VLamNdKljQOOoPZZVkWsD1xV7R/z8cTLmI=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
