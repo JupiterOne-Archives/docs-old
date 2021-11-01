@@ -1297,6 +1297,7 @@ _JSON Array_:
 ```csv
 "_type","_class","_key","_id","custom.0","custom.1","custom.2"
 "my_type","my_class","my_key","my_id","my_value","100","true"
+```
 
 **Sample response:**
 
