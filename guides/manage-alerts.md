@@ -88,5 +88,5 @@ Your **JupiterOne Daily Alert Report** will look like this:
 
 > ![](../assets/alerts-daily-email.png)
 
-To ensure delivery of these reports, please whitelist `@jupiterone.io` and
+To ensure delivery of these reports, please allowlist `@jupiterone.io` and
 `@us.jupiterone.io` in your email configuration.

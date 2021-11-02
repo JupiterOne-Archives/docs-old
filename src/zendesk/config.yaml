@@ -753,8 +753,8 @@ sections:
         hash: T8byvCKKUU4tGfrRPeIqjQml11tGeFBoJNi9C4Z7aPw=
         id: 360040105273
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360040105273'
-      - title: Configuring Resource Whitelisting
-        file: ../guides/resource-whitelist-powerup.md
+      - title: Configuring Resource Allowlists
+        file: ../guides/resource-allowlist-powerup.md
         hash: +iW1De1DYJdJ3qocQJ1v4jidfbg5hcG0CcvNlY1iU0I=
         id: 1500007990882
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500007990882'
