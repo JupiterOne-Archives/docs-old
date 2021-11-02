@@ -35,7 +35,7 @@ sections:
       - title: 06/10 Alerts and Alert Rules
         file: ../guides/manage-alerts.md
         id: 360022720474
-        hash: blVTPUtcmIkbG1T5QV6CVrDETsO3VKdNBvUzwbhpAiA=
+        hash: Mujem7sA7b9m+O2vp9ZePH1sf7PlVIb6nT0Y3r7SYcs=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720474'
       - title: 07/10 Visual Query Builder
         file: ../guides/j1-vqb.md
@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: TAFwkEPMu0S0yZYukIaq1cneArTbV+Atc3oPzu4Br9k=
+        hash: 9Sa6XuRIYMw5oUkcBRy4XX/mBn+jXsTgPNl8z5Wm9NI=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -437,7 +437,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041436913'
       - title: 'Data Model for Governance, Risk, and Compliance (GRC)'
         file: ../docs/data-model/org-grc.md
-        hash: ocVFGthOPV7y79E8CD44XMqmDyeelS1ppdqggJrD1Ac=
+        hash: keVCuRYoCcnuCbvvs/3q/RKGs0yq9v/D9/2Hg+nIJrc=
         id: 360041436933
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041436933'
   - name: Data Model Entity Reference
@@ -755,7 +755,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360040105273'
       - title: Configuring Resource Allowlists
         file: ../guides/resource-allowlist-powerup.md
-        hash: +iW1De1DYJdJ3qocQJ1v4jidfbg5hcG0CcvNlY1iU0I=
+        hash: +yS/a/lPbFg5oR4BG3tug+WWhiXEnppXxTVQkOKYu1c=
         id: 1500007990882
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500007990882'
   - name: Release Notes
@@ -783,7 +783,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: WeUnsVuj3VLamNdKljQOOoPZZVkWsD1xV7R/z8cTLmI=
+        hash: U/G/ZTLr1zYGRhHswI9mEVxb7FeRmCvNSrskSx0fdrE=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
@@ -938,7 +938,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360050930274'
       - title: 2020.47 Release
         file: ../release-notes/2020-47.md
-        hash: YWQ4IsD9B0h6/g9tqjZrRJAxVAAoCgyruUgmSW6HXbY=
+        hash: xZj0sMttkM5lhFy0anVSX/RG734AvJKgpAtlF+V5Ry4=
         id: 360049660854
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049660854'
       - title: 2020.46 Release
