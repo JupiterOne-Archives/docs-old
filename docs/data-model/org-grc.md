@@ -21,7 +21,7 @@
 **Requirements** make up sections of a standard. Individual requirements outline
 the specification that needs to be met. 
 
-    Examples of requirements include: HIPAA §164.310(a)(1)(i), ISO 27001 6.1.3 a, PCI-DSS 8.4.b, FedRAMP AC-2 (7), utilizing application whitelisting to implement CIS Basics 2.7, etc..
+    Examples of requirements include: HIPAA §164.310(a)(1)(i), ISO 27001 6.1.3 a, PCI-DSS 8.4.b, FedRAMP AC-2 (7), utilizing application allowlisting to implement CIS Basics 2.7, etc..
 
 When thinking through different regulatory or compliance
 **standards/frameworks**, the idea of a **standard** _having_ one or more
