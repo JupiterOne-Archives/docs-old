@@ -2248,6 +2248,124 @@ variables:
 
 ## Integration Operations
 
+### Scheduling Integration Jobs
+
+Use the `pollingIntervalCronExpression` to set and `hour` or `dayOfWeek` value for an integration configuration to run.
+
+- `hour` is only valid for the `ONE_DAY` polling interval
+- `dayOfWeek` is only valid for the `ONE_WEEK` polling interval
+- `hour` and `dayOfWeek` can both be set for the `ONE_WEEK` polling interval 
+
+#### Set the hour
+
+When using the `ONE_DAY` polling interval, you can pass an optional `pollingIntervalCronExpression` to specify a time of day for the integration to execute.
+
+The following configuration would set an integration to execute daily between 00:00 and 01:00 UTC.
+
+```json
+{
+  "pollingInterval": "ONE_DAY",
+  "pollingIntervalCronExpression": { "hour": 0 }
+}
+```
+
+`pollingIntervalCronExpression.hour` accepts an integer between 0 and 23.
+
+#### Set the day of week
+
+When using the `ONE_WEEK` polling interval, you can pass an optional `pollingIntervalCronExpression` to specify both a `dayOfWeek` and `hour` for the integration to execute.
+
+The following configuration would set an integration to execute weekly on Sunday between 00:00 and 01:00 UTC.
+
+```json
+{
+  "pollingInterval": "ONE_DAY",
+  "pollingIntervalCronExpression": { "hour": 0, "dayOfWeek": 0 }
+}
+```
+
+`pollingIntervalCronExpression.dayOfWeek` accepts an integer between 0 (Sunday) and 6 (Saturday).
+
+#### Example Mutation
+
+This is an example of a GraphQL mutation that updates the hour and day of the week for a specific configuration of an integration in JupiterOne:
+
+```json
+mutation integrationInstance(
+  $id: String!,
+  $pollingIntervalCronExpression: IntegrationPollingIntervalCronExpressionInput
+) {
+  updateIntegrationInstance(
+    id: $id,
+    update: {
+      pollingIntervalCronExpression: $pollingIntervalCronExpression
+    }
+  ) {
+    id
+    name
+    pollingInterval
+    pollingIntervalCronExpression { 
+      hour
+      dayOfWeek
+    }
+  }
+}
+```
+
+Variables for the mutation:
+
+```json
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "pollingIntervalCronExpression": {
+    "hour": 0,
+    "dayOfWeek": 0
+  }
+}
+```
+
+Variables:
+
+`id`: the `id` of the configuration that you want to update the hour and/or day of week for.  This is visible in each integration configuration in your account. To look this up in your JupiterOne account go to Settings > Integration > {integration name} > {configuration name} > value in the ID field
+
+`hour`: an integer between 0 and 23 that represents the hour of the day in UTC that you want the integration to run.
+
+`dayofWeek`: an integer between 0 and 6 that represents the day of the week Sunday through Saturday that you want the integration to run.
+
+#### Example Query
+
+Example of a GraphQL query that returns the current values in the `hour` and `dayOfWeek` parameters for a specific integration configuration:
+
+```json
+query integrationInstance(
+  $id: String!,
+) {
+  integrationInstance(
+    id: $id,
+  ) {
+    id
+    name
+    pollingInterval
+    pollingIntervalCronExpression { 
+      hour
+      dayOfWeek
+    }
+  }
+}
+```
+
+Variable for the query:
+
+```json
+{
+  "id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
+Variables:
+
+`id`: the `id` of the configuration that you want to update the hour and/or day of week for.  This is visible in each integration configuration in your account. To look this up in your JupiterOne account go to Settings > Integration > {integration name} > {configuration name} > value in the ID field
+
 ### Finding an Integration Definition based on a type
 
 This query returns an Integration Definition. This query requires an Integration Type.
