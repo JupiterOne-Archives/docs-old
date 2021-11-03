@@ -4,13 +4,13 @@ sections:
     articles:
       - title: 00/10 Intro to JupiterOne
         file: ../guides/J1-what-is-it.md
-        hash: ULqpthvk7qllHFpJjXKDfLdjCTRv6SpckWxZkP3by5s=
+        hash: ZAfTpC0DENdk8TfWKF2a/DID/HOQ9/dOm0d+7719kmw=
         id: 4407857686163
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4407857686163'
       - id: 360022884813
         title: 01/10 Configure Integrations
         file: ../guides/configure-integrations.md
-        hash: aRdCA0P1H3QRYbVDMaMXj6etXmxyN1mcSpjRtzLLEGg=
+        hash: tYNh0BaD/n2jFYiAYFa3fWddfr8lCtBBlNwC5TZ3+xQ=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022884813'
       - id: 360022705414
         title: 02/10 Search Quickstart
@@ -35,11 +35,11 @@ sections:
       - title: 06/10 Alerts and Alert Rules
         file: ../guides/manage-alerts.md
         id: 360022720474
-        hash: blVTPUtcmIkbG1T5QV6CVrDETsO3VKdNBvUzwbhpAiA=
+        hash: Mujem7sA7b9m+O2vp9ZePH1sf7PlVIb6nT0Y3r7SYcs=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720474'
       - title: 07/10 Visual Query Builder
         file: ../guides/j1-vqb.md
-        hash: o/ErOmHsfGTAQ5fprdSuAhf14FfgZonjegleyoNY0Dk=
+        hash: 4EM+XMlDJEc9RRHR07stHEwjrbo+AaOvK298LiVouyU=
         id: 4407871506707
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4407871506707'
       - title: 08/10 Manage Findings
@@ -92,7 +92,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500003848502'
       - title: Data Security
         file: ../docs/jupiterone-data-security.md
-        hash: HxyjLE718d78KLrlIjlVB6kjO7RYwh/6lNBLpg1zItY=
+        hash: iGlXN0eWxCj/DLzSMOp19YZ6qvXlBqhHpACx9SgsW18=
         id: 360024092813
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360024092813'
   - name: Common Questions and Queries
@@ -290,12 +290,12 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721914'
       - title: Configure SAML SSO Integration
         file: ../guides/configure-sso-integration.md
-        hash: xVxoR4MlAjAvLctFhddZ3x8m5CQKfhNNmKrXCTOnJA4=
+        hash: /5JHieehwLmjRSQNhcIJrpjLrHzGrsIXmJB0r7Pt2XI=
         id: 360022903353
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903353'
       - title: Configure User Access Control
         file: ../docs/jupiterone-access-controls.md
-        hash: WjSOErKIdpjkFd0M13rBRQUk0W88hI3GJOtzFIoDqeA=
+        hash: ocn4P/uDEvAXb/QLWkiTZlESv+WNIxEUT9P8xXjTL4s=
         id: 360046093834
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046093834'
       - title: Enable API Key Access
@@ -313,7 +313,7 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: KcuH2nSeEM8PpGC2o+0jFV8SvnV/O+zxuRaDt08nt/I=
+        hash: Dzwts/SJEuQ+dqEvpzwftRYJf/XErKu6vxboeimtT9E=
         id: 360022722014
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722014'
       - title: External Parameters and Secrets in J1QL
@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: OPQEv7J8LlmbHVNrnjztuZJuWWbpBARx9rXEpD0j2nA=
+        hash: 9Sa6XuRIYMw5oUkcBRy4XX/mBn+jXsTgPNl8z5Wm9NI=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -437,7 +437,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041436913'
       - title: 'Data Model for Governance, Risk, and Compliance (GRC)'
         file: ../docs/data-model/org-grc.md
-        hash: ocVFGthOPV7y79E8CD44XMqmDyeelS1ppdqggJrD1Ac=
+        hash: keVCuRYoCcnuCbvvs/3q/RKGs0yq9v/D9/2Hg+nIJrc=
         id: 360041436933
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041436933'
   - name: Data Model Entity Reference
@@ -753,9 +753,9 @@ sections:
         hash: T8byvCKKUU4tGfrRPeIqjQml11tGeFBoJNi9C4Z7aPw=
         id: 360040105273
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360040105273'
-      - title: Configuring Resource Whitelisting
-        file: ../guides/resource-whitelist-powerup.md
-        hash: +iW1De1DYJdJ3qocQJ1v4jidfbg5hcG0CcvNlY1iU0I=
+      - title: Configuring Resource Allowlists
+        file: ../guides/resource-allowlist-powerup.md
+        hash: +yS/a/lPbFg5oR4BG3tug+WWhiXEnppXxTVQkOKYu1c=
         id: 1500007990882
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500007990882'
   - name: Release Notes
@@ -783,7 +783,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: iMcsozCba7eqLAwL+zhIdimEOtORqcLSSmG695PcOIc=
+        hash: U/G/ZTLr1zYGRhHswI9mEVxb7FeRmCvNSrskSx0fdrE=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
@@ -938,7 +938,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360050930274'
       - title: 2020.47 Release
         file: ../release-notes/2020-47.md
-        hash: YWQ4IsD9B0h6/g9tqjZrRJAxVAAoCgyruUgmSW6HXbY=
+        hash: xZj0sMttkM5lhFy0anVSX/RG734AvJKgpAtlF+V5Ry4=
         id: 360049660854
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049660854'
       - title: 2020.46 Release

@@ -906,14 +906,13 @@ This information will be tracked:
    persister and associated with an integration job identifier. The "new state"
    will consist of entities, relationships, and raw data.
 
-1. **Finalization:** Once an integration has uploaded all data to the persister
+1. **Finalization:** After an integration has uploaded all data to the persister,
    "finalization" is triggered. During the "finalization" phase, the persister
-   will compare the "new state" with "old state" and determine changes. Any
-   changes that are detected will cause operations to be produced will persisted
-   during the run of the finalization task (they will not be enqueued on a
-   Kinesis stream).
+   compares the "new state" with the "old state" and determines changes. The
+   persister immediately performs any changes that are detected during the
+   run of the finalization task (they are not queued on a Kinesis stream).
 
-   Entities are finalized first and relationships are finalized afterward (since
+   Entities are finalized first and relationships are finalized afterward (because
    relationships might reference new entities).
 
 ## Synchronization API Usage
@@ -1035,13 +1034,118 @@ GET /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3
 }
 ```
 
+### Upload batch of entities and relationships
+
+Batch upload accepts the formats: `json`, `csv`, and `yaml` sent as text in the
+request body. The following `Content-Type` request headers should be set
+according to the intended type:
+
+| Format | Content-Type         |
+| :----: | -------------------- |
+|  json  | `'application/json'` |
+|  yaml  | `'application/yaml'` |
+|  csv   | `'text/csv'`         |
+
+In the case of a `csv`, the type of graph object ("entity" or "relationship") is
+inferred by the presence of one or more of the following the columns:
+`_fromEntityKey`, `_fromEntityId`, `_toEntityKey`, `_toEntityId`.
+
+**Sample request:**
+
+```text
+POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/upload
+```
+
+**Entity / Relationship JSON:**
+
+```json
+{
+  "entities": [
+    {
+      "_key": "1",
+      "_class": "DataStore",
+      "_type": "fake_entity",
+      "displayName": "my_datastore"
+    },
+    {
+      "_key": "2",
+      "_class": "Database",
+      "_type": "fake_entity",
+      "displayName": "my_database"
+    },
+    {
+      "_key": "3",
+      "_class": "Domain",
+      "_type": "fake_entity",
+      "displayName": "my_domain"
+    }
+  ],
+  "relationships": [
+    {
+      "_key": "a",
+      "_type": "fake_relationship",
+      "_fromEntityKey": "1",
+      "_toEntityKey": "2"
+    },
+    {
+      "_key": "b",
+      "_type": "fake_relationship",
+      "_fromEntityKey": "2",
+      "_toEntityKey": "3"
+    }
+  ]
+}
+```
+
+**Entity / Relationship CSV**
+
+```csv
+"_type","_class","_key","displayName","_fromEntityKey","_toEntityKey"
+"<a relationship type>","<a relationship class>","<a relationship key>","my_relationship_name","<an entity key>","<an entity key>"
+"<a entity type>","<a entity class>","<an entity key>","my_entity_name",,
+```
+
+**Sample response:**
+
+```json
+{
+  "job": {
+    "source": "api",
+    "scope": "my-sync-job",
+    "id": "f445397d-8491-4a12-806a-04792839abe3",
+    "status": "AWAITING_UPLOADS",
+    "startTimestamp": 1586915752483,
+    "numEntitiesUploaded": 3,
+    "numEntitiesCreated": 0,
+    "numEntitiesUpdated": 0,
+    "numEntitiesDeleted": 0,
+    "numRelationshipsUploaded": 2,
+    "numRelationshipsCreated": 0,
+    "numRelationshipsUpdated": 0,
+    "numRelationshipsDeleted": 0
+  }
+}
+```
+
 ### Upload batch of entities
+
+Batch upload accepts the formats: `json`, `csv`, and `yaml` sent as text in the
+request body. The following `Content-Type` request headers should be set
+according to the intended type:
+
+| Format | Content-Type         |
+| :----: | -------------------- |
+|  json  | `'application/json'` |
+|  yaml  | `'application/yaml'` |
+|  csv   | `'text/csv'`         |
 
 **Sample request:**
 
 ```text
 POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/entities
 ```
+
+**Upload Entity JSON**
 
 ```json
 {
@@ -1060,6 +1164,13 @@ POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/entiti
     }
   ]
 }
+```
+
+**Upload Entity CSV**
+
+```csv
+"_type","_class","_key","displayName"
+"<a entity type>","<a entity class>","<an entity key>","my_entity_name"
 ```
 
 **Sample response:**
@@ -1086,11 +1197,23 @@ POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/entiti
 
 ### Upload batch of relationships
 
+Batch upload accepts the formats: `json`, `csv`, and `yaml` sent as text in the
+request body. The following `Content-Type` request headers should be set
+according to the intended type:
+
+| Format | Content-Type         |
+| :----: | -------------------- |
+|  json  | `'application/json'` |
+|  yaml  | `'application/yaml'` |
+|  csv   | `'text/csv'`         |
+
 **Sample request:**
 
 ```text
 POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/relationships
 ```
+
+**Upload Relationship JSON:**
 
 ```json
 {
@@ -1111,6 +1234,14 @@ POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/relati
 }
 ```
 
+**Upload Relationship CSV:**
+
+```csv
+"_type","_class","_key","_id","displayName","_fromEntityKey","_toEntityKey"
+"<a relationship type>","<a relationship class>","<a relationship key>","my_relationship_name","<an entity key>","<an entity key>"
+```
+
+
 **Sample response:**
 
 ```json
@@ -1130,6 +1261,80 @@ POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/relati
     "numRelationshipsUpdated": 0,
     "numRelationshipsDeleted": 0
   }
+}
+```
+
+
+### CSV Upload Data Types
+
+JupiterOne will infer primitive types (e.g. strings, numbers, booleans) within
+columns automatically. If the value can be converted to a number or boolean, it
+will be converted during the upload process.
+
+To include JSON arrays within a csv column, there are two acceptable ways to express these structures:
+
+**Double Quote Format**
+
+Use double quotes `""` to escape quotes within an JSON array. This
+format is the most common way to express and escape quote characters when
+embedding JSON within a csv column.
+
+_JSON Array_:
+
+```csv
+"_type","_class","_key","_id","custom"
+"my_type","my_class","my_key","my_id","[""my_value"",100,true]"
+```
+
+**Column Dot Notation**
+
+JSON arrays can also be described by using the value's JSON path
+(via dot notation) within the name of the column. Each element of
+that JSON array would then receive its own column with a zero indexed number specifying its location in the array.
+
+_JSON Array_:
+
+```csv
+"_type","_class","_key","_id","custom.0","custom.1","custom.2"
+"my_type","my_class","my_key","my_id","my_value","100","true"
+```
+
+**Sample response:**
+
+_JSON Array_:
+
+```json
+[
+  {
+    "_type": "my_type",
+    "_class": "my_class",
+    "_key": "my_key",
+    "_id": "my_id",
+    "custom": ["my_value", 100, true]
+  }
+]
+```
+
+### Getting Bulk Upload URLs for Synchronization Jobs
+
+You can use a bulk upload URL to upload a file that has the same structure as
+the body of a normal upload request. The persister processes this file during
+finalization. Currently, the persister only allows one bulk upload per
+synchronization job. If you request a bulk upload URL more than once, the
+persister returns the same URL until it expires. Upload URLs expire in one
+hour.
+
+**Sample request:**
+
+```text
+POST /persister/synchronization/jobs/f445397d-8491-4a12-806a-04792839abe3/uploadUrl
+```
+
+**Sample response:**
+```json
+{
+  "uploadUrl": "{a very long signed S3 URL}",
+  "expiresAt": 1631198730000
 }
 ```
 

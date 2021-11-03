@@ -21,7 +21,7 @@ For details on other integrations, see the respective documentation under
 ## Other Data
 
 In addition,, you can upload data outside of these managed integrations using
-the JupiterOne [API client or CLI](j1-client-and-cli.md). This feature allows you to centrally track,
+the JupiterOne [API client or CLI](../j1-client-and-cli.md). This feature allows you to centrally track,
 monitor, and visualize any of your data, such as on-premise systems and security and
 compliance artifacts.
 

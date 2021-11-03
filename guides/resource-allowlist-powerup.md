@@ -19,7 +19,7 @@ To configure the resource allowlist:
 2. Select **Configure Resource Allowlist**. 
 3. Populate each allowlist, following the instructions in the corresponding section.
 
-![resource-whitelist-setup](../assets/resource-whitelist-setup.png)
+![resource-allowlist-setup](../assets/resource-allowlist-setup.png)
 
 ### Configure the Approved Applications Allowlist
 
