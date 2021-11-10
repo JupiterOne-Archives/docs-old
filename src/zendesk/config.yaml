@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: y8wUsFZhS35v9iZKnzAwo/wQTmLpPt+Np0YgJYLC6Ro=
+        hash: Se1IqpQvdLY9J4K4iYkdGbNRnemQdJ+nXfUffkZ2gEg=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -788,7 +788,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: ZsdN1xMmNjq4r566tR7tTWH/fhiCjwUmi9k2V3AL99Y=
+        hash: IxzkFGdvATJPtvkI5ERB6Qr9RF/oCCPwRgx6y6vcreA=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
