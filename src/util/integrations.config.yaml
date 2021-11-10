@@ -87,8 +87,8 @@ integrations:
   displayName: Snowflake
 - projectName: graph-snyk
   displayName: Snyk
-- projectName: graph-tenable-cloud
-  displayName: Tenable Cloud
+- projectName: graph-tenable-io
+  displayName: Tenable io
 - projectName: graph-threatstack
   displayName: ThreatStack
 - projectName: graph-trend-micro

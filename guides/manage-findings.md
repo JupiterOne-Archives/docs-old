@@ -7,7 +7,7 @@ manage security findings from different sources, including:
 - AWS GuardDuty findings
 - Veracode static and dynamic analysis findings
 - WhiteHat application security findings
-- Tenable Cloud scanning findings
+- Tenable.io scanning findings
 - HackerOne report findings
 - CVEs and other vulnerability findings
 - Manual penetration testing findings (imported via API - see [this guide][1])
