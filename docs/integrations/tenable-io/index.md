@@ -1,17 +1,17 @@
 # Integration with JupiterOne
 
-## Tenable Cloud + JupiterOne Integration Benefits
+## Tenable.io + JupiterOne Integration Benefits
 
-- Visualize Tenable Cloud users, scans, findings, reports, vulnerabilities, and
+- Visualize Tenable.io users, scans, findings, reports, vulnerabilities, and
   container findings in the JupiterOne graph.
-- Map Tenable Cloud users to employees in your JupiterOne account.
+- Map Tenable.io users to employees in your JupiterOne account.
 - Monitor Tenable vulnerabilities and findings within the alerts app.
-- Monitor changes to Tenable Cloud users, scans, findings, reports,
+- Monitor changes to Tenable.io users, scans, findings, reports,
   vulnerabilities, and container findings using JupiterOne alerts.
 
 ## How it Works
 
-- JupiterOne periodically fetches Tenable Cloud users, scans, findings, and
+- JupiterOne periodically fetches Tenable.io users, scans, findings, and
   vulnerabilities to update the graph.
 - Write JupiterOne queries to review and monitor updates to the graph.
 - Configure alerts to reduce the noise of findings.
@@ -20,7 +20,7 @@
 ## Requirements
 
 - JupiterOne requires an access key and secret key used to authenticate with
-  Tenable Cloud.
+  Tenable.io.
 - You must have permission in JupiterOne to install new integrations.
 
 ## Support
@@ -30,7 +30,7 @@ If you need help with this integration, please contact
 
 ## Integration Walkthrough
 
-### In Tenable Cloud
+### In Tenable.io
 
 See the [Tenable Developer Portal](https://developer.tenable.com/) for details
 on how to configure an API access key and secret.
@@ -38,17 +38,17 @@ on how to configure an API access key and secret.
 ### In JupiterOne
 
 1. From the configuration **Gear Icon**, select **Integrations**.
-2. Scroll to the **Tenable Cloud** integration tile and click it.
+2. Scroll to the **Tenable.io** integration tile and click it.
 3. Click the **Add Configuration** button and configure the following settings:
 
-- Enter the **Account Name** by which you'd like to identify this Tenable Cloud
+- Enter the **Account Name** by which you'd like to identify this Tenable.io
   account in JupiterOne. Ingested entities will have this value stored in
   `tag.AccountName` when **Tag with Account Name** is checked.
 - Enter a **Description** that will further assist your team when identifying
   the integration instance.
 - Select a **Polling Interval** that you feel is sufficient for your monitoring
   needs. You may leave this as `DISABLED` and manually execute the integration.
-- Enter the **Access Key** used to authenticate with Tenable Cloud.
+- Enter the **Access Key** used to authenticate with Tenable.io.
 - Enter the **Secret Key** associated with the access key.
 
 4. Click **Create Configuration** once all values are provided.
@@ -56,7 +56,7 @@ on how to configure an API access key and secret.
 ## How to Uninstall
 
 1. From the configuration **Gear Icon**, select **Integrations**.
-2. Scroll to the **Tenable Cloud** integration tile and click it.
+2. Scroll to the **Tenable.io** integration tile and click it.
 3. Identify and click the **integration to delete**.
 4. Click the **trash can** icon.
 5. Click the **Remove** button to delete the integration.
