@@ -2275,7 +2275,7 @@ The following configuration sets an integration to execute weekly on Sunday betw
 
 ```graphql
 {
-  "pollingInterval": "ONE_DAY",
+  "pollingInterval": "ONE_WEEK",
   "pollingIntervalCronExpression": { "hour": 0, "dayOfWeek": 0 }
 }
 ```
