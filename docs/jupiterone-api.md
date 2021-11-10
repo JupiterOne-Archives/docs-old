@@ -2322,15 +2322,21 @@ Variables for the mutation:
 
 Variables:
 
-`id`: the `id` of the configuration for which you want to update the hour and/or day of week. This ID is visible in each integration configuration in your account. To find the ID in your JupiterOne account, go to **Settings > Integration > {integration name} > {configuration name}** > value in the ID field.
+`id`: the `id` of the configuration for which you want to update the hour and/or day of week. 
+This ID is visible in each integration configuration in your account. To find the ID in your 
+JupiterOne account, go to **Settings > Integration > {integration name} > {configuration name}** > 
+value in the ID field.
 
-`hour`: an integer between 0 and 23 that represents the hour of the day in UTC when you want the integration to run.
+`hour`: an integer between 0 and 23 that represents the hour of the day in UTC when you 
+want the integration to run.
 
-`dayofWeek`: an integer between 0 and 6 that represents the day of the week Sunday through Saturday on which you want the integration to run.
+`dayofWeek`: an integer between 0 and 6 that represents the day of the week Sunday through Saturday 
+on which you want the integration to run.
 
 #### Example Query
 
-This is an example of a GraphQL query that returns the current values in the `hour` and `dayOfWeek` parameters for a specific integration configuration:
+This is an example of a GraphQL query that returns the current values in the `hour` and `dayOfWeek` 
+parameters for a specific integration configuration:
 
 ```graphql
 query integrationInstance(
@@ -2360,7 +2366,10 @@ Variable for the query:
 
 Variables:
 
-`id`: the `id` of the configuration for which you want to update the hour and/or day of week. This ID is visible in each integration configuration in your account. To find the ID in your JupiterOne account go to **Settings > Integration > {integration name} > {configuration name} >** value in the ID field.
+`id`: the `id` of the configuration for which you want to update the hour and/or day of week. 
+This ID is visible in each integration configuration in your account. To find the ID in your 
+JupiterOne account go to **Settings > Integration > {integration name} > {configuration name} >** 
+value in the ID field.
 
 ### Finding an Integration Definition Based on a Type
 
