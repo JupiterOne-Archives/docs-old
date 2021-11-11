@@ -38,15 +38,15 @@ If you need help with this integration, please contact
 
 1. From the configuration **Gear Icon**, select **Integrations**.
 
-   <img src="./images/LandingPage.png" alt="drawing" width="200"/>
+   ![Gear Icon](../../../assets/m365LandingPage.png)
 
 2. Scroll to the **Microsoft-365** integration tile and click it.
 
-   <img src="./images/DefinitionsPage.png" alt="drawing" width="200"/>
+   ![Microsoft-365](../../../assets/m365DefinitionsPage.png)
 
 3. Click the **Add Configuration** button.
 
-   <img src="./images/InstancesPage.png" alt="drawing" width="200"/>
+   ![Add Configuration](../../../assets/m365InstancesPage.png)
 
 4. Enter the **Account Name** by which you'd like to identify this Microsoft 365
    account in JupiterOne. Ingested entities will have this value stored in
@@ -57,18 +57,18 @@ If you need help with this integration, please contact
    needs. You may leave this as `DISABLED` and manually execute the integration.
 7. Click **Create Configuration** once all values are provided.
 
-   <img src="./images/CompleteConfiguration.png" alt="drawing" width="200"/>
-   <img src="./images/IntegrationCreatedDialog.png" alt="drawing" width="200"/>
+   ![Create Configuration](../../../assets/m365CompleteConfiguration.png)
+   ![Create Configuration](../../../assets/m365IntegrationCreatedDialog.png)
 
 8. When prompted, click "Complete Offsite" in the dialog.
 
-   <img src="./images/OffsiteDialog.png" alt="drawing" width="200"/>
+   ![Complete Offsite](../../../assets/m365OffsiteDialog.png)
 
 9. You will be directed to Microsoft's identity platform where you must login in
    as a global administrator of the organizational Active Directory tenant you
    intend to integrate with.
 
-      <img src="./images/PickAnAccount.png" alt="drawing" width="200"/>
+      ![directed to Microsoft's identity platform](../../../assets/m365PickAnAccount.png)
 
    NOTE: You must select an account belonging to an organizational tenant. When
    you are already logged into an account, the badge icons indicate the nature
@@ -76,11 +76,11 @@ If you need help with this integration, please contact
 
    Selecting a personal account produces the following error message.
 
-      <img src="./images/PersonalAccountError.png" alt="drawing" width="200"/>
+      ![select a business account](../../../assets/m365PersonalAccountError.png)
 
 10. Review requested permissions (which are described below) and grant consent.
 
-      <img src="./images/PickAnAccount.png" alt="drawing" width="200"/>
+      ![Review requested permissions](../../../assets/m365PickAnAccount.png)
 
 ## Permissions
 
