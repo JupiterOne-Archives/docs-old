@@ -38,7 +38,7 @@ If you need help with this integration, contact
 
 ### In JupiterOne
 
-1. From the settings menu [](../../assets/icons/gear.png), select **Integrations**.
+1. From the settings gear icon, select **Integrations**.
 2. Scroll down to **Azure DevOps** and click it.
 3. Click **Add Configuration** and configure the following settings:
 
@@ -55,7 +55,7 @@ If you need help with this integration, contact
 
 # How to Uninstall
 
-1. From the settings menu [](../../assets/icons/gear.png), select **Integrations**.
+1. From the settings gear icon, select **Integrations**.
 2. Scroll down to **Azure DevOps** and click it.
 3. Identify and click the **integration to delete**.
 4. Click the trash can icon.
