@@ -1,12 +1,11 @@
 # JupiterOne Query Language Tutorial
 
-Querying can be the most challenging, yet the most rewarding part of the
+Querying can be the most challenging yet the most rewarding part of the
 JupiterOne experience. After you become familiar with the query language, 
-you will find yourself uncovering all sorts of previously undiscovered insights 
-into your data.
+you will uncover numerous previously undiscovered insights into your data.
 
 The JupiterOne Query Language (J1QL) is a query language for finding the
-entities and relationships within your digital environment. J1QL blends together
+assets and relationships within your digital environment. J1QL blends together
 the capabilities of asking questions, performing full text search, or querying
 the complex entity-relationship graph.
 
@@ -29,10 +28,10 @@ Try this query:
 Find Account that relates to Root return tree
 ```
 
-Note that the noun that immediately follows the verb is case-sensitive:
+The noun that immediately follows the verb is case-sensitive:
 
 - A `TitleCase` word tells the query to search for assets of that **class** (such as
-`Account`, `Firewall`, `Gateway`, `Host`, `User`, `Root`, `Internet`,).
+`Account`, `Firewall`, `Gateway`, `Host`, `User`, `Root`, `Internet`).
 - A `snake_case` word tells the query to search for assets of that **type**
   (such as `aws_account`, `aws_security_group`, `aws_internet_gateway`,
   `aws_instance`, `aws_iam_user`, `okta_user`, `user_endpoint`)
@@ -54,12 +53,12 @@ The first set of controls (next to the query) allows you to:
 
 - Switch views between **Table**, **Graph**, **Raw JSON**, and **Pretty JSON**.
 
-- Share the query, providing a popup box with the weblink to copy and share.
+- Share the query, using a provided weblink to copy and share.
 
-- Save the query, where you give it a title, description, and optionally some tags to
+- Save the query, where you give it a title, description and, optionally, some tags to
   save it to your own query library.
 
-- Close or remove this result panel from the page.
+- Close or remove this results panel from the page.
 
 The second set of controls (above the selected asset node) allows you to:
 
@@ -92,7 +91,7 @@ See more details on the graph controls in this [documentation][../quickstart-gra
 If you have configured an AWS integration, you are now ready to try something more 
 advanced
 
-### 2a: SSH Key Usage Examples
+### SSH Key Usage Examples
 
 Enter this query:
 
@@ -105,14 +104,14 @@ Find AccessKey with usage='ssh'
 > allow SSH access.
 
 You can also query by the asset type instead of its class. The following query
-returns the same result, unless you also have SSH keys you have added from
+returns the same result unless you also have SSH keys you have added from
 other non-AWS integrations or from the UI or API.
 
 ```j1ql
 Find aws_key_pair
 ```
 
-Now, expand the search a bit with the following:
+You can expand the search using the following:
 
 ```j1ql
 Find Host as h
@@ -134,14 +133,14 @@ Find Host as h
 ```
 
 > This query finds the `Host` asset that `USES` each `AccessKey` and returns a set
-> of specific properties. You can add or remove properties returned as needed.
+> of specific properties. You can add or remove the returned properties, if necessary.
 >
-> Note that the keyword `that` is what tells the query to traverse the graph to find
+> The keyword `that` is what tells the query to traverse the graph to find
 > connections/relationships between assets, followed by a _verb_ that
 > represents the relationship class.
 >
-> Also, keep in mind you can switch to the **Graph** view to get a more visual
-> result, and continue to drill down interactively.
+> Also,  you can switch to the **Graph** view to get a more visual result, and 
+> continue to drill down interactively.
 
 Again, you can query using the more specific asset types. For example:
 
@@ -155,9 +154,9 @@ Or mix and match them:
 Find Host that uses aws_key_pair
 ```
 
-> Note that the relationship keyword/verb is *not* case-sensitive.
+> The relationship keyword/verb is *not* case-sensitive.
 
-### 2b: EBS Volume Examples
+### EBS Volume Examples
 
 First, to see if there are any unencrypted EBS volumes, use this query:
 
@@ -165,7 +164,7 @@ First, to see if there are any unencrypted EBS volumes, use this query:
 Find aws_ebs_volume with encrypted != true
 ```
 
-> Note in the above query that the `with` keyword binds to the asset noun
+> In the above query the `with` keyword binds to the asset noun
 immediately to its left, and allows you to filter results on the property 
 values of that entity.
 
@@ -198,7 +197,7 @@ Find Network as n
     n.displayName, h._type, h.displayName, e.displayName, e.encrypted
 ```
 
-To remove any EBS volumes not currently in use, enter:
+To remove any unused EBS volumes, enter:
 
 ```j1ql
 Find aws_ebs_volume that !uses Host
@@ -206,18 +205,18 @@ Find aws_ebs_volume that !uses Host
 
 > The above query may seem backwards. The query works the same way 
 > regardless of the direction of the relationship. Because the
-> query by default returns all properties from the initial set of assets,
+> query, by default, returns all properties from the initial set of assets,
 > it is sometimes easier to reverse the query direction so that you can more
 > easily get the data you are searching.
 >
 > Technically, `Find Host that !uses aws_ebs_volume as v return v.*` may seem
 > more correct, but it is a more lengthy query to enter.
 
-### 2c: Unencrypted Data
+### Unencrypted Data
 
-There are many types of data stores you can have in AWS, such as **EBS
-Volumes**, **S3 Buckets**, **RDS Clusters and Instances**, **DynamoDB Tables**, and
-**Redshift Clusters**. You should ensure they are encrypted if they store 
+There are many types of data stores you can have in AWS, such as EBS
+Volumes, S3 Buckets, RDS Clusters and Instances, DynamoDB Tables, and
+Redshift Clusters. You should ensure they are encrypted if they store 
 confidential data.
 
 To know if the data stores are encryped, enter:
@@ -233,7 +232,7 @@ by J1 can help by querying by class:
 Find DataStore with encrypted != true
 ```
 
-Add a few property filters to make the results more focused, to help reduce the noise.
+Add a few property filters to make the results more focused, to help reduce the noise,
 or to prioritize remediation:
 
 ```j1ql
@@ -243,14 +242,14 @@ Find DataStore with
   (classification = 'confidential' or classification = 'restricted')
 ```
 
-### 2d: Tagging Resources
+### Tagging Resources
 
 As shown in the earlier examples, tagging resources is useful. It is recommended 
 that you tag your resources at the source. J1 ingests these tags and you can use 
 them in custom queries.
 
-By default, the packaged queries provided by J1, as seen in the **Query
-Library** from the **Search** app and used in the **Compliance** app, rely on
+By default, the packaged queries provided by J1, as seen in the Query
+Library from the Search app and used in the Compliance app, rely on
 the following tags:
 
 - `Classification`
@@ -260,7 +259,7 @@ the following tags:
 - `Production`
 
 All custom tags ingested by J1 integrations are prefixed with
-`tag.<TagName>`, therefore. you must use the tags like this in the query.
+`tag.<TagName>`, therefore. you must use the tags this way in the query.
 
 The `Classification` and `Owner` tags are automatically captured as properties
 so J1 can use them directly in the query without the `tag.` prefix, in all
@@ -269,7 +268,7 @@ lower case: `classification = '...'` or `owner= '...'`.
 J1 can add the `tag.AccountName` (`string`) and `tag.Production` (`boolean`) tags 
 as part of the advanced options in each integration configuration.
 
-### 2e: Network Resources and Configurations
+### Network Resources and Configurations
 
 You can use queries to ask questions or confirm information about your network
 resources and their configurations. 
@@ -300,34 +299,33 @@ Find Network that has (Host|Cluster|Database) return tree
 > 
 >![](../assets/j1ql-tutorial-network-has-resources.png)
 > 
->The properties panel for the selected `aws_subnet` has a `webLink`
+>The properties side panel for the selected `aws_subnet` has a `webLink`
 > that enables you to quickly get to the source directly in the AWS web
 > console.
 
-In AWS, you may have set up **CloudFront distributions** to distribute
+In AWS, you may have set up CloudFront distributions to distribute
 traffic to your API gateways or static websites hosted in S3, such as this example:
 
 ```j1ql
 Find aws_cloudfront_distribution that relates to * return tree
 ```
 
-> Here, the result looks busier, from a J1 account with multiple AWS
-> integration configurations and several `aws_cloudfront_distribution`
-> assets and relationships.
->
-> ![](../assets/j1ql-tutorial-cloudfront.png)
->
-> This graph shows you the origins connected to the distributions: both
+> The following is a J1 account with multiple AWS integration configurations 
+> and several `aws_cloudfront_distribution` assets and relationships.
+> 
+>![](../assets/j1ql-tutorial-cloudfront.png)
+> 
+>This graph shows you the origins connected to the distributions: both
 > S3 buckets (for static website/contents) and API gateways.
 > Additionally, the graph shows you the ACM certificate they use
 > and the WAF ACL, if any, configured to protect them.
->
-> You can select any asset node in the graph to inspect its
+> 
+>You can select any asset node in the graph to inspect its
 > detailed properties, or find a web link to get to the source in the AWS
 > web console.
 
 If you use AWS Transfer for SFTP, you can find the transfer servers,
-users, which IAM Roles are assigned to them, and to which S3 Buckets
+users, which IAM roles are assigned to them, and to which S3 buckets
 the users have access.
 
 ```j1ql
@@ -343,9 +341,9 @@ Find aws_account
 >
 > ![](../assets/j1ql-aws-transfer-servers-users.png)
 
-### 2f: Serverless Functions
+### Serverless Functions
 
-If you are using serverless (lambda functions), there are a few things
+If you are using serverless (Lambda) functions) there are a few things
 to help you see how they are configured.
 
 To see a listing of your lambda functions:
@@ -363,16 +361,16 @@ find aws_lambda_function as function
     trigger._type, trigger.displayName, trigger.arn, trigger.webLink, function.functionName, function.arn, function.webLink
 ```
 
-To see if there are lambda functions with access to resources in a VPC:
+To see if there are Lambda functions with access to resources in a VPC:
 
 ```j1ql
 Find aws_lambda_function that has aws_vpc return tree
 ```
 
-> The above query gives you a visual graph of the lambda functions and
+> The above query gives you a visual graph of the Lambda functions and
 > the VPC they are configured to run inside.
 >
-> It is a best practice to **not** run lambda functions without access
+> It is a best practice to **not** run Lambda functions without access
 > to a VPC unless they need direct access to resources within one, such as 
 > EC2 instances, RDS databases, or ElasticSearch/ElastiCache.
 
@@ -400,7 +398,7 @@ Find Firewall as fw
 > Also, you can toggle to the **Graph** view to see the above results more 
 > visually and interactively.
 
-To see which production resources are directly connected/exposed to the internet/everyone?
+To see which production resources are directly connected/exposed to the internet/everyone:
 
 ```j1ql
 Find (Internet|Everyone)
@@ -428,7 +426,7 @@ Find aws_security_group that PROTECTS aws_instance return tree
 
 After you have configured an Okta or OneLogin integration,  you can use these queries.
 
-### 3a: IdP users and access
+### IdP users and access
 
 *Examples in this section require an identity provider integration (Okta or OneLogin)*.
 
@@ -462,12 +460,12 @@ Find User with active = true and mfaEnabled != true
 > relationship mapping to an `mfa_device` instead of the `mfaEnabled` flag
 > directly as a property.
 >
-> Therefore, the above query finds all `User` entities with the `active` flag
-> but not the `mfaEnabled` flag set to true on its properties, and additionally,
+> Therefore, the above query finds all `User` assets with the `active` flag
+> but not the `mfaEnabled` flag set to true on its properties and, additionally,
 > checks for the existence of an relationship between that `User` and any
 > `mfa_device` assigned or in use.
 
-To find out if there are users accessing my 'AWS' application without using MFA:
+To find out if there are users accessing my AWS application without using MFA:
 
 ```j1ql
 Find User with active = true and mfaEnabled != true
@@ -495,18 +493,18 @@ Find User as u that IS Person as p
 
 > The above query finds contractor users.
 
-### 3b - Cloud users and access
+### Cloud users and access
 
 *Examples in this section require at least one AWS integration configuration.*
 
-**Who has been assigned full Administrator access in AWS?**
+To see who has been assigned full administrator access in AWS:
 
 ```j1ql
 find (aws_iam_role|aws_iam_user|aws_iam_group)
   that ASSIGNED AccessPolicy with policyName='AdministratorAccess'
 ```
 
-**Which IAM roles are assigned which IAM policies?**
+To find which IAM roles are assigned which IAM policies:
 
 ```j1ql
 find aws_iam_role as role
@@ -518,11 +516,11 @@ find aws_iam_role as role
     policy.policyName as PolicyName
 ```
 
-### 3c - Combined users and access across all environments
+### Combined users and access across all environments
 
 *Examples in this section work best when there are both IdP and AWS integration configurations enabled in JupiterOne.*
 
-**Who has access to what systems/resources?**
+To see who has access to what systems/resources:
 
 ```j1ql
 Find (User|Person) as u
@@ -538,7 +536,7 @@ Find (User|Person) as u
 
 *Many examples in this section requires both Okta and AWS integration configurations in JupiterOne, as well as an AWS SAML app configured in your Okta account. Some queries work best when you have multiple AWS configurations.*
 
-**Who has access to my AWS accounts via single sign on (SSO)?**
+To see who has access to your AWS accounts via single sign on (SSO):
 
 ```j1ql
 Find User as U
@@ -552,7 +550,7 @@ Find User as U
     AWS.name as awsAccount
 ```
 
-**Are there assume role trusts from one AWS account to other external entities?**
+To know if there are assume role trusts from one AWS account to other external entities:
 
 ```j1ql
 Find aws_account
@@ -562,20 +560,20 @@ Find aws_account
   return tree
 ```
 
-> Note from the above query, `_source='system-mapper'` is an indicator that the
-> trusted entity is not one ingested by an integration configuration, rather,
-> mapped and created by JupiterOne during the analysis of Assume Role policies
-> of the IAM roles in your account(s). Therefore, these entities are most likely
+> In the above query, `_source='system-mapper'` is an indicator that the
+> trusted asset is not one ingested by an integration configuration. Instead, it is
+> mapped and created by J1 during the analysis of Assume Role policies
+> of the IAM roles in your accounts. Therefore, these entities are most likely
 > external.
 >
-> For example, you will most definitely see the JupiterOne integration IAM role
+> For example, you can see the JupiterOne integration IAM role
 > with a `TRUSTS` relationship to the JupiterOne AWS account.
 
 ## Part 5 - Endpoint Compliance
 
 *Examples in this section require the activation of at least one JupiterOne Endpoint Compliance Agent - powered by Stethoscope app.*
 
-**Do I have local firewall enabled on end-user devices?**
+To see if the local firewall is enabled on end-user devices:
 
 ```j1ql
 Find HostAgent as agent
@@ -592,7 +590,7 @@ Find HostAgent as agent
     agent.displayName
 ```
 
-**Whose endpoints are non-compliant?**
+To see which endpoints are non-compliant:
 
 ```j1ql
 Find Person as person
@@ -611,7 +609,7 @@ Find Person as person
     agent.displayName
 ```
 
-**What applications do those users have access to?**
+To know which applications those users have access to:
 
 ```j1ql
 Find HostAgent with compliant!=true
@@ -622,7 +620,7 @@ Find HostAgent with compliant!=true
   return tree
 ```
 
-**From those above, do any of them have access to AWS?**
+To see if any of those above have access to AWS:
 
 ```j1ql
 Find HostAgent with compliant!=true
@@ -633,9 +631,7 @@ Find HostAgent with compliant!=true
   return tree
 ```
 
-The resulting graph may look like this:
+The resulting graph looks similar this:
 
 ![noncompliance-device-aws-access](../assets/graph-noncompliant-user-endpoint-aws-access.png)
 
-[j1ql-doc]: ../docs/jupiterone-query-language.md
-[quickstart-graph]: ../guides/quickstart-graph.md
