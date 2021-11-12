@@ -72,7 +72,7 @@ NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
 "j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
 DOCUMENTATION FOR USAGE INFORMATION:
 
-https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md
 ********************************************************************************
 -->
 
@@ -82,27 +82,32 @@ https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
 
 The following entities are created:
 
-| Resources                 | Entity `_type`       | Entity `_class`      |
-| ------------------------- | -------------------- | -------------------- |
-| KnowBe4 Account           | `knowbe4_account`    | `Account`            |
-| KnowBe4 Group             | `knowbe4_user_group` | `UserGroup`          |
-| KnowBe4 Training Campaign | `training_campaign`  | `Training`           |
-| KnowBe4 Training Module   | `training_module`    | `Training`, `Module` |
-| KnowBe4 User              | `knowbe4_user`       | `User`               |
+| Resources                      | Entity `_type`                   | Entity `_class`      |
+| ------------------------------ | -------------------------------- | -------------------- |
+| KnowBe4 Account                | `knowbe4_account`                | `Account`            |
+| KnowBe4 Group                  | `knowbe4_user_group`             | `UserGroup`          |
+| KnowBe4 Phishing Campaign      | `knowbe4_phishing_campaign`      | `Training`           |
+| KnowBe4 Phishing Security Test | `knowbe4_phishing_security_test` | `Assessment`         |
+| KnowBe4 Training Campaign      | `training_campaign`              | `Training`           |
+| KnowBe4 Training Module        | `training_module`                | `Training`, `Module` |
+| KnowBe4 User                   | `knowbe4_user`                   | `User`               |
 
 ### Relationships
 
-The following relationships are created/mapped:
+The following relationships are created:
 
-| Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
-| --------------------- | --------------------- | --------------------- |
-| `knowbe4_account`     | **HAS**               | `knowbe4_user`        |
-| `knowbe4_account`     | **HAS**               | `knowbe4_user_group`  |
-| `knowbe4_user_group`  | **HAS**               | `knowbe4_user`        |
-| `training_campaign`   | **ASSIGNED**          | `knowbe4_user_group`  |
-| `training_campaign`   | **HAS**               | `training_module`     |
-| `training_module`     | **ASSIGNED**          | `knowbe4_user`        |
-| `knowbe4_user`        | **COMPLETED**         | `training_module`     |
+| Source Entity `_type`       | Relationship `_class` | Target Entity `_type`            |
+| --------------------------- | --------------------- | -------------------------------- |
+| `knowbe4_account`           | **HAS**               | `knowbe4_phishing_campaign`      |
+| `knowbe4_account`           | **HAS**               | `training_campaign`              |
+| `knowbe4_account`           | **HAS**               | `knowbe4_user`                   |
+| `knowbe4_account`           | **HAS**               | `knowbe4_user_group`             |
+| `knowbe4_phishing_campaign` | **CONTAINS**          | `knowbe4_phishing_security_test` |
+| `knowbe4_user_group`        | **HAS**               | `knowbe4_user`                   |
+| `training_campaign`         | **ASSIGNED**          | `knowbe4_user_group`             |
+| `training_campaign`         | **HAS**               | `training_module`                |
+| `training_module`           | **ASSIGNED**          | `knowbe4_user`                   |
+| `knowbe4_user`              | **COMPLETED**         | `training_module`                |
 
 <!--
 ********************************************************************************
