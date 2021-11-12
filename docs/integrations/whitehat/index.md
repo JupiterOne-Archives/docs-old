@@ -2,14 +2,17 @@
 
 ## WhiteHat Security + JupiterOne Integration Benefits
 
-- Visualize WhiteHat scans, cves, vulnerabilities, and findings in the JupiterOne graph.
-- Map WhiteHat findings to a code repo, project, or application in your JupiterOne account.
+- Visualize WhiteHat scans, cves, vulnerabilities, and findings in the
+  JupiterOne graph.
+- Map WhiteHat findings to a code repo, project, or application in your
+  JupiterOne account.
 - Monitor WhiteHat cves, findings, and vulnerabilities within the alerts app.
 - Monitor changes to WhiteHat scans using JupiterOne alerts.
 
 ## How it Works
 
-- JupiterOne periodically fetches WhiteHat scans and findings to update the graph.
+- JupiterOne periodically fetches WhiteHat scans and findings to update the
+  graph.
 - Write JupiterOne queries to review and monitor updates to the graph.
 - Configure alerts to reduce the noise of findings.
 - Configure alerts to take action when the JupiterOne graph changes.
@@ -37,14 +40,16 @@ password and copy the displayed API Key.
 1. From the configuration **Gear Icon**, select **Integrations**.
 2. Scroll to the **WhiteHat** integration tile and click it.
 3. Click the **Add Configuration** button and configure the following settings:
+
 - Enter the **Account Name** by which you'd like to identify this WhiteHat
-   account in JupiterOne. Ingested entities will have this value stored in
-   `tag.AccountName` when **Tag with Account Name** is checked.
+  account in JupiterOne. Ingested entities will have this value stored in
+  `tag.AccountName` when **Tag with Account Name** is checked.
 - Enter a **Description** that will further assist your team when identifying
-   the integration instance.
+  the integration instance.
 - Select a **Polling Interval** that you feel is sufficient for your monitoring
-   needs. You may leave this as `DISABLED` and manually execute the integration.
+  needs. You may leave this as `DISABLED` and manually execute the integration.
 - Enter the **API Key** used to authenticate with WhiteHat.
+
 4. Click **Create Configuration** once all values are provided.
 
 ## How to Uninstall

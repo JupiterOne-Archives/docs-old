@@ -716,7 +716,7 @@ sections:
         id: 360046874134
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046874134'
       - title: Veracode
-        file: ../docs/integrations/veracode/jupiter-integration-veracode.md
+        file: ../docs/integrations/veracode/index.md
         id: 360022721234
         hash: NfQNqMYz47Bb88Yj7jDsb6fB0o0q/lqfjlzRAmdnzXE=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721234'
@@ -726,12 +726,12 @@ sections:
         id: 360045946733
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360045946733'
       - title: Wazuh
-        file: ../docs/integrations/wazuh/jupiter-integration-wazuh.md
+        file: ../docs/integrations/wazuh/index.md
         id: 360022721254
         hash: xUGCe+r8Qqi0zP2TsyL1F6Q5e39GI6oAhzdA0FGC/TE=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721254'
       - title: WhiteHat Security
-        file: ../docs/integrations/whitehat/jupiter-integration-whitehat.md
+        file: ../docs/integrations/whitehat/index.md
         id: 360022721274
         hash: 2IbqfuK9PorHUqa2dyPSaHN7ynEJN7QI8HOABrh/8EY=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721274'

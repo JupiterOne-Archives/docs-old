@@ -2,22 +2,25 @@
 
 ## Veracode + JupiterOne Integration Benefits
 
-- Visualize Veracode scans, CWEs, vulnerabilities, and findings in the JupiterOne graph.
-- Map Veracode findings to a code repo, project, or application in your JupiterOne account.
-- Monitor Veracode CWEs, findings, and vulnerabilities within the Alerts app.
+- Visualize Veracode scans, cwes, vulnerabilities, and findings in the
+  JupiterOne graph.
+- Map Veracode findings to a code repo, project, or application in your
+  JupiterOne account.
+- Monitor Veracode cwes, findings, and vulnerabilities within the alerts app.
 - Monitor changes to Veracode scans using JupiterOne alerts.
 
 ## How it Works
 
-- JupiterOne periodically fetches Veracode scans, CWEs, vulnerabilities, 
-  and findings to update the graph.
+- JupiterOne periodically fetches Veracode scans, cwes, vulerabilities, and
+  findings to update the graph.
 - Write JupiterOne queries to review and monitor updates to the graph.
 - Configure alerts to reduce the noise of findings.
 - Configure alerts to take action when the JupiterOne graph changes.
 
 ## Support
 
-If you need help with this integration, contact [JupiterOne Support](https://support.jupiterone.io).
+If you need help with this integration, please contact
+[JupiterOne Support](https://support.jupiterone.io).
 
 ## Integration Walkthrough
 
@@ -25,22 +28,24 @@ If you need help with this integration, contact [JupiterOne Support](https://sup
 
 The integration instance configuration requires the customer's API ID and secret
 to authenticate requests to the Veracode REST APIs. Veracode provides [detailed
-instructions for obtaining these credentials](https://help.veracode.com/r/c_veracode_integrations).
+instructions for obtaining these credentials][1].
 
 ### In JupiterOne
 
 1. From the configuration **Gear Icon**, select **Integrations**.
 2. Scroll to the **Veracode** integration tile and click it.
 3. Click the **Add Configuration** button and configure the following settings:
+
 - Enter the **Account Name** by which you'd like to identify this Veracode
-   account in JupiterOne. Ingested entities will have this value stored in
-   `tag.AccountName` when **Tag with Account Name** is checked.
+  account in JupiterOne. Ingested entities will have this value stored in
+  `tag.AccountName` when **Tag with Account Name** is checked.
 - Enter a **Description** that will further assist your team when identifying
-   the integration instance.
+  the integration instance.
 - Select a **Polling Interval** that you feel is sufficient for your monitoring
-   needs. You may leave this as `DISABLED` and manually execute the integration.
+  needs. You may leave this as `DISABLED` and manually execute the integration.
 - Enter the **API ID** used to authenticate with Veracode.
 - Enter the **API Secret** used to authenticate with Veracode.
+
 4. Click **Create Configuration** once all values are provided.
 
 ## How to Uninstall
@@ -83,3 +88,6 @@ The following relationships are created/mapped:
 | From                           | Type        | To                                                                                                                                                                                                 |
 | ------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `CodeRepo/Project/Application` | **HAS/HAD** | `veracode_finding` <br> Note: This is mapped automatically only when the name of the Veracode Application the finding belongs to matches the name of a CodeRepo/Project/Application in JupiterOne. |
+
+[1]:
+  https://help.veracode.com/reader/lsoDk5r2cv~YrwLQSI7lfw/6UdIc6di0T5_Lo6qTHTpNA
