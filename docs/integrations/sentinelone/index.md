@@ -5,20 +5,21 @@
 - Visualize SentinelOne endpoint agents and the devices they protect in the
   JupiterOne graph.
 - Map SentinelOne endpoint agents to devices and devices to the employee who is
-  the owner.  
+  the owner.
 - Monitor changes to SentinelOne endpoint agents and devices using JupiterOne
   alerts.
 
 ## How it Works
 
-- JupiterOne periodically fetches SentinelOne endpoint agents to update the graph.
+- JupiterOne periodically fetches SentinelOne endpoint agents to update the
+  graph.
 - Write JupiterOne queries to review and monitor updates to the graph.
 - Configure alerts to take action when the JupiterOne graph changes.
 
 ## Requirements
 
-- JupiterOne requires the SentinelOne management server hostname/url. 
-JupiterOne also requires the API Token used to authenticate with SentinelOne.
+- JupiterOne requires the SentinelOne management server hostname/url. JupiterOne
+  also requires the API Token used to authenticate with SentinelOne.
 - You must have permission in JupiterOne to install new integrations.
 
 ## Support
@@ -48,15 +49,17 @@ The integration authenticates using an API Token.
 1. From the configuration **Gear Icon**, select **Integrations**.
 2. Scroll to the **SentinelOne** integration tile and click it.
 3. Click the **Add Configuration** button and configure the following settings:
+
 - Enter the **Account Name** by which you'd like to identify this SentinelOne
-   account in JupiterOne. Ingested entities will have this value stored in
-   `tag.AccountName` when **Tag with Account Name** is checked.
+  account in JupiterOne. Ingested entities will have this value stored in
+  `tag.AccountName` when **Tag with Account Name** is checked.
 - Enter a **Description** that will further assist your team when identifying
-   the integration instance.
+  the integration instance.
 - Select a **Polling Interval** that you feel is sufficient for your monitoring
-   needs. You may leave this as `DISABLED` and manually execute the integration.
+  needs. You may leave this as `DISABLED` and manually execute the integration.
 - Enter the **Management Server Hostname/URL** of SentinelOne.
 - Enter the **API Token** used to authenticate with SentinelOne.
+
 4. Click **Create Configuration** once all values are provided.
 
 ## How to Uninstall
@@ -74,7 +77,7 @@ NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
 "j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
 DOCUMENTATION FOR USAGE INFORMATION:
 
-https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md
 ********************************************************************************
 -->
 
@@ -92,7 +95,7 @@ The following entities are created:
 
 ### Relationships
 
-The following relationships are created/mapped:
+The following relationships are created:
 
 | Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
 | --------------------- | --------------------- | --------------------- |

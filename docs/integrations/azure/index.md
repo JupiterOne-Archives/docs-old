@@ -61,7 +61,7 @@ To create the App Registration:
 1. Copy the **Directory (tenant) ID**
 1. Navigate to the **Certificates & secrets** section
 1. Create a new client secret
-1. Copy the generated secret (you only get one chance!)
+1. Copy the generated secret **Value** (you only get one chance!)
 
 #### API Permissions (Azure Active Directory)
 
@@ -121,6 +121,13 @@ information:
    `Configure Subscription Instances` flag in JupiterOne):_
 
    - Also assign the "Management Group Reader" role to the App "JupiterOne"
+
+### Key Vault Access Policy
+
+Please note that listing Key Vault keys and secrets (rm-keyvault-keys and
+rm-keyvault-secrets steps) require a given security principal to have necessary
+policies. The steps necesssary for that are outlined on this page
+[Assign a Key Vault access policy ](https://go.microsoft.com/fwlink/?linkid=2125287).
 
 ### In JupiterOne
 
@@ -197,6 +204,7 @@ The following entities are created:
 | [RM] API Management Service                    | `azure_api_management_service`                    | `Gateway`                          |
 | [RM] Advisor Recommendation                    | `azure_advisor_recommendation`                    | `Finding`                          |
 | [RM] App Service Plan                          | `azure_app_service_plan`                          | `Configuration`                    |
+| [RM] Azure Kubernetes Cluster                  | `azure_kubernetes_cluster`                        | `Cluster`                          |
 | [RM] Azure Managed Disk                        | `azure_managed_disk`                              | `DataStore`, `Disk`                |
 | [RM] Batch Account                             | `azure_batch_account`                             | `Service`                          |
 | [RM] Batch Application                         | `azure_batch_application`                         | `Process`                          |
@@ -222,6 +230,8 @@ The following entities are created:
 | [RM] Gallery                                   | `azure_gallery`                                   | `Repository`                       |
 | [RM] Image                                     | `azure_image`                                     | `Image`                            |
 | [RM] Key Vault                                 | `azure_keyvault_service`                          | `Service`                          |
+| [RM] Key Vault Key                             | `azure_keyvault_key`                              | `Key`                              |
+| [RM] Key Vault Secret                          | `azure_keyvault_secret`                           | `Secret`                           |
 | [RM] Load Balancer                             | `azure_lb`                                        | `Gateway`                          |
 | [RM] Location                                  | `azure_location`                                  | `Site`                             |
 | [RM] Management Group                          | `azure_management_group`                          | `Group`                            |
@@ -249,6 +259,7 @@ The following entities are created:
 | [RM] Redis Cache                               | `azure_redis_cache`                               | `Database`, `DataStore`, `Cluster` |
 | [RM] Redis Firewall Rule                       | `azure_firewall_rule`                             | `Firewall`                         |
 | [RM] Resource Group                            | `azure_resource_group`                            | `Group`                            |
+| [RM] Resource Lock                             | `azure_resource_lock`                             | `Rule`                             |
 | [RM] Role Assignment                           | `azure_role_assignment`                           | `AccessPolicy`                     |
 | [RM] Role Definition                           | `azure_role_definition`                           | `AccessRole`                       |
 | [RM] SQL Database                              | `azure_sql_database`                              | `Database`, `DataStore`            |
@@ -314,6 +325,8 @@ The following relationships are created:
 | `azure_user_group`                 | **HAS**               | `azure_group_member`                              |
 | `azure_user_group`                 | **HAS**               | `azure_user`                                      |
 | `azure_keyvault_service`           | **ALLOWS**            | `ANY_PRINCIPAL`                                   |
+| `azure_keyvault_service`           | **CONTAINS**          | `azure_keyvault_key`                              |
+| `azure_keyvault_service`           | **CONTAINS**          | `azure_keyvault_secret`                           |
 | `azure_lb`                         | **CONNECTS**          | `azure_nic`                                       |
 | `azure_location`                   | **HAS**               | `azure_network_watcher`                           |
 | `azure_management_group`           | **CONTAINS**          | `azure_management_group`                          |
@@ -348,6 +361,7 @@ The following relationships are created:
 | `azure_resource_group`             | **HAS**               | `azure_gallery`                                   |
 | `azure_resource_group`             | **HAS**               | `azure_image`                                     |
 | `azure_resource_group`             | **HAS**               | `azure_keyvault_service`                          |
+| `azure_resource_group`             | **HAS**               | `azure_kubernetes_cluster`                        |
 | `azure_resource_group`             | **HAS**               | `azure_lb`                                        |
 | `azure_resource_group`             | **HAS**               | `azure_managed_disk`                              |
 | `azure_resource_group`             | **HAS**               | `azure_mariadb_server`                            |
@@ -372,6 +386,7 @@ The following relationships are created:
 | `ANY_SCOPE`                        | **HAS**               | `azure_advisor_recommendation`                    |
 | `ANY_SCOPE`                        | **HAS**               | `azure_policy_assignment`                         |
 | `ANY_RESOURCE`                     | **HAS**               | `azure_policy_state`                              |
+| `azure_resource_lock`              | **HAS**               | `ANY_SCOPE`                                       |
 | `azure_role_assignment`            | **ALLOWS**            | `ANY_SCOPE`                                       |
 | `azure_role_assignment`            | **ASSIGNED**          | `azure_application`                               |
 | `azure_role_assignment`            | **ASSIGNED**          | `azure_directory`                                 |

@@ -2,21 +2,22 @@
 
 ## Feroot + JupiterOne Integration Benefits
 
-- Visualize Feroot users, groups, project folders, projects, alerts, and 
-domains in the JupiterOne graph.
+- Visualize Feroot users, groups, project folders, projects, alerts, and domains
+  in the JupiterOne graph.
 - Map Feroot users to employees in your JupiterOne account.
 - Monitor changes to Feroot users and groups using JupiterOne alerts.
-- Monitor changes to Feroot project folders and projects using JupiterOne alerts.
+- Monitor changes to Feroot project folders and projects using JupiterOne
+  alerts.
 - Monitor Feroot findings within the alerts app.
 
 ## How it Works
 
-- JupiterOne periodically fetches users, groups, and other security testing 
-resources from Feroot to update the graph.
-- Write JupiterOne queries to review and monitor updates to the graph, or leverage
- existing queries.
-- Configure alerts to take action when the JupiterOne graph changes, or leverage 
-existing alerts.
+- JupiterOne periodically fetches users, groups, and other security testing
+  resources from Feroot to update the graph.
+- Write JupiterOne queries to review and monitor updates to the graph, or
+  leverage existing queries.
+- Configure alerts to take action when the JupiterOne graph changes, or leverage
+  existing alerts.
 
 ## Requirements
 
@@ -47,15 +48,17 @@ copy the key to use in the integration.
 1. From the configuration **Gear Icon**, select **Integrations**.
 2. Scroll to the **Feroot** integration tile and click it.
 3. Click the **Add Configuration** button and configure the following settings:
-- Enter the **Account Name** by which you'd like to identify this Feroot
-   account in JupiterOne. Ingested entities will have this value stored in
-   `tag.AccountName` when **Tag with Account Name** is checked.
+
+- Enter the **Account Name** by which you'd like to identify this Feroot account
+  in JupiterOne. Ingested entities will have this value stored in
+  `tag.AccountName` when **Tag with Account Name** is checked.
 - Enter a **Description** that will further assist your team when identifying
-   the integration instance.
+  the integration instance.
 - Select a **Polling Interval** that you feel is sufficient for your monitoring
-   needs. You may leave this as `DISABLED` and manually execute the integration.
+  needs. You may leave this as `DISABLED` and manually execute the integration.
 - Enter the **API Key** generated from your Feroot account, configured with an
-admin read-only role.
+  admin read-only role.
+
 4. Click **Create Configuration** once all values are provided.
 
 ## How to Uninstall
@@ -73,7 +76,7 @@ NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
 "j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
 DOCUMENTATION FOR USAGE INFORMATION:
 
-https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md
 ********************************************************************************
 -->
 
@@ -95,7 +98,7 @@ The following entities are created:
 
 ### Relationships
 
-The following relationships are created/mapped:
+The following relationships are created:
 
 | Source Entity `_type`   | Relationship `_class` | Target Entity `_type`      |
 | ----------------------- | --------------------- | -------------------------- |

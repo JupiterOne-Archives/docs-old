@@ -12,17 +12,20 @@ organization and analyze resource relationships.
 
 ## How it Works
 
-- JupiterOne uses your configured credentials to periodically fetch acocunt
-  information, users, groups, and group members from Microsoft 365 to update the
-  graph.
+- JupiterOne periodically fetches account information, users, groups, and group
+  members from Microsoft 365 to update the graph.
 - You write JupiterOne queries to review and monitor updates to the graph.
 - You configure alerts to take action when JupiterOne graph changes.
 
 ## Requirements
 
-- An Azure account with a registered app that will provide credentials for the
-  program to connect to Microsoft Graph APIs.
-- A Microsoft 365 account to target for ingestion.
+- An organizational Active Directory tenant to target for ingestion. The
+  integration does not support the use of other tenant types.
+- An account in the tenant you want to target for ingestion that has global
+  administrator access. You will login with this account to grant the JupiterOne
+  application API permissions that can read data across all users (admin
+  consent).
+- You must have permission in JupiterOne to install new integrations.
 
 ## Support
 
@@ -33,7 +36,7 @@ If you need help with this integration, please contact
 
 ### In JupiterOne
 
-1. From the configuration **Gear Icon**, select **Integrations**. 
+1. From the configuration **Gear Icon**, select **Integrations**.
 
    ![Gear Icon](../../../assets/m365LandingPage.png)
 
@@ -61,14 +64,17 @@ If you need help with this integration, please contact
 
    ![Complete Offsite](../../../assets/m365OffsiteDialog.png)
 
-9. You will be directed to Microsoft's identity platform, where you must login
-   in as an administrator in the Microsoft organization you intend to integrate
-   with.
+9. You will be directed to Microsoft's identity platform where you must login in
+   as a global administrator of the organizational Active Directory tenant you
+   intend to integrate with.
 
       ![directed to Microsoft's identity platform](../../../assets/m365PickAnAccount.png)
 
-   NOTE: You must select a business account which are indicated by badge icons.
-   If you select a personal account, you will recieve the below error messaage.
+   NOTE: You must select an account belonging to an organizational tenant. When
+   you are already logged into an account, the badge icons indicate the nature
+   of the tenant the account belongs to.
+
+   Selecting a personal account produces the following error message.
 
       ![select a business account](../../../assets/m365PersonalAccountError.png)
 
@@ -128,7 +134,7 @@ NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
 "j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
 DOCUMENTATION FOR USAGE INFORMATION:
 
-https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md
 ********************************************************************************
 -->
 
@@ -160,7 +166,7 @@ The following entities are created:
 
 ### Relationships
 
-The following relationships are created/mapped:
+The following relationships are created:
 
 | Source Entity `_type`         | Relationship `_class` | Target Entity `_type`          |
 | ----------------------------- | --------------------- | ------------------------------ |
@@ -191,7 +197,6 @@ The following relationships are created/mapped:
 | `intune_host_agent`           | **MANAGES**           | `smartphone`                   |
 | `intune_host_agent`           | **MANAGES**           | `user_endpoint`                |
 | `intune_host_agent`           | **MANAGES**           | `workstation`                  |
-| `intune_managed_application`  | **MANAGES**           | `intune_detected_application`  |
 | `laptop`                      | **ASSIGNED**          | `intune_managed_application`   |
 | `laptop`                      | **HAS**               | `intune_noncompliance_finding` |
 | `laptop`                      | **INSTALLED**         | `intune_detected_application`  |
