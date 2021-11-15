@@ -1,25 +1,26 @@
-# Alerts
+# Alerts and Alert Rules
 
 JupiterOne allows you to configure alert rules using any J1QL query for
-continuous auditing and threat monitoring. This is done in the **Alerts** app.
+continuous auditing and threat monitoring. You do this in the **Alerts** app.
 
 ## Import Alert Rules from Rule Pack
 
-You will need to have at least one active alert rule to trigger any alert. The
-easiest way to add some rules is to import rule packs, following these steps:
+You must have at least one active alert rule to trigger any alert. The
+easiest way to add some rules is to import rule packs.
 
-1. Go to **Manage Rules** from the Alerts app
+1. From the apps menu ![apps](../assets/icons/apps.png), select **Alerts**.
   
    ![](../assets/alerts-header.png)
 
-1. Click **Import Rule Pack** action button
-
-   ![](../assets/alerts-rules-actions.png)
-
-1. This will bring up the **Import Rules from Rule Pack** modal window, where
-   you can select the rule packs or individual rules within a rule pack. Click
-   **Save** to import the selected rules.
-
+1. Click **MANAGE RULES**.
+   ![](../assets/alerts-manage-rules.png)
+   
+1. Click **IMPORT RULES PACK**.![alerts-import-pack](../assets/alerts-import-pack.png)
+   
+   
+1. From the Import Rules from Rule Pack window, select the rule packs or 
+   individual rules within a rule pack, and click **Save**.
+   
    ![](../assets/alerts-import-rule-pack.png)
 
 ## Create Custom Alert Rules

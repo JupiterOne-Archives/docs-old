@@ -26,7 +26,7 @@ Standard access control is similar to the **Top Level Permissions** in Granular 
 accounts. It allows more fine grain access configuration at each user group
 level to achieve role-based access control (RBAC).
 
-When enabled, to configure access permissions, go to **Settings** [Settings](../assets/icons/gear.png) -> **Users & Access**  and select the user group you want to edit. Then, click the [](../assets/icons/shield.png.
+When enabled, to configure access permissions, go to **Settings** ![](../assets/icons/gear.png)> **Users & Access**  and select the user group you want to edit. Then, click the ![shield](../assets/icons/shield.png) icon.
 
   ![app-permissions](../assets/app-permissions.png)
 
