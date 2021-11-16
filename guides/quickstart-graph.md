@@ -1,85 +1,68 @@
 # Navigating the JupiterOne Graphs
 
-JupiterOne is built on a data-driven graph platform. For the story that inspired
-us to build it, check out [this blog][1].
+J1 is built on a data-driven graph platform. For the story that inspired J1 to build it, 
+read [the J1 blog](https://jupiterone.com/blog/three-dimensional-security/).
 
-JupiterOne query language (J1QL) is designed to traverse this graph and return a
-sub-graph -- or data from the nodes (i.e. entities) and edges (i.e.
-relationships) of a sub-graph. You can view and interact with the sub-graph from
-any J1QL query result.
+JupiterOne Query Language (J1QL) is designed to traverse this graph and return a
+subgraph, or data from the nodes (assets) and edges (relationships) of a subgraph. 
+You can view and interact with the subgraph from any J1QL query result.
 
-This guide focuses on interacting with the graph component. For more details on
-J1QL, check out the [J1QL tutorial][2] and [technical doc][3].
+This documentation focuses on interacting with the graph component. For more 
+details on J1QL, read the [J1QL tutorial](tutorial-j1ql.md) and [technical doc](../docs/jupiterone-query-language.md).
 
-This screenshot below shows an example result graph from a query in the Landing
-app:
+This is an example result graph from a query in the Search for Anything app:
 
 ![](../assets/j1ql-tutorial-root-accounts-graph.png)
 
-The first set of controls on the upper right corner does the following:
+The first set of controls in the upper-right corner comprises:
 
-| Control | Function
-|:-------:|:--------
-| ![][4]  | **Switch views** between `Table`, `Graph`, `Raw JSON`, and `Pretty JSON`.
-| ![][5]  | **Share the query** – shows a modal popup with the weblink to copy and share.
-| ![][6]  | **Save the query** – shows a modal popup where you can provide a title, description, and optionally some tags to save it to your own query library.
-| ![][7]  | **Remove the result** for this particular query/question from the page view.
+|                     Control                     | Function                                                     |
+| :---------------------------------------------: | :----------------------------------------------------------- |
+|   ![query-eye](../assets/icons/query-eye.png)   | Switch views between `Table`, `Graph`, `Raw JSON`, and `Pretty JSON`. |
+| ![query-share](../assets/icons/query-share.png) | Export and share the query by sharing a link or downloading as a CSV or JSON file. |
+|  ![query-copy](../assets/icons/query-copy.png)  | Copy the query to the clipboard to reuse.                    |
+|  ![query-save](../assets/icons/query-save.png)  | Save the query shows a modal popup where you can provide a title, description, and, optionally, some tags to save it to your own query library. |
+| ![query-close](../assets/icons/query-close.png) | Close and remove the results for this specific query/question from the page view. |
 
-Selecting any node (i.e. entity) on the graph will bring up a set of controls
-right on top of it that allows you to interact with the node. They serve the
+Selecting any node on the graph displays a set of controls directly on top of 
+it that allows you to interact with the node. The controls provide the
 following functions:
 
-| Control | Function
-|:-------:| --------
-| ![][8]  | **Open side panel** to show the detailed properties, tags and metadata of the selected entity. <br>Note that you can select an **edge** and see its properties in the side panel as well.
-| ![][9]  | **Load neighbors** – bring in additional nodes directly connected to the selected node that are not yet loaded into the graph.
-| ![][10] | **Hide selected node** from graph to reduce clutter. You can unhide all hidden nodes from the bottom left control.
-| ![][11] | **Expand grouped nodes** of the same type that have the same parent nodes. This option may not be always available depending on the data in the graph.
-| ![][12] | **Collapse nodes** of the same type that have the same parent nodes into a group. This option may not be always available depending on the data in the graph.
+|                          Control                          | Function                                                     |
+| :-------------------------------------------------------: | ------------------------------------------------------------ |
+| ![query-properties](../assets/icons/query-properties.png) | Open the side panel to show the detailed properties, tags, and metadata of the selected asset. You can select an edge and see the relationship properties in the side panel as well. |
+|  ![query-show-more](../assets/icons/query-show-more.png)  | Display additional asset nodes that are directly connected to the selected asset but are not yet loaded into the graph. |
+|       ![query-hide](../assets/icons/query-hide.png)       | Hide the asset from the graph to reduce clutter. You can unhide all hidden assets from the bottom-left control. |
+|     ![query-explan](../assets/icons/query-explan.png)     | Expand grouped nodes of the same type that have the same parent nodes. This option may not be always available depending on the data in the graph. |
+|   ![query-collapse](../assets/icons/query-collapse.png)   | Collapse nodes of the same type that have the same parent nodes into a group. This option may not be always available depending on the data in the graph. |
 
-The last set of controls are at the bottom left corner of the graph, and they do
-the following:
+The last set of controls are at the bottom-left of the graph, and they provide the 
+following functions:
 
-| Control | Function
-|:-------:| --------
-| ![][13] | **Maximize** graph in full screen mode.
-| ![][14] | **Restore** graph in query result component.
-| ![][15] | **Open filter panel** to let you filter (show/hide) nodes on the graph by **Account** and/or **Type**.
-| ![][16] | **Unhide hidden nodes**. This control icon will only show up when there are hidden nodes on the graph.
+| Control | Function|
+|:-------:| --------|
+| ![query-filter](../assets/icons/query-filter.png) | Open the filter panel to show or hide assets on the graph by account and/or type. |
+| ![query-lock](../assets/icons/query-lock.png) | Lock the movement of connected assets. |
+| ![query-layout1](../assets/icons/query-layout1.png) ![query-layout2](../assets/icons/query-layout2.png)![query-layout3](../assets/icons/query-layout3.png) | Toggle the layout between these three types. |
+| ![query-fullscreen](../assets/icons/query-fullscreen.png) | Maximize the graph in full-screen mode. |
+| ![query-drag](../assets/icons/query-exit-full.png) | Exit full-screen mode. |
+| ![query-camera](../assets/icons/query-camera.png) | Download the image. |
+| ![query-center](../assets/icons/query-center.png) | Center the graph. |
+| ![query-undo](../assets/icons/query-undo.png) | Undo the action. |
+| ![query-eye](../assets/icons/query-eye.png) | Unhide hidden asset nodes. This control icon only displays when there are hidden nodes on the graph. |
 
-Here's a screenshot of a graph with the **property panel** and **filter panel**
+Here's a screenshot of a graph with the side property panel and filter panel
 open:
 
 ![](../assets/aws-inspector-guardduty-findings-graph.png)
 
 **Zoom and Move**
 
-| Control         | Function
-|:---------------:| --------
-| ![][17] ![][18] | **Scroll** using your mouse/touchpad to zoom in/out on the graph
-| ![][19]         | **Click and Drag** on a **blank spot** on the graph using your mouse/touchpad to move the graph. **Click and Drag** on a **selected node** to move that particular node.
+|                           Control                            | Function                                                     |
+| :----------------------------------------------------------: | ------------------------------------------------------------ |
+| ![query-zoom-in](../assets/icons/query-zoom-in.png) ![query-zoom-out](../assets/icons/query-zoom-out.png) | Scroll using your mouse/touchpad to zoom in/out on the graph. |
+|        ![query-drag](../assets/icons/query-drag.png)         | Click and drag on a blank spot on the graph using your mouse/touchpad to move the graph. Click and drag on a selected asset node to move that particular node. |
 
-The stand-alone **Galaxy / Graph Viewer** app uses the same sets of controls.
+The Graph Viewer app uses the same sets of controls.
 
-**That's it!** Now go explore! Check out the [J1QL tutorial][2] if you haven't
-yet.
-
-[1]: https://jupiterone.com/blog/three-dimensional-security/
-[2]: tutorial-j1ql.md
-[3]: ../docs/jupiterone-query-language.md
-[4]: https://raw.githubusercontent.com/feathericons/feather/master/icons/eye.svg?sanitize=true
-[5]: https://raw.githubusercontent.com/feathericons/feather/master/icons/share.svg?sanitize=true
-[6]: https://raw.githubusercontent.com/feathericons/feather/master/icons/star.svg?sanitize=true
-[7]: https://raw.githubusercontent.com/feathericons/feather/master/icons/x.svg?sanitize=true
-[8]: https://raw.githubusercontent.com/feathericons/feather/master/icons/info.svg?sanitize=true
-[9]: https://raw.githubusercontent.com/feathericons/feather/master/icons/more-horizontal.svg?sanitize=true
-[10]: https://raw.githubusercontent.com/feathericons/feather/master/icons/eye-off.svg?sanitize=true
-[11]: https://raw.githubusercontent.com/feathericons/feather/master/icons/maximize-2.svg?sanitize=true
-[12]: https://raw.githubusercontent.com/feathericons/feather/master/icons/minimize-2.svg?sanitize=true
-[13]: https://raw.githubusercontent.com/feathericons/feather/master/icons/maximize.svg?sanitize=true
-[14]: https://raw.githubusercontent.com/feathericons/feather/master/icons/minimize.svg?sanitize=true
-[15]: https://raw.githubusercontent.com/feathericons/feather/master/icons/filter.svg?sanitize=true
-[16]: https://raw.githubusercontent.com/feathericons/feather/master/icons/eye.svg?sanitize=true
-[17]: https://raw.githubusercontent.com/feathericons/feather/master/icons/zoom-in.svg?sanitize=true
-[18]: https://raw.githubusercontent.com/feathericons/feather/master/icons/zoom-out.svg?sanitize=true
-[19]: https://raw.githubusercontent.com/feathericons/feather/master/icons/move.svg?sanitize=true
+To learn more about queries and graphs, read the [J1QL tutorial](tutorial-j1ql.md).

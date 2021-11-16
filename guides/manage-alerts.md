@@ -1,92 +1,93 @@
-# Alerts
+# Alerts and Alert Rules
 
 JupiterOne allows you to configure alert rules using any J1QL query for
-continuous auditing and threat monitoring. This is done in the **Alerts** app.
+continuous auditing and threat monitoring. You do this in the **Alerts** app.
 
 ## Import Alert Rules from Rule Pack
 
-You will need to have at least one active alert rule to trigger any alert. The
-easiest way to add some rules is to import rule packs, following these steps:
+You must have at least one active alert rule to trigger any alert. The
+easiest way to add some rules is to import rule packs.
 
-1. Go to **Manage Rules** from the Alerts app
+1. From the apps menu ![apps](../assets/icons/apps.png), select **Alerts**.
   
    ![](../assets/alerts-header.png)
 
-1. Click **Import Rule Pack** action button
-
-   ![](../assets/alerts-rules-actions.png)
-
-1. This will bring up the **Import Rules from Rule Pack** modal window, where
-   you can select the rule packs or individual rules within a rule pack. Click
-   **Save** to import the selected rules.
-
+1. Click **MANAGE RULES**.
+   ![](../assets/alerts-manage-rules.png)
+   
+1. Click **IMPORT RULES PACK**.![alerts-import-pack](../assets/alerts-import-pack.png)
+   
+1. From the Import Rules from Rule Pack window, select the rule packs or 
+   individual rules within a rule pack, and click **Save**.
+   
    ![](../assets/alerts-import-rule-pack.png)
 
 ## Create Custom Alert Rules
 
-Creating your own custom alert rule is easy:
+To create your own custom alert rule:
 
-1. Go to **Manage Rules** from the Alerts app
+1. From the apps menu ![apps](../assets/icons/apps.png), select **Alerts**.
 
-1. Click **Create Rule** action button to bring up the modal window
+1. Click **MANAGE RULES**.
 
-1. Enter the following details for the custom rule and hit **SAVE**:
+1. Click **CREATE RULE**.
 
-   - **Name**
-   - **Description**
-   - **Severity** (select from drop down list)
-   - **Query** (any J1QL query)
+1. Enter the following details for the custom rule and click **SAVE**:
 
+   - Name
+   - Severity (select from drop-down list)
+   - Description
+   - Tags
+   - Query (any J1QL query)
+   
    ![](../assets/alerts-create-rule.png)
 
-The custom rule will be added and be evaluated daily, hourly, or with streaming evaluation for Enterprise customers. 
-If the query you have specified in the rule returns at least one match, it will trigger an alert.
+The custom rule you have added is evaluated daily, hourly, or with 
+streaming evaluation for Enterprise customers. If the query you have 
+specified in the rule returns at least one match, it triggers an alert.
 
 ## Additional Alert Options
 
-We provide the ability to trigger workflows from alerts.
+J1 provides the ability to trigger the following workflows from alerts:
 
-Check the box on the option you would like to utilize and fill in the required information via the drop downs and fields.
+- Slack: You must configure the Slack integration for 
+  JupiterOne by [following these instructions](https://support.jupiterone.io/hc/en-us/articles/360046977154-Slack). Ensure that
+  you specify the channel in the format `#channel`.
+- JIRA: You must configure the JIRA integration for JupiterOne 
+  by [following these instructions](https://support.jupiterone.io/hc/en-us/articles/360022721154-Jira)
+- SNS: The AWS account you want to send to must be configured 
+  as an AWS Integration, and the J1 IAM role for the AWS account you 
+  want to publish to must have the `SNS:Publish` permission.
+- SQS: The AWS account you want to send to must be configured 
+  as an AWS Integration, and the J1 IAM role for the AWS account you want 
+  to publish to must have the `SQS:SendMessage` permission.
+
+To trigger any of these workflows, when creating a custom rule, 
+scroll down to the Additional Alerts section. Select the one you want 
+and provide the required information.
 
 ![](../assets/alerts-additional-options-1.png)
 
-![](../assets/alerts-additional-options-2.png)
-
-**Some alert options require additional integrations/permissions:**
-1. Slack: You must configure the Slack integration for JupiterOne by [following these instructions](https://support.jupiterone.io/hc/en-us/articles/360046977154-Slack)
-   Be sure to include specify the channel in the format `#channel`.
-1. JIRA: You must configure the JIRA integration for JupiterOne by [following these instructions](https://support.jupiterone.io/hc/en-us/articles/360022721154-Jira)
-1. SNS: The AWS Account you wish to send to must be configured as an AWS Integration, and the 
-   JupiterOne IAM Role for the AWS Account you want to publish to must have the `SNS:Publish` permission
-1. SQS: The AWS Account you wish to send to must be configured as an AWS Integration, and the 
-   JupiterOne IAM Role for the AWS Account you want to publish to must have the `SQS:SendMessage` permission
-
 ## Managing Alerts
 
-The alert rules are evaluated _daily_ by default, or at the custom interval --
-_hourly_ or _every 30 minutes_ -- you have specified for a specific rule.
+J1 evaluates the alert rules you create each day, or at the custom 
+interval of every 30 or 60 minutes, if specified.
 
-Active alerts that matched the evaluation criteria of the alert rules will show
-up in the **Alerts** app in a data grid that looks like this:
+Active alerts that match the evaluation criteria of the alert rules appear
+in the **Alerts** app in a data grid.
 
 ![](../assets/alerts-grid.png)
 
-- Click on an individual alert row will expand it to show the alert details.
-- Click on the **DISMISS** button to dismiss an alert.
-
-If an alert is not dismissed, you will not receive a follow up alert notification unless there are changes to the query result.
+Use the icons in the rows to edit, run, delete, or disable a rule.
 
 ## Configure Daily Notification Email
 
-To receive daily notification of new/active alerts, select:
+To receive daily notification of new and active alerts:
 
-- **Manage Rules**
-- **Daily Emails**
-- Enter the email addresses of the users or teams in the **Recipients** field
-
-Your **JupiterOne Daily Alert Report** will look like this:
+1. In the Alerts app, go to **MANAGE ALERTS > EMAIL REPORTS**.
+2. Enter the email addresses of the users or teams in the daily and 
+   weekly recipients fields, with one address per line.
+3. Ensure that `@jupiterone.io` and`@us.jupiterone.io` 
+   are in the allowlist in your email configuration.
 
 > ![](../assets/alerts-daily-email.png)
-
-To ensure delivery of these reports, please allowlist `@jupiterone.io` and
-`@us.jupiterone.io` in your email configuration.
