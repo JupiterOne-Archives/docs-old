@@ -18,8 +18,53 @@ The data you want to add to J1 can come from different sources. For example,
 you can:
 
 - Export it as a CSV file from another application. 
-- Get the data from an API that a tool provides. You could even generate the data by combining data from multiple sources. No matter where it originates you need a way to access the data. The data should include:The entities you want to import to JupiterOne, like user or deviceInclude the properties for each entity, like user first name or device MAC addressClassify the dataOnce you know which data you want to import and how to gather it, there is some analysis you need to go through to ensure that what you add is useful. 
-- For the application you are importing data from you need to identify which entities you want to import. As an example, when JupiterOne imports data from Salesforce we import the following entities: Group, PermissionSet, Profile, User, and UserRoleAfter you identify the identities you also need to identify the relationships between the entities from the application. Continuing our Salesforce example, these are some of the relationships we create:salesforce_user assigned salesforce_permission_setsalesforce_user assigned salesforce_user_rolesalesforce_group has salesforce_userAnd finally you may also need to identify the relationships between entities in Salesforce and entities in other applications that you have in your JupiterOne account.Import the dataThe final step is to import the data to JupiterOne. There are several different ways to get data into JupiterOne. This provides a quick overview of the different options. More details are available in the JupiterOne Documentation.Add or update a single entity via the UI. This is useful for adding low volumes of data. In the JupiterOne UI, you can add a new entity and its associated properties one at a time. You can also add or update the properties on an existing entity if needed. Bulk upload entities via the UI. Format your data in JSON of YAML and then upload the file in your JupiterOne account. 
-- More technical or programmatic ways to import data:Use the JupiterOne CLI with a script. This tool is for those comfortable with the command line and putting scripts together to import data to JupiterOneNode.js API client wrapper. JupiterOne Platform API. The platform API is what JupiterOne uses in their integrations. As a customer you can access all the data in your account and add or update data using a graphQL endpoint. JupiterOne SDK. The SDK allows you to build a complete integration for JupiterOne, like those available in your JupiterOne account. It is the most sophisticated way to import data into JupiterOne. It encapsulates the best practices that the JupiterOne engineering team uses to build integrations with other applications.
+- Get the data from an API that a tool provides. 
+- Generate the data by combining data from multiple sources. 
 
-Adding Data to JupiterOne - the detailsGather and Classify DataPick application to import data fromPick the entities to import from the applicationIdentify the properties for each entityhttps://support.jupiterone.io/hc/en-us/articles/360022903573-Data-Model-Overview Identify the class for each entityhttps://support.jupiterone.io/hc/en-us/articles/360022903573-Data-Model-Overview Identify the type for each entityhttps://support.jupiterone.io/hc/en-us/articles/360022903573-Data-Model-Overview Map relationships between the selected entitieshttps://support.jupiterone.io/hc/en-us/articles/360022903573-Data-Model-Overview Format data depending on the import option being used.Import data Options:Manually enter an entity via the UIIn product (assuming appropriate permissions): Assets > {asset type} > + (Add Entity)Add properties to an existing entityIn product (assuming appropriate permissions): Assets > {asset type} > Entity > EditBulk upload using a JSON or YAML formatted file via the JupiterOne UIIn product (assuming appropriate permissions): Assets > + (Add Entity)https://support.jupiterone.io/hc/en-us/articles/360049348293A command line script using the JupiterOne CLI toolhttps://support.jupiterone.io/hc/en-us/articles/360022903373-JupiterOne-Node-js-Client-and-CLI https://github.com/JupiterOne/jupiterone-client-nodejs Node.js API client wrapperhttps://support.jupiterone.io/hc/en-us/articles/360022903373-JupiterOne-Node-js-Client-and-CLIhttps://github.com/JupiterOne/jupiterone-client-nodejs Use the JupiterOne Platform API to programmatically add data and relationshipshttps://support.jupiterone.io/hc/en-us/articles/360022722094-JupiterOne-Platform-APIBuild an integration using the JupiterOne SDK tools[New Integration Dev Checklist](https://docs.google.com/document/d/1FDdRX0h4_3B5hIU90Bs0r6WuYdhQyXCT32yJtidmC1I/edit) (only some of this is relevant for a customer)Github: [JupiterOne/integration-template: Template for JupiterOne integration projects.](https://github.com/JupiterOne/integration-template) Github: [JupiterOne/sdk: Home of the JupiterOne SDK](https://github.com/JupiterOne/sdk) 
+The data should include the:
+
+- Assets you want to import to J1, such as a user or device.
+- Include the properties for each asset, such as user first name or 
+  device MAC address.
+
+## Classify the Data
+
+Classifying the data ensures that what you import is useful. 
+
+Depending on the application from which you are importing, you must first
+identify which assets you want to import. In addition, you must identify
+the properties, type, and class of the assets.  For example, when J1 imports 
+data from Salesforce, it imports the following assets: Group, PermissionSet, 
+Profile, User, and UserRole
+
+You must also identify the relationships between the assets from the application. 
+In the Salesforce example, some of the relationships J1 creates include:
+
+- salesforce_user assigned salesforce_permission_set
+- salesforce_user assigned salesforce_user_role
+- salesforce_group has salesforce_user
+
+In addition, you may need to identify the relationships between assets in Salesforce 
+and assets in other applications that you have in your J1 account.
+
+[The J1 data model](../docs/jupiterone-data-model.png) is a reference model that describes as an entity-relationship graph 
+the digital resources and complex interconnections among all the resources 
+in a technology organization. It represents a reference model, not a strict or rigid structure.
+
+## Import the Data
+
+There are several different ways to get data into J1:
+
+- Add or update a single asset using the Assets app in the J1 UI. This method is useful 
+  for adding low volumes of data. You can add a new asset and its associated properties 
+  one at a time. You can also add or update the properties on an existing asset in the UI. 
+- Bulk upload assets using the Assets app in the J1 UI. You format your data in 
+  JSON or YAML and then upload the file to your J1 account. 
+- Use the J1 CLI with a script. This tool is for those knowledgeable with the command line 
+  and how to create scripts to import data to the `JupiterOneNode.js` API client wrapper. 
+- Use the JupiterOne Platform API, which is what J1 uses in the integrations. You can access 
+  all the data in your account and add or update data using a graphQL endpoint. 
+- Use the JupiterOne SDK. The SDK allows you to build a complete integration for J1. It is the most sophisticated way to import data into J1. It features the best practices that 
+  J1 uses to build integrations with other applications.
+
+More details are available in the [JupiterOne documentation](https://support.jupiterone.io/hc/en-us).
