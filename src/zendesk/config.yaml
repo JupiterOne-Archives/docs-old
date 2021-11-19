@@ -45,16 +45,16 @@ sections:
       - title: 08/10 Manage Findings
         file: ../guides/manage-findings.md
         id: 360022901893
-        hash: NnB61w7tqFxReiUqxOCszXImVvLcyhSsnwGOmYKUFb4=
+        hash: XI1bxGD6qrpvNLHEufQrlrwjiaUDApIiE+ZvxDDaQgo=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022901893'
       - title: 09/10 Manage Policies and Procedure Documents
         file: ../guides/manage-policies/policies-app.md
-        hash: sJGO4UcViNaKnstIH42RdSSvUhOTQ0Ke28yzS1Pn2Ew=
+        hash: kY6f85QcEFks3nI9MqfJPlBBQZc5E5M5RYHYh5clYso=
         id: 360033968753
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360033968753'
       - title: 10/10 Invite Your Team Members
         file: ../guides/quickstart-invite-users.md
-        hash: ZKPqFs7vVrE71TbiVIVl/ctoIPnBDGBpgdpMDWJDO3I=
+        hash: tIClkIoJzoxnWu7Q4BnV1KoOtzrmX7goFdqnFJhVxdY=
         id: 360023317474
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360023317474'
   - name: FAQs
@@ -196,7 +196,7 @@ sections:
     articles:
       - title: Managing Policies and Procedures on JupiterOne
         file: ../guides/manage-policies/policies-app.md
-        hash: YFDSSYIFS5+ghE4tz3N2sUR/P/yImHfaeay1xKCxl+c=
+        hash: 7TW596Oo5KCESMG+a3lwM/DErBLvyyMBkgurwUHEWmQ=
         id: 360041809413
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041809413'
       - title: Using the Policy Builder CLI
@@ -295,7 +295,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903353'
       - title: Configure User Access Control
         file: ../docs/jupiterone-access-controls.md
-        hash: 7Ddmp3c2A2nOLY8ER3gZGQtwanIzc9BvcYVjaaxTyZA=
+        hash: KmmS361oIVA67LayFyBteB6oHk4pgr8R7OXFzqhMf2Q=
         id: 360046093834
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046093834'
       - title: Enable API Key Access
@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: y1kZjD7I9jj5mN9RMxDJkNv5w9Q0dz46wGbpVUBtkQ8=
+        hash: geWvSze+IXN0PvK3K2/KkjMLIVV8s2axPB57SsZNGko=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -793,7 +793,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: hWUyDmwN7DUBccpzKA/LSHBtQxJz/2i2aLdAoDZjME4=
+        hash: +tSuyXld9rApMh+rmErNy/rmpE1zfWl17r2/GalavZg=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
