@@ -30,7 +30,7 @@ When enabled, to configure access permissions:
 
 1. Go to **Settings** ![](../assets/icons/gear.png)and select **Users & Access** ![users](../assets/icons/users.png).
 2. Find the user group you want to edit and click **Settings** ![](../assets/icons/gear.png). 
-3. Click  **Access Control** ![shield](../assets/icons/shield.png) tab.
+3. Click  the **Access Control** ![shield](../assets/icons/shield.png) tab.
 
   ![app-permissions](../assets/app-permissions.png)
 
