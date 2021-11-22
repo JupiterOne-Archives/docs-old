@@ -20,13 +20,17 @@ To access VQB, from the Landing page, click ![](../assets/icons/vqb-button.png).
 The VQB workspace consists of a:
 
 - Left pane containing:
-  - Default asset classes
-  - J1QL-specific, data model asset types
-  - Other entities, including text search and * wildcard
-    Note: You cannot use a text search asset and a wildcard asset in the same query.
+- Default asset classes
+- J1QL-specific, data model asset types
+- Other entities, including text search and * wildcard
+
+​		**Note**: You cannot use a text search asset and a wildcard asset in the 
+​		same query.
+
 - Center canvas pane
+
 - Right information pane that contains contextual details based on what 
-  is on the center canvas,including a query preview window/
+  is on the center canvas, including a query preview window.
 
 
 
@@ -55,11 +59,11 @@ The VQB workspace consists of a:
 
    1. Each relationship has an identifier. 
    2. Click the relationship identifier to see its details in the right information pane.
-   3. Relationship classes default to all available verbs. J1QL shows all the verbs that you can 
-       apply to that relationship. You can toggle between relationship classes to determine how you 
-       want the query to search.
-       `!!!` note The verb RELATES TO covers any and all relationship verbs. However, It is highly recommended 
-       to use specific relationship verbs for faster query performance.
+   3. Relationship classes default to all available verbs. J1QL shows all the verbs that 
+       you can apply to that relationship. You can toggle between relationship classes 
+       to determine how you want the query to search.
+       **Note**: The verb RELATES TO covers any and all relationship verbs. However, 
+       It is highly recommended to use specific relationship verbs for faster query performance.
    
 
 ![](../assets/vqb-relationship.png)
