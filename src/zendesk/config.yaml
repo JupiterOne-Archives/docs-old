@@ -20,22 +20,22 @@ sections:
       - id: 360022890073
         title: 03/10 Navigate the Graph
         file: ../guides/quickstart-graph.md
-        hash: WO8SSL/RCC2WLhG8kL8/+sn3riXgqczvFSYs2Z1T1f8=
+        hash: UpD/uZ3NOqYARDHXWWGoXjQfAXJM0bnpfRCGdUSk9sY=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022890073'
       - title: 04/10 J1QL Query Tutorial
         file: ../guides/tutorial-j1ql.md
         id: 360022720434
-        hash: XFfHVyu5jPYlshjO+rmF/FO4aJUxC2Ash2CR1yEZEfY=
+        hash: uS+qlCZt8uzgNYB/3UxewGO+FAvq3L6EmJrkiS/sDcY=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720434'
       - title: 05/10 Using Asset Inventory Filters
         file: ../guides/asset-inventory-filters.md
         id: 360022720454
-        hash: iyws2VwnIlNBDmYxwbOpG2FJFNvp+VsnXIdnKYtFK8A=
+        hash: YzpXkJMqts+NIJDwWxrCUW3D7M+ORI7arhhVJg+IGUM=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720454'
       - title: 06/10 Alerts and Alert Rules
         file: ../guides/manage-alerts.md
         id: 360022720474
-        hash: Mujem7sA7b9m+O2vp9ZePH1sf7PlVIb6nT0Y3r7SYcs=
+        hash: SJdCQR0qPb+5AuG6xadTgDHlm9+MPJx8jUDtm5XIALs=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720474'
       - title: 07/10 Visual Query Builder
         file: ../guides/j1-vqb.md
@@ -45,16 +45,16 @@ sections:
       - title: 08/10 Manage Findings
         file: ../guides/manage-findings.md
         id: 360022901893
-        hash: NnB61w7tqFxReiUqxOCszXImVvLcyhSsnwGOmYKUFb4=
+        hash: XI1bxGD6qrpvNLHEufQrlrwjiaUDApIiE+ZvxDDaQgo=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022901893'
       - title: 09/10 Manage Policies and Procedure Documents
         file: ../guides/manage-policies/policies-app.md
-        hash: sJGO4UcViNaKnstIH42RdSSvUhOTQ0Ke28yzS1Pn2Ew=
+        hash: kY6f85QcEFks3nI9MqfJPlBBQZc5E5M5RYHYh5clYso=
         id: 360033968753
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360033968753'
       - title: 10/10 Invite Your Team Members
         file: ../guides/quickstart-invite-users.md
-        hash: ZKPqFs7vVrE71TbiVIVl/ctoIPnBDGBpgdpMDWJDO3I=
+        hash: tIClkIoJzoxnWu7Q4BnV1KoOtzrmX7goFdqnFJhVxdY=
         id: 360023317474
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360023317474'
   - name: FAQs
@@ -196,7 +196,7 @@ sections:
     articles:
       - title: Managing Policies and Procedures on JupiterOne
         file: ../guides/manage-policies/policies-app.md
-        hash: YFDSSYIFS5+ghE4tz3N2sUR/P/yImHfaeay1xKCxl+c=
+        hash: 7TW596Oo5KCESMG+a3lwM/DErBLvyyMBkgurwUHEWmQ=
         id: 360041809413
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041809413'
       - title: Using the Policy Builder CLI
@@ -295,7 +295,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903353'
       - title: Configure User Access Control
         file: ../docs/jupiterone-access-controls.md
-        hash: ocn4P/uDEvAXb/QLWkiTZlESv+WNIxEUT9P8xXjTL4s=
+        hash: KmmS361oIVA67LayFyBteB6oHk4pgr8R7OXFzqhMf2Q=
         id: 360046093834
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046093834'
       - title: Enable API Key Access
@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: V7X9gRfoq230yLJJdCBD5d+XK+XOZE++CuQa1yocLQU=
+        hash: geWvSze+IXN0PvK3K2/KkjMLIVV8s2axPB57SsZNGko=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -761,6 +761,11 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2021.84 Release
+        file: ../release-notes/2021-84.md
+        hash: 2LTnxN0xxZP/nvMLLJwVFjSEYbLIM4joiHL1/nFiIsw=
+        id: 4410842012819
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4410842012819'
       - title: 2021.83 Release
         file: ../release-notes/2021-83.md
         hash: sBcl9qAKTXnjNF303xIsaFLLCdi9G0j6T6pDVgitHTU=
@@ -788,7 +793,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: BPp0pqzjvhTH8KaTpIXv9PxRj7AOkmUnwAQHe8CAkiI=
+        hash: +tSuyXld9rApMh+rmErNy/rmpE1zfWl17r2/GalavZg=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
