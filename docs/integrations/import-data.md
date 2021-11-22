@@ -42,7 +42,7 @@ In the Salesforce example, some of the relationships J1 creates include:
 
 - salesforce_user assigned salesforce_permission_set
 - salesforce_user assigned salesforce_user_role
-- salesforce_group has salesforce_user
+- `salesforce_group` has `salesforce_user`
 
 In addition, you may need to identify the relationships between assets in Salesforce 
 and assets in other applications that you have in your J1 account.
