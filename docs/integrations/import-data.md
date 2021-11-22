@@ -2,7 +2,7 @@
 
 If J1 does not have an integration for a product in which your data is located, 
 you can still import it into J1. You can also enrich current data in your J1 account. 
-There are three steps to importing: prepare the data, classify the data, import 
+There are three steps to importing: gather the data, classify the data, import 
 the data.
 
 ## Gather the Data
