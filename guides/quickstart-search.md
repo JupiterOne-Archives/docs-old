@@ -4,18 +4,17 @@ You can quickly search and get insight across your entire digital environment
 integrated with JupiterOne, from the Search for Anything landing page. 
 There are three modes of search:
 
-1. **Ask questions** by entering any keywords to search across all packaged 
+- **Ask questions** - you can enter any keywords to search across all packaged 
    and saved questions.
-2. Perform a **full-text search** across all assets based on their property values.
-3. Use the **JupiterOne query language (J1QL)** for detailed querying of 
-   assets and relationships
+- **Full-text search** - an easy way to search across all assets based on their 
+  property values.
+- **JupiterOne query language (J1QL)** is best for detailed querying of 
+   assets and relationships.
 
 You can toggle results in four different display modes: **Table**, **Graph**, **Raw JSON**, 
 or **Pretty JSON**.
 
-`!!! note`
-
-For performance reasons, search results are limited to return a maximum
+**Note**: For performance reasons, search results are limited to return a maximum
 250 items. If you believe something is missing from a large result set, try
 fine-tuning the query to generate more precise results.
 
@@ -133,7 +132,5 @@ Find 'security officer' with _type='employee'
 Find 'roles responsibilities' with _class=('Policy' or 'Procedure')
 ```
 
-`!!! note`
-
-Either single quotes (`'`) or double quotes (`"`) work for both full-text search 
+**Note**: Either single quotes (`'`) or double quotes (`"`) work for both full-text search 
 keywords and property string values.
