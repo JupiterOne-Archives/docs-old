@@ -12,6 +12,8 @@ sections:
         file: ../guides/configure-integrations.md
         hash: tYNh0BaD/n2jFYiAYFa3fWddfr8lCtBBlNwC5TZ3+xQ=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022884813'
+      - title: Import Data
+        file: ../guides/import-data.md
       - id: 360022705414
         title: Search Quickstart
         file: ../guides/quickstart-search.md
@@ -665,6 +667,8 @@ sections:
         hash: 6DPfwB2r5T8jZN1HWRamTuLUW3/i2wHZozhQooKqevc=
         id: 360056759853
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360056759853'
+      - title: Salesforce
+        file: ../docs/integrations/salesforce/index.md
       - title: SentinelOne
         file: ../docs/integrations/sentinelone/index.md
         id: 360022721214
