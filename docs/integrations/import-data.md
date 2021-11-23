@@ -40,7 +40,7 @@ Profile, User, and UserRole
 You must also identify the relationships between the assets from the application. 
 In the Salesforce example, some of the relationships J1 creates include:
 
-- salesforce_user assigned salesforce_permission_set
+- `salesforce_user` assigned `salesforce_permission_set`
 - salesforce_user assigned salesforce_user_role
 - `salesforce_group` has `salesforce_user`
 
