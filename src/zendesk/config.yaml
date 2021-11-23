@@ -2,9 +2,9 @@ sections:
   - name: Getting started
     id: 360004204294
     articles:
-      - title: Intro to JupiterOne
+      - title: An Intro to JupiterOne
         file: ../guides/J1-what-is-it.md
-        hash: E7nB01avvPyoYFsEURRHHtBEHD4JhFcPDQMOK8RdhAU=
+        hash: EYEt2fG7ErBsErJbOF9TUcecTd6zJs+Y6ypb9ZyG1XY=
         id: 4407857686163
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4407857686163'
       - id: 360022884813
@@ -37,10 +37,10 @@ sections:
         id: 360022720454
         hash: bvQRNKQlt/RDi9a5Pl2x/chXGHQ52AFCIuMeuj40NfI=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720454'
-      - title: Alerts and Alert Rules
+      - title: Manage Alerts
         file: ../guides/manage-alerts.md
         id: 360022720474
-        hash: 5DQnhGOEjbLC1kiBWhHRoaO5GyoDJKVLCj+h/4ysNc8=
+        hash: qy3rHNcVPZZCRa5L9fC0vd5/Y955f6LVEgdlwqX5S64=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720474'
       - title: Visual Query Builder
         file: ../guides/j1-vqb.md
@@ -331,7 +331,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: 3/dNFypWTKXvBavYtVdbD08Wscvipsm2eYAxn9eUWcY=
+        hash: 5STAUR0tDBEM/AVGxvob3JJYMsxw0nTvGWKc96aJzMY=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -803,7 +803,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: qAZQJiivNuov8OiIzGrba+uKEde8sBJ+Wv4eCWhN3f0=
+        hash: knDzRYwkJB3SNbYHf2vumCzorsHbbMylGIuUkRcYowg=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
@@ -813,7 +813,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405085006227'
       - title: 2021.76 Release
         file: ../release-notes/2021-76.md
-        hash: X/+CQPmVGVd7uy9Bay0o8Nk3E6DBG8uy0Oy8Yr2eEf0=
+        hash: w2t2lgLq0SNXOgAxcO6/2FldCljY86GW+GzeATAJWZs=
         id: 4404383303059
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4404383303059'
       - title: 2021.75 Release

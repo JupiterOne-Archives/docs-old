@@ -2,6 +2,7 @@
   "linksMap": {
     "J1-what-is-it": "https://support.jupiterone.io/hc/en-us/articles/4407857686163",
     "configure-integrations": "https://support.jupiterone.io/hc/en-us/articles/360022884813",
+    "import-data": "https://support.jupiterone.io/hc/en-us/articles/4411153308051",
     "quickstart-search": "https://support.jupiterone.io/hc/en-us/articles/360022705414",
     "quickstart-graph": "https://support.jupiterone.io/hc/en-us/articles/360022890073",
     "tutorial-j1ql": "https://support.jupiterone.io/hc/en-us/articles/360022720434",
@@ -122,6 +123,7 @@
     "integrations/pagerduty/index": "https://support.jupiterone.io/hc/en-us/articles/360046951894",
     "integrations/qualys/index": "https://support.jupiterone.io/hc/en-us/articles/360046952094",
     "integrations/rapid7/index": "https://support.jupiterone.io/hc/en-us/articles/360056759853",
+    "integrations/salesforce/index": "https://support.jupiterone.io/hc/en-us/articles/4411161725203",
     "integrations/sentinelone/index": "https://support.jupiterone.io/hc/en-us/articles/360022721214",
     "integrations/servicenow/index": "https://support.jupiterone.io/hc/en-us/articles/1500011204241",
     "integrations/slack/index": "https://support.jupiterone.io/hc/en-us/articles/360046977154",
