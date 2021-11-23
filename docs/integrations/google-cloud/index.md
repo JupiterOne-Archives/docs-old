@@ -457,7 +457,7 @@ The following relationships are created:
 | `google_dataproc_cluster`                                        | **USES**              | `google_kms_crypto_key`                                           |
 | `google_dataproc_cluster`                                        | **USES**              | `google_storage_bucket`                                           |
 | `google_cloud_folder`                                            | **HAS**               | `google_cloud_project`                                            |
-| `google_cloud_api_service`                                       | **HAS**               | `resource`                                                        |
+| `google_iam_binding`                                             | **ALLOWS**            | `resource`                                                        |
 | `google_iam_binding`                                             | **ASSIGNED**          | `google_cloud_authenticated_users`                                |
 | `google_iam_binding`                                             | **ASSIGNED**          | `google_domain`                                                   |
 | `google_iam_binding`                                             | **ASSIGNED**          | `everyone`                                                        |
