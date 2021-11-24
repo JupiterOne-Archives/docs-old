@@ -26,7 +26,7 @@ The VQB workspace consists of a:
     Note: You cannot use a text search asset and a wildcard asset in the same query.
 - Center canvas pane
 - Right information pane that contains contextual details based on what 
-  is on the center canvas,including a query preview window/
+  is on the center canvas,including a query preview window
 
 
 
@@ -58,8 +58,7 @@ The VQB workspace consists of a:
    3. Relationship classes default to all available verbs. J1QL shows all the verbs that you can 
        apply to that relationship. You can toggle between relationship classes to determine how you 
        want the query to search.
-       `!!!` note The verb RELATES TO covers any and all relationship verbs. However, It is highly recommended 
-       to use specific relationship verbs for faster query performance.
+       **Note**: The verb RELATES TO covers any and all relationship verbs. However, It is highly recommended to use specific relationship verbs for faster query performance.
    
 
 ![](../assets/vqb-relationship.png)
@@ -74,7 +73,8 @@ For example, in the following example, the text asset Security is the root asset
 
 ![](../assets/vqb-wildcard.png)
 
-**Note:** When connecting relationships between assets or asset groups, you must start with the root asset (such as e1) and drag it to the related asset (such as e4), and then connect the other assets as required.
+**Note:** When connecting relationships between assets or asset groups, you must start with the root asset
+(![root](../assets/icons/root.png)) and drag it to the related asset (such as e4), and then connect the other assets as required.
 
 ### Filtering
 
