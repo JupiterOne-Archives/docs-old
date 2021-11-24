@@ -15,7 +15,7 @@ Your organization must have already used an integration to import your data in t
 
 ### Creating Queries Using VQB
 
-To access VQB, from the Landing page, click ![](../assets/icons/vqb-button.png).![](../assets/vqb-access.png)
+To access VQB, from the Search for Anything landing page, click ![](../assets/icons/vqb-button.png).![](../assets/vqb-access.png)
 
 The VQB workspace consists of a:
 
@@ -26,7 +26,7 @@ The VQB workspace consists of a:
     Note: You cannot use a text search asset and a wildcard asset in the same query.
 - Center canvas pane
 - Right information pane that contains contextual details based on what 
-  is on the center canvas,including a query preview window
+  is on the center canvas, including a query preview window
 
 
 
