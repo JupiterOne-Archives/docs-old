@@ -31,10 +31,15 @@ If you need help with this integration, please contact
 
 ### In CloudFlare
 
-The integration connects directly to [Cloudflare REST API][1] to obtain DNS
+The integration connects directly to [Cloudflare v4 REST API][1] to obtain DNS
 related configuration information.
 
 Configure the integration by providing an API Token with read-only permissions.
+
+- `organization:read` to list accounts, members, and roles
+- `zone:read` to list zones
+- `dns_records:read` to list records in a zone
+
 Obtain an API token from the bottom of the ["API Tokens" page][2] in your
 Cloudflare account.
 
