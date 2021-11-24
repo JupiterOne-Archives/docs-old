@@ -12,19 +12,19 @@
   to update the graph.
 - Write JupiterOne queries to review and monitor updates to the graph, or
   leverage existing queries.
-- Configure alerts to take action when a JupiterOne graph changes, or leverage
+- Configure alerts to take action when JupiterOne graph changes, or leverage
   existing alerts.
 
 ## Requirements
 
-- The Azure DevOps + JupiterOne integration uses a read-only, personal access
+- The Azure DevOps + JupiterOne integration uses a read-only personal access
   token to ingest data from the Azure DevOps platform. You must have access to
   generate a personal access token in Azure DevOps
 - You must have permission in JupiterOne to install new integrations.
 
 ## Support
 
-If you need help with this integration, contact
+If you need help with this integration, please contact
 [JupiterOne Support](https://support.jupiterone.io).
 
 ## Integration Walkthrough
@@ -33,33 +33,34 @@ If you need help with this integration, contact
 
 1. [Generate a Personal Access Token (PAT)](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate)
 2. Grant the following permissions to your PAT:
-   - Project and Team [read]
-   - Work Items [read]
+   - **Project and Team [read]**
+   - **Work Items [read]**
 
 ### In JupiterOne
 
-1. From the settings gear icon, select **Integrations**.
-2. Scroll down to **Azure DevOps** and click it.
-3. Click **Add Configuration** and configure the following settings:
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **Azure DevOps** integration tile and click it.
+3. Click the **Add Configuration** button and configure the following settings:
 
-- Enter the account name by which you want to identify this Azure DevOps
-  account in JupiterOne. Select **Tag with Account Name** to store this value in 
-  `tag.AccountName` of the ingested assets.
-- Enter a description to assist your team identify the integration instance.
-- Select a polling interval that is sufficient for your monitoring
-  needs. You can leave this as `DISABLED` and manually execute the integration.
-- Enter your account URL (_Example: "https://dev.azure.com/jupiterone"_).
-- Enter the personal access token generated for use by JupiterOne.
+- Enter the **Account Name** by which you'd like to identify this Azure DevOps
+  account in JupiterOne. Ingested entities will have this value stored in
+  `tag.AccountName` when **Tag with Account Name** is checked.
+- Enter a **Description** that will further assist your team when identifying
+  the integration instance.
+- Select a **Polling Interval** that you feel is sufficient for your monitoring
+  needs. You may leave this as `DISABLED` and manually execute the integration.
+- Enter your account URL (_Example: "https://dev.azure.com/jupiterone"_)
+- Enter the **Personal Access Token** generated for use by JupiterOne.
 
-4. Click **Create Configuration** after you have entered all the values.
+4. Click **Create Configuration** once all values are provided.
 
 # How to Uninstall
 
-1. From the settings gear icon, select **Integrations**.
-2. Scroll down to **Azure DevOps** and click it.
+1. From the configuration **Gear Icon**, select **Integrations**.
+2. Scroll to the **Azure DevOps** integration tile and click it.
 3. Identify and click the **integration to delete**.
-4. Click the trash can icon.
-5. Click **Remove** to delete the integration.
+4. Click the **trash can** icon.
+5. Click the **Remove** button to delete the integration.
 
 <!-- {J1_DOCUMENTATION_MARKER_START} -->
 <!--
