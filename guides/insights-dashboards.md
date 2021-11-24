@@ -22,14 +22,14 @@ that have already been built.
 Here are a few example boards and their configurations:
 [https://github.com/JupiterOne/insights-dashboards](https://github.com/JupiterOne/insights-dashboards)
 
-## 1. Import prebuilt Insights Dashboards (from GitHub)
+## Import Prebuilt Insights Dashboards (from GitHub)
 
 1. Navigate to the specific prebuilt dashboard you’d like to import into your
    JupiterOne account:
 
-   <https://github.com/JupiterOne/insights-dashboards>
+   <https://github.com/JupiterOne/insights-dashboards>.
 
-1. Pick the specific board, e.g., "AWS Accounts"
+1. Pick the specific board, for example, "AWS Accounts".
 
 1. Click into ‘board.json’
 
@@ -48,8 +48,12 @@ Here are a few example boards and their configurations:
 1. Click **Upload From JSON Schema** + select the file you previously saved
 
    ![import-dashboard](../assets/import-dashboard.gif)
+   
+   
+   
+   For more information about J1 standard Insights dashboards, [watch this video](https://support.jupiterone.io/hc/en-us/articles/360063694773-Getting-Started-with-Insights-Dashboards).
 
-## 2. Creating a custom Insights dashboard with custom charts based on queries
+## Creating a Custom Insights Dashboard with Custom Charts Based on Queries
 
 You can build your own custom dashboard with customized individual charts. Each
 chart is powered by one or more J1QL queries under the hood.
@@ -58,19 +62,21 @@ chart is powered by one or more J1QL queries under the hood.
 
    ![insights](../assets/insights.png)
 
-1. Expand the left sidebar by hitting the ‘>’ carrot 
+1. Expand the left sidebar by clicking the ‘>’ carrot .
 
-1. Hit the **Add** button’ + choose whether you want a personal or team board
+1. Hit the **Add** button’ + choose whether you want a personal or team board.
 
 1. Click **Start Adding Charts**. This will open up the **Add Chart** workflow where
    you can customize the details of your query/chart, which include, but aren't
    limited to:
    
-   - type of visual chart, e.g., number, pie, line, bar, etc.
+   - type of visual chart, such as number, pie, line, bar.
    - the chart’s query or queries
    - formatting options 
    
      ![custom-board](../assets/custom-board.gif)
+
+For more information about custom Insights dashboards, [watch this video](https://try.jupiterone.com/blog/how-to-create-customized-dashboards).
 
 ### Additional support documentation/resources for writing queries:
 
@@ -95,7 +101,11 @@ layout, add charts:
   ![delete-widget](../assets/delete-widget.png)
 
 - Reorder either charts within a specific board, or the board within the
-sidepanel by dragging the chart or board to the desired spot:
+  sidepanel by dragging the chart or board to the desired spot:
 
   ![reorder](../assets/reorder.gif)
+
+
+
+To see more examples of editing charts and graphs in an Insights dashboard, [watch this video](https://try.jupiterone.com/blog/how-to-use-charts-and-graphs-widgets).
 

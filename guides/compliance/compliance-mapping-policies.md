@@ -11,18 +11,18 @@ security_procedure
           |-- IMPLEMENTS -> compliance requirement or control
 ```
 
-See [this article][1] for the full GRC graph data model.
+See [this article](../../docs/data-model/org-grc.md) for the full GRC graph data model.
 
 > Mapping is created only between security procedures to a compliance
 requirement/control. Policies are indirectly mapped via procedures. This is
-because policies are very high level descriptions (i.e. principal statements)
+because policies are very high-level descriptions (such as principal statements)
 and principals cannot directly implement a compliance requirement/control. Only
 details on what you do and how you do it (the procedures) can implement a
-reqirement/control.
+requirement/control.
 >
 > ![compliance-mapped-policy-procedure](../../assets/compliance-mapped-policy-procedure.png)
 
-## Edit mapping of an individual compliance requirement/control
+## Edit Mapping of an Individual Compliance Requirement or Control
 
 Mapped security procedures of a specific compliance requirement or control can
 be selected via the UI in the requirement details view:
@@ -36,11 +36,13 @@ be selected via the UI in the requirement details view:
   (mapped policy procedures are listed on the right)
 - Click **Submit** when done
 
+[Watch this video](https://try.jupiterone.com/blog/how-to-map-grc-policies-and-procedures) to learn more about mapping policy or procedure documents.
+
 ## Edit full mapping in JSON
 
-The complete mapping between a security procedure (i.e. written documentation describing
-a security control or process) and a compliance requirement is can be edited via a JSON
-configuration file.
+The complete mapping between a security procedure (such as written 
+documentation describing a security control or process) and a compliance 
+requirement is can be edited via a JSON configuration file.
 
 An example mapping is provided here:
 
@@ -50,12 +52,10 @@ This JSON can be edited to meet your organization's policy procedures and
 compliance specifications, and then uploaded to the JupiterOne Compliance app:
 
 - Go to https://apps.us.jupiterone.io/compliance
-- Click ![edit][edit-icon] **Edit mapping**
+- Click ![edit](../../assets/icons/edit.png) **Edit mapping**
 - Copy/paste your "Policy Procedures to Compliance Mapping" JSON
-
-[1]: ../../docs/data-model/org-grc.md
-[edit-icon]: https://raw.githubusercontent.com/feathericons/feather/master/icons/edit.svg?sanitize=true
 
 ### JSON Structure
 
 See the schema documented [here](../../docs/schemas/policies-compliance.md).
+
