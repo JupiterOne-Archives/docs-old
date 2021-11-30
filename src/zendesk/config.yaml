@@ -331,7 +331,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: 5STAUR0tDBEM/AVGxvob3JJYMsxw0nTvGWKc96aJzMY=
+        hash: x/ylSlkq3fe177zO+Tm1mMUrKaWF4NEULmIEFnWhxbQ=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -537,7 +537,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500007928421'
       - title: CrowdStrike
         file: ../docs/integrations/crowdstrike/index.md
-        hash: 8uwVIrVRHZBYZCqGDIGNhw223DNlYL99syaGSXf7z3w=
+        hash: hKBbkISxpXa1krWZ6lzPTMDkJnaqdtprijlYpZRA2J8=
         id: 360041319254
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041319254'
       - title: Detectify
@@ -583,7 +583,7 @@ sections:
       - title: Google
         file: ../docs/integrations/google/index.md
         id: 360022902533
-        hash: NOXYhFALwM9lyhM2UfFPtX3jBeMhbmklS+RL+1oLwps=
+        hash: tumb6Kn1NPe9WOKmOO2Z8JWP0b8YEbI+3Iy0NPM3C6s=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
@@ -613,7 +613,7 @@ sections:
       - title: Jira
         file: ../docs/integrations/jira/index.md
         id: 360022721154
-        hash: FPKTTz5HiXI5a2K6wZMMIEVqrcSrGRQvkh4ViAI+j0o=
+        hash: F1U454mbWyaiBqwvMllWPDmmXFBdR3CQVe4re89OaK8=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721154'
       - title: JumpCloud
         file: ../docs/integrations/jumpcloud/index.md
@@ -803,7 +803,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: knDzRYwkJB3SNbYHf2vumCzorsHbbMylGIuUkRcYowg=
+        hash: 63Id/Px9Za5VGpDkGM1xjYT3Ko1M70ucgFQK4RoPO20=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
