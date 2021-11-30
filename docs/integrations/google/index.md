@@ -121,6 +121,10 @@ permissions required by JupiterOne, and which will include only the
    - Domain Management
    - User Security Management
 
+NOTE: In order to ingest role and role assignment data you will need to grant
+this account Super Admin permissions in addition to the custom role listed
+above.
+
 #### Adding Scopes and Privileges
 
 Changes to the integration may include additional data ingestion requiring
