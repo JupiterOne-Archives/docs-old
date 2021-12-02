@@ -331,7 +331,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: x/ylSlkq3fe177zO+Tm1mMUrKaWF4NEULmIEFnWhxbQ=
+        hash: kP9nFasV1HdPI4+2Cly2cBOsbJG+ltLkV9IpOqA5INA=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -710,6 +710,11 @@ sections:
         hash: glSEL4645hUPvtNuOG3lvumTXj7BIvt8WU/vqxyNH9g=
         id: 4404828273171
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4404828273171'
+      - title: Splunk
+        file: ../docs/integrations/splunk/index.md
+        hash: VJU3Ac6Z+clKmFhG0YDebaodXH+/AGp8G/qOmFUKNes=
+        id: 4411830287507
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4411830287507'
       - title: Tenable.io
         file: ../docs/integrations/tenable-io/index.md
         id: 360022902593
@@ -803,7 +808,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: 63Id/Px9Za5VGpDkGM1xjYT3Ko1M70ucgFQK4RoPO20=
+        hash: hm0MBlu+4Y88JUTM+P+pt8y1Bnq++BGBTWaL68UBIyg=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
