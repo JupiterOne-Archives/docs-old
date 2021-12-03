@@ -20,7 +20,7 @@ _All timestamps are store in Epoch milliseconds and displayed in the UI in ISO d
 | ------------ | -------- | --------------------------------------------------- |
 | `_createdOn` | `number` | The timestamp the entity/relationship was first created in JupiterOne. Usually represents a time after the resource was created in the provider environment.
 | `_beginOn`   | `number` | The timestamp when the latest version of entity/relationship was created. Equivalent to last updated timestamp within JupiterOne (_not_ the timestamp of the resource updated in the provider environment).
-| `_endOn`     | `number` | THe timestamp a version of the entity/relationship was deleted in JupiterOne.
+| `_endOn`     | `number` | The timestamp a version of the entity/relationship was deleted in JupiterOne.
 
 > Timestamps from the resource provider, if available, are generally normalized
 > to one of the following:
