@@ -160,7 +160,7 @@ NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
 "j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
 DOCUMENTATION FOR USAGE INFORMATION:
 
-https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
+https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md
 ********************************************************************************
 -->
 
@@ -170,16 +170,16 @@ https://github.com/JupiterOne/sdk/blob/master/docs/integrations/development.md
 
 The following entities are created:
 
-| Resources    | Entity `_type` | Entity `_class` |
-| ------------ | -------------- | --------------- |
-| Account      | `jira_account` | `Account`       |
-| Jira Issue   | `jira_issue`   | `Record`        |
-| Jira Project | `jira_project` | `Project`       |
-| Jira User    | `jira_user`    | `User`          |
+| Resources    | Entity `_type` | Entity `_class`   |
+| ------------ | -------------- | ----------------- |
+| Account      | `jira_account` | `Account`         |
+| Jira Issue   | `jira_issue`   | `Record`, `Issue` |
+| Jira Project | `jira_project` | `Project`         |
+| Jira User    | `jira_user`    | `User`            |
 
 ### Relationships
 
-The following relationships are created/mapped:
+The following relationships are created:
 
 | Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
 | --------------------- | --------------------- | --------------------- |

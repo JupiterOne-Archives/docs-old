@@ -1,4 +1,4 @@
-# Supporting SOC 2 audits using JupiterOne
+# Supporting SOC 2 Audits Using JupiterOne
 
 ## 1. Configure integrations
 
@@ -142,6 +142,8 @@ ability to invite your external auditors to use JupiterOne to conduct the
 assessment with the same workflow functionality.
 
 ![workflow](../assets/workflow.gif)
+
+[Watch this video](https://try.jupiterone.com/blog/video-workflows-within-the-j1-compliance-app) for more information about compliance workflows for collaboration. 
 
 #### Managing access
 

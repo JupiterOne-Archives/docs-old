@@ -33,3 +33,8 @@ controls:
 Here is an example screenshot:
 
 ![compliance-status](../../assets/compliance-summary-status-bars.png)
+
+
+
+[Watch this video](https://try.jupiterone.com/blog/video-managing-grc-with-jupiterone) for more information about managing compliance 
+with automated policies and procedures.
