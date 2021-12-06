@@ -51,7 +51,7 @@ Here are a few example boards and their configurations:
    
    
    
-   For more information about J1 standard Insights dashboards, [watch this video](https://support.jupiterone.io/hc/en-us/articles/360063694773-Getting-Started-with-Insights-Dashboards).
+   For more information about J1 standard Insights dashboards, [watch this video](https://try.jupiterone.com/blog/video-how-to-modify-out-of-the-box-dashboards).
 
 ## Creating a Custom Insights Dashboard with Custom Charts Based on Queries
 

@@ -54,7 +54,7 @@ selecting specific property values.
 
 To apply granular filters to your class and type filtered results:
 
-1. Click **Filter ** ![filter](../assets/icons/filter.png) in the top-right corner. 
+1. Click **Filter** ![filter](../assets/icons/filter.png) in the top-right corner. 
 2. Find all the properties you want to filter on.
 3. Select the required value for each property. 
 4. Click **Filter** ![green-filter](../assets/icons/green-filter.png) at the bottom. 
