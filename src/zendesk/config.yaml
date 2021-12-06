@@ -10,7 +10,7 @@ sections:
       - id: 360022884813
         title: Configure Integrations
         file: ../guides/configure-integrations.md
-        hash: FtArILSXRqsFtXu7LcMw2AzSuRTM1V6aPvn/bY1B52w=
+        hash: QO1YjTSHD7kSd8ychNx5oOWxXVV5dIpCtYrVeMwnXlM=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022884813'
       - title: Import Data
         file: ../guides/import-data.md
@@ -20,7 +20,7 @@ sections:
       - id: 360022705414
         title: Search Quickstart
         file: ../guides/quickstart-search.md
-        hash: WFtR929RplZyVSM6dk9Z8uKr6/137TUiIr14P8w+ur4=
+        hash: u49DJWi7mnzIXC3Lw8VT7i3X3eKckPwGV8Txz7B/+vI=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022705414'
       - id: 360022890073
         title: Navigate the Graph
@@ -35,7 +35,7 @@ sections:
       - title: Using Asset Inventory Filters
         file: ../guides/asset-inventory-filters.md
         id: 360022720454
-        hash: bvQRNKQlt/RDi9a5Pl2x/chXGHQ52AFCIuMeuj40NfI=
+        hash: CvBTQhu/W9tTysPLfZaigk26M5vlNBmCxuiHJ/Nc/Go=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720454'
       - title: Manage Alerts
         file: ../guides/manage-alerts.md
@@ -44,7 +44,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720474'
       - title: Visual Query Builder
         file: ../guides/j1-vqb.md
-        hash: 770OXHLl0SeGQYKpQOOOiTLcW0vloxD1A2zpsaPjNg0=
+        hash: pBCvv4Rel0a88vJlZFQxwFOxF6tpnudHKBAx4MrfoCY=
         id: 4407871506707
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4407871506707'
       - title: Manage Findings
@@ -219,7 +219,7 @@ sections:
     articles:
       - title: Managing Compliance in JupiterOne
         file: ../guides/compliance/compliance-overview.md
-        hash: oNSI6y9ZPOhsFSFD8GArhoxx1ZU5CZXc2vSjJcPfgqA=
+        hash: TkvfQJ0o5IhuRHs+nh1H7U3StwEAeKMcl0zsftGaj0A=
         id: 360042682733
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682733'
       - title: Import Compliance Standard or Security Questionnaire
@@ -234,12 +234,12 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042195334'
       - title: Compliance Policies Mapping
         file: ../guides/compliance/compliance-mapping-policies.md
-        hash: sr5KOflpFQrIZrL8nbdWMMs1si8BgyMa8Bs6UvPulik=
+        hash: iH4pvHyu5S6uO4fcPy1XDWDIZd88IYZ/bOoDtqUhBZs=
         id: 360042195394
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042195394'
       - title: Compliance Evidence Mapping
         file: ../guides/compliance/compliance-mapping-evidence.md
-        hash: v5c6QWxQpJBTQJvBDNTodzXLl7L5fQvIsl/GVa95nr8=
+        hash: eB++gVRAKIaoUuPoFI5HigrDwrO+q38DhzBLnuFQEyw=
         id: 360042682833
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682833'
       - title: Compliance Gap Analysis
@@ -249,7 +249,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682873'
       - title: Supporting SOC 2 audits using JupiterOne
         file: ../guides/soc2-with-jupiterone.md
-        hash: /3gDw6cYAWJi4c8DI0Qr5Nw5f3E7rnIxrQQQZ/O+eCE=
+        hash: DRZysXmOAWXjMo6P+A31iv+b+weK1aN8hFycZbViZ2k=
         id: 360061564534
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360061564534'
   - name: Asset Discovery and Inventory
@@ -268,14 +268,9 @@ sections:
   - name: User Guides
     id: 360002297174
     articles:
-      - title: Videos Gallery
-        file: ../guides/videos.md
-        hash: ltH+bJyUKM0S7PtHVvJO/v/aGm80tJ9MiyWHllbpm2w=
-        id: 1500005037902
-        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500005037902'
       - title: Getting Started with Insights Dashboards
         file: ../guides/insights-dashboards.md
-        hash: faJ25NnCOKoPXof1nDFnlSzasZ1XX5KGvo4EkrMxGBM=
+        hash: S+x0AXqRai36r66e86JsmLCWJW4nTyQRtZNSIyfuqlA=
         id: 360063694773
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360063694773'
       - title: AWS Resource Configuration Auditing
@@ -300,7 +295,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903353'
       - title: Configure User Access Control
         file: ../docs/jupiterone-access-controls.md
-        hash: KmmS361oIVA67LayFyBteB6oHk4pgr8R7OXFzqhMf2Q=
+        hash: KwCLUe+yHmn9TsVSwHojVAW9qRBnO/h57vGZ63bepHw=
         id: 360046093834
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046093834'
       - title: Enable API Key Access
@@ -331,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: kP9nFasV1HdPI4+2Cly2cBOsbJG+ltLkV9IpOqA5INA=
+        hash: FJQpzH3jftTjcS6MAMO8usskBtvihfdRzJCXfejePdY=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -808,7 +803,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: hm0MBlu+4Y88JUTM+P+pt8y1Bnq++BGBTWaL68UBIyg=
+        hash: GryT1Mf7HzBKZg6QvZeFtzA0vHlqS0VTUU7jGtYep+g=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
