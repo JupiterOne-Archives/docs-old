@@ -58,12 +58,19 @@ There are several different ways to get data into J1:
 - Add or update a single asset using the Assets app in the J1 UI. This method is useful 
   for adding low volumes of data. You can add a new asset and its associated properties 
   one at a time. You can also add or update the properties on an existing asset in the UI. 
-- Bulk upload assets using the Assets app in the J1 UI. You format your data in 
-  JSON or YAML and then upload the file to your J1 account. 
+  
+- Bulk upload assets using the Assets app in the J1 UI. 
+  ![add-asset-plus](../assets/add-asset-plus.png)
+  
+  You format your data in JSON or YAML and then upload the file to your J1 account. You
+  must have the Assets Admin and GraphViewer Admin roles.
+  
 - Use the J1 CLI with a script. This tool is for those knowledgeable with the command line 
   and how to create scripts to import data to the `JupiterOneNode.js` API client wrapper. 
+
 - Use the JupiterOne Platform API, which is what J1 uses in the integrations. You can access 
   all the data in your account and add or update data using a graphQL endpoint. 
+
 - Use the JupiterOne SDK. The SDK allows you to build a complete integration for J1. It is the most sophisticated way to import data into J1. It features the best practices that 
   J1 uses to build integrations with other applications.
 
