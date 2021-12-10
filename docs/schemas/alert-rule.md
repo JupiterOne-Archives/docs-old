@@ -55,7 +55,7 @@ JSON Example:
 | `name`             | `string`          | Name of the rule, which is unique to each account.           |
 | `description?`     | `string`          | A description of the rule.                                   |
 | `specVersion`      | `number`          | Rule evaluation version in the case of breaking changes.     |
-| `pollingInterval?` | `PollingInterval` | Frequency of automated rule evaluation. Defaults to `ONE_DAY`. |
+| `pollingInterval?` | `PollingInterval` | Frequency of automated rule evaluation. Options are `DISABLED`, `THIRTY_MINUTES`, `ONE_HOUR`, `FOUR_HOURS`, `EIGHT_HOURS`, `TWELVE_HOURS`, `ONE_DAY`, `ONE_WEEK`. Defaults to `ONE_DAY`. |
 | `question`         | `Question`        | Contains properties related to queries used in the rule evaluation. |
 | `operations`       | `RuleOperation[]` | Actions that are executed when a corresponding condition is met. |
 | `templates?`       | `object`          | Optional key/value pairs of template name to template.       |

@@ -331,8 +331,8 @@ Property filters are evaluated according the following **order of operations**:
 
 ## String Comparisons
 
-J1QL supports the use of the following operators for string comparisons, in
-addition to `=` and `!=`:
+J1QL supports the use of the following operators for comparisons of 
+strings stored either as a single string or multi-value field. In addition to `=` and `!=`:
 
 - `~=` : contains
 - `^=` : starts with
@@ -341,7 +341,7 @@ addition to `=` and `!=`:
 - `!^=` : does not start with
 - `!$=` : does not end with
 
-These operators only work for string comparisons.
+These operators only work for comparisons of strings or multi-value fields.
 
 **Examples:**
 
@@ -352,10 +352,25 @@ Find Person with firstName^='J'
 The above query returns all entities of the `Person` class that have a `firstName` beginning with the character 'J'.
 
 ```j1ql
+Find Person with email='a@b.com'
+```
+
+The above query returns all assets of the `Person` class that have a `Person.email'
+of 'a@b.com' or ['a@b.com', 'x@y.com'].
+
+ ```j1jl
+Find Person with email~='.com'
+ ```
+
+The above query checks if a substring matches for either a single string or a multi-value field.
+
+```j1ql
 Find Host with tag.AccountName~='demo'
 ```
 
 The above query returns entities of the `Host` class with any of the following examples of `tag.AccountName`: `xyz_demo`, `demo_xyz`, `abc_demo_xyz`.
+
+
 
 !!! warning
 These string evaluations are case-sensitive. So `'Demo'` and `'demo'`
