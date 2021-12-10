@@ -14,7 +14,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022884813'
       - title: Import Data
         file: ../guides/import-data.md
-        hash: N0524MFy5D7lBpDiUeIo+ZO3hgEGwvMjNusA/8SlWmk=
+        hash: egLrTxlY4UphEiYjlc3wnoCW1kMX3Y3/ehIJ5yfP4fI=
         id: 4411153308051
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4411153308051'
       - id: 360022705414
@@ -35,7 +35,7 @@ sections:
       - title: Using Asset Inventory Filters
         file: ../guides/asset-inventory-filters.md
         id: 360022720454
-        hash: CvBTQhu/W9tTysPLfZaigk26M5vlNBmCxuiHJ/Nc/Go=
+        hash: pd1Fjfai16a+cOmiMZnfHvtFD8APLBmBcjkKAtJ67HE=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720454'
       - title: Manage Alerts
         file: ../guides/manage-alerts.md
@@ -270,7 +270,7 @@ sections:
     articles:
       - title: Getting Started with Insights Dashboards
         file: ../guides/insights-dashboards.md
-        hash: S+x0AXqRai36r66e86JsmLCWJW4nTyQRtZNSIyfuqlA=
+        hash: RWYydUV4xwMDVzPTtkMAJHPitx4aYOlPi/GqbMW2aRM=
         id: 360063694773
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360063694773'
       - title: AWS Resource Configuration Auditing
@@ -313,7 +313,7 @@ sections:
     articles:
       - title: J1QL Language Specs
         file: ../docs/jupiterone-query-language.md
-        hash: giMRhcYyF7nTINcEBvmfNzf2++UmxCCjofKAk1uDFDk=
+        hash: L+fX+P9aI1AYc+Mt9xjgtRJ6Lp7B4v4nJ4ElfjDT74Y=
         id: 360022722014
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722014'
       - title: External Parameters and Secrets in J1QL
@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: FJQpzH3jftTjcS6MAMO8usskBtvihfdRzJCXfejePdY=
+        hash: 4aFByN1s0AAJgCX9fs9MlRxOcSwzF+uPV6+rJ3uavuU=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -351,7 +351,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049348293'
       - title: Alert Rule Schema
         file: ../docs/schemas/alert-rule.md
-        hash: CcLtHxA6f7ywAbuGBWIthRXjrgUAdjq+w4dnmNxZDbI=
+        hash: wpWIDXf0Dpvf3KqxBTwtsLnpVt27tj1t29nn3M1AO64=
         id: 360039711354
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360039711354'
       - title: Policies and Compliance related data schema
@@ -402,7 +402,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041392094'
       - title: Resource Metadata
         file: ../docs/metadata.md
-        hash: +txndhsSmY98epScn22kk8fw8mZx30vRkYhiQl3XO7A=
+        hash: Utb6PguejXTR8dfXSHtT4B4/CiseOpXeJ5APnfUzIvo=
         id: 360049346733
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360049346733'
       - title: Data Model for Software Development
@@ -707,7 +707,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4404828273171'
       - title: Splunk
         file: ../docs/integrations/splunk/index.md
-        hash: VJU3Ac6Z+clKmFhG0YDebaodXH+/AGp8G/qOmFUKNes=
+        hash: nJUr/g1nMXOf4RyFg/RIHteYC9ytgeJky3Id8lXemYU=
         id: 4411830287507
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4411830287507'
       - title: Tenable.io
@@ -803,7 +803,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: GryT1Mf7HzBKZg6QvZeFtzA0vHlqS0VTUU7jGtYep+g=
+        hash: U0yT2/bsFr51Ht2f/mTULuwh8BkEk+4fbF1KfCXKgDA=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
