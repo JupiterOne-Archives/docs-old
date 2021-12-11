@@ -1,0 +1,24 @@
+
+# JupiterOne 2021.86 Release
+
+December 13, 2021
+
+## Integrations
+
+### AWS
+
+JupiterOne has updated AWS S3 bucket access data to better align with AWS S3 bucket access presented in the AWS Console. 
+Users will see a change to some access settings data. 
+
+JupiterOne presents:
+ 
+  AWS `Access Public` aligns with J1 `public: true`
+
+  AWS `Access Objects can be public` aligns with J1 `public: undefined`
+
+  AWS `Access Bucket and objects not public` aligns with J1 `public: false`
+
+We believe this update presents a significant improvement in understanding your bucket access settings over our previous 
+reliance on [get-bucket-policy-status](https://docs.aws.amazon.com/cli/latest/reference/s3api/get-bucket-policy-status.html). 
+
+If you notice inconsistencies in your data, please let us know so that we can further tune and improve our logic. 
