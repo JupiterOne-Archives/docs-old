@@ -57,7 +57,7 @@ To delete the API key at any time, click **Revoke**.
 
 
 
-## Create API Keys in Queries
+## Create API Keys Using the GraphQL API
 
 You can use GraphQL queries to create account-level API keys.
 
@@ -82,8 +82,6 @@ mutation CreateToken($token: TokenInput!) {
   }
 }
 
-
-json
 "variables": {
         "token": {
         "name": "Token Name",
@@ -91,11 +89,8 @@ json
         "policy": "{\n\t\"permissions\": [{\n\t\t\"effect\":\"ALLOW\",\n\t\t\"actions\":[ \"dashboard:View\" ],\n\t\t\"resources\": [ \"dashboard:123456\" ]\n\t}]\n}"
     }
 }
-~~~
-
 The `policy` variable is a JSON object formatted as follows:
 
-~~~json
 {
   "permissions": [
     {
@@ -105,14 +100,12 @@ The `policy` variable is a JSON object formatted as follows:
     }
   ]
 }
-~~~
 
 The effect parameter is ether `ALLOW` or `DENY` and is case-sensitive. Currently, 
 J1 only supports fully-qualified actions and resources or the wildcard `*`.
 
 Supported actions include:
 
-````
 "compliance:GetStandard",
 "compliance:GetSummary",
 "dashboard:View",
@@ -127,11 +120,9 @@ Supported actions include:
 "parameters:DeleteParameter"
 
 "*" // All actions
-````
 
 Supported resources include:
 
-````
 "account:<resourceId>",
 "api:<resourceId>",
 "compliance-standard:<resourceId>",
@@ -143,17 +134,13 @@ Supported resources include:
 "parameter:<resourceId>"
 
 "*" // All resources
-````
 
 ### Revoke Account-Level API Keys
 
 To revoke an account-level key, enter:
 
-```j1ql
  POST `https://j1dev.apps.dev.jupiterone.io/api/graphql`
-```
 
-~~~gql
 mutation RevokeToken($id: String!) {
   revokeToken(id: $id) {
     token
@@ -173,4 +160,3 @@ mutation RevokeToken($id: String!) {
     }
 }
 ~~~
-
