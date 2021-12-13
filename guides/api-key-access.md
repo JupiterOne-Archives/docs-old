@@ -30,7 +30,7 @@ To generate a new API key or manage existing API keys:
 3. In the left panel, click the key icon.
    ![api_key_acct-mgmt](../assets/api_key_acct-mgmt.png) 
 4. In the User API Keys page, click **Add** ![api-keys-plus](../assets/icons/api-keys-plus.png).
-5.  In the API Keys modal, enter the name of the key and the number of days 
+5. In the API Keys modal, enter the name of the key and the number of days 
    before it expires, and click **Create**.
 
 To revoke an API key, in the User API Keys page, go to the key you want to 
@@ -59,7 +59,7 @@ To delete the API key at any time, click **Revoke**.
 
 ## Create API Keys in Queries
 
-You can use J1 queries to create account-level API keys.
+You can use GraphQL queries to create account-level API keys.
 
 To create an account-level API key, enter:
 
@@ -67,8 +67,7 @@ To create an account-level API key, enter:
 POST `https://j1dev.apps.dev.jupiterone.io/api/graphql`
 ```
 
-~~~gql
-```gql
+~~~http
 mutation CreateToken($token: TokenInput!) {
   createToken(token: $token) {
     token
@@ -82,9 +81,9 @@ mutation CreateToken($token: TokenInput!) {
     __typename
   }
 }
-```
 
-```json
+
+json
 "variables": {
         "token": {
         "name": "Token Name",
@@ -92,13 +91,11 @@ mutation CreateToken($token: TokenInput!) {
         "policy": "{\n\t\"permissions\": [{\n\t\t\"effect\":\"ALLOW\",\n\t\t\"actions\":[ \"dashboard:View\" ],\n\t\t\"resources\": [ \"dashboard:123456\" ]\n\t}]\n}"
     }
 }
-```
 ~~~
 
 The `policy` variable is a JSON object formatted as follows:
 
 ~~~json
-```json
 {
   "permissions": [
     {
@@ -108,7 +105,6 @@ The `policy` variable is a JSON object formatted as follows:
     }
   ]
 }
-```
 ~~~
 
 The effect parameter is ether `ALLOW` or `DENY` and is case-sensitive. Currently, 
@@ -117,7 +113,6 @@ J1 only supports fully-qualified actions and resources or the wildcard `*`.
 Supported actions include:
 
 ````
-```
 "compliance:GetStandard",
 "compliance:GetSummary",
 "dashboard:View",
@@ -132,13 +127,11 @@ Supported actions include:
 "parameters:DeleteParameter"
 
 "*" // All actions
-```
 ````
 
 Supported resources include:
 
 ````
-```
 "account:<resourceId>",
 "api:<resourceId>",
 "compliance-standard:<resourceId>",
@@ -150,7 +143,6 @@ Supported resources include:
 "parameter:<resourceId>"
 
 "*" // All resources
-```
 ````
 
 ### Revoke Account-Level API Keys
@@ -162,7 +154,6 @@ To revoke an account-level key, enter:
 ```
 
 ~~~gql
-```gql
 mutation RevokeToken($id: String!) {
   revokeToken(id: $id) {
     token
@@ -176,13 +167,10 @@ mutation RevokeToken($id: String!) {
     __typename
   }
 }
-```
 
-```json
 "variables": {
         "id": "<tokenId>"
     }
 }
-```
 ~~~
 
