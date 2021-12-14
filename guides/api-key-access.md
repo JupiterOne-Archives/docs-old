@@ -67,7 +67,7 @@ To create an account-level API key, enter:
 POST `https://j1dev.apps.dev.jupiterone.io/api/graphql`
 ```
 
-~~~http
+~~~
 mutation CreateToken($token: TokenInput!) {
   createToken(token: $token) {
     token
@@ -81,31 +81,35 @@ mutation CreateToken($token: TokenInput!) {
     __typename
   }
 }
+~~~
 
-"variables": {
-        "token": {
+
+    "variables": {
+       	"token": {
         "name": "Token Name",
         "category": "tags",
-        "policy": "{\n\t\"permissions\": [{\n\t\t\"effect\":\"ALLOW\",\n\t\t\"actions\":[ \"dashboard:View\" ],\n\t\t\"resources\": [ \"dashboard:123456\" ]\n\t}]\n}"
+        "policy": "{\n\t\"permissions\": [{\n\t\t\"effect\":\"ALLOW\",\n\t\t\"actions\":[\"dashboard:View\" ],\n\t\t\"resources\": [ \"dashboard:123456\" ]\n\t}]\n}"
+    	}
     }
-}
+
 The `policy` variable is a JSON object formatted as follows:
 
-{
-  "permissions": [
+    {
+    
+      "permissions": [
     {
       "effect": "ALLOW",
       "actions": ["dashboard:View"],
       "resources": ["dashboard:123456"]
     }
-  ]
-}
-
-The effect parameter is ether `ALLOW` or `DENY` and is case-sensitive. Currently, 
-J1 only supports fully-qualified actions and resources or the wildcard `*`.
+      ]
+    }
+    
+The effect parameter is ether `ALLOW` or `DENY` and is case-sensitive. Currently, J1 only supports fully-qualified actions and resources or the wildcard `*`.
 
 Supported actions include:
 
+```
 "compliance:GetStandard",
 "compliance:GetSummary",
 "dashboard:View",
@@ -120,9 +124,11 @@ Supported actions include:
 "parameters:DeleteParameter"
 
 "*" // All actions
+```
 
 Supported resources include:
 
+```
 "account:<resourceId>",
 "api:<resourceId>",
 "compliance-standard:<resourceId>",
@@ -134,6 +140,7 @@ Supported resources include:
 "parameter:<resourceId>"
 
 "*" // All resources
+```
 
 ### Revoke Account-Level API Keys
 
@@ -141,22 +148,22 @@ To revoke an account-level key, enter:
 
  POST `https://j1dev.apps.dev.jupiterone.io/api/graphql`
 
-mutation RevokeToken($id: String!) {
-  revokeToken(id: $id) {
-    token
-    id
-    name
-    category
-    policy
-    revoked
-    createdAt
-    expiresAt
-    __typename
-  }
-}
-
-"variables": {
-        "id": "<tokenId>"
+    mutation RevokeToken($id: String!) {
+    	revokeToken(id: $id) {
+    		token
+           		id
+            	name
+            	category
+            	policy
+            	revoked
+            	createdAt
+            	expiresAt
+            	__typename
+         }
     }
-}
-~~~
+
+
+    "variables": {
+    		"id": "<tokenId>"
+    	}
+    }
