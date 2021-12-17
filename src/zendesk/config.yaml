@@ -300,7 +300,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046093834'
       - title: Enable API Key Access
         file: ../guides/api-key-access.md
-        hash: GnXV/Yw9QFCkoPFDRBa4GOFWcSM8YWk2VjHKKOqpDbo=
+        hash: Vmwi1RSgpMCAtKotBtiu4hEWNyH30iViBl81z5k5YlE=
         id: 360025989253
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360025989253'
       - title: Creating `Team` entities and mapping team members
@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: 4aFByN1s0AAJgCX9fs9MlRxOcSwzF+uPV6+rJ3uavuU=
+        hash: M5b8CjxtTBebsvsSyYxO5AjcsMnrcxSVs/aIlzjILS8=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -341,7 +341,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903373'
       - title: Enable API Key Access
         file: ../guides/api-key-access.md
-        hash: GnXV/Yw9QFCkoPFDRBa4GOFWcSM8YWk2VjHKKOqpDbo=
+        hash: Vmwi1RSgpMCAtKotBtiu4hEWNyH30iViBl81z5k5YlE=
         id: 360025847594
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360025847594'
       - title: Data Structure for Bulk Upload
@@ -578,7 +578,7 @@ sections:
       - title: Google
         file: ../docs/integrations/google/index.md
         id: 360022902533
-        hash: tumb6Kn1NPe9WOKmOO2Z8JWP0b8YEbI+3Iy0NPM3C6s=
+        hash: jfahzxKjMMJvCPMUk+wgsXdvT62VFqn8Y9bpryvUoiE=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902533'
       - title: Google Cloud
         file: ../docs/integrations/google-cloud/index.md
@@ -598,7 +598,7 @@ sections:
       - title: Jamf
         file: ../docs/integrations/jamf/index.md
         id: 360022721134
-        hash: Xa2BN3JkvHDvO+EAK4bHC+irZtHrnR8AxrZAiHaI8Eg=
+        hash: N/MkV649770ce+rM71gNIyMUaFtzCnwPrcImUXWzy9A=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721134'
       - title: JFrog Artifactory
         file: ../docs/integrations/jfrog-artifactory/index.md
@@ -773,8 +773,14 @@ sections:
     articles:
       - title: 2021.86 Release
         file: ../release-notes/2021-86.md
+        hash: stRwkWdYjxs19Sg3hIoULi2X5l4uwTV5V/mKILy5XaE=
+        id: 4412979582867
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4412979582867'
       - title: 2021.85 Release
         file: ../release-notes/2021-85.md
+        hash: j/lmKSjCzjU+w4WUcs93dm9tqBepVPtJj9okrVoTXok=
+        id: 4412995820051
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4412995820051'
       - title: 2021.84 Release
         file: ../release-notes/2021-84.md
         hash: 2LTnxN0xxZP/nvMLLJwVFjSEYbLIM4joiHL1/nFiIsw=
@@ -807,7 +813,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: U0yT2/bsFr51Ht2f/mTULuwh8BkEk+4fbF1KfCXKgDA=
+        hash: TGUplKRWwy9F4GlvZIt95iHjiftfi9lhfHOdIXoQXyg=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
