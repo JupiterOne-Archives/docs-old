@@ -771,6 +771,10 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2021.86 Release
+        file: ../release-notes/2021-86.md
+      - title: 2021.85 Release
+        file: ../release-notes/2021-85.md
       - title: 2021.84 Release
         file: ../release-notes/2021-84.md
         hash: 2LTnxN0xxZP/nvMLLJwVFjSEYbLIM4joiHL1/nFiIsw=

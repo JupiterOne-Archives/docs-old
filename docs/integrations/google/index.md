@@ -72,7 +72,8 @@ perform the following actions.
 5. Add the following **API scopes** (comma separated):
 
    ```text
-   https://www.googleapis.com/auth/admin.directory.domain.readonly, https://www.googleapis.com/auth/admin.directory.user.readonly, https://www.googleapis.com/auth/admin.directory.group.readonly, https://www.googleapis.com/auth/admin.directory.user.security, https://www.googleapis.com/auth/apps.groups.settings, https://www.googleapis.com/auth/admin.directory.rolemanagement.readonly
+   https://www.googleapis.com/auth/admin.directory.domain.readonly, https://www.googleapis.com/auth/admin.directory.user.readonly, https://www.googleapis.com/auth/admin.directory.group.readonly, https://www.googleapis.com/auth/admin.directory.user.security, https://www.googleapis.com/auth/apps.groups.settings, https://www.googleapis.com/auth/admin.directory.rolemanagement.readonly,
+   https://www.googleapis.com/auth/admin.directory.device.mobile.readonly
    ```
 
 6. Click **Authorize**.
@@ -120,6 +121,7 @@ permissions required by JupiterOne, and which will include only the
    - Groups -> Read
    - Domain Management
    - User Security Management
+   - Mobile Device Management
 
 NOTE: In order to ingest role and role assignment data you will need to grant
 this account Super Admin permissions in addition to the custom role listed
@@ -213,6 +215,7 @@ The following entities are created:
 | Domain         | `google_domain`         | `Domain`        |
 | Group          | `google_group`          | `UserGroup`     |
 | Group Settings | `google_group_settings` | `Configuration` |
+| Mobile Device  | `google_mobile_device`  | `Device`        |
 | Role           | `google_role`           | `AccessRole`    |
 | Site           | `google_site`           | `Site`          |
 | Token          | `google_token`          | `AccessKey`     |
@@ -220,13 +223,14 @@ The following entities are created:
 
 ### Relationships
 
-The following relationships are created/mapped:
+The following relationships are created:
 
 | Source Entity `_type` | Relationship `_class` | Target Entity `_type`          |
 | --------------------- | --------------------- | ------------------------------ |
 | `google_account`      | **HAS**               | `google_group`                 |
 | `google_account`      | **HAS**               | `google_role`                  |
 | `google_account`      | **HAS**               | `google_user`                  |
+| `google_account`      | **MANAGES**           | `google_mobile_device`         |
 | `google_group`        | **HAS**               | `google_group`                 |
 | `google_group`        | **HAS**               | `google_group_settings`        |
 | `google_group`        | **HAS**               | `google_user`                  |
