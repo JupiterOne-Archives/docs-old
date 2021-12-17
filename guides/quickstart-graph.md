@@ -1,4 +1,4 @@
-# Navigating the JupiterOne Graphs-+
+# Navigating the JupiterOne Graphs
 
 J1 is built on a data-driven graph platform. For the story that inspired J1 to build it, 
 read [the J1 blog](https://jupiterone.com/blog/three-dimensional-security/).
