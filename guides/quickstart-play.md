@@ -12,14 +12,14 @@ To access the J1 playground:
    ![](../assets/onboarding.png)
 3. On the Enable J1 Playground page, click **Get Access** to receive an invitation to the playground.
     ![invitation](../assets/play_invite.png)
-   ​
+       ​
 4. When you receive the invitation email, click **Signup** or **Login** to get started, and follow the instructions on the Accept Invitation page to get to the playground.
 5. You know you are in the playground when the you see a J1 landing page with play as its title in the top-left corner.
    ![play search page](../assets/play-search.png)
    ​
 
 
-If you need more assistance learning about the J1 user interface, read the [introduction documentation](./J1-what-is-it/.md).
+If you need more assistance learning about the J1 user interface, read the [introduction documentation](./j1-what-is-it.md).
 
 ## Discover Your Assets
 
@@ -27,4 +27,4 @@ Your assets are operational entities such as code repositories, data stores, IAM
 
 Modern security and visibility requires in-depth knowledge of your cyber assets and the insights that come from the relationships that connect them. J1 Assets provides meaningful context that you can use to strengthen your security program.
 
-Look around at the playground data in J1 Assets and read more in the [product documentation](./).
+Look around at the playground data in J1 Assets and read more in the [product documentation](./asset-inventory-filters.md).
