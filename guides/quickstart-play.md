@@ -19,7 +19,7 @@ To access the J1 playground:
    ​
 
 
-If you need more assistance learning about the J1 user interface, read the [introduction documentation](./j1-what-is-it.md).
+You access all of the J1 apps from the home page by clicking ![apps](../assets/icons/apps.png). If you need more assistance learning about the J1 user interface, read the [introduction documentation](./j1-what-is-it.md).
 
 ## Discover Your Assets
 
@@ -27,4 +27,10 @@ Your assets are operational entities such as code repositories, data stores, IAM
 
 Modern security and visibility requires in-depth knowledge of your cyber assets and the insights that come from the relationships that connect them. J1 Assets provides meaningful context that you can use to strengthen your security program.
 
-Look around at the playground data in J1 Assets and read more in the [product documentation](./asset-inventory-filters.md).
+Look around at the playground data in J1 Assets by selecting a class and type of asset to filter on. and read more in the [product documentation](./asset-inventory-filters.md). ![assets](../assets/asset-critical.png)
+
+
+
+## Try Some Queries
+
+J1 provides a [questions library](https://ask.us.jupiterone.io/filter?tagFilter=all) that updates on a regular basis. Have a look and try the queries associated with the questions. 
