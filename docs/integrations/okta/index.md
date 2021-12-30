@@ -36,7 +36,11 @@ If you need help with this integration, please contact
 ### In Okta
 
 1. Login to Okta at https://yoursubdomain.okta.com, using an account with Admin
-   privileges.
+   privileges. It is important to note that the token inherits the privileges of
+   the user that creates the token, "API tokens are generated with the
+   permissions of the user that created the token. If a user’s permissions
+   changes, then so does that of the token. Okta recommends generating API
+   tokens from a service account with permissions that do not change."
 2. Go to Admin mode by pressing the Admin button in the top right corner. You
    should now be at https://yoursubdomain-admin.okta.com.
 3. On the left-side menu, select Security, and then API.
