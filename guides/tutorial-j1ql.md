@@ -642,3 +642,7 @@ The resulting graph looks similar this:
 
 [../docs/jupiterone-query-language.md]: 
 [./quickstart-graph.md]: 
+
+[./quickstart-graph.md]: 
+
+[../docs/jupiterone-query-language.md]: 
