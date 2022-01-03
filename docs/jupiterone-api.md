@@ -939,6 +939,9 @@ are duplicate keys already in use.
 - Scope is required when the `syncMode` is `DIFF`.
 - Scope can only be used when the `source` is `api`.
 
+!!! warning
+    There can only be one sync job finalized under the same `scope` at a time. Multiple attempts to finalize a job under the same scope will result in a `400`.
+
 `syncMode`:
 
 - `DIFF` is the default value when a syncMode is not specified. This mode will
