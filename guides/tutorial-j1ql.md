@@ -13,11 +13,10 @@ There are several prepackaged queries you can use in the **Search**
 app or browse for in **Query Library**. This tutorial focuses on helping you
 construct custom queries yourself.
 
-This tutorial builds on the [full J1QL documentation][../docs/jupiterone-query-language.md] using some
-common use cases.
+This tutorial builds on the [full J1QL documentation](../docs/jupiterone-query-language.md) using some common use cases.
 
 The queries in this tutorial and other JupiterOne documentation are examples 
-that work in most cases, but may require fine-tuning based on the specific  
+that work in most cases, but may require fine-tuning based on the specific 
 structure of your data sources.
 
 ## Part 1:  Simple Root Query
@@ -75,14 +74,12 @@ The second set of controls (above the selected asset node) allows you to:
 The last set of controls (in the bottom-left corner) allows you to:
 
 - Toggle the full screen mode.
-
 - Opens the filter panel to show/hide assets in the graph by account or
   asset type.
-
 - Unhide all currently hidden assets (not shown in the above image as it
   only shows when there is at least one hidden asset).
 
-See more details on the graph controls in this [documentation][./quickstart-graph.md].
+See more details on the graph controls in this [documentation](./quickstart-graph.md).
 
 ## Part 2: Infrastructure Analysis
 
@@ -646,3 +643,7 @@ The resulting graph looks similar this:
 [./quickstart-graph.md]: 
 
 [../docs/jupiterone-query-language.md]: 
+
+[../docs/jupiterone-query-language.md]: 
+
+[./quickstart-graph.md]: 
