@@ -13,12 +13,12 @@ There are several prepackaged queries you can use in the **Search**
 app or browse for in **Query Library**. This tutorial focuses on helping you
 construct custom queries yourself.
 
-This tutorial builds on the [full J1QL documentation][../j1ql-doc.md] using some
+This tutorial builds on the [full J1QL documentation][../docs/jupiterone-query-language.md] using some
 common use cases.
 
-_The queries in this tutorial and other JupiterOne documentation are examples _
-_that work in most cases, but may require fine-tuning based on the specific _
-_structure of your data sources._
+The queries in this tutorial and other JupiterOne documentation are examples 
+that work in most cases, but may require fine-tuning based on the specific  
+structure of your data sources.
 
 ## Part 1:  Simple Root Query
 
@@ -31,7 +31,7 @@ Find Account that relates to Root return tree
 The noun that immediately follows the verb is case-sensitive:
 
 - A `TitleCase` word tells the query to search for assets of that **class** (such as
-`Account`, `Firewall`, `Gateway`, `Host`, `User`, `Root`, `Internet`).
+  `Account`, `Firewall`, `Gateway`, `Host`, `User`, `Root`, `Internet`).
 - A `snake_case` word tells the query to search for assets of that **type**
   (such as `aws_account`, `aws_security_group`, `aws_internet_gateway`,
   `aws_instance`, `aws_iam_user`, `okta_user`, `user_endpoint`)
@@ -82,7 +82,7 @@ The last set of controls (in the bottom-left corner) allows you to:
 - Unhide all currently hidden assets (not shown in the above image as it
   only shows when there is at least one hidden asset).
 
-See more details on the graph controls in this [documentation][../quickstart-graph.md].
+See more details on the graph controls in this [documentation][./quickstart-graph.md].
 
 ## Part 2: Infrastructure Analysis
 
@@ -165,8 +165,8 @@ Find aws_ebs_volume with encrypted != true
 ```
 
 > In the above query the `with` keyword binds to the asset noun
-immediately to its left, and allows you to filter results on the property 
-values of that entity.
+> immediately to its left, and allows you to filter results on the property 
+> values of that entity.
 
 If the above query finds some unencrypted EBS volumes, you can see what
 is using them by entering:
@@ -296,10 +296,10 @@ Find Network that has (Host|Cluster|Database) return tree
 ```
 
 > This is a basic result. Your environment may look more complex:
-> 
->![](../assets/j1ql-tutorial-network-has-resources.png)
-> 
->The properties side panel for the selected `aws_subnet` has a `webLink`
+>
+> ![](../assets/j1ql-tutorial-network-has-resources.png)
+>
+> The properties side panel for the selected `aws_subnet` has a `webLink`
 > that enables you to quickly get to the source directly in the AWS web
 > console.
 
@@ -312,15 +312,15 @@ Find aws_cloudfront_distribution that relates to * return tree
 
 > The following is a J1 account with multiple AWS integration configurations 
 > and several `aws_cloudfront_distribution` assets and relationships.
-> 
->![](../assets/j1ql-tutorial-cloudfront.png)
-> 
->This graph shows you the origins connected to the distributions: both
+>
+> ![](../assets/j1ql-tutorial-cloudfront.png)
+>
+> This graph shows you the origins connected to the distributions: both
 > S3 buckets (for static website/contents) and API gateways.
 > Additionally, the graph shows you the ACM certificate they use
 > and the WAF ACL, if any, configured to protect them.
-> 
->You can select any asset node in the graph to inspect its
+>
+> You can select any asset node in the graph to inspect its
 > detailed properties, or find a web link to get to the source in the AWS
 > web console.
 
@@ -635,3 +635,10 @@ The resulting graph looks similar this:
 
 ![noncompliance-device-aws-access](../assets/graph-noncompliant-user-endpoint-aws-access.png)
 
+
+
+[../j1ql-doc.md]: 
+[../docs/jupiterone-query-language.md]: 
+
+[../docs/jupiterone-query-language.md]: 
+[./quickstart-graph.md]: 
