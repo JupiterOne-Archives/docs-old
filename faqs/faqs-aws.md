@@ -14,20 +14,13 @@ Or they can be found on the [jupiterone-aws-integration][] project on Github.
 ## How can I add/configure all the sub-accounts in my AWS Organization?
 
 First configure your AWS Organization master account to JupiterOne per the instructions 
-in the JupiterOne application or those found at the [jupiterone-aws-integration][] project on Github. 
-During this process you will create an IAM Role for JupiterOne with specific policies attached and a 
-specific external trust ID. Please note the IAM Role name, policies, and external trust ID used. 
-Do not select the option "Auto-configure additional integrations..." yet.
+in the JupiterOne application or those found at the [jupiterone-aws-integration][] project on Github. During this process you will create an IAM Role for JupiterOne with specific policies attached and a specific external trust ID. Please note the IAM Role name, policies, and external trust ID used. Do not select the option "Auto-configure additional integrations..." yet.
 
-Now use your favorite infrastructure-as-code method to systematically generate an identical JupiterOne IAM Role in each of your 
-sub-accounts. Be sure to name the IAM Role identically, attach the same policies, and use the same external trust ID 
-as was used with the master account configuration.
+Now use your favorite infrastructure-as-code method to systematically generate an identical JupiterOne IAM Role in each of your  sub-accounts. Be sure to name the IAM Role identically, attach the same policies, and use the same external trust ID as was used with the master account configuration.
 
-Finally, make sure that in the JupiterOne application you have selected a polling interval and select the option 
-to "Auto-configure additional integrations..." in your master account configuration.
+Finally, make sure that in the JupiterOne application you have selected a polling interval and select the option to "Auto-configure additional integrations..." in your master account configuration.
 
-If these steps are done correctly, JupiterOne will automatically pull in all
-sub-accounts from the Organization the next time it polls your environment.
+If these steps are done correctly, JupiterOne will automatically pull in all sub-accounts from the Organization the next time it polls your environment.
 
 ## How can I skip certain sub-accounts when auto-configuring my AWS Organization?
 
@@ -37,8 +30,7 @@ to the sub-account in your infrastructure-as-code or from the AWS Organizations 
 
 ## How can I bypass a Service Control Policy blocking the JupiterOne Integration?
 
-See the [AWS Service control policies documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html)
-for the latest information.
+See the [AWS Service control policies documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html) for the latest information.
 
 Errors may occur after configuring one or many AWS integrations if there is a
 Service Control Policy (SCP) blocking specified services or regions. Any AWS
@@ -95,9 +87,7 @@ In this case, if a security group has a rule allowing traffic to or from the Int
 relationship edge between that security group connecting it to/from the Internet. The EC2 instance 
 itself will _not_ have a relationship edge to/from the Internet.
 
-To determine whether an EC2 instance is publicly accessible, the instance itself needs to be in a public
-subnet in addition to having a security group rule allowing traffic. This is determined by a query that
-checks for both of these conditions:
+To determine whether an EC2 instance is publicly accessible, the instance itself needs to be in a public subnet in addition to having a security group rule allowing traffic. This is determined by a query that checks for both of these conditions:
 
 ```j1ql
 Find aws_subnet with public=true
@@ -121,18 +111,13 @@ Find aws_instance with tag.Environment='staging'
 
 ## I am using a powerful policy like AdministratorAccess in AWS, why can't I query on the resources it allows?
 
-The relationships in J1 are built between the entities as described in the environments. For example, 
-the `AdministratorAccess` IAM policy in AWS has an `allow *:*` rule, therefore, a relationship is
-built directly from that `aws_iam_policy` entity to the `aws_account` entity.
+The relationships in J1 are built between the entities as described in the environments. For example, the `AdministratorAccess` IAM policy in AWS has an `allow *:*` rule, therefore, a relationship is built directly from that `aws_iam_policy` entity to the `aws_account` entity.
 
-Similarly, if the policy states `allow s3:*`, the `ALLOWS` relationship in JupiterOne is built between 
-the `aws_iam_policy` entity to the `aws_s3` service entity. This approach allows for simpler graph without 
-thousands of connections from one entity to all other sub-entities that reside within an account or service.
+Similarly, if the policy states `allow s3:*`, the `ALLOWS` relationship in JupiterOne is built between the `aws_iam_policy` entity to the `aws_s3` service entity. This approach allows for simpler graph without thousands of connections from one entity to all other sub-entities that reside within an account or service.
 
 These conditions need to be taken into account at the query level.
 
-For example, to find IAM policies that allow access to S3 buckets, we should also check those that 
-allow access to all resources in the S3 service and those that allow access to all services in the AWS account.
+For example, to find IAM policies that allow access to S3 buckets, we should also check those that allow access to all resources in the S3 service and those that allow access to all services in the AWS account.
 
 This is done simply as follows:
 
@@ -185,11 +170,11 @@ return tree
     There are additional properties captured on the edge in each case, 
     which can be used for additional filtering (see screenshots). 
     For example:
-
-    ```j1ql
+    
+    ​```j1ql
     find aws_s3_bucket 
     that sends aws_cloudtrail 
     that logs to * 
     where logs.read=true and logs.write=true
     return TREE
-    ```
+    ​```
