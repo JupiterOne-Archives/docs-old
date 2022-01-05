@@ -65,7 +65,7 @@ open:
 
 |                 Control                  | Function                                 |
 | :--------------------------------------: | ---------------------------------------- |
-| ![query-zoom-in](../assets/icons/query-zoom-in.png)&nbsp;![query-zoom-out](../assets/icons/query-zoom-out.png) | Scroll using your mouse/touchpad to zoom in/out on the graph. |
+| ![query-zoom-in](../assets/icons/zoom_in.png)&nbsp;![query-zoom-out](../assets/icons/zoom_out.png) | Scroll using your mouse/touchpad to zoom in/out on the graph. |
 | ![query-drag](../assets/icons/query-drag.png) | Click and drag on a blank spot on the graph using your mouse/touchpad to move the graph. Click and drag on a selected asset node to move that particular node. |
 
 The Graph Viewer app uses the same sets of controls.
