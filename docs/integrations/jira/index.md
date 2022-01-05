@@ -13,10 +13,23 @@
 
 ## How it Works
 
-- JupiterOne periodically fetches Jira projects, users, and issues to update the
-  graph.
+- JupiterOne periodically fetches Jira projects, users, and issues\* to update
+  the graph.
 - Write JupiterOne queries to review and monitor updates to the graph.
 - Configure alerts to take action when the JupiterOne graph changes.
+- Jira issue entities will have additional `_class` values when custom types are
+  used in Jira:
+  - `Change` (also added when the issue key starts with `PRODCM`)
+  - `Finding`
+  - `Incident`
+  - `Risk`
+  - `Vulnerability`
+
+(\*) The integration performs a rolling ingestion of up to 2000 of the most
+recently created or updated issues. Already ingested issues that are not
+modified will remain in the graph when the integration runs again. Issues are
+only deleted along with other entities associated with the integration instance
+when the integration instance is deleted.
 
 ## Requirements
 
@@ -78,20 +91,19 @@ Before you use an existing user, you should verify a couple of things.
 1. From the configuration **Gear Icon**, select **Integrations**.
 2. Scroll to the **Jira** integration tile and click it.
 3. Click the **Add Configuration** button and configure the following settings:
-
-- Enter the **Account Name** by which you'd like to identify this Jira account
-  in JupiterOne. Ingested entities will have this value stored in
-  `tag.AccountName` when **Tag with Account Name** is checked.
-- Enter a **Description** that will further assist your team when identifying
-  the integration instance.
-- Select a **Polling Interval** that you feel is sufficient for your monitoring
-  needs. You may leave this as `DISABLED` and manually execute the integration.
-- Enter the **Hostname** of your organization.
-- Enter the **User Email** used to authenticate with Jira.
-- Enter the **User Password** associated with the user email, or the **API Key**
-  if the password requires MFA.
-- Enter the **Project Keys** that the integration will retrieve data from.
-
+   - Enter the **Account Name** by which you'd like to identify this Jira
+     account in JupiterOne. Ingested entities will have this value stored in
+     `tag.AccountName` when **Tag with Account Name** is checked.
+   - Enter a **Description** that will further assist your team when identifying
+     the integration instance.
+   - Select a **Polling Interval** that you feel is sufficient for your
+     monitoring needs. You may leave this as `DISABLED` and manually execute the
+     integration.
+   - Enter the **Hostname** of your organization.
+   - Enter the **User Email** used to authenticate with Jira.
+   - Enter the **User Password** associated with the user email, or the **API
+     Key** if the password requires MFA.
+   - Enter the **Project Keys** that the integration will retrieve data from.
 4. Click **Create Configuration** once all values are provided.
 
 ## How to Uninstall
@@ -101,57 +113,6 @@ Before you use an existing user, you should verify a couple of things.
 3. Identify and click the **integration to delete**.
 4. Click the **trash can** icon.
 5. Click the **Remove** button to delete the integration.
-
-## Data Model
-
-### Entities
-
-The following entity resources are ingested when the integration runs:
-
-| Jira Resource | \_type of the Entity | \_class of the Entity |
-| ------------- | -------------------- | --------------------- |
-| Account       | `jira_account`       | `Account`             |
-| Project       | `jira_project`       | `Project`             |
-| User          | `jira_user`          | `User`                |
-| Issue \*      | `jira_issue`         | `Record`              |
-
-(\*) The integration ingests issues up to a year prior to the date of execution.
-Issues ingested are kept as records, such that issues older than a year that
-were previously ingested will remain in the graph when the integration runs
-again. Issues are deleted only when the integration instance is deleted, along
-with other entities associated with the integration instance.
-
-### Relationships
-
-The following relationships are created/mapped:
-
-| From           | Type         | To             |
-| -------------- | ------------ | -------------- |
-| `jira_account` | **HAS**      | `jira_project` |
-| `jira_project` | **HAS**      | `jira_issue`   |
-| `jira_user`    | **CREATED**  | `jira_issue`   |
-| `jira_user`    | **REPORTED** | `jira_issue`   |
-
-[1]:
-  https://developer.atlassian.com/cloud/jira/platform/security-for-other-integrations/
-[2]: https://confluence.atlassian.com/cloud/api-tokens-938839638.html
-[3]:
-  https://support.atlassian.com/jira-core-cloud/docs/how-do-jira-permissions-work/
-[4]:
-  https://confluence.atlassian.com/jirakb/jira-cloud-how-to-create-a-read-only-user-779160729.html
-[5]:
-  https://confluence.atlassian.com/adminjiraserver/managing-global-permissions-938847142.html
-
-## Pro Tips
-
-In Jira, if you create custom issue types and use one of the following, the
-integration will parse and translate them to the corresponding entity class:
-
-- `Change` (this also maps when the issue key starts with `PRODCM`)
-- `Finding`
-- `Incident`
-- `Risk`
-- `Vulnerability`
 
 <!-- {J1_DOCUMENTATION_MARKER_START} -->
 <!--
@@ -195,3 +156,13 @@ END OF GENERATED DOCUMENTATION AFTER BELOW MARKER
 ********************************************************************************
 -->
 <!-- {J1_DOCUMENTATION_MARKER_END} -->
+
+[1]:
+  https://developer.atlassian.com/cloud/jira/platform/security-for-other-integrations/
+[2]: https://confluence.atlassian.com/cloud/api-tokens-938839638.html
+[3]:
+  https://support.atlassian.com/jira-core-cloud/docs/how-do-jira-permissions-work/
+[4]:
+  https://confluence.atlassian.com/jirakb/jira-cloud-how-to-create-a-read-only-user-779160729.html
+[5]:
+  https://confluence.atlassian.com/adminjiraserver/managing-global-permissions-938847142.html
