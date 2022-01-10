@@ -486,12 +486,6 @@
 >
 >   * `_key = source.assessment`
 
-## `ThreatIntel <-HAS- Finding`
-
-> **Target Filters**
->
->   * `qid = source.qid`
-
 ## `ThreatIntel <-HAS- Vulnerability`
 
 > **Target Filters**
@@ -587,3 +581,9 @@
 > **Target Filters**
 >
 >   * `id = source.requires`
+
+## `Domain -HAS-> User`
+
+> **Source Filters**
+>
+>   * `domainName = !null`
