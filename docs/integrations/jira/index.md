@@ -34,8 +34,10 @@ when the integration instance is deleted.
 ## Requirements
 
 - JupiterOne requires the hostname for your Jira organization. JupiterOne also
-  requires the email and password for a user that has the correct permissions
-  enabled. Use an API key instead of a user's password when MFA is enabled.
+  requires the username/email and an API key for a user having the correct
+  permissions granted.
+- The integration supports Jira Cloud with Jira API v3 and Jira Data Center with
+  Jira API v2. Other setups may work.
 - You must have permission in JupiterOne to install new integrations.
 
 ## Support
