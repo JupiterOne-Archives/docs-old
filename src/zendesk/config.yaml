@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: QBF8xQHW1xL2SGBRLc5QF6wNJp9roU/u5wPrXpueyTI=
+        hash: 70k/UdReNK3gVN4nAI8EmQOxfgr9xy7j4fdRGu9x6Q4=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -392,12 +392,12 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360034786734'
       - title: Entity Relationship Mapping - Global Rules
         file: ../docs/data-model/mappings-global.md
-        hash: FeFqdApXalYF7IIhxzh2wXnNiFwdivMw73NTum6vUIE=
+        hash: Wwotaey3JrcK0C4P401JreM+aeWshAPtZTMFyKJy9H4=
         id: 360041392074
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041392074'
       - title: Entity Relationship Mapping - Integration Rules
         file: ../docs/data-model/mappings-integrations.md
-        hash: 9xCNN1adQNWg5aR9ziuAr2VTVjnTGfz7f6l2Hb5aZkM=
+        hash: lKWLQIcUY0vNMjJzF+foE8g1u/meKQV2Yk3kNdcEtL0=
         id: 360041392094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041392094'
       - title: Resource Metadata
@@ -608,7 +608,7 @@ sections:
       - title: Jira
         file: ../docs/integrations/jira/index.md
         id: 360022721154
-        hash: Hapn47ZheX3mNdb6ODd0A2sONKimHaB9VfKpoFFLo4k=
+        hash: UrvL46zQZVU3WkOL7Bi2PGbctxL2NNy8qO4vb+9rCfU=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721154'
       - title: JumpCloud
         file: ../docs/integrations/jumpcloud/index.md
@@ -643,7 +643,7 @@ sections:
       - title: Okta
         file: ../docs/integrations/okta/index.md
         id: 360022902573
-        hash: FtUaKzCpKPSexOU8gdozzksgiRY/8IFaR6b9+6wDx/k=
+        hash: HTrX3oK6AJ0EbY0QKYLA1fXnYbSz6+ICTf/VLGyXuQs=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902573'
       - title: OneLogin
         file: ../docs/integrations/onelogin/index.md
@@ -813,7 +813,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: BKby3KPhys2RVwzP6NhBa3IzYUaBiuBlJdIlZYRENSo=
+        hash: COYB4F+ng/1POV5W72TrKzIr2KZDqG4QR7l+Z2jOoyo=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
