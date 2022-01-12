@@ -771,6 +771,8 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2022-JAN-12 Release
+        file: ../release-notes/2022-JAN-11.md
       - title: 2021.86 Release
         file: ../release-notes/2021-86.md
         hash: XJks/SwMhskGL2lN7m/JUm0Tv8KY7SFJHksYHz8ixcA=
