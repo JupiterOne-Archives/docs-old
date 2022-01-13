@@ -45,8 +45,8 @@ You must be a member of the Administrators group to perform configurations.
 1. In your IdP Account, add a new SAML application and name it JupiterOne.
 
    - Copy the previous two variable values in the SAML settings.
-   - Use the same single sign-on URL string value for Recipient URL and
-     Destination URL.
+   - Use the same single sign-on URL string value for recipient URL and
+     destination URL.
    - Leave the Default Relay State field empty.
    - Select _EmailAddress_ for the name ID format.
    - Select _Email_ or _Username_ for the application username.
@@ -65,8 +65,8 @@ You must be a member of the Administrators group to perform configurations.
 
 1. Enter a client name, such as Okta.
 
-1. Under Allowed OAuth Flows, select the **Authorization code grant** and
-   **Implicit Grant** checkboxes.
+1. Under Allowed OAuth Flows, select **Authorization code grant** and
+   **Implicit Grant**.
 
    ![allowed-oauth-flows](../assets/j1-sso-client-oauth-flows.png)
 
@@ -109,7 +109,7 @@ can access the SSO URL and your Audience URI before proceeding.
 ![okta-sso-general-settings](../assets/okta-sso-general-settings.png)
 
 4. In the SAML Settings sections:
-   - In the Single sign on URL field, enter your SSO URL.
+   - In the Single sign-on URL field, enter your SSO URL.
    - In the Audience URI (SP Entity ID) field, enter your Audience URI.
    - In the Name ID format field, select **EmailAddress**.
    - In the _Application username_ field, select **Email**.
@@ -292,17 +292,16 @@ following:
 
 ## Troubleshooting
 
-While different SSO providers have varying UI's and nomenclature ultimately the SAML response and attribute statement should look similar.
+While different SSO providers have varying UIs and nomenclature, ultimately the SAML response and attribute statement should look similar.
 
 **Common Problems:**
 
 - Infinite Redirect Loop
-  - An infinite redirct loop can occur it the SAML subject is incorrect or not present or if the required SAML attribute `email` (case sensitive) is not present
+  - An infinite redirct loop can occur if the SAML subject is incorrect or missing or if the required SAML attribute `email` (case-sensitive) is not present.
 
 **SAML Subject**
 
-A common problem during SSO configuration is an incorrect SAML subject.
-An example of a correct subject is bellow:
+A common problem during SSO configuration is an incorrect SAML subject. Here is an example of a correct subject:
 
 ```xml
 <saml2:Subject>
@@ -335,10 +334,10 @@ An example of a correct attribute statement is:
 
 **Viewing the SAML Response**
 
-In order to view the SAML response, browser plugins can be used to capture the POST to `/saml2/idpresponse`.
-For example in the Chrome browser the plugin [SAML-tracer](https://chrome.google.com/webstore/detail/saml-tracer/mpdajninpobndbfcldcmbpnnbhibjmch?hl=en) can be used to decode and view the SAML response and therefore the SAML attribute statement.
+To view the SAML response, you can use browser plugins to capture the POST to `/saml2/idpresponse`.
+For example, in the Chrome browser the plugin, you can use [SAML-tracer](https://chrome.google.com/webstore/detail/saml-tracer/mpdajninpobndbfcldcmbpnnbhibjmch?hl=en) to decode and view the SAML response and, therefore, the SAML attribute statement.
 
-Here is an example of what SAML-tracer looks like after following a login by SSO. Notice the `SAML` tab is active to view the XML.
-Calls that have SAML will also be marked with a yellow `SAML` tag on the right of the http request.
+Here is an example of what SAML-tracer looks like after logging in by SSO. The `SAML` tab is active to view the XML.
+Calls that have SAML are also marked with a yellow `SAML` tag on the right of the HTTP request.
 
 ![SAML-tracer](../assets/saml-tracer-example.png)
