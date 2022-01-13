@@ -41,6 +41,19 @@ and assigning that read-only role to a dedicated ServiceNow user.
    [assign the `jupiterone_reader` role](https://docs.servicenow.com/bundle/rome-platform-administration/page/administer/users-and-groups/task/t_AssignARoleToAUser.html)
    to your newly created user.
 
+5. (**OPTIONAL**) For JupiterOne users who wish to create ServiceNow incidents
+   based on JupiterOne alert rules, we suggest creating a
+   `jupiterone_incident_creator` role. Repeat steps 1, 2, and 4 above with the
+   following parameters:
+
+   **1. ServiceNow Role**: `name: jupiterone_incident_creator`
+
+   **2. Access Control Rule (ACL)** : `Type:Record` , `Operation:Create` ,
+   `Name(table):incident` , `Role:jupiterone_incident_creator`
+
+   **4. Role Assignment**: Assign `jupiterone_incident_creator` role to
+   `JupiterOne` user
+
 <!-- {J1_DOCUMENTATION_MARKER_START} -->
 <!--
 ********************************************************************************
