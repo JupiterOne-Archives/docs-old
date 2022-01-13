@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: TkiGpYbb7b8ej2SkM2UwBYmCUuOqH+q3xiZEfaEG/aY=
+        hash: uljbmnWZW6AtA7Pg0YSX0hqWtxqXKvpqAVadCDWS6Mo=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -677,7 +677,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721214'
       - title: ServiceNow
         file: ../docs/integrations/servicenow/index.md
-        hash: eVmm4EPVTEw2KkHuznWUr+R6cQasGLwt0P/LoE9n/vg=
+        hash: yn/4pIJAsglJZdBsYS3AnyodmGJkkRrMbBXqnEescrk=
         id: 1500011204241
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500011204241'
       - title: Slack
@@ -823,7 +823,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: 7kkC5iU0BN7pM0YInHaI8SYAAO2OuZRQELxBIxWNocc=
+        hash: 8nPx0ECLQDKHql5j0wFLBbILGBEPwjeKLPKG1kiwU/o=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
