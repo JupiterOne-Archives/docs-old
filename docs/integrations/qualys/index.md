@@ -65,6 +65,43 @@ controlled by a license setting.
 4. Click the **trash can** icon.
 5. Click the **Remove** button to delete the integration.
 
+## Troubleshooting Qualys User Credentials
+
+If your integration is not running successfully due to insufficient permissions
+from your Qualys user, we have provided a bash script that hits the various
+endpoints used in this integration. Using the **USERNAME**, **PASSWORD**, and
+**HOSTNAME** that are used in your JupiterOne Qualys Integration configuration,
+you should be able to determine which endpoints your user does not have the
+appropriate permissions to invoke.
+
+The script can be found here:
+https://github.com/JupiterOne/graph-qualys/blob/main/docs/troubleshoot-creds.sh
+
+Please note that while you may receive a status 200 for a particular endpoint,
+the response may contain a message indicating your lack of permissions.
+
+Example output:
+
+```
+< HTTP/1.1 200
+< X-Powered-By: Qualys:USPOD03:b3f3a819-7884-e60e-81d0-9725801da546:cbf7331a-292e-f3ed-8231-200b1fb10047
+< Content-Type: application/xml
+< Transfer-Encoding: chunked
+< Vary: Accept-Encoding
+< Date: Fri, 14 Jan 2022 03:55:39 GMT
+< Server: Apache
+<
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://qualysapi.qg3.apps.qualys.com/qps/xsd/2.0/am/hostasset.xsd">
+  <responseCode>UNAUTHORIZED</responseCode>
+  <responseErrorDetails>
+    <errorMessage>You are not authorized to access the application through the API.</errorMessage>
+    <errorResolution>If you think this is an error, please contact your account manager.</errorResolution>
+  </responseErrorDetails>
+* Connection #0 to host qualysapi.qg3.apps.qualys.com left intact
+</ServiceResponse>
+```
+
 <!-- {J1_DOCUMENTATION_MARKER_START} -->
 <!--
 ********************************************************************************
