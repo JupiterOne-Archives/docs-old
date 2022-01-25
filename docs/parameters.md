@@ -1,7 +1,6 @@
 # JupiterOne Parameter Service
 
-Previously, some use cases of JupiterOne required referencing a *literal* value that is better suited to reference as a *variable* or a **parameter**.  
-Some common values that are better stored and retrieved at runtime instead of saved literally include:
+Previously, some use cases of JupiterOne required referencing a *literal* value that is better suited to reference as a *variable* or a **parameter**. Some common values that are better stored and retrieved at runtime instead of saved literally include:
 
  - Long or unwieldy values (such as a long URL)
  - Sensitive values (such as a private key or API token)
@@ -9,10 +8,7 @@ Some common values that are better stored and retrieved at runtime instead of sa
 
  A better alternative exists in the form of parameters that can be stored and referenced in rules and queries with a special syntax.
 
-<br>
-<hr>
-
-## Example
+## Examples
 
 In the use case of a very long URL, which may not be easily human-readable and may be referenced in many rules, queries, or questions, use: 
 
@@ -35,8 +31,6 @@ remote contents instead of the parameter expression. You can leverage this same 
 different types of parameter types and comparisons, explained below. As shown above, the 
 syntax between rules and queries differs slightly, but is consistent with variables (in the
 case of queries) and expressions (in the case of rules).
-<hr>
-<br>
 
 ## Usage: Schema
 
@@ -46,33 +40,27 @@ In the future, a user interface will be available to account users but, currentl
 A parameter is an object stored in the parameter-service which uses the following schema:
 
 
-| Property           | Type              | Description                                                                                                                                                         |
-| ------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`               | `string`          | The parameter **key** or "name" |
-| `value`          | `string` \| `number` \| `boolean` \| `list`[*](#listtypes)          | The parameter **value** to be stored/retrieved 
+| Property | Type     | Description                     |
+| -------- | -------- | ------------------------------- |
+| `name`   | `string` | The parameter **key** or "name" |
+| `value`          | `string` \| `number` \| `boolean` \| `list`  | The parameter **value** to be stored/retrieved 
 | `secret`[*](#secretparameters)              | `boolean`          | **Flag** to treat value as sensitive data |
 | `lastUpdatedOn`               | `date`          | **Date** which indicates last update  |
 
 #### List Types 
 Lists are considered to be arrays of `string`, `number`, or `boolean` types
 
-<br>
-
-<hr>
-
 ## Usage: API Operations and Queries
 
-|Queriable fields:||
-|--|--|
-| [parameter](#queryparameter)|Individual `QUERY` for one parameter|
-|[parameterList](#queryparameterlist)|Bulk `QUERY` for parameters|
+| Queriable fields: |                                      |
+| ----------------- | ------------------------------------ |
+| parameter         | Individual `QUERY` for one parameter |
+| parameterList     | Bulk `QUERY` for parameters          |
 
-|Mutations:||
-|--|--|
-| [setParameter](#mutationsetparameter)|Create/update a remote parameter|
-|[deleteParameter](#mutationdeleteparameter)|Remove a parameter from the remote store|
-
-<br>
+| Mutations:      |                                          |
+| --------------- | ---------------------------------------- |
+| setParameter    | Create/update a remote parameter         |
+| deleteParameter | Remove a parameter from the remote store |
 
 
 ## GraphQL API
@@ -80,11 +68,11 @@ Lists are considered to be arrays of `string`, `number`, or `boolean` types
 ### Query: `parameter`
 
 
-|*Argument*|*Type*|*Required?*|
-|--|--|--|
-| name | `string` | Yes |
+| *Argument* | *Type*   | *Required?* |
+| ---------- | -------- | ----------- |
+| name       | `string` | Yes         |
 
-***Returns***: [Parameter](#usageschema)
+***Returns***: Parameter
 
 ***Example***: 
 ```gql
@@ -97,16 +85,14 @@ query Query($name: String!) {
     }
 }
 ```
-<br>
-
 ### Query: `parameterList`
 
-|*Argument*|*Type*|*Required?*|*Default*|
-|--|--|--|--|
-| limit | `number` | No | 100 |
-| cursor | `string` | No (unless paginating) | n/a |
+| *Argument* | *Type*   | *Required?*            | *Default* |
+| ---------- | -------- | ---------------------- | --------- |
+| limit      | `number` | No                     | 100       |
+| cursor     | `string` | No (unless paginating) | n/a       |
 
-***Returns***: Paginated<[Parameter](#usageschema)>
+***Returns***: Paginated
 
 ***Example***: 
 ```gql
@@ -125,8 +111,6 @@ query Query($limit: Int, $cursor: String) {
     }
 }
 ```
-<br>
-
 ### Mutation: `setParameter`
 
 |*Argument*|*Type*|*Required?*|*Default*
@@ -150,13 +134,11 @@ mutation Mutation($name: String!, $value: ParameterValue!) {
 }
 ```
 
-<br>
-
 #### Mutation: `deleteParameter`
 
-|*Argument*|*Type*|*Required?*|
-|--|--|--|
-| name | `Array<string>` |Yes|
+| *Argument* | *Type*          | *Required?* |
+| ---------- | --------------- | ----------- |
+| name       | `Array<string>` | Yes         |
 
 #### ***Returns***
 ```ts
@@ -171,23 +153,22 @@ mutation Mutation($name: String!) {
     }
 }
 ```
-<br>
+
 
 ## Parameter References
 
-You can reference parameters in [rules' configurations](./schemas/alert-rule.md) or any [query expression](./jupiterone-query-language.md), although the syntax is [slightly different](#example) between the two. `param` is a special keyword that, when invoked, fetches values from the parameter-storing service. 
+You can reference parameters in [rules' configurations](../APIs_and-integrations/APIs/alert-rule-schema.md) or any [query expression](../jupiterOne-query-language_(J1QL)/jupiterOne-query-language.md), although the syntax is slightly different between the two. `param` is a special keyword that, when invoked, fetches values from the parameter-storing service. 
 
-!!! warning
-      In the case of both rules and queries, referencing a nonexistent parameter causes an error and abandon execution.
+**Note:**
+    In the case of both rules and queries, referencing a nonexistent parameter causes an error and abandon execution.
 
-## Auditing & Security
+## Auditing and Security
 
 All changes (including creation and deletion) of parameters is captured by an audit trail providing visibility into the historic usage and access of these values. In addition, all parameters are encrypted-at-rest and in-transit, subject to log redaction, and are subject to either ABAC or IAM-based fine-grained permissions.
 
 ## Secret Parameters
 
-Any parameters set with `secret` to be `true` have write-only values and are not readable from the API. Only evaluations of the query can access 
-these parameter values.  This usage enables the storage of sensitive parameters such as API keys that JupiterOne users should not be able to see.  All read access to these secret parameters contains redacted values, but metadata is able to be read.
+Any parameters set with `secret` to be `true` have write-only values and are not readable from the API. Only evaluations of the query can access these parameter values.  This usage enables the storage of sensitive parameters such as API keys that JupiterOne users should not be able to see.  All read access to these secret parameters contains redacted values, but metadata is able to be read.
 
-!!! note
+**Note:**
     By design, you cannot update a parameter that has had `secret` set to true to `secret: false` without also changing the value in the same request.
