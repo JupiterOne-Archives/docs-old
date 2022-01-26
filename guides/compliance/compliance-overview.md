@@ -1,24 +1,25 @@
 # Compliance Management in JupiterOne
 
-JupiterOne provides a flexible platform for you to import and manage any
-compliance standard or framework as a set of controls or requirements. The
-J1 Compliance platform provides the following capabilities:
+JupiterOne empowers your cybersecurity and GRC teams with a centralized,
+compliance-as-code solution that automatically gathers evidence to support 
+compliance needs and processes. JupiterOne gives you continuous compliance 
+capabilities, leading to stronger security that goes beyond a single point in time.
 
-- [Import a compliance standard or security questionnaire][1]
+The JupiterOne Compliance app is a flexible platform for you to import 
+and manage any compliance standard or framework as a set of controls or 
+requirements. You can use the Compliance app to:
 
-- [Map policy procedures to each control or requirement][2]
+- [Import a compliance standard or security questionnaire](../compliance/compliance-import.md)
 
-- [Map data-driven compliance evidence by query questions][3]
+- [Map policy procedures to each control or requirement](../compliance/compliance-mapping-policies.md)
 
-- [Perform automated gap analysis based on query results][4]
+- [Map data-driven compliance evidence by query questions](../compliance/compliance-mapping-evidence.md)
 
-- [Export compliance artifacts (summary or full evidence package)][5]
+- [Perform automated gap analysis based on query results](../compliance/compliance-gap-analysis.md)
 
-[1]: ../compliance/compliance-import.md
-[2]: ../compliance/compliance-mapping-policies.md
-[3]: ../compliance/compliance-mapping-evidence.md
-[4]: ../compliance/compliance-gap-analysis.md
-[5]: ../compliance/compliance-export.md
+- [Export compliance artifacts as a summary or full evidence package](../compliance/compliance-export.md)
+
+
 
 ## Compliance Status and Maturity
 
