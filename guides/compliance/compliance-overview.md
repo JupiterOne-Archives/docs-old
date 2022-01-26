@@ -1,8 +1,8 @@
 # Compliance Management in JupiterOne
 
-JupiterOne provides a flexible platform for users to import and manage any
-compliance standard / framework as a set of controls or requirements. The
-platform provides the following capabilities:
+JupiterOne provides a flexible platform for you to import and manage any
+compliance standard or framework as a set of controls or requirements. The
+J1 Compliance platform provides the following capabilities:
 
 - [Import a compliance standard or security questionnaire][1]
 
@@ -22,15 +22,16 @@ platform provides the following capabilities:
 
 ## Compliance Status and Maturity
 
-JupiterOne compliance app provides measurements and status indicators at three
+The JupiterOne Compliance app provides measurements and status indicators at four
 different maturity levels for each compliance standard and its requirements /
 controls:
 
-1. Has documented policies and procedures
-2. Has implementation evidence (either via data-driven queries or external evidence)
-3. Continuous monitoring and remediation
+- Documented policies and procedures
+- Implementation evidence, either via data-driven queries or external evidence
+- Gap analysis between fulfilled requirements and outstanding remediation
+- Continuous monitoring and remediation
 
-Here is an example screenshot:
+Here is an example:
 
 ![compliance-status](../../assets/compliance-summary-status-bars.png)
 
