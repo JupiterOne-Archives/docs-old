@@ -1,6 +1,7 @@
 # Creating User and Account API Keys
 
-API keys enable users to use the J1 APIs in queries and with integrations. You can enable the use of API keys for a group of users and create API keys for your organization account.
+API keys enable users to use the J1 APIs in queries and with integrations. You can enable the use of API keys for a
+group of users and create API keys for your organization account.
 
 ## Enable User-Level API Key Access
 
@@ -20,33 +21,32 @@ An API key icon appears in the My Profile view for each user in the group that h
 
 ## Create Account-Level API Keys
 
-You can manage user-level keys in the Account Management page. You must have 
-administrator permissions  to make changes to account-level API keys.
+You can manage user-level keys in the Account Management page. You must have administrator permissions to make changes
+to account-level API keys.
 
 To generate a new API key or manage existing API keys:
 
 1. Log in to the account you want to manage.
 2. Go to **Settings** ![gear](../assets/icons/gear.png) **>** **Account Management**.
 3. In the left panel, click the key icon.
-   ![api_key_acct-mgmt](../assets/api_key_acct-mgmt.png) 
+   ![api_key_acct-mgmt](../assets/api_key_acct-mgmt.png)
 4. In the User API Keys page, click **Add** ![api-keys-plus](../assets/icons/api-keys-plus.png).
-5. In the API Keys modal, enter the name of the key and the number of days 
-   before it expires, and click **Create**.
+5. In the API Keys modal, enter the name of the key and the number of days before it expires, and click **Create**.
 
-To revoke an API key, in the User API Keys page, go to the key you want to 
-revoke and click the trash icon ![trash](../assets/icons/trash.png).
+To revoke an API key, in the User API Keys page, go to the key you want to revoke and click the trash
+icon ![trash](../assets/icons/trash.png).
 
 ## Create Integration API Keys
 
-You must have administrator permissions to be able to create keys and the 
-selected integration must have at least one configuration.
+You must have administrator permissions to be able to create keys and the selected integration must have at least one
+configuration.
 
 To create API keys that you can use with your J1 integration:
 
 1. Go to **Settings ![gear](../assets/icons/gear.png) > Integrations**.
 2. Select the integration for which you want to create an API key.
 3. Select the configuration you want to edit.
-4. Scroll down to Integration API Keys and click **Create**.  
+4. Scroll down to Integration API Keys and click **Create**.
 5. When prompted, click **Create** again to confirm your action.
 
 The key is now available for you to use to synchronize data in this integrations.
@@ -55,19 +55,17 @@ The key is now available for you to use to synchronize data in this integrations
 
 To delete the API key at any time, click **Revoke**.
 
-
-
 ## Create API Keys Using the GraphQL API
 
 You can use GraphQL queries to create account-level API keys.
 
 To create an account-level API key, enter:
 
-```j1ql
+```
 POST `https://j1dev.apps.dev.jupiterone.io/api/graphql`
 ```
 
-~~~
+```
 mutation CreateToken($token: TokenInput!) {
   createToken(token: $token) {
     token
@@ -81,31 +79,36 @@ mutation CreateToken($token: TokenInput!) {
     __typename
   }
 }
-~~~
+```
 
-
-    "variables": {
-       	"token": {
-        "name": "Token Name",
-        "category": "tags",
-        "policy": "{\n\t\"permissions\": [{\n\t\t\"effect\":\"ALLOW\",\n\t\t\"actions\":[\"dashboard:View\" ],\n\t\t\"resources\": [ \"dashboard:123456\" ]\n\t}]\n}"
-    	}
+```
+{
+  "variables": {
+    "token": {
+      "name": "Token Name",
+      "category": "tags",
+      "policy": "{\n\t\"permissions\": [{\n\t\t\"effect\":\"ALLOW\",\n\t\t\"actions\":[\"dashboard:View\" ],\n\t\t\"resources\": [ \"dashboard:123456\" ]\n\t}]\n}"
     }
+  }
+}
+```
 
 The `policy` variable is a JSON object formatted as follows:
 
-    {
-    
-      "permissions": [
+```
+{
+  "permissions": [
     {
       "effect": "ALLOW",
       "actions": ["dashboard:View"],
       "resources": ["dashboard:123456"]
     }
-      ]
-    }
-    
-The effect parameter is ether `ALLOW` or `DENY` and is case-sensitive. Currently, J1 only supports fully-qualified actions and resources or the wildcard `*`.
+  ]
+}
+```
+
+The effect parameter is ether `ALLOW` or `DENY` and is case-sensitive. Currently, J1 only supports fully-qualified
+actions and resources or the wildcard `*`.
 
 Supported actions include:
 
@@ -146,24 +149,30 @@ Supported resources include:
 
 To revoke an account-level key, enter:
 
- POST `https://j1dev.apps.dev.jupiterone.io/api/graphql`
+```
+POST `https://j1dev.apps.dev.jupiterone.io/api/graphql`
+```
 
-    mutation RevokeToken($id: String!) {
-    	revokeToken(id: $id) {
-    		token
-           		id
-            	name
-            	category
-            	policy
-            	revoked
-            	createdAt
-            	expiresAt
-            	__typename
-         }
-    }
+```
+mutation RevokeToken($id: String!) {
+  revokeToken(id: $id) {
+    token
+    id
+    name
+    category
+    policy
+    revoked
+    createdAt
+    expiresAt
+    __typename
+  }
+}
+```
 
-
-    "variables": {
-    		"id": "<tokenId>"
-    	}
-    }
+```
+{
+  "variables": {
+    "id": "<tokenId>"
+  }
+}
+```
