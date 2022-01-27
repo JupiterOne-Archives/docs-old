@@ -148,7 +148,7 @@ Supported resources include:
 The action `query:ReadGraphData` cannot be applied to resources other than the wildcard resource (`*`). However, it may
 be constrained by a condition. For the policy to allow access to a graph object, that graph object must have the
 properties specified in the condition and those properties must have the values specified in the condition. For example,
-this policy will only allow its user to query for graph objects that have the property `_type` equal to `github_repo`:
+this policy only allows its user to query for graph objects that have the property `_type` equal to `github_repo`:
 
 ```
 {
