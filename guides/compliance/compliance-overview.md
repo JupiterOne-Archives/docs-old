@@ -7,7 +7,19 @@ capabilities, leading to stronger security that goes beyond a single point in ti
 
 The JupiterOne Compliance app is a flexible platform for you to import 
 and manage any compliance standard or framework as a set of controls or 
-requirements. You can use the Compliance app to:
+requirements. 
+
+## Getting Started with J1 Compliance
+
+Managing compliance consists of:
+
+1. Importing benchmarks or standards.
+2. Adding a framework.
+3. Adding controls.
+
+
+
+You can use the Compliance app for each step in the security compliance workflow:
 
 - [Import a compliance standard or security questionnaire](../compliance/compliance-import.md)
 
@@ -32,7 +44,7 @@ controls:
 - Gap analysis between fulfilled requirements and outstanding remediation
 - Continuous monitoring and remediation
 
-Here is an example:
+Here is an example: ![](../../assets/compliance-summary-status-bars.png)
 
 ![compliance-status](../../assets/compliance-summary-status-bars.png)
 
