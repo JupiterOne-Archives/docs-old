@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: uljbmnWZW6AtA7Pg0YSX0hqWtxqXKvpqAVadCDWS6Mo=
+        hash: ffUok25i8SjTgjiOjBkYhhQXGHaXuK8/nL/mybtBC5k=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -487,7 +487,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500004935101'
       - title: BambooHR
         file: ../docs/integrations/bamboohr/index.md
-        hash: N8tDVNnOLSnaHHBNJU7VQl0Dd4rDXqzTGti2DnG17/s=
+        hash: FrYHZopM0CM5/Rh5kLslNz91BQgr181rHxjaR6UPOuk=
         id: 360056759813
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360056759813'
       - title: Bitbucket
@@ -567,7 +567,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721114'
       - title: GitLab
         file: ../docs/integrations/gitlab/index.md
-        hash: Muqb9Tjhb07cceYz8Yv2l9Sg0qSasJdfbG+LCZc+gEs=
+        hash: 78S0q+wdktQYaezVzyw8bGdynszrOcssSEUIM+htM5M=
         id: 360047916954
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047916954'
       - title: GoDaddy
@@ -657,7 +657,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046951894'
       - title: Qualys
         file: ../docs/integrations/qualys/index.md
-        hash: MVA+Wm2EeFPMDNZXnyF90a0riSUyxhIReJjIkhPDnak=
+        hash: 43epLBqyGJOxSbPehAqqhgFvsQcdQD+/NDLAe6yNrQY=
         id: 360046952094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046952094'
       - title: Rapid7
@@ -778,7 +778,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4415181017491'
       - title: 2022-JAN-12 Release
         file: ../release-notes/2022-JAN-11.md
-        hash: w1fLVllvRz+aDNHpNRoZbr9t9YvXimY2OSf2hI8yU78=
+        hash: smcJPvO9rGohwztPO9Etl9o7BPT+/LcjbWolCC6PL/g=
         id: 4415089578899
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4415089578899'
       - title: 2021.86 Release
@@ -823,7 +823,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: 8nPx0ECLQDKHql5j0wFLBbILGBEPwjeKLPKG1kiwU/o=
+        hash: u6QQCxspQZjJkZr9b26psFoxKHZ4cm1aGo1bhnVZKRk=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
