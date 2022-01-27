@@ -145,6 +145,31 @@ Supported resources include:
 "*" // All resources
 ```
 
+The action `query:ReadGraphData` cannot be applied to resources other than the wildcard resource (`*`). However, it may
+be constrained by a condition. For the policy to allow access to a graph object, that graph object must have the
+properties specified in the condition and those properties must have the values specified in the condition. For example,
+this policy will only allow its user to query for graph objects that have the property `_type` equal to `github_repo`:
+
+```
+{
+  "permissions": [
+    {
+      "effect": "ALLOW",
+      "actions": ["query:ReadGraphData"],
+      "resources": ["*"],
+      "condition": {
+        "stringEquals": {
+          "_type": "github_repo"
+        }
+      }
+    }
+  ]
+}
+```
+
+Currently, only the `/j1ql` REST route supports the `query:ReadGraphData` permission. The GraphQL API (`queryV1`) does
+not.
+
 ### Revoke Account-Level API Keys
 
 To revoke an account-level key, enter:
