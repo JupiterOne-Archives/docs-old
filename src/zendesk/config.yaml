@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: jwn7wwRxLU0oa0EyH1NsB61CNjfguH2aH1Zh1OmtXTw=
+        hash: VY1q3jo7v6rgX5doJALfzUsVCqJyVPjM6EPnydm89Ok=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -750,6 +750,11 @@ sections:
         hash: P9AnIb7alB/MSMNqA6oKmQufR3HxDLHd5wvXwFpLRh4=
         id: 360062764753
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360062764753'
+      - title: Wordpress
+        file: ../docs/integrations/wordpress/jupiterone.md
+        hash: wvPdd8L9ZQPtOV0Qkr+ogw3wW4BflWnLLNabHB4Msg8=
+        id: 4416568808979
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4416568808979'
   - name: Power Ups
     id: 360006506113
     articles:
@@ -828,7 +833,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: LV9POInCogL+bdNzMR5ExwR4RvN5/s1k82NXOEThvqs=
+        hash: 95E6RcznHqKL+rG6wCgHMoXOxZSINRHCtqzw4iCB4pc=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
