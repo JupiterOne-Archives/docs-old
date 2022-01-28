@@ -1,9 +1,9 @@
 # Adding Compliance Frameworks
 
-A compliance framework is a structured set of guidelines that details the processes 
+A security compliance framework is a structured set of guidelines that details the processes 
 and procedures your organization implements to be in accordance with established 
 regulations, specifications or legislation. Frameworks can include communication 
-processes, risk controls and governance practices for maintaining compliance.
+processes, risk controls, and governance practices for maintaining compliance.
 
 The first step in compliance management is to select the frameworks with which 
 you want to be compliant. You can select the preset standards provided by J1 or 
@@ -22,7 +22,7 @@ Open the J1 Compliance app by clicking ![](../../assets/icons/apps.png)and selec
 2. Choose one of the templates that J1 provides, or click **Import JSON/CVS** and 
    paste your compliance framework file in JSON or CSV format. 
    ​
-   You can see community example files at: https://github.com/JupiterOne/security-policy-templates/tree/main/templates/standards.
+   J1 provides [community example files](https://github.com/JupiterOne/security-policy-templates/tree/main/templates/standards) for to use as references.
 
 **Note**: You must have the necessary license and permission to use a framework for 
 your organization. **Licensing is not provided by JupiterOne**, except for CIS Controls 
