@@ -11,21 +11,32 @@ requirements.
 
 ## Getting Started with J1 Compliance
 
-Managing compliance consists of:
+The first step in managing compliance is adding the security frameworks to which
+your organization wants to be compliant. Frameworks comprise of benchmarks, 
+standards, and security questionnaires.
 
-1. Importing benchmarks or standards.
-2. Adding a framework.
-3. Adding controls.
+Each framework has sets of controls or requirements that are grouped into 
+categories. The controls and requirements are a series of policies and guidelines that 
+instruct you how to comply with the framework.  By default, all the controls and 
+requirements are applied to the framework. If you do not want to apply any controls 
+or requirements, you can toggle them on or off.
+
+J1 provides a library of controls and requirements but you can also add your own 
+custom controls. Where applicable, J1 links security policies to controls and requirements.
+You are able to link more policies at any time.
+
+For the controls applicable to your frameworks, you must provide evidence of compliance. 
+
 
 
 
 You can use the Compliance app for each step in the security compliance workflow:
 
-- [Import a compliance standard or security questionnaire](../compliance/compliance-import.md)
+- [Add compliance frameworks](../compliance/compliance-import.md)
 
-- [Map policy procedures to each control or requirement](../compliance/compliance-mapping-policies.md)
+- [Link policy procedures to each control or requirement](../compliance/compliance-mapping-policies.md)
 
-- [Map data-driven compliance evidence by query questions](../compliance/compliance-mapping-evidence.md)
+- [Add data-driven compliance evidence by query questions](../compliance/compliance-mapping-evidence.md)
 
 - [Perform automated gap analysis based on query results](../compliance/compliance-gap-analysis.md)
 
@@ -46,7 +57,7 @@ controls:
 
 Here is an example: ![](../../assets/compliance-summary-status-bars.png)
 
-![compliance-status](../../assets/compliance-summary-status-bars.png)
+
 
 
 
