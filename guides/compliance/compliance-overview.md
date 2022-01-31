@@ -24,6 +24,7 @@ You can use the J1 Compliance app for each step in the security compliance workf
 - [Select security frameworks](./compliance-import.md) 
 - [Add data-driven compliance evidence](./compliance-mapping-evidence.md) 
 - [Link to controls](./compliance-controls.md)
+- [Link policies and procedures](./compliance-mapping-policies.md)
 - [Perform automated gap analysis](./compliance-gap-analysis.md)
 - [Export compliance artifacts](../compliance/compliance-export.md)
 
@@ -31,7 +32,7 @@ You can use the J1 Compliance app for each step in the security compliance workf
 
 ## Compliance Status and Maturity
 
-The JupiterOne Compliance app provides measurements and status indicators at four
+The JupiterOne Compliance app Status view provides measurements and status indicators at four
 different maturity levels for each compliance framework and its requirements and
 controls:
 
@@ -40,6 +41,6 @@ controls:
 - Gap analysis between fulfilled requirements and outstanding remediation
 - Continuous monitoring and remediation
 
-Here is an example: ![](../../assets/compliance-summary-status-bars.png)
+![](../../assets/compliance-summary-status-bars.png)
 
 [Watch this video](https://try.jupiterone.com/blog/video-managing-grc-with-jupiterone) for more information about managing compliance with automated policies and procedures.
