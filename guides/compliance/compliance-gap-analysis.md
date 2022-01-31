@@ -1,17 +1,22 @@
 # Compliance Gap Analysis
 
-JupiterOne compliance platform is capable of performing automated gap analysis
-based on the query or queries saved in mapped questions. Here is how it works.
+The J1 Compliance app performs automated gap analysis based on the queries saved 
+in questions that you have added as evidence to meeting compliance.
 
-## Query Results Indicator
+At any time, you can review where the gaps are in your compliance but clicking the
+information icon next to gap analysis in a selected framework.
 
-Each query in a saved question has a property to indiciate whether the results
-from the query are good, bad, unknown, or informative. This can be configured
+![](../../assets/compliance-gap-analysis.png)
+
+
+
+
+
+Each query in a saved question has a property to indicate whether the results
+from the query are good, bad, unknown, or informative. You can configureThis can be configured
 either in the app UI or via the API.
 
-Here is a screenshot of the app UI configuration:
 
-![edit-question](../../assets/query-question-edit-name-results.png)
 
 At the API level, this is set with the `resultsAre` property. For example:
 
@@ -49,7 +54,7 @@ requirement trigger automated gap analysis, as follow:
 - `GOOD`:
 
   Results from a "good" query indicates **expected configuration is present**.
-  
+
   For example, a list of critical data stores that are encrypted.
 
   ```j1ql
@@ -106,7 +111,7 @@ following:
   status with the queries provided.
 
   > This status appears also when the requirement or control has no mapped query
-    question _and_ no external evidence provided.
+  >   question _and_ no external evidence provided.
 
 The status is determined by the presence and output of the named queries in the
 mapped question(s), as seen in the following matrix:
@@ -114,4 +119,4 @@ mapped question(s), as seen in the following matrix:
 ![compliance-gap-analysis](../../assets/compliance-query-gap-analysis-status.png)
 
 > Note: A single query in a question without the `resultsAre` property set is
-  implicitly interpreted as a `GOOD` query.
+>   implicitly interpreted as a `GOOD` query.
