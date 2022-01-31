@@ -219,12 +219,12 @@ sections:
     articles:
       - title: Managing Compliance in JupiterOne
         file: ../guides/compliance/compliance-overview.md
-        hash: TkvfQJ0o5IhuRHs+nh1H7U3StwEAeKMcl0zsftGaj0A=
+        hash: ZXy7lhXC7zsBJvkGAQV6z/vTyjghvY3OgKxzBcmQVNs=
         id: 360042682733
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682733'
       - title: Import Compliance Standard or Security Questionnaire
         file: ../guides/compliance/compliance-import.md
-        hash: wenMKDeWl6rFfGxmM7i2Yf/xY8X6lQtbFYI9j4JNWJ4=
+        hash: hMPDVxFy7cbL5ZCEjvRZ0Slo9DUfr0NeRNIMr77QnqA=
         id: 360042682773
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682773'
       - title: Export Compliance Artifacts
@@ -234,17 +234,17 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042195334'
       - title: Compliance Policies Mapping
         file: ../guides/compliance/compliance-mapping-policies.md
-        hash: iH4pvHyu5S6uO4fcPy1XDWDIZd88IYZ/bOoDtqUhBZs=
+        hash: RZQlFUosu2b37OcyXf9109EI0o7IruaJocnXy/bGynU=
         id: 360042195394
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042195394'
       - title: Compliance Evidence Mapping
         file: ../guides/compliance/compliance-mapping-evidence.md
-        hash: eB++gVRAKIaoUuPoFI5HigrDwrO+q38DhzBLnuFQEyw=
+        hash: A3a+6HrDsiFHpdS10kSWTg5ChN01ZrONySK+vTmzJ+s=
         id: 360042682833
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682833'
       - title: Compliance Gap Analysis
         file: ../guides/compliance/compliance-gap-analysis.md
-        hash: 8X9938YtIQE6emOb76aV3wsoVXuA2ZkqBdqCZkXn4Ks=
+        hash: cNoot8Hsbl+fOgliXxY+XRx83ArgHQFFM68q1dkF4CQ=
         id: 360042682873
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682873'
       - title: Supporting SOC 2 audits using JupiterOne
@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: YMbKbe6afr2SRQvqQfh4tbO97GQF6W5KD/fInE02YZ8=
+        hash: S6tWMmegWOJAgJdeQl0uNJ1NvtU4TegvWjlEZW2kf1c=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -838,7 +838,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: Z0Nv9uFep02pXF+ccxeT/u9xf+1BNHPgl7UdG48cXiA=
+        hash: Cka2irda9Wq4t4avyFOe+tdrOwpUyiCVj942rEHrcK4=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
