@@ -17,7 +17,7 @@ Click a control to add evidence, see how many compliance requirements currently 
 
 
 
-When you link a control, you are given the option of using all the current and future evidence items from the linked control for the gap evaluation of this compliance item. If you select this option, J1 automatically monitors the control in the context of the linked evidence for the requirement.
+When you link a control to a requirement, you are given the option of using all the current and future evidence items from the linked control for the gap evaluation of this compliance item. If you select this option, J1 automatically monitors the control in the context of the linked evidence for the requirement.
 
 ![](../../assets/compliance-control-options.png)
 

@@ -14,13 +14,12 @@ security_procedure
 See [this article](../../docs/data-model/org-grc.md) for the full GRC graph data model.
 
 When you link a policy and procedure, J1 creates a link between a security procedure to a 
-compliance requirement or control. Policies are very high-level descriptions, that provide 
-details on what you should do. Procedures explain how you can implement a requirement 
-or control.
+compliance control. Policies are very high-level descriptions, that provide details on what 
+you should do. Procedures explain how you can implement a control.
 
-You can link security procedures for a specific compliance requirement or control in the details view 
-of that control or requirement.
+You can link security procedures for a specific compliance control in the details view 
+of that control.
 
 ![compliance-map-policies](../../assets/compliance-map-policies.png)
 
-[Watch this video](https://try.jupiterone.com/blog/how-to-map-grc-policies-and-procedures) to learn more about mapping policy or procedure documents.
+[Watch this video](https://try.jupiterone.com/blog/how-to-map-grc-policies-and-procedures) to learn more about linking policy or procedure documents.

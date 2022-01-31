@@ -17,7 +17,7 @@ Open the J1 Compliance app by clicking ![](../../assets/icons/apps.png)and selec
 1. Select **Frameworks** from the left navigation panel and click **Add Framework**.
    ​
    ![](../../assets/compliance-frmwk-overview.png)
-2. Choose one of the templates that J1 provides, or click **Import JSON/CVS** and 
+2. Choose one of the templates that J1 provides, or click **Import JSON/CSV** and 
    paste your compliance framework file in JSON or CSV format. 
    ​
    J1 provides [community example files](https://github.com/JupiterOne/security-policy-templates/tree/main/templates/standards) for you to use as references.
