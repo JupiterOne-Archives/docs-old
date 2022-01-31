@@ -1,40 +1,46 @@
 # Compliance Management in JupiterOne
 
-JupiterOne provides a flexible platform for users to import and manage any
-compliance standard / framework as a set of controls or requirements. The
-platform provides the following capabilities:
+JupiterOne empowers your cybersecurity and GRC teams with a centralized,
+compliance-as-code solution that automatically gathers evidence to support 
+compliance needs and processes. JupiterOne gives you continuous compliance 
+capabilities, leading to stronger security that goes beyond a single point in time.
 
-- [Import a compliance standard or security questionnaire][1]
+The JupiterOne Compliance app is a flexible platform for you to import 
+and manage any compliance standard or framework as a set of controls or 
+requirements. 
 
-- [Map policy procedures to each control or requirement][2]
+## Getting Started with J1 Compliance
 
-- [Map data-driven compliance evidence by query questions][3]
+The first step in managing compliance is adding the security frameworks to which
+your organization wants to be compliant. Frameworks comprise benchmarks, 
+standards, and security questionnaires.
 
-- [Perform automated gap analysis based on query results][4]
+By default, J1 applies requirements to each framework to which you can then 
+add data-driven compliance evidence and link to controls.
 
-- [Export compliance artifacts (summary or full evidence package)][5]
 
-[1]: ../compliance/compliance-import.md
-[2]: ../compliance/compliance-mapping-policies.md
-[3]: ../compliance/compliance-mapping-evidence.md
-[4]: ../compliance/compliance-gap-analysis.md
-[5]: ../compliance/compliance-export.md
+You can use the J1 Compliance app for each step in the security compliance workflow:
+
+- [Select security frameworks](./compliance-import.md) 
+- [Add data-driven compliance evidence](./compliance-mapping-evidence.md) 
+- [Link to controls](./compliance-controls.md)
+- [Link policies and procedures](./compliance-mapping-policies.md)
+- [Perform automated gap analysis](./compliance-gap-analysis.md)
+- [Export compliance artifacts](../compliance/compliance-export.md)
+
+
 
 ## Compliance Status and Maturity
 
-JupiterOne compliance app provides measurements and status indicators at three
-different maturity levels for each compliance standard and its requirements /
+The JupiterOne Compliance app Status view provides measurements and status indicators at four
+different maturity levels for each compliance framework and its requirements and
 controls:
 
-1. Has documented policies and procedures
-2. Has implementation evidence (either via data-driven queries or external evidence)
-3. Continuous monitoring and remediation
+- Documented policies and procedures
+- Implementation evidence, either via data-driven queries or external evidence
+- Gap analysis between fulfilled requirements and outstanding remediation
+- Continuous monitoring and remediation
 
-Here is an example screenshot:
+![](../../assets/compliance-summary-status-bars.png)
 
-![compliance-status](../../assets/compliance-summary-status-bars.png)
-
-
-
-[Watch this video](https://try.jupiterone.com/blog/video-managing-grc-with-jupiterone) for more information about managing compliance 
-with automated policies and procedures.
+[Watch this video](https://try.jupiterone.com/blog/video-managing-grc-with-jupiterone) for more information about managing compliance with automated policies and procedures.
