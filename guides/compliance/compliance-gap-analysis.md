@@ -10,13 +10,14 @@ information icon next to gap analysis in a selected framework.
 
 
 
+From the selected framework details view, click the filter icon next to the gap category
+to see where the gaps are in your compliance status. 
 
+![](../../assets/compliance-gaps.png)
 
 Each query in a saved question has a property to indicate whether the results
-from the query are good, bad, unknown, or informative. You can configureThis can be configured
-either in the app UI or via the API.
-
-
+from the query are good, bad, unknown, or informative. You can configure this in the 
+J1Query Language app UI or via the API.
 
 At the API level, this is set with the `resultsAre` property. For example:
 
