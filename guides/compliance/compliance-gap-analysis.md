@@ -82,42 +82,37 @@ requirement trigger automated gap analysis, as follow:
   Find DataStore with classification=undefined
   ```
 
-> `INFORMATIVE` queries are not used in compliance gap analysis.
+`INFORMATIVE` queries are not used in compliance gap analysis.
 
-_A question can have one or all of the above named queries._
+A question can have one or all of the above named queries.
 
 ## Gap Analysis Status
 
 The gap analysis status of each requirement of control may be one of the
 following:
 
-- `FULFILLED`:
+- `TESTED`
 
-  Requirement is "fulfilled and monitoring".
+  The requirement is fulfilled and monitoring.
 
-- `WARNING`:
+- `ATTENTION`
 
-  "Attention - potential remediation needed" because a potential gap has been
-  detected, with a mix of properly configured resources and misconfigurations
-  (i.e. _partially fulfilled_).
+  Potential remediation is needed because J1 has detected a potential gap, 
+  with a mix of properly configured resources and misconfigurations, such 
+  as partially fulfilled.
 
-- `GAP`:
+- `GAP`
 
-  "Gap detected" with no properly configured resources identified, indicating a
-  _full control gap_.
+  A control gap is detected with no properly configured resources identified.
 
-- `UNKNOWN` or `INDETERMINATE`:
+- `UNKNOWN`
 
-  "Manual review needed" because the platform was unable to auto-determine the
+  Manual review is needed because J1 was unable to auto-determine the
   status with the queries provided.
 
-  > This status appears also when the requirement or control has no mapped query
-  >   question _and_ no external evidence provided.
+  This status appears also when the requirement or control has no mapped query question _and_ no external evidence provided.
 
 The status is determined by the presence and output of the named queries in the
-mapped question(s), as seen in the following matrix:
+mapped questions.
 
-![compliance-gap-analysis](../../assets/compliance-query-gap-analysis-status.png)
-
-> Note: A single query in a question without the `resultsAre` property set is
->   implicitly interpreted as a `GOOD` query.
+**Note**: A single query in a question without the `resultsAre` property set is implicitly interpreted as a `GOOD` query.
