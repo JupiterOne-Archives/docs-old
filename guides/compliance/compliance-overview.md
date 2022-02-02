@@ -21,11 +21,11 @@ add data-driven compliance evidence and link to controls.
 
 You can use the J1 Compliance app for each step in the security compliance workflow:
 
-- [Select security frameworks](./compliance-import.md) 
-- [Add data-driven compliance evidence](./compliance-mapping-evidence.md) 
-- [Link to controls](./compliance-controls.md)
-- [Link policies and procedures](./compliance-mapping-policies.md)
-- [Perform automated gap analysis](./compliance-gap-analysis.md)
+- [Select security frameworks](../compliance/compliance-import.md) 
+- [Add data-driven compliance evidence](../compliance/compliance-mapping-evidence.md) 
+- [Link to controls](../compliance/compliance-controls.md)
+- [Link policies and procedures](../compliance/compliance-mapping-policies.md)
+- [Perform automated gap analysis](../compliance/compliance-gap-analysis.md)
 - [Export compliance artifacts](../compliance/compliance-export.md)
 
 
