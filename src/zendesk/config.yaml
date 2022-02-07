@@ -244,7 +244,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682833'
       - title: Compliance Gap Analysis
         file: ../guides/compliance/compliance-gap-analysis.md
-        hash: VvaNdE/pHIzVXCpgUhllZUCdPbCWlNg97VYpDJS7ghU=
+        hash: ipkrec7l8AH3BVqA4hV/P1acEhfTAqRTuSNYU24iBF4=
         id: 360042682873
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682873'
       - title: Supporting SOC 2 audits using JupiterOne
@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: IRcgnsG4sj9sqradKZ1aY/eIE8Oju2TbDPEGRkR4xEg=
+        hash: eoUgocAikQYgF+ffmyBDEQ1LdNwxha0sFU5nMqX4WW0=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -838,7 +838,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: 4L0ScWi+pAC//Ewaf2RUdWt+e0DN0rxYPai5UWwoH44=
+        hash: VfxepzH+MutQbS4/6zvqEwZ4D7lh0ntoDMJcMs3T+Y8=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
