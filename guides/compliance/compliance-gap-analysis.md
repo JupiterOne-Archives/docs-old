@@ -113,6 +113,10 @@ following:
   This status appears also when the requirement or control has no mapped query question _and_ no external evidence provided.
 
 The status is determined by the presence and output of the named queries in the
-mapped questions.
+mapped questions, as shown in this matrix:
+
+![](../../assets/compliance-query-gap-analysis-status-2.png)
+
+
 
 **Note**: A single query in a question without the `resultsAre` property set is implicitly interpreted as a `GOOD` query.
