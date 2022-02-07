@@ -17,6 +17,22 @@
 - Write JupiterOne queries to review and monitor updates to the graph.
 - Configure alerts to take action when JupiterOne graph changes.
 
+Important notes:
+
+- The employee directory API does not include employees that have been
+  terminated. The employee records will not be included in the graph output of
+  the integration.
+- The users listing API includes user records of employees that have been
+  terminated (the status will be 'disabled', `active: false` in the `User`
+  entity). Over time you will see the number of user entities exceed the number
+  of employees, and the `User` will have no relationship to an employee
+  `Record`.
+- BambooHR employee records have an "Employee #" that is assigned when the
+  employee is created and which may later be modified. There is also a permanent
+  record "id" property that does not change and very likely is not equal to the
+  Employee #. The "Employee #" is not returned in employee list API and is
+  therefore not stored in the graph data.
+
 ## Requirements
 
 - JupiterOne requires the subdomain of your BambooHR account. For example:

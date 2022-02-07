@@ -1,39 +1,44 @@
-# Compliance Mapping - Evidence
+# Adding Compliance Evidence
 
-Each compliance requirement or control can have the following items as evidence:
+Each framework has sets of requirements that are grouped into categories such as logging 
+or access control and management. By default, all the requirements are applied to the framework. 
+If you do not want to apply a specific requirement, you can toggle it off from the requirement 
+details view.
 
-- Mapped query questions
-- Linked external evidence
+![](../../assets/compliance-toggle-applicable.png)
+
+After you have reviewed the requirements for your framework, you can click **Add Evidence** in 
+the requirement details view and provide any of the following items as evidence.
+
+- Query questions: 
+- External evidence
 - Additional notes
 
-## Query Questions
+#### Query Questions
 
-From the compliance requirement details view, you can add a new question or map
-an existing question to the selected requirement.
+You can add an existing query question or write a new one.  It is recommended 
+that you write queries about your assets and their relationships that can provide 
+data-driven compliance evidence.
 
-As long as data is represented within JupiterOne -- entities and relationships
-that comes from either managed integrations or custom automation, writing
-queries to provide data-drive compliance evidence is the recommended approach.
+Each question can have one or more queries. You can name the queries so that they 
+trigger [automated compliance gap analysis](../compliance/compliance-gap-analysis.md).
 
-Each "question" can have one or more queries. The queries can be named to
-trigger automated compliance gap analysis. See [this article](../compliance/compliance-gap-analysis.md) for more
-details.
+#### External Evidence
 
-## External Evidence
+In some cases, compliance evidence cannot be provided using the data available in
+J1. There are two ways to provide external evidence for a given control: 
 
-In some cases, compliance evidence cannot be provided via data available in
-JupiterOne. There are two ways to provide this evidence for a given control: 
-as an external link to a document hosted outside of JupiterOne (such as on 
-SharePoint or Google Docs), or using a direct uploaded (such as a screenshot or 
-PDF).  
+- External links to a document hosted outside of JupiterOne, such as on SharePoint 
+  or Google Docs
+- Direct uploads, such as a screenshot or PDF
 
-Both external evidence types require a name and have an optional description.
+Both external evidence types require a name and you can provide an optional description.
 
-[Watch this video](https://try.jupiterone.com/blog/video-evidence-collection-with-the-compliance-app) to see examples of queries you can use to collect and map 
+[Watch this video](https://try.jupiterone.com/blog/video-evidence-collection-with-the-compliance-app) to see examples of queries you can use to collect and link 
 evidence to controls.
 
-## Notes
+#### Notes and Attestations
 
-Additionally, free form notes can be added to any compliance requirement or
-control item to provide more details or context as needed. Each note, when
-saved, will capture the author and timestamp.
+Additionally, you can add free-form notes or attestations to any compliance requirement 
+or control to provide more details or context, as needed. Each note, when saved, captures 
+the author and timestamp.

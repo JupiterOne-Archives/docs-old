@@ -34,6 +34,24 @@
 
 
 
+## sysdig Mappings
+
+### `sysdig_account <-OWNS- <ROOT>`
+
+### `sysdig_account <-HOSTS- Vendor`
+
+> **Target Filters**
+>
+>   * `name = "Sysdig"`
+
+> **Transferred Properties**
+>
+>   * `name = "Sysdig"`
+>   * `displayName = "Sysdig"`
+>   * `_type = "sysdig"`
+
+
+
 ## atspoke Mappings
 
 ### `atspoke_account <-OWNS- <ROOT>`
@@ -164,6 +182,8 @@
 
 ### `nowsecure_account <-OWNS- <ROOT>`
 
+### `mobile_app <-DEVELOPS- <ROOT>`
+
 ### `nowsecure_account <-HOSTS- Vendor`
 
 > **Target Filters**
@@ -204,11 +224,55 @@
 
 ## gitlab Mappings
 
+### `gitlab_account <-OWNS- <ROOT>`
+
+### `gitlab_account <-HOSTS- Vendor`
+
+> **Target Filters**
+>
+>   * `name = "GitLab"`
+
+> **Transferred Properties**
+>
+>   * `name = "GitLab"`
+>   * `displayName = "GitLab"`
+>   * `_type = "gitlab"`
+
 
 
 ## artifactory Mappings
 
 ### `artifactory_account <-OWNS- <ROOT>`
+
+### `artifactory_account <-HOSTS- Vendor`
+
+> **Target Filters**
+>
+>   * `name = "Artifactory"`
+
+> **Transferred Properties**
+>
+>   * `name = "Artifactory"`
+>   * `displayName = "Artifactory"`
+>   * `_type = "artifactory"`
+
+
+
+## salesforce Mappings
+
+### `salesforce_account <-OWNS- <ROOT>`
+
+### `salesforce_account <-HOSTS- Vendor`
+
+> **Target Filters**
+>
+>   * `name = "Salesforce"`
+
+> **Transferred Properties**
+>
+>   * `name = "Salesforce"`
+>   * `displayName = "Salesforce"`
+>   * `_type = "salesforce"`
 
 
 
@@ -228,6 +292,18 @@
 
 ### `digicert_account <-OWNS- <ROOT>`
 
+### `digicert_certificate <-HAS- (Domain|DomainZone)`
+
+> **Target Filters**
+>
+>   * `name = source.domainName`
+
+### `digicert_certificate <-HAS- (Domain|DomainZone)`
+
+> **Target Filters**
+>
+>   * `name = source.dnsNames`
+
 
 
 ## feroot Mappings
@@ -237,6 +313,8 @@
 
 
 ## crowdstrike Mappings
+
+### `crowdstrike_account <-OWNS- <ROOT>`
 
 ### `crowdstrike_account <-HOSTS- Vendor`
 
@@ -250,7 +328,49 @@
 >   * `displayName = "CrowdStrike"`
 >   * `_type = "crowdstrike"`
 
-### `crowdstrike_account <-OWNS- <ROOT>`
+### `crowdstrike_sensor -PROTECTS-> user_endpoint`
+
+> **Source Filters**
+>
+>   * `instanceId = null`
+>   * `serialNumber = !null`
+>   * `productTypeDesc = Workstation`
+
+> **Target Filters**
+>
+>   * `_key = source.serialNumber`
+
+> **Transferred Properties**
+>
+>   * `_type = "user_endpoint"`
+>   * `_key = source.serialNumber`
+>   * `name = source.name`
+>   * `displayName = source.displayName`
+>   * `hostname = source.hostname`
+>   * `serialNumber = source.serialNumber`
+>   * `macAddress = source.macAddress`
+>   * `localIp = source.localIp`
+>   * `externalIp = source.externalIp`
+>   * `machineDomain = source.machineDomain`
+>   * `osVersion = source.osVersion`
+
+### `crowdstrike_sensor -PROTECTS-> aws_instance`
+
+> **Source Filters**
+>
+>   * `ec2InstanceArn = !null`
+
+> **Target Filters**
+>
+>   * `_key = source.ec2InstanceArn`
+
+> **Transferred Properties**
+>
+>   * `_key = source.ec2InstanceArn`
+>   * `_type = "aws_instance"`
+>   * `accountId = source.serviceProviderAccountId`
+>   * `instanceId = source.instanceId`
+>   * `availabilityZone = source.zoneGroup`
 
 
 
@@ -280,19 +400,39 @@
 
 > **Target Filters**
 >
->   * `name = "BugCrowd"`
+>   * `name = "Bugcrowd"`
 
 > **Transferred Properties**
 >
->   * `name = "BugCrowd"`
->   * `displayName = "BugCrowd"`
+>   * `name = "Bugcrowd"`
+>   * `displayName = "Bugcrowd"`
 >   * `_type = "bugcrowd"`
+
+
+
+## zoom Mappings
+
+### `zoom_account <-OWNS- <ROOT>`
+
+### `zoom_account <-HOSTS- Vendor`
+
+> **Target Filters**
+>
+>   * `name = "Zoom"`
+
+> **Transferred Properties**
+>
+>   * `name = "Zoom"`
+>   * `displayName = "Zoom"`
+>   * `_type = "zoom"`
 
 
 
 ## detectify Mappings
 
 ### `detectify_account <-OWNS- <ROOT>`
+
+### `web_app_domain <-HAS- <ROOT>`
 
 ### `detectify_account <-HOSTS- Vendor`
 
@@ -323,6 +463,14 @@
 >   * `_type = "duo"`
 
 ### `duo_account <-OWNS- <ROOT>`
+
+### `duo_phone <-IS- Device`
+
+> **Transferred Properties**
+>
+>   * `mobileNumber = source.number`
+>   * `displayName = "Duo"`
+>   * `_type = "mobile_phone"`
 
 
 
@@ -381,6 +529,8 @@
 >   * `_key = "global:internet"`
 
 ### `aws_account <-OWNS- <ROOT>`
+
+### `aws_organization <-HAS- <ROOT>`
 
 ### `aws_iam_user -IS-> Person`
 
@@ -456,6 +606,58 @@
 >
 >   * `efsArns = source.arn`
 
+### `aws_route53_record -CONNECTS-> (aws_lb|aws_nlb|aws_alb|aws_elb)`
+
+> **Target Filters**
+>
+>   * `dualstackDnsName = source.value`
+
+### `aws_shield_protection -PROTECTS-> *`
+
+> **Target Filters**
+>
+>   * `_key = source.resourceArn`
+
+### `aws_shield_protection_group -HAS-> *`
+
+> **Target Filters**
+>
+>   * `_key = source.members`
+
+### `DataStore -LOGS-> *`
+
+> **Source Filters**
+>
+>   * `loggingTargetBucket = !null`
+
+> **Target Filters**
+>
+>   * `bucketName = source.loggingTargetBucket`
+
+### `aws_cloudwatch_metric_alarm -TRIGGERS-> *`
+
+> **Target Filters**
+>
+>   * `_key = source.okActions`
+
+
+
+## sonarqube Mappings
+
+### `sonarqube_account <-HOSTS- Vendor`
+
+> **Target Filters**
+>
+>   * `name = "SonarQube"`
+
+> **Transferred Properties**
+>
+>   * `name = "SonarQube"`
+>   * `displayName = "SonarQube"`
+>   * `_type = "sonarqube"`
+
+### `sonarqube_account <-OWNS- <ROOT>`
+
 
 
 ## fastly Mappings
@@ -491,12 +693,46 @@
 >   * `deviceId = source.uuid`
 >   * `_type = "user_endpoint"`
 >   * `users = source.lastLoggedInUserName`
+>   * `hostname = toLowerCase(source.computerName)`
+>   * `displayName = source.displayName`
+
+### `sentinelone_agent -PROTECTS-> user_endpoint`
+
+> **Target Filters**
+>
+>   * `hostname = toLowerCase(source.computerName)`
+
+> **Transferred Properties**
+>
+>   * `deviceId = source.uuid`
+>   * `_type = "user_endpoint"`
+>   * `users = source.lastLoggedInUserName`
+>   * `hostname = toLowerCase(source.computerName)`
+>   * `displayName = source.displayName`
 
 
 
 ## servicenow Mappings
 
 ### `servicenow_account <-OWNS- <ROOT>`
+
+
+
+## wpengine Mappings
+
+### `wpengine_account <-OWNS- <ROOT>`
+
+### `wpengine_account <-HOSTS- Vendor`
+
+> **Target Filters**
+>
+>   * `name = "WP Engine"`
+
+> **Transferred Properties**
+>
+>   * `name = "WP Engine"`
+>   * `displayName = "WP Engine"`
+>   * `_type = "wpengine"`
 
 
 
@@ -609,23 +845,44 @@
 
 ### `onelogin_account <-OWNS- <ROOT>`
 
+### `onelogin_user -IS-> Person`
+
+> **Target Filters**
+>
+>   * `email = toLowerCase(source.email)`
+
+> **Transferred Properties**
+>
+>   * `email = toLowerCase(source.email)`
+>   * `displayName = "{source.firstName} {source.lastName}"`
+>   * `name = "{source.firstName} {source.lastName}"`
+>   * `firstName = source.firstName`
+>   * `lastName = source.lastName`
+>   * `_type = "employee"`
+>   * `company = source.company`
+>   * `department = source.department`
+>   * `state = source.state`
+>   * `title = source.title`
+>   * `phone = source.phone`
+>   * `status = source.status`
+
 
 
 ## airwatch Mappings
+
+### `airwatch_account <-OWNS- <ROOT>`
 
 ### `airwatch_account <-HOSTS- Vendor`
 
 > **Target Filters**
 >
->   * `name = "VMware"`
+>   * `name = "Airwatch"`
 
 > **Transferred Properties**
 >
->   * `name = "VMware"`
->   * `displayName = "VMware"`
->   * `_type = "vmware"`
-
-### `airwatch_account <-OWNS- <ROOT>`
+>   * `name = "Airwatch"`
+>   * `displayName = "Airwatch"`
+>   * `_type = "airwatch"`
 
 
 
@@ -721,8 +978,8 @@
 
 > **Source Filters**
 >
->   * `employeeType = !(bot|generic|service|shared|system)`
->   * `userType = !(bot|generic|service|shared|system)`
+>   * `employeeType = !(admin|bot|generic|service|shared|system)`
+>   * `userType = !(admin|bot|generic|service|shared|system)`
 
 > **Target Filters**
 >
@@ -738,7 +995,8 @@
 >   * `_type = "employee"`
 >   * `employeeType = source.employeeType`
 >   * `employeeId = source.employeeNumber`
->   * `userId = source.username`
+>   * `userId = source.id`
+>   * `username = source.username`
 >   * `department = source.department`
 >   * `division = source.division`
 >   * `location = source.location`
@@ -819,7 +1077,15 @@
 
 
 
+## cobalt Mappings
+
+### `cobalt_account <-OWNS- <ROOT>`
+
+
+
 ## cloudflare Mappings
+
+### `cloudflare_account <-OWNS- <ROOT>`
 
 ### `cloudflare_account <-HOSTS- Vendor`
 
@@ -832,8 +1098,6 @@
 >   * `name = "Cloudflare"`
 >   * `displayName = "Cloudflare"`
 >   * `_type = "cloudflare"`
-
-### `cloudflare_account <-OWNS- <ROOT>`
 
 
 
@@ -927,13 +1191,13 @@
 
 > **Target Filters**
 >
->   * `name = "Tenable Cloud"`
+>   * `name = "Tenable.io"`
 
 > **Transferred Properties**
 >
->   * `name = "Tenable Cloud"`
->   * `displayName = "Tenable Cloud"`
->   * `_type = "tenable_cloud"`
+>   * `name = "Tenable.io"`
+>   * `displayName = "Tenable.io"`
+>   * `_type = "tenable_io"`
 
 ### `tenable_account <-OWNS- <ROOT>`
 
@@ -978,6 +1242,42 @@
 
 
 
+## auth0 Mappings
+
+### `auth0_account <-OWNS- <ROOT>`
+
+### `auth0_account <-HOSTS- Vendor`
+
+> **Target Filters**
+>
+>   * `name = "Auth0"`
+
+> **Transferred Properties**
+>
+>   * `name = "Auth0"`
+>   * `displayName = "Auth0"`
+>   * `_type = "auth0"`
+
+
+
+## sentry Mappings
+
+### `sentry_account <-OWNS- <ROOT>`
+
+### `sentry_account <-HOSTS- Vendor`
+
+> **Target Filters**
+>
+>   * `name = "Sentry"`
+
+> **Transferred Properties**
+>
+>   * `name = "Sentry"`
+>   * `displayName = "Sentry"`
+>   * `_type = "sentry"`
+
+
+
 ## azure-devops Mappings
 
 ### `azure_devops_account <-OWNS- <ROOT>`
@@ -1000,38 +1300,92 @@
 
 ### `qualys_account <-OWNS- <ROOT>`
 
-### `Finding <-HAS- aws_instance`
-
-> **Source Filters**
->
->   * `ec2InstanceArn = !null`
-
-> **Target Filters**
->
->   * `_key = source.ec2InstanceArn`
-
-> **Transferred Properties**
->
->   * `_key = source.ec2InstanceArn`
->   * `_type = "aws_instance"`
-
-### `Finding <-HAS- Host`
-
-> **Source Filters**
->
->   * `ec2InstanceArn = null`
-
-> **Target Filters**
->
->   * `fqdn = source.fqdn`
-
-> **Transferred Properties**
->
->   * `fqdn = source.fqdn`
-
 
 
 ## integration-benchmark Mappings
+
+
+
+## github2 Mappings
+
+### `github2_account <-OWNS- <ROOT>`
+
+### `github2_account <-HOSTS- Vendor`
+
+> **Target Filters**
+>
+>   * `name = "GitHub 2"`
+
+> **Transferred Properties**
+>
+>   * `name = "GitHub 2"`
+>   * `displayName = "GitHub 2"`
+>   * `_type = "github2"`
+
+
+
+## bamboohr Mappings
+
+### `bamboohr_user -IS-> Person`
+
+> **Target Filters**
+>
+>   * `email = toLowerCase(source.email)`
+
+> **Transferred Properties**
+>
+>   * `email = toLowerCase(source.email)`
+>   * `displayName = source.displayName`
+>   * `name = source.name`
+>   * `firstName = source.firstName`
+>   * `lastName = source.lastName`
+>   * `_type = "employee"`
+>   * `employeeId = source.employeeId`
+>   * `location = source.location`
+>   * `title = source.jobTitle`
+>   * `workEmail = source.workEmail`
+>   * `department = source.department`
+>   * `division = source.division`
+>   * `manager = source.supervisor`
+>   * `mobilePhone = source.mobilePhone`
+>   * `workPhone = source.workPhone`
+
+### `bamboohr_employee -IS-> Person`
+
+> **Target Filters**
+>
+>   * `email = toLowerCase(source.email)`
+
+> **Transferred Properties**
+>
+>   * `email = toLowerCase(source.email)`
+>   * `displayName = source.displayName`
+>   * `name = source.name`
+>   * `firstName = source.firstName`
+>   * `lastName = source.lastName`
+>   * `_type = "employee"`
+>   * `location = source.location`
+>   * `title = source.jobTitle`
+>   * `workEmail = source.workEmail`
+>   * `department = source.department`
+>   * `division = source.division`
+>   * `manager = source.supervisor`
+>   * `mobilePhone = source.mobilePhone`
+>   * `workPhone = source.workPhone`
+
+### `bamboohr_account <-HOSTS- Vendor`
+
+> **Target Filters**
+>
+>   * `name = "BambooHR"`
+
+> **Transferred Properties**
+>
+>   * `name = "BambooHR"`
+>   * `displayName = "BambooHR"`
+>   * `_type = "bamboohr"`
+
+### `bamboohr_account <-OWNS- <ROOT>`
 
 
 
@@ -1077,8 +1431,8 @@
 
 > **Source Filters**
 >
->   * `employeeType = !(bot|generic|service|shared|system)`
->   * `userType = !(bot|generic|service|shared|system)`
+>   * `employeeType = !(admin|bot|generic|service|shared|system)`
+>   * `userType = !(admin|bot|generic|service|shared|system)`
 >   * `role = !(bot|generic|service|shared|system)`
 
 > **Target Filters**
@@ -1094,9 +1448,13 @@
 >   * `firstName = source.firstName`
 >   * `lastName = source.lastName`
 >   * `_type = "employee"`
+>   * `department = source.department`
+>   * `division = source.division`
+>   * `location = source.location`
 >   * `employeeType = source.employeeType`
 >   * `employeeId = source.employeeNumber`
->   * `userIds = source.username`
+>   * `userId = source.id`
+>   * `username = source.username`
 >   * `title = source.title`
 >   * `manager = source.manager`
 >   * `managerId = source.managerId`
@@ -1107,6 +1465,8 @@
 
 
 ## snowflake Mappings
+
+### `snowflake_account <-OWNS- <ROOT>`
 
 ### `snowflake_account <-HOSTS- Vendor`
 
@@ -1120,13 +1480,11 @@
 >   * `displayName = "Snowflake"`
 >   * `_type = "snowflake"`
 
-### `snowflake_account <-OWNS- <ROOT>`
-
 
 
 ## cisco_meraki Mappings
 
-### `cisco_maraki_account <-HOSTS- Vendor`
+### `cisco_meraki_account <-HOSTS- Vendor`
 
 > **Target Filters**
 >
@@ -1136,13 +1494,23 @@
 >
 >   * `name = "Cisco Meraki"`
 >   * `displayName = "Cisco Meraki"`
->   * `_type = "cisco_maraki"`
+>   * `_type = "cisco_meraki"`
 
-### `cisco_maraki_account <-OWNS- <ROOT>`
+### `cisco_meraki_account <-OWNS- <ROOT>`
+
+### `meraki_organization <-HAS- <ROOT>`
+
+### `user_endpoint -CONNECTS-> meraki_device`
+
+> **Target Filters**
+>
+>   * `publicIp = source.publicIp`
 
 
 
 ## npm Mappings
+
+### `npm_account <-OWNS- <ROOT>`
 
 ### `npm_account <-HOSTS- Vendor`
 
@@ -1157,6 +1525,35 @@
 >   * `_type = "npm"`
 
 ### `npm_account <-OWNS- <ROOT>`
+
+### `npm_package <-PUBLISHED- CodeRepo`
+
+> **Target Filters**
+>
+>   * `name = source.name`
+>   * `owner = source.scope`
+
+
+
+## kubernetes Mappings
+
+
+
+## addigy Mappings
+
+### `addigy_account <-OWNS- <ROOT>`
+
+### `addigy_account <-HOSTS- Vendor`
+
+> **Target Filters**
+>
+>   * `name = "Addigy"`
+
+> **Transferred Properties**
+>
+>   * `name = "Addigy"`
+>   * `displayName = "Addigy"`
+>   * `_type = "addigy"`
 
 
 

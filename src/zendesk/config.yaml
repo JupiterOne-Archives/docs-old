@@ -25,12 +25,12 @@ sections:
       - id: 360022890073
         title: Navigate the Graph
         file: ../guides/quickstart-graph.md
-        hash: FszqURJLZfDLMhGsc2D9xahCaofz5AELD7Xt3V6ieKA=
+        hash: VW20LPyht9kSHf4ZSCpnnXKwKPqMFuGHs6ilyhI04UA=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022890073'
       - title: J1QL Query Tutorial
         file: ../guides/tutorial-j1ql.md
         id: 360022720434
-        hash: dK+hsJF5snKIecoCNeprl/iSMW+tKb8yp9IKyiCPqC4=
+        hash: A7zINpuE4W4G+f4rsqSlDERCXCwO7vNyjRcC9TZf52M=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720434'
       - title: Using Asset Inventory Filters
         file: ../guides/asset-inventory-filters.md
@@ -219,12 +219,12 @@ sections:
     articles:
       - title: Managing Compliance in JupiterOne
         file: ../guides/compliance/compliance-overview.md
-        hash: TkvfQJ0o5IhuRHs+nh1H7U3StwEAeKMcl0zsftGaj0A=
+        hash: ZXy7lhXC7zsBJvkGAQV6z/vTyjghvY3OgKxzBcmQVNs=
         id: 360042682733
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682733'
       - title: Import Compliance Standard or Security Questionnaire
         file: ../guides/compliance/compliance-import.md
-        hash: wenMKDeWl6rFfGxmM7i2Yf/xY8X6lQtbFYI9j4JNWJ4=
+        hash: hMPDVxFy7cbL5ZCEjvRZ0Slo9DUfr0NeRNIMr77QnqA=
         id: 360042682773
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682773'
       - title: Export Compliance Artifacts
@@ -234,17 +234,17 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042195334'
       - title: Compliance Policies Mapping
         file: ../guides/compliance/compliance-mapping-policies.md
-        hash: iH4pvHyu5S6uO4fcPy1XDWDIZd88IYZ/bOoDtqUhBZs=
+        hash: RZQlFUosu2b37OcyXf9109EI0o7IruaJocnXy/bGynU=
         id: 360042195394
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042195394'
       - title: Compliance Evidence Mapping
         file: ../guides/compliance/compliance-mapping-evidence.md
-        hash: eB++gVRAKIaoUuPoFI5HigrDwrO+q38DhzBLnuFQEyw=
+        hash: A3a+6HrDsiFHpdS10kSWTg5ChN01ZrONySK+vTmzJ+s=
         id: 360042682833
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682833'
       - title: Compliance Gap Analysis
         file: ../guides/compliance/compliance-gap-analysis.md
-        hash: 8X9938YtIQE6emOb76aV3wsoVXuA2ZkqBdqCZkXn4Ks=
+        hash: cNoot8Hsbl+fOgliXxY+XRx83ArgHQFFM68q1dkF4CQ=
         id: 360042682873
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682873'
       - title: Supporting SOC 2 audits using JupiterOne
@@ -290,7 +290,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721914'
       - title: Configure SAML SSO Integration
         file: ../guides/configure-sso-integration.md
-        hash: /5JHieehwLmjRSQNhcIJrpjLrHzGrsIXmJB0r7Pt2XI=
+        hash: jgrE+COIpdKfMldEYBTG8VtHm//D5nZ8bIkOzRrDMLE=
         id: 360022903353
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903353'
       - title: Configure User Access Control
@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: M5b8CjxtTBebsvsSyYxO5AjcsMnrcxSVs/aIlzjILS8=
+        hash: S6tWMmegWOJAgJdeQl0uNJ1NvtU4TegvWjlEZW2kf1c=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -392,12 +392,12 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360034786734'
       - title: Entity Relationship Mapping - Global Rules
         file: ../docs/data-model/mappings-global.md
-        hash: FeFqdApXalYF7IIhxzh2wXnNiFwdivMw73NTum6vUIE=
+        hash: Wwotaey3JrcK0C4P401JreM+aeWshAPtZTMFyKJy9H4=
         id: 360041392074
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041392074'
       - title: Entity Relationship Mapping - Integration Rules
         file: ../docs/data-model/mappings-integrations.md
-        hash: 9xCNN1adQNWg5aR9ziuAr2VTVjnTGfz7f6l2Hb5aZkM=
+        hash: lKWLQIcUY0vNMjJzF+foE8g1u/meKQV2Yk3kNdcEtL0=
         id: 360041392094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041392094'
       - title: Resource Metadata
@@ -487,7 +487,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500004935101'
       - title: BambooHR
         file: ../docs/integrations/bamboohr/index.md
-        hash: N8tDVNnOLSnaHHBNJU7VQl0Dd4rDXqzTGti2DnG17/s=
+        hash: FrYHZopM0CM5/Rh5kLslNz91BQgr181rHxjaR6UPOuk=
         id: 360056759813
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360056759813'
       - title: Bitbucket
@@ -567,7 +567,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721114'
       - title: GitLab
         file: ../docs/integrations/gitlab/index.md
-        hash: Muqb9Tjhb07cceYz8Yv2l9Sg0qSasJdfbG+LCZc+gEs=
+        hash: 78S0q+wdktQYaezVzyw8bGdynszrOcssSEUIM+htM5M=
         id: 360047916954
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360047916954'
       - title: GoDaddy
@@ -608,7 +608,7 @@ sections:
       - title: Jira
         file: ../docs/integrations/jira/index.md
         id: 360022721154
-        hash: F1U454mbWyaiBqwvMllWPDmmXFBdR3CQVe4re89OaK8=
+        hash: UrvL46zQZVU3WkOL7Bi2PGbctxL2NNy8qO4vb+9rCfU=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721154'
       - title: JumpCloud
         file: ../docs/integrations/jumpcloud/index.md
@@ -643,7 +643,7 @@ sections:
       - title: Okta
         file: ../docs/integrations/okta/index.md
         id: 360022902573
-        hash: zBorFTgUSqjZgvm+8UVUxbQD7nsa5GI+zU6M5Exj07M=
+        hash: HTrX3oK6AJ0EbY0QKYLA1fXnYbSz6+ICTf/VLGyXuQs=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022902573'
       - title: OneLogin
         file: ../docs/integrations/onelogin/index.md
@@ -657,7 +657,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046951894'
       - title: Qualys
         file: ../docs/integrations/qualys/index.md
-        hash: MVA+Wm2EeFPMDNZXnyF90a0riSUyxhIReJjIkhPDnak=
+        hash: 43epLBqyGJOxSbPehAqqhgFvsQcdQD+/NDLAe6yNrQY=
         id: 360046952094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046952094'
       - title: Rapid7
@@ -677,7 +677,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022721214'
       - title: ServiceNow
         file: ../docs/integrations/servicenow/index.md
-        hash: eVmm4EPVTEw2KkHuznWUr+R6cQasGLwt0P/LoE9n/vg=
+        hash: yn/4pIJAsglJZdBsYS3AnyodmGJkkRrMbBXqnEescrk=
         id: 1500011204241
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500011204241'
       - title: Slack
@@ -750,6 +750,11 @@ sections:
         hash: P9AnIb7alB/MSMNqA6oKmQufR3HxDLHd5wvXwFpLRh4=
         id: 360062764753
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360062764753'
+      - title: Wordpress
+        file: ../docs/integrations/wordpress/jupiterone.md
+        hash: wvPdd8L9ZQPtOV0Qkr+ogw3wW4BflWnLLNabHB4Msg8=
+        id: 4416568808979
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4416568808979'
   - name: Power Ups
     id: 360006506113
     articles:
@@ -771,9 +776,29 @@ sections:
   - name: Release Notes
     id: 360002427353
     articles:
+      - title: 2022-JAN-31 Release
+        file: ../release-notes/2022-JAN-31.md
+        hash: 1CeWzeBLSXw0PzFL5zob+loi4dEVO1xJeT07O0E4ssg=
+        id: 4416823202067
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4416823202067'
+      - title: 2022-JAN-28 Release
+        file: ../release-notes/2022-JAN-26.md
+        hash: fuU1pzdHS6Zip01PUb/373gT8j9zh3en2Hg8HZd6OgI=
+        id: 4416560346003
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4416560346003'
+      - title: 2022-JAN-13 Release
+        file: ../release-notes/2022-JAN-13.md
+        hash: otKvZonxR+A/TLXCc4S/6zGreBdldAYOVyuf/L97B04=
+        id: 4415181017491
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4415181017491'
+      - title: 2022-JAN-12 Release
+        file: ../release-notes/2022-JAN-11.md
+        hash: smcJPvO9rGohwztPO9Etl9o7BPT+/LcjbWolCC6PL/g=
+        id: 4415089578899
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4415089578899'
       - title: 2021.86 Release
         file: ../release-notes/2021-86.md
-        hash: stRwkWdYjxs19Sg3hIoULi2X5l4uwTV5V/mKILy5XaE=
+        hash: XJks/SwMhskGL2lN7m/JUm0Tv8KY7SFJHksYHz8ixcA=
         id: 4412979582867
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4412979582867'
       - title: 2021.85 Release
@@ -813,7 +838,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: TGUplKRWwy9F4GlvZIt95iHjiftfi9lhfHOdIXoQXyg=
+        hash: Cka2irda9Wq4t4avyFOe+tdrOwpUyiCVj942rEHrcK4=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
