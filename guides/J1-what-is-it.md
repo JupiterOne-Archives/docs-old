@@ -12,7 +12,7 @@ you see the status of your onboarding items and any other actions that J1 recomm
 
 ![](../assets/home-todo.png)
 
-As time goes on, J1 collects key performance indicator (KPI) information for your organization and displays
+Over time, J1 collects key performance indicator (KPI) information for your organization and displays
 it in a dashboard. Your dashboard enables you to quickly see what has changed in your security program, the status of your environment, and where your compliance gaps are.
 
 ![](../assets/dashboard-home.png) 
