@@ -12,7 +12,7 @@ import your own configuration.
 
 **Note:** You must have the adminCompliance permission to be able to import frameworks.
 
-Open the J1 Compliance app by clicking ![](../../assets/icons/apps.png)and select Compliance.  To add a framework:
+Open the J1 Compliance app by clicking ![](../../assets/icons/apps.png) and select Compliance.  To add a framework:
 
 1. Select **Frameworks** from the left navigation panel and click **Add Framework**.
    ​

@@ -1,19 +1,23 @@
 # Export Compliance Artifacts
 
-The ![download][download-icon] "Download" button in JupiterOne Compliance app
-provides two options to export compliance artifacts:
+J1 provides an compliance artifacts summary package for you to download. 
+
+From the details view of a security framework in the J1 Compliance app, click the ![][../../assets/icons/download.png]
+download button. J1 builds an evidence package that can take several minutes to
+prepare. You can navigate away from the
+
+![](../../assets/compliance-download.png)
 
 - **Summary**
 - **All Evidence**
 
-> Compliance artifact export is an asynchronous background job. The download
-> icon will turn green when the artifact finishes building in the background.
-> You may leave the app while the artifact is being generated. You will receive
-> an email notification when the download is available.
+> Compliance artifact export is an asynchronous background job. The ![download][download-icon] download
+> turns green when the evidence package finishes building in the background, and J1 downloads
+> the zip file to your computer. You can leave the app while J1 is generating the package.
 
 ## Compliance Summary
 
-The **Summary** artifact is a zip package containing these two files:
+The summary artifact is a zip package containing these two files:
 
 - `complete-policies-and-procedures-listing.csv`
 
@@ -26,7 +30,7 @@ The **Summary** artifact is a zip package containing these two files:
 ## All Evidence
 
 The **All Evidence** artifact is a zip package containing the summary and the
-evidence output, in the following folder structure:
+evidence output, in this folder structure:
 
 ```text
 <standard_name>_evidence.zip
@@ -50,6 +54,4 @@ evidence output, in the following folder structure:
   | |____summary.csv
 ```
 
-> Note: the output of each query is limited to a sample of up to 250 results.
-
-[download-icon]: https://raw.githubusercontent.com/feathericons/feather/master/icons/download.svg?sanitize=true
+Note: the output of each query is limited to a sample of up to 250 results.
