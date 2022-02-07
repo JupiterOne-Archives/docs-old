@@ -7,15 +7,15 @@ ultimate visibility to your environment, infrastructure, and operations.
 
 ## Sign In and Search
 
-When you first sign in to J1, you land on the Search page, the center of all your activities. As a first-time
-user, you see a checklist of actions J1 recommends that you take, such as configuring your environment
-or integrations. As time goes on, J1 collects key performance indicator (KP1) information and displays
-it in a dashboard.
+When you first sign in to J1, you land on the Search page, the center of all your activities. In the To-Do tab,
+you see the status of your onboarding items and any other actions that J1 recommends that you complete, such as enabling the playground or configuring your compliance frameworks. 
+
+![](../assets/home-todo.png)
+
+As time goes on, J1 collects key performance indicator (KPI) information for your organization and displays
+it in a dashboard. Your dashboard enables you to quickly see what has changed in your security program, the status of your environment, and where your compliance gaps are.
 
 ![](../assets/dashboard-home.png) 
-
-Your dashboard enables you to quickly see what has changed in your compliance posture, the status of
-your environment, and where your compliance gaps are.
 
 From the Search page, you can enter questions in the search bar. By default, J1 autocompletes the 
 text and lists any questions related to your keywords. ![](../assets/search-query.png)
