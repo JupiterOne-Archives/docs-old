@@ -27,12 +27,12 @@ This works:
 }
 ```
 
-# Creating Relationships Between Entities You Own And Entities You Do Not
+# Creating Relationships Between Assets You Own and Assets You Do Not
 
-The goal is to create relationships between an entity that you own
-an another that you may not own. 
+The goal is to create relationships between an asset that you own
+and one you do not own. 
 
-The concentp of ownership in the J1 platform determines what you see. Without knowing 
+The concept of ownership in the J1 platform determines what you see. Without knowing 
 how to form relationships, it may be unclear why your data does not appear in the graph.
 
 What is not obvious when viewing the graph is that the graph you see is the 
@@ -42,8 +42,8 @@ provide a cohesive set of results. These subgraphs denote ownership. For example
 if subgraph 1 owns entity A, it means that entity A is in subgraph 1. Ownership
 is important because it is how J1 understands the state of everything.
 
-When interacting with entities that are owned by various sources, you must be
-specific in your interactions so the end graph is how you expect it to look.
+When interacting with assets that are owned by various sources, you must be
+specific in your interactions so the resulting graph is how you expect it to look.
 
 Try this query:
 
@@ -54,21 +54,19 @@ AND from = 'testing'
 THAT USES << CodeRepo
 ```
 
-You can now see your entities in the graph with the expected relationships.
-
-Adding new data to the JupiterOne graph forming relationships with that data is a 
+Adding new data to the JupiterOne graph to form relationships with that data is a 
 common use case. What this specific case shows is how to form relationships
-an ID for your asset.
+between assets you own and those you do not own.
 
-Therefore, to form a relationship with one sync job, you must utilize the
+To form a relationship with one sync job, you must utilize the
 `_key` property of your entity. The key is to be specific in how
 you do so.
 
 ## Acquiring Data in the Graph to Form Our Relationships
 
 After you have your prepared your data and are ready to send it to J1, the next
-step is to gather the assets that already exist in the JupiterOne graph so that you 
-can form relationships with them using this simple query:
+step is to gather the assets that already exist in the JupiterOne graph. Use this
+simply query to form relationships:
 
 ```
 FIND github_repo
@@ -139,7 +137,7 @@ the same `_key`.
 When you form a relationship with two `_key` values and you do not specify the
 `source` and the `scope` of the data that already exists in the graph, J1 does not 
 understand which asset you are referencing and, therefore, does not create the 
-relationship. because two assets could have the same `_key`, the software needs more 
+relationship. Because two assets could have the same `_key`, the software needs more 
 information to be able to identify the asset you are referencing.
 
 ### How to Get More Information
