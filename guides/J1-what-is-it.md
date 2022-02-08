@@ -5,6 +5,23 @@ empowering unobstructed visibility into security risks across your entire cyber 
 This extensible platform connects the dots between complex relationships and data, providing 
 ultimate visibility to your environment, infrastructure, and operations.
 
+## Sign In and Search
+
+When you first sign in to J1, you land on the Search page, the center of all your activities. In the To-Do tab,
+you see the status of your onboarding items and any other actions that J1 recommends that you complete, such as enabling the playground or configuring your compliance frameworks. 
+
+![](../assets/home-todo.png)
+
+Over time, J1 collects key performance indicator (KPI) information for your organization and displays
+it in a dashboard. Your dashboard enables you to quickly see what has changed in your security program, the status of your environment, and where your compliance gaps are.
+
+![](../assets/dashboard-home.png) 
+
+From the Search page, you can enter questions in the search bar. By default, J1 autocompletes the 
+text and lists any questions related to your keywords. ![](../assets/search-query.png)
+
+
+
 ## Using J1 Integrations
 
 The first step in using J1 is to bring your data into J1. There are numerous 
@@ -91,11 +108,7 @@ to access the J1 query library.
 
  ![](../assets/j1-query-library.png)
 
-## Ask Anything
 
-In addition to using the J1 query library, from any J1 page or app, you 
-can enter questions in the search bar. By default, J1 autocompletes 
-the text and lists any questions related to your keywords. ![](../assets/j1-ask-anything.png)
 
 ## JupiterOne Query Language
 

@@ -219,17 +219,17 @@ sections:
     articles:
       - title: Managing Compliance in JupiterOne
         file: ../guides/compliance/compliance-overview.md
-        hash: ZXy7lhXC7zsBJvkGAQV6z/vTyjghvY3OgKxzBcmQVNs=
+        hash: Ydc0RHzRn4PPQ1Qqd5bXErqpanj3jesLVx4ZBfv+L1w=
         id: 360042682733
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682733'
       - title: Import Compliance Standard or Security Questionnaire
         file: ../guides/compliance/compliance-import.md
-        hash: hMPDVxFy7cbL5ZCEjvRZ0Slo9DUfr0NeRNIMr77QnqA=
+        hash: +F/4stf7/mv0F+cjrTF0Nj/RkJ8IEM0cvUa9wQSLeP8=
         id: 360042682773
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682773'
       - title: Export Compliance Artifacts
         file: ../guides/compliance/compliance-export.md
-        hash: IHuTUj5/LTiBnlZWYRVsvBK14ot1GWQKSGm7mI8MKuQ=
+        hash: oz/mrhy1m/Qopl/LwzaT9xjrjV5NmOQogUZOBM3WnTM=
         id: 360042195334
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042195334'
       - title: Compliance Policies Mapping
@@ -244,7 +244,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682833'
       - title: Compliance Gap Analysis
         file: ../guides/compliance/compliance-gap-analysis.md
-        hash: cNoot8Hsbl+fOgliXxY+XRx83ArgHQFFM68q1dkF4CQ=
+        hash: ipkrec7l8AH3BVqA4hV/P1acEhfTAqRTuSNYU24iBF4=
         id: 360042682873
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360042682873'
       - title: Supporting SOC 2 audits using JupiterOne
@@ -300,7 +300,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360046093834'
       - title: Enable API Key Access
         file: ../guides/api-key-access.md
-        hash: Vmwi1RSgpMCAtKotBtiu4hEWNyH30iViBl81z5k5YlE=
+        hash: fCOznYWqqEfV/KjF+X0wiM+WYGxTNtvex0dv6QG+ehE=
         id: 360025989253
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360025989253'
       - title: Creating `Team` entities and mapping team members
@@ -326,7 +326,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: S6tWMmegWOJAgJdeQl0uNJ1NvtU4TegvWjlEZW2kf1c=
+        hash: eoUgocAikQYgF+ffmyBDEQ1LdNwxha0sFU5nMqX4WW0=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -341,7 +341,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022903373'
       - title: Enable API Key Access
         file: ../guides/api-key-access.md
-        hash: Vmwi1RSgpMCAtKotBtiu4hEWNyH30iViBl81z5k5YlE=
+        hash: fCOznYWqqEfV/KjF+X0wiM+WYGxTNtvex0dv6QG+ehE=
         id: 360025847594
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360025847594'
       - title: Data Structure for Bulk Upload
@@ -838,7 +838,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: Cka2irda9Wq4t4avyFOe+tdrOwpUyiCVj942rEHrcK4=
+        hash: VfxepzH+MutQbS4/6zvqEwZ4D7lh0ntoDMJcMs3T+Y8=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
