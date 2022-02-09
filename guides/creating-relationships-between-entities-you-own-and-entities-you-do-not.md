@@ -64,9 +64,9 @@ FIND github_repository
     WITH from = 'testing'
 ```
 
-We have now have `CodeRepos` that you can form relationships with.
+You have now have `CodeRepos` that you can form relationships with.
 
-An example query response payload:
+An example query response payload from one of the `CodeRepos`:
 
 ```
 {
@@ -101,7 +101,7 @@ An example query response payload:
 
 ## Forming the Relationship
 
-The next step in the guide is to form relationships between assets we own and assets we do not. Looking at the options for creating a relationship, there are two primary choices:
+The next step in the guide is to form relationships between assets you own and assets you do not. Looking at the options for creating a relationship, there are two primary choices:
 
 ```
 {
