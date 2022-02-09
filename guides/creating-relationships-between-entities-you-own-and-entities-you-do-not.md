@@ -30,7 +30,7 @@ This works:
 # Creating Relationships Between Assets You Own and Assets You Do Not
 
 This guide teaches you how to create relationships between an asset that you own
-and one you do not own. Adding new data to the JupiterOne graph and forming relationships 
+and one you do not own. Adding new data to the J1 graph and forming relationships 
 with that data is a common use case. If you are not specific with how you form relationships, 
 you might not see the data in the graph after you have uploaded it.  
 
@@ -39,12 +39,12 @@ What is not obvious when viewing the graph is that the graph you see is the
 aggregation of many subgraphs. There are subgraphs for the AWS integration, the 
 system mapper, and API ingested data among other things. All of these different subgraphs 
 provide a cohesive set of results. These subgraphs denote ownership. For example,
-if subgraph 1 owns entity A, it means that entity A is in subgraph 1. Ownership
+if a certain subgraph owns `entity A`, it means that `entity A` is in that subgraph. Ownership
 is important because it is how J1 understands the state of everything. 
 
 A subgraph is created by fusing the `source` and the `scope` of an entity together. For example, 
 `api:your-api-call` could be a subgraph. These subgraphs provide identity to your data in the J1. 
-When interacting with assets that are owned by various sources, you must be
+When interacting with assets that are owned by various subgraphs, you must be
 specific in your interactions so the resulting graph is how you expect it to look.
 
 
@@ -59,17 +59,18 @@ THAT USES << CodeRepo
 
 An example of this use case is available at: https://github.com/JupiterOne/jupiterone-client-nodejs/tree/main/examples/sync-api
 
-This guide assumes that you have run the example above. This step is necessary because of the 
+This guide assumes that you have run the example above. This is necessary because of the 
 need for ephemeral data that is owned by an `integration-managed` source. The example 
 creates data that is controlled by the `integration-managed` source, creates data that 
 is controlled the `api` source, and creates a relationship between those two assets.
 
-## Acquiring Data in the Graph to Form Relationships
+## Acquiring Assets in the Graph to Form Relationships
 
-The next step is to acquire `integration-managed` data from J1. If you have run the 
-example scenario above, you should have newly-created [CodeRepos](https://github.com/JupiterOne/jupiterone-client-nodejs/blob/main/examples/sync-api/src/data/code-repos.json) 
-in your graph to query. The example code uploads this data in an `integration-managed` 
-scope. This upload enables us to work with data that is outside of your scope (`api`).
+After you have compiled the assets that you want to upload to J1, you still must acquire assets from 
+the J1 graph so that you can form relationships with it. Therefore, our first step in this guide is to acquire `integration-managed` data from J1. 
+If you have run the example scenario above, you should have newly-created [CodeRepos](https://github.com/JupiterOne/jupiterone-client-nodejs/blob/main/examples/sync-api/src/data/code-repos.json) 
+in your graph to query. The example code uploads assets into J1 in an `integration-managed` 
+scope. This upload enables us to work with assets that is outside of your scope (`api`).
 
 ```
 FIND github_repository
@@ -145,7 +146,7 @@ information to be able to identify the asset you are referencing.
 
 ### How to Get More Information
 
-Use the `source` and `scope` of your JupiterOne data with the `_key`!
+Use the `source` and `scope` of your J1 data with the `_key`!
 
 ```
 {
