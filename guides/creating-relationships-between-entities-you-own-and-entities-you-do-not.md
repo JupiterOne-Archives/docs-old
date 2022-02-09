@@ -29,23 +29,20 @@ This works:
 
 # Creating Relationships Between Assets You Own and Assets You Do Not
 
-The goal is to create relationships between an asset that you own
-and one you do not own. 
+This guide teaches you how to create relationships between an asset that you own
+and one you do not own. Adding new data to the JupiterOne graph and forming relationships with that data is a common use case. If you're not specific with how you form relationships, you might not see the data in the graph after you have uploaded it.  
 
-The concept of ownership in the J1 platform determines what you see. Without knowing 
-how to form relationships, it may be unclear why your data does not appear in the graph.
-
+The concept of ownership in the J1 platform determines what you see. 
 What is not obvious when viewing the graph is that the graph you see is the 
 aggregation of many subgraphs. There are subgraphs for the AWS integration, the 
 system mapper, and API ingested data among other things. All of these different subgraphs 
 provide a cohesive set of results. These subgraphs denote ownership. For example,
 if subgraph 1 owns entity A, it means that entity A is in subgraph 1. Ownership
-is important because it is how J1 understands the state of everything.
-
-When interacting with assets that are owned by various sources, you must be
+is important because it is how J1 understands the state of everything. A subgraph is created by fusing the `source` and the `scope` of an entity together. For example, `api:your-api-call` could be a subgraph. These subgraphs provide identity to your data in the J1. When interacting with assets that are owned by various sources, you must be
 specific in your interactions so the resulting graph is how you expect it to look.
 
-Try this query:
+
+At the end of this guide, you should be able to run this query and see your results:
 
 ```
 FIND CodeModule
@@ -54,23 +51,17 @@ AND from = 'testing'
 THAT USES << CodeRepo
 ```
 
-Adding new data to the JupiterOne graph to form relationships with that data is a 
-common use case. What this specific case shows is how to form relationships
-between assets you own and those you do not own.
+An example of this use case is available at: https://github.com/JupiterOne/jupiterone-client-nodejs/tree/main/examples/sync-api
 
-To form a relationship with one sync job, you must utilize the
-`_key` property of your entity. The key is to be specific in how
-you do so.
+This guide assumes that you have run the example above. This is necessary because of the need for ephemeral data that is owned by an `integration-managed` source. The example creates data that is controlled by the `integration-managed` source, creates data that is controlled the `api` source, and creates a relationship between those two entities.
 
 ## Acquiring Data in the Graph to Form Our Relationships
 
-After you have your prepared your data and are ready to send it to J1, the next
-step is to gather the assets that already exist in the JupiterOne graph. Use this
-simply query to form relationships:
+The next step in the guide is to acquire `integration-managed` data from J1. If you have run the example scenario above, you should have newly-created [CodeRepos](https://github.com/JupiterOne/jupiterone-client-nodejs/blob/main/examples/sync-api/src/data/code-repos.json) in your graph to query. The example code uploads this data in an `integration-managed` scope. This enables us to work with data that is outside of your scope (`api`).
 
 ```
-FIND github_repo
-    WITH displayName = ('graph-veracode' OR 'graph-knowbe4' OR 'graph-azure' OR 'graph-wazuh' OR 'graph-enrichment-examples' OR 'graph-whois' OR 'graph-zeit')
+FIND github_repository
+    WITH from = 'testing'
 ```
 
 We have now have `CodeRepos` that you can form relationships with.
@@ -83,10 +74,10 @@ An example query response payload:
         "CodeRepo"
     ],
     "_type": [
-        "github_repo"
+        "github_repository"
     ],
     "_key": "MDEwOlJlcG9zaXRvcnkxNjkzMzI3NTQ=",
-    "displayName": "graph-veracode",
+    "displayName": "ibzibid",
     "_integrationType": "github",
     "_integrationClass": [
         "ITS",
@@ -110,8 +101,7 @@ An example query response payload:
 
 ## Forming the Relationship
 
-Looking at the options for creating a relationship, there are two primary
-choices:
+The next step in the guide is to form relationships between assets we own and assets we do not. Looking at the options for creating a relationship, there are two primary choices:
 
 ```
 {
@@ -174,6 +164,43 @@ In JSON, it looks like this:
 }
 ```
 
-## Using This Example
+## Putting It Together
 
-An example of this use case is available at: https://github.com/JupiterOne/jupiterone-client-nodejs/tree/main/examples/sync-api
+Now that you know how to form relationships with assets that you do not own, here's what your [sync api](https://community.askj1.com/kb/articles/786-jupiterone-bulk-upload-schema) payload should look like put together:
+
+```
+{
+    "entities": [
+        {
+            "_key": "npm_package:hizurur",
+            "_class": "CodeModule",
+            "_type": "npm_package",
+            "displayName": "hizurur",
+            "from": "testing"
+        },
+        {...}
+    ],
+    relationships: [
+        {
+            _key: "codeRepo:USES:codeModule",
+            _type: "codeRepo:USES:codeModule",
+            _class: "USES",
+            displayName: "USES v3.4.3",
+            _fromEntitySource: "integration-managed"
+            _fromEntityScope: "integration_id"
+            _fromEntityKey: "codeRepo_key"
+            _toEntityKey: "npm_package:hizurur" 
+        },
+        {...}
+    ]
+}
+```
+
+After you have uploaded the data, use the query posted earlier in the guide in J1 to view your results:
+
+```
+FIND CodeModule
+WITH displayName = ('hizurur' OR 'carnud' OR 'vici' OR 'iti' OR 'jifguilo' OR 'kiwoj' OR 'juvhove')
+AND from = 'testing'
+THAT USES << CodeRepo
+```
