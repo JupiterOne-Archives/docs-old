@@ -62,7 +62,9 @@ Try editing and running the rules queries and get used to how the interface work
 
 Read more about alerts in the [documentation](../compliance/compliance-overview.md).
 
-## Understand Compliance
+## Understand the Compliance Dashboard
 
 Playing with the Compliance app is also one action you should try in the J1 playground. The compliance dashboard enables you to quickly review your compliance status and download evidence against controls, policies, and procedures for HIPAA, SOC 2, PCI, and other frameworks.
+
+
 
