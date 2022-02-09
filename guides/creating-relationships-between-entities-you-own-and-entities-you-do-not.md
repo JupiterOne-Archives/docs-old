@@ -59,25 +59,26 @@ THAT USES << CodeRepo
 
 An example of this use case is available at: https://github.com/JupiterOne/jupiterone-client-nodejs/tree/main/examples/sync-api
 
-This guide assumes that you have run the example above. This is necessary because of the 
-need for ephemeral data that is owned by an `integration-managed` source. The example 
+This guide assumes that you have run the example above so that you have the necessary
+ephemeral data that is owned by an `integration-managed` source. The example 
 creates data that is controlled by the `integration-managed` source, creates data that 
 is controlled the `api` source, and creates a relationship between those two assets.
 
 ## Acquiring Assets in the Graph to Form Relationships
 
 After you have compiled the assets that you want to upload to J1, you still must acquire assets from 
-the J1 graph so that you can form relationships with it. Therefore, our first step in this guide is to acquire `integration-managed` data from J1. 
-If you have run the example scenario above, you should have newly-created [CodeRepos](https://github.com/JupiterOne/jupiterone-client-nodejs/blob/main/examples/sync-api/src/data/code-repos.json) 
-in your graph to query. The example code uploads assets into J1 in an `integration-managed` 
-scope. This upload enables us to work with assets that is outside of your scope (`api`).
+the J1 graph so that you can form relationships with it. Therefore, the first step in this guide is 
+to acquire `integration-managed` data from J1. 
+
+If you have run the example scenario above, you should have newly-created [CodeRepos](https://github.com/JupiterOne/jupiterone-client-nodejs/blob/main/examples/sync-api/src/data/code-repos.json) in your graph to query. The example code uploads assets into J1 
+in an `integration-managed` scope. This upload enables us to work with assets that is outside of your scope (`api`).
 
 ```
 FIND github_repository
     WITH from = 'testing'
 ```
 
-You have now have `CodeRepos` that you can form relationships with.
+You now have `CodeRepos` that you can form relationships with.
 
 An example query response payload from one of the `CodeRepos`:
 
