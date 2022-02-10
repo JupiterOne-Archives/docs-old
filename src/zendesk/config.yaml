@@ -32,6 +32,8 @@ sections:
         id: 360022720434
         hash: A7zINpuE4W4G+f4rsqSlDERCXCwO7vNyjRcC9TZf52M=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720434'
+      - title: Creating Relationships Between Assets You Upload and Assets You Do Not
+        file: ../guides/creating-relationships-between-entities-you-own-and-entities-you-do-not.md
       - title: Using Asset Inventory Filters
         file: ../guides/asset-inventory-filters.md
         id: 360022720454
