@@ -4,7 +4,7 @@ sections:
     articles:
       - title: An Intro to JupiterOne
         file: ../guides/J1-what-is-it.md
-        hash: EYEt2fG7ErBsErJbOF9TUcecTd6zJs+Y6ypb9ZyG1XY=
+        hash: ucHQipwbKMffzZAW5oVsfxNMnZbZlmEumK3Wvxc8Umg=
         id: 4407857686163
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4407857686163'
       - id: 360022884813
@@ -32,6 +32,12 @@ sections:
         id: 360022720434
         hash: A7zINpuE4W4G+f4rsqSlDERCXCwO7vNyjRcC9TZf52M=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720434'
+      - title: Creating Relationships Between Assets You Upload and Assets You Do Not
+        file: >-
+          ../guides/creating-relationships-between-entities-you-own-and-entities-you-do-not.md
+        hash: GTO2Zce0Y8ugBpADcue+do41ry0Fyxpo2AAUSGHUnRw=
+        id: 4418064305811
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4418064305811'
       - title: Using Asset Inventory Filters
         file: ../guides/asset-inventory-filters.md
         id: 360022720454
@@ -326,7 +332,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: eoUgocAikQYgF+ffmyBDEQ1LdNwxha0sFU5nMqX4WW0=
+        hash: GC+uGmZ3UPvI4JENhkRTTgprPJ/9z3f+dz99/gBCecg=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -838,7 +844,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: VfxepzH+MutQbS4/6zvqEwZ4D7lh0ntoDMJcMs3T+Y8=
+        hash: 3+03OpZeUsp1i5zSLVdoj3qNN0K3oNK97xqMRnOciIE=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
