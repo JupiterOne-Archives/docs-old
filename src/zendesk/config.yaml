@@ -33,7 +33,11 @@ sections:
         hash: A7zINpuE4W4G+f4rsqSlDERCXCwO7vNyjRcC9TZf52M=
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022720434'
       - title: Creating Relationships Between Assets You Upload and Assets You Do Not
-        file: ../guides/creating-relationships-between-entities-you-own-and-entities-you-do-not.md
+        file: >-
+          ../guides/creating-relationships-between-entities-you-own-and-entities-you-do-not.md
+        hash: GTO2Zce0Y8ugBpADcue+do41ry0Fyxpo2AAUSGHUnRw=
+        id: 4418064305811
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4418064305811'
       - title: Using Asset Inventory Filters
         file: ../guides/asset-inventory-filters.md
         id: 360022720454
@@ -328,7 +332,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: QqlKFnwXdmQ8X92U1ywXlWFobQa1meCkQd/VUrk4jrk=
+        hash: GC+uGmZ3UPvI4JENhkRTTgprPJ/9z3f+dz99/gBCecg=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -840,7 +844,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: eGdstd1K9yq9oJLY0JtgqpJWukNzaLSfymB/P1UXj4c=
+        hash: 3+03OpZeUsp1i5zSLVdoj3qNN0K3oNK97xqMRnOciIE=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
