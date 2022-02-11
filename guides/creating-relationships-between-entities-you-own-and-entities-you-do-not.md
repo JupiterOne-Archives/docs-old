@@ -1,4 +1,6 @@
-# TL;DR
+# Creating Relationships Between Assets You Own and Assets You Do Not
+
+## Overview
 
 If you want to form a relationship using a `_key`, you must include the
 `_source` and `_scope` of the entity that already exists in the graph.
@@ -26,8 +28,6 @@ This works:
     _toEntityKey: entityTo.entity._key,
 }
 ```
-
-# Creating Relationships Between Assets You Own and Assets You Do Not
 
 This guide teaches you how to create relationships between an asset that you own
 and one you do not own. Adding new data to the J1 graph and forming relationships 
