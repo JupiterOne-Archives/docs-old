@@ -81,6 +81,8 @@ integrations:
   displayName: SentinelOne
 - projectName: graph-servicenow
   displayName: ServiceNow
+- projectName: graph-signal-sciences
+  displayName: Signal Sciences
 - projectName: graph-slack
   displayName: Slack
 - projectName: graph-snipe-it
@@ -89,6 +91,8 @@ integrations:
   displayName: Snowflake
 - projectName: graph-snyk
   displayName: Snyk
+- projectName: graph-sysdig
+  displayName: Sysdig
 - projectName: graph-tenable-io
   displayName: Tenable io
 - projectName: graph-threatstack
