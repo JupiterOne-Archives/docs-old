@@ -1,6 +1,8 @@
 integrations:
 - projectName: graph-airwatch
   displayName: AirWatch
+- projectName: graph-aquasec
+  displayName: Aqua Security
 - projectName: graph-artifactory
   displayName: JFrog Artifactory
 - projectName: graph-auth0
