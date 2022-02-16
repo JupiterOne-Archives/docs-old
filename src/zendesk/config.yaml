@@ -716,6 +716,8 @@ sections:
         hash: nJUr/g1nMXOf4RyFg/RIHteYC9ytgeJky3Id8lXemYU=
         id: 4411830287507
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4411830287507'
+      - title: Sysdig
+        file: ../docs/integrations/sysdig/index.md
       - title: Tenable.io
         file: ../docs/integrations/tenable-io/index.md
         id: 360022902593
