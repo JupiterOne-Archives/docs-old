@@ -332,7 +332,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: LTJMy1vTiNC/sZNCRIE6tVHiEUIN3ZgRrJ04IjiUY6k=
+        hash: YfK/MKOpdeC8x9BgdrI4H+xhnNVuLuCxQpVKRzVMbbY=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -456,16 +456,21 @@ sections:
         hash: qpMROwx+isMUp8E5QhsdmNpGnjDCEgVlCohtB+oUiDc=
         id: 360041763713
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360041763713'
-      - title: Auth0
-        file: ../docs/integrations/auth0/index.md
-        hash: aR66pIgvszg7gM57GgbJWAf3D6hDkfKCWItYjAxfaIA=
-        id: 1500011942922
-        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500011942922'
+      - title: Aqua Security
+        file: ../docs/integrations/aqua-security/index.md
+        hash: vkXyyj2cfIfV129IDjZDkX6MpbJEWCtJNGMn5k37fa8=
+        id: 4425430604307
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4425430604307'
       - title: atSpoke
         file: ../docs/integrations/atspoke/index.md
         hash: Ywpz61h+TZdT7Iiv1bsm7xVm0YcU1C+zO4Mmgmy8Qkg=
         id: 360062101514
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360062101514'
+      - title: Auth0
+        file: ../docs/integrations/auth0/index.md
+        hash: aR66pIgvszg7gM57GgbJWAf3D6hDkfKCWItYjAxfaIA=
+        id: 1500011942922
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500011942922'
       - title: AWS
         file: ../docs/integrations/aws/index.md
         id: 360022721054
@@ -849,7 +854,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: +VxhuM6mGGxO9uFboZa+D8C0dLUKXQKWQjRQ3uxSlRM=
+        hash: 42463M6kx034HUr0nNRy+xqbC66O0Qybd/sQ+8kIu6o=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
