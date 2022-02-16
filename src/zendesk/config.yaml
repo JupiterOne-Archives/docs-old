@@ -332,7 +332,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: NJdAm/Vmov6gOUhvrKCxrPBk2bLQNcguTIkI35kEqRY=
+        hash: LTJMy1vTiNC/sZNCRIE6tVHiEUIN3ZgRrJ04IjiUY6k=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -718,6 +718,9 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4411830287507'
       - title: Sysdig
         file: ../docs/integrations/sysdig/index.md
+        hash: ogQkrBeIYVNS45cWa6hkya/ViajG6sS5o9fhxw/Vnjw=
+        id: 4425398892435
+        webLink: 'https://support.jupiterone.io/hc/en-us/articles/4425398892435'
       - title: Tenable.io
         file: ../docs/integrations/tenable-io/index.md
         id: 360022902593
@@ -846,7 +849,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: 6E+eNnoAv4wGrG02w0lKn+2SyGN7YlWm8WflpYG7BnU=
+        hash: +VxhuM6mGGxO9uFboZa+D8C0dLUKXQKWQjRQ3uxSlRM=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
