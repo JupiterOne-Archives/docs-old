@@ -332,7 +332,7 @@ sections:
     articles:
       - title: JupiterOne Platform API
         file: ../docs/jupiterone-api.md
-        hash: GC+uGmZ3UPvI4JENhkRTTgprPJ/9z3f+dz99/gBCecg=
+        hash: NJdAm/Vmov6gOUhvrKCxrPBk2bLQNcguTIkI35kEqRY=
         id: 360022722094
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360022722094'
       - title: JupiterOne Compliance API
@@ -493,7 +493,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/1500004935101'
       - title: BambooHR
         file: ../docs/integrations/bamboohr/index.md
-        hash: FrYHZopM0CM5/Rh5kLslNz91BQgr181rHxjaR6UPOuk=
+        hash: ZY8KJK0NK2bHTRpDKeBy0C/fTVD8ZLGCogoanuTI8zo=
         id: 360056759813
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360056759813'
       - title: Bitbucket
@@ -623,7 +623,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360037319533'
       - title: KnowBe4
         file: ../docs/integrations/knowbe4/index.md
-        hash: xDCvIMlwtELXJo7M7LBYL05zmL1BT491viA+iCjKL6Y=
+        hash: ZLgs828/XX3QINi7sCP9Ljqwdamm+h9zhhz9O/Y31lo=
         id: 360023741834
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/360023741834'
       - title: Malwarebyes
@@ -844,7 +844,7 @@ sections:
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4406699567635'
       - title: 2021.78 Release
         file: ../release-notes/2021-78.md
-        hash: 3+03OpZeUsp1i5zSLVdoj3qNN0K3oNK97xqMRnOciIE=
+        hash: 6E+eNnoAv4wGrG02w0lKn+2SyGN7YlWm8WflpYG7BnU=
         id: 4405894523667
         webLink: 'https://support.jupiterone.io/hc/en-us/articles/4405894523667'
       - title: 2021.77 Release
